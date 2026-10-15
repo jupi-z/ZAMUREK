@@ -1,27 +1,14 @@
-# Compatibilité future avec une marketplace
+# Marketplace future : canal installable additionnel
 
-**Hors V1.** L'objectif est la compatibilité architecturale, non sa livraison immédiate.
+**Hors V1, compatibilité anticipée.** Le commerçant active **volontairement** l'exposition de son catalogue public dans la marketplace, avec possibilité de retrait.
 
-## Invariants dès V1
-- Identifiants immuables de tenants, produits et commandes, avec tenant explicite dans les références cross-store.
-- API versionnée indépendante du canal de présentation.
-- Config public catalogue et visibilité ; réglages d'opt-in de découverte (non activés automatiquement).
-- Identités globales préparées mais données clients locales isolées et accès soumis à consentement.
-- Checkout mono-tenant obligatoire : aucune commande traverse plusieurs DB.
+## Contrat d'intégration
+Référence produits (tenantId, productId, variantId) et disponibilité, tarifs **CDF et USD** distincts, aucun FX automatique. Projection centrale de catalogue opt-in consommant événements outbox, mais bases tenant restent sources de vérité ; respecter retrait et données privées.
 
-## Agrégation future
-Indexer **uniquement le catalogue public opt-in** dans une projection centrale : tenantId, productId, title, category, image URL publique, prix indicatif, devise, visibilité, updatedAt, sourceVersion.
-Source de vérité : base tenant. Répliquer via outbox / consommateur idempotent ; traiter suppressions, désinscriptions, retard d'index et reconstruction complète.
+## Identité et commandes
+Identité acheteur **globale obligatoire** introduite dès V1 ; profils et commandes locaux tenant isolés. Une application marketplace Android future consomme les API versionnées, avec paniers et checkouts **mono-boutique** et monnaie sélectionnée par commande. Ni paiement fractionné ni panier inter-vendeur V1.
 
-## Parcours marketplace conseillé
-Découverte de produits de différents commerçants, fiches et paniers **par boutique**. Au premier lancement marketplace, demander un checkout indépendant pour chaque boutique : limite le risque financier, la coordination et l'annulation distribuée.
+## Compatibilité
+Les APK personnalisées continuent à fonctionner indépendamment. Aucune migration forcée de bases/identités/apps, pas de portail web marketplace. Les contrats API restent compatibles ou dépréciés avec période de support documentée.
 
-## Si panier multi-vendeur plus tard
-Créer une intention globale non financière et des commandes enfants indépendantes, chacune dans sa DB. Gérer compensation et états partiels de façon explicite ; jamais prétendre à transaction ACID distribuée. Paiements fractionnés/reversement exigent choix PSP et conformité spécifique.
-
-## Compatibilité ascendante
-Les apps propriétaires continuent à parler directement au canal enregistré de leur tenant. Marketplace est un canal additionnel, non un remplacement. Tests contractuels croisés obligatoires.
-
-## Dépendances
-Architecture outbox et opt-in catalogue, matrice de consentement, index externe, choix des commissions et règles de service client. Voir [events](EVENTS.md) et [identity](IDENTITY.md).
-
+Voir [IDENTITY](IDENTITY.md), [CURRENCY](CURRENCY-CDF-USD.md), [EVENTS](EVENTS.md).
