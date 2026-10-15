@@ -1,67 +1,48 @@
-# Spécifications fonctionnelles — V1
+# xShop — Spécifications fonctionnelles V1 (révisées)
 
-**Statut : contrat produit initial ; aucune fonction ci-dessous n'est encore implémentée.**
+**Statut : objectifs contractualisés, non encore implémentés.** [Arbitrages approuvés](../DECISIONS-VALIDATED-2026-10-15.md).
 
 ## Rôles
-- Visiteur : explorer les produits publics.
-- Acheteur invité : créer panier et commande, consulter sa commande via preuve de possession (jeton non devinable).
-- Merchant owner : gérer informations boutique, produits, commandes et utilisateurs.
-- Merchant staff : gérer catalogue et commandes suivant permissions.
-- Platform operator : créer / suspendre / inspecter état technique des tenants ; jamais lire les commandes sans justification, autorisation et audit.
+- Client **avec compte obligatoire** : création, connexion, vérification identité selon protocole retenu, panier, commande, suivi, demandes d'annulation.
+- Owner marchand : produits, variantes, tarifs, commandes, versements manuels, zones, employés.
+- Staff : permissions dédiées (lecture / gestion catalogue / préparation / confirmation paiement si expressément autorisé).
+- Platform operator : création et gestion des tenants et des canaux, sans lecture de commandes sauf délégation sécurisée et audit.
 
-## Catalogue
-- Produit : ID opaque, titre, description, catégorie, images, prix en unités monétaires mineures, devise ISO, statut DRAFT/ACTIVE/HIDDEN/UNAVAILABLE/ARCHIVED, variantes facultatives (options et prix propres).
-- Recherche texte simple, tri et pagination cursor/offset plafonnée ; aucune exposition des brouillons.
-- Pas de quantité disponible / entrepôt V1. La quantité demandée dans le panier reste possible, mais n'est pas une quantité en stock.
-- Validation serveur des montants, images, options, produit actif, catégorie et statut.
+## Comptes clients
+Identité centrale réutilisable entre apps personnalisées ; profil commercial **local** par tenant sans partage implicite de commandes. Inscription, connexion, reset, rotation/révocation sessions, logout et confidentialité. Voir [auth](../architecture/AUTH-CUSTOMER.md). **Aucun checkout invité**, ni token de suivi invité dans la V1.
+
+## Catalogue et disponibilités
+Produits, catégories, images, variantes simples (taille/couleur éventuelle), DRAFT/ACTIVE/HIDDEN/UNAVAILABLE/ARCHIVED, sans stock quantifié. Seuls articles publiés/visibles apparaissent ; les indisponibles ne sont pas achetables. Publication exige un prix valide **en CDF et en USD**, par variante. Aucun change automatique.
 
 ## Panier
-- Panier rattaché à **une seule boutique** et à un appareil/session (non à un identifiant de tenant libre).
-- Ajouter, modifier quantité et retirer ; limites configurables ; calcul côté serveur à chaque mutation.
-- Le panier est temporaire ; il peut expirer ; aucune promesse de prix bloqué avant validation de commande.
-- Le jeton secret du panier est délivré à la création puis conservé par Kotlin ; GET/PATCH ne renvoient pas à nouveau ce secret.
+Panier mono-tenant et **mono-devise**, protégé par identité client ; produit/variante, quantité demandée, prix indicatif retourné par serveur. Le client choisit CDF ou USD, et tout changement de monnaie déclenche un recalcul **dans la devise cible**. Aucun secret de panier invité dans le parcours authentifié définitif. Panier expirant et serveur autoritaire sur montant.
 
-## Livraison
-- Le commerçant configure RETRAIT / LIVRAISON et ses zones / frais.
-- L'adresse et le téléphone sont requis pour livraison ; informations de contact adaptées au retrait.
-- Les zones de livraison sont sélectionnées à partir de la configuration tenant et validées serveur.
-- Aucune géolocalisation ni suivi GPS du livreur en V1.
+## Remise
+Retrait en boutique ou livraison dans zone autorisée ; **frais par zone et devise** configurés par marchand, affichage avant confirmation. Adresse/contact requis pour livraison, consentement et protection des données. Aucun suivi GPS des coursiers dans V1.
 
-## Commande
-- Au checkout, le serveur revalide les produits, frais, mode de règlement et montants, puis crée une commande immuable quant aux prix et intitulés capturés.
-- L'opération est idempotente via une clé client par tentative, avec portée tenant + canal + acteur.
-- Numéro de commande visible propre au tenant ; ID interne global opaque.
-- Statuts V1 : PLACED, ACCEPTED, PREPARING, READY, OUT_FOR_DELIVERY, COMPLETED, CANCELLED.
-- Transitions autorisées explicites : PLACED→ACCEPTED/CANCELLED ; ACCEPTED→PREPARING/CANCELLED ; PREPARING→READY/CANCELLED (si autorisé) ; READY→OUT_FOR_DELIVERY ou COMPLETED ; OUT_FOR_DELIVERY→COMPLETED ; les transitions impossibles renvoient 409.
-- Annulation côté client après commande : demande au marchand, non automatique en V1 ; politique configurable par boutique.
-- Échec partiel ou double soumission : aucune création dupliquée ni double débit.
+## Checkout
+Authentification obligatoire, devises CDF/USD supportées, tarifs cohérents dans **une monnaie unique par commande**, confirmation côté serveur et capture immutable des lignes/frais/totaux/devise. Idempotency-Key obligatoire (retry réseau). Aucun paiement ou commande multi-tenant. Le client ne peut pas modifier le statut de paiement.
+
+## Commandes
+Statuts : PLACED, ACCEPTED, PREPARING, READY, OUT_FOR_DELIVERY, COMPLETED, CANCELLED, avec transitions spécifiques et auditées. Demande d'annulation acheteur adressée au marchand, qui décide selon politique applicable ; aucune annulation automatique côté client. Historique dans son application sur identité authentifiée ; interdiction IDOR.
 
 ## Paiement
-- Méthodes minimales : PAY_ON_DELIVERY et MANUAL_TRANSFER (si activées pour le tenant).
-- États de paiement indépendants : PENDING, AWAITING_CONFIRMATION, PAID, FAILED, REFUNDED (réservé aux futures intégrations), CANCELLED.
-- MANUAL_TRANSFER ne devient PAID qu'après vérification de marchand habilité ; l'acheteur ne peut pas auto-certifier son paiement.
-- Les paiements électroniques utilisent plus tard une interface provider-agnostic avec webhooks signés et idempotents.
+PAY_ON_DELIVERY ou MANUAL_TRANSFER, **vers comptes du commerçant** dans la devise de commande, état PENDING / AWAITING_CONFIRMATION / PAID / FAILED / CANCELLED, sans remboursement automatique. Paiement vérifié par un employé habilité ; un message acheteur ne signifie pas PAID. Le cas d'un transfert en devise différente est traité hors parcours automatique V1.
 
-## Suivi acheteur
-- Un jeton secret de suivi propre à la commande est retourné une seule fois à la création, stocké sous forme hachée serveur, sans données sensibles dans l'URL publique.
-- Répéter la consultation nécessite cette preuve ; mécanisme futur de récupération par vérification d'identité.
-- La réponse client masque les informations sensibles du personnel et de la plateforme.
+## Application Android client
+Accueil, liste/recherche/détail produit, inscription/connexion, panier/devises, livraison/retrait, checkout, confirmation, historique/suivi, demande d'annulation, profil, erreurs/offline. React uniquement affichage ; Kotlin réseau/cache/sessions natives.
 
-## Administration boutique
-- Catalogue CRUD, chargement média contrôlé, visibilité, suivi/statuts, validation de paiement manuel, paramètres livraison/contact, gestion d'employés suivant leurs rôles.
-- Toutes les opérations sensibles produisent une entrée d'audit contextualisée.
+## Application Android marchand indépendante
+Connexion staff, boutique courante, catalogue et prix CDF/USD, upload images, disponible/indisponible, zones et frais CDF/USD, commandes/statuts/paiements manuels, paramètres de boutique et accès employés selon permissions, chargement/erreurs.
 
-## Administration plateforme
-- Provisionner tenant, préparer credentials, appliquer migrations, configurer application + canaux, états PROVISIONING/ACTIVE/SUSPENDED/FAILED, vue de santé et audit.
-- Support inter-tenant strictement motivé, contrôlé et journalisé.
-- Suppression définitive : hors parcours self-service V1.
+## Administration Windows
+Opérateur : provisioning, états des tenants, canal Android, santé, migration, audit sans exposition data client. Marchand Windows : client additionnel installable selon priorité. UI React embarquée dans Tauri, cœur natif Rust. **Aucune admin web publiée**.
 
-## Vues mobiles indispensables
-Accueil, recherche/catalogue, détail produit, panier, mode de remise et contact, confirmation, suivi, erreurs réseau, vide, chargement, tenant désactivé, mise à jour incompatible.
+## Notifications
+Historique et statuts récupérés à l'ouverture/rafraîchissement ; pas de SMS, push ou WhatsApp en V1 par défaut (OTP d'identité **distinct** d'une notification commerciale). Si l'app est fermée, aucune notification de commande temps réel garantie.
 
-## Accessibilité et localisation
-FR V1, contraste lisible et tailles de cible tactiles adaptées ; devises affichées selon devise du tenant. Les formats ne doivent pas modifier les valeurs monétaires stockées.
+## Langue et visual
+Français V1, i18n préparée, branding par tenant, UX tactile accessible, prix/devises toujours non ambigus.
 
-## Critères de recette
-Voir [acceptation](../quality/ACCEPTANCE.md). La spécification OpenAPI documente la surface prévue, non son implémentation.
-
+## Recette bloquante
+Deux tenants, deux devises, identité obligatoire, isolation par boutique, commandes réelles de bout en bout, Android acheteur/marchand, au moins une console opérateur installable, restauration et sécurité. Voir [gates](../quality/ACCEPTANCE.md).
