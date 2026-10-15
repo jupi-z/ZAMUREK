@@ -18,7 +18,7 @@ UUIDs/identifiants opaques pour les entités. Chaque objet métier existe dans *
 - product_variant : id, product_id, public_options JSON validé, price_minor, currency_code, status. Un produit sans variantes conserve une variante par défaut.
 - product_media : id, product_id, key média, ordering, alt_text, status.
 - delivery_zone : id, name, fee_minor, currency_code, enabled.
-- cart : id, channel_id, guest_session_hash, currency_code, expires_at.
+- cart : id, channel_id, guest_session_hash, cart_access_token_hash, currency_code, expires_at ; le jeton secret n'est délivré qu'à la création, jamais redonné dans GET/PATCH.
 - cart_item : id, cart_id, variant_id, quantity > 0, added_at.
 - customer_profile : id, display_name, phone, contact_consent ; optional_global_identity_ref (sans clé d'accès globale).
 - order : id, tenant_local_number unique, channel_id, customer_snapshot, fulfillment_snapshot, status, currency_code, subtotal_minor, delivery_minor, total_minor, created_at.
