@@ -46,7 +46,7 @@
 
 Le dépôt est volontairement **documentation-first** : les arborescences applicatives contiennent des README, mais les projets NestJS et Android ne sont pas encore générés. Les commandes `pnpm build`, `pnpm test` et les builds Android n'existent pas encore et ne doivent pas être présentés comme fonctionnels.
 
-Exécuter `python3 scripts/validate_docs.py` pour vérifier les chemins et les liens Markdown locaux. La CI reproduit ce contrôle.
+Exécuter `python3 scripts/validate_docs.py` pour vérifier les chemins et les liens Markdown locaux. Exécuter aussi `python3 -m pip install -r scripts/requirements-docs.txt` puis `python3 scripts/validate_openapi.py` pour vérifier la syntaxe et les références du contrat. La CI reproduit ces deux contrôles.
 
 Les variables d'environnement proposées figurent dans `.env.example` ; aucun secret ni identifiant marchand ne doit être commité. Les versions exactes, fournisseurs de paiements, hébergement et politiques de sauvegarde sont conditionnés aux essais et décisions listés dans la documentation.
 
