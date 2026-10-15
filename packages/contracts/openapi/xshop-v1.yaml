@@ -299,6 +299,143 @@ paths:
           $ref: '#/components/responses/Forbidden'
         '422':
           $ref: '#/components/responses/Unprocessable'
+  /v1/merchant/products:
+    get:
+      tags: [Merchant]
+      operationId: listMerchantProducts
+      summary: Produits de la boutique, y compris brouillons et masqués
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/Channel'
+      responses:
+        '200':
+          description: Catalogue administrable du tenant autorisé
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MerchantProduct'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+    post:
+      tags: [Merchant]
+      operationId: createMerchantProduct
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/Channel'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpsertProduct'
+      responses:
+        '201':
+          description: Produit créé dans la boutique du marchand
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MerchantProduct'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '422':
+          $ref: '#/components/responses/Unprocessable'
+  /v1/merchant/orders/{orderId}/payments/{paymentId}/confirm-manual:
+    post:
+      tags: [Merchant]
+      operationId: confirmManualPayment
+      summary: Confirmer après vérification humaine un paiement manuel
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/Channel'
+        - $ref: '#/components/parameters/OrderId'
+        - name: paymentId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [verificationNote]
+              properties:
+                verificationNote:
+                  type: string
+                  minLength: 4
+                  maxLength: 500
+                externalReference:
+                  type: string
+                  maxLength: 120
+      responses:
+        '200':
+          description: État PAID seulement si méthode manuelle, montant et autorisation vérifiés
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MerchantOrder'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/merchant/delivery-zones:
+    get:
+      tags: [Merchant]
+      operationId: listMerchantDeliveryZones
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/Channel'
+      responses:
+        '200':
+          description: Zones de livraison du tenant autorisé
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DeliveryZone'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+    post:
+      tags: [Merchant]
+      operationId: createMerchantDeliveryZone
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/Channel'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [name, fee]
+              properties:
+                name:
+                  type: string
+                  minLength: 2
+                fee:
+                  $ref: '#/components/schemas/Money'
+      responses:
+        '201':
+          description: Zone créée
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeliveryZone'
+        '403':
+          $ref: '#/components/responses/Forbidden'
   /platform/v1/tenants:
     post:
       tags: [Platform]
@@ -736,7 +873,51 @@ components:
           type: array
           minItems: 1
           items:
+            $ref: '#/components/schemas/VariantInput'
+    VariantInput:
+      type: object
+      additionalProperties: false
+      required: [label, price, available]
+      properties:
+        label:
+          type: string
+          minLength: 1
+          maxLength: 120
+        price:
+          $ref: '#/components/schemas/Money'
+        available:
+          type: boolean
+    MerchantProduct:
+      type: object
+      additionalProperties: false
+      required: [id, name, status, variants]
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        status:
+          type: string
+          enum: [DRAFT, ACTIVE, HIDDEN, UNAVAILABLE, ARCHIVED]
+        variants:
+          type: array
+          items:
             $ref: '#/components/schemas/Variant'
+    DeliveryZone:
+      type: object
+      additionalProperties: false
+      required: [id, name, fee, enabled]
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        fee:
+          $ref: '#/components/schemas/Money'
+        enabled:
+          type: boolean
     TenantProvisioning:
       type: object
       additionalProperties: false
