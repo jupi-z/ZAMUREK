@@ -1,6 +1,5 @@
-# Marketplace (réservée ; hors V1)
+# Future marketplace xShop — hors V1
 
-Pas de code à développer avant les gates du commerce V1 et la validation du PRD marketplace. Marketplace est un nouveau canal consommateur d'API, jamais un remplacement des apps indépendantes.
+Client installable (priorité Android), jamais site web xShop hébergé ; peut découvrir plusieurs boutiques volontaires (opt-in), utilisant identité globale et API du même backend. Catalogue en CDF/USD sans change automatique ; paniers et commandes par boutique. Les anciennes APK de commerçants restent indépendantes.
 
-Voir [MARKETPLACE](../../docs/architecture/MARKETPLACE.md).
-
+Voir [Marketplace](../../docs/architecture/MARKETPLACE.md).
