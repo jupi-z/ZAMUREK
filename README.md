@@ -1,60 +1,54 @@
-# xShop
+# xShop — commerce multi-tenant, clients installables
 
-**Plateforme de commerce électronique multi-tenant, conçue pour lancer des boutiques indépendantes avec des applications Android personnalisées, puis les réunir éventuellement dans une marketplace commune.**
+**Statut G0 : cadrage validé par le porteur de projet le 15 octobre 2026 ; le backend et les applications ne sont PAS encore implémentés.**
 
-> État du projet : **G0 — fondations et spécifications**. Ce dépôt décrit la cible et les contrats initiaux ; aucun backend, application Android ou paiement opérationnel n'est encore livré. Ne pas présenter les éléments documentés comme implémentés.
+> **Production = backend + API uniquement.** Aucune interface cliente ou d'administration hébergée : ni site marchand, ni PWA/SPA, ni portail, ni Swagger UI public.
 
-## Principes structurants
+## Vision
+Un moteur commerce NestJS/PostgreSQL unique avec base **isolée par tenant**, plusieurs apps Android personnalisées et une future marketplace additive opt-in. Les anciennes apps continuent à fonctionner. xShop vend son logiciel par **abonnement mensuel**, tandis que chaque commerçant est vendeur et encaisse directement.
 
-1. **Un cœur commercial commun** : API de commerce et services partagés ; aucune copie indépendante du backend par commerçant.
-2. **Une base PostgreSQL métier dédiée à chaque tenant**, plus un registre de plateforme distinct. Provisioning, migrations, sauvegardes et isolation obligatoires.
-3. **Des applications personnalisées qui coexistent** avec une future marketplace ; les applications existantes ne sont jamais rendues obsolètes par l'ajout d'un nouveau canal.
-4. **Android : React pour l'interface uniquement** ; Capacitor pour le pont ; Kotlin pour les requêtes, la persistance, l'authentification côté appareil et les intégrations système. Le serveur reste autoritaire.
-5. **MVP réellement achetable** : catalogue, panier, commande, retrait/livraison, paiement à la livraison ou manuel, gestion marchand et suivi. Les paiements électroniques seront intégrés après validation du prestataire.
-6. **Contrats versionnés, contrôle d'accès rigoureux et dépendances maîtrisées**. Ne jamais déduire les autorisations d'un tenant ID fourni par le client.
+## Décisions métier V1
+- Pilote interne **xShop Atelier** : pagnes, bijoux, accessoires à Kolwezi (RDC), sans usage d'une marque client réelle.
+- **Compte client obligatoire**, identité globale réutilisable entre boutiques avec commandes/PII tenant isolées ; pas de checkout invité.
+- **CDF et USD simultanément par boutique**, tarifs individuels et indépendants pour chaque devise ; aucun FX implicite.
+- Disponibilité simple, sans quantités de stock ; livraison tarifée par zones dans les deux devises, ou retrait.
+- Paiement à la livraison et transfert manuel (marchand confirme après vérification).
+- Demande d'annulation au marchand ; suivi dans l'app et les clients de gestion (pas de push/SMS de commande par défaut).
+- APK pilote puis éventuel Google Play **sous compte du commerçant** ; code propriétaire dans dépôt privé.
 
-## Applications prévues
+## Clients à construire
+- `apps/storefront-android/` — app acheteur, React UI + Capacitor + **Kotlin** (réseau, stockage, sécurité).
+- `apps/merchant-android/` — app marchand séparée, React UI + Capacitor + Kotlin.
+- `apps/platform-desktop/` — console xShop Windows EXE/MSI, React UI embarquée + **Tauri/Rust**.
+- `apps/merchant-desktop/` — client marchand Windows additionnel.
+- `apps/marketplace/` — marketplace future, installable, non implémentée.
 
-- `apps/api` : backend NestJS modulaire.
-- `apps/storefront-android` : socle Android white-label React + Capacitor + Kotlin.
-- `apps/merchant-admin` : espace de gestion de chaque commerce.
-- `apps/platform-admin` : création et supervision des boutiques.
-- `apps/marketplace` : emplacement réservé, hors V1.
-- `packages/contracts` : API OpenAPI et contrats d'intégration.
+## Backend
+- `apps/api/` — monolithe modulaire NestJS / TypeScript, PostgreSQL registry + une base tenant par marchand.
+- `packages/contracts/openapi/xshop-v1.yaml` — contrat d'API **provisoire**.
+- `packages/branding`, `packages/shared`, `infrastructure`, `scripts` et `.github` — structure réservée et outillage de documentation.
+- Les médias peuvent être transmis en HTTPS via l'API ou du stockage objet contrôlé ; cela ne constitue pas une interface web.
 
-## Documentation : commencer ici
+## Documentation
+1. [Arbitrages expressément validés](docs/DECISIONS-VALIDATED-2026-10-15.md)
+2. [Index complet](docs/INDEX.md)
+3. [PRD V1](docs/product/PRD.md) et [spécifications](docs/product/V1-FUNCTIONAL-SPEC.md)
+4. [Authentification](docs/architecture/AUTH-CUSTOMER.md) et [CDF/USD](docs/architecture/CURRENCY-CDF-USD.md)
+5. [Production API-only / clients](docs/architecture/CLIENTS-DEPLOYMENT.md)
+6. [Isolation des tenants](docs/architecture/TENANCY.md)
+7. [Contrat OpenAPI V1](packages/contracts/openapi/xshop-v1.yaml)
+8. [Risques de l'audit initial](docs/quality/AUDIT-G0-2026-10-15.md)
+9. [Décisions ouvertes](docs/OPEN-QUESTIONS.md), [jalons](docs/ROADMAP.md), [ADRs](docs/decisions/README.md)
 
-- [Index et état des livrables](docs/INDEX.md)
-- [Vision / PRD](docs/product/PRD.md)
-- [Spécifications fonctionnelles V1](docs/product/V1-FUNCTIONAL-SPEC.md)
-- [Architecture système](docs/architecture/SYSTEM.md)
-- [Isolation multi-tenant](docs/architecture/TENANCY.md)
-- [Modèle de données](docs/architecture/DATA-MODEL.md)
-- [Paiements et commandes](docs/architecture/PAYMENTS.md)
-- [Architecture Android](docs/architecture/ANDROID.md)
-- [Personnalisation des applications](docs/architecture/WHITE-LABEL.md)
-- [Préparation de la marketplace](docs/architecture/MARKETPLACE.md)
-- [Sécurité et conformité](docs/architecture/SECURITY.md)
-- [Exploitation](docs/architecture/OPERATIONS.md)
-- [Tests et exigences de qualité](docs/quality/TEST-STRATEGY.md)
-- [Contrat API initial](packages/contracts/openapi/xshop-v1.yaml)
-- [Feuille de route et jalons](docs/ROADMAP.md)
-- [Décisions ouvertes](docs/OPEN-QUESTIONS.md)
-- [ADR — décisions architecturales](docs/decisions/README.md)
-
-## État et démarrage
-
-Le dépôt est volontairement **documentation-first** : les arborescences applicatives contiennent des README, mais les projets NestJS et Android ne sont pas encore générés. Les commandes `pnpm build`, `pnpm test` et les builds Android n'existent pas encore et ne doivent pas être présentés comme fonctionnels.
-
-Exécuter `python3 scripts/validate_docs.py` pour vérifier les chemins et les liens Markdown locaux. Exécuter aussi `python3 -m pip install -r scripts/requirements-docs.txt` puis `python3 scripts/validate_openapi.py` pour vérifier la syntaxe et les références du contrat. La CI reproduit ces deux contrôles.
-
-Les variables d'environnement proposées figurent dans `.env.example` ; aucun secret ni identifiant marchand ne doit être commité. Les versions exactes, fournisseurs de paiements, hébergement et politiques de sauvegarde sont conditionnés aux essais et décisions listés dans la documentation.
+## Contrôles documentaires G0
+```bash
+python3 scripts/validate_docs.py
+python3 -m pip install -r scripts/requirements-docs.txt
+python3 scripts/validate_openapi.py
+```
+Ces scripts ne vérifient **ni un serveur de production, ni la sécurité réelle, ni l'exécution Android/Windows**. Ils ne remplacent pas la validation OpenAPI normative à ajouter en G1.
 
 ## Gouvernance
+Branches/PR, revue stricte auth/tenant/prix/paiements ; aucun secret ni clé de signature dans Git. Aucun calendrier fictif. **Code propriétaire, sans licence open source accordée.** Toutes les exigences de mise en production et légales sont à vérifier au stade G4.
 
-- Travailler par branches et pull requests dès les premiers développements ; `main` doit rester documenté et cohérent.
-- Mettre à jour les ADR et les contrats lors des évolutions incompatibles.
-- Une fonctionnalité n'est « faite » que si les critères de sortie et tests associés sont satisfaits.
-- **Licence non décidée** : ne pas supposer qu'un dépôt public accorde automatiquement une autorisation de réutilisation.
-
-Projet initié le 15 octobre 2026.
+Le VPS existant et des noms de domaine disponibles sont des candidats pour des essais techniques, pas une infrastructure de production déjà auditée.
