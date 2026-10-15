@@ -117,11 +117,11 @@ paths:
         - $ref: '#/components/parameters/Channel'
       responses:
         '201':
-          description: Panier créé
+          description: Panier créé ; accessToken secret délivré uniquement ici
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Cart'
+                $ref: '#/components/schemas/CartCreated'
         '404':
           $ref: '#/components/responses/NotFound'
   /v1/carts/{cartId}:
@@ -177,6 +177,37 @@ paths:
           $ref: '#/components/responses/Conflict'
         '422':
           $ref: '#/components/responses/Unprocessable'
+  /v1/fulfillment/options:
+    get:
+      tags: [Storefront]
+      operationId: listPublicFulfillmentOptions
+      summary: Méthodes publiques de remise, zones et paiements activés par la boutique
+      parameters:
+        - $ref: '#/components/parameters/Channel'
+      responses:
+        '200':
+          description: Options applicables lors du checkout
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                required: [fulfillmentMethods, deliveryZones, paymentMethods]
+                properties:
+                  fulfillmentMethods:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/FulfillmentMethod'
+                  deliveryZones:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/DeliveryZone'
+                  paymentMethods:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/PaymentMethod'
+        '404':
+          $ref: '#/components/responses/NotFound'
   /v1/checkouts:
     post:
       tags: [Checkout]
@@ -716,17 +747,26 @@ components:
           type: boolean
         price:
           $ref: '#/components/schemas/Money'
+    CartCreated:
+      type: object
+      additionalProperties: false
+      required: [cart, accessToken]
+      description: accessToken secret n'est délivré qu'à la création et doit être conservé côté Kotlin
+      properties:
+        cart:
+          $ref: '#/components/schemas/Cart'
+        accessToken:
+          type: string
+          minLength: 32
     Cart:
       type: object
       additionalProperties: false
-      required: [id, accessToken, items, subtotal, expiresAt]
-      description: accessToken n'est retourné qu'à la création ou à son détenteur habilité ; design final à confirmer
+      required: [id, items, subtotal, expiresAt]
+      description: Réponse de lecture/modification sans rediffusion du jeton secret
       properties:
         id:
           type: string
           format: uuid
-        accessToken:
-          type: string
         items:
           type: array
           items:
