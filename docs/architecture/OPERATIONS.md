@@ -1,29 +1,24 @@
-# Exploitation, migrations, sauvegardes et observabilité
+# Exploitation — serveur API-only
+
+## Topologie
+Serveur de production : backend NestJS API et worker(s), registry PostgreSQL, **une DB métier par tenant**, stockage médias contrôlé, TLS et supervision. **Aucun frontend hébergé**, admin Windows et apps Android livrées aux utilisateurs ; Swagger UI désactivé en production.
+
+## Ressources disponibles (à vérifier)
+Le porteur possède un VPS et des domaines libres, proposés provisoirement pour essais. **Capacité, OS, ports, sauvegardes, performances et disponibilité ne sont pas connus**. Ne pas les présenter comme audités ou déjà déployés.
 
 ## Environnements
-Local/dev, staging avec au moins 2 tenants factices, production. Ne jamais utiliser vraies données clients dans CI ou environnements de tests.
+Local → staging isolé (deux tenants fictifs) → production séparée. Ne pas réutiliser une DB de production pour démo ; secrets dans coffre sécurisé hors code. Domaines possibles: sous-domaine API uniquement, avec HTTPS/certificats et DNS gérés.
 
-## Provisioning / migrations
-Tenant Registry conserve statut, emplacement de DB et version de schéma. Worker orchestration idempotent ; supervision du nombre de bases/connexions. Migrations expand/contract par lot, canary tenant, compatibilité version API.
+## Migrations et tenant
+Provisioning idempotent, pool PostgreSQL borné/éviction, versionnage et migrations par cohortes, contrôle des dépendances registry→tenant et compensation échec. Backup et restauration d'un tenant sans perturber les autres ; registre sauvegardé indépendamment.
 
-## Sauvegardes et restauration
-- Sauvegardes **par base tenant** + registre séparé + objets médias avec inventaire.
-- Fréquence, rétention, RPO et RTO **non décidés** : documenter et tester avant ouverture publique.
-- Exercices de restauration d'un tenant A sans toucher B et de registre avec reconstruction vérifiée du mapping.
-- Sauvegardes chiffrées, accès strict, preuves d'exécution et alertes d'échec.
+## Observabilité / incidents
+Métriques de connexion et disponibilité API, latence, erreurs checkout/monnaie, santé DB, backlog outbox, crashes Android/Windows via mécanisme de télémétrie consenti et configuré. Journaux anonymisés. On-call/support et engagements RPO/RTO à définir après mesures et besoins commerciaux.
 
-## Observabilité
-Metrics : requêtes/latences/erreurs par route et tenant pseudonymisé, santé DB/pools, provisioning et migrations, échecs checkout, outbox backlog, santé médias, uptime. Traces corrélées ; ne pas logger téléphone/adresse ni secret.
+## Release
+Artéfacts APK et EXE/MSI versionnés/signés par canaux appropriés ; signature et publication des apps Play sous compte marchand ; compatibilité API conservée. Pas de deploy d'interface HTML, même pour admin. Les schémas OpenAPI sont livrables internes (Git/CI), jamais page Swagger UI publique.
 
-## Procédure incident
-Détecter → qualifier impact tenant(s) → contenir → diagnostiquer corrélation → corriger → restaurer si besoin → documenter. Suspensions contrôlées pour empêcher nouvelles commandes pendant incident.
+## Sécurité et conformité
+Permissions tenant, HTTPS, secrets, SSH sécurisée, politique sauvegarde/restauration, contrôle de vulnérabilité, revue juridique RDC et contrats clients avant G4. L'accès au VPS n'a pas été fourni et n'est pas demandé en clair dans Git ou le chat.
 
-## Rotation secrets
-Credentials tenant séparés, rotation graduelle, procédure de rollback. Aucun accès SQL privilégié depuis applications clientes.
-
-## Mise à l'échelle
-Budget de connexions par instance et tenant ; backpressure à forte charge ; tests nombre de tenants, failover, déplacement des DBs entre hosts. Pas de promesse SLO tant qu'aucune mesure en staging/pilote.
-
-## Checklist pré-lancement
-Secrets, certificats HTTPS, tests A/B, migrations et downgrade plan, backup/restore, quotas, logs/audit, sécurité admin, procédures de support et paiements validés.
-
+Voir [clients](CLIENTS-DEPLOYMENT.md), [tenancy](TENANCY.md), [blocages](../OPEN-QUESTIONS.md).
