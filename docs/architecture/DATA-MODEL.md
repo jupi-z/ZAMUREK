@@ -25,7 +25,7 @@ UUIDs/identifiants opaques pour les entités. Chaque objet métier existe dans *
 - order_item : id, order_id, variant_id nullable, sku_snapshot, name_snapshot, options_snapshot, unit_price_minor, quantity, line_total_minor.
 - payment : id, order_id, method, provider nullable, status, amount_minor, currency_code, external_ref nullable ; aucun PAN stocké.
 - payment_event : id, payment_id, provider_event_id unique sous provider, signature_verified, processed_at.
-- checkout_idempotency : tenant_id implicitement porté par DB, actor/session, key, request_fingerprint, response_snapshot, expires_at.
+- checkout_idempotency : tenant_id implicitement porté par DB, actor/session, key, request_fingerprint, response_replay_encrypted, expires_at. Le replay du secret invité a une durée courte, un chiffrement côté serveur et une vérification stricte du même acteur/session. La preuve durable de suivi reste uniquement son hash.
 - order_status_history : order_id, from, to, actor, note, timestamp.
 - guest_tracking_credential : order_id, token_hash, created_at, expires_at, revoked_at.
 - outbox_event : id, type, version, aggregate_id, payload filtré, created_at, published_at, retry_count.
