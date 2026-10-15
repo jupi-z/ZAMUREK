@@ -4,10 +4,11 @@
   "version": "0.0.0",
   "description": "xShop multi-tenant commerce platform; G0 documentation and scaffold only",
   "scripts": {
-    "docs:check": "python3 scripts/validate_docs.py"
+    "docs:check": "python3 scripts/validate_docs.py",
+    "contract:check": "python3 scripts/validate_openapi.py",
+    "check": "python3 scripts/validate_docs.py && python3 scripts/validate_openapi.py"
   },
   "engines": {
     "node": ">=22"
   }
 }
-
