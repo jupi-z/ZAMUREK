@@ -67,7 +67,52 @@ def main() -> None:
             segment = segment.replace("~1", "/").replace("~0", "~")
             assert isinstance(current, dict) and segment in current, f"Broken ref: {ref}"
             current = current[segment]
-    assert operations >= 10, "OpenAPI contract too incomplete for V1 draft"
+    # xShop business invariants approved on 2026-10-15 (static contract checks).
+    required_paths = (
+        "/auth/v1/register", "/auth/v1/login", "/auth/v1/refresh",
+        "/auth/v1/logout", "/v1/carts", "/v1/checkouts",
+        "/v1/orders", "/v1/orders/{orderId}",
+        "/v1/carts/{cartId}/currency", "/v1/merchant/orders",
+    )
+    for required in required_paths:
+        assert required in doc["paths"], f"Required V1 route missing: {required}"
+
+    protected = (
+        ("/v1/carts", "post"),
+        ("/v1/carts/{cartId}", "get"),
+        ("/v1/carts/{cartId}/items", "patch"),
+        ("/v1/carts/{cartId}/currency", "put"),
+        ("/v1/checkouts", "post"),
+        ("/v1/orders", "get"),
+        ("/v1/orders/{orderId}", "get"),
+    )
+    for path, verb in protected:
+        op = doc["paths"][path][verb]
+        assert {"bearerAuth": []} in op.get("security", []), (
+            f"Mandatory customer auth absent from {verb.upper()} {path}"
+        )
+
+    schemas = doc["components"]["schemas"]
+    assert "CartCreated" not in schemas, "Guest cart token schema still present"
+    assert "TrackingToken" not in doc["components"].get("parameters", {}), (
+        "Guest order tracking parameter still present"
+    )
+    assert "CartToken" not in doc["components"].get("parameters", {}), (
+        "Guest cart token parameter still present"
+    )
+    assert {"CDF", "USD"} <= set(schemas["DualPrice"]["properties"]), (
+        "Independent CDF/USD price objects required"
+    )
+    assert {"currencyCode", "recipient"} <= set(
+        schemas["CheckoutRequest"]["required"]
+    ), "Checkout must select a currency and include recipient information"
+    assert "currencyCode" in schemas["Cart"]["required"], (
+        "Cart must have immutable single currency until an explicit recalculation"
+    )
+    assert "accessToken" not in schemas["Cart"]["properties"], (
+        "Never return guest cart tokens from cart API"
+    )
+    assert operations >= 25, "OpenAPI draft lacks the required authenticated flows"
     print(f"OpenAPI 3.1 draft parsed: {operations} operations, component references resolved.")
 
 if __name__ == "__main__":
