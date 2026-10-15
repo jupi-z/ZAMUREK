@@ -1,42 +1,25 @@
-# Architecture logique — xShop
+# Architecture système xShop — après arbitrages
 
-## Vue d'ensemble
-Clients : (a) Android white-label React/Capacitor/Kotlin ; (b) Merchant Admin web ; (c) Platform Admin web ; (d) future marketplace.
+## Production : services uniquement
+- HTTPS/reverse proxy, API NestJS REST/OpenAPI (pas Swagger UI public), workers et traitements internes.
+- Registry/identity centrale ; **une DB PostgreSQL métier par boutique** et comptes SQL isolés ; stockage média tenant-scopé.
+- **Aucun serveur d'interface** : pas de portail web, SSR, PWA, SPA ni admin hébergée. Les assets React sont **embarqués dans des applications installables**.
 
-Côté serveur : reverse proxy TLS, API NestJS modulaire, contrôle identités/permissions, Tenant Registry, Tenant Resolver, Commerce Modules, repositories PostgreSQL, stockage objet et worker d'événements (lorsqu'il sera implémenté).
+## Clients V1
+- App Android acheteur white-label = React UI + Capacitor + Kotlin.
+- App Android marchand séparée = React UI + Capacitor + Kotlin.
+- Application Windows opérateur = React UI + Tauri/Rust, livrée EXE/MSI.
+- Option Windows marchand = React UI + Tauri/Rust, installable sans UI distante.
+- Marketplace future = client installable d'API existante, opt-in marchand.
 
-### Modules backend
-- **Platform** : tenant registry, provisioning, canaux, santé.
-- **Identity** : identités opérateurs, staff/memberships, sessions et jetons.
-- **Catalog** : catégories, produits, variantes, médias et visibilité.
-- **Cart** : paniers mono-boutique, prix serveur, expiration.
-- **Checkout/Orders** : validation transactionnelle, idempotence, snapshots, statuts.
-- **Fulfillment** : zones, frais et modalités de remise.
-- **Payments** : intentions de paiement et rapprochement manuel, futur adaptateur PSP.
-- **Audit** : enregistrements sensibles et corrélation.
-- **Events** : outbox transactionnelle et diffusion à terme.
-- **Discovery (future)** : index public multi-tenant.
+## Modules backend
+Tenant registry/provisioner ; comptes globaux clients et auth sessions ; staff/memberships ; catalog/categories/variants/prices CDF USD ; cart mono-devise ; checkout authentifié idempotent ; orders ; payment manual/pay-on-delivery ; zone delivery + fees CDF USD ; audit et outbox ; projection discovery future.
 
-## Frontières et responsabilités
-- React Android est **presentation only**. Il n'envoie pas de HTTP métier directement. Kotlin gère le réseau, les tokens, cache, synchronisation et appels de services ; il livre au pont des DTO minimaux.
-- La logique native optimise l'expérience locale, mais **le serveur conserve l'autorité** sur les tarifs, permissions, commande et règlement.
-- Merchant Admin web utilise directement l'API protégée : la contrainte « réseau en Kotlin » concerne l'application Android, pas un navigateur web.
-- Les modules métier n'ouvrent pas eux-mêmes des connexions arbitraires : la couche TenantDB impose contexte et cycle de vie.
-- Un tenant ne peut jamais être résolu à partir d'un seul paramètre fourni par un utilisateur non autorisé.
+## Invariants
+Backend seul autoritaire (prix, devise de commande, identité/permissions, statuts, paiements). No cross-tenant DB connection based on user input. DB tenant sélectionnée après résolution et contrôle serveur ; secrets hors clients. **Aucune transaction cross-tenant au checkout**. Outbox locale transactionnelle ; publication/replay idempotents.
 
-## Topologie de lancement
-Monolithe modulaire, un déploiement serveur central, une base registry et plusieurs bases tenant sur une ou plusieurs instances PostgreSQL ; CDN non obligatoire, médias via stockage objet compatible S3, HTTPS partout.
+## Extensions
+Pas de microservices au lancement ; DB par tenant gérée avec pools bornés/éviction. Les besoins CPU, mémoire, migrations et backup sont testés sur VPS candidat avant production.
 
-Pas de microservice, Kafka, moteur de recherche dédié ni Redis obligatoire en G0. Les dépendances seront introduites sur besoin mesuré, pas par anticipation.
-
-## Transaction et cohérence
-- Transaction PostgreSQL par commande dans sa base tenant.
-- Outbox écrite dans la **même transaction** que la mutation métier.
-- Événements inter-bases asynchrones ; pas de transaction ACID distribuée entre registres, tenants et discovery.
-- Pas de garantie d'« exactly once » entre services ; consommateurs idempotents et réconciliation.
-
-## Sources primaires
-NestJS modules : https://docs.nestjs.com/modules
-Prisma v7 PostgreSQL : https://www.prisma.io/docs/orm/v7/core-concepts/supported-databases/postgresql
-Voir [tenancy](TENANCY.md), [events](EVENTS.md), [android](ANDROID.md).
-
+Références : https://docs.nestjs.com/ ; https://capacitorjs.com/docs/ ; https://v2.tauri.app/distribute/windows-installer/ .
+Voir [clients et déploiement](CLIENTS-DEPLOYMENT.md), [tenancy](TENANCY.md), [devises](CURRENCY-CDF-USD.md), [auth](AUTH-CUSTOMER.md).
