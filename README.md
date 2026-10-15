@@ -38,7 +38,8 @@ Un moteur commerce NestJS/PostgreSQL unique avec base **isolée par tenant**, pl
 6. [Isolation des tenants](docs/architecture/TENANCY.md)
 7. [Contrat OpenAPI V1](packages/contracts/openapi/xshop-v1.yaml)
 8. [Risques de l'audit initial](docs/quality/AUDIT-G0-2026-10-15.md)
-9. [Décisions ouvertes](docs/OPEN-QUESTIONS.md), [jalons](docs/ROADMAP.md), [ADRs](docs/decisions/README.md)
+9. [Revue de cohérence après arbitrages](docs/quality/AUDIT-POST-DECISIONS-2026-10-15.md), [abonnements](docs/architecture/SUBSCRIPTIONS.md)
+10. [Décisions ouvertes](docs/OPEN-QUESTIONS.md), [jalons](docs/ROADMAP.md), [ADRs](docs/decisions/README.md)
 
 ## Contrôles documentaires G0
 ```bash
