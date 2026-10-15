@@ -10,8 +10,8 @@
 5. [Android](architecture/ANDROID.md), [clients Windows / production API-only](architecture/CLIENTS-DEPLOYMENT.md), [white-label](architecture/WHITE-LABEL.md).
 6. [API](architecture/API.md) et [contrat OpenAPI initial](../packages/contracts/openapi/xshop-v1.yaml).
 7. [Paiements](architecture/PAYMENTS.md), [marketplace future](architecture/MARKETPLACE.md), [événements](architecture/EVENTS.md).
-8. [Sécurité](architecture/SECURITY.md), [exploitation](architecture/OPERATIONS.md).
-9. [Audit G0 initial](quality/AUDIT-G0-2026-10-15.md), [tests](quality/TEST-STRATEGY.md), [conditions de recette](quality/ACCEPTANCE.md).
+8. [Sécurité](architecture/SECURITY.md), [exploitation](architecture/OPERATIONS.md), [abonnement mensuel](architecture/SUBSCRIPTIONS.md).
+9. [Revue post-décisions](quality/AUDIT-POST-DECISIONS-2026-10-15.md), [Audit G0 initial](quality/AUDIT-G0-2026-10-15.md), [tests](quality/TEST-STRATEGY.md), [conditions de recette](quality/ACCEPTANCE.md).
 10. [Feuille de route](ROADMAP.md), [questions externes restantes](OPEN-QUESTIONS.md), [ADRs](decisions/README.md).
 
 ## Statuts
