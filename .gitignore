@@ -1,0 +1,41 @@
+# JS
+node_modules/
+dist/
+build/
+coverage/
+.turbo/
+.next/
+*.tsbuildinfo
+
+# Environment/secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.jks
+*.keystore
+*.mobileprovision
+secrets/
+credentials/
+
+# Kotlin/Android
+.gradle/
+**/build/
+local.properties
+*.apk
+*.aab
+captures/
+.idea/
+*.iml
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# OS/editors
+.DS_Store
+Thumbs.db
+.vscode/
+

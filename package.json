@@ -1,0 +1,13 @@
+{
+  "name": "xshop",
+  "private": true,
+  "version": "0.0.0",
+  "description": "xShop multi-tenant commerce platform; G0 documentation and scaffold only",
+  "scripts": {
+    "docs:check": "python3 scripts/validate_docs.py"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
+
