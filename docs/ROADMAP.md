@@ -1,32 +1,22 @@
-# Feuille de route xShop
+# Roadmap xShop après validation des arbitrages
 
-Les jalons sont **conditionnés par leurs critères de sortie**, pas par des délais arbitraires. Aucun pourcentage d'avancement fictif.
+Aucun délai garanti avant mesures, aucune fonctionnalité prétendue opérationnelle tant qu'elle n'a pas de tests.
 
-| Jalon | Livrables | Gate |
+| Phase | Livraison | Gate |
 |---|---|---|
-| G0 — Fondation documentaire | Specs, ADR, contrat API, arborescence, check documentation | [G0](quality/ACCEPTANCE.md) |
-| G1 — Backend & tenants exécutables | API NestJS, registre, 2 DB provisionnées, migrations, admin minimale | G1 |
-| G2 — Commerce API | Produits, panier, commande, retrait/livraison, paiement manuel, suivi | G2 |
-| G3 — Expérience client + marchand | Android React/Capacitor/Kotlin, console, build marque A et B | G3 |
-| G4 — Pilote réel contrôlé | Tests, sécurité, sauvegardes, déploiement, distribution validée | G4 |
-| G5 — Multiplication boutiques | Génération configurable, CI/CD, monitoring et maintenance multi-app | G5 |
-| Après G5 — Marketplace | Catalogue central opt-in, discovery, commandes mono-boutique | Nouveau PRD/ADR |
+| G0 | Décisions validées, architecture API-only, PRD, ADR, OpenAPI draft, sécurité et parcours | Documentation enregistrée ; contrôle CI + audit statique encore à confirmer |
+| G1 | Monorepo exécutable : API NestJS, registry, identity, 2 DB tenant, authentification client/staff, migrations, OpenAPI vérifié, socles Android Kotlin/Capacitor et Windows Tauri | Builds + migrations + tests isolation A/B |
+| G2 | Commerce API : catégories, variantes **deux tarifs CDF/USD**, panier authentifié mono-devise, checkout, retrait/livraison, paiement manuel, commande client, traitement annulation | Tests E2E CDF ET USD dans deux tenants, idempotence |
+| G3 | APK acheteur white-label, **APK marchand distinct**, console opérateur Windows installable, UX/catalogue/checkout réels | Parcours Android natifs + Windows, aucune UI production web |
+| G4 | Pilote Kolwezi : audit sécurité, restauration tenant ciblée, signing, distribution APK, vérification OTP, obligations légales, support, disponibilité API | Autorisations externes B04-B10 + tests |
+| G5 | Industrialisation des builds multi-marques, client marchand Windows additionnel, abonnement mensuel opérationnel, maintenance compatibilité | Builds reproductibles + contrats + traçabilité facturation |
+| Futur | Marketplace Android opt-in, index catalogue et commandes mono-boutique | PRD séparé, consentement marchand |
 
-## Ordre d'exécution proposé
-1. G0 : stabiliser décisions, valider notre modèle de commande / paiement.
-2. G1 : contrat API et modèle tenant avant UI sophistiquée.
-3. G2 : backend commande atomique et admin simplifiée.
-4. G3 : relier premier client Android, tester deux marques isolées.
-5. G4/G5 : pilote et industrialisation, sans précipiter les PSP ni marketplace.
+## Stratégie de développement
+1. Auth globale, registry et résolution sécurisée des tenants.
+2. Deux tenants d'essai : pagnes/bijoux (xShop Atelier fictif) et boutique différente, pour prouver isolation.
+3. Contrat OpenAPI complet, deux tarifs CDF/USD, ledger des transactions de commande et états payements.
+4. Clients installables et supervision native, pas de backend d'UI SSR/SPA.
+5. Mesures sur VPS **après inventaire**, sans mettre des données réelles dans le staging.
 
-## Première tranche de tickets G1
-- Repository setup, toolchain, CI.
-- Registry DB schema + migrations.
-- Tenant provisioning saga/steps and test fixture.
-- Tenant resolver + membership guards.
-- Tenant DB client manager with bounded connections.
-- OpenAPI validation and generated type contracts.
-- Android Vite/Capacitor skeleton and minimal Kotlin bridge.
-- Basic back-office login & health dashboards.
-- Isolation integration tests A/B.
-
+Voir [gates détaillés](quality/ACCEPTANCE.md) et [blocages externes](OPEN-QUESTIONS.md).
