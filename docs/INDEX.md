@@ -22,6 +22,7 @@
 - [Exploitation](architecture/OPERATIONS.md)
 
 ## Pilotage
+- [Audit transversal G0 : risques et corrections](quality/AUDIT-G0-2026-10-15.md)
 - [Tests et vérifications](quality/TEST-STRATEGY.md)
 - [Critères d'acceptation](quality/ACCEPTANCE.md)
 - [Jalons G0 → G5](ROADMAP.md)
