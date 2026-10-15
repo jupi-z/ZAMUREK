@@ -11,6 +11,7 @@ servers:
   - url: https://api.example.invalid
     description: Exemple fictif non déployé
 tags:
+  - name: Identity
   - name: Storefront
   - name: Catalog
   - name: Cart
@@ -19,6 +20,179 @@ tags:
   - name: Merchant
   - name: Platform
 paths:
+  /auth/v1/register:
+    post:
+      tags: [Identity]
+      operationId: registerCustomer
+      summary: Créer un compte client global par téléphone, en attente de vérification
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterCustomer'
+      responses:
+        '202':
+          description: Demande enregistrée ; ne révèle pas l'existence du compte
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericAcknowledgement'
+        '422':
+          $ref: '#/components/responses/Unprocessable'
+  /auth/v1/verify-phone:
+    post:
+      tags: [Identity]
+      operationId: verifyCustomerPhone
+      summary: Vérifier la possession du téléphone par code à usage limité
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [phoneE164, otpCode]
+              properties:
+                phoneE164:
+                  $ref: '#/components/schemas/PhoneE164'
+                otpCode:
+                  type: string
+                  minLength: 4
+                  maxLength: 12
+      responses:
+        '200':
+          description: Téléphone vérifié ; authentification encore nécessaire
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericAcknowledgement'
+        '422':
+          $ref: '#/components/responses/Unprocessable'
+  /auth/v1/login:
+    post:
+      tags: [Identity]
+      operationId: loginCustomer
+      summary: Session client authentifiée (réservée aux clients natifs)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerCredentials'
+      responses:
+        '200':
+          description: Tokens émis seulement après authentification ; jamais journalisés
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthTokens'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /auth/v1/refresh:
+    post:
+      tags: [Identity]
+      operationId: refreshCustomerSession
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [refreshToken]
+              properties:
+                refreshToken:
+                  type: string
+      responses:
+        '200':
+          description: Session renouvelée avec rotation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthTokens'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /auth/v1/logout:
+    post:
+      tags: [Identity]
+      operationId: logoutCustomer
+      security:
+        - bearerAuth: []
+      responses:
+        '204':
+          description: Session révoquée
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /auth/v1/me:
+    get:
+      tags: [Identity]
+      operationId: getCurrentCustomer
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Profil d'identité globale restreint à son détenteur
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerIdentity'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /auth/v1/recovery/request:
+    post:
+      tags: [Identity]
+      operationId: requestAccountRecovery
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [phoneE164]
+              properties:
+                phoneE164:
+                  $ref: '#/components/schemas/PhoneE164'
+      responses:
+        '202':
+          description: Réponse non révélatrice
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericAcknowledgement'
+  /auth/v1/recovery/confirm:
+    post:
+      tags: [Identity]
+      operationId: confirmAccountRecovery
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [phoneE164, otpCode, newPassword]
+              properties:
+                phoneE164:
+                  $ref: '#/components/schemas/PhoneE164'
+                otpCode:
+                  type: string
+                  minLength: 4
+                  maxLength: 12
+                newPassword:
+                  type: string
+                  minLength: 12
+                  maxLength: 128
+      responses:
+        '200':
+          description: Mot de passe modifié et sessions précédentes révoquées
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericAcknowledgement'
+        '422':
+          $ref: '#/components/responses/Unprocessable'
   /v1/storefront/config:
     get:
       tags: [Storefront]
@@ -112,29 +286,45 @@ paths:
     post:
       tags: [Cart]
       operationId: createCart
-      summary: Créer un panier temporaire mono-boutique
+      summary: Créer un panier pour le client authentifié dans une devise unique
+      security:
+        - bearerAuth: []
       parameters:
         - $ref: '#/components/parameters/Channel'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [currencyCode]
+              properties:
+                currencyCode:
+                  $ref: '#/components/schemas/SupportedCurrency'
       responses:
         '201':
-          description: Panier créé ; accessToken secret délivré uniquement ici
+          description: Panier client sans jeton d'invité
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CartCreated'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: '#/components/schemas/Cart'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '422':
+          $ref: '#/components/responses/Unprocessable'
   /v1/carts/{cartId}:
     get:
       tags: [Cart]
       operationId: getCart
+      security:
+        - bearerAuth: []
       parameters:
         - $ref: '#/components/parameters/Channel'
         - $ref: '#/components/parameters/CartId'
-        - $ref: '#/components/parameters/CartToken'
       responses:
         '200':
-          description: Panier et prix serveur recalculés
+          description: Panier du client authentifié uniquement
           content:
             application/json:
               schema:
@@ -145,11 +335,11 @@ paths:
     patch:
       tags: [Cart]
       operationId: changeCartItem
-      summary: Ajouter, modifier ou retirer une variante (quantity=0)
+      security:
+        - bearerAuth: []
       parameters:
         - $ref: '#/components/parameters/Channel'
         - $ref: '#/components/parameters/CartId'
-        - $ref: '#/components/parameters/CartToken'
       requestBody:
         required: true
         content:
@@ -168,25 +358,53 @@ paths:
                   maximum: 99
       responses:
         '200':
-          description: Panier recalculé
+          description: Panier recalculé dans sa monnaie
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Cart'
         '409':
           $ref: '#/components/responses/Conflict'
-        '422':
-          $ref: '#/components/responses/Unprocessable'
+  /v1/carts/{cartId}/currency:
+    put:
+      tags: [Cart]
+      operationId: changeCartCurrency
+      summary: Recalculer dans l'autre devise sans taux de conversion
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/Channel'
+        - $ref: '#/components/parameters/CartId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [currencyCode]
+              properties:
+                currencyCode:
+                  $ref: '#/components/schemas/SupportedCurrency'
+      responses:
+        '200':
+          description: Panier recalculé à partir des prix marchand de cette devise
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cart'
+        '409':
+          $ref: '#/components/responses/Conflict'
   /v1/fulfillment/options:
     get:
       tags: [Storefront]
       operationId: listPublicFulfillmentOptions
-      summary: Méthodes publiques de remise, zones et paiements activés par la boutique
+      summary: Options publiques de remise et frais distincts CDF/USD
       parameters:
         - $ref: '#/components/parameters/Channel'
       responses:
         '200':
-          description: Options applicables lors du checkout
+          description: Options de la boutique
           content:
             application/json:
               schema:
@@ -206,16 +424,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/PaymentMethod'
-        '404':
-          $ref: '#/components/responses/NotFound'
   /v1/checkouts:
     post:
       tags: [Checkout]
       operationId: placeOrder
-      summary: Valider le panier et créer une commande unique
+      summary: Créer commande authentifiée dans une monnaie sélectionnée
+      security:
+        - bearerAuth: []
       parameters:
         - $ref: '#/components/parameters/Channel'
-        - $ref: '#/components/parameters/CartToken'
         - $ref: '#/components/parameters/IdempotencyKey'
       requestBody:
         required: true
@@ -225,35 +442,91 @@ paths:
               $ref: '#/components/schemas/CheckoutRequest'
       responses:
         '201':
-          description: Commande créée ; token de suivi délivré une seule fois au client
+          description: Commande créée, prix et monnaie figés par serveur
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/CheckoutReceipt'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
         '409':
           $ref: '#/components/responses/Conflict'
         '422':
           $ref: '#/components/responses/Unprocessable'
         '503':
           $ref: '#/components/responses/Unavailable'
-  /v1/orders/{orderId}/tracking:
+  /v1/orders:
     get:
       tags: [Tracking]
-      operationId: trackGuestOrder
-      summary: Statut de commande par preuve de possession du token invité
+      operationId: listMyOrders
+      summary: Commandes du client courant dans la boutique du canal
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/Channel'
+      responses:
+        '200':
+          description: Commandes visibles au propriétaire authentifié
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OrderTracking'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /v1/orders/{orderId}:
+    get:
+      tags: [Tracking]
+      operationId: getMyOrder
+      summary: Détail d'une commande appartenant au client connecté
+      security:
+        - bearerAuth: []
       parameters:
         - $ref: '#/components/parameters/Channel'
         - $ref: '#/components/parameters/OrderId'
-        - $ref: '#/components/parameters/TrackingToken'
       responses:
         '200':
-          description: Suivi filtré, sans données internes sensibles
+          description: Détail de commande après contrôle tenant + ownership
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/OrderTracking'
         '404':
           $ref: '#/components/responses/NotFound'
+  /v1/orders/{orderId}/cancellation-requests:
+    post:
+      tags: [Tracking]
+      operationId: requestOrderCancellation
+      summary: Déposer une demande ; jamais annuler immédiatement la commande
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/Channel'
+        - $ref: '#/components/parameters/OrderId'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [reason]
+              properties:
+                reason:
+                  type: string
+                  minLength: 3
+                  maxLength: 500
+      responses:
+        '202':
+          description: Demande reçue pour examen marchand
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericAcknowledgement'
+        '409':
+          $ref: '#/components/responses/Conflict'
   /v1/merchant/orders:
     get:
       tags: [Merchant]
@@ -451,13 +724,13 @@ paths:
             schema:
               type: object
               additionalProperties: false
-              required: [name, fee]
+              required: [name, fees]
               properties:
                 name:
                   type: string
                   minLength: 2
-                fee:
-                  $ref: '#/components/schemas/Money'
+                fees:
+                  $ref: '#/components/schemas/DualPrice'
       responses:
         '201':
           description: Zone créée
@@ -551,22 +824,6 @@ components:
         type: string
         minLength: 8
         maxLength: 128
-    CartToken:
-      name: X-Cart-Token
-      in: header
-      required: true
-      description: Jeton secret de session de panier, distinct de l'ID ; stockage serveur sous hash
-      schema:
-        type: string
-        minLength: 32
-    TrackingToken:
-      name: X-Order-Tracking-Token
-      in: header
-      required: true
-      description: Secret de consultation invité ; ne pas placer en URL
-      schema:
-        type: string
-        minLength: 32
     ProductId:
       name: productId
       in: path
@@ -589,6 +846,12 @@ components:
         type: string
         format: uuid
   responses:
+    Unauthorized:
+      description: Authentification absente ou session invalide
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiError'
     NotFound:
       description: Ressource ou contexte introuvable, ou volontairement masqué
       content:
@@ -620,6 +883,66 @@ components:
           schema:
             $ref: '#/components/schemas/ApiError'
   schemas:
+    PhoneE164:
+      type: string
+      pattern: '^\+[1-9][0-9]{7,14}$'
+    SupportedCurrency:
+      type: string
+      enum: [CDF, USD]
+    RegisterCustomer:
+      type: object
+      additionalProperties: false
+      required: [phoneE164, password]
+      properties:
+        phoneE164:
+          $ref: '#/components/schemas/PhoneE164'
+        password:
+          type: string
+          minLength: 12
+          maxLength: 128
+    CustomerCredentials:
+      $ref: '#/components/schemas/RegisterCustomer'
+    AuthTokens:
+      type: object
+      additionalProperties: false
+      required: [accessToken, refreshToken, expiresInSeconds]
+      description: Secrets remis au cœur natif, jamais dans les logs ni dans les événements React
+      properties:
+        accessToken:
+          type: string
+        refreshToken:
+          type: string
+        expiresInSeconds:
+          type: integer
+          minimum: 1
+    CustomerIdentity:
+      type: object
+      additionalProperties: false
+      required: [id, phoneE164, phoneVerified]
+      properties:
+        id:
+          type: string
+          format: uuid
+        phoneE164:
+          $ref: '#/components/schemas/PhoneE164'
+        phoneVerified:
+          type: boolean
+    GenericAcknowledgement:
+      type: object
+      additionalProperties: false
+      required: [accepted]
+      properties:
+        accepted:
+          type: boolean
+    DualPrice:
+      type: object
+      additionalProperties: false
+      required: [CDF, USD]
+      properties:
+        CDF:
+          $ref: '#/components/schemas/Money'
+        USD:
+          $ref: '#/components/schemas/Money'
     ApiError:
       type: object
       additionalProperties: false
@@ -652,7 +975,7 @@ components:
     StorefrontConfig:
       type: object
       additionalProperties: false
-      required: [tenantId, channelId, displayName, currency, fulfillmentMethods, paymentMethods, branding]
+      required: [tenantId, channelId, displayName, supportedCurrencies, defaultCurrency, fulfillmentMethods, paymentMethods, branding]
       properties:
         tenantId:
           type: string
@@ -661,9 +984,14 @@ components:
           type: string
         displayName:
           type: string
-        currency:
-          type: string
-          pattern: '^[A-Z]{3}$'
+        supportedCurrencies:
+          type: array
+          minItems: 2
+          maxItems: 2
+          items:
+            $ref: '#/components/schemas/SupportedCurrency'
+        defaultCurrency:
+          $ref: '#/components/schemas/SupportedCurrency'
         fulfillmentMethods:
           type: array
           items:
@@ -736,7 +1064,7 @@ components:
     Variant:
       type: object
       additionalProperties: false
-      required: [id, label, price, available]
+      required: [id, label, prices, available]
       properties:
         id:
           type: string
@@ -745,28 +1073,18 @@ components:
           type: string
         available:
           type: boolean
-        price:
-          $ref: '#/components/schemas/Money'
-    CartCreated:
-      type: object
-      additionalProperties: false
-      required: [cart, accessToken]
-      description: accessToken secret n'est délivré qu'à la création et doit être conservé côté Kotlin
-      properties:
-        cart:
-          $ref: '#/components/schemas/Cart'
-        accessToken:
-          type: string
-          minLength: 32
+        prices:
+          $ref: '#/components/schemas/DualPrice'
     Cart:
       type: object
       additionalProperties: false
-      required: [id, items, subtotal, expiresAt]
-      description: Réponse de lecture/modification sans rediffusion du jeton secret
+      required: [id, currencyCode, items, subtotal, expiresAt]
       properties:
         id:
           type: string
           format: uuid
+        currencyCode:
+          $ref: '#/components/schemas/SupportedCurrency'
         items:
           type: array
           items:
@@ -798,24 +1116,13 @@ components:
     CheckoutRequest:
       type: object
       additionalProperties: false
-      required: [cartId, customer, fulfillment, paymentMethod]
+      required: [cartId, currencyCode, fulfillment, paymentMethod]
       properties:
         cartId:
           type: string
           format: uuid
-        customer:
-          type: object
-          additionalProperties: false
-          required: [name, phone]
-          properties:
-            name:
-              type: string
-              minLength: 2
-              maxLength: 120
-            phone:
-              type: string
-              minLength: 6
-              maxLength: 32
+        currencyCode:
+          $ref: '#/components/schemas/SupportedCurrency'
         fulfillment:
           type: object
           additionalProperties: false
@@ -837,7 +1144,7 @@ components:
     CheckoutReceipt:
       type: object
       additionalProperties: false
-      required: [orderId, orderNumber, status, paymentStatus, total, trackingToken]
+      required: [orderId, orderNumber, status, paymentStatus, total, currencyCode]
       properties:
         orderId:
           type: string
@@ -848,11 +1155,10 @@ components:
           $ref: '#/components/schemas/OrderStatus'
         paymentStatus:
           $ref: '#/components/schemas/PaymentStatus'
+        currencyCode:
+          $ref: '#/components/schemas/SupportedCurrency'
         total:
           $ref: '#/components/schemas/Money'
-        trackingToken:
-          type: string
-          description: Secret délivré lors de l'initialisation et repris seulement sur retry idempotent autorisé
     OrderStatus:
       type: string
       enum: [PLACED, ACCEPTED, PREPARING, READY, OUT_FOR_DELIVERY, COMPLETED, CANCELLED]
@@ -917,14 +1223,14 @@ components:
     VariantInput:
       type: object
       additionalProperties: false
-      required: [label, price, available]
+      required: [label, prices, available]
       properties:
         label:
           type: string
           minLength: 1
           maxLength: 120
-        price:
-          $ref: '#/components/schemas/Money'
+        prices:
+          $ref: '#/components/schemas/DualPrice'
         available:
           type: boolean
     MerchantProduct:
@@ -947,15 +1253,15 @@ components:
     DeliveryZone:
       type: object
       additionalProperties: false
-      required: [id, name, fee, enabled]
+      required: [id, name, fees, enabled]
       properties:
         id:
           type: string
           format: uuid
         name:
           type: string
-        fee:
-          $ref: '#/components/schemas/Money'
+        fees:
+          $ref: '#/components/schemas/DualPrice'
         enabled:
           type: boolean
     TenantProvisioning:
