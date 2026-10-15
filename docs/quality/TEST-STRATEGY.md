@@ -1,30 +1,28 @@
-# Stratégie qualité et tests
+# Stratégie qualité et tests (après arbitrages)
 
 ## Niveaux
-1. Unitaires : pricing minor-unit, état commande/paiement, authz, clés d'idempotence, validations.
-2. Intégration : PostgreSQL registry + deux DB tenant, migrations, repository, transaction checkout/outbox, médias.
-3. Contrat : OpenAPI, stabilité des DTO, ancien APK/SDK face nouvelle API, statut erreurs.
-4. E2E : deux apps mono-boutiques, commandes invitées, admin, livraison/retrait, suivi.
-5. Android réel : rendu/lifecycle, clavier, permissions refusées, WebView bridge, réseau instable, process kill, mémoire et fluidité.
-6. Sécurité : matrice A/B lecture/écriture, IDOR, session expirée, brute force, secrets, URLs média.
-7. Exploitation : provisioning idempotent, migration multi-bases, backup et restore isolés, worker retry.
+- Unitaires : prix **CDF et USD indépendants**, frais livraison 2 devises, format minor-unit, aucun FX implicite, état paiement/commande, règles d'annulation.
+- Intégration : registry + DB tenants A/B avec privilèges distincts, migrations, pools bornés, transactions et idempotence, stockage objet.
+- API contract : OpenAPI normatif, identité / refresh / récupération, routes marchands/provisioning, contrats rétrocompatibles.
+- E2E : inscription/connexion vérifiée, client authentifié commande CDF puis USD, refus checkout anonyme, suivi par identité, marchand Android accepte et marque transfert vérifié, Windows opérateur provisionne B.
+- Android réel : deux APK distincts, Capacitor bridge vers Kotlin, suspension, récupération réseau, rotation, clavier, vieille APK/new API, empreinte mémoire/jank.
+- Windows réel : EXE/MSI Tauri/Rust, stockage sûr tokens, UI embarquée fonctionnant sans frontend distant.
+- Sécurité : deux clients différents dans même boutique et deux boutiques A/B, injections, IDOR, élévation staff/opérateur, aucun secret APK/EXE.
+- Exploitation : VPS de staging, backup/restore uniquement A, perte réseau, panne de connexion DB, redémarrage et retries.
 
-## Vérifications de contrat supplémentaires
-- POST panier délivre un jeton secret ; GET/PATCH ne le redonnent jamais.
-- Les zones/frais publics proviennent du tenant ; recalcul obligatoire au checkout.
-- La validation YAML et des références de notre script n'est pas une validation normative OpenAPI complète ; ajouter un validateur reconnu en G1.
-- Le contrat doit couvrir login/refresh/logout, catégories, médias, réglages et personnel avant que le parcours d'administration soit déclaré fini.
+## Cas de refus obligatoires
+- Sans token : POST panier/checkout et GET commandes → 401.
+- Client A → commande client B, même magasin → 403/404, pas de fuite.
+- Client tenant A → commandes/produits privés tenant B → 403/404.
+- Variantes sans prix CDF ou USD → publication rejetée.
+- Livraison frais manquants dans devise de commande → erreur explicite.
+- Switch devise → nouveau calcul à partir du tableau tarifs, jamais taux de change.
+- Double checkout même clé → même commande, changement payload même clé → 409.
+- Paiement manuel déclaré par client → PAID refusé.
+- Production contient SPA/SSR/Swagger UI → release rejetée.
 
-## Matrice minimale d'isolation
-AppA→produitB privé = refus ; ownerA→orderB = refus ; clientA→suiviB sans secret = refus ; mediaA→mediaB privée = refus ; channelId modifié → aucune autorisation administrative ; opérateur non habilité → refus.
+## CI G0
+scripts validate_docs et validate_openapi : contrôles de structure uniquement, **pas validation de conformité OpenAPI exhaustive ni code d'application**. Ajouter linter/schéma normatif en G1.
 
-## Critères de blocage
-- Une fuite inter-tenant, double commande après retry identique, faux paiement PAID, commande à prix fourni par appareil, absence de restauration testée ou credentials DB embarqués bloque release.
-- Un build qui ne compile pas, un schéma cassé ou un contrat API non validé bloque fin de jalon.
-
-## CI proposée
-PR : liens/docs, lint, typecheck, tests métier, vérification OpenAPI et schema, secrets scan. Après implémentation : Android Gradle test et assemblage de debug, intégration Postgres jetable. Aujourd'hui seule validation de documentation est disponible.
-
-## Jeux de test
-Tenant A (pagne/bijoux) et Tenant B (téléphones) avec produits et permissions propres, scénarios devise/zone distincts. Données synthétiques exclusivement. Chaque test écrit sa DB transactionnelle/réinitialisée.
-
+## États
+Jeux d'essai synthétiques à Kolwezi, « xShop Atelier » fictif, minimum deux tenants. Les environnements de test ne contiennent aucune donnée réelle de clients.
