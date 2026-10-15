@@ -1,35 +1,27 @@
-# Definition of Done et validation des jalons
+# Gates et Definition of Done — xShop
 
-## Done — toute fonctionnalité
-Spécification et ADR cohérents, code review, migrations reproductibles, tests unitaires/intégration pertinents, erreurs/états UI, authz tenant, logs et audit sensible, documentation API/ops mise à jour, démonstration E2E, pas de secret commité.
+## Toute fonctionnalité
+PR/commit revu, schéma API/documentation à jour, test automatique reproductible, contrôle des droits sur identité+tenant+objet, absence secrets/PII dans logs, montant/monnaie intacts, erreurs UI, migration si pertinente.
 
 ## G0 — cadrage
-- Monorepo documenté et arborescence réservée.
-- PRD, fonctionnalités V1, schéma conceptuel, tenance, sécurité, bridge Android, marketplace, ADR et questions ouvertes.
-- Contrat API initial consultable ; vérificateur documentaire disponible.
-- Statut des composants honnête : non implémentés.
+Arbitrages approuvés et documentés ; dépôt privé, PRD/API-only, double devise, identité obligatoire, clients installables, plan d'essais. **Une documentation seule n'est pas preuve d'un système prêt.**
 
-## G1 — fondation exécutable
-- pnpm install + build API/admin + app React passent, projets natifs générés et build Android debug sur SDK documenté.
-- PostgreSQL registry + provisioner + deux DB tenant migrés ; test d'isolation A/B en CI.
-- Healthcheck tenant-scopé et création d'une boutique de test reproducible.
+## G1 — fondations exécutables
+Builds vérifiés NestJS, React/Capacitor Android, Tauri/Rust Windows ; registry et **deux bases tenant**, tenant resolver, credentials séparés, auth/refresh/logout, validation OpenAPI normative, erreurs sécurisées. Tests isolation A/B exécutés en CI.
 
-## G2 — backend commerce
-- Produits/catégories, panier, checkout idempotent, livraison/retrait, paiements manuels, état commande, suivi invité et role merchant testés E2E.
-- Test double soumission et capture de prix immuable.
+## G2 — cœur commerce
+Catalogue et variantes avec prix CDF ET USD et frais par zone, panier/checkout client authentifié, commandes sans doublon, remise et paiement manuel, annulation sur demande marchand ; tests E2E dans les deux devises et tenants. Paiement non auto-certifié par l'acheteur.
 
-## G3 — Android + administration
-- App white-label pilotable de bout en bout, Kotlin réseau/cache/sécurité, UI React, marchand et plateforme administrables.
-- Tests Android réel + tests de reprise réseau, permissions et deux builds à marques distinctes.
+## G3 — interfaces installables
+APK acheteur, APK marchand différent, application opérateur Windows EXE/MSI en staging, signés selon politique, parcours complets avec Kotlin/Rust assurant réseau/sessions. **Aucune URL d'interface web hébergée en production.**
 
-## G4 — pilote opérationnel
-- Deux tenants distincts, restauration d'une seule DB vérifiée, monitoring, audit, configuration secrets, checklists Play Store / distribution, documentation support.
-- Livraison électronique seulement si PSP et conformité validés.
+## G4 — pilote réel Kolwezi
+Inventaire VPS/domaine, secrets, TLS, sauvegarde-restauration ciblée, auth vérifiée (provider OTP si retenu), tests sécurité, règles locales vente/fiscalité/PII, commerçant réel et comptes de paiement, support, APK pilote. Pas de production sans preuves.
 
-## G5 — industrialisation
-- Pipeline white-label reproductible, mise à jour sans casser l'ancien canal, migration N tenants, métriques/alertes et versionnement des clients.
-- Pas de marketplace nécessaire pour atteindre G5.
+## G5 — scale
+White-label par canal, app marchand Windows additionnelle, abonnement mensuel contractuel et facturation xShop, gestion N DB / pools, tests compatibilité vieux clients et future marketplace opt-in.
 
-## Preuve attendue
-Un lien PR/commit, résultat CI ou test reproductible, traces anonymisées et checklist signée. Une simple présence de code n'est pas une preuve de Done.
+## Bloquants immédiats
+Fuite inter-tenant, commande anonyme, tarif unique masquant devise, devise non vérifiée, état de paiement payé par demande client, app à secrets embarqués, interface web en production, restauration non testée avant commercialisation.
 
+Une preuve = tests/logs anonymisés/commit + critères de recette. Aucun résultat de test Android ou infra n'est actuellement revendiqué.
