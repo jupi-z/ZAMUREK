@@ -19,6 +19,7 @@
 - Panier rattaché à **une seule boutique** et à un appareil/session (non à un identifiant de tenant libre).
 - Ajouter, modifier quantité et retirer ; limites configurables ; calcul côté serveur à chaque mutation.
 - Le panier est temporaire ; il peut expirer ; aucune promesse de prix bloqué avant validation de commande.
+- Le jeton secret du panier est délivré à la création puis conservé par Kotlin ; GET/PATCH ne renvoient pas à nouveau ce secret.
 
 ## Livraison
 - Le commerçant configure RETRAIT / LIVRAISON et ses zones / frais.
