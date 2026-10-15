@@ -20,6 +20,16 @@ Les choix techniques ont été pris comme **hypothèses de travail de conception
 | Q14 | Licence du dépôt public | Aucune licence accordée par défaut | dès décision de diffusion |
 | Q15 | Seuils de qualité (latence, mémoire, disponibilité) | Fixés après instrumenter pilote Android/backend | avant G4 |
 | Q16 | Méthode de livraison et zones | Retrait + zones/frais manuels | avant G2 |
+| Q17 | Boutique pilote / catégorie produits | Commencer par un commerçant de produits physiques standard | avant G1 |
+| Q18 | Notifications marchand/client | Actualisation admin et suivi app d'abord ; push/SMS après évaluation | avant G3 |
+| Q19 | Catalogue marketplace opt-in | Participation volontaire, désactivée par défaut | avant marketplace |
+| Q20 | Périmètre des canaux au pilote | Android client + console marchand web + console opérateur minimale | avant G1 |
+| Q21 | Modes de contact et support | Contact marchand public + processus support xShop distinct | avant G3 |
+| Q22 | Portage légal et fiscal des ventes | À définir contractuellement et vérifier juridiquement selon les territoires | avant G4 |
+
+Pour les choix opérationnels (hébergement, RPO/RTO, qualité), définir budget et attentes, puis déléguer les paramètres techniques à l'équipe après tests. Un défaut proposé n'est **pas une décision validée**.
+
+Voir [audit G0](quality/AUDIT-G0-2026-10-15.md).
 
 ## Procédure d'arbitrage
 Documenter la décision, sa motivation, les alternatives et les effets sur le contrat API ; mettre à jour ADR/PRD/spec si nécessaire. Éviter de coder une hypothèse comme règle irréversible.
