@@ -1,7 +1,7 @@
 # Identité, sessions et autorisations
 
 ## Trois domaines séparés
-1. Acheteur invité : pas de compte obligatoire en V1 ; token de suivi aléatoire, limité et stocké haché serveur.
+1. Acheteur invité : pas de compte obligatoire en V1 ; token de suivi aléatoire, limité et stocké haché serveur. Pour permettre un retry idempotent juste après checkout, un snapshot de réponse chiffré peut être conservé temporairement avec TTL court et accès limité à la même session ; il ne constitue pas le stockage durable du secret.
 2. Employé commerçant : identité authentifiée et membership tenant avec rôle OWNER ou STAFF ; permissions granulaires sur les actions ; révocation active.
 3. Opérateur plateforme : identité distincte, MFA recommandé et journal d'audit obligatoire pour toute intervention inter-tenant.
 
