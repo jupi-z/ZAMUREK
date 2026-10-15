@@ -936,6 +936,7 @@ components:
           type: boolean
     DualPrice:
       type: object
+      description: Deux prix indépendants fournis par le marchand ; CDF.currency=CDF et USD.currency=USD doivent être vérifiés côté API, aucun FX implicite
       additionalProperties: false
       required: [CDF, USD]
       properties:
@@ -1113,16 +1114,29 @@ components:
     PaymentMethod:
       type: string
       enum: [PAY_ON_DELIVERY, MANUAL_TRANSFER]
+    OrderRecipient:
+      type: object
+      additionalProperties: false
+      required: [fullName, phoneE164]
+      properties:
+        fullName:
+          type: string
+          minLength: 2
+          maxLength: 120
+        phoneE164:
+          $ref: '#/components/schemas/PhoneE164'
     CheckoutRequest:
       type: object
       additionalProperties: false
-      required: [cartId, currencyCode, fulfillment, paymentMethod]
+      required: [cartId, currencyCode, recipient, fulfillment, paymentMethod]
       properties:
         cartId:
           type: string
           format: uuid
         currencyCode:
           $ref: '#/components/schemas/SupportedCurrency'
+        recipient:
+          $ref: '#/components/schemas/OrderRecipient'
         fulfillment:
           type: object
           additionalProperties: false
