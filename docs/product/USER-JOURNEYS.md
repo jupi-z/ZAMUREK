@@ -1,38 +1,25 @@
-# Parcours V1 et cas d'échec
+# Parcours V1 après décisions
 
-## Visiteur → achat invité
-1. L'application installée initialise son identifiant de canal et récupère la configuration publique de sa boutique.
-2. Affichage produits paginés ; un produit indisponible n'est pas commandable.
-3. Ajout produit au panier : validation serveur, retour de montants recalculés et de la devise.
-4. Choix retrait/livraison ; choix zone, frais, coordonnées, remarques.
-5. Dernière vérification serveur ; commande unique créée avec clé d'idempotence.
-6. Affichage confirmation, numéro et jeton de suivi local sécurisé.
-7. Consultation du statut avec preuve de possession du jeton.
+## Client Android : inscription → achat
+1. L'application récupère la configuration publique du canal, sans présumer de permission.
+2. L'utilisateur s'inscrit / se connecte ; contrôle d'identité (vérification téléphone prévue pour commercialisation).
+3. Il consulte le catalogue, choisit **CDF ou USD** ; toutes les lignes et frais affichés dans cette monnaie.
+4. Il ajoute produit/quantité au panier **lié au compte, au tenant et à la devise**.
+5. Livraison en zone tarifée CDF/USD ou retrait ; téléphone/contact et adresse de livraison, si nécessaire.
+6. Le serveur revalide session, accès tenant, prix, devise, disponibilité, frais, puis crée commande idempotente.
+7. Confirmation authentifiée, historique/états dans l'app ; demande d'annulation transmise au marchand.
 
-## Marchand → exécution
-1. Connexion propriétaire ou employé et contrôle RBAC propre au tenant.
-2. Affichage commandes de sa boutique uniquement.
-3. Acceptation, préparation, disponibilité/retrait ou expédition, complétion.
-4. Vérification documentée d'un transfert manuel si utilisé.
-5. Toute modification de statut enregistre acteur, origine, date et résultat.
+## Marchand Android : préparation
+1. Connexion staff + membership tenant ; aucun accès croisé entre tenants.
+2. Catalogue/variantes, **saisie séparée de prix CDF et USD**, disponibilité sans stock, zones/frais par monnaie.
+3. Accepter, préparer, remettre/livrer commande ; confirmer **manuellement** transfert ou paiement livraison après preuve.
+4. Demande d'annulation traitée selon politique, pas de changement d'état non autorisé ; journal d'audit.
 
-## Plateforme → ouverture d'une boutique
-1. Validation données de commerce et unicité de slug/app ID.
-2. Création registre PROVISIONING, réservation des identifiants.
-3. Génération credentials et base dédiés, migrations vérifiées, bucket/namespace médias.
-4. Tests de connexion et d'isolation, publication de configuration canal.
-5. Activation seulement quand les contrôles réussissent ; sinon FAILED et compensation.
+## Plateforme Windows : cycle tenant
+Opérateur autorisé s'authentifie, crée tenant, provisionne DB/secret/migration, contrôle deux tests d'isolation, associe canal et app ; active, suspend, supervise. Aucune interface web distante.
 
-## Échecs obligatoirement traités
-- Produits devenus indisponibles au checkout : 409 + panier actualisé, sans créer la commande.
-- Paiement manuel non confirmé : commande créée, paiement PENDING/AWAITING_CONFIRMATION.
-- Réseau perdu pendant POST : retry avec **la même clé** d'idempotence ; lecture d'état ensuite.
-- Tentative de lire tenant B via token tenant A : rejet, audit et test de non-divulgation.
-- Tenant suspendu : catalogue public selon politique d'indisponibilité, checkout interdit.
-- Nouvelle version de catalogue : pas de prix client pris pour autorité.
-- Double webhook d'un prestataire futur : pas de double encaissement comptabilisé.
-- Application ancienne : réponse d'incompatibilité contrôlée, version d'API maintenue selon politique de cycle de vie.
+## Échecs
+Utilisateur non connecté au checkout = 401 ; token d'un autre client/tenant = refus ; produit sans un des deux tarifs = non publiable ; devise changée = panier recalculé ; réseau coupé durant POST = retry même clé ; faux paiement déclaré = reste non payé ; tenant suspendu = checkout refusé.
 
-## Limites assumées
-Pas de récupération du jeton invité sans canal de vérification, pas de traitement automatique des remboursements en V1, pas de promesse de fonctionnement complet hors connexion.
-
+## Prolongement
+Future marketplace Android en canal supplémentaire ; participation du commerçant explicitement consentie ; aucun achat multi-tenant transactionnel en V1.
