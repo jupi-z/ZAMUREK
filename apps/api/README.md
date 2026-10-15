@@ -1,10 +1,9 @@
-# API xShop (prévu ; non implémenté)
+# xShop API — application backend seule en production
 
-Backend NestJS + TypeScript, PostgreSQL par tenant, registre et modules Commerce. Le serveur est source de vérité pour prix, accès, paniers et commandes.
+**Prévue, non implémentée.** NestJS + TypeScript, monolithe modulaire, registry/identity, bases PostgreSQL métier **par tenant**, couche de connexion bornée et secrets externes.
 
-**Modules envisagés** : platform, tenancy, identity, catalog, cart, checkout, fulfillment, payments, audit, outbox.
+Domaines V1 : identity client obligatoire (auth téléphone/mot de passe/OTP proposé), memberships personnel, catalogue variantes **prix CDF/USD**, panier/auth et monnaie sélectionnée, checkout idempotent, commandes, livraison/retrait et double frais CDF/USD, paiement manuel direct marchand, demandes d'annulation, audit et provisioning.
 
-**Démarrage** : en G1, générer ici le projet NestJS et versionner sa configuration. Aucune commande npm de build ne fonctionne encore dans ce répertoire.
+Déploiement : API REST JSON HTTPS, workers et infrastructures nécessaires seulement ; **pas de frontend, SPA/SSR/PWA, portail admin ou Swagger UI**. OpenAPI dans Git/CI.
 
-Voir [SYSTEM](../../docs/architecture/SYSTEM.md), [TENANCY](../../docs/architecture/TENANCY.md) et [OpenAPI](../../packages/contracts/openapi/xshop-v1.yaml).
-
+Voir [contrat](../../packages/contracts/openapi/xshop-v1.yaml), [système](../../docs/architecture/SYSTEM.md), [tenancy](../../docs/architecture/TENANCY.md).
