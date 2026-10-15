@@ -9,6 +9,12 @@
 6. Sécurité : matrice A/B lecture/écriture, IDOR, session expirée, brute force, secrets, URLs média.
 7. Exploitation : provisioning idempotent, migration multi-bases, backup et restore isolés, worker retry.
 
+## Vérifications de contrat supplémentaires
+- POST panier délivre un jeton secret ; GET/PATCH ne le redonnent jamais.
+- Les zones/frais publics proviennent du tenant ; recalcul obligatoire au checkout.
+- La validation YAML et des références de notre script n'est pas une validation normative OpenAPI complète ; ajouter un validateur reconnu en G1.
+- Le contrat doit couvrir login/refresh/logout, catégories, médias, réglages et personnel avant que le parcours d'administration soit déclaré fini.
+
 ## Matrice minimale d'isolation
 AppA→produitB privé = refus ; ownerA→orderB = refus ; clientA→suiviB sans secret = refus ; mediaA→mediaB privée = refus ; channelId modifié → aucune autorisation administrative ; opérateur non habilité → refus.
 
