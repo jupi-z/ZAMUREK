@@ -1,36 +1,41 @@
-# Registre des décisions ouvertes
+# Derniers prérequis ouverts — état après arbitrages du 15 octobre 2026
 
-Les choix techniques ont été pris comme **hypothèses de travail de conception** à la demande du porteur de projet. Les éléments ci-dessous exigent validation avant implémentation ou mise en production.
+Les **décisions produit V1 ont été fournies** et enregistrées dans [DECISIONS](DECISIONS-VALIDATED-2026-10-15.md). Ne pas rouvrir les anciens choix « guest checkout / web admins / une seule devise / abonnement vs commission / identité dépôt ».
 
-| ID | Question | Défaut proposé | Échéance |
+## Bloquants pour lancer G1 (code et tests locaux)
+**Aucun arbitrage métier supplémentaire indispensable.** Les choix d'implémentation sont délégués. La V1 ne peut cependant être déclarée finie avant les validations ci-dessous.
+
+## Bloquants AVANT déploiement d'un staging sur le VPS
+
+| ID | Prérequis | Responsable | Statut |
 |---|---|---|---|
-| Q01 | Encaissement | Chaque commerçant encaisse directement ; xShop n'est pas agent de paiement | avant G2 |
-| Q02 | Prestataire(s) Mobile Money / carte en RDC | Aucun fournisseur engagé avant test + contrat | avant paiement électronique |
-| Q03 | Langues, territoires et devises | FR ; devise fixée par boutique, aucun taux de change | avant G3 |
-| Q04 | Gestion de stock | Statut de disponibilité simple, aucun stock chiffré | G2 |
-| Q05 | Identité client globale | Invité V1, liaison volontaire dans évolution | avant marketplace |
-| Q06 | Hébergement et budget | Mesurer charge pilote, décider VPS/DB et stockage | avant G1 production |
-| Q07 | Rétention PII / règles applicables | Minimisation + validation juridique selon territoires | avant G4 |
-| Q08 | Publication multi-app Google Play | Évaluer différenciation ; PWA alternative | avant G3 release |
-| Q09 | Propriété / comptes de signature | Publication et signature sous comptes autorisés, procédure de transfert | avant publication |
-| Q10 | Modèle de facturation de xShop | Non implémenté | avant commercialisation |
-| Q11 | Politique d'annulation / remboursement | Le marchand arbitre selon procédure et obligations | avant G4 |
-| Q12 | RPO/RTO, backups et support | Aucune promesse contractuelle avant exercice de restauration | avant G4 |
-| Q13 | Noms, domaines et package IDs | Configurables par commerçant | avant build G3 |
-| Q14 | Licence du dépôt public | Aucune licence accordée par défaut | dès décision de diffusion |
-| Q15 | Seuils de qualité (latence, mémoire, disponibilité) | Fixés après instrumenter pilote Android/backend | avant G4 |
-| Q16 | Méthode de livraison et zones | Retrait + zones/frais manuels | avant G2 |
-| Q17 | Boutique pilote / catégorie produits | Commencer par un commerçant de produits physiques standard | avant G1 |
-| Q18 | Notifications marchand/client | Actualisation admin et suivi app d'abord ; push/SMS après évaluation | avant G3 |
-| Q19 | Catalogue marketplace opt-in | Participation volontaire, désactivée par défaut | avant marketplace |
-| Q20 | Périmètre des canaux au pilote | Android client + console marchand web + console opérateur minimale | avant G1 |
-| Q21 | Modes de contact et support | Contact marchand public + processus support xShop distinct | avant G3 |
-| Q22 | Portage légal et fiscal des ventes | À définir contractuellement et vérifier juridiquement selon les territoires | avant G4 |
+| B01 | Inventaire du VPS : OS/version, CPU, RAM, stockage, accès DNS/ports et capacités sauvegarde ; séparation test/production | Titulaire du VPS + équipe technique | Informations non fournies |
+| B02 | Nom de domaine/sous-domaine pour **API seulement**, DNS/TLS et droits d'usage | Titulaire des domaines | Domaines disponibles, non identifiés |
+| B03 | Plan de sauvegarde, restauration ciblée de DB tenant et tests d'isolation sur le VPS | Équipe technique | Tests à réaliser |
 
-Pour les choix opérationnels (hébergement, RPO/RTO, qualité), définir budget et attentes, puis déléguer les paramètres techniques à l'équipe après tests. Un défaut proposé n'est **pas une décision validée**.
+Ne **jamais envoyer mot de passe, clé SSH privée, token ou secret** dans les réponses au questionnaire. Les accès doivent être configurés via un moyen sécurisé au moment du déploiement.
 
-Voir [audit G0](quality/AUDIT-G0-2026-10-15.md).
+## Bloquants AVANT vente publique (G4)
 
-## Procédure d'arbitrage
-Documenter la décision, sa motivation, les alternatives et les effets sur le contrat API ; mettre à jour ADR/PRD/spec si nécessaire. Éviter de coder une hypothèse comme règle irréversible.
+| ID | Prérequis | Motif |
+|---|---|---|
+| B04 | Fournisseur SMS/OTP vérifié, coût et conditions en RDC, ou révision explicite de la méthode d'authentification | Identité client avec téléphone + vérification avant première commande |
+| B05 | Mentions de vente, confidentialité, protection données, taxation/facturation applicables RDC et répartition contractuelle vendeur/xShop | Ne pas inventer une conformité réglementaire |
+| B06 | Modèle d'abonnement : **prix mensuel**, échéance, suspension, modalités de règlement, contrat et support | « Abonnement uniquement » validé mais montant non fixé |
+| B07 | Identité juridique/compte éditeur de chaque commerçant, droits des marques, signature et règles Google Play | Distribution APK/Play au cas par cas |
+| B08 | Choix d'un marchand réel pilote, coordonnées et moyens de paiement commerciaux, zones/frais en CDF/USD | Les fixtures « xShop Atelier » ne sont pas une véritable boutique |
+| B09 | RPO/RTO, rétention données, supervision et obligations support adaptées au budget et au risque | Contrat d'exploitation et restauration |
+| B10 | Conditions de réception et d'annulation de paiement manuel et éventuels remboursements, par vendeur | Flux commerciaux et légaux |
 
+## Choix techniques délégués, non bloquants G1
+- Tauri 2/Rust pour clients Windows ; Kotlin Android, React pour présentation.
+- Devises CDF/USD via **prix indépendants** ; aucun change automatique.
+- Auth globale téléphone + mot de passe avec OTP à validation externe avant exploitation réelle ; provider non choisi.
+- Backend NestJS modulaire, DB tenant, OpenAPI dans Git, aucun frontend hébergé.
+- Pilote fictif xShop Atelier à Kolwezi.
+
+## Décision de confidentialité du dépôt
+Le dépôt GitHub a été **vérifié privé** pendant la mise à jour. Accès à des collaborateurs uniquement selon permissions ; licence open source non accordée.
+
+## Suite
+G1 = implémenter registre tenant, auth/client, migrations multi-DB et contrats ; préparer ensuite appels sur VPS quand B01/B02 sont renseignés. Aucun accès VPS n'a été demandé ni établi.
