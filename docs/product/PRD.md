@@ -1,51 +1,41 @@
-# Product Requirements Document — xShop
+# xShop — PRD V1 (arbitrages validés le 15 octobre 2026)
 
-**Version : 0.1 | 15 octobre 2026 | Statut : spécification de référence initiale**
+**Statut : cadrage produit approuvé ; code applicatif non implémenté.** Document prioritaire : [décisions validées](../DECISIONS-VALIDATED-2026-10-15.md).
 
-## Problème
-De petites boutiques ont besoin d'un canal de vente simple (application personnalisée, éventuellement site web), sans coût de construction d'une plateforme indépendante par commerçant. L'opérateur xShop veut centraliser le logiciel, isoler les données de chaque boutique, et pouvoir agréger plus tard les catalogues dans une marketplace unique.
+## Produit
+Plateforme commerce multi-tenant : backend commercial mutualisé NestJS, registry central et **base PostgreSQL dédiée par boutique**, applications clients distinctes et personnalisables. Marketplace future additionnelle, aucune migration forcée des anciennes apps.
 
-## Proposition de valeur
-- Commerçant : marque personnelle, catalogue, commandes et suivi, console de gestion limitée à sa boutique.
-- Acheteur : découvrir les produits, choisir livraison ou retrait, commander sans création de compte obligatoire, suivre la commande.
-- Opérateur : activer/suspendre une boutique, générer des configurations d'application, maintenir une seule API.
-- Futur acheteur marketplace : découvrir plusieurs commerces sans perdre leurs applications d'origine.
+## Première utilisation
+**xShop Atelier**, commerce pilote fictif de pagnes, bijoux et accessoires pour Kolwezi (RDC). Ce nom sert aux jeux de données et ne doit pas être publié comme identité d'un commerçant réel.
 
-## Personas
-1. Visiteur / acheteur invité ; éventuellement client authentifié ultérieurement.
-2. Propriétaire commerçant et personnel de boutique.
-3. Opérateur plateforme et support habilité, avec actions auditées.
+## Canaux V1
+1. **Android acheteur** : APK React UI + Capacitor + Kotlin Core, boutique white-label.
+2. **Android marchand séparé** : APK gestion catalogue, tarifs CDF/USD, commandes, disponibilité, livraison, validation de paiement manuel et gestion des permissions.
+3. **Console opérateur installable Windows** : EXE/MSI (React embarqué + Tauri/Rust), provisioning et gestion des tenants.
+4. **Client marchand Windows installable** : canal additionnel, réutilisant les services métiers, priorisation selon gates.
+**AUCUNE UI hébergée en production**, aucune console web/SPA/PWA/SSR/Swagger UI. Seul backend/API et infrastructure non visuelle tournent côté serveur.
 
-## Principes non négociables
-- Une base commerciale PostgreSQL par tenant ; registre central dédié.
-- Tout acte commercial est autorisé et valorisé par le serveur ; aucune confiance dans les prix ou droits envoyés par le client.
-- Une commande V1 ne traverse jamais plusieurs boutiques.
-- Aucun compte marchand ou moyen de paiement n'est commun à deux boutiques sans consentement/configuration spécifique.
-- Le client Android est du React/HTML/CSS pour la présentation ; opérations API, cache, sécurité et traitements système en Kotlin.
-- Les anciennes applications personnalisées gardent leur accès après l'arrivée de la marketplace.
-- Le service reste utilisable sans paiements électroniques en V1, via un mode manuel / paiement à la remise configuré.
-- Une boutique désactivée ou supprimée n'est pas effacée silencieusement ; archivage et conservation encadrés.
+## Profils
+- Acheteur **authentifié obligatoirement** pour commander et suivre ses commandes ; pas de guest checkout.
+- Propriétaire et employé boutique avec rôles limités à leurs tenants.
+- Opérateur plateforme avec droits distincts et journalisation forte.
 
-## Objectif V1
-Réaliser et administrer une commande mono-boutique, depuis un téléphone Android, de manière traçable, pour au moins **deux tenants d'essai isolés**. Une première boutique peut être utilisée pour le pilote.
+## Périmètre commercial
+Catalogue/catégories/images, variantes simples, disponibilité sans inventaire quantifié, recherche et panier, **prix affichables CDF et USD pour chaque boutique**, monnaie sélectionnée par client et montants recalculés par serveur. Livraison par zones tarifées en CDF/USD et retrait. Commandes mono-boutique, paiement à livraison/transfert manuel au commerçant, suivi authentifié et demande d'annulation au marchand. Notifications limitées à l'actualisation dans les clients installés et la console marchand.
 
-## Inclus V1
-Identité et personnalisation simple, produit à prix fixe ou variantes simples, catégories, recherche basique, panier, livraison/retrait, adresse et téléphone, commande invitée, paiement manuel/à la livraison, suivi avec secret de consultation, gestion des commandes, rôles simples, supervision/creation de tenant, journal d'audit critique, tests d'isolation et restauration.
+## Responsabilités / offre
+Vendeur = commerçant ; xShop = logiciel et support technique, contrat à vérifier juridiquement. **Abonnement mensuel uniquement**, prix non fixés. Encaissement des ventes directement par le marchand, pas de prélèvement/redistribution plateforme.
+
+## Distribution
+APK pilote, puis Google Play au cas par cas sous le compte éditeur du commerçant, sous réserve des règles anti-applications répétitives. Windows EXE/MSI distribués de façon sécurisée et signés selon politique de release. GitHub **privé / code propriétaire**, sans redistribution de source.
 
 ## Hors V1
-Stock quantifié, réservation de stock, promotions avancées, programme de fidélité, panier multi-vendeur, paiement fractionné, commissions marketplace, reversement automatisé, messagerie, IA, livraison optimisée, ERP, comptabilité générale, facturation fiscale garantie, arbitrage de litige, iOS et web public complet. Extensions sur décision.
+Marketplace, panier multi-commerçants, comptes invités, site web/PWA, back-office hébergé, gestion de stock quantitatif, change automatique/FX, paiement électronique intégré, reversement plateforme, programme fidélité, facturation fiscale garantie, moteur promotions avancé, IA, iOS.
 
-## Principes UX
-Interface mobile accessible, lisible sans animations obligatoires ; français comme langue initiale ; états chargement/vide/erreur/hors-ligne définis. Catalogue et thèmes par tenant ; aucune duplication du cœur métier.
+## Indicateurs sans valeurs inventées
+Proportion commandes terminées, taux d'échec checkout, pannes réseau, incidents d'accès tenant, restauration ciblée, latence API/pont natif, mémoire Android, nombre de tenants actifs. Les SLO et la capacité du VPS restent à mesurer.
 
-## Modèle économique (à décider)
-Abonnement, frais de mise en service, frais de maintenance ou commission commerciale : non arbitrés. Ne pas coder de facturation SaaS ni de pourcentage implicite.
+## Gates
+Une V1 n'est pas opérationnelle sans authentification client, test de 2 bases séparées, commande CDF et USD, client Android acheteur et marchand distincts, console opérateur installable, sauvegarde/restauration, validation légale et distribution, fournisseur SMS si OTP retenu.
 
-## Indicateurs à mesurer (sans seuil inventé)
-Taux de conversion visite→commande, taux d'échec API, temps d'ouverture de l'app, durée commande, commandes par boutique, commandes annulées, incidents d'isolation, restauration testée. Les cibles SLO seront fixées après mesures pilote.
-
-## Hypothèses à valider
-Fournisseurs Mobile Money, responsabilités légales par pays, zone(s) de livraison, choix d'identité client, stratégie de publication de nombreuses applications sur Google Play, quantité de tenants initiale, infrastructure et budget.
-
-Voir [spécification V1](V1-FUNCTIONAL-SPEC.md) et [questions ouvertes](../OPEN-QUESTIONS.md).
-
+Voir [spécifications fonctionnelles](V1-FUNCTIONAL-SPEC.md), [clients et déploiement](../architecture/CLIENTS-DEPLOYMENT.md), [devises](../architecture/CURRENCY-CDF-USD.md).
