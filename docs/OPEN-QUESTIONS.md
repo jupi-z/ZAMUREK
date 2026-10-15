@@ -37,5 +37,8 @@ Ne **jamais envoyer mot de passe, clé SSH privée, token ou secret** dans les r
 ## Décision de confidentialité du dépôt
 Le dépôt GitHub a été **vérifié privé** pendant la mise à jour. Accès à des collaborateurs uniquement selon permissions ; licence open source non accordée.
 
+## Évaluation post-décisions
+[Revue G0 mise à jour](quality/AUDIT-POST-DECISIONS-2026-10-15.md) ; [abonnements](architecture/SUBSCRIPTIONS.md).
+
 ## Suite
 G1 = implémenter registre tenant, auth/client, migrations multi-DB et contrats ; préparer ensuite appels sur VPS quand B01/B02 sont renseignés. Aucun accès VPS n'a été demandé ni établi.
