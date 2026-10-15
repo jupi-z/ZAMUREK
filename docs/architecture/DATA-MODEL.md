@@ -1,44 +1,41 @@
-# Modèle de données — contrat conceptuel V1
+# Modèle conceptuel des données — xShop V1 après arbitrages
 
-## Identifiants et montants
-UUIDs/identifiants opaques pour les entités. Chaque objet métier existe dans **une DB tenant**. IDs exposés avec contexte tenant ; jamais utiliser un ID seul pour autoriser. Prix et frais en entier signé 64 bits d'unités mineures, sérialisés en **chaîne décimale** dans les DTO JSON pour éviter les pertes IEEE-754 en JS. Devise ISO 4217 par commande ; conversion multi-devises hors V1.
+**Deux niveaux de stockage** : registry/identity plateforme distincte et **une base PostgreSQL métier par tenant**.
 
-## Base registry
-- tenant : id, slug unique, status, db_ref, schema_version, timestamps.
-- storefront_channel : id, tenant_id, kind, identifier unique, config_version, enabled.
-- platform_user / staff_identity : données de connexion distinctes des fiches clients métier.
-- tenant_membership : user_id, tenant_id, role, status.
-- provisioning_job : tenant_id, idempotency_key, step, state, attempts, audit.
-- platform_audit_log : acteur, action, cible, raison, correlation_id, instant.
+## Registry (base centrale)
+- tenant(id UUID, slug, status, db_secret_ref, schema_version, created_at).
+- storefront_channel(id, tenant_id, client_type, app_identifier, build_config_version, status).
+- global_customer_identity(id, phone_e164 unique, password_hash, phone_verified_at, status, created_at).
+- customer_auth_session(id, global_customer_id, refresh_hash, revoked_at, expires_at).
+- otp_challenge(id, global_customer_id, purpose, code_hash, expires_at, attempts, used_at).
+- staff_identity(id, credentials_ref, status), tenant_membership(user_id, tenant_id, role, permission_set).
+- platform_operator / platform_audit / provisioning_job / subscription_contract (facturation de l'abonnement xShop hors V1).
+- Ne pas placer produits, commandes, adresses de livraison ou moyens de paiement marchand dans le registry.
 
-## Base tenant
-- store_settings : branding, devise, contact public, modes de remise, statut commerce.
-- category : id, parent_id nullable, name, slug, sort_order, state.
-- product : id, category_id, sku nullable, name, description, status, timestamps.
-- product_variant : id, product_id, public_options JSON validé, price_minor, currency_code, status. Un produit sans variantes conserve une variante par défaut.
-- product_media : id, product_id, key média, ordering, alt_text, status.
-- delivery_zone : id, name, fee_minor, currency_code, enabled.
-- cart : id, channel_id, guest_session_hash, cart_access_token_hash, currency_code, expires_at ; le jeton secret n'est délivré qu'à la création, jamais redonné dans GET/PATCH.
-- cart_item : id, cart_id, variant_id, quantity > 0, added_at.
-- customer_profile : id, display_name, phone, contact_consent ; optional_global_identity_ref (sans clé d'accès globale).
-- order : id, tenant_local_number unique, channel_id, customer_snapshot, fulfillment_snapshot, status, currency_code, subtotal_minor, delivery_minor, total_minor, created_at.
-- order_item : id, order_id, variant_id nullable, sku_snapshot, name_snapshot, options_snapshot, unit_price_minor, quantity, line_total_minor.
-- payment : id, order_id, method, provider nullable, status, amount_minor, currency_code, external_ref nullable ; aucun PAN stocké.
-- payment_event : id, payment_id, provider_event_id unique sous provider, signature_verified, processed_at.
-- checkout_idempotency : tenant_id implicitement porté par DB, actor/session, key, request_fingerprint, response_replay_encrypted, expires_at. Le replay du secret invité a une durée courte, un chiffrement côté serveur et une vérification stricte du même acteur/session. La preuve durable de suivi reste uniquement son hash.
-- order_status_history : order_id, from, to, actor, note, timestamp.
-- guest_tracking_credential : order_id, token_hash, created_at, expires_at, revoked_at.
-- outbox_event : id, type, version, aggregate_id, payload filtré, created_at, published_at, retry_count.
-- audit_log : actor, action, object_id, correlation_id, occurred_at, redactable metadata.
+## Dans chaque DB tenant
+- store_settings (name, logo, branding, default_currency, supportedCurrencies=[CDF,USD], modes).
+- category, product (name, status), product_variant(id, product_id, options, active).
+- **product_variant_price(variant_id, currency_code, amount_minor)** ; contrainte unique (variant_id,currency_code) ; **2 tarifs actifs par variante commercialisée**.
+- product_media (clé média, position, droits).
+- delivery_zone(id, name, enabled), **delivery_zone_fee(zone_id,currency_code,amount_minor)**.
+- cart(id, global_customer_id, channel_id, currency_code, expires_at), cart_item(cart_id,variant_id,quantity).
+- customer_profile(id, global_customer_id, contact, consent_scope).
+- order(id, tenant_local_number, global_customer_id, customer_profile_id, channel_id, currency_code, fulfillment_snapshot, subtotal_minor, delivery_minor, total_minor, status, timestamps).
+- order_item(order_id, variant_snapshot, item_name_snapshot, unit_price_minor, quantity, line_total_minor, currency_code).
+- payment(id, order_id, currency_code, amount_minor, method, status, merchant_reference).
+- cancellation_request(order_id, requested_by, reason, status, resolved_by, resolved_at).
+- order_status_history, checkout_idempotency (global_customer_id, key, request_fingerprint, response_snapshot_encrypted, expires_at).
+- outbox_event, audit_log (PII-redacted).
 
-## Invariants relationnels
-- Une commande est mono-tenant et mono-devise ; items liés à la même DB uniquement.
-- total = sous-total + frais de remise (moins réductions à introduire plus tard). Les montants sont recalculés serveur.
-- Les snapshots de commande ne suivent jamais une modification ultérieure de produit.
-- Idempotence checkout unique par acteur/session et clé, avec empreinte de requête ; même clé + payload différent = 409.
-- Les transitions d'état sont explicitement contrôlées.
-- Contraintes SQL/transactions pour ne jamais enregistrer commande sans ses lignes.
+## Invariants
+- Les order / cart sont **mono-tenant, mono-devise** ; choix CDF/USD explicite, jamais conversion automatique.
+- Un tarif requis manquant bloque publication / checkout ; devise livraison identique devise commande.
+- Calcul serveur, snapshots et transactions ; contrôle d'accès par (global_customer_id, tenantContext, order ownership).
+- Pas de guest_tracking_credential et pas de guest_session_hash en V1.
+- Token/OTP hachés, jamais dans journaux ; aucune donnée commerciale tenant exposée à un autre.
+- Évolution marketplace : réf (tenantId,productId), opt-in de visibilité uniquement, source of truth DB tenant.
 
-## Contrat de migration
-Distinguer schéma du registre et schéma des tenants. Migration de chaque nouveau tenant de zéro jusqu'à version actuelle ; tests d'upgrade entre deux versions précédentes. Aucune table partagée de produits ou commandes dans registry.
+## Migrations
+Migrations distinctes registry / tenant ; versions, déploiement par cohortes, restauration ciblée, tests A/B ; exigences SQL et colonnes exactes à figer en G1.
 
+Voir [devises](CURRENCY-CDF-USD.md), [identité](AUTH-CUSTOMER.md), [tenancy](TENANCY.md).
