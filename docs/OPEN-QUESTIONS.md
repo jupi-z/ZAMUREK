@@ -1,44 +1,25 @@
-# Derniers prérequis ouverts — état après arbitrages du 15 octobre 2026
+# Prérequis externes restant — 16 octobre 2026
 
-Les **décisions produit V1 ont été fournies** et enregistrées dans [DECISIONS](DECISIONS-VALIDATED-2026-10-15.md). Ne pas rouvrir les anciens choix « guest checkout / web admins / une seule devise / abonnement vs commission / identité dépôt ».
+**Aucun nouvel arbitrage métier obligatoire pour démarrer G1 en local.** Les décisions du [16 octobre](DECISIONS-VALIDATED-2026-10-16.md) ont remplacé les hypothèses 15/10 incompatibles.
 
-## Bloquants pour lancer G1 (code et tests locaux)
-**Aucun arbitrage métier supplémentaire indispensable.** Les choix d'implémentation sont délégués. La V1 ne peut cependant être déclarée finie avant les validations ci-dessous.
+## Avant staging sur VPS
+- **E01** : OS, vCPU, RAM, stockage, sauvegardes et accès réseau du VPS existant. Vérifier non-collision et cohabitation avec usages ShuleOps ; pas de credential dans Git/chat.
+- **E02** : confirmer propriété DNS de `shuleops.com` et disponibilité réelle de `xshop-api-test.shuleops.com`. DNS/TLS pas créés.
+- **E03** : installer un VPN ou segmentation équivalente pour opérateur, DB, métriques, workers et routes `/platform/v1`, isoler staging/prod, vérifier pare-feu.
 
-## Bloquants AVANT déploiement d'un staging sur le VPS
+## Avant ventes réelles en RDC
+- **E04 (juridique, prioritaire)** : vérifier **arrêté 007/2025** (publicité des prix/factures en CDF), exceptions éventuelles, conditions de règlement USD, taux marchand autorisé et fiscalité. En attendant, prix/factures client en **CDF uniquement**.
+- **E05 (e-mail)** : tester un SMTP réel pour inscription, validation et récupération de compte ; **pas de SMS**, aucune marque/fournisseur choisi d'avance.
+- **E06 (commerce)** : commerçant réel volontaire, produits, taux USD→CDF confirmé par lui (taux 2360 seulement de démonstration), frais de livraison, coordonnées et moyens de transfert, conditions de vente/retour.
+- **E07 (SaaS)** : contrat d'abonnement **BASIC 7 USD/mois** ; cycle, suspension, service, modalités de paiement, taux plateforme pour facturation CDF et taxes à confirmer.
+- **E08 (données)** : obligations du Code du numérique, mentions confidentialité, responsabilités opérateur/commerçant, durée conservation et demandes d'accès/suppression.
+- **E09 (ops)** : sauvegardes/restauration par tenant, tests isolation, mesures et support, signature APK et règle de publication Google Play par commerçant.
 
-| ID | Prérequis | Responsable | Statut |
-|---|---|---|---|
-| B01 | Inventaire du VPS : OS/version, CPU, RAM, stockage, accès DNS/ports et capacités sauvegarde ; séparation test/production | Titulaire du VPS + équipe technique | Informations non fournies |
-| B02 | Nom de domaine/sous-domaine pour **API seulement**, DNS/TLS et droits d'usage | Titulaire des domaines | Domaines disponibles, non identifiés |
-| B03 | Plan de sauvegarde, restauration ciblée de DB tenant et tests d'isolation sur le VPS | Équipe technique | Tests à réaliser |
+## Ne bloque pas G1
+Nom public définitif (xShop provisoire), commerçant réel pilote, budget infrastructure chiffré (évaluer après inventaire), DNS final, fournisseur Mobile Money, activation affichage USD, nouvelle formule d'abonnement, futur marketplace.
 
-Ne **jamais envoyer mot de passe, clé SSH privée, token ou secret** dans les réponses au questionnaire. Les accès doivent être configurés via un moyen sécurisé au moment du déploiement.
+## Blocages techniques internes G1
+Completer le contrat OpenAPI (identité marchand/TOTP, CRUD media/settings, fx write, subscription), migrations, tests d'intégration A/B, outils de build. Tout cela relève de l'équipe technique sans question supplémentaire pour le porteur.
 
-## Bloquants AVANT vente publique (G4)
-
-| ID | Prérequis | Motif |
-|---|---|---|
-| B04 | Fournisseur SMS/OTP vérifié, coût et conditions en RDC, ou révision explicite de la méthode d'authentification | Identité client avec téléphone + vérification avant première commande |
-| B05 | Mentions de vente, confidentialité, protection données, taxation/facturation applicables RDC et répartition contractuelle vendeur/xShop | Ne pas inventer une conformité réglementaire |
-| B06 | Modèle d'abonnement : **prix mensuel**, échéance, suspension, modalités de règlement, contrat et support | « Abonnement uniquement » validé mais montant non fixé |
-| B07 | Identité juridique/compte éditeur de chaque commerçant, droits des marques, signature et règles Google Play | Distribution APK/Play au cas par cas |
-| B08 | Choix d'un marchand réel pilote, coordonnées et moyens de paiement commerciaux, zones/frais en CDF/USD | Les fixtures « xShop Atelier » ne sont pas une véritable boutique |
-| B09 | RPO/RTO, rétention données, supervision et obligations support adaptées au budget et au risque | Contrat d'exploitation et restauration |
-| B10 | Conditions de réception et d'annulation de paiement manuel et éventuels remboursements, par vendeur | Flux commerciaux et légaux |
-
-## Choix techniques délégués, non bloquants G1
-- Tauri 2/Rust pour clients Windows ; Kotlin Android, React pour présentation.
-- Devises CDF/USD via **prix indépendants** ; aucun change automatique.
-- Auth globale téléphone + mot de passe avec OTP à validation externe avant exploitation réelle ; provider non choisi.
-- Backend NestJS modulaire, DB tenant, OpenAPI dans Git, aucun frontend hébergé.
-- Pilote fictif xShop Atelier à Kolwezi.
-
-## Décision de confidentialité du dépôt
-Le dépôt GitHub a été **vérifié privé** pendant la mise à jour. Accès à des collaborateurs uniquement selon permissions ; licence open source non accordée.
-
-## Évaluation post-décisions
-[Revue G0 mise à jour](quality/AUDIT-POST-DECISIONS-2026-10-15.md) ; [abonnements](architecture/SUBSCRIPTIONS.md).
-
-## Suite
-G1 = implémenter registre tenant, auth/client, migrations multi-DB et contrats ; préparer ensuite appels sur VPS quand B01/B02 sont renseignés. Aucun accès VPS n'a été demandé ni établi.
+## Références
+[Revue juridique RDC](legal/RDC-INITIAL-REVIEW.md), [réseau](architecture/NETWORK-EXPOSURE.md), [FX](architecture/FX-PRICING.md), [auth sans SMS](architecture/AUTH-NO-SMS.md).
