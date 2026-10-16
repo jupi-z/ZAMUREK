@@ -926,16 +926,45 @@ components:
       properties:
         accepted:
           type: boolean
-    DualPrice:
+    FxRateSnapshot:
       type: object
-      description: Deux prix indépendants fournis par le marchand ; CDF.currency=CDF et USD.currency=USD doivent être vérifiés côté API, aucun FX implicite
       additionalProperties: false
-      required: [CDF, USD]
+      required: [rateVersion, usdToCdf, effectiveAt]
       properties:
-        CDF:
+        rateVersion:
+          type: integer
+          minimum: 1
+        usdToCdf:
+          type: string
+          pattern: '^[0-9]+(\.[0-9]+)?$'
+          description: Taux marchand paramétré, distinct d'un cours officiel BCC
+        effectiveAt:
+          type: string
+          format: date-time
+    PriceQuote:
+      type: object
+      additionalProperties: false
+      required: [id, cartId, currencyCode, subtotal, deliveryFee, total, rate, expiresAt]
+      properties:
+        id:
+          type: string
+          format: uuid
+        cartId:
+          type: string
+          format: uuid
+        currencyCode:
+          $ref: '#/components/schemas/SupportedCurrency'
+        subtotal:
           $ref: '#/components/schemas/Money'
-        USD:
+        deliveryFee:
           $ref: '#/components/schemas/Money'
+        total:
+          $ref: '#/components/schemas/Money'
+        rate:
+          $ref: '#/components/schemas/FxRateSnapshot'
+        expiresAt:
+          type: string
+          format: date-time
     ApiError:
       type: object
       additionalProperties: false
@@ -968,7 +997,7 @@ components:
     StorefrontConfig:
       type: object
       additionalProperties: false
-      required: [tenantId, channelId, displayName, supportedCurrencies, defaultCurrency, fulfillmentMethods, paymentMethods, branding]
+      required: [tenantId, channelId, displayName, publicDisplayCurrency, fulfillmentMethods, paymentMethods, branding]
       properties:
         tenantId:
           type: string
@@ -977,13 +1006,7 @@ components:
           type: string
         displayName:
           type: string
-        supportedCurrencies:
-          type: array
-          minItems: 2
-          maxItems: 2
-          items:
-            $ref: '#/components/schemas/SupportedCurrency'
-        defaultCurrency:
+        publicDisplayCurrency:
           $ref: '#/components/schemas/SupportedCurrency'
         fulfillmentMethods:
           type: array
@@ -1057,7 +1080,7 @@ components:
     Variant:
       type: object
       additionalProperties: false
-      required: [id, label, prices, available]
+      required: [id, label, price, available]
       properties:
         id:
           type: string
@@ -1066,8 +1089,9 @@ components:
           type: string
         available:
           type: boolean
-        prices:
-          $ref: '#/components/schemas/DualPrice'
+        price:
+          $ref: '#/components/schemas/Money'
+          description: Prix CDF commercial calculé par le serveur
     Cart:
       type: object
       additionalProperties: false
