@@ -1,5 +1,5 @@
-# xShop Merchant Desktop — prévu
+# Marchand Windows — client additionnel planifié (pas de code)
 
-**Client Windows marchand (EXE/MSI), non implémenté.** React UI embarquée + Tauri 2/Rust pour HTTP métier, sécurité, stockage et OS. Identiques rôles/contrats au client marchand Android. Aucun frontend hébergé, aucun SDK serveur secret embarqué.
+React UI embarquée + Tauri/Rust, EXE/MSI. Fonctionnalités analogues app marchand Android : produits **USD source unique**, taux marchand USD→CDF versionné, ventes CDF RDC et commandes tenant, direct payments. Aucune UI déployée sur serveur et pas de credentials DB embarqués. MFA/TOTP pour rôles sensibles.
 
-Livraison additionnelle selon jalons et validation de la version Android. Compilation MSI sur Windows. Référence : https://v2.tauri.app/distribute/windows-installer/ .
+Voir [FX](../../docs/architecture/FX-PRICING.md), [clients](../../docs/architecture/CLIENTS-DEPLOYMENT.md).
