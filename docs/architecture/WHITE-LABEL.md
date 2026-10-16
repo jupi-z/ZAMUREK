@@ -1,19 +1,14 @@
-# Distribution et personnalisation white-label
+# White label — applications xShop installables
 
-## App indépendante par boutique
-Même code source, configurations et builds différents : channelId public, branding, appId/packageName, icônes et textes, signature, identifiant métier tenant. Aucune donnée de connexion DB ni clé d'administration dans APK.
+Nom **xShop provisoire**, thème et nom des APK personnalisés par commerçant, tous bâtis depuis un code commun. Canaux via registry, package ID distinct, signatures isolées, build reproductible ; aucune clé serveur embarquée.
 
-## Distribution validée
-APK pilote à Kolwezi, puis Google Play **au cas par cas**, sous **compte éditeur du commerçant**. Publication et propriété des marques vérifiées avec le titulaire ; politique Google Play contre contenus répétitifs : https://support.google.com/googleplay/android-developer/answer/9899034 .
+## Flux
+Chaque app Android client React UI + Capacitor/Kotlin affiche les **prix commerciaux CDF** fournis par API en RDC, même si le catalogue source USD est commun et le taux marchand configurable. Pas de sélecteur USD public en RDC sans validation du droit applicable. Android marchand distinct, gestion prix USD / taux versionné.
 
-## Apps de gestion
-App marchand Android séparée du client ; la console plateforme et le client marchand Windows sont installables (EXE/MSI) et utilisent la même API. Aucune interface hébergée côté production.
-
-## Pipeline
-Création tenant (DB isolée) → canal lié → thème/build → tests de signature, autorisations et isolation → distribution autorisée → compatibilité contractuelle et release contrôlée. La génération des installateurs est un système à réaliser, pas une capacité déjà disponible.
-
-## Marketplace
-Canal ultérieur qui **s'ajoute** sans modifier l'association des apps propriétaires. Participation volontaire, pas de fusion des DB ni des commandes.
+## Distribution
+APK interne pour tests puis, si approprié, chaque commerçant publie sous **son compte Google Play** ; règles sur apps répétitives à vérifier. Pas de fork backend, pas de portail web xShop. Clients Windows EXE/MSI pour rôles concernés, React embarqué + Tauri/Rust.
 
 ## Sécurité
-Un channelId n'est pas un secret ; les droits sont prouvés par sessions et autorisations serveur. Protéger clés de signature dans un coffre, jamais Git.
+AppId/channelId public jamais preuve d'autorisation ; session, permissions tenant et identité côté serveur. Aucune donnée DB, clef de signature et credential privillégié dans APK. Toutes les versions anciennes supportées par stratégie de dépréciation explicite.
+
+Voir [clients installables](CLIENTS-DEPLOYMENT.md), [FX](FX-PRICING.md), [réseau](NETWORK-EXPOSURE.md).
