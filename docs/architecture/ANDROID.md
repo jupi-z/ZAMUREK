@@ -1,23 +1,19 @@
-# Android : React UI + Capacitor bridge + Kotlin Core
+# Clients Android — React UI, Kotlin Core, Capacitor
 
-## Périmètre
-Deux **APK distincts** :
-- storefront client white-label (inscription/connexion obligatoire, catalogue, prix CDF/USD, panier, commande et suivi).
-- app marchand (administration catalogue, prix CDF/USD, livraison, commandes et paiements manuels), staff/owner limités par tenant.
+Deux APK : **acheteur** et **marchand** séparés. Aucune UI web hébergée.
 
-## Responsabilités strictes
-React/TS/HTML/CSS = **interfaces et état éphémère**. Kotlin = HTTP, identité sécurisée, sessions, cache local Room/SQLite, tâches système, fichiers et communication avec le serveur. Bridge Capacitor typé, APIs en nombre limité. **Aucune logique prix autoritative en JS/Kotlin** : recalcul serveur.
+React/TypeScript/HTML/CSS = rendu/navigation/état éphémère ; Capacitor bridge typé ; **Kotlin** = HTTP, token e-mail login, cache/Room, permissions système, upload médias, jobs, validation locale UX. **Le backend** garantit montant CDF, conversion taux, devis, commande, auth/tenant.
 
-## Exemple de contrats natifs
-Auth.register / verifyPhone / login / refresh / logout ; Store.getBootstrap ; Catalog.listProducts({currency,query,limit}); Cart.create({currency}); Cart.updateItem; Checkout.placeOrder({cartId,method,details,idempotencyKey}); Orders.listMy; Merchant.listOrders/updateStatus/confirmManualPayment, Merchant.updatePricing.
+## Acheteur
+Login **e-mail vérifié, aucun SMS**, prix public CDF ; catalogue, panier, quote CDF versionnée, checkout/état commande, profil et annulation. Une préférence de devise future peut rester sauvegardée, mais pas d'affichage USD public RDC sans validation juridique.
 
-Kotlin transmet au frontend seulement les DTO nécessaires ; ne pas exposer refresh tokens/mots de passe aux événements DOM ou logs. Éviter les appels bridge par frame de rendu ; les animations se font côté WebView.
+## Marchand
+Login avec MFA TOTP pour rôles sensibles, prix USD source, taux USD→CDF configurable, frais USD zone, suivi/confirmation paiements directs, staff tenant. Aucun prix client CDF saisi indépendamment.
 
-## Dépendances de release
-Android Lifecycle et WebView restrictive ; tests réseau instable, reprise, ancienne APK/nouvelle API, protection sessions, déconnexion, charge RAM, refus de permissions ; validation UX prix/monnaie explicite.
+## Performance
+Ne pas franchir le bridge à chaque scroll/frame ; paquets de DTO minimaux, opérations asynchrones Kotlin, mesures cold start/mémoire/jank ; WebView reste un moteur web. Pas de promesse de performances natives pour le DOM.
 
-## Hors ligne
-L'UI embarquée fonctionne sans réseau ; possibilité de montrer catalogue mis en cache avec avertissement. **Aucune commande acceptée hors ligne sans réponse positive du serveur.**
+## Sécurité
+WebView local et origine contrôlée, bridge whitelist, refresh secrets hors React, appels TLS, aucun mot de passe/DB credentials dans JS. Acteurs client/tenant vérifiés serveur, tests appareils réels.
 
-Voir [AUTH-CUSTOMER](AUTH-CUSTOMER.md), [CLIENTS-DEPLOYMENT](CLIENTS-DEPLOYMENT.md).
-Sources : https://capacitorjs.com/docs/plugins/android ; https://developer.android.com/topic/architecture .
+Références : [FX](FX-PRICING.md), [auth](AUTH-NO-SMS.md), [réseau](NETWORK-EXPOSURE.md).
