@@ -24,7 +24,7 @@ paths:
     post:
       tags: [Identity]
       operationId: registerCustomer
-      summary: Créer un compte client global par téléphone, en attente de vérification
+      summary: Créer un compte client e-mail sans SMS
       requestBody:
         required: true
         content:
@@ -40,11 +40,11 @@ paths:
                 $ref: '#/components/schemas/GenericAcknowledgement'
         '422':
           $ref: '#/components/responses/Unprocessable'
-  /auth/v1/verify-phone:
+  /auth/v1/verify-email:
     post:
       tags: [Identity]
-      operationId: verifyCustomerPhone
-      summary: Vérifier la possession du téléphone par code à usage limité
+      operationId: verifyCustomerEmail
+      summary: Code de vérification d'e-mail à usage unique
       requestBody:
         required: true
         content:
@@ -52,17 +52,17 @@ paths:
             schema:
               type: object
               additionalProperties: false
-              required: [phoneE164, otpCode]
+              required: [email, verificationCode]
               properties:
-                phoneE164:
-                  $ref: '#/components/schemas/PhoneE164'
-                otpCode:
+                email:
+                  $ref: '#/components/schemas/EmailAddress'
+                verificationCode:
                   type: string
-                  minLength: 4
-                  maxLength: 12
+                  minLength: 6
+                  maxLength: 128
       responses:
         '200':
-          description: Téléphone vérifié ; authentification encore nécessaire
+          description: Adresse e-mail vérifiée
           content:
             application/json:
               schema:
@@ -150,13 +150,13 @@ paths:
             schema:
               type: object
               additionalProperties: false
-              required: [phoneE164]
+              required: [email]
               properties:
-                phoneE164:
-                  $ref: '#/components/schemas/PhoneE164'
+                email:
+                  $ref: '#/components/schemas/EmailAddress'
       responses:
         '202':
-          description: Réponse non révélatrice
+          description: Réponse neutre, e-mail envoyé si compte reconnu
           content:
             application/json:
               schema:
@@ -172,11 +172,11 @@ paths:
             schema:
               type: object
               additionalProperties: false
-              required: [phoneE164, otpCode, newPassword]
+              required: [email, recoveryCode, newPassword]
               properties:
-                phoneE164:
-                  $ref: '#/components/schemas/PhoneE164'
-                otpCode:
+                email:
+                  $ref: '#/components/schemas/EmailAddress'
+                recoveryCode:
                   type: string
                   minLength: 4
                   maxLength: 12
@@ -885,17 +885,23 @@ components:
   schemas:
     PhoneE164:
       type: string
-      pattern: '^\+[1-9][0-9]{7,14}$'
+      pattern: '^\\+[1-9][0-9]{7,14}$'
+      description: Contact livraison uniquement, pas un identifiant de connexion
+    EmailAddress:
+      type: string
+      format: email
+      maxLength: 254
     SupportedCurrency:
       type: string
-      enum: [CDF, USD]
+      enum: [CDF]
+      description: Devise commerciale publique autorisée pour le pilote RDC
     RegisterCustomer:
       type: object
       additionalProperties: false
-      required: [phoneE164, password]
+      required: [email, password]
       properties:
-        phoneE164:
-          $ref: '#/components/schemas/PhoneE164'
+        email:
+          $ref: '#/components/schemas/EmailAddress'
         password:
           type: string
           minLength: 12
@@ -918,14 +924,14 @@ components:
     CustomerIdentity:
       type: object
       additionalProperties: false
-      required: [id, phoneE164, phoneVerified]
+      required: [id, email, emailVerified]
       properties:
         id:
           type: string
           format: uuid
-        phoneE164:
-          $ref: '#/components/schemas/PhoneE164'
-        phoneVerified:
+        email:
+          $ref: '#/components/schemas/EmailAddress'
+        emailVerified:
           type: boolean
     GenericAcknowledgement:
       type: object
