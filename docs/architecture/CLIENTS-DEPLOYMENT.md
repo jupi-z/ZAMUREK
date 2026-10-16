@@ -1,27 +1,24 @@
-# Clients installables et serveur API-only
+# Distribution clients installables et production API-only
 
-**Décision validée : production = backend/API uniquement, jamais d'interfaces HTML hébergées.**
+## Clients
+- Android acheteur white-label, React UI embarquée + Capacitor/Kotlin.
+- Android marchand séparé, React UI embarquée + Capacitor/Kotlin.
+- Windows opérateur EXE/MSI, React embarqué + Tauri/Rust, **VPN obligatoire** ; Windows marchand futur.
+- Marketplace additionnelle Android, opt-in et non requise en V1.
 
-## Clients V1
-- **Acheteur Android** : `apps/storefront-android`, APK React + Capacitor + Kotlin.
-- **Marchand Android** : `apps/merchant-android`, APK distinct, React UI + Capacitor + Kotlin, permissions magasin.
-- **Administration plateforme Windows** : `apps/platform-desktop`, programme React UI embarquée + Tauri 2/Rust natif, installé en EXE ou MSI.
-- **Marchand Windows** : `apps/merchant-desktop`, client Windows additionnel installable, même principe Tauri 2/Rust. L'ordre de livraison de cette variante reste dépendant des gates de recette.
-- **Future marketplace** : client Android indépendant, non hébergé en tant que site web.
+## Serveur
+API NestJS HTTPS avec ressources statiques **uniquement médias nécessaires** et payload JSON ; aucun HTML marchand/administrateur, Swagger UI, SPA, SSR ni PWA. Routes publiques limitées à catalogue CDF, identité email, commandes authentifiées ; merchant routes avec RBAC/MFA selon rôle, plateforme routes **réseau privé/VPN exclusivement**, sans authentification désactivée en interne. DB, metrics, secrets, stockage interne ne sont jamais exposés.
 
-## Windows
-Tauri 2 prend en charge l'installation Windows NSIS .exe et WiX .msi ; MSI nécessite un build sur Windows. Documentation officielle : https://v2.tauri.app/distribute/windows-installer/ . Ressources React incluses dans le programme, réseau/persistance/permissions dans le code Rust, aucun frontend remote. IPC Rust strictement typé, pas de commandes arbitraires.
+## DNS proposés et non configurés
+`xshop-api-test.shuleops.com` pour staging et `xshop-api.shuleops.com` après mise en production éventuelle. Les sous-domaines doivent être vérifiés contre usages existants du domaine et recevoir TLS. Le nom xShop est provisoire, garder abstraction des URLs.
 
-## Production serveur
-Un service NestJS API, workers, registry et bases tenant, stockage médias nécessaires et reverse proxy HTTPS ; le backend peut servir des réponses JSON et des flux médias, **pas de SPA/SSR/PWA, portail navigateur, serveur de frontend ou Swagger UI**. OpenAPI versionné dans Git / artefacts CI ; spécification JSON de production exposée seulement si besoin et sous contrôle d'accès. Pas de /docs public.
+## Devise
+Backend produit prix CDF public à partir du prix USD interne et de la version de taux. UI React n'effectue pas de conversion autoritative ; la commande capture le taux. Les utilisateurs peuvent exprimer une préférence monétaire pour territoires futurs, mais **pas affichage USD activé pour RDC sans validation réglementaire**.
 
-Le VPS existant et certains domaines sont des candidats **provisoires de test**. Aucune information d'accès n'est présente dans Git. Vérifier OS/RAM/CPU/espace disque/versions/sauvegardes et config DNS avant usage. Staging et production doivent rester séparés ; données client réelles interdites sur environnement de test.
+## Identité
+Pas de SMS, e-mail + mot de passe et vérification par SMTP ; comptes marchands/opérateurs TOTP. Aucun refresh token transféré au DOM.
 
-## Distribution
-APK pilote direct, puis chaque marchand publie depuis son propre compte éditeur Google Play après vérification des règles et de la valeur distinctive de l'app. Signature/versions sous comptes autorisés ; livrables Windows signés et contrôlés, mises à jour sans serveur frontend. Toutes les applications clientes sont publiques au sens technique et ne peuvent contenir de secrets DB.
+## Livraison Windows
+Tauri 2 supporte NSIS EXE et WiX MSI, builds/signature sur Windows. Source : https://v2.tauri.app/distribute/windows-installer/ .
 
-## Invariants
-- Aucune interface accessible depuis navigateur en production xShop, même administration.
-- React : affichage/interaction visuelle ; Kotlin et Rust : HTTP métier, persistance, services OS, traitement local. Le serveur reste autoritaire pour les règles commerciales.
-- Les API sont accessibles en HTTPS aux clients authentifiés ; absence de CORS n'est pas une barrière de sécurité.
-- Anciennes APK/MSI restent compatibles avec API versionnée.
+Voir [réseau détaillé](NETWORK-EXPOSURE.md), [auth](AUTH-NO-SMS.md) et [revue juridique](../legal/RDC-INITIAL-REVIEW.md).
