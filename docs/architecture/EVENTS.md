@@ -1,20 +1,9 @@
-# Outbox et événements métier — proposition d'extension maîtrisée
+# Événements et outbox — futur xShop
 
-## Motivation
-Synchroniser un jour catalogue marketplace, notifications, recherche, audit externe, sans coupler la transaction commande à des services distants.
+Pattern transactionnel proposé : événements enregistrés dans outbox de la DB tenant au même commit que la mutation métier, publication asynchronous avec retries et consommateurs idempotents. Aucune garantie exactly-once hors DB ; aucun broker requis en G0.
 
-## Pattern
-Écrire une ligne outbox **dans la même transaction PostgreSQL tenant** que la modification métier. Worker lit par lot, publie vers destination, marque traité, retry/backoff ; DLQ logique ou statut terminal avec alertes. Les consommateurs doivent être **idempotents**.
+Types futurs : `product.changed.v1`, `fx_rate.changed.v1` (tenant/version/audit, pas données privées), `order.placed.v1` (sans PII), `order.status_changed.v1`, `tenant.updated.v1`, `subscription.state_changed.v1`.
 
-## Événements candidats
-product.published.v1, product.hidden.v1, product.updated.v1, order.placed.v1, order.status_changed.v1, payment.confirmed.v1, tenant.activated.v1 (registre central).
+Important : modification du taux marchand exige invalidation/régénération des projections prix CDF catalogue et des devis non confirmés ; **n'affecte pas anciennes commandes**, qui capturent leur taux et total. Une marketplace future indexe uniquement le catalogue opt-in public par territoire/devises d'affichage légalement autorisées. Retard d'index implique validation serveur au checkout, pas promesse de prix.
 
-## Envelope
-eventId UUID, eventType, schemaVersion, tenantId, aggregateId, occurredAt, correlationId, payload public/minimal. Éviter PII dans événements de catalogue ; jamais tokens, mots de passe, coordonnées de paiement.
-
-## Précautions
-At-least-once par défaut ; ordre garanti seulement là où conçu (clé aggregate, version) ; doublons et retards autorisés ; reprise et replay contrôlés. Pas d'infrastructure broker à déployer tant que le besoin n'est pas réel. Les writes métier n'attendent pas les consommateurs.
-
-## Tests
-Retry, publication deux fois, crash worker, événement obsolète, changement de version, suppression boutique et rattrapage de projection ; aucune fuite multi-tenant.
-
+Validation avec duplications, retards, crash worker, replay historique, suppression opt-in et séparation tenant.
