@@ -1,9 +1,15 @@
-# xShop API — application backend seule en production
+# API xShop — monolithe NestJS, G0 non implémenté
 
-**Prévue, non implémentée.** NestJS + TypeScript, monolithe modulaire, registry/identity, bases PostgreSQL métier **par tenant**, couche de connexion bornée et secrets externes.
+Seul serveur applicatif prévu en production ; OpenAPI JSON/REST, registre global, base PostgreSQL **par tenant**. Pas d'interface hébergée. Routes publiques acheteur limitées au strict nécessaire ; marchand auth RBAC+TOTP selon droits ; opérateur `/platform/v1` accessible **VPN seulement**.
 
-Domaines V1 : identity client obligatoire (auth téléphone/mot de passe/OTP proposé), memberships personnel, catalogue variantes **prix CDF/USD**, panier/auth et monnaie sélectionnée, checkout idempotent, commandes, livraison/retrait et double frais CDF/USD, paiement manuel direct marchand, demandes d'annulation, audit et provisioning.
+## Modules cibles
+- Identity **e-mail + mot de passe et vérification e-mail (sans SMS)**.
+- Tenants/roles/membership, catalogue **prix de base USD seulement**.
+- FX marchand USD→CDF versionné et audité ; calcul quotes **CDF serveur** + snapshot sur commande ; pas de deux prix indépendants.
+- Carts, idempotent checkout, orders, fulfillment, paiements manuels direct marchand, cancellation requests, BASIC 7 USD/mois SaaS.
+- Outbox, audit, metrics non publics, sauvegarde par tenant.
 
-Déploiement : API REST JSON HTTPS, workers et infrastructures nécessaires seulement ; **pas de frontend, SPA/SSR/PWA, portail admin ou Swagger UI**. OpenAPI dans Git/CI.
+## Infrastructure
+Proposer `xshop-api-test.shuleops.com` pour staging ; `xshop-api.shuleops.com` plus tard. DNS/VPS non configurés ; tests locaux d'abord. Droit RDC affichage commercial CDF à vérifier avant lancement.
 
-Voir [contrat](../../packages/contracts/openapi/xshop-v1.yaml), [système](../../docs/architecture/SYSTEM.md), [tenancy](../../docs/architecture/TENANCY.md).
+Voir [API](../../docs/architecture/API.md), [FX](../../docs/architecture/FX-PRICING.md), [réseau](../../docs/architecture/NETWORK-EXPOSURE.md).
