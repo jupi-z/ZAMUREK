@@ -1,55 +1,44 @@
-# xShop — commerce multi-tenant, clients installables
+# xShop — plateforme multi-tenant (nom provisoire)
 
-**Statut G0 : cadrage validé par le porteur de projet le 15 octobre 2026 ; le backend et les applications ne sont PAS encore implémentés.**
+**Statut : G0 / architecture documentaire ; code métier et applications non implémentés.** Dépôt privé, code propriétaire.
 
-> **Production = backend + API uniquement.** Aucune interface cliente ou d'administration hébergée : ni site marchand, ni PWA/SPA, ni portail, ni Swagger UI public.
+## Décisions les plus récentes
+[Arbitrages validés le 16 octobre 2026](docs/DECISIONS-VALIDATED-2026-10-16.md) **priment** sur ceux du [15 octobre](docs/DECISIONS-VALIDATED-2026-10-15.md) en cas de contradiction.
 
-## Vision
-Un moteur commerce NestJS/PostgreSQL unique avec base **isolée par tenant**, plusieurs apps Android personnalisées et une future marketplace additive opt-in. Les anciennes apps continuent à fonctionner. xShop vend son logiciel par **abonnement mensuel**, tandis que chaque commerçant est vendeur et encaisse directement.
+- Une API backend NestJS commune, registre central d'identité + **une base PostgreSQL métier par tenant**.
+- Catalogue et frais livraison enregistrés **en USD uniquement** ; taux **USD→CDF configurable par marchand**, versionné ; backend calcule les montants et les fige dans la commande.
+- Le taux **2360 CDF/USD** est un paramétrage de démonstration fourni, **pas le cours officiel BCC**.
+- Pour le pilote à Kolwezi, prix **affichés/facturés en CDF**, par précaution selon l'arrêté RDC de 2025. L'option d'affichage USD en RDC **ne sera pas activée** sans validation juridique ; le stockage USD interne subsiste.
+- **Compte client obligatoire, e-mail + mot de passe, vérification par e-mail, sans SMS** ; SMTP à confirmer avant commercialisation. MFA TOTP pour rôles sensibles.
+- Android acheteur et Android marchand **applications distinctes** (React UI, Capacitor, Kotlin Core) ; admin opérateur Windows EXE/MSI (React embarqué, Tauri/Rust).
+- Production **API-only**, services internes privés. Routes opérateur via VPN ; API minimale nécessaire aux APK distant accessible sous HTTPS/auth. Aucun web frontend, SPA, PWA ou Swagger UI hébergé.
+- Sous-domaines **provisoires proposés** et non créés : `xshop-api-test.shuleops.com` (tests), `xshop-api.shuleops.com` (futur prod).
+- Un seul abonnement SaaS **BASIC 7 USD/mois par boutique**, devise CDF de publicité/facturation RDC conforme à vérifier, sans commission ni frais d'installation V1.
+- Commerce pilote fictif `xShop Atelier` (pagnes/bijoux/accessoires) pour jeux de test Kolwezi ; aucun commerçant réel validé ; marketplace ultérieure opt-in et sans casser les apps existantes.
 
-## Décisions métier V1
-- Pilote interne **xShop Atelier** : pagnes, bijoux, accessoires à Kolwezi (RDC), sans usage d'une marque client réelle.
-- **Compte client obligatoire**, identité globale réutilisable entre boutiques avec commandes/PII tenant isolées ; pas de checkout invité.
-- **CDF et USD simultanément par boutique**, tarifs individuels et indépendants pour chaque devise ; aucun FX implicite.
-- Disponibilité simple, sans quantités de stock ; livraison tarifée par zones dans les deux devises, ou retrait.
-- Paiement à la livraison et transfert manuel (marchand confirme après vérification).
-- Demande d'annulation au marchand ; suivi dans l'app et les clients de gestion (pas de push/SMS de commande par défaut).
-- APK pilote puis éventuel Google Play **sous compte du commerçant** ; code propriétaire dans dépôt privé.
+## Répertoires
+`apps/api`, `apps/storefront-android`, `apps/merchant-android`, `apps/platform-desktop`, `apps/merchant-desktop`, `apps/marketplace` (plus tard), `packages/contracts`, `docs`, `infrastructure`, `scripts`.
 
-## Clients à construire
-- `apps/storefront-android/` — app acheteur, React UI + Capacitor + **Kotlin** (réseau, stockage, sécurité).
-- `apps/merchant-android/` — app marchand séparée, React UI + Capacitor + Kotlin.
-- `apps/platform-desktop/` — console xShop Windows EXE/MSI, React UI embarquée + **Tauri/Rust**.
-- `apps/merchant-desktop/` — client marchand Windows additionnel.
-- `apps/marketplace/` — marketplace future, installable, non implémentée.
-
-## Backend
-- `apps/api/` — monolithe modulaire NestJS / TypeScript, PostgreSQL registry + une base tenant par marchand.
-- `packages/contracts/openapi/xshop-v1.yaml` — contrat d'API **provisoire**.
-- `packages/branding`, `packages/shared`, `infrastructure`, `scripts` et `.github` — structure réservée et outillage de documentation.
-- Les médias peuvent être transmis en HTTPS via l'API ou du stockage objet contrôlé ; cela ne constitue pas une interface web.
+**Les dossiers apps sont des emplacements documentés, pas des projets exécutables.** Aucun APK/EXE ni backend déployé.
 
 ## Documentation
-1. [Arbitrages expressément validés](docs/DECISIONS-VALIDATED-2026-10-15.md)
-2. [Index complet](docs/INDEX.md)
-3. [PRD V1](docs/product/PRD.md) et [spécifications](docs/product/V1-FUNCTIONAL-SPEC.md)
-4. [Authentification](docs/architecture/AUTH-CUSTOMER.md) et [CDF/USD](docs/architecture/CURRENCY-CDF-USD.md)
-5. [Production API-only / clients](docs/architecture/CLIENTS-DEPLOYMENT.md)
-6. [Isolation des tenants](docs/architecture/TENANCY.md)
-7. [Contrat OpenAPI V1](packages/contracts/openapi/xshop-v1.yaml)
-8. [Risques de l'audit initial](docs/quality/AUDIT-G0-2026-10-15.md)
-9. [Revue de cohérence après arbitrages](docs/quality/AUDIT-POST-DECISIONS-2026-10-15.md), [abonnements](docs/architecture/SUBSCRIPTIONS.md)
-10. [Décisions ouvertes](docs/OPEN-QUESTIONS.md), [jalons](docs/ROADMAP.md), [ADRs](docs/decisions/README.md)
+- [Index](docs/INDEX.md)
+- [PRD](docs/product/PRD.md), [spécifications V1](docs/product/V1-FUNCTIONAL-SPEC.md)
+- [Prix USD + FX CDF](docs/architecture/FX-PRICING.md)
+- [Authentification sans SMS](docs/architecture/AUTH-NO-SMS.md)
+- [Exposition minimale du réseau](docs/architecture/NETWORK-EXPOSURE.md)
+- [Revue juridique initiale RDC](docs/legal/RDC-INITIAL-REVIEW.md)
+- [Abonnement unique](docs/architecture/SUBSCRIPTIONS.md)
+- [OpenAPI 3.1 draft](packages/contracts/openapi/xshop-v1.yaml)
+- [Feuille de route](docs/ROADMAP.md), [prérequis externes](docs/OPEN-QUESTIONS.md), [ADRs](docs/decisions/README.md)
 
-## Contrôles documentaires G0
+## Contrôles G0
 ```bash
 python3 scripts/validate_docs.py
 python3 -m pip install -r scripts/requirements-docs.txt
 python3 scripts/validate_openapi.py
 ```
-Ces scripts ne vérifient **ni un serveur de production, ni la sécurité réelle, ni l'exécution Android/Windows**. Ils ne remplacent pas la validation OpenAPI normative à ajouter en G1.
+Ces scripts valident structure et références, pas un serveur opérationnel, conformité OpenAPI exhaustive ni sécurité. CI GitHub existante, exécution réussie non confirmée ici.
 
 ## Gouvernance
-Branches/PR, revue stricte auth/tenant/prix/paiements ; aucun secret ni clé de signature dans Git. Aucun calendrier fictif. **Code propriétaire, sans licence open source accordée.** Toutes les exigences de mise en production et légales sont à vérifier au stade G4.
-
-Le VPS existant et des noms de domaine disponibles sont des candidats pour des essais techniques, pas une infrastructure de production déjà auditée.
+Aucun secret, clé d'installation, mot de passe ou données réelles dans Git. Contrôle strict des tenants, montants, authentification et versions. Le VPS et les domaines ne sont pas connectés dans cette conversation.
