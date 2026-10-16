@@ -1,27 +1,18 @@
-# Abonnement mensuel xShop — modèle commercial et technique
+# SaaS xShop — un seul abonnement à 7 USD/mois
 
-**Décision validée : xShop est facturé par abonnement mensuel uniquement. Aucun pourcentage ou commission sur les ventes des commerçants en V1.**
+**Décision utilisateur le 16 octobre 2026** : exactement **une formule unique BASIC, 7 USD/mois par boutique**, sans frais de lancement ni commission sur les ventes V1. Évolutions de prix/plans futures versionnées sans changer rétroactivement les contrats.
 
-## Séparation financière
-- **Abonnement xShop** : payé par le marchand au fournisseur du logiciel ; enregistré dans le domaine `platform-subscription` du registre central, sans mélanger les écritures commerciales tenant.
-- **Paiements des achats** : acheteur → marchand directement (livraison ou transfert manuel) ; enregistrés dans **DB tenant**, pas dans la facturation SaaS.
-- Les PSP de l'abonnement xShop et les moyens d'encaissement des ventes peuvent être totalement distincts.
+## Registry
+`subscription_plan('BASIC', monthlyUsdMinor=700, billingPeriod='P1M', active=true)`, `merchant_subscription(tenantId, planId, status, start, renewAt, graceUntil, cancelAt)`, `subscription_invoice`, `subscription_payment`, audit/événements. Les paiements SaaS restent séparés des achats clients (tenant DB).
 
-## Entités de conception
-subscription_plan(id, name, currency, monthlyAmountMinor, isActive, effectiveAt) ; merchant_subscription(id, tenantId, planId, status, cycleStart, cycleEnd, trialEndsAt?, canceledAt?) ; subscription_invoice(id, tenantId, cycle, amountMinor, currency, status) ; subscription_payment(id, subscriptionInvoiceId, method, verificationStatus, paidAt?) ; subscription_event/audit.
+## Devise
+7 USD est **montant interne de référence**. Les prix publiquement affichés / factures concernant des opérateurs en RDC doivent être CDF par politique conservatoire documentée [legal](../legal/RDC-INITIAL-REVIEW.md). Conversion avec **taux plateforme distinct du taux marchand**, snapshot à l'échéance et facture, aucune nouvelle facture recalculée après paiement.
 
-Montant, devise, frais de mise en route (interdits par décision « abonnement uniquement »), essai, taxes et règlement restent à arbitrer **avant vente**, non avant le prototype technique.
+## Cycle
+ACTIVE → PAST_DUE → SUSPENDED ou CANCELLED, grace period et règles d'accès/rétention à définir contractuellement. Pas de suppression automatique de commandes à suspension. Facturation/encaissement de l'abonnement à configurer avant commercialisation ; aucune « preuve fiscale » garantie.
 
-## Cycle proposé
-DRAFT → ACTIVE → PAST_DUE → SUSPENDED / CANCELLED. Émission de facture d'abonnement du fournisseur logiciel distincte des documents de vente du commerçant. Une période de grâce éventuellement nécessaire sera fixée contractuellement.
+## Évolutions
+Prêt à supporter nouveaux tarifs dans le futur mais **une seule offre commercialisée au départ**. Pas de création d'une marketplace financière. Cycle de renouvellement, gestion des périodes, relances non-SMS et procédure de réactivation à spécifier dans G3/G4.
 
-## Préservation des données
-La suspension d'un abonnement ne détruit pas automatiquement la DB tenant ni les commandes historiques ; accès/modes bloqués selon droits et contrat. Export, réactivation, résiliation, rétention et effacement documentés par contrat et règles applicables. Un marchand ne peut pas contourner les restrictions en changeant de canal APK.
-
-## Portée par phase
-G1 : modèles et statuts tenant prêts pour extensibilité, pas d'encaissement SaaS obligatoire. G4/G5 : abonnement réel, conditions contractuelles, facture/confirmation, suspension/réactivation testée avant commercialisation.
-
-## Décisions externes en attente
-Tarif, modalités de règlement, cycle de facturation, conditions de retard/réactivation, taxes, support inclus, politique de suppression/export. Pas de « conformité fiscale » supposée.
-
-Voir [ADR-0014](../decisions/0014-monthly-saas-merchant-collection.md), [blocages](../OPEN-QUESTIONS.md).
+## Sources
+[Décisions 2026-10-16](../DECISIONS-VALIDATED-2026-10-16.md).
