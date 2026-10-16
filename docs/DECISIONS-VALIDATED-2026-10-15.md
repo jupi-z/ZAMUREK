@@ -1,5 +1,7 @@
 # Arbitrages approuvés — xShop V1
 
+> **Document historique.** Sur les devises, l'authentification et le périmètre réseau, la [décision du 16 octobre](DECISIONS-VALIDATED-2026-10-16.md) prime. Les règles de prix indépendants et OTP SMS ne sont plus applicables.
+
 **Date : 2026-10-15. Statut : décisions produit validées par le porteur du projet.**
 
 Ce document **prime sur toute ancienne hypothèse contradictoire de G0**. Les documents PRD, architecture et OpenAPI doivent s'y conformer. Les recommandations techniques ci-dessous restent proposées et sont révisables par ADR ; elles ne remplacent pas une validation réglementaire ou d'un prestataire.
