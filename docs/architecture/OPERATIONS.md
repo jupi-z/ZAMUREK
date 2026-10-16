@@ -1,24 +1,24 @@
-# Exploitation — serveur API-only
+# Exploitation xShop — API-only et segmentation
 
-## Topologie
-Serveur de production : backend NestJS API et worker(s), registry PostgreSQL, **une DB métier par tenant**, stockage médias contrôlé, TLS et supervision. **Aucun frontend hébergé**, admin Windows et apps Android livrées aux utilisateurs ; Swagger UI désactivé en production.
+## Réseau
+API HTTPS 443 publique limitée aux besoins réels des clients ; route plateforme `/platform/v1` **VPN privé et MFA**, DB PostgreSQL, objets privés, métriques, backups, secret manager et port SSH **pas accessibles publiquement**. Pare-feu DENY par défaut, reverse proxy strict, rate limits sur auth et endpoints commande.
 
-## Ressources disponibles (à vérifier)
-Le porteur possède un VPS et des domaines libres, proposés provisoirement pour essais. **Capacité, OS, ports, sauvegardes, performances et disponibilité ne sont pas connus**. Ne pas les présenter comme audités ou déjà déployés.
+## Sous-domaines de test
+Proposer `xshop-api-test.shuleops.com` pour staging, `xshop-api.shuleops.com` pour production éventuelle, **sans prétendre que DNS / TLS existent**. Éviter collisions avec projets ShuleOps existants.
 
-## Environnements
-Local → staging isolé (deux tenants fictifs) → production séparée. Ne pas réutiliser une DB de production pour démo ; secrets dans coffre sécurisé hors code. Domaines possibles: sous-domaine API uniquement, avec HTTPS/certificats et DNS gérés.
+## VPS
+Utilisateur possède VPS et domaines ; **aucune configuration ou accès connu**. Inventaire OS/RAM/CPU/disque et pare-feu obligatoire avant déploiement. Respecter isolation staging/prod ; pas de vraies données en tests.
 
-## Migrations et tenant
-Provisioning idempotent, pool PostgreSQL borné/éviction, versionnage et migrations par cohortes, contrôle des dépendances registry→tenant et compensation échec. Backup et restauration d'un tenant sans perturber les autres ; registre sauvegardé indépendamment.
+## Données et sauvegardes
+Registry et une DB par tenant ; pools bornés, migrations versionnées, creds séparés et rotations. Backups chiffrés vérifiables, restauration tenant A sans B, tests d'auth email et commerce, audits des taux USD→CDF.
 
-## Observabilité / incidents
-Métriques de connexion et disponibilité API, latence, erreurs checkout/monnaie, santé DB, backlog outbox, crashes Android/Windows via mécanisme de télémétrie consenti et configuré. Journaux anonymisés. On-call/support et engagements RPO/RTO à définir après mesures et besoins commerciaux.
+## Traçabilité
+Taux marchand modifié = nouveau numéro de version + acteur + date ; commande et facture conservent prix USD source, taux, total CDF. Les taux BCC peuvent être consultés informativement sans substitution automatique au taux du commerçant ; taux commerçant à vérifier légalement avant exploitation.
+
+## Service et abonnements
+Un seul plan BASIC 7 USD/mois et par boutique ; modèle des paiements d'abonnement isolé des commandes clients, conversion CDF selon politique RDC distincte des taux marchands.
 
 ## Release
-Artéfacts APK et EXE/MSI versionnés/signés par canaux appropriés ; signature et publication des apps Play sous compte marchand ; compatibilité API conservée. Pas de deploy d'interface HTML, même pour admin. Les schémas OpenAPI sont livrables internes (Git/CI), jamais page Swagger UI publique.
+API seulement, aucun Swagger UI/portail. Clients APK/EXE/MSI signés distribués via canaux appropriés ; SMTP de vérification e-mail à tester avant ventes réelles, aucun SMS.
 
-## Sécurité et conformité
-Permissions tenant, HTTPS, secrets, SSH sécurisée, politique sauvegarde/restauration, contrôle de vulnérabilité, revue juridique RDC et contrats clients avant G4. L'accès au VPS n'a pas été fourni et n'est pas demandé en clair dans Git ou le chat.
-
-Voir [clients](CLIENTS-DEPLOYMENT.md), [tenancy](TENANCY.md), [blocages](../OPEN-QUESTIONS.md).
+Voir [réseau](NETWORK-EXPOSURE.md), [FX](FX-PRICING.md), [legal](../legal/RDC-INITIAL-REVIEW.md).
