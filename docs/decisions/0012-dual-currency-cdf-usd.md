@@ -1,9 +1,9 @@
-# ADR-0012 — CDF et USD simultanément par boutique
+# ADR-0012 — Deux prix indépendants par devise
 
-**Statut : ADOPTÉ | 2026-10-15**
+**STATUT : REMPLACÉE par [ADR-0015](0015-usd-source-converted-cdf.md), depuis le 16 octobre 2026.**
 
-Chaque variante et zone de livraison commercialisée possède **deux montants indépendants**, CDF et USD, renseignés par le marchand ; aucun change automatique. Panier et commande sont **mono-devise**, sélectionnés par l'acheteur et confirmés côté backend. Frais et paiements liés à la même monnaie. Données financières en unités mineures entières, JSON chaîne.
+## Ancienne proposition (historique seulement)
+Chaque variante/zone possédait deux prix indépendants CDF et USD, sans taux de change. Cela **n'est plus le modèle xShop**.
 
-Alternative écartée : une seule devise par boutique ou conversion FX implicite. Cette décision complète le modèle de données et le contrat OpenAPI.
-
-Conséquences : validation stricte de publication et intégrité des totaux CDF/USD, tests de changement de devise et taxes/conformité à valider selon territoire.
+## Décision actuelle
+Un prix de base USD et un taux USD→CDF marchand configurable, versionné. Conversion **serveur** avec snapshots commande et affichage public CDF pilote RDC. Lire [FX-PRICING](../architecture/FX-PRICING.md). Ne pas réutiliser cette ancienne approche dans les migrations ou l'API.
