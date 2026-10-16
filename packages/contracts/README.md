@@ -1,7 +1,5 @@
-# Contrat OpenAPI partagé
+# Contrats OpenAPI xShop G0
 
-[Draft V1 OpenAPI 3.1](openapi/xshop-v1.yaml) : registres publics, authentification client obligatoire, produits/prix CDF/USD, paniers authentifiés mono-devise, commandes client, admin marchande, provisioning plateforme.
+[Contrat draft V1](openapi/xshop-v1.yaml) : e-mail auth sans SMS, catalogue **CDF public calculé**, base prix marchand USD, devis serveur avec taux/version, checkout lié à quote, commandes et taux marchand. Aucun serveur n'implémente ces opérations.
 
-C'est un **contrat initial** : aucun serveur n'est prêt et les endpoints de gestion des employés, sessions marchandes, images et certaines commandes admin nécessitent encore détail en G1. Tests normatifs OpenAPI + génération types Kotlin/TypeScript/Rust à mettre en place ; aucun SDK opérationnel.
-
-Schéma archivé/versionné ici, jamais une interface Swagger UI publiée sur production.
+Le contrat reste à compléter G1 (MFA/identité staff, catégories/médias, abonnements, administratif) ; validation normative OpenAPI/test d'intégration obligatoire avant stabilisation. Pas de Swagger UI en production, seulement schéma Git/CI.
