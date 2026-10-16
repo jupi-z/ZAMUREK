@@ -1,28 +1,24 @@
-# Stratégie qualité et tests (après arbitrages)
+# Tests xShop — état cible après arbitrages 16 octobre 2026
 
-## Niveaux
-- Unitaires : prix **CDF et USD indépendants**, frais livraison 2 devises, format minor-unit, aucun FX implicite, état paiement/commande, règles d'annulation.
-- Intégration : registry + DB tenants A/B avec privilèges distincts, migrations, pools bornés, transactions et idempotence, stockage objet.
-- API contract : OpenAPI normatif, identité / refresh / récupération, routes marchands/provisioning, contrats rétrocompatibles.
-- E2E : inscription/connexion vérifiée, client authentifié commande CDF puis USD, refus checkout anonyme, suivi par identité, marchand Android accepte et marque transfert vérifié, Windows opérateur provisionne B.
-- Android réel : deux APK distincts, Capacitor bridge vers Kotlin, suspension, récupération réseau, rotation, clavier, vieille APK/new API, empreinte mémoire/jank.
-- Windows réel : EXE/MSI Tauri/Rust, stockage sûr tokens, UI embarquée fonctionnant sans frontend distant.
-- Sécurité : deux clients différents dans même boutique et deux boutiques A/B, injections, IDOR, élévation staff/opérateur, aucun secret APK/EXE.
-- Exploitation : VPS de staging, backup/restore uniquement A, perte réseau, panne de connexion DB, redémarrage et retries.
+## Architecture/métier
+- Deux tenants avec DB et credentials distincts ; deux acheteurs même tenant ; IDOR inter-tenant et inter-client refusés.
+- Catalogue produit USD seul, pas de deuxième prix CDF indépendant. Prix publics RDC **CDF uniquement**, pas de sélecteur USD actif.
+- Taux USD→CDF commerçant versionné, audit auteur/date ; exemple synthétique 2360, puis taux modifié ; ancien historique reste identique.
+- Calcul monétaire avec précision décimale/fraction exacte, arrondi stable au CDF entier selon règle versionnée et tests des valeurs limites, grandes quantités, frais livraison, overflow, taux négatif/nul.
+- Devis CDF serveur `quoteId` et expiry ; prix/taux/frais changé depuis devis → 409/reconfirm, aucun checkout sans devis frais/tx valide. Idempotence d'une commande avec même clé et empreinte.
+- Paiements livraison/transfert manuel direct marchand ; aucune auto-certification de PAID ; gestion devise réception distincte, pas de paiement USD automatisé sans validation.
+- Abonnement plateforme BASIC **700 cents USD/mois**, zéro commission, taux plateforme indépendant pour facturation publique CDF RDC.
 
-## Cas de refus obligatoires
-- Sans token : POST panier/checkout et GET commandes → 401.
-- Client A → commande client B, même magasin → 403/404, pas de fuite.
-- Client tenant A → commandes/produits privés tenant B → 403/404.
-- Variantes sans prix CDF ou USD → publication rejetée.
-- Livraison frais manquants dans devise de commande → erreur explicite.
-- Switch devise → nouveau calcul à partir du tableau tarifs, jamais taux de change.
-- Double checkout même clé → même commande, changement payload même clé → 409.
-- Paiement manuel déclaré par client → PAID refusé.
-- Production contient SPA/SSR/Swagger UI → release rejetée.
+## Identité
+- Inscription e-mail/mot de passe, e-mail verification unique, login, rotation refresh, recovery, révocation ; **aucun appel SMS** ni dépendance SMS ; provider SMTP simulé en tests.
+- Staff marchand MFA TOTP si privilégié, opérateur MFA + VPN ; tests bruteforce, IDOR, perte récupération.
 
-## CI G0
-scripts validate_docs et validate_openapi : contrôles de structure uniquement, **pas validation de conformité OpenAPI exhaustive ni code d'application**. Ajouter linter/schéma normatif en G1.
+## Réseau
+- En simulation de prod, `/platform/v1` n'est **pas accessible depuis Internet public** ; DB/metrics/stockage privé non exposés ; /auth/v1/checkout publics uniquement selon auth/TLS.
+- Aucune SPA/PWA/SSR/admin web/Swagger UI livrée en production ; Android React UI+Kotlin et Windows Tauri/Rust installables et signés.
 
-## États
-Jeux d'essai synthétiques à Kolwezi, « xShop Atelier » fictif, minimum deux tenants. Les environnements de test ne contiennent aucune donnée réelle de clients.
+## CI
+G0 : `validate_docs.py` et `validate_openapi.py` ; une validation normative OpenAPI de tiers reste nécessaire en G1. Aucune suite d'intégration ou benchmark prod n'est déclarée exécutée.
+
+## Gate G4
+Texte légal RDC prix CDF et cas règlement devise / taux marchand / facturation/TVA validés ; SMTP réel, commerçant pilote, DNS et VPS, sauvegarde tenant/restauration et UX mobile confirmés.
