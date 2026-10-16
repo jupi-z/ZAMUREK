@@ -1,5 +1,7 @@
 # Revue post-arbitrage — xShop G0
 
+> **HISTORIQUE (avant révision du 16 octobre 2026)** : voir les [décisions récentes](../DECISIONS-VALIDATED-2026-10-16.md). Les anciennes prescriptions sur deux tarifs indépendants CDF/USD, SMS ou affichage USD public RDC ne sont plus applicables.
+
 **15 octobre 2026 — Audit documentaire de cohérence uniquement.** Ce fichier ne certifie pas la sécurité, la validité réglementaire ni des tests d'implémentation.
 
 ## Décisions vérifiées dans les spécifications
