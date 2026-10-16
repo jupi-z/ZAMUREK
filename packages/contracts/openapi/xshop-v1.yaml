@@ -693,7 +693,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/DeliveryZone'
+                  $ref: '#/components/schemas/MerchantDeliveryZone'
         '403':
           $ref: '#/components/responses/Forbidden'
     post:
@@ -710,20 +710,20 @@ paths:
             schema:
               type: object
               additionalProperties: false
-              required: [name, fees]
+              required: [name, baseFeeUsd]
               properties:
                 name:
                   type: string
                   minLength: 2
-                fees:
-                  $ref: '#/components/schemas/DualPrice'
+                baseFeeUsd:
+                  $ref: '#/components/schemas/Money'
       responses:
         '201':
           description: Zone créée
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DeliveryZone'
+                $ref: '#/components/schemas/MerchantDeliveryZone'
         '403':
           $ref: '#/components/responses/Forbidden'
   /platform/v1/tenants:
@@ -1144,13 +1144,14 @@ components:
     CheckoutRequest:
       type: object
       additionalProperties: false
-      required: [cartId, currencyCode, recipient, fulfillment, paymentMethod]
+      required: [cartId, quoteId, recipient, fulfillment, paymentMethod]
       properties:
         cartId:
           type: string
           format: uuid
-        currencyCode:
-          $ref: '#/components/schemas/SupportedCurrency'
+        quoteId:
+          type: string
+          format: uuid
         recipient:
           $ref: '#/components/schemas/OrderRecipient'
         fulfillment:
@@ -1174,7 +1175,7 @@ components:
     CheckoutReceipt:
       type: object
       additionalProperties: false
-      required: [orderId, orderNumber, status, paymentStatus, total, currencyCode]
+      required: [orderId, orderNumber, status, paymentStatus, total, currencyCode, rate]
       properties:
         orderId:
           type: string
@@ -1189,6 +1190,8 @@ components:
           $ref: '#/components/schemas/SupportedCurrency'
         total:
           $ref: '#/components/schemas/Money'
+        rate:
+          $ref: '#/components/schemas/FxRateSnapshot'
     OrderStatus:
       type: string
       enum: [PLACED, ACCEPTED, PREPARING, READY, OUT_FOR_DELIVERY, COMPLETED, CANCELLED]
@@ -1253,14 +1256,29 @@ components:
     VariantInput:
       type: object
       additionalProperties: false
-      required: [label, prices, available]
+      required: [label, basePriceUsd, available]
       properties:
         label:
           type: string
           minLength: 1
           maxLength: 120
-        prices:
-          $ref: '#/components/schemas/DualPrice'
+        basePriceUsd:
+          $ref: '#/components/schemas/Money'
+          description: Base USD uniquement, validation currency USD côté backend
+        available:
+          type: boolean
+    MerchantVariant:
+      type: object
+      additionalProperties: false
+      required: [id, label, basePriceUsd, available]
+      properties:
+        id:
+          type: string
+          format: uuid
+        label:
+          type: string
+        basePriceUsd:
+          $ref: '#/components/schemas/Money'
         available:
           type: boolean
     MerchantProduct:
@@ -1279,19 +1297,35 @@ components:
         variants:
           type: array
           items:
-            $ref: '#/components/schemas/Variant'
+            $ref: '#/components/schemas/MerchantVariant'
     DeliveryZone:
       type: object
       additionalProperties: false
-      required: [id, name, fees, enabled]
+      required: [id, name, fee, enabled]
       properties:
         id:
           type: string
           format: uuid
         name:
           type: string
-        fees:
-          $ref: '#/components/schemas/DualPrice'
+        fee:
+          $ref: '#/components/schemas/Money'
+          description: Frais CDF calculés par serveur pour l'acheteur
+        enabled:
+          type: boolean
+    MerchantDeliveryZone:
+      type: object
+      additionalProperties: false
+      required: [id, name, baseFeeUsd, enabled]
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        baseFeeUsd:
+          $ref: '#/components/schemas/Money'
+          description: Frais source USD
         enabled:
           type: boolean
     TenantProvisioning:
