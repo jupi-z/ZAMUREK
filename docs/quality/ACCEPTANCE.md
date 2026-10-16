@@ -1,27 +1,24 @@
-# Gates et Definition of Done — xShop
+# Critères d'acceptation xShop — édition 16 octobre 2026
 
-## Toute fonctionnalité
-PR/commit revu, schéma API/documentation à jour, test automatique reproductible, contrôle des droits sur identité+tenant+objet, absence secrets/PII dans logs, montant/monnaie intacts, erreurs UI, migration si pertinente.
+## G0 documentaire
+Arbitrages 16/10 enregistrés, documents actifs alignés USD source + FX merchant versionné + **CDF public RDC**, e-mail sans SMS, accès opérateur VPN, plan BASIC 7 USD, noms provisoires. Contrat OpenAPI cohérent et scripts structurels ; **aucune validation de production prétendue**.
 
-## G0 — cadrage
-Arbitrages approuvés et documentés ; dépôt privé, PRD/API-only, double devise, identité obligatoire, clients installables, plan d'essais. **Une documentation seule n'est pas preuve d'un système prêt.**
+## G1 — Fondations exécutables
+NestJS/Prisma/Postgres, registry global et deux DB tenant, migrations/clients SQL limités, email auth/refresh, route taux marchand, policy territoriale RDC et segmentation routes (plateforme VPN), builds Android Kotlin/Capacitor et Windows Tauri de base, CI avec validateurs normatifs OpenAPI ; tests A/B.
 
-## G1 — fondations exécutables
-Builds vérifiés NestJS, React/Capacitor Android, Tauri/Rust Windows ; registry et **deux bases tenant**, tenant resolver, credentials séparés, auth/refresh/logout, validation OpenAPI normative, erreurs sécurisées. Tests isolation A/B exécutés en CI.
+## G2 — Commerce
+Produit tarif USD, taux par tenant/version, prix publics CDF, devis CDF horodaté/quoteId, checkout idempotent et snapshot, paiement manuel/à livraison, livraison zone USD→CDF et annulations à la demande ; tests de réconciliation/rounding/immutabilité.
 
-## G2 — cœur commerce
-Catalogue et variantes avec prix CDF ET USD et frais par zone, panier/checkout client authentifié, commandes sans doublon, remise et paiement manuel, annulation sur demande marchand ; tests E2E dans les deux devises et tenants. Paiement non auto-certifié par l'acheteur.
+## G3 — Apps
+APK acheteur et marchand distincts, console opérateur Windows EXE/MSI, ressources React embarquées, réseau/cache/sessions Kotlin et Rust, workflow devise conforme à politique RDC, pas de frontend web sur serveur.
 
-## G3 — interfaces installables
-APK acheteur, APK marchand différent, application opérateur Windows EXE/MSI en staging, signés selon politique, parcours complets avec Kotlin/Rust assurant réseau/sessions. **Aucune URL d'interface web hébergée en production.**
+## G4 — Préouverture commerciale
+Avis juridique sur arrêté 007/2025, affichage/facture et paiement en devise, validité du taux merchant et fiscalité ; SMTP de vérification réel, VPS/domaines DNS privés sécurisés, compte opérateur MFA et VPN, sauvegarde/restauration A sans B, politique de données, contrat commercial BASIC 7 USD/mois affiché/facturé conformément aux obligations RDC.
 
-## G4 — pilote réel Kolwezi
-Inventaire VPS/domaine, secrets, TLS, sauvegarde-restauration ciblée, auth vérifiée (provider OTP si retenu), tests sécurité, règles locales vente/fiscalité/PII, commerçant réel et comptes de paiement, support, APK pilote. Pas de production sans preuves.
+## G5 — Industrialisation
+Automatisation clients white label, anciens clients restent compatibles, pricing SaaS révisable uniquement par nouvelles versions de plan, marketplace opt-in ultérieure.
 
-## G5 — scale
-White-label par canal, app marchand Windows additionnelle, abonnement mensuel contractuel et facturation xShop, gestion N DB / pools, tests compatibilité vieux clients et future marketplace opt-in.
+## Blocages absolus
+Taux flottant non fiabilisé, faux prix CDF client, ancien montant recalculé après modification taux, SMS implémenté contre choix, interface admin web en prod, accès /platform/v1 public, commande sans auth, double commande après retry, isolation SQL non démontrée.
 
-## Bloquants immédiats
-Fuite inter-tenant, commande anonyme, tarif unique masquant devise, devise non vérifiée, état de paiement payé par demande client, app à secrets embarqués, interface web en production, restauration non testée avant commercialisation.
-
-Une preuve = tests/logs anonymisés/commit + critères de recette. Aucun résultat de test Android ou infra n'est actuellement revendiqué.
+Des tests réels devront accompagner chaque gate. G0 n'implique pas une fonctionnalité opérationnelle.
