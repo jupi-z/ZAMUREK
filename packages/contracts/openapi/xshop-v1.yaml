@@ -286,33 +286,20 @@ paths:
     post:
       tags: [Cart]
       operationId: createCart
-      summary: Créer un panier pour le client authentifié dans une devise unique
+      summary: Créer panier authentifié ; prix serveur CDF pour marché RDC
       security:
         - bearerAuth: []
       parameters:
         - $ref: '#/components/parameters/Channel'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties: false
-              required: [currencyCode]
-              properties:
-                currencyCode:
-                  $ref: '#/components/schemas/SupportedCurrency'
       responses:
         '201':
-          description: Panier client sans jeton d'invité
+          description: Panier utilisateur
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Cart'
         '401':
           $ref: '#/components/responses/Unauthorized'
-        '422':
-          $ref: '#/components/responses/Unprocessable'
   /v1/carts/{cartId}:
     get:
       tags: [Cart]
@@ -365,41 +352,40 @@ paths:
                 $ref: '#/components/schemas/Cart'
         '409':
           $ref: '#/components/responses/Conflict'
-  /v1/carts/{cartId}/currency:
-    put:
+  /v1/carts/{cartId}/quote:
+    get:
       tags: [Cart]
-      operationId: changeCartCurrency
-      summary: Recalculer dans l'autre devise sans taux de conversion
+      operationId: quoteCart
+      summary: Devis backend CDF à partir du prix USD et taux marchand versionné
       security:
         - bearerAuth: []
       parameters:
         - $ref: '#/components/parameters/Channel'
         - $ref: '#/components/parameters/CartId'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties: false
-              required: [currencyCode]
-              properties:
-                currencyCode:
-                  $ref: '#/components/schemas/SupportedCurrency'
+        - name: fulfillmentMethod
+          in: query
+          required: true
+          schema:
+            $ref: '#/components/schemas/FulfillmentMethod'
+        - name: deliveryZoneId
+          in: query
+          schema:
+            type: string
+            format: uuid
       responses:
         '200':
-          description: Panier recalculé à partir des prix marchand de cette devise
+          description: Devis CDF avec taux figé, date expiration et détails
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Cart'
+                $ref: '#/components/schemas/PriceQuote'
         '409':
           $ref: '#/components/responses/Conflict'
   /v1/fulfillment/options:
     get:
       tags: [Storefront]
       operationId: listPublicFulfillmentOptions
-      summary: Options publiques de remise et frais distincts CDF/USD
+      summary: Options de livraison et frais CDF calculés par API
       parameters:
         - $ref: '#/components/parameters/Channel'
       responses:
@@ -428,7 +414,7 @@ paths:
     post:
       tags: [Checkout]
       operationId: placeOrder
-      summary: Créer commande authentifiée dans une monnaie sélectionnée
+      summary: Créer commande CDF à partir d'un devis serveur versionné
       security:
         - bearerAuth: []
       parameters:
