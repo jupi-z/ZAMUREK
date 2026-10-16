@@ -1,41 +1,30 @@
-# xShop — PRD V1 (arbitrages validés le 15 octobre 2026)
-
-**Statut : cadrage produit approuvé ; code applicatif non implémenté.** Document prioritaire : [décisions validées](../DECISIONS-VALIDATED-2026-10-15.md).
+# PRD xShop — édition 16 octobre 2026
 
 ## Produit
-Plateforme commerce multi-tenant : backend commercial mutualisé NestJS, registry central et **base PostgreSQL dédiée par boutique**, applications clients distinctes et personnalisables. Marketplace future additionnelle, aucune migration forcée des anciennes apps.
+xShop est un **nom provisoire** pour la plateforme logicielle de boutiques simples. Une API NestJS, registry partagé, **base PostgreSQL par commerçant**, et plusieurs clients installés (Android acheteur, Android marchand, Windows opérateur). Marketplace future facultative/opt-in et additive.
 
-## Première utilisation
-**xShop Atelier**, commerce pilote fictif de pagnes, bijoux et accessoires pour Kolwezi (RDC). Ce nom sert aux jeux de données et ne doit pas être publié comme identité d'un commerçant réel.
+## Première clientèle
+Commerces physiques pagnes, bijoux, accessoires à **Kolwezi**, pilote fictif `xShop Atelier`. Chaque marchand vend à ses clients, les encaisse directement, gère remise et relation commerciale.
 
-## Canaux V1
-1. **Android acheteur** : APK React UI + Capacitor + Kotlin Core, boutique white-label.
-2. **Android marchand séparé** : APK gestion catalogue, tarifs CDF/USD, commandes, disponibilité, livraison, validation de paiement manuel et gestion des permissions.
-3. **Console opérateur installable Windows** : EXE/MSI (React embarqué + Tauri/Rust), provisioning et gestion des tenants.
-4. **Client marchand Windows installable** : canal additionnel, réutilisant les services métiers, priorisation selon gates.
-**AUCUNE UI hébergée en production**, aucune console web/SPA/PWA/SSR/Swagger UI. Seul backend/API et infrastructure non visuelle tournent côté serveur.
+## Offre
+**Un seul abonnement BASIC à 7 USD par mois et par boutique**, sans commission V1, sans frais d'installation. Affichage/facturation en CDF sur marché RDC selon règle vérifiée provisoirement, taxe/contrat à valider. Les clients APK ne doivent pas contenir de secrets de la plateforme.
 
-## Profils
-- Acheteur **authentifié obligatoirement** pour commander et suivre ses commandes ; pas de guest checkout.
-- Propriétaire et employé boutique avec rôles limités à leurs tenants.
-- Opérateur plateforme avec droits distincts et journalisation forte.
+## Catalogue et devises
+Un **prix de base USD** par variante et un **coût de livraison USD** par zone. Taux de conversion **USD→CDF par marchand**, avec historique, contrôles et snapshot de commande. Le backend seul calcule les montants CDF commerçants qui engagent une vente. Le taux 2360 est une **illustration de configuration, non cours officiel**. Éviter toute double grille de prix indépendants. Aucune conversion monétaire autoritative dans React.
 
-## Périmètre commercial
-Catalogue/catégories/images, variantes simples, disponibilité sans inventaire quantifié, recherche et panier, **prix affichables CDF et USD pour chaque boutique**, monnaie sélectionnée par client et montants recalculés par serveur. Livraison par zones tarifées en CDF/USD et retrait. Commandes mono-boutique, paiement à livraison/transfert manuel au commerçant, suivi authentifié et demande d'annulation au marchand. Notifications limitées à l'actualisation dans les clients installés et la console marchand.
+La préférence de devise d'affichage utilisateur est préparée, mais **CDF uniquement sur surfaces publiques RDC** tant que le droit en vigueur et ses exceptions n'ont pas été confirmés. Le paiement USD est un dossier différent et ne doit pas être supposé autorisé.
 
-## Responsabilités / offre
-Vendeur = commerçant ; xShop = logiciel et support technique, contrat à vérifier juridiquement. **Abonnement mensuel uniquement**, prix non fixés. Encaissement des ventes directement par le marchand, pas de prélèvement/redistribution plateforme.
+## Compte client
+Obligatoire ; **e-mail + mot de passe et vérification e-mail, pas de SMS**, récupération sécurisée, session globale entre apps et propriété des commandes isolée tenant. Rôles marchands/opérateurs avec TOTP.
 
-## Distribution
-APK pilote, puis Google Play au cas par cas sous le compte éditeur du commerçant, sous réserve des règles anti-applications répétitives. Windows EXE/MSI distribués de façon sécurisée et signés selon politique de release. GitHub **privé / code propriétaire**, sans redistribution de source.
+## V1
+Produits + catégories + images, disponibilité simple sans stock chiffré, panier/quote checkout authentifié, livraison zones/retrait, paiements à la livraison ou transfert manuel au commerçant, historique et demande d'annulation au marchand. Suivi en app, pas de notifications commerciales payantes.
+
+## Distribution / production
+**API HTTPS backend seulement** : aucune UI web hébergée. Android client+marchand en deux APK, Windows opérateur EXE/MSI ; futurs autres clients ajoutés sans dupliquer le backend. Proposer `xshop-api-test.shuleops.com` pour staging après validation DNS. API publique minimale, plateforme via VPN.
 
 ## Hors V1
-Marketplace, panier multi-commerçants, comptes invités, site web/PWA, back-office hébergé, gestion de stock quantitatif, change automatique/FX, paiement électronique intégré, reversement plateforme, programme fidélité, facturation fiscale garantie, moteur promotions avancé, IA, iOS.
-
-## Indicateurs sans valeurs inventées
-Proportion commandes terminées, taux d'échec checkout, pannes réseau, incidents d'accès tenant, restauration ciblée, latence API/pont natif, mémoire Android, nombre de tenants actifs. Les SLO et la capacité du VPS restent à mesurer.
+E-commerce web, checkout invité, stock chiffré, marketplace, panier multi-tenant, prestataires de paiement intégrés, change automatique au cours BCC, SMS, reversement plateforme, fiscalité garantie, iOS.
 
 ## Gates
-Une V1 n'est pas opérationnelle sans authentification client, test de 2 bases séparées, commande CDF et USD, client Android acheteur et marchand distincts, console opérateur installable, sauvegarde/restauration, validation légale et distribution, fournisseur SMS si OTP retenu.
-
-Voir [spécifications fonctionnelles](V1-FUNCTIONAL-SPEC.md), [clients et déploiement](../architecture/CLIENTS-DEPLOYMENT.md), [devises](../architecture/CURRENCY-CDF-USD.md).
+Conformité juridique/affichage CDF, vraie délivrance e-mail, budget VPS, contrats et backup avant pilote commercial. [Spécifications](V1-FUNCTIONAL-SPEC.md) ; [arbitrages](../DECISIONS-VALIDATED-2026-10-16.md).
