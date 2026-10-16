@@ -1,27 +1,21 @@
-# Paiements, montants et commande — V1
+# Checkout et paiements — modèle 16 octobre 2026
 
-**Décisions approuvées :** CDF/USD simultanément dans chaque boutique ; paiement à la livraison ou transfert manuel ; encaissement **direct marchand**, jamais xShop collecteur en V1.
+## Prix et conversion
+Chaque produit/variante et zone de livraison a un tarif **USD interne unique**. Le commerçant règle `usdToCdf` versionné. Le backend convertit tous les montants affichés/commandés en **CDF** pour les ventes en RDC selon politique territoriale ; montants en unités mineures, arrondis explicites, aucun calcul JavaScript faisant autorité.
 
-## Prix par devise
-- Chaque variante publiable possède prix distincts CDF et USD ; chaque zone de livraison possède frais distincts CDF et USD.
-- Aucun taux de conversion ni valeur FX implicite. Le client sélectionne une monnaie avant checkout, le backend calcule tout dans cette monnaie, la capture est immuable.
-- Int64 en unités mineures par devise ; sérialisation JSON chaîne décimale. Voir [currency](CURRENCY-CDF-USD.md).
-- Aucun mélange de monnaies dans un panier, une commande, une transaction ou un montant affiché sans étiquette.
+## Devis et commande
+GET/POST devis côté serveur avec taux versionné et TTL, vérification du prix/source USD, taux et état au checkout, changement avant confirmation = nouveau devis avec acceptation client. Snapshot immuable USD, CDF, taux, date et policy dans order et lignes. Idempotency-Key sur checkout, transaction dans DB du tenant, aucun panier cross-tenant.
 
-## Checkout
-Bearer client obligatoire, vérification tenant + ownership panier + versions de prix/disponibilité. Idempotency-Key scoped tenant + client + endpoint + request fingerprint ; transaction tenant avec order/order_items/payment/outbox/idempotency record. Retry identique retourne résultat sans créer de doublon. Changement de montant au checkout explicite et reconfirmé côté client.
-
-## Paiements
-- PAY_ON_DELIVERY : commande PENDING, marchand confirme reçu réellement, journalisé.
-- MANUAL_TRANSFER : instructions et coordonnées configurées par marchand **dans la monnaie de la commande** ; preuve fournie par client peut être enregistrée, mais PAS une confirmation. Seul marchand habilité après vérification rapprochement passe PAID.
-- Paiement dans autre devise / partiel : cas exceptionnel traité manuellement hors automatisation V1, pas d'état PAID par défaut.
-- Statut de paiement séparé du statut de préparation/livraison et transition contrôlée.
+## Encaissement V1
+Direct commerçant, PAY_ON_DELIVERY et MANUAL_TRANSFER. Prix public, validation commande et preuve/facture en CDF. **Paiement effectivement remis en USD** : option future à activer seulement après validation du cadre RDC et une procédure de rapprochement explicite (devise reçue, taux utilisé, équivalent CDF, preuve), jamais un marquage PAID automatique.
 
 ## Annulation
-Client dépose demande ; marchand décide et journalise. Commande déjà payée ou livrée : ne pas faire transition naïve vers CANCELLED ni simuler remboursement ; workflow cas par cas et obligations légales à clarifier.
+Le client dépose une demande ; marchand accepte/refuse selon conditions. Déjà payé = traitement spécifique, ne pas prétendre rembourser automatiquement.
 
-## Facturation
-Aucune garantie fiscale DGI, aucune taxation calculée sans règles confirmées ; montant commande et preuve paiement ne valent pas facture fiscale homologuée. Vérifier responsabilités et modalités locales avant lancement.
+## Abonnement plateforme
+Un seul plan BASIC 7 USD/mois. Conversion de présentation CDF pour clients RDC utilise **taux plateforme distinct** (pas le taux commerçant) ; contrats et TVA à vérifier. Aucune commission sur commandes.
 
-## Extension future
-PaymentProvider abstrait, webhooks signés, idempotents, capture/confirmation serveur, rapprochement, remboursements/chargebacks par prestataire autorisé ; pas d'engagement PSP électronique V1.
+## Risques
+Référence taux 2360 fournie par le porteur n'est **pas un cours officiel** ; BCC publie ses propres cours. Les règles du droit de publicité des prix et facture locale conditionnent G4.
+
+Voir [FX](FX-PRICING.md), [revue juridique](../legal/RDC-INITIAL-REVIEW.md).
