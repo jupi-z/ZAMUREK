@@ -1,25 +1,25 @@
-# Parcours V1 après décisions
+# Parcours utilisateurs V1 — édition 16 octobre
 
-## Client Android : inscription → achat
-1. L'application récupère la configuration publique du canal, sans présumer de permission.
-2. L'utilisateur s'inscrit / se connecte ; contrôle d'identité (vérification téléphone prévue pour commercialisation).
-3. Il consulte le catalogue, choisit **CDF ou USD** ; toutes les lignes et frais affichés dans cette monnaie.
-4. Il ajoute produit/quantité au panier **lié au compte, au tenant et à la devise**.
-5. Livraison en zone tarifée CDF/USD ou retrait ; téléphone/contact et adresse de livraison, si nécessaire.
-6. Le serveur revalide session, accès tenant, prix, devise, disponibilité, frais, puis crée commande idempotente.
-7. Confirmation authentifiée, historique/états dans l'app ; demande d'annulation transmise au marchand.
+## Acheteur
+1. Ouvre APK marque et récupère config publique ; aucun identifiant canal n'est une preuve d'auth.
+2. Crée compte par e-mail + mot de passe ; vérifie e-mail via challenge, **sans SMS**, puis se connecte.
+3. Catalogue : prix **CDF** calculé côté backend depuis la base USD et le taux actif marchand.
+4. Ajoute article à panier authentifié, choisit retrait/livraison.
+5. Demande **devis CDF** au backend : taux/version, frais et expiration ; confirme total et paiement livraison/transfert manuel.
+6. Checkout avec quoteId et Idempotency-Key, snapshots enregistrés ; suivi de commande depuis son compte.
+7. Demande annulation à commerçant, sans annulation automatique ; paiement marqué reçu uniquement par marchand habilité.
 
-## Marchand Android : préparation
-1. Connexion staff + membership tenant ; aucun accès croisé entre tenants.
-2. Catalogue/variantes, **saisie séparée de prix CDF et USD**, disponibilité sans stock, zones/frais par monnaie.
-3. Accepter, préparer, remettre/livrer commande ; confirmer **manuellement** transfert ou paiement livraison après preuve.
-4. Demande d'annulation traitée selon politique, pas de changement d'état non autorisé ; journal d'audit.
+## Marchand Android
+1. Se connecte sous rôle approuvé (TOTP si rôle sensible), choisit boutique autorisée.
+2. Définit prix **USD** variante et frais USD par zone ; configure taux USD→CDF tenant avec audit.
+3. Gère disponibilité, clients/profils autorisés et commandes ; reçoit demandes d'annulation, confirme transferts après rapprochement.
+4. Anciennes commandes conservent leurs snapshots même si taux change.
 
-## Plateforme Windows : cycle tenant
-Opérateur autorisé s'authentifie, crée tenant, provisionne DB/secret/migration, contrôle deux tests d'isolation, associe canal et app ; active, suspend, supervise. Aucune interface web distante.
+## Opérateur Windows
+Se connecte via VPN, MFA, gère registry, bases tenant, canaux et abonnements BASIC 7 USD ; routes plateforme pas publiques. Aucun portail web hébergé.
 
-## Échecs
-Utilisateur non connecté au checkout = 401 ; token d'un autre client/tenant = refus ; produit sans un des deux tarifs = non publiable ; devise changée = panier recalculé ; réseau coupé durant POST = retry même clé ; faux paiement déclaré = reste non payé ; tenant suspendu = checkout refusé.
+## Erreurs
+Compte non vérifié → commande impossible ; panne SMTP = inscription/récupération retardée et traitée explicitement. Taux modifié après devis → nouveau prix et reconfirmation ; pas de checkout validé hors réseau. IDOR client ou inter-tenant rejeté ; prix USD public en RDC rejeté par règle territoriale. VPS test isolé du réel.
 
-## Prolongement
-Future marketplace Android en canal supplémentaire ; participation du commerçant explicitement consentie ; aucun achat multi-tenant transactionnel en V1.
+## Marketplace ultérieure
+Même API, profil global, consentement marchand et nouveaux canaux ; pas de migration obligatoire d'APK existante.
