@@ -1,5 +1,5 @@
-# Future marketplace xShop — hors V1
+# Marketplace xShop future — hors V1
 
-Client installable (priorité Android), jamais site web xShop hébergé ; peut découvrir plusieurs boutiques volontaires (opt-in), utilisant identité globale et API du même backend. Catalogue en CDF/USD sans change automatique ; paniers et commandes par boutique. Les anciennes APK de commerçants restent indépendantes.
+Application installable, sans site public xShop hébergé. Consentement explicite des commerçants ; index de catalogue public **CDF converti depuis leur base USD et leur taux actif** pour RDC, hors PII. Checkout authentifié mono-boutique par commerce, revalidation devis au taux serveur, commandes isolées en DB tenant. Ne rend pas obsolètes les anciennes applications de boutique.
 
-Voir [Marketplace](../../docs/architecture/MARKETPLACE.md).
+Voir [marketplace](../../docs/architecture/MARKETPLACE.md).
