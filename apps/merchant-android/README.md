@@ -1,11 +1,9 @@
-# xShop Merchant Android — G0
+# Marchand Android xShop — G0 non implémenté
 
-**Client Android marchand séparé de la boutique acheteur. Aucun projet compilable créé.**
+Application séparée de l'acheteur ; React UI + Capacitor/Kotlin pour réseau, persistance, OS et sessions. E-mail/mot de passe, MFA TOTP pour rôles sensibles.
 
-- React/Vite/TypeScript = UI embarquée uniquement.
-- Capacitor = bridge typé ; Kotlin = réseau, sessions, cache, services Android.
-- Auth staff et memberships tenant ; catalogue, doubles tarifs CDF/USD, disponibilité sans stock, zones/frais CDF/USD, commandes, statuts, validation paiements manuels, paramètres et employés autorisés.
-- Aucun accès à une autre boutique sans permission ; journal d'audit côté serveur.
-- APK pilote, tests réels et build signé, sans UI hébergée.
+Gestion : produits et variantes **prix source USD seul**, zones et frais de livraison source USD, **taux USD→CDF marchand configurable**, version/audit, disponibilité sans stock chiffré, commandes/snapshots CDF, paiement livraison/transfert manuel, demandes d'annulation, équipe selon membership.
 
-Voir [architecture clients](../../docs/architecture/CLIENTS-DEPLOYMENT.md) et [spécifications V1](../../docs/product/V1-FUNCTIONAL-SPEC.md).
+Pas de double prix CDF autonome, pas de SMS, pas de console web hébergée, accès strict tenant et objet. Route plateforme opérateur hors de portée de cette app.
+
+Voir [FX](../../docs/architecture/FX-PRICING.md), [NETWORK](../../docs/architecture/NETWORK-EXPOSURE.md).
