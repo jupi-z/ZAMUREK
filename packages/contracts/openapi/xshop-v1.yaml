@@ -924,7 +924,7 @@ components:
   schemas:
     PhoneE164:
       type: string
-      pattern: '^\\+[1-9][0-9]{7,14}$'
+      pattern: '^\+[1-9][0-9]{7,14}$'
       description: Contact livraison uniquement, pas un identifiant de connexion
     EmailAddress:
       type: string
