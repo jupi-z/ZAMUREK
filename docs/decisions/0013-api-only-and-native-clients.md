@@ -1,6 +1,6 @@
 # ADR-0013 — Aucun frontend hébergé en production
 
-**Statut : ADOPTÉ | 2026-10-15**
+**Statut : ADOPTÉ, durci par [ADR-0017](0017-minimum-exposure.md) | 2026-10-16**
 
 Le serveur de production expose **backend/API uniquement**, aucune UI HTML commerciale/admin, SSR, SPA, PWA ni Swagger UI public. Apps acheteur et marchand Android séparées, React UI embarquée + Capacitor/Kotlin. Consoles Windows opérateur/marchand React embarquée + Tauri 2/Rust, installateurs EXE/MSI.
 
