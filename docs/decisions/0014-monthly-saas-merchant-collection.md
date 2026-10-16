@@ -1,9 +1,7 @@
-# ADR-0014 — Abonnement xShop et encaissement marchand
+# ADR-0014 — Offre SaaS et encaissement marchand
 
-**Statut : ADOPTÉ pour modèle métier ; conditions contractuelles ouvertes | 2026-10-15**
+**Statut : ADOPTÉ, complété par [ADR-0018](0018-basic-seven-usd.md).**
 
-xShop fournit un logiciel contre **abonnement mensuel uniquement**, sans commission prélevée sur les commandes V1. Chaque marchand vend, reçoit les paiements directs et assure le service commercial ; xShop fournit assistance technique. Prestataires électroniques et obligations fiscales restent à valider.
+Abonnement **mensuel sans commission ni frais installation**. Décision 16 octobre : **7 USD/mois/boutique, formule BASIC unique**. Les commerçants encaissent directement leurs ventes. Facturation/affichage commercial en CDF sur territoire RDC selon règlementation à vérifier, taux conversion **plateforme** distinct du taux des ventes chez chaque commerçant.
 
-Alternative abandonnée : commission sur ventes ou encaissement/redistribution par xShop. ADR-0006 (encaissement direct) est ainsi confirmée.
-
-Conséquences : déterminer montant, cycle, suspension, support et mode de paiement de l'abonnement avant commercialisation ; prévoir service licensing/entitlement côté plateforme sans mélanger avec DB commandes tenant.
+Voir [SUBSCRIPTIONS](../architecture/SUBSCRIPTIONS.md).
