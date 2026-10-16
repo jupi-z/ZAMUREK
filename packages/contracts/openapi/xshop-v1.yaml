@@ -743,6 +743,42 @@ paths:
                 $ref: '#/components/schemas/FxRateSnapshot'
         '403':
           $ref: '#/components/responses/Forbidden'
+    put:
+      tags: [Merchant]
+      operationId: updateMerchantFxRate
+      summary: Modifier le taux USD vers CDF et incrémenter la version auditée
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/Channel'
+        - name: If-Match
+          in: header
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [usdToCdf]
+              properties:
+                usdToCdf:
+                  type: string
+                  pattern: '^[0-9]+(\.[0-9]+)?$'
+      responses:
+        '200':
+          description: Taux modifié ; anciennes commandes inchangées
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FxRateSnapshot'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
   /platform/v1/tenants:
     post:
       tags: [Platform]
