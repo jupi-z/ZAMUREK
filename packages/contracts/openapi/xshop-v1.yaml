@@ -726,6 +726,23 @@ paths:
                 $ref: '#/components/schemas/MerchantDeliveryZone'
         '403':
           $ref: '#/components/responses/Forbidden'
+  /v1/merchant/fx-rate:
+    get:
+      tags: [Merchant]
+      operationId: getMerchantFxRate
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/Channel'
+      responses:
+        '200':
+          description: Taux en vigueur
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FxRateSnapshot'
+        '403':
+          $ref: '#/components/responses/Forbidden'
   /platform/v1/tenants:
     post:
       tags: [Platform]
