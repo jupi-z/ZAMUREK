@@ -1,41 +1,33 @@
-# Modèle conceptuel des données — xShop V1 après arbitrages
+# Modèle de données conceptuel xShop V1 — 16 octobre 2026
 
-**Deux niveaux de stockage** : registry/identity plateforme distincte et **une base PostgreSQL métier par tenant**.
+## Registry / identité globales
+- tenant(id UUID, slug, status, databaseSecretRef, schemaVersion), storefront_channel(id, tenantId, platform, appId).
+- global_customer_identity(id, emailOriginal, emailCanonical unique, passwordHash, verifiedAt, status) ; session_refresh(id, identityId, tokenHash, expiresAt, revokedAt) ; email_challenge(identityId, purpose, tokenHash, expiresAt, consumedAt, attempts).
+- merchant_staff(id, emailCanonical, hash, totpCredentialRef), tenant_membership(staffId, tenantId, role, enabled).
+- platform_operator(id, authRef, totpCredentialRef), platform_audit, provisioning_job.
+- subscription_plan(id, code BASIC, **basePriceUsdMinor = 700**, periodMonths=1), merchant_subscription(tenantId, plan, state, cycle).
+- platform_fx_rate/version (distinct du marchand) pour calcul réglementaire CDF des factures xShop, sans toucher aux commandes boutiques.
 
-## Registry (base centrale)
-- tenant(id UUID, slug, status, db_secret_ref, schema_version, created_at).
-- storefront_channel(id, tenant_id, client_type, app_identifier, build_config_version, status).
-- global_customer_identity(id, phone_e164 unique, password_hash, phone_verified_at, status, created_at).
-- customer_auth_session(id, global_customer_id, refresh_hash, revoked_at, expires_at).
-- otp_challenge(id, global_customer_id, purpose, code_hash, expires_at, attempts, used_at).
-- staff_identity(id, credentials_ref, status), tenant_membership(user_id, tenant_id, role, permission_set).
-- platform_operator / platform_audit / provisioning_job / subscription_contract (facturation de l'abonnement xShop hors V1).
-- Ne pas placer produits, commandes, adresses de livraison ou moyens de paiement marchand dans le registry.
-
-## Dans chaque DB tenant
-- store_settings (name, logo, branding, default_currency, supportedCurrencies=[CDF,USD], modes).
-- category, product (name, status), product_variant(id, product_id, options, active).
-- **product_variant_price(variant_id, currency_code, amount_minor)** ; contrainte unique (variant_id,currency_code) ; **2 tarifs actifs par variante commercialisée**.
-- product_media (clé média, position, droits).
-- delivery_zone(id, name, enabled), **delivery_zone_fee(zone_id,currency_code,amount_minor)**.
-- cart(id, global_customer_id, channel_id, currency_code, expires_at), cart_item(cart_id,variant_id,quantity).
-- customer_profile(id, global_customer_id, contact, consent_scope).
-- order(id, tenant_local_number, global_customer_id, customer_profile_id, channel_id, currency_code, fulfillment_snapshot, subtotal_minor, delivery_minor, total_minor, status, timestamps).
-- order_item(order_id, variant_snapshot, item_name_snapshot, unit_price_minor, quantity, line_total_minor, currency_code).
-- payment(id, order_id, currency_code, amount_minor, method, status, merchant_reference).
-- cancellation_request(order_id, requested_by, reason, status, resolved_by, resolved_at).
-- order_status_history, checkout_idempotency (global_customer_id, key, request_fingerprint, response_snapshot_encrypted, expires_at).
-- outbox_event, audit_log (PII-redacted).
+## Base PostgreSQL par commerçant
+- store_settings(..., `baseCurrency='USD'`, `territory='CD'`, legal_display_currency='CDF', fulfillment flags).
+- product(id,name,status), product_variant(id, productId, attributes, **basePriceUsdMinor**), product_media, category.
+- delivery_zone(id,name,enabled, **baseFeeUsdMinor**).
+- **tenant_fx_rate**(id, usdToCdfNumerator, usdToCdfDenominator, decimalText, version, activeFrom, changedBy, audit) — historique immuable ; référence utilisateur 2360 uniquement pour test, confirmer en vente.
+- cart(id, ownerGlobalIdentityId, channelId, rateVersion, quoteExpiresAt, **saleCurrency='CDF'**), cart_item(variantId, quantity).
+- price_quote(id, cartId, rateVersion, pricesSourceUsd, amountsCdf, roundingPolicyVersion, expiresAt, fingerprint), transactionnel et contrôlé serveur.
+- order(id, customerGlobalIdentityId, orderLocalNumber, currency='CDF', rateSnapshot, rateVersion, **subtotalCdfMinor**, feeCdfMinor, totalCdfMinor, recipientSnapshot, createdAt, state).
+- order_item(variantId, productSnapshot, unitBaseUsdMinor, **unitCdfMinor**, quantity, lineCdfMinor) ; payment(id, orderId, receivedCurrency, receiptAmountMinor, saleCurrency='CDF', dueCdfMinor, status, merchantRef).
+- cancellation_request, checkout_idempotency, outbox_event, audit_log.
 
 ## Invariants
-- Les order / cart sont **mono-tenant, mono-devise** ; choix CDF/USD explicite, jamais conversion automatique.
-- Un tarif requis manquant bloque publication / checkout ; devise livraison identique devise commande.
-- Calcul serveur, snapshots et transactions ; contrôle d'accès par (global_customer_id, tenantContext, order ownership).
-- Pas de guest_tracking_credential et pas de guest_session_hash en V1.
-- Token/OTP hachés, jamais dans journaux ; aucune donnée commerciale tenant exposée à un autre.
-- Évolution marketplace : réf (tenantId,productId), opt-in de visibilité uniquement, source of truth DB tenant.
+- Référence produit **uniquement USD**, pas `product_variant_price` dual-table ; calcul des valeurs CDF effectué par le backend.
+- Affichage commercial et libellé des documents RDC en CDF par politique conservatoire ; aucune option client USD sur territoire CD sauf validation légale ultérieure.
+- Snapshot immuable du taux et des montants au moment du checkout ; changer le taux ne réécrit ni anciennes commandes ni historique.
+- Pas de `phone_e164` dans l'auth V1, mais téléphone du destinataire de livraison dans les commandes tenant.
+- Facturation xShop 7 USD mensuel en référence interne, **CDF public/facture RDC via taux plateforme** ; pas de commission sur commandes.
+- Séparation tenant SQL, validation (identité, tenant, propriété de l'objet) pour chaque accès.
 
-## Migrations
-Migrations distinctes registry / tenant ; versions, déploiement par cohortes, restauration ciblée, tests A/B ; exigences SQL et colonnes exactes à figer en G1.
+## Gate G1
+Établir migrations, contraintes d'intégrité, test des arrondis et TTL de quote, deux DB tenant, sauvegarde ciblée. Ne pas utiliser de float pour la monnaie.
 
-Voir [devises](CURRENCY-CDF-USD.md), [identité](AUTH-CUSTOMER.md), [tenancy](TENANCY.md).
+Voir [FX-PRICING](FX-PRICING.md), [AUTH-NO-SMS](AUTH-NO-SMS.md), [legal](../legal/RDC-INITIAL-REVIEW.md), [abonnement](SUBSCRIPTIONS.md).
