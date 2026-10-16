@@ -1,48 +1,31 @@
-# xShop — Spécifications fonctionnelles V1 (révisées)
+# xShop — Fonctionnel V1 actif au 16 octobre 2026
 
-**Statut : objectifs contractualisés, non encore implémentés.** [Arbitrages approuvés](../DECISIONS-VALIDATED-2026-10-15.md).
+## Canal & identité
+- App Android **acheteur** white-label et app Android **marchand** séparées ; console Windows opérateur EXE/MSI.
+- Compte acheteur **obligatoire** : email + mot de passe et adresse vérifiée, aucun SMS. Récupération par email. Identité globale mais chaque objet commande/profil isolé DB tenant.
+- Marchand/staff avec rôles/permissions tenant et TOTP ; plateforme accessible via console VPN.
+- Aucun frontend hébergé sur le serveur production.
 
-## Rôles
-- Client **avec compte obligatoire** : création, connexion, vérification identité selon protocole retenu, panier, commande, suivi, demandes d'annulation.
-- Owner marchand : produits, variantes, tarifs, commandes, versements manuels, zones, employés.
-- Staff : permissions dédiées (lecture / gestion catalogue / préparation / confirmation paiement si expressément autorisé).
-- Platform operator : création et gestion des tenants et des canaux, sans lecture de commandes sauf délégation sécurisée et audit.
+## Catalogue
+Catégories, variantes, images, prix source **USD seul** par variante, publication disponibilité (ACTIVE/UNAVAILABLE/HIDDEN/DRAFT), pas de stock quantitatif. Taux USD→CDF **marchand** réglable via app marchand, audité/versionné ; défaut 2360 **en fixture de test seulement**. Frais livraison en USD par zone et convertis CDF à partir du taux du marchand.
 
-## Comptes clients
-Identité centrale réutilisable entre apps personnalisées ; profil commercial **local** par tenant sans partage implicite de commandes. Inscription, connexion, reset, rotation/révocation sessions, logout et confidentialité. Voir [auth](../architecture/AUTH-CUSTOMER.md). **Aucun checkout invité**, ni token de suivi invité dans la V1.
+## Affichage commercial Kolwezi
+Public **CDF uniquement** par politique de prudence réglementaire. Les réponses API publiques sont converties côté backend ; l'utilisateur n'a pas un sélecteur de devise USD opérationnel en RDC avant avis juridique. Une préférence d'affichage est prévue techniquement pour territoires autorisés plus tard. Ne pas confondre affichage prix avec devise du règlement.
 
-## Catalogue et disponibilités
-Produits, catégories, images, variantes simples (taille/couleur éventuelle), DRAFT/ACTIVE/HIDDEN/UNAVAILABLE/ARCHIVED, sans stock quantifié. Seuls articles publiés/visibles apparaissent ; les indisponibles ne sont pas achetables. Publication exige un prix valide **en CDF et en USD**, par variante. Aucun change automatique.
+## Parcours client
+Catalogue → panier authentifié → choix retrait ou zone de livraison → **devis CDF du backend** avec ID/taux/version/expiration → confirmation explicite du total → commande CDF idempotente avec snapshots immuables USD, taux et CDF. Si taux/prix/frais changent, quote expirée ou invalidée et confirmation exigée. Suivi dans app par propriétaire connecté.
 
-## Panier
-Panier mono-tenant et **mono-devise**, protégé par identité client ; produit/variante, quantité demandée, prix indicatif retourné par serveur. Le client choisit CDF ou USD, et tout changement de monnaie déclenche un recalcul **dans la devise cible**. Aucun secret de panier invité dans le parcours authentifié définitif. Panier expirant et serveur autoritaire sur montant.
+## Modes de paiement
+À livraison ou transfert manuel direct marchand. L'app affiche uniquement les instructions du commerçant ; le client ne peut pas s'auto-déclarer payé. Toute réception USD éventuelle est hors automatisation V1 et doit être validée légalement. La commande et preuve commerciale sont en CDF.
 
-## Remise
-Retrait en boutique ou livraison dans zone autorisée ; **frais par zone et devise** configurés par marchand, affichage avant confirmation. Adresse/contact requis pour livraison, consentement et protection des données. Aucun suivi GPS des coursiers dans V1.
+## Livraisons, annulations et suivi
+Retrait ou zones de livraison, frais convertis depuis USD et affichés CDF ; adresse et téléphone destinataire si livraison. Demande d'annulation au marchand, aucune annulation automatique ; les paiements et états de commande sont des automates distincts.
 
-## Checkout
-Authentification obligatoire, devises CDF/USD supportées, tarifs cohérents dans **une monnaie unique par commande**, confirmation côté serveur et capture immutable des lignes/frais/totaux/devise. Idempotency-Key obligatoire (retry réseau). Aucun paiement ou commande multi-tenant. Le client ne peut pas modifier le statut de paiement.
+## App marchand
+Catalogue et prix USD, taux USD→CDF, zones et frais source USD, commandes/confirmations, disponibilité, personnel autorisé, boutique et médias. Aucune commande d'un autre tenant. Pas d'interface web marchand en production.
 
-## Commandes
-Statuts : PLACED, ACCEPTED, PREPARING, READY, OUT_FOR_DELIVERY, COMPLETED, CANCELLED, avec transitions spécifiques et auditées. Demande d'annulation acheteur adressée au marchand, qui décide selon politique applicable ; aucune annulation automatique côté client. Historique dans son application sur identité authentifiée ; interdiction IDOR.
+## Offre xShop
+Plan unique BASIC **7 USD/mois/boutique**, facturation CDF sur marché RDC selon validation juridique, taux plateforme distinct du taux marchand. Service client final = commerçant ; support logiciel = xShop.
 
-## Paiement
-PAY_ON_DELIVERY ou MANUAL_TRANSFER, **vers comptes du commerçant** dans la devise de commande, état PENDING / AWAITING_CONFIRMATION / PAID / FAILED / CANCELLED, sans remboursement automatique. Paiement vérifié par un employé habilité ; un message acheteur ne signifie pas PAID. Le cas d'un transfert en devise différente est traité hors parcours automatique V1.
-
-## Application Android client
-Accueil, liste/recherche/détail produit, inscription/connexion, panier/devises, livraison/retrait, checkout, confirmation, historique/suivi, demande d'annulation, profil, erreurs/offline. React uniquement affichage ; Kotlin réseau/cache/sessions natives.
-
-## Application Android marchand indépendante
-Connexion staff, boutique courante, catalogue et prix CDF/USD, upload images, disponible/indisponible, zones et frais CDF/USD, commandes/statuts/paiements manuels, paramètres de boutique et accès employés selon permissions, chargement/erreurs.
-
-## Administration Windows
-Opérateur : provisioning, états des tenants, canal Android, santé, migration, audit sans exposition data client. Marchand Windows : client additionnel installable selon priorité. UI React embarquée dans Tauri, cœur natif Rust. **Aucune admin web publiée**.
-
-## Notifications
-Historique et statuts récupérés à l'ouverture/rafraîchissement ; pas de SMS, push ou WhatsApp en V1 par défaut (OTP d'identité **distinct** d'une notification commerciale). Si l'app est fermée, aucune notification de commande temps réel garantie.
-
-## Langue et visual
-Français V1, i18n préparée, branding par tenant, UX tactile accessible, prix/devises toujours non ambigus.
-
-## Recette bloquante
-Deux tenants, deux devises, identité obligatoire, isolation par boutique, commandes réelles de bout en bout, Android acheteur/marchand, au moins une console opérateur installable, restauration et sécurité. Voir [gates](../quality/ACCEPTANCE.md).
+## Critères de recette
+Tests auth sans SMS, quote stable, modifications taux/anciennes commandes, CDF public, cross-tenant + cross-customer, app Android acheteur/marchand distinctes, console Windows, réseau privé platform, restauration DB et conformité applicable. Voir [FX](../architecture/FX-PRICING.md), [Legal](../legal/RDC-INITIAL-REVIEW.md), [Tests](../quality/TEST-STRATEGY.md).
