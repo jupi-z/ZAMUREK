@@ -1,25 +1,21 @@
-# Architecture système xShop — après arbitrages
+# Architecture xShop — édition 16 octobre
 
-## Production : services uniquement
-- HTTPS/reverse proxy, API NestJS REST/OpenAPI (pas Swagger UI public), workers et traitements internes.
-- Registry/identity centrale ; **une DB PostgreSQL métier par boutique** et comptes SQL isolés ; stockage média tenant-scopé.
-- **Aucun serveur d'interface** : pas de portail web, SSR, PWA, SPA ni admin hébergée. Les assets React sont **embarqués dans des applications installables**.
+## Un serveur de production backend/API seulement
+Services NestJS : Platform Registry/provisioning, Global Identity e-mail verified, Merchant Membership + MFA, Catalog (USD source), FX (rate tenant versioned), Quote (public CDF), Cart/Checkout/Orders, Payment Manual, Fulfillment, SaaS Plan BASIC, Audit/Outbox.
 
-## Clients V1
-- App Android acheteur white-label = React UI + Capacitor + Kotlin.
-- App Android marchand séparée = React UI + Capacitor + Kotlin.
-- Application Windows opérateur = React UI + Tauri/Rust, livrée EXE/MSI.
-- Option Windows marchand = React UI + Tauri/Rust, installable sans UI distante.
-- Marketplace future = client installable d'API existante, opt-in marchand.
+Registre central + **une DB PostgreSQL métier par tenant** ; gestion pools/credentials bornés. Stockage média tenant-scopé, worker de synchronisation. Aucun HTML UI/SPA/SSR/PWA/Swagger UI hébergé.
 
-## Modules backend
-Tenant registry/provisioner ; comptes globaux clients et auth sessions ; staff/memberships ; catalog/categories/variants/prices CDF USD ; cart mono-devise ; checkout authentifié idempotent ; orders ; payment manual/pay-on-delivery ; zone delivery + fees CDF USD ; audit et outbox ; projection discovery future.
+## Applications installables
+- Android acheteur : React UI → Capacitor → Kotlin API/cache/auth, boutique marque.
+- Android marchand séparé : React UI → Capacitor → Kotlin, prix USD/taux USD-CDF/commandes.
+- Windows opérateur : React embarquée → Tauri 2/Rust, **accès plateforme VPN**.
+- Windows marchand ultérieurement, marketplace Android future opt-in.
 
-## Invariants
-Backend seul autoritaire (prix, devise de commande, identité/permissions, statuts, paiements). No cross-tenant DB connection based on user input. DB tenant sélectionnée après résolution et contrôle serveur ; secrets hors clients. **Aucune transaction cross-tenant au checkout**. Outbox locale transactionnelle ; publication/replay idempotents.
+## Frontières réseau
+Endpoint clients publics en HTTPS 443 + auth et permissions ; /v1/merchant auth/RBAC+TOTP ; /platform/v1 via VPN seulement ; PostgreSQL, secrets, monitoring et stockage privé non exposés. CORS ne remplace pas auth. Domaines candidats `xshop-api-test.shuleops.com`, `xshop-api.shuleops.com` non configurés.
 
-## Extensions
-Pas de microservices au lancement ; DB par tenant gérée avec pools bornés/éviction. Les besoins CPU, mémoire, migrations et backup sont testés sur VPS candidat avant production.
+## Prix
+USD seule source catalogue et tarif livraison, FX tenant versionné, quote CDF serveur, snapshot taux et montants sur commande ; publication/facture CDF RDC par politique réglementaire conservatoire. Aucun FX opérant dans une UI faisant autorité.
 
-Références : https://docs.nestjs.com/ ; https://capacitorjs.com/docs/ ; https://v2.tauri.app/distribute/windows-installer/ .
-Voir [clients et déploiement](CLIENTS-DEPLOYMENT.md), [tenancy](TENANCY.md), [devises](CURRENCY-CDF-USD.md), [auth](AUTH-CUSTOMER.md).
+## Risques et preuves
+Validation légale arrêté prix CDF, rate merchant/official, délivrance e-mail SMTP, quota VPS, restauration DB A sans B, IDOR, performances natives. Documents de référence : [FX](FX-PRICING.md), [réseau](NETWORK-EXPOSURE.md), [identité](AUTH-NO-SMS.md).
