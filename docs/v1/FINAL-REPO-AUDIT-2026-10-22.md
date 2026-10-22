@@ -1,3 +1,5 @@
+> **HISTORIQUE — état du dépôt AVANT la décision du Core partagé.** Depuis le 22/10/2026, la charte et les contrats sont révisés : [ADR-0024](../decisions/0024-shared-monarque-core-zamurek.md), [roadmap intégrée](INTEGRATION-ROADMAP.md). Les chiffres 38 capacités, une DB par entreprise et l'ancien prompt ci-dessous n'ont plus autorité ; le rapport demeure preuve du précédent audit, pas du nouveau plan.
+
 # ZAMUREK — audit intégral pré-Codex du 22 octobre 2026
 
 **Statut : READY_FOR_CODEX_0.1.0, sous réserves techniques/externes documentées ; NOT_READY_FOR_PRODUCTION.**
