@@ -1,4 +1,4 @@
-name: documentation-check
+name: zamurek-specification-check
 on:
   push:
     branches: [main]
@@ -7,18 +7,24 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: specs-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  docs:
+  specification:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install OpenAPI validator
+      - name: Install pinned YAML parser
         run: python3 -m pip install -r scripts/requirements-docs.txt
-      - name: Validate repository docs
+      - name: Validate markdown and repository structure
         run: python3 scripts/validate_docs.py
-      - name: Validate OpenAPI contract
+      - name: Validate 38-capability V1 manifest and progress gates
+        run: python3 scripts/validate_v1_scope.py
+      - name: Validate ZAMUREK V1 OpenAPI draft and invariants
         run: python3 scripts/validate_openapi.py
-
