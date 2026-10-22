@@ -1,3 +1,5 @@
+> **ZAMUREK V1 ACTIVE SPEC :** [Charte](../../docs/v1/PRODUCT-CHARTER.md), [Domaines](../../docs/v1/DOMAIN-MODEL.md), [Contrats](../../docs/v1/TECHNICAL-CONTRACTS.md) et [OpenAPI](../../packages/contracts/openapi/zamurek-v1.yaml). L'ancien contenu xShop ci-dessous est historique et **non exécutable** ; intégrer cuisine, rendez-vous, poids, devis, réparations, venue et agents IA en plus du commerce.
+
 # API xShop — monolithe NestJS, G0 non implémenté
 
 Seul serveur applicatif prévu en production ; OpenAPI JSON/REST, registre global, base PostgreSQL **par tenant**. Pas d'interface hébergée. Routes publiques acheteur limitées au strict nécessaire ; marchand auth RBAC+TOTP selon droits ; opérateur `/platform/v1` accessible **VPN seulement**.
