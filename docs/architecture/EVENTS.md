@@ -1,9 +1,11 @@
-# Événements et outbox — futur xShop
+# ZAMUREK — outbox et événements métier
 
-Pattern transactionnel proposé : événements enregistrés dans outbox de la DB tenant au même commit que la mutation métier, publication asynchronous avec retries et consommateurs idempotents. Aucune garantie exactly-once hors DB ; aucun broker requis en G0.
+**En vigueur pour la V1 dès 0.1.0**, et non une option reportée à une version ultérieure. Voir [noyau agentique](../v1/AGENTIC-KERNEL.md) et [event envelope](../../packages/contracts/events/event-envelope.schema.json).
 
-Types futurs : `product.changed.v1`, `fx_rate.changed.v1` (tenant/version/audit, pas données privées), `order.placed.v1` (sans PII), `order.status_changed.v1`, `tenant.updated.v1`, `subscription.state_changed.v1`.
+Un événement est écrit dans la **même transaction PostgreSQL tenant** que la mutation métier ; les workers récupèrent/outbox avec backoff, circuit-breaker, dead-letter et consommateurs idempotents. Aucune promesse exactly-once inter-systèmes ; rejouabilité/versionnement et trace d'audit contrôlés.
 
-Important : modification du taux marchand exige invalidation/régénération des projections prix CDF catalogue et des devis non confirmés ; **n'affecte pas anciennes commandes**, qui capturent leur taux et total. Une marketplace future indexe uniquement le catalogue opt-in public par territoire/devises d'affichage légalement autorisées. Retard d'index implique validation serveur au checkout, pas promesse de prix.
+Envelope : eventId, eventType et schemaVersion, organizationId, establishmentId éventuel, correlationId/causationId, occurredAt, classification, payloadRef. Payload tenant protégé par ACL ; aucun envoi d'informations privées au gestionnaire d'un centre commercial, à un autre tenant ou à un modèle IA non approuvé.
 
-Validation avec duplications, retards, crash worker, replay historique, suppression opt-in et séparation tenant.
+Événements V1 : `catalog.item.changed.v1`, `fx.rate.changed.v1`, `order.placed.v1`, `appointment.booked.v1`, `restaurant.kitchen.updated.v1`, `repair.case.updated.v1`, `venue.optin.revoked.v1`, `agent.run.requested.v1`, `agent.tool.approval.v1`. Un changement FX invalide les quotes non confirmées et régénère les projections publiques CDF, mais **ne modifie pas les commandes historiques**.
+
+Tests obligatoires : transaction/outbox atomique, duplicate event delivery, replay, périmètre tenant, fusion de versions, crash worker et opt-out venue.
