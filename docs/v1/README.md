@@ -28,6 +28,7 @@
 ```bash
 python3 scripts/validate_docs.py
 python3 scripts/validate_v1_scope.py
+python3 scripts/validate_convergence.py
 python3 scripts/validate_agent_contracts.py
 python3 -m pip install -r scripts/requirements-docs.txt
 python3 scripts/validate_openapi.py
