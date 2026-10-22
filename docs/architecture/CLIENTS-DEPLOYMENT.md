@@ -1,24 +1,17 @@
-# Distribution clients installables et production API-only
+# Distribution V1 — applications clientes installables uniquement
 
-## Clients
-- Android acheteur white-label, React UI embarquée + Capacitor/Kotlin.
-- Android marchand séparé, React UI embarquée + Capacitor/Kotlin.
-- Windows opérateur EXE/MSI, React embarqué + Tauri/Rust, **VPN obligatoire** ; Windows marchand futur.
-- Marketplace additionnelle Android, opt-in et non requise en V1.
+| Client | Runtime | V1 |
+|---|---|---|
+| APK boutique acheteur | React UI embarquée + Capacitor/Kotlin | REQUIRED |
+| APK ZAMUREK Discovery / venue | React UI embarquée + Capacitor/Kotlin | REQUIRED |
+| APK marchand | React UI embarquée + Capacitor/Kotlin | REQUIRED |
+| Windows marchand EXE/MSI | React UI embarquée + Tauri 2/Rust | REQUIRED |
+| Windows opérateur EXE/MSI | React UI embarquée + Tauri 2/Rust, VPN/MFA | REQUIRED |
 
-## Serveur
-API NestJS HTTPS avec ressources statiques **uniquement médias nécessaires** et payload JSON ; aucun HTML marchand/administrateur, Swagger UI, SPA, SSR ni PWA. Routes publiques limitées à catalogue CDF, identité email, commandes authentifiées ; merchant routes avec RBAC/MFA selon rôle, plateforme routes **réseau privé/VPN exclusivement**, sans authentification désactivée en interne. DB, metrics, secrets, stockage interne ne sont jamais exposés.
+Le noyau commercial de production s'exécute derrière **API HTTPS seulement**. Aucun web UI, SSR/SPA/PWA, portail opérateur/marchand, Swagger UI public. Les logiciels installables s'appuient sur l'API propriétaire versionnée et n'intègrent pas de secrets serveur. Signature, build, installateur, désinstallation et support compatibilité sont testés.
 
-## DNS proposés et non configurés
-`xshop-api-test.shuleops.com` pour staging et `xshop-api.shuleops.com` après mise en production éventuelle. Les sous-domaines doivent être vérifiés contre usages existants du domaine et recevoir TLS. Le nom xShop est provisoire, garder abstraction des URLs.
+APK des commerçants sur leur compte éditeur si admissibilité Google Play vérifiée et publication autorisée. Les droits de LaJoie Mall ne sont pas acquis, aucune app ne peut utiliser sa marque avant partenariat/licence.
 
-## Devise
-Backend produit prix CDF public à partir du prix USD interne et de la version de taux. UI React n'effectue pas de conversion autoritative ; la commande capture le taux. Les utilisateurs peuvent exprimer une préférence monétaire pour territoires futurs, mais **pas affichage USD activé pour RDC sans validation réglementaire**.
+Sous-domaines candidats `zamurek-api-test.shuleops.com` et `zamurek-api.shuleops.com` non configurés. Console opérateur et services sensibles non exposés publiquement.
 
-## Identité
-Pas de SMS, e-mail + mot de passe et vérification par SMTP ; comptes marchands/opérateurs TOTP. Aucun refresh token transféré au DOM.
-
-## Livraison Windows
-Tauri 2 supporte NSIS EXE et WiX MSI, builds/signature sur Windows. Source : https://v2.tauri.app/distribute/windows-installer/ .
-
-Voir [réseau détaillé](NETWORK-EXPOSURE.md), [auth](AUTH-NO-SMS.md) et [revue juridique](../legal/RDC-INITIAL-REVIEW.md).
+Tauri v2 documentation installateurs : https://v2.tauri.app/distribute/windows-installer/ . Voir [contrat](../v1/TECHNICAL-CONTRACTS.md), [gates](../v1/RELEASE-GATES.md).
