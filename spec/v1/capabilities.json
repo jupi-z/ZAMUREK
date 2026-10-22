@@ -1,0 +1,336 @@
+{
+  "schemaVersion": "1.0",
+  "product": "ZAMUREK",
+  "targetRelease": "1.0.0",
+  "baseRelease": "0.0.0",
+  "asOf": "2026-10-22",
+  "policy": "NO_PARTIAL_COMMERCIAL_LAUNCH",
+  "scopeStatus": "NORMATIVE_NOT_IMPLEMENTED",
+  "declaredVerticals": [
+    "retail",
+    "weighted",
+    "food",
+    "service",
+    "furniture",
+    "repair",
+    "pharmacy",
+    "venue"
+  ],
+  "properties": {
+    "merchantDatabaseIsolation": "one_postgres_db_per_organization",
+    "establishments": "many_per_organization",
+    "productIP": "proprietary",
+    "commerceEngineFoundation": "none_third_party",
+    "publicInternet": "least_privilege_api_only",
+    "patientOrPrescriptionHandling": "disabled_until_licensed",
+    "pricing": "USD_SOURCE_CDF_POLICY_PUBLIC",
+    "login": "EMAIL_NO_SMS",
+    "aiCore": "FIRST_CLASS_AGENTIC_FABRIC"
+  },
+  "capabilities": [
+    {
+      "id": "FND-01",
+      "category": "foundation",
+      "priority": "P0",
+      "requiredForV1": true,
+      "description": "Registry + DB tenant + establishment RBAC",
+      "acceptance": "T1/T2 + E1/E2 cannot read each other's private records"
+    },
+    {
+      "id": "FND-02",
+      "category": "foundation",
+      "priority": "P0",
+      "requiredForV1": true,
+      "description": "Email login, sessions, staff MFA and operator VPN",
+      "acceptance": "guest checkout refused; MFA and VPN enforced"
+    },
+    {
+      "id": "FND-03",
+      "category": "foundation",
+      "priority": "P1",
+      "requiredForV1": true,
+      "description": "Configurable multi-business capability profiles",
+      "acceptance": "single establishment activates restaurant and retail safely"
+    },
+    {
+      "id": "FND-04",
+      "category": "foundation",
+      "priority": "P1",
+      "requiredForV1": true,
+      "description": "Typed offers, media, variants and categories",
+      "acceptance": "PRODUCT/WEIGHTED/FOOD/SERVICE/QUOTED/REPAIR/REGULATED schemas validated"
+    },
+    {
+      "id": "FND-05",
+      "category": "foundation",
+      "priority": "P0",
+      "requiredForV1": true,
+      "description": "USD source pricing with merchant FX + immutable CDF quotes",
+      "acceptance": "2360→2300 rate update does not modify existing orders"
+    },
+    {
+      "id": "FND-06",
+      "category": "foundation",
+      "priority": "P0",
+      "requiredForV1": true,
+      "description": "Order lifecycle and state history",
+      "acceptance": "order accepted to completed; illegal transitions rejected"
+    },
+    {
+      "id": "FND-07",
+      "category": "foundation",
+      "priority": "P0",
+      "requiredForV1": true,
+      "description": "Cash on pickup/delivery and manual transfer confirmation",
+      "acceptance": "buyer declaration alone never marks paid"
+    },
+    {
+      "id": "FND-08",
+      "category": "foundation",
+      "priority": "P1",
+      "requiredForV1": true,
+      "description": "Zone delivery and pickup/on-site fulfillment",
+      "acceptance": "unsupported area fails before checkout"
+    },
+    {
+      "id": "FND-09",
+      "category": "foundation",
+      "priority": "P1",
+      "requiredForV1": true,
+      "description": "Merchant Android and Windows installed consoles",
+      "acceptance": "same tenant workflows executed on both platforms"
+    },
+    {
+      "id": "FND-10",
+      "category": "foundation",
+      "priority": "P1",
+      "requiredForV1": true,
+      "description": "Connected POS for cashier workflows",
+      "acceptance": "cash sale uses validated server pricing and audit"
+    },
+    {
+      "id": "FND-11",
+      "category": "foundation",
+      "priority": "P1",
+      "requiredForV1": true,
+      "description": "BASIC 7 USD organization subscription",
+      "acceptance": "subscription lifecycle doesn't delete tenant data"
+    },
+    {
+      "id": "FND-12",
+      "category": "foundation",
+      "priority": "P1",
+      "requiredForV1": true,
+      "description": "Branded buyer Android and unified Discovery/venue",
+      "acceptance": "tenant A opt-out removes published listing"
+    },
+    {
+      "id": "FND-13",
+      "category": "foundation",
+      "priority": "P0",
+      "requiredForV1": true,
+      "description": "API-only deploy with restoration and private services",
+      "acceptance": "tenant A restored without affecting tenant B"
+    },
+    {
+      "id": "FND-14",
+      "category": "foundation",
+      "priority": "P1",
+      "requiredForV1": true,
+      "description": "Versioned API, French i18n and accessibility",
+      "acceptance": "older APK version remains compatible"
+    },
+    {
+      "id": "FND-15",
+      "category": "foundation",
+      "priority": "P0",
+      "requiredForV1": true,
+      "description": "Territory compliance and category gates",
+      "acceptance": "RDC pricing exposed as CDF and regulated offering blocked"
+    },
+    {
+      "id": "FND-16",
+      "category": "foundation",
+      "priority": "P0",
+      "requiredForV1": true,
+      "description": "Outbox, idempotency and in-app notifications",
+      "acceptance": "two identical checkout retries produce one order"
+    },
+    {
+      "id": "RTL-01",
+      "category": "retail",
+      "priority": "P1",
+      "requiredForV1": true,
+      "description": "Standard product sales and availability",
+      "acceptance": "variant purchased and fulfilled end to end"
+    },
+    {
+      "id": "WGT-01",
+      "category": "weighted",
+      "priority": "P1",
+      "requiredForV1": true,
+      "description": "G/KG pricing from canonical mass units",
+      "acceptance": "125 g and 1.5 kg priced exactly"
+    },
+    {
+      "id": "WGT-02",
+      "category": "weighted",
+      "priority": "P0",
+      "requiredForV1": true,
+      "description": "Exact fractional quantities and weight confirmation",
+      "acceptance": "final weight changed needs reacceptance"
+    },
+    {
+      "id": "FOD-01",
+      "category": "food",
+      "priority": "P1",
+      "requiredForV1": true,
+      "description": "Restaurant menu and required modifiers",
+      "acceptance": "pizza with topping and required options quoted exactly"
+    },
+    {
+      "id": "FOD-02",
+      "category": "food",
+      "priority": "P1",
+      "requiredForV1": true,
+      "description": "Scheduled cooking and kitchen ticket flow",
+      "acceptance": "order accepted, prepared, ready and handed over"
+    },
+    {
+      "id": "FOD-03",
+      "category": "food",
+      "priority": "P0",
+      "requiredForV1": true,
+      "description": "Table booking concurrency control",
+      "acceptance": "two concurrent parties cannot overbook table slot"
+    },
+    {
+      "id": "SVC-01",
+      "category": "service",
+      "priority": "P1",
+      "requiredForV1": true,
+      "description": "Services, staff schedules, duration and buffers",
+      "acceptance": "employee absent slot not offered"
+    },
+    {
+      "id": "SVC-02",
+      "category": "service",
+      "priority": "P0",
+      "requiredForV1": true,
+      "description": "Appointment lifecycle and no double booking",
+      "acceptance": "concurrent slot booking prevents conflicts"
+    },
+    {
+      "id": "FUR-01",
+      "category": "furniture",
+      "priority": "P1",
+      "requiredForV1": true,
+      "description": "Bulky goods quote and specialty delivery",
+      "acceptance": "client approves quote then order created"
+    },
+    {
+      "id": "REP-01",
+      "category": "repair",
+      "priority": "P0",
+      "requiredForV1": true,
+      "description": "Diagnostic plus explicit customer approval",
+      "acceptance": "unauthorized paid repair step rejected"
+    },
+    {
+      "id": "REP-02",
+      "category": "repair",
+      "priority": "P1",
+      "requiredForV1": true,
+      "description": "Work order, handover and merchant warranty record",
+      "acceptance": "repair work order completed and returned"
+    },
+    {
+      "id": "PHA-01",
+      "category": "pharmacy",
+      "priority": "P1",
+      "requiredForV1": true,
+      "description": "Permitted nonregulated offerings in qualified stores",
+      "acceptance": "allowed nonmedicinal product sold with qualification check"
+    },
+    {
+      "id": "PHA-02",
+      "category": "pharmacy",
+      "priority": "P0",
+      "requiredForV1": true,
+      "description": "Regulated medicine is fail-closed",
+      "acceptance": "prescription-controlled item cannot enter basket or checkout"
+    },
+    {
+      "id": "VEN-01",
+      "category": "venue",
+      "priority": "P1",
+      "requiredForV1": true,
+      "description": "Venue map/floors and opt-in merchant discovery",
+      "acceptance": "two merchants discovered without disclosing private data"
+    },
+    {
+      "id": "VEN-02",
+      "category": "venue",
+      "priority": "P0",
+      "requiredForV1": true,
+      "description": "Merchant-scoped cart/order from aggregated app",
+      "acceptance": "order never spans tenant databases"
+    },
+    {
+      "id": "AGT-01",
+      "category": "ai",
+      "priority": "P0",
+      "requiredForV1": true,
+      "description": "Versioned tool registry and tenant policy engine",
+      "acceptance": "no cross-tenant tool call succeeds"
+    },
+    {
+      "id": "AGT-02",
+      "category": "ai",
+      "priority": "P0",
+      "requiredForV1": true,
+      "description": "Durable workflow, approval and retry discipline",
+      "acceptance": "approval reused for changed payload rejected"
+    },
+    {
+      "id": "AGT-03",
+      "category": "ai",
+      "priority": "P0",
+      "requiredForV1": true,
+      "description": "Provider-neutral models and per-tenant kill switch",
+      "acceptance": "LLM offline does not stop commerce"
+    },
+    {
+      "id": "AGT-04",
+      "category": "ai",
+      "priority": "P1",
+      "requiredForV1": true,
+      "description": "Catalogue, FAQ and analytics assistants",
+      "acceptance": "three assistants work with verified data and scopes"
+    },
+    {
+      "id": "SEC-01",
+      "category": "security",
+      "priority": "P0",
+      "requiredForV1": true,
+      "description": "Security/redteam tests for prompt injection",
+      "acceptance": "untrusted prompts cannot elevate permission"
+    },
+    {
+      "id": "OPS-01",
+      "category": "operations",
+      "priority": "P0",
+      "requiredForV1": true,
+      "description": "CI and shipped build evidence for all clients",
+      "acceptance": "real mobile/Windows builds and test reports"
+    },
+    {
+      "id": "LEG-01",
+      "category": "legal",
+      "priority": "P0",
+      "requiredForV1": true,
+      "description": "Verified market-specific legal release gates",
+      "acceptance": "documented legal reviewer decision before real sales"
+    }
+  ]
+}
