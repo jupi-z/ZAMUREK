@@ -1,3 +1,5 @@
+> **ZAMUREK V1 :** App marchand multi-établissement, cuisine, caisse, réservations et agentique avec approval. La source de vérité est [Charte V1](../../docs/v1/PRODUCT-CHARTER.md) et [Parcours métiers](../../docs/v1/BUSINESS-WORKFLOWS.md). L'ancien descriptif xShop ci-dessous reste historique.
+
 # Marchand Android xShop — G0 non implémenté
 
 Application séparée de l'acheteur ; React UI + Capacitor/Kotlin pour réseau, persistance, OS et sessions. E-mail/mot de passe, MFA TOTP pour rôles sensibles.
