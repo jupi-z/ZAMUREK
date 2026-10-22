@@ -1,3 +1,5 @@
+> **NOTE HISTORIQUE :** cette baseline précédait le contrôle final. La CI a ensuite été mise au vert et les défauts OpenAPI corrigés. Voir impérativement le [rapport final d'audit](FINAL-REPO-AUDIT-2026-10-22.md) et le [prompt Codex initial](CODEX-PHASE-0.1.0-PROMPT.md) pour l'état actuel.
+
 # Audit de préparation à Codex — ZAMUREK, 22 octobre 2026
 
 ## Périmètre audité
