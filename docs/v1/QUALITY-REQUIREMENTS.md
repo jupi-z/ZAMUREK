@@ -5,7 +5,7 @@ Code compilé, tests unité/intégration et E2E sur le scénario visé, OpenAPI 
 
 ## Contrôles P0 (bloquants absolus)
 1. **Isolation** : DB distinctes T1/T2 et permissions établissement E1/E2 ; BOLA/BFLA IDOR clients/staff/agents et projections mall.
-2. **Finance** : décimal exact, conversion USD/CDF et arrondi déterministes, quote TTL, immutabilité des montants et conformité territorial prix.
+2. **Finance** : décimal exact, conversion USD/CDF par **CDF_LINE_HALF_UP_V1** et arrondi déterministes, quote TTL, immutabilité des montants et conformité territorial prix.
 3. **Réservations** : pas de réservation concurrente de même ressource/intervalle ; transactions et compensations ; cancellation policies.
 4. **États** : vente, service, restauration et réparation possèdent des transitions permises, idempotency sur chaque mutation, audit.
 5. **Paiements** : paiement manuel/à livraison sans fausse auto-confirmation, remboursements encadrés, abonnements séparés.
