@@ -14,7 +14,7 @@
 10. [Roadmap 0.0.0→1.0.0](RELEASE-GATES.md) — critères de sortie.
 11. [Dossier opérationnel Codex](CODEX-HANDOFF.md) — protocole d'implémentation.
 
-Les contrats machine : [capacités](../../spec/v1/capabilities.json), [progression](../../spec/v1/progress-template.json), [OpenAPI 3.1 V1](../../packages/contracts/openapi/zamurek-v1.yaml). **Attention : l'OpenAPI est un premier contrat de conception, non un backend prêt ou un schéma définitivement stabilisé.**
+Les contrats machine : [capacités](../../spec/v1/capabilities.json), [progression](../../spec/v1/progress-template.json), [fixtures synthétiques](../../spec/v1/fixtures.json), [OpenAPI 3.1 V1](../../packages/contracts/openapi/zamurek-v1.yaml). **Attention : l'OpenAPI est un premier contrat de conception, non un backend prêt ou un schéma définitivement stabilisé.**
 
 ## Conditions à date
 - Partenariat LaJoie Mall **envisagé mais non conclu**, aucune marque tierce présumée autorisée.
@@ -26,6 +26,7 @@ Les contrats machine : [capacités](../../spec/v1/capabilities.json), [progressi
 ```bash
 python3 scripts/validate_docs.py
 python3 scripts/validate_v1_scope.py
+python3 scripts/validate_agent_contracts.py
 python3 -m pip install -r scripts/requirements-docs.txt
 python3 scripts/validate_openapi.py
 ```
