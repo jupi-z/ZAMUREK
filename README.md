@@ -40,7 +40,8 @@ ZAMUREK est une plateforme commerciale et de services **100 % propriétaire**, m
 9. [Contrat OpenAPI brouillon](packages/contracts/openapi/zamurek-v1.yaml)
 10. [Manifeste V1 contrôlable](spec/v1/capabilities.json), [progression Codex](spec/v1/progress-template.json) et [fixtures synthétiques](spec/v1/fixtures.json)
 11. [**Premier prompt Codex — phase 0.1.0**](docs/v1/CODEX-PHASE-0.1.0-PROMPT.md)
-12. [**Dossier pour Codex**](docs/v1/CODEX-HANDOFF.md)
+12. [**Dernier audit pré-Codex et état CI**](docs/v1/FINAL-REPO-AUDIT-2026-10-22.md)
+13. [**Dossier pour Codex**](docs/v1/CODEX-HANDOFF.md)
 
 ## Vérifications de conception
 ```bash
