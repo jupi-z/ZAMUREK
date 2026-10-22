@@ -1,6 +1,6 @@
 # xShop — arbitrages G0 révisés le 16 octobre 2026
 
-**Statut : décision métier actualisée, prioritaire sur celles du 15 octobre 2026 en cas de contradiction.** Le nom `xShop` est provisoire ; ne pas le figer dans le branding utilisateur final. Le code du système n'est pas encore implémenté.
+**Statut : HISTORIQUE xShop. Pour ZAMUREK 1.0.0, [les spécifications ZAMUREK V1](v1/README.md) et les ADR-0020→0023 prévalent.** Au 16/10 ce document remplaçait les décisions xShop du 15/10. Le nom `xShop` est provisoire ; ne pas le figer dans le branding utilisateur final. Le code du système n'est pas encore implémenté.
 
 ## Décisions nouvelles du propriétaire
 
