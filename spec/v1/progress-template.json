@@ -1,0 +1,129 @@
+{
+  "schemaVersion": "1.0",
+  "product": "ZAMUREK",
+  "overallPercent": 0,
+  "releaseTarget": "1.0.0",
+  "releaseStatus": "NOT_READY",
+  "updatedAt": null,
+  "calculation": "sum(weight * verifiedItems / plannedItems) / sum(weights); no evidence=no credit; P0/P1 gate overrides percentage",
+  "requiredWorkstreams": [
+    {
+      "version": "0.1.0",
+      "name": "foundation-and-agentic-envelope",
+      "weight": 15,
+      "plannedItems": 0,
+      "verifiedItems": 0,
+      "percent": 0,
+      "status": "PLANNED",
+      "evidence": [],
+      "blockers": []
+    },
+    {
+      "version": "0.2.0",
+      "name": "retail-weight-fx-pos-commerce",
+      "weight": 15,
+      "plannedItems": 0,
+      "verifiedItems": 0,
+      "percent": 0,
+      "status": "PLANNED",
+      "evidence": [],
+      "blockers": []
+    },
+    {
+      "version": "0.3.0",
+      "name": "food-restaurant",
+      "weight": 10,
+      "plannedItems": 0,
+      "verifiedItems": 0,
+      "percent": 0,
+      "status": "PLANNED",
+      "evidence": [],
+      "blockers": []
+    },
+    {
+      "version": "0.4.0",
+      "name": "services-booking",
+      "weight": 8,
+      "plannedItems": 0,
+      "verifiedItems": 0,
+      "percent": 0,
+      "status": "PLANNED",
+      "evidence": [],
+      "blockers": []
+    },
+    {
+      "version": "0.5.0",
+      "name": "furniture-repair",
+      "weight": 10,
+      "plannedItems": 0,
+      "verifiedItems": 0,
+      "percent": 0,
+      "status": "PLANNED",
+      "evidence": [],
+      "blockers": []
+    },
+    {
+      "version": "0.6.0",
+      "name": "pharmacy-venue-discovery",
+      "weight": 10,
+      "plannedItems": 0,
+      "verifiedItems": 0,
+      "percent": 0,
+      "status": "PLANNED",
+      "evidence": [],
+      "blockers": []
+    },
+    {
+      "version": "0.7.0",
+      "name": "agentic-runtime-real-assistants",
+      "weight": 12,
+      "plannedItems": 0,
+      "verifiedItems": 0,
+      "percent": 0,
+      "status": "PLANNED",
+      "evidence": [],
+      "blockers": []
+    },
+    {
+      "version": "0.8.0",
+      "name": "android-windows-distribution",
+      "weight": 12,
+      "plannedItems": 0,
+      "verifiedItems": 0,
+      "percent": 0,
+      "status": "PLANNED",
+      "evidence": [],
+      "blockers": []
+    },
+    {
+      "version": "0.9.0",
+      "name": "cross-module-hardening-release",
+      "weight": 8,
+      "plannedItems": 0,
+      "verifiedItems": 0,
+      "percent": 0,
+      "status": "PLANNED",
+      "evidence": [],
+      "blockers": []
+    }
+  ],
+  "capabilities": {
+    "total": 38,
+    "implemented": 0,
+    "tested": 0,
+    "accepted": 0,
+    "blocked": 0
+  },
+  "criticalGates": {
+    "P0": "NOT_RUN",
+    "P1": "NOT_RUN",
+    "security": "NOT_RUN",
+    "legal": "NOT_RUN",
+    "distribution": "NOT_RUN",
+    "disasterRecovery": "NOT_RUN"
+  },
+  "notes": [
+    "Template only. Codex fills plannedItems after decomposing scope; zero until verified tests, not a claim of progress.",
+    "Release 1.0.0 cannot be marked ready unless all capabilities accepted, P0/P1 gates pass and external legal conditions are satisfied."
+  ]
+}
