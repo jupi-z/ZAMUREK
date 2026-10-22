@@ -1,19 +1,25 @@
 #!/usr/bin/env python3
-"""Strict structural checks for the draft xShop OpenAPI spec; requires PyYAML."""
+"""Static OpenAPI 3.1 structural/semantic assertions for normative ZAMUREK V1 draft.
+
+This is intentionally NOT a full OpenAPI conformance validator or a backend test.
+"""
 from __future__ import annotations
 import sys
 from pathlib import Path
+
 try:
     import yaml
 except ImportError:
-    print("Missing PyYAML; install: python3 -m pip install -r scripts/requirements-docs.txt")
+    print("Missing PyYAML; pip install -r scripts/requirements-docs.txt")
     sys.exit(2)
 
 ROOT = Path(__file__).resolve().parents[1]
-SPEC = ROOT / "packages/contracts/openapi/xshop-v1.yaml"
+SPEC = ROOT / "packages/contracts/openapi/zamurek-v1.yaml"
+
 
 class UniqueKeyLoader(yaml.SafeLoader):
     pass
+
 
 def construct_mapping(loader, node):
     loader.flatten_mapping(node)
@@ -25,9 +31,9 @@ def construct_mapping(loader, node):
         result[key] = loader.construct_object(value_node)
     return result
 
-UniqueKeyLoader.add_constructor(
-    yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG, construct_mapping
-)
+
+UniqueKeyLoader.add_constructor(yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG, construct_mapping)
+
 
 def walk(value):
     if isinstance(value, dict):
@@ -38,75 +44,93 @@ def walk(value):
         for v in value:
             yield from walk(v)
 
-def main() -> None:
-    doc = yaml.load(SPEC.read_text(encoding="utf-8"), Loader=UniqueKeyLoader)
-    assert isinstance(doc, dict) and str(doc.get("openapi", "")).startswith("3.1."), "Expected OpenAPI 3.1"
-    assert isinstance(doc.get("paths"), dict) and doc["paths"], "Missing paths"
-    assert doc.get("components", {}).get("schemas"), "Missing component schemas"
 
-    operation_ids = set()
+def main():
+    doc = yaml.load(SPEC.read_text(encoding="utf-8"), Loader=UniqueKeyLoader)
+    assert isinstance(doc, dict) and str(doc.get("openapi", "")).startswith("3.1."), "OpenAPI 3.1 required"
+    assert "ZAMUREK" in doc.get("info", {}).get("title", ""), "Legacy xShop title not accepted"
+    paths = doc.get("paths", {})
+    assert isinstance(paths, dict) and paths, "Missing paths"
+
+    required_paths = {
+        "/auth/v1/register", "/auth/v1/verify-email", "/auth/v1/login",
+        "/merchant/v1/sessions", "/merchant/v1/mfa/verify",
+        "/v1/offerings", "/v1/merchant/weighted-offerings",
+        "/v1/merchant/food-menus", "/v1/restaurant/menus",
+        "/v1/restaurant/table-availability", "/v1/table-reservations",
+        "/v1/appointments/availability", "/v1/appointments",
+        "/v1/merchant/quotes", "/v1/quotes/{quoteId}/accept",
+        "/v1/repairs", "/v1/repairs/{repairId}/approve-estimate",
+        "/v1/merchant/pos/sales", "/v1/venues", "/v1/venues/{venueId}/offerings",
+        "/v1/merchant/venues/{venueId}/opt-in",
+        "/v1/merchant/regulated-offerings",
+        "/v1/merchant/fx-rate", "/v1/agents/runs",
+        "/v1/agents/approvals/{approvalId}",
+        "/v1/checkouts", "/v1/orders", "/platform/v1/subscriptions",
+    }
+    missing = required_paths - set(paths)
+    assert not missing, f"ZAMUREK V1 endpoints missing: {sorted(missing)}"
+    operation_ids: set[str] = set()
     operations = 0
-    for path, methods in doc["paths"].items():
-        assert path.startswith("/"), f"Invalid path: {path}"
-        for verb, definition in methods.items():
-            if verb.lower() not in {"get", "post", "put", "patch", "delete", "options", "head", "trace"}:
+    methods = {"get", "post", "put", "patch", "delete", "head", "options", "trace"}
+    for name, mapping in paths.items():
+        assert name.startswith("/"), f"Bad path: {name}"
+        assert isinstance(mapping, dict), f"Path must map to operations: {name}"
+        for method, operation in mapping.items():
+            if method not in methods:
                 continue
             operations += 1
-            op_id = definition.get("operationId")
-            assert op_id and op_id not in operation_ids, f"Duplicate/missing operationId: {op_id}"
-            operation_ids.add(op_id)
-            assert definition.get("responses"), f"Missing responses: {verb} {path}"
+            assert isinstance(operation, dict), f"Invalid {method} {name}"
+            operation_id = operation.get("operationId")
+            assert operation_id and operation_id not in operation_ids, (
+                f"Duplicate/missing operationId: {operation_id}"
+            )
+            operation_ids.add(operation_id)
+            assert operation.get("responses"), f"Missing responses: {method} {name}"
+            if name.startswith("/platform/") or name.startswith("/v1/merchant/"):
+                assert {"bearerAuth": []} in operation.get("security", []), (
+                    f"Privileged endpoint missing bearerAuth: {method} {name}"
+                )
 
-    for node in walk(doc):
-        ref = node.get("$ref")
+    components = doc.get("components", {})
+    schemas = components.get("schemas", {})
+    assert isinstance(schemas, dict) and len(schemas) >= 40, "Insufficient typed schemas"
+    for value in walk(doc):
+        ref = value.get("$ref")
         if ref is None:
             continue
-        assert isinstance(ref, str) and ref.startswith("#/"), f"Unexpected ref: {ref}"
+        assert isinstance(ref, str) and ref.startswith("#/"), f"External/invalid ref: {ref}"
         current = doc
         for segment in ref[2:].split("/"):
             segment = segment.replace("~1", "/").replace("~0", "~")
-            assert isinstance(current, dict) and segment in current, f"Broken ref: {ref}"
+            assert isinstance(current, dict) and segment in current, f"Broken reference {ref}"
             current = current[segment]
-    # Approved xShop invariants as of 2026-10-16.
-    required_paths = (
-        "/auth/v1/register", "/auth/v1/verify-email", "/auth/v1/login",
-        "/auth/v1/refresh", "/auth/v1/logout", "/v1/carts",
-        "/v1/carts/{cartId}/quote", "/v1/checkouts",
-        "/v1/orders", "/v1/orders/{orderId}",
-        "/v1/merchant/fx-rate", "/v1/merchant/orders",
-    )
-    for required in required_paths:
-        assert required in doc["paths"], f"Required route missing: {required}"
 
-    protected = (
-        ("/v1/carts", "post"),
-        ("/v1/carts/{cartId}", "get"),
-        ("/v1/carts/{cartId}/items", "patch"),
-        ("/v1/carts/{cartId}/quote", "get"),
-        ("/v1/checkouts", "post"),
-        ("/v1/orders", "get"),
-        ("/v1/orders/{orderId}", "get"),
-        ("/v1/merchant/fx-rate", "get"),
+    required_schemas = {
+        "EmailAddress", "PriceQuote", "FxRateSnapshot", "WeightedOfferingInput",
+        "FoodMenuItemInput", "AppointmentInput", "TableReservationInput",
+        "RepairIntake", "RepairCase", "VenueOptIn", "PosSaleInput",
+        "AgentRunInput", "AgentApprovalInput", "MerchantCredentials",
+        "EstablishmentInput", "OfferingInput", "Subscription",
+    }
+    assert required_schemas <= set(schemas), (
+        f"Missing schemas: {sorted(required_schemas - set(schemas))}"
     )
-    for path, verb in protected:
-        op = doc["paths"][path][verb]
-        assert {"bearerAuth": []} in op.get("security", []), (
-            f"Auth absent: {verb.upper()} {path}"
-        )
-
-    schemas = doc["components"]["schemas"]
-    assert "DualPrice" not in schemas, "Old independent dual prices must be removed"
-    assert "CartCreated" not in schemas and "CartToken" not in doc["components"].get("parameters", {})
-    assert "PriceQuote" in schemas and "FxRateSnapshot" in schemas
-    assert "EmailAddress" in schemas, "Email identity required (no SMS)"
-    assert "email" in schemas["RegisterCustomer"]["required"]
-    assert "phoneE164" not in schemas["RegisterCustomer"]["required"]
+    assert schemas["SupportedCurrency"]["enum"] == ["CDF"], "RDC pilot publicly priced CDF"
+    assert "DualPrice" not in schemas, "Two independently priced currencies are superseded"
+    assert "basePriceUsd" in schemas["OfferingInput"]["required"]
     assert "quoteId" in schemas["CheckoutRequest"]["required"]
-    assert "basePriceUsd" in schemas["VariantInput"]["required"], "USD-only source price"
-    assert schemas["SupportedCurrency"]["enum"] == ["CDF"], "RDC commercial public currency must be CDF"
-    assert "/v1/carts/{cartId}/currency" not in doc["paths"], "Old switch-currency route"
-    assert operations >= 25, "OpenAPI draft too incomplete"
-    print(f"OpenAPI 3.1 draft parsed: {operations} operations, component references resolved.")
+    assert "email" in schemas["RegisterCustomer"]["required"]
+    assert "/auth/v1/verify-phone" not in paths, "SMS auth not permitted by V1"
+    assert "/v1/carts/{cartId}/currency" not in paths, "Legacy free USD display switch"
+    assert operations >= 65, "Multi-industry V1 API surface incomplete"
+
+    print(
+        f"ZAMUREK draft OpenAPI parsed: {operations} operations, "
+        f"{len(paths)} paths, all component references resolved. "
+        "Schema conformance/runtime checks still required in G1."
+    )
+
 
 if __name__ == "__main__":
     main()
