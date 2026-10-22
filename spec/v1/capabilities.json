@@ -249,8 +249,8 @@
       "category": "pharmacy",
       "priority": "P1",
       "requiredForV1": true,
-      "description": "Permitted nonregulated offerings in qualified stores",
-      "acceptance": "allowed nonmedicinal product sold with qualification check"
+      "description": "Permitted pharmacy goods, seller qualifications and lot/expiry policies when applicable",
+      "acceptance": "Qualified tenant can transact permitted goods; expired lots and restricted medicines rejected"
     },
     {
       "id": "PHA-02",
