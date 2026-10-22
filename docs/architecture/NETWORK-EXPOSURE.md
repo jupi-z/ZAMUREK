@@ -1,26 +1,17 @@
-# ZAMUREK — topologie API-only et réseau minimal
+# ZAMUREK — réseau API-only sur Core Monarque Connect
 
-**Statut : architecture V1, pas une configuration réelle de VPS, DNS ou VPN.**
+**Statut : architecture cible non déployée.** Pas de serveur ZAMUREK autonome. Le backend REST dans le dépôt privé Monarque Connect expose les routes nécessaires à ZAMUREK via contrats d'intégration versionnés, préfixe `/api/v1` et canal public non privilégié.
 
-## Domaines provisoires CANDIDATS, non créés
-- `zamurek-api-test.shuleops.com` (staging, accès restreint, aucune donnée réelle)
-- `zamurek-api.shuleops.com` (production future, HTTPS)
-Tous deux requièrent confirmation de propriété du domaine, absence de conflit ShuleOps, DNS/TLS et vérification de l'infrastructure. Le serveur existant n'a pas été inspecté.
-
-## Routes
-| Surface | Accès |
+| Surface | Réseau et politique |
 |---|---|
-| Catalogue, menu, disponibilités, venue opt-in publiés | HTTPS public en lecture, territorial CDF, rate-limit |
-| Identité acheteur email/password, panier, commandes, rendez-vous | HTTPS public **mais session, RBAC/ownership, consentement et anti-abus** |
-| API marchand (catalogue, FX, caisse, appointments, réparation, agents autorisés) | HTTPS authentifié + tenant/establishment scopes, MFA/step-up sensible, surveillance |
-| API plateforme provisioning/billing/tenant/agent admin | **VPN privé + MFA opérateur** ; refus du trafic public au proxy |
-| DB registry/tenant, secrets, object store admin, files workers, métriques, SSH, backups | **réseau privé seulement**, deny-default |
-| Swagger UI, SPA, SSR, PWA, portail marchand/administrateur hébergé | **non déployés** |
+| Catalogue public, menu, venue opt-in | HTTPS, lecture limitée aux données publiées, rate limit |
+| Buyer online, commandes, rendez-vous | HTTPS + buyer authentifié, ownership object strict |
+| Marchand, caisse POS, imprimables | HTTPS + staff/cashier authenticated, RBAC/establishment/MFA selon opération |
+| Administration plateforme et clés IA | VPN privé + MFA opérateur, aucun accès public |
+| PostgreSQL, secrets, workers, médias privés, sauvegarde, métriques | réseau interne exclusivement |
 
-## Règles
-Protéger routes derrière reverse proxy explicite + firewall ; aucun trust basé sur channelId, CORS, user-agent, device-id ou signature APK. TLS 443, authentification backends, rate-limits distincts, upload contrôlé, aucun endpoint général du serveur exposé. VPN WireGuard ou alternative approuvée, MFA et audit. Media public diffusé par mécanisme contrôlé, media privé par autorisations strictes.
+Production ZAMUREK : **pas de SPA, SSR, PWA ni console web**. Applications installées conservent UI embarquée et appellent uniquement Core HTTP autorisé. HTTPS/CORS/channelId ne remplacent pas authz. Aucune donnée financière venue ou autre tenant ne peut être exposée.
 
-## Séparation environnements
-Local → staging isolé → production validée ; données synthétiques en staging ; pas de migration/restore automatique production à partir de staging. Backups chiffrés, restauration testée et monitoring privé. Aucune route web frontend hébergée.
+Les anciens candidats `zamurek-api-test.shuleops.com` et `zamurek-api.shuleops.com` n'ont **pas** été configurés ni validés ; un routage DNS pourrait pointer vers Core mais doit être arbitré avec propriété domaine, environnement, TLS et proxy. Aucun DNS/serveur/modèle fournisseur n'est affirmé en service.
 
-Voir [menaces V1](../v1/SECURITY-THREAT-MODEL.md), [contrats](../v1/TECHNICAL-CONTRACTS.md).
+Voir [intégration](../v1/SHARED-CORE-INTEGRATION.md) et [sécurité](../v1/SECURITY-THREAT-MODEL.md).

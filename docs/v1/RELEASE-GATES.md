@@ -1,20 +1,22 @@
 # Trajectoire immuable 0.0.0 → 1.0.0 — ZAMUREK
 
-**V1 = lancement commercial complet des parcours obligatoires, pas MVP.** Chaque jalon livre un incrément réel testé ; les branches non terminées ne sont pas présentées comme « V1 ». Versions sont des checkpoints internes, non des autorisations de commercialisation.
+**V1 = lancement commercial complet des 43 capacités obligatoires, pas MVP.** Phase Core préalable = Monarque Connect **10A.5**, voir [roadmap intégration](INTEGRATION-ROADMAP.md) et [ADR-0024](../decisions/0024-shared-monarque-core-zamurek.md). Chaque jalon livre un incrément réel testé ; les branches non terminées ne sont pas présentées comme « V1 ». Versions sont des checkpoints internes, non des autorisations de commercialisation.
 
 | Version cible | Workstream et livrable | Critère de sortie bloquant |
 |---|---|---|
-| **0.0.0** | Audit, ADR, PRD normatif, matrice, contrat de départ, qualité et protocole Codex | Documents cohérents, CI docs/contrats, zéro violation critique connue sans suivi |
-| **0.1.0** | Monorepo compilable, registry, identity mail+MFA, 2 DB tenant/establishments, événements/outbox, **enveloppe Agentic Fabric dès les modèles initiaux**, contract tooling | Builds API/Android/Windows squelettes ; isolation A/B, migrations, auth, outbox rejouable |
-| **0.2.0** | Catalogue commun typé, USD/FX/CDF exact, quantités pondérales, offre/variantes, panier, quote, checkout/paiement manuel, POS connecté | E2E retail + 125 g/1.5 kg, devise et taux figés, commande idempotente |
+| **0.0.0** | Convergence ADR-0024, Core Monarque 10A.5 C0/C1/C2/C3/C6/C7 contrat shared, migration du cahier des charges et de l'ancien prompt | Documentation cohérente et Core contrat signé/testable ; ne pas exécuter le prompt autonome ZAMUREK |
+| **0.1.0** | Monorepo **clients** Android/Windows compilable, SDK versionné Core, intégrations auth + organisation/établissements/canal ; aucun second NestJS/PostgreSQL/Agentic Fabric | Android/Windows builds réels, API contrat Core SHA, tests scopes A/B E1/E2, aucun backend autonome |
+| **0.2.0** | Core 10A.5 C4/C5 : POS cash/fonds/session/rendu monnaie et documents ; apps ZAMUREK retail/poids/checkout online + POS Android/Windows | vente POS walk-in sans e-mail client, 1 ordre+1 payment+1 cash entry, A4/58/80mm imprimés, FX 125g exact, fiscale fail-closed |
 | **0.3.0** | Restaurant/pizzeria : menu/options, capacité, timing, tickets de cuisine, commandes, réservation de table | E2E prise commande + modificateurs + préparation et réservation sans doublon |
 | **0.4.0** | Prestations, ressources/staff/calendriers, salon, reports/no-show | E2E réservation + concurrents/ressource, fermeture/créneaux |
 | **0.5.0** | Devis meubles et livraison volumineuse, service réparation/diagnostic/consentement | E2E devis→accord→commande ; réparation→accord→restitution |
 | **0.6.0** | Module pharmacie fail-closed & vérification légale, groupes Venue/mall, discovery opt-in, révocation et cache | produits interdits rejetés ; deux commerçants indépendants et opt-out effectif |
-| **0.7.0** | **Agentic Fabric complet** : moteur durable, tool registry, policy, approvals, model adapters, mémoire tenant et 3 assistants V1 | provider réel testé, offline/fallback, redteam prompt injection, aucune transaction risquée autonome |
+| **0.7.0** | Utilisation du **Runtime IA commun** MC 10B/11.5, outils métiers ZAMUREK et 3 assistants V1 | un seul gateway/runs/mémoire/policies; provider réel évalué, désactivation sûre, PII/Red Team et actions A3 humaines |
 | **0.8.0** | Android acheteur, Android marchand, Android Discover/venue, Windows marchand, Windows opérateur, builds white-label | APK(s) et EXE/MSI exécutés sur devices/Windows, aucun web admin déployé |
-| **0.9.0** | Intégration complète, performance, migrations, backups/restore, observabilité, clients signés, accessibilité, localisation, revue licences, juridique/fiscal & processus support | Tous les scénarios inter-modules et restauration A/B passent ; zéro finding de sécurité critique ouvert |
+| **0.9.0** | Qualification conjointe Core et ZAMUREK : isolation logique A/B, rollback/restauration sélective, multi-produit FairScale, POS+imprimante, privacy, performance, sauvegardes et fiscalité | Core phase 12 et produits testés séparément et ensemble ; licences, conformité, appareils, zéro risque critique ouvert |
 | **1.0.0** | Publication commerciale unique, avec capacités obligatoires testées, docs opérateur et engagements support | Go/no-go formel signé, **100% des gates P0/P1**, preuves CI/build/E2E/juridique, pas de fonctionnalité V1 laissée pour plus tard |
+
+**Dépendance externe normative :** phase 10A.5 Monarque Connect (Core privé) doit produire ses APIs/commands et contrats prouvés. ZAMUREK ne possède **aucun** registry, DB par marchand ou Agent Runtime indépendant. C0-C3/C6/C7 avant 0.1.0, C4-C5 avant vente/encaissement et impression 0.2.0. Les gates de production Core/MC/ZAMUREK restent séparés.
 
 ## Méthodologie de clôture
 - Un checkpoint n'est clos que si ses critères **tous** `PASS` avec preuves réelles (commit, test logs, captures de test, artefacts et environnement). `NOT_RUN`, `BLOCKED`, `SKIPPED` ≠ PASS.

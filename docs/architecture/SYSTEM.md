@@ -1,25 +1,13 @@
-# Architecture ZAMUREK — synthèse, voir modèle V1 normatif
+# ZAMUREK V1 — architecture de système intégrée
 
-**PRIORITÉ :** [Modèle de domaine universel V1](../v1/DOMAIN-MODEL.md), [Charte V1](../v1/PRODUCT-CHARTER.md) et [Noyau agentique](../v1/AGENTIC-KERNEL.md) prévalent sur toute ancienne architecture boutique seule décrite ci-dessous.
+**Normatif 22/10/2026 :** [ADR-0024](../decisions/0024-shared-monarque-core-zamurek.md), [Core intégré](../v1/SHARED-CORE-INTEGRATION.md), [POS](../v1/POS-AND-FISCAL-DOCUMENTS.md). Les anciennes descriptions « une DB PostgreSQL métier par tenant », « nouveau registre ZAMUREK » et « second backend autonome » sont abrogées.
 
-**Règle de conception :** API, services métiers, modèles tenant, règles de vente/réservation, traitements spécifiques aux types de commerce et socle agentique développés **en propre**. **Aucun Mercur ni moteur commercial préconstruit**. Réutiliser seulement des briques génériques open source dont les licences sont permissives et vérifiées, selon [ADR-0019](../decisions/0019-proprietary-platform-permissive-oss.md).
+Monarque Connect (dépôt privé) est le **backend NestJS/Prisma/PostgreSQL transactionnel unique** partagé entre Business OS et ZAMUREK : identité, organizations, establishments, item, sales, invoice, payments, cash, entitlements/billing, documents, events et AI Gateway/Runtime.
 
-## Un serveur de production backend/API seulement
-Services NestJS : Platform Registry/provisioning, Global Identity e-mail verified, Merchant Membership + MFA, Catalog (USD source), FX (rate tenant versioned), Quote (public CDF), Cart/Checkout/Orders, Payment Manual, Fulfillment, SaaS Plan BASIC, Audit/Outbox.
+Les modules commerciaux spécialisés POS terminal/session/cash/document, menus et réservation restaurant, poids, services/booking, devis mobiliers, réparations et venue opt-in sont des **modules Core**, avec API et permissions propres, mais pas des copies des tables financières ni du système de gestion.
 
-Registre central + **une DB PostgreSQL métier par tenant** ; gestion pools/credentials bornés. Stockage média tenant-scopé, worker de synchronisation. Aucun HTML UI/SPA/SSR/PWA/Swagger UI hébergé.
+ZAMUREK (dépôt produit/applications) fournit les canaux installables Android (React UI embarquée/Capacitor + Kotlin) et Windows (Tauri/Rust), impression locale A4/thermique, écrans métiers, UX discovery/vente et tests/contrats clients. Aucun portail hébergé ZAMUREK sur production ; backend Core expose seulement API HTTP nécessaires, route opérateur derrière VPN/MFA.
 
-## Applications installables
-- Android acheteur : React UI → Capacitor → Kotlin API/cache/auth, boutique marque.
-- Android marchand séparé : React UI → Capacitor → Kotlin, prix USD/taux USD-CDF/commandes.
-- Windows opérateur : React embarquée → Tauri 2/Rust, **accès plateforme VPN**.
-- Windows marchand ultérieurement, marketplace Android future opt-in.
+Les clients online passent par acheteur e-mail vérifié, les ventes POS peuvent être effectuées avec acheteur de passage **sans compte** mais caissier authentifié. Les transactions financières Core sont atomiques/idempotentes et les factures fiscales restent sous statut bloqué tant que le dispositif légal requis n'est pas prouvé.
 
-## Frontières réseau
-Endpoint clients publics en HTTPS 443 + auth et permissions ; /v1/merchant auth/RBAC+TOTP ; /platform/v1 via VPN seulement ; PostgreSQL, secrets, monitoring et stockage privé non exposés. CORS ne remplace pas auth. Domaines candidats `xshop-api-test.shuleops.com`, `xshop-api.shuleops.com` non configurés.
-
-## Prix
-USD seule source catalogue et tarif livraison, FX tenant versionné, quote CDF serveur, snapshot taux et montants sur commande ; publication/facture CDF RDC par politique réglementaire conservatoire. Aucun FX opérant dans une UI faisant autorité.
-
-## Risques et preuves
-Validation légale arrêté prix CDF, rate merchant/official, délivrance e-mail SMTP, quota VPS, restauration DB A sans B, IDOR, performances natives. Documents de référence : [FX](FX-PRICING.md), [réseau](NETWORK-EXPOSURE.md), [identité](AUTH-NO-SMS.md).
+Schéma DB PostgreSQL **partagé** du Core avec scopes `organizationId+establishmentId+ownership` et isolation testée, sans DB ZAMUREK dédiée. La venue ne reçoit que listings publiés sur consentement. AI Agent Runtime/knowledge/policies sont également mutualisés, avec outils ZAMUREK spécifiques.

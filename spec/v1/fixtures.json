@@ -197,7 +197,47 @@
     "expired FX quote denied",
     "user message with prompt injection cannot execute merchant price update",
     "blocked prescription item cannot checkout",
-    "network offline cannot confirm POS sale"
+    "network offline cannot confirm POS sale",
+    "POS walk-in does not require customer email but must require logged-in cashier and open cash session",
+    "printer failure reprints same receipt and never duplicates sale",
+    "ZAMUREK_BASIC does not activate Monarque Connect CRM/PURCHASES",
+    "same organization uses ZAMUREK and Monarque Connect with one financial ledger"
   ],
-  "expectedFirstRunProgress": 0
+  "expectedFirstRunProgress": 0,
+  "integration": {
+    "backend": "MONARQUE_CONNECT_CORE",
+    "storageModel": "SHARED_POSTGRESQL_LOGICALLY_ISOLATED",
+    "apiBasePath": "/api/v1",
+    "dualProductTenant": "org-retail",
+    "mockApiIsNotProduction": true
+  },
+  "posScenario": {
+    "id": "pos-walkin-cdf-cash",
+    "organizationId": "org-retail",
+    "establishmentId": "est-retail-a",
+    "cashierRole": "CASHIER",
+    "buyer": {
+      "kind": "WALK_IN",
+      "email": null
+    },
+    "cashSessionOpen": true,
+    "sku": "test-pagne",
+    "saleTotalCdf": "28320",
+    "amountTenderedCdf": "30000",
+    "changeDueCdf": "1680",
+    "expectedCanonical": {
+      "salesOrders": 1,
+      "paymentRecords": 1,
+      "cashMovements": 1,
+      "outboxEvents": 1
+    },
+    "printerFormats": [
+      "THERMAL_58",
+      "THERMAL_80",
+      "A4"
+    ],
+    "offlineSaleConfirmation": false,
+    "retryIdempotent": true,
+    "printedReceiptNotAutomaticallyDgiAuthenticated": true
+  }
 }

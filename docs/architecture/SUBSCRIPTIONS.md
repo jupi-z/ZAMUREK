@@ -1,17 +1,14 @@
-# ZAMUREK BASIC — une offre SaaS 7 USD/mois
+# ZAMUREK — abonnement produit séparé dans FairScale Core
 
-**Décision de travail V1 :** une formule BASIC à **7 USD mensuels par Organization commerçante** (une organisation peut disposer de plusieurs établissements), sans frais d'installation ni commission sur ventes. Les modalités de limitation raisonnable, de facturation commerciale en CDF RDC, taxes et contrats doivent être documentées et acceptées avant encaissement réel.
+**Planifié ; pas d'abonnement réel ZAMUREK seedé/facturé à ce stade.** Le propriétaire a retenu une **cible à 7 USD/mois par organisation** et aucune commission sur les ventes, mais cela ne permet pas d'affirmer que **tous** les établissements/utilisateurs/canaux sont sans limite au même prix.
 
-## Registry
-`subscription_plan(code='BASIC', monthlyUsdMinor=700, period='P1M')` ; `merchant_subscription(organizationId, planId, state, cycle, grace)`, `subscription_invoice`, `subscription_payment`, audit, entitlement(s). Aucune confusion avec les ventes dans DB tenant. Il n'existe qu'une offre commercialisée à la sortie V1, plan extensible sous nouvelles ADR.
+## Core Billing
+Monarque Connect conserve son catalogue de plans et le moteur Billing/FairScale. Introduire `productCode=ZAMUREK`, `ZAMUREK_BASIC`, `planVersion`, `subscription`, `effectiveEntitlements` indépendants de `MONARQUE_CONNECT`. Une seule Organization peut détenir les deux produits et conserver ses commandes canoniques. Un marchand ZAMUREK seul ne peut ouvrir CRM, Achats, Projets ou modules Business/Enterprise.
 
-## Cycle
-ACTIVE → PAST_DUE → SUSPENDED / CANCELLED avec grace window, notification in-app/e-mail selon accord. Suspension ne supprime pas la DB, historiques, factures ou réservations sans procédure légale/contractuelle. Retours/export après résiliation selon contrat.
+## Quotas et fiscalité à valider
+Avant facturer : nombre inclus d'établissements, terminaux, caissiers, offres, consommations IA, frais de support, stockage, sauvegarde, coût moyen par client, croissance et conditions de suspension. Les planchers/limites FairScale historiques ne sont pas automatiquement effacés. Factures SaaS **séparées** des factures de vente du marchand, prix commercial en CDF selon droit local et snapshot taux plateforme distinct du taux commerçant.
 
-## Devise
-Référence interne 700 cents USD ; documents commerciaux RDC affichés CDF **selon règlementation applicable**, avec taux **plateforme** distinct de la conversion des marchands. Historiser snapshot taux/date/montant lors de chaque facture ; pas de modification rétroactive.
+## Tests
+ZAMUREK-only, MC-only, double abonnement même org, upgrade/downgrade, suspension sélective, changement quota établissement, aucun droit non entitled, pas de double prélèvement ni effacement de factures/commandes à la résiliation.
 
-## Gate vente réelle
-CGV/contrat, taxes, capacité support, périmètre de compte et plusieurs établissements, limites d'usage, modalités de paiement, suspension/remboursement/rétention et notification légale doivent être formellement validés ; aucun logiciel de facturation fiscale certifié n'est présumé.
-
-Voir [charte V1](../v1/PRODUCT-CHARTER.md) et [LEGAL](../v1/LEGAL-REGULATED-GATES.md).
+Références : [ADR-0024](../decisions/0024-shared-monarque-core-zamurek.md), [open questions](../OPEN-QUESTIONS.md).

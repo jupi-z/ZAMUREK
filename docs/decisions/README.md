@@ -30,4 +30,6 @@
 | [0022 Agentic Fabric dès les fondations](0022-first-class-agentic-fabric.md) | **adopté 22/10** |
 | [0023 Secteurs réglementés fail-closed](0023-regulated-commerce-fail-closed.md) | **adopté 22/10** |
 
+| [0024 Core Monarque Connect partagé, ZAMUREK extension omnicanale](0024-shared-monarque-core-zamurek.md) | **adopté en principe 22/10, non implémenté** |
+
 L'ADR est une décision de conception, non une preuve d'exécution.

@@ -9,7 +9,7 @@
   "requiredWorkstreams": [
     {
       "version": "0.1.0",
-      "name": "foundation-and-agentic-envelope",
+      "name": "shared-core-client-integration-contracts",
       "weight": 15,
       "plannedItems": 0,
       "verifiedItems": 0,
@@ -20,7 +20,7 @@
     },
     {
       "version": "0.2.0",
-      "name": "retail-weight-fx-pos-commerce",
+      "name": "retail-weight-online-pos-cash-print",
       "weight": 15,
       "plannedItems": 0,
       "verifiedItems": 0,
@@ -75,7 +75,7 @@
     },
     {
       "version": "0.7.0",
-      "name": "agentic-runtime-real-assistants",
+      "name": "shared-core-ai-agents-three-vertical-assistants",
       "weight": 12,
       "plannedItems": 0,
       "verifiedItems": 0,
@@ -108,7 +108,7 @@
     }
   ],
   "capabilities": {
-    "total": 38,
+    "total": 43,
     "implemented": 0,
     "tested": 0,
     "accepted": 0,
@@ -120,10 +120,13 @@
     "security": "NOT_RUN",
     "legal": "NOT_RUN",
     "distribution": "NOT_RUN",
-    "disasterRecovery": "NOT_RUN"
+    "disasterRecovery": "NOT_RUN",
+    "sharedCoreContracts": "NOT_RUN",
+    "posCashFiscal": "NOT_RUN"
   },
   "notes": [
     "Template only. Codex fills plannedItems after decomposing scope; zero until verified tests, not a claim of progress.",
-    "Release 1.0.0 cannot be marked ready unless all capabilities accepted, P0/P1 gates pass and external legal conditions are satisfied."
+    "Release 1.0.0 cannot be marked ready unless all capabilities accepted, P0/P1 gates pass and external legal conditions are satisfied.",
+    "Monarque Connect phase 10A.5 contracts required; backend/POS/AI owned by private Core. No duplicate independent DB."
   ]
 }

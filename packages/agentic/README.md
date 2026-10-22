@@ -1,17 +1,9 @@
-# ZAMUREK Agentic Fabric — package propriétaire planifié
+# packages/agentic — contrats clients des tools ZAMUREK
 
-**G0 : contrats et conception seulement, aucun runtime d'agents.**
+**Le Runtime IA est partagé et propriétaire de Monarque Connect**, pas implémenté ici. Les événements, modèle gateway, quotas, mémoires, 정책/permissions, approvals et agent runs réels appartiennent au backend Core privé.
 
-Dès `0.1.0`, introduire domaine et types `AgentDefinition, ModelGateway, ToolDefinition, ToolExecution, PolicyDecision, MemoryScope, Approval, AgentRun, RunCheckpoint`, intégrés aux événements métier et aux use cases plutôt qu'aux seules interfaces chat.
+Ce package ZAMUREK n'a vocation qu'à contenir des **types clients générés** depuis les contrats Core, fixtures de tests et définitions d'outils sectoriels sans privilèges (catalogue, FAQ, planning, rapports), versionnés avec le SHA contractuel de Monarque Connect. Ne pas créer de `ToolExecutor`, `ModelGateway`, outbox ou stockage mémoire indépendant.
 
-- API `ModelGateway` provider-neutral, pas de clés dans clients Android/Windows.
-- Every action: actor, tenant, establishment, object-level permission, consentement et classification de données ; budget/timeout/retries.
-- Approval humaine liée au hash exact payload/action/version et durée limitée pour changement prix, FX, paiements, annulations et publications.
-- Les tools appellent handlers/domain services qui exécutent **leur propre** validation, pas d'accès SQL illimité.
-- Les documents ou messages clients sont **données non fiables** : protéger contre instruction injection, data exfiltration, role spoofing.
-- Journal outbox, audit, stockage mémoire isolé, rétention et suppression, anti-corruption entre tenants.
-- Aucun logiciel commerce/agentique tiers ne dicte l'orchestration métier. Composants techniques permissifs revus et approuvés.
+Les contrats locaux dans `packages/contracts/agent-tools` et `events` sont **PRE-CONVERGENCE DRAFT**, à aligner/générer depuis le Core. Toute opération financière, publication, changement de prix ou mouvement caisse suit A3 approval/permissions et commands métier Core.
 
-Contrats JSON Schema de départ : [tool-definition](../contracts/agent-tools/tool-definition.schema.json) et [event-envelope](../contracts/events/event-envelope.schema.json). Ils doivent être étendus/validés en G1 par des tests stricts, pas considérés implémentation.
-
-Référence : [architecture agentique](../../docs/v1/AGENTIC-KERNEL.md), [security](../../docs/v1/SECURITY-THREAT-MODEL.md).
+Voir [Agentique commune](../../docs/v1/AGENTIC-KERNEL.md) et [ADR-0024](../../docs/decisions/0024-shared-monarque-core-zamurek.md).

@@ -1,11 +1,12 @@
-# ZAMUREK — contrats partagés
+# ZAMUREK — contrats clients consommateurs du Core Monarque Connect
 
-**Normatif pour le début de G1, non implémenté :** [OpenAPI ZAMUREK V1 draft](openapi/zamurek-v1.yaml) couvrant commerces, produits au poids, restaurant, rendez-vous, meubles/devis, réparations, pharmacie sous garde-fous, venue/mall et agents.
+**Nouveau contrat canonique du runtime : celui de Monarque Connect** (repo privé, `openapi/`, `contracts/`) versionné pendant sa phase 10A.5. Ce dossier ZAMUREK publie uniquement les **SDK/types clients générés, suites de tests d'intégration et métadonnées de compatibilité** `coreCommitSha + coreContractVersion`.
 
-**Contrats bas niveau IA/événements :** [event envelope JSON Schema](events/event-envelope.schema.json) et [tool definition JSON Schema](agent-tools/tool-definition.schema.json).
+- [zamurek-v1.yaml](openapi/zamurek-v1.yaml) : **DRAFT AVANT CONVERGENCE**, 69 opérations fictives de cadrage, **NON** un backend réellement disponible. Ne l'utiliser ni pour codegen runtime définitif ni pour reconstruire un Core.
+- [xshop-v1.yaml](openapi/xshop-v1.yaml) : **ARCHIVE HISTORIQUE**, ne pas utiliser.
+- [agent-tools/tool-definition.schema.json](agent-tools/tool-definition.schema.json) et [events/event-envelope.schema.json](events/event-envelope.schema.json) : brouillons de validation à harmoniser avec les schémas canoniques Monarque Connect et classes A0–A4.
+- Contrats nécessaires au futur Core : buyer versus staff identities, POS walk-in/terminal/cash session/tenders/print jobs, commerce mono-vendeur, invoices/FX, Agent tools, entitlements par produit.
 
-Le fichier [xshop-v1.yaml](openapi/xshop-v1.yaml) est conservé **comme archive**, pas utilisé pour générer la V1 universelle. Il ne doit pas être utilisé comme seul contrat de codegen.
+Le pipeline doit détecter toute divergence de version et les breaking changes pour les APK/EXE installés. Le Swagger/console web n'est pas hébergé en production.
 
-Les nouveaux contrats sont **DRAFT**, avec composants et opérations initiales typées ; G1 doit ajouter chaque CRUD, état, policy et schéma nécessaire et réaliser validation OpenAPI complète, génération clients, tests contractuels et rétrocompatibilité. Aucun endpoint n'est opérationnel à G0.
-
-Pas de Swagger UI hébergé en production. Voir [TECHNICAL-CONTRACTS](../../docs/v1/TECHNICAL-CONTRACTS.md) et [SECURITY](../../docs/v1/SECURITY-THREAT-MODEL.md).
+Voir [contrats normatifs](../../docs/v1/TECHNICAL-CONTRACTS.md), [POS](../../docs/v1/POS-AND-FISCAL-DOCUMENTS.md) et [ADR](../../docs/decisions/0024-shared-monarque-core-zamurek.md).

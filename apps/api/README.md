@@ -1,17 +1,7 @@
-> **ZAMUREK V1 ACTIVE SPEC :** [Charte](../../docs/v1/PRODUCT-CHARTER.md), [Domaines](../../docs/v1/DOMAIN-MODEL.md), [Contrats](../../docs/v1/TECHNICAL-CONTRACTS.md) et [OpenAPI](../../packages/contracts/openapi/zamurek-v1.yaml). L'ancien contenu xShop ci-dessous est historique et **non exécutable** ; intégrer cuisine, rendez-vous, poids, devis, réparations, venue et agents IA en plus du commerce.
+# apps/api — EMPLACEMENT HISTORIQUE, backend séparé ABANDONNÉ
 
-# API xShop — monolithe NestJS, G0 non implémenté
+**Ne pas implémenter de NestJS/Prisma/backend commercial dans ce dossier.** Décision [ADR-0024](../../docs/decisions/0024-shared-monarque-core-zamurek.md) : Monarque Connect privé est l'unique API et Core transactionnel. Le dépôt ZAMUREK ne porte pas de second registre, DB par tenant, duplicata de SalesOrder/Invoice/PaymentRecord/CashMovement, Billing ni runtime agents.
 
-Seul serveur applicatif prévu en production ; OpenAPI JSON/REST, registre global, base PostgreSQL **par tenant**. Pas d'interface hébergée. Routes publiques acheteur limitées au strict nécessaire ; marchand auth RBAC+TOTP selon droits ; opérateur `/platform/v1` accessible **VPN seulement**.
+Les extensions restaurant, appointment, repair, POS, venue qui nécessitent transaction/permissions s'implémentent en **modules dédiés dans le backend Monarque Connect privé**. Les adaptateurs clients/types OpenAPI et tests contractuels résident plutôt dans `packages/contracts` / clients ZAMUREK.
 
-## Modules cibles
-- Identity **e-mail + mot de passe et vérification e-mail (sans SMS)**.
-- Tenants/roles/membership, catalogue **prix de base USD seulement**.
-- FX marchand USD→CDF versionné et audité ; calcul quotes **CDF serveur** + snapshot sur commande ; pas de deux prix indépendants.
-- Carts, idempotent checkout, orders, fulfillment, paiements manuels direct marchand, cancellation requests, BASIC 7 USD/mois SaaS.
-- Outbox, audit, metrics non publics, sauvegarde par tenant.
-
-## Infrastructure
-Proposer `xshop-api-test.shuleops.com` pour staging ; `xshop-api.shuleops.com` plus tard. DNS/VPS non configurés ; tests locaux d'abord. Droit RDC affichage commercial CDF à vérifier avant lancement.
-
-Voir [API](../../docs/architecture/API.md), [FX](../../docs/architecture/FX-PRICING.md), [réseau](../../docs/architecture/NETWORK-EXPOSURE.md).
+Ne pas lancer l'ancien prompt autonome G1. Lire [intégration](../../docs/v1/SHARED-CORE-INTEGRATION.md) et [nouveau prompt](../../docs/v1/CODEX-INTEGRATION-PROMPT.md). Conserver ce fichier comme trace explicite du pivot, puis supprimer ce placeholder seulement si ADR le permet.

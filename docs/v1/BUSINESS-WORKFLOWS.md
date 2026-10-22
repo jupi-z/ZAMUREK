@@ -1,7 +1,11 @@
 # Parcours métiers V1 — critères fonctionnels non négociables
 
 ## Parcours générique
-Organisation créée → un ou plusieurs établissements → profils métiers activés → staff avec rôles → catalogue/offres/horaires/frais → client e-mail vérifié → découverte/vitrine → quote serveur (USD interne→CDF commercial RDC) → réservation ou commande → règlement directement marchand → exécution → remise/service rendu → historique/audit. Aucun état critique n'est réglé par une requête anonyme, un modèle IA ou un calcul de l'interface.
+Organisation créée → un ou plusieurs établissements → profils métiers activés → staff avec rôles → catalogue/offres/horaires/frais → client **online** e-mail vérifié OU client de passage **POS** sans compte mais caissier authentifié → découverte/vitrine → quote serveur (USD interne→CDF commercial RDC) → réservation ou commande → règlement directement marchand → exécution → remise/service rendu → historique/audit. Aucun état critique n'est réglé par une requête anonyme, un modèle IA ou un calcul de l'interface.
+
+## W0 Point de vente physique / cash / impression — obligatoire dans tous métiers éligibles
+
+Caissier autorisé ouvre `CashSession` sur `PosTerminal` d'un établissement, compte l'espèce initiale et vend **sans exiger une identité client/e-mail** (`WALK_IN`). Catalogue commun online/POS, prix calculés serveur, vente atomique Core `SalesOrder(origin=POS)` + `PaymentRecord` + `CashMovement` si cash + outbox avec idempotence ; monnaie rendue `tendered - due` n'est pas chiffre d'affaires. Transferts manuels jamais considérés payés sur simple promesse. Imprimer/re-imprimer facture A4 ou ticket 58/80 mm depuis état document canonique, sans nouvelle vente si imprimante échoue ; DGI conforme seulement si intégration/authentification réellement validée. Clôture de caisse = fonds attendus, espèces comptées, écarts et justificatifs, supervisor selon rôle. Les commandes physiques et en ligne convergent dans **une seule comptabilité de ventes** ; POS transactionnel offline hors V1.
 
 ## W1 Retail / boutique physique
 SKU/variant + médias + disponibilité établissement, vente unitaire et bundles simples, prix source USD, panier mono-vendeur, retrait/livraison, caisse en point de vente connecté, retour/annulation manuels documentés. Les rôles propriétaires, caissiers, préparateurs et livreurs sont distincts. Pas de stock quantifié imposé : statut disponible/indisponible suffit, quantités vendues dans les commandes nécessaires.

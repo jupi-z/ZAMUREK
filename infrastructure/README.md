@@ -1,11 +1,9 @@
-# ZAMUREK — environnement G1 à construire
+# Infrastructure ZAMUREK — CLIENTS, pas un second Core
 
-Aucun déploiement, fichier Docker opérationnel ou serveur validé n'est actuellement présent.
+**Aucun backend à déployer depuis ce dépôt.** Monarque Connect privé possède le backend transactionnel NestJS/Prisma/PostgreSQL, identités, tenancy, ventes, caisse, factures, Billing, Event Fabric et IA. Le projet ZAMUREK fournit clients et tests d'intégration, pas de registry autonome ni DB par commerçant.
 
-Pour 0.1.0, Codex doit fournir des ressources reproductibles pour **PostgreSQL registry**, **deux DB commerciales d'organisations indépendantes**, au moins **deux établissements dans une même organisation**, migrations, test SMTP/local capture, stockage objet local, workers/outbox/Agentic Fabric et observabilité privée.
+Pour tests G1, utiliser un Core local/staging synthétique **fourni par Monarque Connect phase 10A.5** avec deux organisations logiquement séparées dans PostgreSQL Core, deux établissements sous une organisation, buyers C1/C2, caissier walk-in, fonctionnalités canal opt-in et fake mail en développement uniquement. Pas de secrets ni de DB métier sensible dans ce dépôt public.
 
-VPS et DNS provisoires `zamurek-api-test.shuleops.com` / `zamurek-api.shuleops.com` **non configurés**. Staging isolé et datasets synthétiques obligatoires. Le serveur **n'héberge aucune interface web** ; seuls API/workers/DB/stockage, services internes privés et points TLS nécessaires peuvent tourner.
+CI ZAMUREK compile ses clients et vérifie compatibilité avec la version identifiée des contrats Core; la CI backend complète appartient au Core privé. Les API publiques doivent être HTTPS et scopes côté serveur ; administrateur via VPN/MFA, aucun frontend web de production.
 
-CI doit tester migrations, droits des DB, policies réseau, fail-close en absence de secrets/LLM, backup/restoration d'un tenant et conformité dépendances avant prétendre production-ready.
-
-Voir [tenancy](../docs/architecture/TENANCY.md), [network](../docs/architecture/NETWORK-EXPOSURE.md), [gates](../docs/v1/RELEASE-GATES.md).
+VPS/DNS proposés ne sont pas configurés et ne doivent pas être créés automatiquement. Voir [architecture](../docs/v1/SHARED-CORE-INTEGRATION.md) et [roadmap](../docs/v1/INTEGRATION-ROADMAP.md).

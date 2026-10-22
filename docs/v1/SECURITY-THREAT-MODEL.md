@@ -1,5 +1,8 @@
 # Sécurité et surfaces d'attaque — ZAMUREK V1
 
+> **Mise à jour Core partagé :** [ADR-0024](../decisions/0024-shared-monarque-core-zamurek.md) remplace l'ancien schéma registry + DB par commerçant : PostgreSQL canonique Monarque Connect **partagé** avec `organizationId/establishmentId/ownership` et testing négatif. Les références historiques à la « DB tenant distincte » ci-dessous sont **non normatives** ; voir [tenancy actuelle](../architecture/TENANCY.md). POS walk-in buyer sans compte autorisé avec staff/cash session authentifiés ; finance/IA dans Core unique, fiscalisation fail-closed.
+
+
 ## Frontières
 - Internet : GET catalogue/venue public CDF, inscription e-mail, sessions, orders/appointments d'acheteur sous token ; routes marchand selon RBAC/MFA, limitation et contrôle métier.
 - VPN privé : opérateur `/platform/v1`, provisioning tenants, migrations, réseau supervision.
@@ -10,7 +13,7 @@
 ## Matrice de menaces (minimum)
 | Risque | Contrôle attendu | Preuve |
 |---|---|---|
-| BOLA / cross-tenant | contexte org depuis registry vérifié, DB credentials séparés, ownership objet | essais A→B, deux clients même tenant |
+| BOLA / cross-tenant | contexte org/établissement et ownership vérifiés dans le Core partagé, aucune sélection DB contrôlée par client | essais A→B, E1→E2, C1→C2 |
 | BFLA / droits employés | membership au bon établissement, rôle + action + MFA | test vendeur lecture finance refus |
 | Confusion establishment | filtre et accès explicites par établissement | staff établissement A ne voit pas B |
 | IDOR rendez-vous | actor + booking ownership + resource scopes | essai collision et lecture tiers |
@@ -22,7 +25,7 @@
 | Exfiltration mémoire IA | scopes + TTL + consent + redaction | test retrieval cross-tenant |
 | DoS/disponibilité | rate limit, budgets, pools bornés, timeouts, queue bounds | tests charge/circuit breaker |
 | Secrets et logs | vault, rotation, chiffrement en transit/rest, pas de PII brute logs | scans et revues |
-| Backup / restore | snapshots chiffrés distincts org, restauration ciblée | restauration A sans B |
+| Backup / restore | sauvegarde Core chiffrée, export/restauration **logique** sélectifs | restauration logique A sans fuite B |
 | APK/API compatibility | versions contractuelles et signature | ancien APK testé |
 | Réservation concurrente | contraintes DB anti-double booking | 2 requêtes slot simultanées |
 | Supply chain | dépendances permissives approuvées, SBOM, notices, vulnérabilités | audit automatique des paquets |

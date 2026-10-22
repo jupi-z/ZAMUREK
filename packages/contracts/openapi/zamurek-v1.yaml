@@ -1,3 +1,6 @@
+# PRE-CONVERGENCE DRAFT — NOT A LIVE RUNTIME CONTRACT.
+# Canonical Core APIs must be versioned from private jupi-z/Monarque-Connect after Phase 10A.5.
+# Do not generate or deploy an independent ZAMUREK backend from this historical contract.
 openapi: 3.1.0
 info:
   title: ZAMUREK Universal Commerce API

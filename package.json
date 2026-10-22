@@ -2,13 +2,14 @@
   "name": "zamurek",
   "private": true,
   "version": "0.0.0",
-  "description": "ZAMUREK universal multi-tenant commerce platform — G0 normative V1 specification, no application code yet",
+  "description": "ZAMUREK shared Monarque Connect Core commerce omnichannel and client specification (not implemented)",
   "scripts": {
     "docs:check": "python3 scripts/validate_docs.py",
     "scope:check": "python3 scripts/validate_v1_scope.py",
     "contract:check": "python3 scripts/validate_openapi.py",
-    "check": "python3 scripts/validate_docs.py && python3 scripts/validate_v1_scope.py && python3 scripts/validate_agent_contracts.py && python3 scripts/validate_openapi.py",
-    "agent-contracts:check": "python3 scripts/validate_agent_contracts.py"
+    "check": "python3 scripts/validate_docs.py && python3 scripts/validate_v1_scope.py && python3 scripts/validate_convergence.py && python3 scripts/validate_agent_contracts.py && python3 scripts/validate_openapi.py",
+    "agent-contracts:check": "python3 scripts/validate_agent_contracts.py",
+    "convergence:check": "python3 scripts/validate_convergence.py"
   },
   "engines": {
     "node": ">=22"

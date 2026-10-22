@@ -1,6 +1,6 @@
-# Authentification sans SMS — conception choisie pour démarrage
+# Authentification sans SMS — Core Monarque Connect, checkout online et POS physique
 
-**Directive : aucun SMS au lancement.** Compte client toujours obligatoire. Recommandation technique : **adresse e-mail + mot de passe**, vérification de l'adresse par lien/code à usage unique envoyé via transport SMTP configuré. Le numéro de téléphone est une donnée de livraison/contact **facultative à l'inscription**, obligatoire seulement lors d'une livraison si nécessaire. Ne pas utiliser le numéro non vérifié comme preuve d'identité.
+**Directive : aucun SMS au lancement.** Compte client e-mail vérifié obligatoire pour checkout **en ligne** ; en **vente physique POS**, acheteur de passage sans compte ni e-mail autorisé, à condition que le caissier soit authentifié et sa session/terminal vérifiés par Monarque Connect Core. Recommandation technique : **adresse e-mail + mot de passe**, vérification de l'adresse par lien/code à usage unique envoyé via transport SMTP configuré. Le numéro de téléphone est une donnée de livraison/contact **facultative à l'inscription**, obligatoire seulement lors d'une livraison si nécessaire. Ne pas utiliser le numéro non vérifié comme preuve d'identité.
 
 ## Comptes acheteur
 - Enregistrement e-mail vérifié + mot de passe, hash Argon2id/scrypt selon bibliothèque auditée. Normalisation email prudente, unicité et absence d'énumération.

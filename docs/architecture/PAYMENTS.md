@@ -1,4 +1,4 @@
-# Checkout et paiements — modèle 16 octobre 2026
+# Checkout, règlements manuels et POS cash — modèle commun V1
 
 ## Prix et conversion
 Chaque produit/variante et zone de livraison a un tarif **USD interne unique**. Le commerçant règle `usdToCdf` versionné. Le backend convertit tous les montants affichés/commandés en **CDF** pour les ventes en RDC selon politique territoriale ; montants en unités mineures, arrondis explicites, aucun calcul JavaScript faisant autorité.
@@ -6,7 +6,11 @@ Chaque produit/variante et zone de livraison a un tarif **USD interne unique**. 
 ## Devis et commande
 GET/POST devis côté serveur avec taux versionné et TTL, vérification du prix/source USD, taux et état au checkout, changement avant confirmation = nouveau devis avec acceptation client. Snapshot immuable USD, CDF, taux, date et policy dans order et lignes. Idempotency-Key sur checkout, transaction dans DB du tenant, aucun panier cross-tenant.
 
-## Encaissement V1
+## Encaissement physique POS (obligatoire V1)
+
+**Monarque Connect Core** gère la transaction unique et idempotente : SalesOrder POS → PaymentRecord → CashMovement si cash → outbox, sur établissement et session de caissier authentifiés. Acheteur walk-in peut rester sans e-mail ni compte. Gestion monnaie rendue, fonds d'ouverture/clôture, écarts, transferts manuels confirmés par personnel, documents imprimés A4/58/80 mm. Un échec d'impression ne réenregistre jamais un paiement. Fiscalisation/QR DGI sous validation légale, pas de simulation. Voir [POS](../v1/POS-AND-FISCAL-DOCUMENTS.md).
+
+## Encaissement en ligne / livraison V1
 Direct commerçant, PAY_ON_DELIVERY et MANUAL_TRANSFER. Prix public, validation commande et preuve/facture en CDF. **Paiement effectivement remis en USD** : option future à activer seulement après validation du cadre RDC et une procédure de rapprochement explicite (devise reçue, taux utilisé, équivalent CDF, preuve), jamais un marquage PAID automatique.
 
 ## Annulation

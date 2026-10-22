@@ -53,10 +53,11 @@ def main() -> int:
         "PHA-01", "PHA-02", "VEN-01", "VEN-02",
         "AGT-01", "AGT-02", "AGT-03", "AGT-04",
         "SEC-01", "OPS-01", "LEG-01",
+        "POS-01", "POS-02", "POS-03", "INT-01", "INT-02",
     }
     capabilities = data.get("capabilities", [])
-    if not isinstance(capabilities, list) or len(capabilities) < 38:
-        fail("Expected at least 38 explicitly accountable V1 capabilities")
+    if not isinstance(capabilities, list) or len(capabilities) < 43:
+        fail("Expected at least 43 explicitly accountable V1 capabilities")
         capabilities = []
     ids = [cap.get("id") for cap in capabilities if isinstance(cap, dict)]
     if len(ids) != len(set(ids)):
@@ -72,7 +73,7 @@ def main() -> int:
             fail(f"{ident}: all manifest entries must be mandatory for complete V1")
         if cap.get("priority") not in {"P0", "P1"}:
             fail(f"{ident}: invalid priority")
-        if cap.get("category") not in expected_verticals | {"foundation", "ai", "security", "operations", "legal"}:
+        if cap.get("category") not in expected_verticals | {"foundation", "ai", "security", "operations", "legal", "pos", "integration"}:
             fail(f"{ident}: unknown category")
         if not cap.get("description") or not cap.get("acceptance"):
             fail(f"{ident}: missing acceptance criteria")
@@ -107,6 +108,21 @@ def main() -> int:
         if progress.get("criticalGates", {}).get(priority) != "NOT_RUN":
             fail(f"{priority} is not passed before evidence")
 
+    pos = fixtures.get("posScenario", {})
+    if pos.get("buyer", {}).get("kind") != "WALK_IN" or pos.get("buyer", {}).get("email") is not None:
+        fail("POS fixture must support customer walk-in without an email")
+    if pos.get("cashSessionOpen") is not True or pos.get("offlineSaleConfirmation") is not False:
+        fail("POS session and fail-closed offline fixture missing")
+    expected_counts = {"salesOrders": 1, "paymentRecords": 1, "cashMovements": 1, "outboxEvents": 1}
+    if pos.get("expectedCanonical") != expected_counts:
+        fail("POS must use canonical Core orders/payment/cash and outbox exactly once")
+    try:
+        if Decimal(pos.get("amountTenderedCdf", "0")) - Decimal(pos.get("saleTotalCdf", "0")) != Decimal(pos.get("changeDueCdf", "-1")):
+            fail("Cash change arithmetic fixture mismatch")
+    except InvalidOperation:
+        fail("Invalid POS amount decimals")
+    if fixtures.get("integration", {}).get("backend") != "MONARQUE_CONNECT_CORE":
+        fail("Synthetic tests must rely on shared Monarque Connect Core")
     # Real exact-decimal fixture checks, never Python float in currency/weight.
     organizations = fixtures.get("organizations", [])
     if len(organizations) != 7:
@@ -141,12 +157,25 @@ def main() -> int:
     except (KeyError, TypeError, InvalidOperation, AssertionError) as exc:
         fail(f"Price/pharmacy fixture validation failed: {exc}")
 
+    integration = data.get("integration", {})
+    if integration.get("sharedBackend") != "MONARQUE_CONNECT_PRIVATE":
+        fail("Monarque Connect must be canonical shared backend")
+    if integration.get("storageModel") != "SHARED_POSTGRESQL_ORGANIZATION_ID_ESTABLISHMENT_ID":
+        fail("ZAMUREK cannot require a separate PostgreSQL DB per organization in V1")
+    if integration.get("noIndependentCommercialBackend") is not True:
+        fail("Do not implement independent Sales/Cash/Billing backend for ZAMUREK")
+    if integration.get("customerWalkInPos") is not True:
+        fail("Walk-in POS checkout without buyer e-mail required")
+    if "une base métier postgresql par" in charter.lower():
+        fail("Old per-merchant DB charter rule is prohibited")
+    if not all(s in charter.lower() for s in ("pos", "cash", "monarque connect")):
+        fail("Charter must guarantee physical POS and shared Core")
     if ERRORS:
         print("ZAMUREK V1 scope validation FAILED:")
         for issue in ERRORS:
             print(" -", issue)
         return 1
-    print(f"ZAMUREK V1 scope OK: {len(capabilities)} capabilities, 8 verticals, "
+    print(f"ZAMUREK V1 scope OK: {len(capabilities)} capabilities, 8 verticals, shared Core, POS, "
           "9 weighted gates, 100% evidence required.")
     return 0
 

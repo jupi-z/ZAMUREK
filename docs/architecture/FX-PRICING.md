@@ -1,6 +1,6 @@
 # Architecture monétaire — source USD et conversion contrôlée
 
-**Décision du 16/10/2026.** Un seul prix catalogue USD par variante ; un seul tarif de base USD par zone de livraison. Le vendeur configure un taux USD→CDF versionné. **Aucun prix CDF indépendant sur les variantes.**
+**Décision du 16/10/2026, désormais applicable aux offres et canaux ZAMUREK via le PricingContext partagé Monarque Connect (ADR-0024), sans modifier les devises historiques des autres organisations.** Un seul prix source USD par variante ; un seul tarif de base USD par zone de livraison. Le vendeur configure un taux USD→CDF versionné. **Aucun prix CDF indépendant sur les variantes.**
 
 ## Source de vérité
 - `product_variant.price_usd_minor` (int64, cents USD) et `delivery_zone.fee_usd_minor`.

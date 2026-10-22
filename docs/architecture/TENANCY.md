@@ -1,29 +1,21 @@
-# ZAMUREK — isolation multi-tenant et multi-établissement (V1)
+# ZAMUREK — modèle multi-tenant V1, Core Monarque Connect
 
-**Document actif conforme à [DOMAIN-MODEL V1](../v1/DOMAIN-MODEL.md).**
+**Normatif après ADR-0024.** L'ancien modèle « registry ZAMUREK + DB PostgreSQL dédiée par organization » est **abrogé** pour V1.
 
-## Hiérarchie
-Platform Registry → Organization (tenant commerçant, **sa base PostgreSQL dédiée**) → Establishments (succursales/sites multi-activités dans la même DB), avec `organizationId` validé au routage DB et `establishmentId` validé sur chaque objet et action. Une personne peut avoir des memberships différents par établissement.
+## Stockage partagé et droits
+Monarque Connect conserve **une seule architecture PostgreSQL partagée**, avec `organizationId` obligatoire en logique serveur et `establishmentId` pour les activités dépendantes de l'établissement. Ce sont les tables et le PrismaService canoniques de Monarque Connect, pas une copie ZAMUREK. L'existence d'une seule DB physique **ne réduit pas** l'obligation d'isolation et de restauration sélective.
 
-LaJoie Mall et tout centre commercial éventuel sont représentés comme `Venue` dans le registry avec ses propres niveaux/zones et adhésions **opt-in** ; ils ne deviennent jamais propriétaires de données des entreprises adhérentes.
+Contexte chaque commande : `actorId`/scope (`BUYER`, `MERCHANT`, `CASHIER`, `OPERATOR`, `AGENT`), `organizationId`, `establishmentId`, `objectOwner`, `productCode`, `entitlement`, `channelId`. Un `channelId` public **n'accorde aucun rôle** et ne choisit pas arbitrairement une organisation.
 
-## Registry
-Organizations, DB secret references, établissements metadata minimales, channel app mappings, identity globale **e-mail vérifié, sans SMS**, staff sessions/MFA et venue consent/public discovery metadata. Commandes, rendez-vous, réparations, paiements et données confidentielles résident dans **DB métier de l'organisation**, jamais registry/venue.
+## Buyer / vendeur / venue
+Achat **ONLINE** : buyer e-mail vérifié, relation avec la commande contrôlée par ID serveur, aucune obligation d'être Membership staff de la boutique. **POS physique** : acheteur walk-in sans compte/e-mail, mais caissier authentifié avec terminal/session ouverts et permissions établissement.
 
-## Résolution et permissions
-- `X-Zamurek-Channel` identifie un canal, **ne prouve pas de droit**.
-- Tenant résolu uniquement après contrôle serveur channel→organization, policy territoriale et actor; DB credentials sélectionnés depuis un registry privé, jamais URL/header client.
-- Contrôle systématique `userId + organizationId + establishmentId + action + objectOwnership + businessCapability` ; clients, employés, agents et venues ne sautent jamais ces vérifications.
-- Opérateur plateforme via VPN/MFA. Aucun outil Agentic Fabric n'accorde des privilèges implicites.
-- SQL tenant credentials et pools séparés/limités ; une DB commune PostgreSQL par organisation est **isolation logique**, pas machine physique dédiée.
+`Venue/Mall` ne gère que des consentements opt-in et projections *publiques*. Aucun gestionnaire de venue ne voit, par simple appartenance au centre commercial, les paiements, devis privés, historiques clients ou dossiers de réparation.
 
-## Provisioning / migrations
-Créer organization idempotente, DB role + DB, appliquer migrations et enregistrements initialisés, contrôle droits, activation seulement après validations. Migrations expand/contract par cohorts, rotation secrets, recovery ciblé et backup registry distinct. Le code supporte plusieurs établissements sous la même organization sans ouvrir une DB par succursale.
+## Test et exploitation
+P0 : cross-org T1/T2 et T2→T1; cross-establishment E1/E2, staff rôle insuffisant, customer C1→C2; product entitlements ZAMUREK-only≠CRM/Enterprise; agent tool unauthorized; venue→ledger refused; idempotence finance concurrente et prix CDF. Sauvegarde du Core et **export/restauration ciblée d'une organisation** réellement testés, non simple restauration de DB entière.
 
-## Prix et poids
-Catalogue offre/variant stocke **USD source** ; prix CDF dérivé backend via taux commerçant versionné. Aucun double tarif autonome CDF/USD ; *aucun float* pour montants ou grammes. Snapshots immuables commande, quote et établissement. Politique RDC CDF publique jusqu'à validation juridique.
+## Extension ultérieure
+Bases dédiées par client = **possible option future**, jamais prérequis G1 ni V1 ; nécessite ADR, adapter de persistance et migrations/recovery testées sans rupture des identifiants.
 
-## Tests P0
-A→B cross-organization, E1→E2 cross-establishment dans une même org, deux clients d'E1, venue manager→order, agent d'une org→autre org, secret DB et migration, backup A/restauration A sans toucher B. La mise en production est bloquée à la moindre fuite.
-
-Voir [DOMAIN-MODEL](../v1/DOMAIN-MODEL.md), [SECURITY](../v1/SECURITY-THREAT-MODEL.md), [NETWORK](NETWORK-EXPOSURE.md).
+Références : [ADR-0024](../decisions/0024-shared-monarque-core-zamurek.md), [Core](../v1/SHARED-CORE-INTEGRATION.md), [menaces](../v1/SECURITY-THREAT-MODEL.md).

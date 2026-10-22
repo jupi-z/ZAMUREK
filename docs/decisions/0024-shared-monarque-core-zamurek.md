@@ -1,0 +1,23 @@
+# ADR-0024 — ZAMUREK, produit commercial adossé au Core Monarque Connect
+
+**Statut : ADOPTÉ en principe par le propriétaire le 22/10/2026, implémentation NON COMMENCÉE.** Remplace pour la V1 les clauses des anciens documents ZAMUREK exigeant un backend commercial distinct et **une DB PostgreSQL par organisation**. Complément côté backend privé : [ADR-039 Monarque Connect](https://github.com/jupi-z/Monarque-Connect/blob/main/Docs/104_ADR_039_SHARED_COMMERCE_CORE_ZAMUREK.md), à fusionner avant utilisation. Le lien main ne prouve pas encore la fusion.
+
+## Décisions normatives
+1. **Monarque Connect** est le Core partagé **propriétaire** pour Identity, RBAC, Organizations, Establishments, Product Entitlements/FairScale, Item/catalogue, price/FX command service, SalesOrder/Invoice/PaymentRecord/CashAccount/CashMovement, Event Fabric, AI Gateway/Agent Runtime et fiscal documents.
+2. **ZAMUREK** est une identité **commerciale indépendante**, ses apps Android/Windows, son expérience découverte/mall opt-in et ses verticales (vente au poids, restauration, salon, meubles/devis, électronique-réparation, articles pharmaceutiques autorisés).
+3. Les domaines métiers spécifiques qui nécessitent transactions et verrouillages avec les domaines Core sont développés en **modules NestJS isolés du backend privé Monarque Connect**, jamais comme duplication d'une DB/backend financier public chez ZAMUREK. Les contrats et applications clients peuvent rester dans le dépôt ZAMUREK.
+4. **Isolation multi-tenant V1 :** utiliser le modèle éprouvé `organizationId` + `establishmentId` dans PostgreSQL partagé de Monarque Connect, avec RBAC, object ownership, tests cross-tenant/cross-establishment et audits. L'ancienne exigence « une DB par organisation » est **RETIRÉE de la V1** ; déploiement dédié éventuel ultérieur sur décision séparée et migration démontrée.
+5. Monarque Connect conserve le statut de source de vérité de **toutes ventes/factures/paiements/mouvements de caisse** ; ZAMUREK ne persiste que les modèles spécialisés et les projections publiques opt-in, jamais un deuxième ledger financier.
+6. **POS en boutique = obligatoire V1** : passage client sans compte/e-mail (caissier authentifié), terminal/session, paiement cash, monnaie rendue, méthodes mixtes si validées, ouverture/clôture/écarts, retour, ticket/facture A4/58-80 mm et conformité fiscale fail-closed. Vente physique et online partagent commandes, journal de caisse et états canoniques.
+7. **Prix ZAMUREK source USD vers CDF**, snapshot côté serveur, sans imposer la devise USD à toutes organisations Monarque Connect ni changer leurs factures anciennes.
+8. **ZAMUREK BASIC 7 USD/mois/org** reste proposition de prix, avec capacité d'établissements/quotas/coûts à confirmer avant facturation réelle ; la souscription ZAMUREK **n'accorde pas** les droits ERP Business/Enterprise.
+9. **Une seule Event Fabric, AI Gateway et Agent Runtime** : l'agent commercial ZAMUREK déclare outils/policies et appelle les use cases communs ; jamais d'agent propriétaire concurrent contournant Sales/Cash.
+10. **Conventions d'API** : contrat canonique généré/versionné depuis le dépôt backend privé `Monarque-Connect` ; ZAMUREK conserve seulement le contrat client/projection et une traçabilité de version. Le `zamurek-v1.yaml` actuel est un **brouillon historique pré-convergence**, non une implémentation ni une autorité sur des endpoints existants.
+
+## Déploiement / non-objectifs
+Le backend commun reste privé, API-only pour les clients ZAMUREK. Aucune SPA/SSR/portail marchand web ZAMUREK hébergé ; apps installables. LaJoie Mall n'est pas un partenariat acquis. Aucun Mercur/Medusa/Saleor, ERPNext/Frappe ; briques permissives vérifiées seulement. Facture normalisée DGI et pharmacie réglementée nécessitent validations/solutions officiellement autorisées ; pas de faux codes ou autorisations.
+
+## Dépendances
+**Avant Codex ZAMUREK 0.1.0** : obtenir la phase 10A.5 **C0–C3/C6/C7** du Core ou interfaces partagées testables ; ne pas suivre l'ancien prompt autonome. **Avant vente/POS réelle** : C4–C5 Core prouvés, sécurité et gates juridiques.
+
+Voir [intégration](../v1/SHARED-CORE-INTEGRATION.md), [POS](../v1/POS-AND-FISCAL-DOCUMENTS.md), [roadmap](../v1/RELEASE-GATES.md).

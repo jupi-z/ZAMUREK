@@ -1,22 +1,22 @@
 # Matrice normative des capacités — ZAMUREK 1.0.0
 
-**Règle :** une ligne marquée REQUIRED doit être implémentée et démontrée E2E pour que 1.0.0 soit publiable. Il ne s'agit pas d'un MVP. Les fonctionnalités réglementées font l'objet de *gates*, jamais d'une activation tacite.
+**Règle :** **Le backend transactionnel est Monarque Connect Core** (voir [ADR-0024](../decisions/0024-shared-monarque-core-zamurek.md)). Les 43 capacités V1 restent obligatoires ; une ligne marquée REQUIRED doit être implémentée et démontrée E2E pour que 1.0.0 soit publiable. Il ne s'agit pas d'un MVP. Les fonctionnalités réglementées font l'objet de *gates*, jamais d'une activation tacite.
 
 | ID | Contexte / capacité | V1 | Tests de sortie minimum |
 |---|---|---|---|
-| FND-01 | Registry, tenant DB isolée, établissement + membership | REQUIRED | T1/T2, E1/E2, refus cross-tenant et cross-establishment |
+| FND-01 | Isolation logique `organizationId` + `establishmentId` du Core, scope/ownership | REQUIRED | T1/T2, E1/E2, acheteurs C1/C2 refus cross-tenant |
 | FND-02 | Identité e-mail vérifié, sessions, reset, staff MFA, opérateur VPN | REQUIRED | rejets 401/403/IDOR, replay sessions |
 | FND-03 | Merchant capability profiles configurables multi-activités | REQUIRED | activer 2 métiers dans 1 établissement, masquer le reste |
 | FND-04 | Catalogue commun (offering PRODUCTS/SERVICES/WEIGHTED/FOOD/REGULATED) | REQUIRED | variantes, catégorie, photos, droits, publier/masquer |
 | FND-05 | Prix USD sources, FX tenant vers CDF, quotes versionnées | REQUIRED | taux change, reçu antérieur immuable, décimal exact |
 | FND-06 | Client orders, statuses, historique, pièces et communications statut | REQUIRED | achat → exécution → clôture, audit |
-| FND-07 | Manual payment, COD/COP, règlement, preuves, refunds manuels | REQUIRED | aucun PAID arbitraire, reversals contrôlés |
+| FND-07 | Cash POS + paiements manuels Core, reversals et rapprochement | REQUIRED | PaymentRecord/CashMovement cohérents ; transferts non auto-confirmés |
 | FND-08 | Pickup/local delivery, zones/horaires/frais, contact et preuve remise | REQUIRED | indisponibilité zone, pickup, livreur manuel |
 | FND-09 | Backoffice marchand Android ET Windows installable | REQUIRED | autonomie pour toutes verticales, RBAC |
-| FND-10 | POS/caisse **connecté** marchand (tablette/Android/Windows) | REQUIRED | ticket/encaissement manuel, offline pas de confirmation |
-| FND-11 | Abonnement unique BASIC, tenant lifecycle, audit et suspension | REQUIRED | montant 7 USD, protection commandes et données |
+| FND-10 | POS physique connecté, caissier identifié, client de passage sans e-mail | REQUIRED | cash, rendu monnaie, ticket et aucune vente confirmée offline |
+| FND-11 | Abonnement produit ZAMUREK BASIC indépendant de FairScale Core | REQUIRED | 7 USD cible, aucun déblocage CRM/achats, quotas arbitrés |
 | FND-12 | Applications acheteur marque + Discovery/venue, opt-in | REQUIRED | 2 tenants, aucun résultat privé sans consentement |
-| FND-13 | API-only prod, observabilité privée, backup tenant/restauration | REQUIRED | smoke test distribution sans web UI, restore A |
+| FND-13 | API Core partagée privée/admin, isolation logique, export/restauration ciblés | REQUIRED | smoke Core, restauration logique A sans fuite vers B |
 | FND-14 | Contrats/compatibilité clients, i18n français et a11y | REQUIRED | ancien build supporté, erreurs et chargement robustes |
 | FND-15 | Moteur politique géographique/prix, conformité marchés | REQUIRED | CDF public RDC, désactivation vente prohibée |
 | FND-16 | Outbox, audit, idempotence et notifications in-app | REQUIRED | double retry sans doublon, consommateur rejeu |
@@ -35,12 +35,17 @@
 | PHA-02 | Classement réglementaire, licence/approbation et vente refusée | REQUIRED | ordonnance/produit protégé **jamais vendu** sans validation |
 | VEN-01 | Venue/mall, emplacements, opt-in, découverte inter-entreprises | REQUIRED | opt-out retranche les listings et cache |
 | VEN-02 | Panier et checkout propres à chaque commerçant | REQUIRED | plusieurs shops visibles mais commandes séparées |
-| AGT-01 | Registry outils/agents, scopes, politiques, journalisation | REQUIRED | tool call refusé sans scope et consentement |
+| AGT-01 | Outils verticaux ZAMUREK sur Agent Runtime commun Monarque Connect | REQUIRED | aucun second agent runner, scopes/consentement testés |
 | AGT-02 | Workflow durable, événements, retries, approbation humaine | REQUIRED | reprise, timeouts, replay, approbation versionnée |
 | AGT-03 | Modèles interchangeables et désactivation globale/tenant | REQUIRED | fournisseur indisponible : métier continue |
 | AGT-04 | Assistant catalogue / FAQ / synthèse réelle et vérifiable | REQUIRED | hallucinations contrôlées, no privileged write |
 | SEC-01 | Tests red-team, isolation contextuelle IA, injection prompt | REQUIRED | outil refusé selon policy indépendamment du LLM |
-| OPS-01 | CI lint/compile/tests E2E mobiles/backend/Windows et scan licences | REQUIRED | logs/artefacts authentiques, aucune simulation |
+| OPS-01 | CI inter-dépôts + contrats Core versionnés, builds mobiles/Windows | REQUIRED | SHA contrat identiques, tests runtime et artefacts authentiques |
 | LEG-01 | Gates fiscaux/données/réglementation RDC | REQUIRED BEFORE PRODUCTION | preuves et acceptation responsable |
+| POS-01 | Terminal, session caissier et ouverture/clôture de caisse | REQUIRED | cash float, sessions et audit multi-caissiers |
+| POS-02 | Paiement cash, monnaie, modes mixtes contrôlés et rapprochement | REQUIRED | 1 ordre/1 payment/1 cash movement par idempotency, écarts audités |
+| POS-03 | Ticket thermique 58/80 mm, facture A4 et fiscalité par statut | REQUIRED | impressions réelles, réimpression sans double vente, aucune fausse DGI |
+| INT-01 | Monarque Connect Core **unique** pour Sales/Cash/Invoice/IA | REQUIRED | vente physique/online partagent ledgers, aucun double backend |
+| INT-02 | Plans multi-produits et droits ZAMUREK séparés | REQUIRED | BASIC ZAMUREK n’ouvre jamais modules ERP avancés |
 
 Chaque capacité a un owner technique à affecter dans le registre de progression, un jeu de tests positif/négatif et une preuve dans le rapport de jalon. **Un texte marqué REQUIRED n'est pas un acquis réalisé.**

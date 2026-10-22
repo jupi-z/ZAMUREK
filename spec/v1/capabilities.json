@@ -17,15 +17,16 @@
     "venue"
   ],
   "properties": {
-    "merchantDatabaseIsolation": "one_postgres_db_per_organization",
+    "merchantDatabaseIsolation": "shared_core_postgres_scoped_organizationId_establishmentId",
     "establishments": "many_per_organization",
-    "productIP": "proprietary",
+    "productIP": "proprietary_shared_with_monarque_connect_core",
     "commerceEngineFoundation": "none_third_party",
     "publicInternet": "least_privilege_api_only",
     "patientOrPrescriptionHandling": "disabled_until_licensed",
     "pricing": "USD_SOURCE_CDF_POLICY_PUBLIC",
     "login": "EMAIL_NO_SMS",
-    "aiCore": "FIRST_CLASS_AGENTIC_FABRIC"
+    "aiCore": "SINGLE_MONARQUE_CONNECT_AGENT_RUNTIME",
+    "merchantPurchase": "POS_CASH_AND_ONLINE"
   },
   "capabilities": [
     {
@@ -33,8 +34,8 @@
       "category": "foundation",
       "priority": "P0",
       "requiredForV1": true,
-      "description": "Registry + DB tenant + establishment RBAC",
-      "acceptance": "T1/T2 + E1/E2 cannot read each other's private records"
+      "description": "Shared Monarque Core tenant isolation (organizationId, establishmentId, object ownership)",
+      "acceptance": "T1/T2, E1/E2 and buyer C1/C2 denied across logical scopes in real Core"
     },
     {
       "id": "FND-02",
@@ -81,8 +82,8 @@
       "category": "foundation",
       "priority": "P0",
       "requiredForV1": true,
-      "description": "Cash on pickup/delivery and manual transfer confirmation",
-      "acceptance": "buyer declaration alone never marks paid"
+      "description": "Canonical Core payments, cash at POS, manual transfer, refunds and safe reconciliation",
+      "acceptance": "Cash tender creates exactly one PaymentRecord and CashMovement, and manual proof does not auto-confirm transfer"
     },
     {
       "id": "FND-08",
@@ -105,16 +106,16 @@
       "category": "foundation",
       "priority": "P1",
       "requiredForV1": true,
-      "description": "Connected POS for cashier workflows",
-      "acceptance": "cash sale uses validated server pricing and audit"
+      "description": "Connected in-person POS Android/Windows using canonical Core Sales/Cash",
+      "acceptance": "Authenticated cashier, walk-in without email, idempotent sale, cash change and real ticket print"
     },
     {
       "id": "FND-11",
       "category": "foundation",
       "priority": "P1",
       "requiredForV1": true,
-      "description": "BASIC 7 USD organization subscription",
-      "acceptance": "subscription lifecycle doesn't delete tenant data"
+      "description": "ZAMUREK BASIC 7 USD monthly organization product entitlement separate from Monarque FairScale",
+      "acceptance": "ZAMUREK-only cannot access CRM/PURCHASES/ENTERPRISE; limits/pricing externally reviewed"
     },
     {
       "id": "FND-12",
@@ -129,8 +130,8 @@
       "category": "foundation",
       "priority": "P0",
       "requiredForV1": true,
-      "description": "API-only deploy with restoration and private services",
-      "acceptance": "tenant A restored without affecting tenant B"
+      "description": "Shared Monarque Core API-only, logical tenant isolation, selective export/recovery and private operations",
+      "acceptance": "Cross-org separation, selective tenant export/restoration drill and private admin routes"
     },
     {
       "id": "FND-14",
@@ -281,8 +282,8 @@
       "category": "ai",
       "priority": "P0",
       "requiredForV1": true,
-      "description": "Versioned tool registry and tenant policy engine",
-      "acceptance": "no cross-tenant tool call succeeds"
+      "description": "Shared Monarque Core agent registry/tools/scopes; ZAMUREK registers vertical tools without second AI runtime",
+      "acceptance": "Core agent policy denies cross-tenant writes and ZAMUREK-specific tool delegation works"
     },
     {
       "id": "AGT-02",
@@ -321,8 +322,8 @@
       "category": "operations",
       "priority": "P0",
       "requiredForV1": true,
-      "description": "CI and shipped build evidence for all clients",
-      "acceptance": "real mobile/Windows builds and test reports"
+      "description": "Cross-repository CI, build evidence, versioned Core contracts, Android and Windows runtime tests",
+      "acceptance": "Core and ZAMUREK CI real run logs, contract SHA consistency and installer smoke"
     },
     {
       "id": "LEG-01",
@@ -331,6 +332,66 @@
       "requiredForV1": true,
       "description": "Verified market-specific legal release gates",
       "acceptance": "documented legal reviewer decision before real sales"
+    },
+    {
+      "id": "POS-01",
+      "category": "pos",
+      "priority": "P0",
+      "requiredForV1": true,
+      "description": "Physical cashier, POS terminal and opening/closing cash sessions",
+      "acceptance": "Counter walk-in sale with signed-in cashier, initial float, terminal, close and audit"
+    },
+    {
+      "id": "POS-02",
+      "category": "pos",
+      "priority": "P0",
+      "requiredForV1": true,
+      "description": "Cash payment, change due, tender split policy and cash reconciliation",
+      "acceptance": "Exactly one canonical SalesOrder/PaymentRecord/CashMovement; correct change, returns and discrepancy report"
+    },
+    {
+      "id": "POS-03",
+      "category": "pos",
+      "priority": "P0",
+      "requiredForV1": true,
+      "description": "A4/58/80mm printed receipts/invoices and fiscal gating",
+      "acceptance": "Physical print validated; printer failure retries print only; no false DGI authentication"
+    },
+    {
+      "id": "INT-01",
+      "category": "integration",
+      "priority": "P0",
+      "requiredForV1": true,
+      "description": "Shared Monarque Connect Core without duplicate billing/sales/tenancy/agent engine",
+      "acceptance": "An online and POS sale share the same order ledger and enterprise scope; no second financial datastore"
+    },
+    {
+      "id": "INT-02",
+      "category": "integration",
+      "priority": "P0",
+      "requiredForV1": true,
+      "description": "Independent ZAMUREK product entitlements and multi-product access controls",
+      "acceptance": "ZAMUREK BASIC does not activate Monarque CRM/Purchases; dual subscription retains shared organization"
     }
-  ]
+  ],
+  "integration": {
+    "sharedBackend": "MONARQUE_CONNECT_PRIVATE",
+    "sourceOfTruth": [
+      "SalesOrder",
+      "Invoice",
+      "PaymentRecord",
+      "CashMovement",
+      "Organization",
+      "Item",
+      "AgentRuntime"
+    ],
+    "storageModel": "SHARED_POSTGRESQL_ORGANIZATION_ID_ESTABLISHMENT_ID",
+    "noIndependentCommercialBackend": true,
+    "coreApiPrefix": "/api/v1",
+    "legacyOpenApi": "PRE_CONVERGENCE_DRAFT",
+    "coreDependency": "PHASE_10A5_C0_C3_C6_C7_BEFORE_ZAMUREK_0_1",
+    "posCoreDependency": "PHASE_10A5_C4_C5_BEFORE_ZAMUREK_0_2",
+    "customerWalkInPos": true,
+    "publicRepoHasNoPrivateCoreCode": true
+  }
 }

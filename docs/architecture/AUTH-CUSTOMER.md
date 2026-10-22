@@ -4,4 +4,4 @@
 
 Lire [authentification sans SMS](AUTH-NO-SMS.md) et [arbitrages du 16 octobre](../DECISIONS-VALIDATED-2026-10-16.md).
 
-**Modèle actif** : compte client obligatoire avec e-mail + mot de passe et vérification e-mail par SMTP configurable ; aucun SMS. Opérateurs et marchands à privilèges avec TOTP authenticator.
+**Modèle actif** : compte client obligatoire **pour checkout en ligne**, pas pour vente physique POS walk-in (caissier authentifié), avec e-mail + mot de passe et vérification e-mail par SMTP configurable ; aucun SMS. Opérateurs et marchands à privilèges avec TOTP authenticator.
