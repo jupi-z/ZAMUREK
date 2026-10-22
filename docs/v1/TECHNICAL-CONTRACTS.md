@@ -1,40 +1,31 @@
-# Contrats techniques V1 — décisions d'implémentation déléguées
+# ZAMUREK — contrats d'intégration Core (V1)
 
-## Principes
-Le référentiel canonique des API démarre dans `packages/contracts/openapi/zamurek-v1.yaml` **en état DRAFT**. Il ne remplace ni tests E2E ni code. Versionnement `/v1` ; ne pas changer signatures/behaviors incompatibles sans schéma de migration + tests anciens clients. Le contrat legacy `xshop-v1.yaml` reste **historique** et n'est pas une source de vérité V1.
+**Statut : SPECIFICATION non implémentée.** Monarque Connect est la **seule autorité pour l'API transactionnelle** ; son contrat OpenAPI existe dans le dépôt privé et évolue via la phase 10A.5. Le fichier local `packages/contracts/openapi/zamurek-v1.yaml` est **PRE-CONVERGENCE DRAFT** : ses routes `/v1/*` ne sont pas des endpoints prouvés et ne doivent PAS être utilisées pour générer un backend ZAMUREK autonome. Voir [ADR-0024](../decisions/0024-shared-monarque-core-zamurek.md), [intégration](SHARED-CORE-INTEGRATION.md).
 
-## Headers et contextes
-- `X-Zamurek-Channel` : identifiant public de canal/venue ou commerçant, **jamais un secret** ; résolu serveur sur `organizationId, establishmentId?, territoryPolicy, channelPolicy`.
-- `Authorization: Bearer` obligatoire pour toute mutation acheteur/vente/profil/booking ; merchant auth séparée dans scopes JWT/memberships avec MFA.
-- `Idempotency-Key` exigée sur create/order/booking/approval/payment/status sensibles. Scope `organization+actor+method+route+fingerprint`, répétition identique retourne le même résultat ; payload différent = 409.
-- `X-Correlation-Id` serveur généré/propagé et redaction PII dans logs.
+## Politique d'API
+- Préfixe canonique serveur Monarque Connect `/api/v1/`. Le module ZAMUREK peut exposer une façade spécifique `/api/v1/zamurek/*` et/ou endpoints Core enrichis, sous contrats OpenAPI publics et privés séparés.
+- Toute mutation requiert actor/identity valable, `organizationId` autorisé, `establishmentId`, entitlement par produit, ownership, idempotence; un channel public `X-Zamurek-Channel` ne donne aucun privilège.
+- Achat *online* : buyer e-mail vérifié et propriétaire de la commande ; achat **POS walk-in** : buyer non enregistré mais caissier autorisé avec session ouverte. Pas de compte fictif/staff membership pour acheteurs.
+- Transactions dans Core : quote pricing versionnée → SalesOrder `origin` → PaymentRecord → CashMovement si cash → outbox, atomique et idempotente.
+- Détails API POS : [POS et impression](POS-AND-FISCAL-DOCUMENTS.md). Full CRUD, erreurs et security OpenAPI **à créer et tester pendant 10A.5**, pas s'appuyer sur esquisse actuelle.
 
-## Domaines d'endpoint (draft évolutif, toutes surfaces V1 ont une API)
-- `/auth/v1/*` register, verify e-mail, login, refresh, logout, recovery, me ; `/merchant/v1/*` staff login + MFA/memberships.
-- `/v1/organizations/*`, `/v1/establishments/*`, `/v1/capabilities/*` gestion publique limitée, écriture staff.
-- `/v1/catalog/*` produits/services/food/weighted/quotes ; `/v1/fx/*` lecture CDF public et taux USD source côté marchand.
-- `/v1/carts/*`, `/v1/quotes/*`, `/v1/orders/*`, `/v1/payments/*`, `/v1/fulfillment/*`, `/v1/cancellations/*`.
-- `/v1/appointments/*`, `/v1/resources/*`, `/v1/restaurant/*`, `/v1/table-reservations/*`.
-- `/v1/merchant/quotes/*`, `/v1/repairs/*`, `/v1/merchant/pos/*`, `/v1/merchant/venues/*` ; route staff avec permissions.
-- `/v1/venues/*` découverte lieux, tenants opt-in et projection publique ; aucun historique cross-tenant.
-- `/v1/agents/*` modèles/outils/sessions/approbations sous scope ; aucun endpoint système ou secrets.
-- `/platform/v1/*` provisioning, abonnement BASIC et opérateur accessible **VPN only**.
-- Tous les documents publics prix RDC en **CDF** ; l'USD n'apparaît que dans des contextes de gestion autorisés. Les médias sont protégés par politiques.
+## Transports / codes
+REST 200/201/202/204, erreurs 400/401/403/404/409/422/429/503 sans révéler existence d'autres ressources. `Idempotency-Key` tenant/actor/operation/payload-hash obligatoire sur mutations critiques. Heure UTC + timezone IANA établissement, quantité `DecimalExact` string, prix serveur, politique CDF territoriale sans float.
 
-## Contrat de commande par type
-`CartItem` discriminé avec `kind`: PRODUCT(qtyPCS), WEIGHTED(qtyGramExact), FOOD(options/requiresPrep), SCHEDULED_SERVICE(appointmentId), QUOTED_GOOD(acceptedQuoteId), REPAIR_SERVICE(acceptedRepairEstimateId), REGULATED_GOOD(allowedFlag). Un panier mono-vendeur et une commande mono-vendeur ; pour des services planifiés, le lien `appointmentId` peut être obligatoire. Valider invariants par module avant quote/checkout. Aucune « vente médicament » sous type générique pour contourner classification.
+## Produits, versions et entitlements
+`productCode = MONARQUE_CONNECT|ZAMUREK` ; `ZAMUREK_BASIC` à 7 USD/mois cible, droits aux modules commerciaux nécessaires uniquement. Un org peut souscrire l'un, l'autre ou les deux sans duplication des commandes. Le serveur contrôle la séparation, pas React/Capacitor.
 
-## Modes de fulfilment
-PICKUP, LOCAL_DELIVERY, ON_SITE, APPOINTMENT, SPECIAL_DELIVERY, REPAIR_HANDOVER ; associations offre×établissement validées. L'enregistrement de commande ne peut pas réserver indéfiniment une table, un staff ou une ressource. Réservations et holdings expirables, état facturation indépendant.
+## API spécialisées à définir dans le Core (exigées V1)
+- Discovery public opt-in, listings et disponibilités par venue (lecture filtrée).
+- Catalogue typé, produits pondéraux, menus/options, devis, heures et slots.
+- Checkout public mono-vendeur, order status et annulations sous ownership.
+- POS caissier, sessions, tender/cash, cash reconciliation, PDF/ticket/rendu fiscal.
+- Réservation services/tables avec contrainte concurrence, cuisines, devis/repairs.
+- Agents via gateway partagé, aucune route arbitrant argent hors policy.
+- Console opérateur via réseau privé VPN/MFA.
 
-## Contrats Agentic Fabric
-`AgentTool` déclaré en schéma JSON versionné ; événements domain EventEnvelope versionné ; `run(agentDefinitionId,tenantContext,userConsent)` non privilégié, `approve(actionHash)` réservé à rôle et timebox. Toute opération d'agent passe par le même handler métier que l'action humaine. Format logs limité à runId, toolId, actorId, authzOutcome, payloadHash, modelId, timings et correlation.
+## Contrats sous contrôle de version
+Core maintient schémas OpenAPI et événements canoniques, CI génère/adapte SDK TS/Kotlin/Rust pour ZAMUREK et vérifie compatibilité clients APK/EXE. Le client ZAMUREK consomme un artefact versionné identifié par `coreCommitSha + contractVersion`. Aucun schéma manuel divergant ne peut être déclaré `runtime ready`.
 
-## États/erreurs
-HTTP 200/201/202/204 ; 400 malformed, 401 unauth, 403 forbidden, 404 inaccessible/nonexistent, 409 version/concurrency, 422 invalid business, 429 throttled, 503 unavailable. Body `{code,message,correlationId,details?}` sans fuite d'existence d'un compte/commande. Heure UTC, timezone IANA établissement pour créneaux.
-
-## Build/dist
-APK acheteur par magasin/venue, Android marchand, Discover Android ; Windows Tauri 2/Rust marchand et opérateur EXE/MSI, le MSI à compiler sur Windows. API/worker PostgreSQL via déploiement documenté, pas d'UI html sur réseau de production.
-
-## Choix secondaires Codex
-Bibliothèque décimale, ORM, SDK mail, bibliothèque auth/TOTP, framework de tests : à choisir sur preuve licence permissive et bonnes pratiques ; ne pas inventer une obligation d'outil à partir d'un placeholder G0. Vérifier licence réelle du framework/app version exact avant ajout.
+## Réalisation
+La phase Core 10A.5 est préalable aux contrats financiers. Le jalon ZAMUREK 0.1.0 teste sessions/permissions et SDK contre vrais endpoints Core **dès qu'ils sont disponibles**. POS et fiscalisation attendent 10A.5 C4–C5; ne jamais produire une fausse facture DGI ni un succès mock de paiement.
