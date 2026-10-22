@@ -1,0 +1,3260 @@
+openapi: 3.1.0
+info:
+  title: ZAMUREK Universal Commerce API
+  version: 0.0.0-contract-draft
+  description: |
+    Contrat de conception ZAMUREK V1, tous métiers et établissements. Brouillon à stabiliser lors de G1.
+    Non implémenté. /v1 est version d'URL, les points d'extension multi-activité sont à valider avec les modèles de domaine et les tests.
+    X-Zamurek-Channel identifie un canal public, jamais une authentification.
+    Les montants sont des chaînes décimales d'unités monétaires mineures.
+servers:
+  - url: https://api.example.invalid
+    description: Exemple fictif non déployé
+tags:
+  - name: Identity
+  - name: Storefront
+  - name: Catalog
+  - name: Cart
+  - name: Checkout
+  - name: Tracking
+  - name: Merchant
+  - name: Platform
+  - name: MerchantIdentity
+  - name: Establishments
+  - name: UniversalCatalog
+  - name: WeightedCommerce
+  - name: FoodService
+  - name: Appointments
+  - name: QuotesAndRepairs
+  - name: Venues
+  - name: Regulated
+  - name: POS
+  - name: Agentic
+  - name: Subscriptions
+paths:
+  /auth/v1/register:
+    post:
+      tags: [Identity]
+      operationId: registerCustomer
+      summary: Créer un compte client e-mail sans SMS
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterCustomer'
+      responses:
+        '202':
+          description: Demande enregistrée ; ne révèle pas l'existence du compte
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericAcknowledgement'
+        '422':
+          $ref: '#/components/responses/Unprocessable'
+  /auth/v1/verify-email:
+    post:
+      tags: [Identity]
+      operationId: verifyCustomerEmail
+      summary: Code de vérification d'e-mail à usage unique
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [email, verificationCode]
+              properties:
+                email:
+                  $ref: '#/components/schemas/EmailAddress'
+                verificationCode:
+                  type: string
+                  minLength: 6
+                  maxLength: 128
+      responses:
+        '200':
+          description: Adresse e-mail vérifiée
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericAcknowledgement'
+        '422':
+          $ref: '#/components/responses/Unprocessable'
+  /auth/v1/login:
+    post:
+      tags: [Identity]
+      operationId: loginCustomer
+      summary: Session client authentifiée (réservée aux clients natifs)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerCredentials'
+      responses:
+        '200':
+          description: Tokens émis seulement après authentification ; jamais journalisés
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthTokens'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /auth/v1/refresh:
+    post:
+      tags: [Identity]
+      operationId: refreshCustomerSession
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [refreshToken]
+              properties:
+                refreshToken:
+                  type: string
+      responses:
+        '200':
+          description: Session renouvelée avec rotation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthTokens'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /auth/v1/logout:
+    post:
+      tags: [Identity]
+      operationId: logoutCustomer
+      security:
+        - bearerAuth: []
+      responses:
+        '204':
+          description: Session révoquée
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /auth/v1/me:
+    get:
+      tags: [Identity]
+      operationId: getCurrentCustomer
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Profil d'identité globale restreint à son détenteur
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerIdentity'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /auth/v1/recovery/request:
+    post:
+      tags: [Identity]
+      operationId: requestAccountRecovery
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [email]
+              properties:
+                email:
+                  $ref: '#/components/schemas/EmailAddress'
+      responses:
+        '202':
+          description: Réponse neutre, e-mail envoyé si compte reconnu
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericAcknowledgement'
+  /auth/v1/recovery/confirm:
+    post:
+      tags: [Identity]
+      operationId: confirmAccountRecovery
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [email, recoveryCode, newPassword]
+              properties:
+                email:
+                  $ref: '#/components/schemas/EmailAddress'
+                recoveryCode:
+                  type: string
+                  minLength: 4
+                  maxLength: 12
+                newPassword:
+                  type: string
+                  minLength: 12
+                  maxLength: 128
+      responses:
+        '200':
+          description: Mot de passe modifié et sessions précédentes révoquées
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericAcknowledgement'
+        '422':
+          $ref: '#/components/responses/Unprocessable'
+  /v1/storefront/config:
+    get:
+      tags: [Storefront]
+      operationId: getStorefrontConfig
+      summary: Configuration publique de la boutique associée au canal
+      parameters:
+        - $ref: '#/components/parameters/Channel'
+      responses:
+        '200':
+          description: Configuration de boutique
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StorefrontConfig'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '503':
+          $ref: '#/components/responses/Unavailable'
+  /v1/categories:
+    get:
+      tags: [Catalog]
+      operationId: listCategories
+      summary: Catégories publiques visibles
+      parameters:
+        - $ref: '#/components/parameters/Channel'
+      responses:
+        '200':
+          description: Catégories
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Category'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /v1/products:
+    get:
+      tags: [Catalog]
+      operationId: listProducts
+      summary: Catalogue visible (paginated)
+      parameters:
+        - $ref: '#/components/parameters/Channel'
+        - name: cursor
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 50
+            default: 20
+        - name: query
+          in: query
+          schema:
+            type: string
+            maxLength: 120
+        - name: categoryId
+          in: query
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Page de produits publics
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductPage'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /v1/products/{productId}:
+    get:
+      tags: [Catalog]
+      operationId: getProduct
+      parameters:
+        - $ref: '#/components/parameters/Channel'
+        - $ref: '#/components/parameters/ProductId'
+      responses:
+        '200':
+          description: Détail visible du produit
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /v1/carts:
+    post:
+      tags: [Cart]
+      operationId: createCart
+      summary: Créer panier authentifié ; prix serveur CDF pour marché RDC
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/Channel'
+      responses:
+        '201':
+          description: Panier utilisateur
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cart'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /v1/carts/{cartId}:
+    get:
+      tags: [Cart]
+      operationId: getCart
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/Channel'
+        - $ref: '#/components/parameters/CartId'
+      responses:
+        '200':
+          description: Panier du client authentifié uniquement
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cart'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /v1/carts/{cartId}/items:
+    patch:
+      tags: [Cart]
+      operationId: changeCartItem
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/Channel'
+        - $ref: '#/components/parameters/CartId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [variantId, quantity]
+              properties:
+                variantId:
+                  type: string
+                  format: uuid
+                quantity:
+                  type: integer
+                  minimum: 0
+                  maximum: 99
+      responses:
+        '200':
+          description: Panier recalculé dans sa monnaie
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cart'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/carts/{cartId}/quote:
+    get:
+      tags: [Cart]
+      operationId: quoteCart
+      summary: Devis backend CDF à partir du prix USD et taux marchand versionné
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/Channel'
+        - $ref: '#/components/parameters/CartId'
+        - name: fulfillmentMethod
+          in: query
+          required: true
+          schema:
+            $ref: '#/components/schemas/FulfillmentMethod'
+        - name: deliveryZoneId
+          in: query
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Devis CDF avec taux figé, date expiration et détails
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PriceQuote'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/fulfillment/options:
+    get:
+      tags: [Storefront]
+      operationId: listPublicFulfillmentOptions
+      summary: Options de livraison et frais CDF calculés par API
+      parameters:
+        - $ref: '#/components/parameters/Channel'
+      responses:
+        '200':
+          description: Options de la boutique
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                required: [fulfillmentMethods, deliveryZones, paymentMethods]
+                properties:
+                  fulfillmentMethods:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/FulfillmentMethod'
+                  deliveryZones:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/DeliveryZone'
+                  paymentMethods:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/PaymentMethod'
+  /v1/checkouts:
+    post:
+      tags: [Checkout]
+      operationId: placeOrder
+      summary: Créer commande CDF à partir d'un devis serveur versionné
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/Channel'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CheckoutRequest'
+      responses:
+        '201':
+          description: Commande créée, prix et monnaie figés par serveur
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CheckoutReceipt'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/Unprocessable'
+        '503':
+          $ref: '#/components/responses/Unavailable'
+  /v1/orders:
+    get:
+      tags: [Tracking]
+      operationId: listMyOrders
+      summary: Commandes du client courant dans la boutique du canal
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/Channel'
+      responses:
+        '200':
+          description: Commandes visibles au propriétaire authentifié
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OrderTracking'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /v1/orders/{orderId}:
+    get:
+      tags: [Tracking]
+      operationId: getMyOrder
+      summary: Détail d'une commande appartenant au client connecté
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/Channel'
+        - $ref: '#/components/parameters/OrderId'
+      responses:
+        '200':
+          description: Détail de commande après contrôle tenant + ownership
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderTracking'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /v1/orders/{orderId}/cancellation-requests:
+    post:
+      tags: [Tracking]
+      operationId: requestOrderCancellation
+      summary: Déposer une demande ; jamais annuler immédiatement la commande
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/Channel'
+        - $ref: '#/components/parameters/OrderId'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [reason]
+              properties:
+                reason:
+                  type: string
+                  minLength: 3
+                  maxLength: 500
+      responses:
+        '202':
+          description: Demande reçue pour examen marchand
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericAcknowledgement'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/merchant/orders:
+    get:
+      tags: [Merchant]
+      operationId: listMerchantOrders
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/Channel'
+      responses:
+        '200':
+          description: Commandes du tenant autorisé (représentation réduite)
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MerchantOrder'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+  /v1/merchant/orders/{orderId}/status:
+    patch:
+      tags: [Merchant]
+      operationId: updateOrderStatus
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/Channel'
+        - $ref: '#/components/parameters/OrderId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [status]
+              properties:
+                status:
+                  $ref: '#/components/schemas/OrderStatus'
+      responses:
+        '200':
+          description: Transition acceptée et auditée
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MerchantOrder'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/merchant/products/{productId}:
+    put:
+      tags: [Merchant]
+      operationId: replaceMerchantProduct
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/Channel'
+        - $ref: '#/components/parameters/ProductId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpsertProduct'
+      responses:
+        '200':
+          description: Produit mis à jour
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '422':
+          $ref: '#/components/responses/Unprocessable'
+  /v1/merchant/products:
+    get:
+      tags: [Merchant]
+      operationId: listMerchantProducts
+      summary: Produits de la boutique, y compris brouillons et masqués
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/Channel'
+      responses:
+        '200':
+          description: Catalogue administrable du tenant autorisé
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MerchantProduct'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+    post:
+      tags: [Merchant]
+      operationId: createMerchantProduct
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/Channel'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpsertProduct'
+      responses:
+        '201':
+          description: Produit créé dans la boutique du marchand
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MerchantProduct'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '422':
+          $ref: '#/components/responses/Unprocessable'
+  /v1/merchant/orders/{orderId}/payments/{paymentId}/confirm-manual:
+    post:
+      tags: [Merchant]
+      operationId: confirmManualPayment
+      summary: Confirmer après vérification humaine un paiement manuel
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/Channel'
+        - $ref: '#/components/parameters/OrderId'
+        - name: paymentId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [verificationNote]
+              properties:
+                verificationNote:
+                  type: string
+                  minLength: 4
+                  maxLength: 500
+                externalReference:
+                  type: string
+                  maxLength: 120
+      responses:
+        '200':
+          description: État PAID seulement si méthode manuelle, montant et autorisation vérifiés
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MerchantOrder'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/merchant/delivery-zones:
+    get:
+      tags: [Merchant]
+      operationId: listMerchantDeliveryZones
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/Channel'
+      responses:
+        '200':
+          description: Zones de livraison du tenant autorisé
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MerchantDeliveryZone'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+    post:
+      tags: [Merchant]
+      operationId: createMerchantDeliveryZone
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/Channel'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [name, baseFeeUsd]
+              properties:
+                name:
+                  type: string
+                  minLength: 2
+                baseFeeUsd:
+                  $ref: '#/components/schemas/Money'
+      responses:
+        '201':
+          description: Zone créée
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MerchantDeliveryZone'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+  /v1/merchant/fx-rate:
+    get:
+      tags: [Merchant]
+      operationId: getMerchantFxRate
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/Channel'
+      responses:
+        '200':
+          description: Taux en vigueur
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FxRateSnapshot'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+    put:
+      tags: [Merchant]
+      operationId: updateMerchantFxRate
+      summary: Modifier le taux USD vers CDF et incrémenter la version auditée
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/Channel'
+        - name: If-Match
+          in: header
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [usdToCdf]
+              properties:
+                usdToCdf:
+                  type: string
+                  pattern: '^[0-9]+(\.[0-9]+)?$'
+      responses:
+        '200':
+          description: Taux modifié ; anciennes commandes inchangées
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FxRateSnapshot'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /platform/v1/tenants:
+    post:
+      tags: [Platform]
+      operationId: provisionTenant
+      summary: Demander le provisioning idempotent d'un tenant
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [slug, displayName]
+              properties:
+                slug:
+                  type: string
+                  pattern: '^[a-z0-9][a-z0-9-]{1,48}$'
+                displayName:
+                  type: string
+                  minLength: 2
+                  maxLength: 140
+      responses:
+        '202':
+          description: Provisioning accepté de façon asynchrone
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TenantProvisioning'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /platform/v1/tenants/{tenantId}:
+    get:
+      tags: [Platform]
+      operationId: getTenantProvisioning
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: tenantId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: État du provisioning
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TenantProvisioning'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'  /merchant/v1/sessions:
+    post:
+      tags: [MerchantIdentity]
+      operationId: loginMerchantStaff
+      summary: loginMerchantStaff — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: public
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MerchantCredentials'
+      responses:
+        '201':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MerchantSession'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /merchant/v1/mfa/verify:
+    post:
+      tags: [MerchantIdentity]
+      operationId: verifyMerchantMfa
+      summary: verifyMerchantMfa — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: public
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MfaVerification'
+      responses:
+        '201':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MerchantSession'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/organizations/{organizationId}/establishments:
+    parameters:
+      - name: organizationId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    get:
+      tags: [Establishments]
+      operationId: listOrganizationEstablishments
+      summary: listOrganizationEstablishments — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: merchant
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EstablishmentList'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/merchant/establishments:
+    post:
+      tags: [Establishments]
+      operationId: createEstablishment
+      summary: createEstablishment — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: merchant
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EstablishmentInput'
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '201':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Establishment'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/merchant/establishments/{establishmentId}/capabilities:
+    parameters:
+      - name: establishmentId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    put:
+      tags: [Establishments]
+      operationId: updateEstablishmentCapabilities
+      summary: updateEstablishmentCapabilities — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: merchant
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CapabilityConfig'
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Establishment'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/offerings:
+    get:
+      tags: [UniversalCatalog]
+      operationId: listPublicOfferings
+      summary: listPublicOfferings — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: public
+      responses:
+        '200':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OfferingList'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/merchant/offerings:
+    post:
+      tags: [UniversalCatalog]
+      operationId: createMerchantOffering
+      summary: createMerchantOffering — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: merchant
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OfferingInput'
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '201':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Offering'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/merchant/weighted-offerings:
+    post:
+      tags: [WeightedCommerce]
+      operationId: createWeightedOffering
+      summary: createWeightedOffering — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: merchant
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WeightedOfferingInput'
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '201':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Offering'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/merchant/food-menus:
+    post:
+      tags: [FoodService]
+      operationId: createFoodMenu
+      summary: createFoodMenu — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: merchant
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FoodMenuInput'
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '201':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FoodMenu'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/merchant/food-menus/{menuId}/items:
+    parameters:
+      - name: menuId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    post:
+      tags: [FoodService]
+      operationId: createFoodMenuItem
+      summary: createFoodMenuItem — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: merchant
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FoodMenuItemInput'
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '201':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Offering'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/restaurant/menus:
+    get:
+      tags: [FoodService]
+      operationId: listPublicFoodMenus
+      summary: listPublicFoodMenus — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: public
+      responses:
+        '200':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FoodMenuList'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/restaurant/orders/{orderId}/kitchen/advance:
+    parameters:
+      - name: orderId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    post:
+      tags: [FoodService]
+      operationId: advanceKitchenTicket
+      summary: advanceKitchenTicket — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: merchant
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/KitchenTransition'
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '201':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KitchenTicket'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/restaurant/table-availability:
+    get:
+      tags: [FoodService]
+      operationId: getRestaurantTableAvailability
+      summary: getRestaurantTableAvailability — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: public
+      responses:
+        '200':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceAvailability'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/table-reservations:
+    post:
+      tags: [FoodService]
+      operationId: bookRestaurantTable
+      summary: bookRestaurantTable — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: customer
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TableReservationInput'
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '201':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BookingReceipt'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+    get:
+      tags: [FoodService]
+      operationId: listMyTableReservations
+      summary: listMyTableReservations — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: customer
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BookingList'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/appointments/availability:
+    get:
+      tags: [Appointments]
+      operationId: getServiceAvailability
+      summary: getServiceAvailability — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: public
+      responses:
+        '200':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceAvailability'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/appointments:
+    post:
+      tags: [Appointments]
+      operationId: bookServiceAppointment
+      summary: bookServiceAppointment — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: customer
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AppointmentInput'
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '201':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BookingReceipt'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/merchant/appointments:
+    get:
+      tags: [Appointments]
+      operationId: listMerchantAppointments
+      summary: listMerchantAppointments — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: merchant
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BookingList'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/merchant/appointments/{appointmentId}:
+    parameters:
+      - name: appointmentId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    patch:
+      tags: [Appointments]
+      operationId: transitionAppointment
+      summary: transitionAppointment — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: merchant
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AppointmentTransition'
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BookingReceipt'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/merchant/quotes:
+    post:
+      tags: [QuotesAndRepairs]
+      operationId: createMerchantQuotation
+      summary: createMerchantQuotation — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: merchant
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QuoteInput'
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '201':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommercialQuotation'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/quotes/{quoteId}/accept:
+    parameters:
+      - name: quoteId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    post:
+      tags: [QuotesAndRepairs]
+      operationId: acceptMerchantQuotation
+      summary: acceptMerchantQuotation — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: customer
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QuotationAcceptance'
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '201':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommercialQuotation'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/repairs:
+    post:
+      tags: [QuotesAndRepairs]
+      operationId: registerRepairIntake
+      summary: registerRepairIntake — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: customer
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RepairIntake'
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '201':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RepairCase'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/merchant/repairs/{repairId}:
+    parameters:
+      - name: repairId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    patch:
+      tags: [QuotesAndRepairs]
+      operationId: updateRepairCase
+      summary: updateRepairCase — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: merchant
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RepairUpdate'
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RepairCase'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/repairs/{repairId}/approve-estimate:
+    parameters:
+      - name: repairId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    post:
+      tags: [QuotesAndRepairs]
+      operationId: approveRepairEstimate
+      summary: approveRepairEstimate — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: customer
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QuotationAcceptance'
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '201':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RepairCase'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/venues:
+    get:
+      tags: [Venues]
+      operationId: listDiscoverableVenues
+      summary: listDiscoverableVenues — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: public
+      responses:
+        '200':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VenueList'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/venues/{venueId}/offerings:
+    parameters:
+      - name: venueId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    get:
+      tags: [Venues]
+      operationId: listVenuePublicOfferings
+      summary: listVenuePublicOfferings — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: public
+      responses:
+        '200':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OfferingList'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/merchant/venues/{venueId}/opt-in:
+    parameters:
+      - name: venueId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    post:
+      tags: [Venues]
+      operationId: joinVenueAsMerchant
+      summary: joinVenueAsMerchant — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: merchant
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VenueOptIn'
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '201':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VenueMembership'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+    delete:
+      tags: [Venues]
+      operationId: revokeVenueMembership
+      summary: revokeVenueMembership — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: merchant
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '204':
+          description: Opt-in révoqué et index à invalider
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/merchant/regulated-offerings:
+    get:
+      tags: [Regulated]
+      operationId: listRegulatedOfferingStatus
+      summary: listRegulatedOfferingStatus — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: merchant
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OfferingList'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/merchant/pos/sales:
+    post:
+      tags: [POS]
+      operationId: createMerchantPosSale
+      summary: createMerchantPosSale — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: merchant
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PosSaleInput'
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '201':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PosReceipt'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/agents:
+    get:
+      tags: [Agentic]
+      operationId: listPermittedAgentProfiles
+      summary: listPermittedAgentProfiles — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: customer
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AgentList'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/agents/runs:
+    post:
+      tags: [Agentic]
+      operationId: createAgentRun
+      summary: createAgentRun — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: customer
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AgentRunInput'
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '201':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AgentRun'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/agents/runs/{runId}:
+    parameters:
+      - name: runId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    get:
+      tags: [Agentic]
+      operationId: getAgentRun
+      summary: getAgentRun — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: customer
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AgentRun'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/agents/approvals/{approvalId}:
+    parameters:
+      - name: approvalId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    post:
+      tags: [Agentic]
+      operationId: decideAgentApproval
+      summary: decideAgentApproval — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: merchant
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AgentApprovalInput'
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '201':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AgentRun'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /platform/v1/subscriptions:
+    get:
+      tags: [Subscriptions]
+      operationId: listPlatformSubscriptions
+      summary: listPlatformSubscriptions — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: private
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubscriptionList'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /platform/v1/subscriptions/{organizationId}:
+    parameters:
+      - name: organizationId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    put:
+      tags: [Subscriptions]
+      operationId: updatePlatformSubscription
+      summary: updatePlatformSubscription — premier contrat typé, à stabiliser en G1
+      x-contractStatus: DRAFT
+      x-network-scope: private
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SubscriptionUpdate'
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: Réponse contrôlée par politiques tenant/objet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Subscription'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  parameters:
+    Channel:
+      name: X-Zamurek-Channel
+      in: header
+      required: true
+      description: Identifiant public d'un canal enregistré ; ne confère aucune permission
+      schema:
+        type: string
+        minLength: 8
+        maxLength: 128
+    IdempotencyKey:
+      name: Idempotency-Key
+      in: header
+      required: true
+      schema:
+        type: string
+        minLength: 8
+        maxLength: 128
+    ProductId:
+      name: productId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+    CartId:
+      name: cartId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+    OrderId:
+      name: orderId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+  responses:
+    Unauthorized:
+      description: Authentification absente ou session invalide
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiError'
+    NotFound:
+      description: Ressource ou contexte introuvable, ou volontairement masqué
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiError'
+    Forbidden:
+      description: Accès interdit
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiError'
+    Conflict:
+      description: État ou empreinte d'idempotence en conflit
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiError'
+    Unprocessable:
+      description: Données invalides
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiError'
+    Unavailable:
+      description: Boutique désactivée ou service indisponible
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiError'
+  schemas:
+    ResourceId:
+      type: string
+      format: uuid
+    DecimalExact:
+      type: string
+      pattern: '^[0-9]+(\.[0-9]+)?    PhoneE164:
+      type: string
+      pattern: '^\+[1-9][0-9]{7,14}$'
+      description: Contact livraison uniquement, pas un identifiant de connexion
+    EmailAddress:
+      type: string
+      format: email
+      maxLength: 254
+    SupportedCurrency:
+      type: string
+      enum: [CDF]
+      description: Devise commerciale publique autorisée pour le pilote RDC
+    RegisterCustomer:
+      type: object
+      additionalProperties: false
+      required: [email, password]
+      properties:
+        email:
+          $ref: '#/components/schemas/EmailAddress'
+        password:
+          type: string
+          minLength: 12
+          maxLength: 128
+    CustomerCredentials:
+      $ref: '#/components/schemas/RegisterCustomer'
+    AuthTokens:
+      type: object
+      additionalProperties: false
+      required: [accessToken, refreshToken, expiresInSeconds]
+      description: Secrets remis au cœur natif, jamais dans les logs ni dans les événements React
+      properties:
+        accessToken:
+          type: string
+        refreshToken:
+          type: string
+        expiresInSeconds:
+          type: integer
+          minimum: 1
+    CustomerIdentity:
+      type: object
+      additionalProperties: false
+      required: [id, email, emailVerified]
+      properties:
+        id:
+          type: string
+          format: uuid
+        email:
+          $ref: '#/components/schemas/EmailAddress'
+        emailVerified:
+          type: boolean
+    GenericAcknowledgement:
+      type: object
+      additionalProperties: false
+      required: [accepted]
+      properties:
+        accepted:
+          type: boolean
+    FxRateSnapshot:
+      type: object
+      additionalProperties: false
+      required: [rateVersion, usdToCdf, effectiveAt]
+      properties:
+        rateVersion:
+          type: integer
+          minimum: 1
+        usdToCdf:
+          type: string
+          pattern: '^[0-9]+(\.[0-9]+)?$'
+          description: Taux marchand paramétré, distinct d'un cours officiel BCC
+        effectiveAt:
+          type: string
+          format: date-time
+    PriceQuote:
+      type: object
+      additionalProperties: false
+      required: [id, cartId, currencyCode, subtotal, deliveryFee, total, rate, expiresAt]
+      properties:
+        id:
+          type: string
+          format: uuid
+        cartId:
+          type: string
+          format: uuid
+        currencyCode:
+          $ref: '#/components/schemas/SupportedCurrency'
+        subtotal:
+          $ref: '#/components/schemas/Money'
+        deliveryFee:
+          $ref: '#/components/schemas/Money'
+        total:
+          $ref: '#/components/schemas/Money'
+        rate:
+          $ref: '#/components/schemas/FxRateSnapshot'
+        expiresAt:
+          type: string
+          format: date-time
+    ApiError:
+      type: object
+      additionalProperties: false
+      required: [code, message, correlationId]
+      properties:
+        code:
+          type: string
+          example: PRODUCT_UNAVAILABLE
+        message:
+          type: string
+        correlationId:
+          type: string
+        details:
+          type: object
+          additionalProperties: true
+    Money:
+      type: object
+      additionalProperties: false
+      required: [currency, amountMinor]
+      properties:
+        currency:
+          type: string
+          pattern: '^[A-Z]{3}$'
+          examples: [CDF, USD]
+        amountMinor:
+          type: string
+          pattern: '^[0-9]+$'
+          description: Entier décimal en unités mineures, toujours positif ou nul
+          examples: ['15000']
+    StorefrontConfig:
+      type: object
+      additionalProperties: false
+      required: [tenantId, channelId, displayName, publicDisplayCurrency, fulfillmentMethods, paymentMethods, branding]
+      properties:
+        tenantId:
+          type: string
+          format: uuid
+        channelId:
+          type: string
+        displayName:
+          type: string
+        publicDisplayCurrency:
+          $ref: '#/components/schemas/SupportedCurrency'
+        fulfillmentMethods:
+          type: array
+          items:
+            $ref: '#/components/schemas/FulfillmentMethod'
+        paymentMethods:
+          type: array
+          items:
+            $ref: '#/components/schemas/PaymentMethod'
+        branding:
+          type: object
+          additionalProperties: false
+          required: [primaryColor]
+          properties:
+            primaryColor:
+              type: string
+              pattern: '^#[0-9A-Fa-f]{6}$'
+            logoUrl:
+              type: [string, 'null']
+              format: uri
+    Category:
+      type: object
+      additionalProperties: false
+      required: [id, name]
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+    ProductPage:
+      type: object
+      additionalProperties: false
+      required: [items]
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Product'
+        nextCursor:
+          type: [string, 'null']
+    Product:
+      type: object
+      additionalProperties: false
+      required: [id, name, status, variants]
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        description:
+          type: string
+        categoryId:
+          type: [string, 'null']
+          format: uuid
+        status:
+          type: string
+          enum: [ACTIVE, UNAVAILABLE]
+          description: Seuls les produits publics apparaissent ici
+        imageUrls:
+          type: array
+          items:
+            type: string
+            format: uri
+        variants:
+          type: array
+          minItems: 1
+          items:
+            $ref: '#/components/schemas/Variant'
+    Variant:
+      type: object
+      additionalProperties: false
+      required: [id, label, price, available]
+      properties:
+        id:
+          type: string
+          format: uuid
+        label:
+          type: string
+        available:
+          type: boolean
+        price:
+          $ref: '#/components/schemas/Money'
+          description: Prix CDF commercial calculé par le serveur
+    Cart:
+      type: object
+      additionalProperties: false
+      required: [id, currencyCode, items, subtotal, expiresAt]
+      properties:
+        id:
+          type: string
+          format: uuid
+        currencyCode:
+          $ref: '#/components/schemas/SupportedCurrency'
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/CartItem'
+        subtotal:
+          $ref: '#/components/schemas/Money'
+        expiresAt:
+          type: string
+          format: date-time
+    CartItem:
+      type: object
+      additionalProperties: false
+      required: [variantId, quantity, lineTotal]
+      properties:
+        variantId:
+          type: string
+          format: uuid
+        quantity:
+          type: integer
+          minimum: 1
+        lineTotal:
+          $ref: '#/components/schemas/Money'
+    FulfillmentMethod:
+      type: string
+      enum: [PICKUP, DELIVERY]
+    PaymentMethod:
+      type: string
+      enum: [PAY_ON_DELIVERY, MANUAL_TRANSFER]
+    OrderRecipient:
+      type: object
+      additionalProperties: false
+      required: [fullName, phoneE164]
+      properties:
+        fullName:
+          type: string
+          minLength: 2
+          maxLength: 120
+        phoneE164:
+          $ref: '#/components/schemas/PhoneE164'
+    CheckoutRequest:
+      type: object
+      additionalProperties: false
+      required: [cartId, quoteId, recipient, fulfillment, paymentMethod]
+      properties:
+        cartId:
+          type: string
+          format: uuid
+        quoteId:
+          type: string
+          format: uuid
+        recipient:
+          $ref: '#/components/schemas/OrderRecipient'
+        fulfillment:
+          type: object
+          additionalProperties: false
+          required: [method]
+          properties:
+            method:
+              $ref: '#/components/schemas/FulfillmentMethod'
+            deliveryZoneId:
+              type: string
+              format: uuid
+            address:
+              type: string
+              maxLength: 320
+            instructions:
+              type: string
+              maxLength: 500
+        paymentMethod:
+          $ref: '#/components/schemas/PaymentMethod'
+    CheckoutReceipt:
+      type: object
+      additionalProperties: false
+      required: [orderId, orderNumber, status, paymentStatus, total, currencyCode, rate]
+      properties:
+        orderId:
+          type: string
+          format: uuid
+        orderNumber:
+          type: string
+        status:
+          $ref: '#/components/schemas/OrderStatus'
+        paymentStatus:
+          $ref: '#/components/schemas/PaymentStatus'
+        currencyCode:
+          $ref: '#/components/schemas/SupportedCurrency'
+        total:
+          $ref: '#/components/schemas/Money'
+        rate:
+          $ref: '#/components/schemas/FxRateSnapshot'
+    OrderStatus:
+      type: string
+      enum: [PLACED, ACCEPTED, PREPARING, READY, OUT_FOR_DELIVERY, COMPLETED, CANCELLED]
+    PaymentStatus:
+      type: string
+      enum: [PENDING, AWAITING_CONFIRMATION, PAID, FAILED, CANCELLED, REFUNDED]
+    OrderTracking:
+      type: object
+      additionalProperties: false
+      required: [orderId, orderNumber, status, paymentStatus, total]
+      properties:
+        orderId:
+          type: string
+          format: uuid
+        orderNumber:
+          type: string
+        status:
+          $ref: '#/components/schemas/OrderStatus'
+        paymentStatus:
+          $ref: '#/components/schemas/PaymentStatus'
+        total:
+          $ref: '#/components/schemas/Money'
+    MerchantOrder:
+      type: object
+      additionalProperties: false
+      required: [id, number, status, paymentStatus, total, createdAt]
+      properties:
+        id:
+          type: string
+          format: uuid
+        number:
+          type: string
+        status:
+          $ref: '#/components/schemas/OrderStatus'
+        paymentStatus:
+          $ref: '#/components/schemas/PaymentStatus'
+        total:
+          $ref: '#/components/schemas/Money'
+        createdAt:
+          type: string
+          format: date-time
+    UpsertProduct:
+      type: object
+      additionalProperties: false
+      required: [name, status, variants]
+      properties:
+        name:
+          type: string
+          minLength: 2
+          maxLength: 180
+        description:
+          type: string
+          maxLength: 10000
+        status:
+          type: string
+          enum: [DRAFT, ACTIVE, HIDDEN, UNAVAILABLE, ARCHIVED]
+        variants:
+          type: array
+          minItems: 1
+          items:
+            $ref: '#/components/schemas/VariantInput'
+    VariantInput:
+      type: object
+      additionalProperties: false
+      required: [label, basePriceUsd, available]
+      properties:
+        label:
+          type: string
+          minLength: 1
+          maxLength: 120
+        basePriceUsd:
+          $ref: '#/components/schemas/Money'
+          description: Base USD uniquement, validation currency USD côté backend
+        available:
+          type: boolean
+    MerchantVariant:
+      type: object
+      additionalProperties: false
+      required: [id, label, basePriceUsd, available]
+      properties:
+        id:
+          type: string
+          format: uuid
+        label:
+          type: string
+        basePriceUsd:
+          $ref: '#/components/schemas/Money'
+        available:
+          type: boolean
+    MerchantProduct:
+      type: object
+      additionalProperties: false
+      required: [id, name, status, variants]
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        status:
+          type: string
+          enum: [DRAFT, ACTIVE, HIDDEN, UNAVAILABLE, ARCHIVED]
+        variants:
+          type: array
+          items:
+            $ref: '#/components/schemas/MerchantVariant'
+    DeliveryZone:
+      type: object
+      additionalProperties: false
+      required: [id, name, fee, enabled]
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        fee:
+          $ref: '#/components/schemas/Money'
+          description: Frais CDF calculés par serveur pour l'acheteur
+        enabled:
+          type: boolean
+    MerchantDeliveryZone:
+      type: object
+      additionalProperties: false
+      required: [id, name, baseFeeUsd, enabled]
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        baseFeeUsd:
+          $ref: '#/components/schemas/Money'
+          description: Frais source USD
+        enabled:
+          type: boolean
+    TenantProvisioning:
+      type: object
+      additionalProperties: false
+      required: [tenantId, status]
+      properties:
+        tenantId:
+          type: string
+          format: uuid
+        status:
+          type: string
+          enum: [PROVISIONING, ACTIVE, SUSPENDED, FAILED]
+        jobId:
+          type: string
+          format: uuid
+
+      description: Quantité ou taux décimal encodé en chaîne, sans floating point
+    MerchantCredentials:
+      type: object
+      additionalProperties: false
+      required: [email, password]
+      properties:
+        email: {type: string, format: email}
+        password: {type: string, minLength: 12}
+    MfaVerification:
+      type: object
+      additionalProperties: false
+      required: [challengeId, totp]
+      properties:
+        challengeId: {$ref: '#/components/schemas/ResourceId'}
+        totp: {type: string, minLength: 6, maxLength: 12}
+    MerchantSession:
+      type: object
+      additionalProperties: false
+      required: [identityId, mfaVerified, accessToken]
+      properties:
+        identityId: {$ref: '#/components/schemas/ResourceId'}
+        mfaVerified: {type: boolean}
+        accessToken: {type: string}
+    EstablishmentInput:
+      type: object
+      additionalProperties: false
+      required: [organizationId, name, timezone]
+      properties:
+        organizationId: {$ref: '#/components/schemas/ResourceId'}
+        name: {type: string, minLength: 2}
+        timezone: {type: string, description: IANA timezone}
+        address: {type: string}
+    CapabilityConfig:
+      type: object
+      additionalProperties: false
+      required: [capabilityIds]
+      properties:
+        capabilityIds:
+          type: array
+          uniqueItems: true
+          items:
+            type: string
+            enum: [RETAIL, WEIGHTED, FOOD, SERVICES, FURNITURE, REPAIRS, PHARMACY]
+    Establishment:
+      type: object
+      additionalProperties: false
+      required: [id, organizationId, name, timezone, capabilityIds]
+      properties:
+        id: {$ref: '#/components/schemas/ResourceId'}
+        organizationId: {$ref: '#/components/schemas/ResourceId'}
+        name: {type: string}
+        timezone: {type: string}
+        capabilityIds: {type: array, items: {type: string}}
+    EstablishmentList:
+      type: array
+      items: {$ref: '#/components/schemas/Establishment'}
+    OfferingInput:
+      type: object
+      additionalProperties: false
+      required: [establishmentId, kind, name, basePriceUsd]
+      properties:
+        establishmentId: {$ref: '#/components/schemas/ResourceId'}
+        kind:
+          type: string
+          enum: [PRODUCT, WEIGHTED_PRODUCT, PREPARED_FOOD, SCHEDULED_SERVICE, QUOTED_GOOD, REPAIR_SERVICE, REGULATED_GOOD]
+        name: {type: string, minLength: 1}
+        basePriceUsd: {$ref: '#/components/schemas/Money'}
+        availability: {type: string, enum: [AVAILABLE, UNAVAILABLE]}
+    WeightedOfferingInput:
+      type: object
+      additionalProperties: false
+      required: [establishmentId, name, basePriceUsdPerUnit, unitBasis, minimumQuantity, stepQuantity]
+      properties:
+        establishmentId: {$ref: '#/components/schemas/ResourceId'}
+        name: {type: string, minLength: 1}
+        basePriceUsdPerUnit: {$ref: '#/components/schemas/Money'}
+        unitBasis: {type: string, enum: [G, KG]}
+        minimumQuantity: {$ref: '#/components/schemas/DecimalExact'}
+        stepQuantity: {$ref: '#/components/schemas/DecimalExact'}
+    Offering:
+      type: object
+      additionalProperties: false
+      required: [id, establishmentId, kind, name, available]
+      properties:
+        id: {$ref: '#/components/schemas/ResourceId'}
+        establishmentId: {$ref: '#/components/schemas/ResourceId'}
+        kind: {type: string}
+        name: {type: string}
+        available: {type: boolean}
+        publicPriceCdf: {$ref: '#/components/schemas/Money'}
+    OfferingList:
+      type: array
+      items: {$ref: '#/components/schemas/Offering'}
+    FoodMenuInput:
+      type: object
+      additionalProperties: false
+      required: [establishmentId, name]
+      properties:
+        establishmentId: {$ref: '#/components/schemas/ResourceId'}
+        name: {type: string}
+    FoodMenuItemInput:
+      type: object
+      additionalProperties: false
+      required: [offeringId, modifierGroups]
+      properties:
+        offeringId: {$ref: '#/components/schemas/ResourceId'}
+        modifierGroups:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required: [name, minSelected, maxSelected]
+            properties:
+              name: {type: string}
+              minSelected: {type: integer, minimum: 0}
+              maxSelected: {type: integer, minimum: 1}
+    FoodMenu:
+      type: object
+      additionalProperties: false
+      required: [id, establishmentId, name]
+      properties:
+        id: {$ref: '#/components/schemas/ResourceId'}
+        establishmentId: {$ref: '#/components/schemas/ResourceId'}
+        name: {type: string}
+    FoodMenuList:
+      type: array
+      items: {$ref: '#/components/schemas/FoodMenu'}
+    KitchenTransition:
+      type: object
+      additionalProperties: false
+      required: [targetState]
+      properties:
+        targetState: {type: string, enum: [ACCEPTED, PREPARING, READY, FULFILLED, CANCELLED]}
+        reason: {type: string}
+    KitchenTicket:
+      type: object
+      additionalProperties: false
+      required: [orderId, state]
+      properties:
+        orderId: {$ref: '#/components/schemas/ResourceId'}
+        state: {type: string}
+    ResourceAvailability:
+      type: object
+      additionalProperties: false
+      required: [establishmentId, availableSlots]
+      properties:
+        establishmentId: {$ref: '#/components/schemas/ResourceId'}
+        availableSlots:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required: [startsAt, endsAt]
+            properties:
+              startsAt: {type: string, format: date-time}
+              endsAt: {type: string, format: date-time}
+              capacity: {type: integer, minimum: 0}
+    TableReservationInput:
+      type: object
+      additionalProperties: false
+      required: [establishmentId, partySize, startsAt]
+      properties:
+        establishmentId: {$ref: '#/components/schemas/ResourceId'}
+        partySize: {type: integer, minimum: 1}
+        startsAt: {type: string, format: date-time}
+    AppointmentInput:
+      type: object
+      additionalProperties: false
+      required: [establishmentId, serviceOfferingId, startsAt]
+      properties:
+        establishmentId: {$ref: '#/components/schemas/ResourceId'}
+        serviceOfferingId: {$ref: '#/components/schemas/ResourceId'}
+        staffId: {$ref: '#/components/schemas/ResourceId'}
+        startsAt: {type: string, format: date-time}
+    AppointmentTransition:
+      type: object
+      additionalProperties: false
+      required: [targetState]
+      properties:
+        targetState: {type: string, enum: [CONFIRMED, RESCHEDULED, ARRIVED, IN_PROGRESS, COMPLETED, CANCELLED, NO_SHOW]}
+        newStartsAt: {type: string, format: date-time}
+        reason: {type: string}
+    BookingReceipt:
+      type: object
+      additionalProperties: false
+      required: [id, establishmentId, state, startsAt]
+      properties:
+        id: {$ref: '#/components/schemas/ResourceId'}
+        establishmentId: {$ref: '#/components/schemas/ResourceId'}
+        state: {type: string}
+        startsAt: {type: string, format: date-time}
+    BookingList:
+      type: array
+      items: {$ref: '#/components/schemas/BookingReceipt'}
+    QuoteInput:
+      type: object
+      additionalProperties: false
+      required: [establishmentId, scope, baseAmountUsd]
+      properties:
+        establishmentId: {$ref: '#/components/schemas/ResourceId'}
+        scope: {type: string, enum: [BULKY_GOOD, REPAIR, CUSTOM_SERVICE]}
+        baseAmountUsd: {$ref: '#/components/schemas/Money'}
+        notes: {type: string, maxLength: 2000}
+    QuotationAcceptance:
+      type: object
+      additionalProperties: false
+      required: [acceptedRevision]
+      properties:
+        acceptedRevision: {type: integer, minimum: 1}
+    CommercialQuotation:
+      type: object
+      additionalProperties: false
+      required: [id, revision, expiresAt, totalCdf]
+      properties:
+        id: {$ref: '#/components/schemas/ResourceId'}
+        revision: {type: integer, minimum: 1}
+        expiresAt: {type: string, format: date-time}
+        totalCdf: {$ref: '#/components/schemas/Money'}
+    RepairIntake:
+      type: object
+      additionalProperties: false
+      required: [establishmentId, category, customerDescription, customerConsent]
+      properties:
+        establishmentId: {$ref: '#/components/schemas/ResourceId'}
+        category: {type: string}
+        customerDescription: {type: string}
+        customerConsent: {type: boolean, const: true}
+    RepairUpdate:
+      type: object
+      additionalProperties: false
+      required: [targetState]
+      properties:
+        targetState: {type: string, enum: [RECEIVED, DIAGNOSING, AWAITING_APPROVAL, REPAIRING, TESTING, READY, HANDED_OVER, CANCELLED]}
+        notes: {type: string}
+    RepairCase:
+      type: object
+      additionalProperties: false
+      required: [id, establishmentId, status, customerConsent]
+      properties:
+        id: {$ref: '#/components/schemas/ResourceId'}
+        establishmentId: {$ref: '#/components/schemas/ResourceId'}
+        status: {type: string}
+        customerConsent: {type: boolean}
+    VenueOptIn:
+      type: object
+      additionalProperties: false
+      required: [organizationId, publicListingScope, consent]
+      properties:
+        organizationId: {$ref: '#/components/schemas/ResourceId'}
+        publicListingScope: {type: string, enum: [ESTABLISHMENT, PUBLIC_CATALOG, PUBLIC_CATALOG_AND_SERVICES]}
+        consent: {type: boolean, const: true}
+    VenueMembership:
+      type: object
+      additionalProperties: false
+      required: [venueId, organizationId, status]
+      properties:
+        venueId: {$ref: '#/components/schemas/ResourceId'}
+        organizationId: {$ref: '#/components/schemas/ResourceId'}
+        status: {type: string, enum: [ACTIVE, REVOKED, PENDING]}
+    VenueList:
+      type: array
+      items: {$ref: '#/components/schemas/VenueMembership'}
+    PosSaleInput:
+      type: object
+      additionalProperties: false
+      required: [establishmentId, lines, paymentMethod]
+      properties:
+        establishmentId: {$ref: '#/components/schemas/ResourceId'}
+        lines:
+          type: array
+          minItems: 1
+          items:
+            type: object
+            additionalProperties: false
+            required: [offeringId, quantity]
+            properties:
+              offeringId: {$ref: '#/components/schemas/ResourceId'}
+              quantity: {$ref: '#/components/schemas/DecimalExact'}
+        paymentMethod: {type: string, enum: [CASH_ON_PICKUP, MANUAL_TRANSFER]}
+    PosReceipt:
+      type: object
+      additionalProperties: false
+      required: [orderId, totalCdf]
+      properties:
+        orderId: {$ref: '#/components/schemas/ResourceId'}
+        totalCdf: {$ref: '#/components/schemas/Money'}
+    AgentRunInput:
+      type: object
+      additionalProperties: false
+      required: [agentDefinitionId, establishmentId, userQuery]
+      properties:
+        agentDefinitionId: {$ref: '#/components/schemas/ResourceId'}
+        establishmentId: {$ref: '#/components/schemas/ResourceId'}
+        userQuery: {type: string, maxLength: 8000}
+    AgentApprovalInput:
+      type: object
+      additionalProperties: false
+      required: [decision, payloadHash]
+      properties:
+        decision: {type: string, enum: [APPROVE, REJECT]}
+        payloadHash: {type: string, minLength: 32}
+    AgentRun:
+      type: object
+      additionalProperties: false
+      required: [runId, state, agentDefinitionId]
+      properties:
+        runId: {$ref: '#/components/schemas/ResourceId'}
+        agentDefinitionId: {$ref: '#/components/schemas/ResourceId'}
+        state: {type: string, enum: [QUEUED, RUNNING, WAITING_APPROVAL, SUCCEEDED, FAILED, CANCELLED]}
+    AgentList:
+      type: array
+      items:
+        type: object
+        additionalProperties: false
+        required: [id, name]
+        properties:
+          id: {$ref: '#/components/schemas/ResourceId'}
+          name: {type: string}
+    SubscriptionUpdate:
+      type: object
+      additionalProperties: false
+      required: [targetState]
+      properties:
+        targetState: {type: string, enum: [ACTIVE, PAST_DUE, SUSPENDED, CANCELLED]}
+        reason: {type: string}
+    Subscription:
+      type: object
+      additionalProperties: false
+      required: [organizationId, plan, monthlyUsdMinor, state]
+      properties:
+        organizationId: {$ref: '#/components/schemas/ResourceId'}
+        plan: {type: string, const: BASIC}
+        monthlyUsdMinor: {type: integer, const: 700}
+        state: {type: string}
+    SubscriptionList:
+      type: array
+      items: {$ref: '#/components/schemas/Subscription'}
+    PhoneE164:
+      type: string
+      pattern: '^\+[1-9][0-9]{7,14}$'
+      description: Contact livraison uniquement, pas un identifiant de connexion
+    EmailAddress:
+      type: string
+      format: email
+      maxLength: 254
+    SupportedCurrency:
+      type: string
+      enum: [CDF]
+      description: Devise commerciale publique autorisée pour le pilote RDC
+    RegisterCustomer:
+      type: object
+      additionalProperties: false
+      required: [email, password]
+      properties:
+        email:
+          $ref: '#/components/schemas/EmailAddress'
+        password:
+          type: string
+          minLength: 12
+          maxLength: 128
+    CustomerCredentials:
+      $ref: '#/components/schemas/RegisterCustomer'
+    AuthTokens:
+      type: object
+      additionalProperties: false
+      required: [accessToken, refreshToken, expiresInSeconds]
+      description: Secrets remis au cœur natif, jamais dans les logs ni dans les événements React
+      properties:
+        accessToken:
+          type: string
+        refreshToken:
+          type: string
+        expiresInSeconds:
+          type: integer
+          minimum: 1
+    CustomerIdentity:
+      type: object
+      additionalProperties: false
+      required: [id, email, emailVerified]
+      properties:
+        id:
+          type: string
+          format: uuid
+        email:
+          $ref: '#/components/schemas/EmailAddress'
+        emailVerified:
+          type: boolean
+    GenericAcknowledgement:
+      type: object
+      additionalProperties: false
+      required: [accepted]
+      properties:
+        accepted:
+          type: boolean
+    FxRateSnapshot:
+      type: object
+      additionalProperties: false
+      required: [rateVersion, usdToCdf, effectiveAt]
+      properties:
+        rateVersion:
+          type: integer
+          minimum: 1
+        usdToCdf:
+          type: string
+          pattern: '^[0-9]+(\.[0-9]+)?$'
+          description: Taux marchand paramétré, distinct d'un cours officiel BCC
+        effectiveAt:
+          type: string
+          format: date-time
+    PriceQuote:
+      type: object
+      additionalProperties: false
+      required: [id, cartId, currencyCode, subtotal, deliveryFee, total, rate, expiresAt]
+      properties:
+        id:
+          type: string
+          format: uuid
+        cartId:
+          type: string
+          format: uuid
+        currencyCode:
+          $ref: '#/components/schemas/SupportedCurrency'
+        subtotal:
+          $ref: '#/components/schemas/Money'
+        deliveryFee:
+          $ref: '#/components/schemas/Money'
+        total:
+          $ref: '#/components/schemas/Money'
+        rate:
+          $ref: '#/components/schemas/FxRateSnapshot'
+        expiresAt:
+          type: string
+          format: date-time
+    ApiError:
+      type: object
+      additionalProperties: false
+      required: [code, message, correlationId]
+      properties:
+        code:
+          type: string
+          example: PRODUCT_UNAVAILABLE
+        message:
+          type: string
+        correlationId:
+          type: string
+        details:
+          type: object
+          additionalProperties: true
+    Money:
+      type: object
+      additionalProperties: false
+      required: [currency, amountMinor]
+      properties:
+        currency:
+          type: string
+          pattern: '^[A-Z]{3}$'
+          examples: [CDF, USD]
+        amountMinor:
+          type: string
+          pattern: '^[0-9]+$'
+          description: Entier décimal en unités mineures, toujours positif ou nul
+          examples: ['15000']
+    StorefrontConfig:
+      type: object
+      additionalProperties: false
+      required: [tenantId, channelId, displayName, publicDisplayCurrency, fulfillmentMethods, paymentMethods, branding]
+      properties:
+        tenantId:
+          type: string
+          format: uuid
+        channelId:
+          type: string
+        displayName:
+          type: string
+        publicDisplayCurrency:
+          $ref: '#/components/schemas/SupportedCurrency'
+        fulfillmentMethods:
+          type: array
+          items:
+            $ref: '#/components/schemas/FulfillmentMethod'
+        paymentMethods:
+          type: array
+          items:
+            $ref: '#/components/schemas/PaymentMethod'
+        branding:
+          type: object
+          additionalProperties: false
+          required: [primaryColor]
+          properties:
+            primaryColor:
+              type: string
+              pattern: '^#[0-9A-Fa-f]{6}$'
+            logoUrl:
+              type: [string, 'null']
+              format: uri
+    Category:
+      type: object
+      additionalProperties: false
+      required: [id, name]
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+    ProductPage:
+      type: object
+      additionalProperties: false
+      required: [items]
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Product'
+        nextCursor:
+          type: [string, 'null']
+    Product:
+      type: object
+      additionalProperties: false
+      required: [id, name, status, variants]
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        description:
+          type: string
+        categoryId:
+          type: [string, 'null']
+          format: uuid
+        status:
+          type: string
+          enum: [ACTIVE, UNAVAILABLE]
+          description: Seuls les produits publics apparaissent ici
+        imageUrls:
+          type: array
+          items:
+            type: string
+            format: uri
+        variants:
+          type: array
+          minItems: 1
+          items:
+            $ref: '#/components/schemas/Variant'
+    Variant:
+      type: object
+      additionalProperties: false
+      required: [id, label, price, available]
+      properties:
+        id:
+          type: string
+          format: uuid
+        label:
+          type: string
+        available:
+          type: boolean
+        price:
+          $ref: '#/components/schemas/Money'
+          description: Prix CDF commercial calculé par le serveur
+    Cart:
+      type: object
+      additionalProperties: false
+      required: [id, currencyCode, items, subtotal, expiresAt]
+      properties:
+        id:
+          type: string
+          format: uuid
+        currencyCode:
+          $ref: '#/components/schemas/SupportedCurrency'
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/CartItem'
+        subtotal:
+          $ref: '#/components/schemas/Money'
+        expiresAt:
+          type: string
+          format: date-time
+    CartItem:
+      type: object
+      additionalProperties: false
+      required: [variantId, quantity, lineTotal]
+      properties:
+        variantId:
+          type: string
+          format: uuid
+        quantity:
+          type: integer
+          minimum: 1
+        lineTotal:
+          $ref: '#/components/schemas/Money'
+    FulfillmentMethod:
+      type: string
+      enum: [PICKUP, DELIVERY]
+    PaymentMethod:
+      type: string
+      enum: [PAY_ON_DELIVERY, MANUAL_TRANSFER]
+    OrderRecipient:
+      type: object
+      additionalProperties: false
+      required: [fullName, phoneE164]
+      properties:
+        fullName:
+          type: string
+          minLength: 2
+          maxLength: 120
+        phoneE164:
+          $ref: '#/components/schemas/PhoneE164'
+    CheckoutRequest:
+      type: object
+      additionalProperties: false
+      required: [cartId, quoteId, recipient, fulfillment, paymentMethod]
+      properties:
+        cartId:
+          type: string
+          format: uuid
+        quoteId:
+          type: string
+          format: uuid
+        recipient:
+          $ref: '#/components/schemas/OrderRecipient'
+        fulfillment:
+          type: object
+          additionalProperties: false
+          required: [method]
+          properties:
+            method:
+              $ref: '#/components/schemas/FulfillmentMethod'
+            deliveryZoneId:
+              type: string
+              format: uuid
+            address:
+              type: string
+              maxLength: 320
+            instructions:
+              type: string
+              maxLength: 500
+        paymentMethod:
+          $ref: '#/components/schemas/PaymentMethod'
+    CheckoutReceipt:
+      type: object
+      additionalProperties: false
+      required: [orderId, orderNumber, status, paymentStatus, total, currencyCode, rate]
+      properties:
+        orderId:
+          type: string
+          format: uuid
+        orderNumber:
+          type: string
+        status:
+          $ref: '#/components/schemas/OrderStatus'
+        paymentStatus:
+          $ref: '#/components/schemas/PaymentStatus'
+        currencyCode:
+          $ref: '#/components/schemas/SupportedCurrency'
+        total:
+          $ref: '#/components/schemas/Money'
+        rate:
+          $ref: '#/components/schemas/FxRateSnapshot'
+    OrderStatus:
+      type: string
+      enum: [PLACED, ACCEPTED, PREPARING, READY, OUT_FOR_DELIVERY, COMPLETED, CANCELLED]
+    PaymentStatus:
+      type: string
+      enum: [PENDING, AWAITING_CONFIRMATION, PAID, FAILED, CANCELLED, REFUNDED]
+    OrderTracking:
+      type: object
+      additionalProperties: false
+      required: [orderId, orderNumber, status, paymentStatus, total]
+      properties:
+        orderId:
+          type: string
+          format: uuid
+        orderNumber:
+          type: string
+        status:
+          $ref: '#/components/schemas/OrderStatus'
+        paymentStatus:
+          $ref: '#/components/schemas/PaymentStatus'
+        total:
+          $ref: '#/components/schemas/Money'
+    MerchantOrder:
+      type: object
+      additionalProperties: false
+      required: [id, number, status, paymentStatus, total, createdAt]
+      properties:
+        id:
+          type: string
+          format: uuid
+        number:
+          type: string
+        status:
+          $ref: '#/components/schemas/OrderStatus'
+        paymentStatus:
+          $ref: '#/components/schemas/PaymentStatus'
+        total:
+          $ref: '#/components/schemas/Money'
+        createdAt:
+          type: string
+          format: date-time
+    UpsertProduct:
+      type: object
+      additionalProperties: false
+      required: [name, status, variants]
+      properties:
+        name:
+          type: string
+          minLength: 2
+          maxLength: 180
+        description:
+          type: string
+          maxLength: 10000
+        status:
+          type: string
+          enum: [DRAFT, ACTIVE, HIDDEN, UNAVAILABLE, ARCHIVED]
+        variants:
+          type: array
+          minItems: 1
+          items:
+            $ref: '#/components/schemas/VariantInput'
+    VariantInput:
+      type: object
+      additionalProperties: false
+      required: [label, basePriceUsd, available]
+      properties:
+        label:
+          type: string
+          minLength: 1
+          maxLength: 120
+        basePriceUsd:
+          $ref: '#/components/schemas/Money'
+          description: Base USD uniquement, validation currency USD côté backend
+        available:
+          type: boolean
+    MerchantVariant:
+      type: object
+      additionalProperties: false
+      required: [id, label, basePriceUsd, available]
+      properties:
+        id:
+          type: string
+          format: uuid
+        label:
+          type: string
+        basePriceUsd:
+          $ref: '#/components/schemas/Money'
+        available:
+          type: boolean
+    MerchantProduct:
+      type: object
+      additionalProperties: false
+      required: [id, name, status, variants]
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        status:
+          type: string
+          enum: [DRAFT, ACTIVE, HIDDEN, UNAVAILABLE, ARCHIVED]
+        variants:
+          type: array
+          items:
+            $ref: '#/components/schemas/MerchantVariant'
+    DeliveryZone:
+      type: object
+      additionalProperties: false
+      required: [id, name, fee, enabled]
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        fee:
+          $ref: '#/components/schemas/Money'
+          description: Frais CDF calculés par serveur pour l'acheteur
+        enabled:
+          type: boolean
+    MerchantDeliveryZone:
+      type: object
+      additionalProperties: false
+      required: [id, name, baseFeeUsd, enabled]
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        baseFeeUsd:
+          $ref: '#/components/schemas/Money'
+          description: Frais source USD
+        enabled:
+          type: boolean
+    TenantProvisioning:
+      type: object
+      additionalProperties: false
+      required: [tenantId, status]
+      properties:
+        tenantId:
+          type: string
+          format: uuid
+        status:
+          type: string
+          enum: [PROVISIONING, ACTIVE, SUSPENDED, FAILED]
+        jobId:
+          type: string
+          format: uuid
