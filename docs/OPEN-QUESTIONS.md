@@ -1,34 +1,24 @@
-# Prérequis externes et décisions en attente — ZAMUREK V1
+# ZAMUREK — décisions externes et dépendances ouvertes après convergence
 
-**Statut au 22 octobre 2026.** La conception complète est déléguée, mais certaines conditions exigent des ressources ou décisions externes ; ne pas simuler qu'elles sont acquises. Les besoins techniques non bloquants doivent être arbitrés par Codex selon docs/v1.
+**Statut 22/10/2026.** Les décisions d'architecture du [Core partagé](v1/SHARED-CORE-INTEGRATION.md) sont adoptées, les implémentations sont à réaliser. Aucun statut de contrat juridique, fiscal ou commercial n'est présumé obtenu.
 
-## N'empêche pas de commencer Codex / G1
-- **LaJoie Mall** : partenariat seulement envisagé ; on développe `Venue` générique et jeux synthétiques, pas une application de marque utilisant LaJoie Mall sans autorisation.
-- **Nom de domaine** : `shuleops.com` disponible comme famille candidate, mais `zamurek-api-test.shuleops.com` et `zamurek-api.shuleops.com` **non créés**.
-- **VPS** : existence signalée, capacités inconnues ; développement local et tests via environnement isolé d'abord.
-- **Commerçants réels** : utiliser organisations fictives pour toutes les verticales, avec profils et données sans information personnelle.
-- **Fournisseur de modèle IA** : préparer `ModelGateway`, modèles interchangeables et simulateurs ; une vraie intégration sera obligatoire au 1.0.0 mais aucun secret/fournisseur n'est présumé.
-- **Identité publique de la marque** : ZAMUREK nom retenu ; vérifications propriété des signes/marques/domaine restent nécessaires avant diffusion.
+## Dépendances techniques priorisées
+- **D01** Monarque Connect **10A.5** : C0–C3/C6/C7 canonique, contrats OpenAPI signés/versionnés, scopes et entitlements ; **bloque la clôture ZAMUREK 0.1.0**.
+- **D02** Monarque Connect **10A.5 C4/C5** : POS cash atomique, sessions de caisse, facture/reçu et renderer ; **bloque les ventes ZAMUREK 0.2.0**.
+- **D03** Backend Core privé, repo ZAMUREK public : protéger code propriétaire futur, définir publication d'artefacts contracts entre repos sans fuite de code/secrets.
+- **D04** Compatibilité Auth : acheteur online vérifié ≠ staff membership, POS walk-in sans adresse e-mail.
+- **D05** Choix/licence d'imprimantes test (58/80mm ESC/POS/A4) et environnement Android/Windows réel ; pas de faux « imprimé ».
+- **D06** FX et fiscalité : vérifier droit RDC à afficher/pricer CDF, statut facture normalisée DGI, taxes et homologation/solution fiscale, conservation de documents.
+- **D07** Formule **ZAMUREK BASIC 7 USD/mois/org** : fixer par contrat nombre d'établissements/caisses/employés inclus, usage IA, coût SMTP/support/transaction, règles de suspension et facturation CDF. Aucun établissement illimité présumé.
+- **D08** AI provider et coûts, consentement, contrat traitement données, seuils évaluation et confidentialité, en coordination MC 10B/11.5.
+- **D09** Infrastructure Core API-only : VPS, DNS, TLS, VPN opérateur, SMTP, backups/restauration logique et sécurité ; aucun sous-domaine proposé n'est considéré déployé.
+- **D10** Apps/signature/distribution : identités éditeurs, droit d'usage marques et compatibilité magasins d'apps.
 
-## Bloque mise en service/test VPS à distance
-- E01 : fournir **sans secrets** OS, vCPU, RAM, disque, politique sauvegarde, IP/ports, charges existantes sur le VPS.
-- E02 : confirmer DNS réel, TLS, sous-domaines non conflictuels.
-- E03 : mettre en place isolation staging/prod, WireGuard/VPN plateforme et pare-feu API-only, DB et métriques privées.
-- E04 : véritable messagerie SMTP/test de délivrabilité pour inscription et récupération **sans SMS**.
-
-## Bloque vente commerciale / app store / fonctionnalités réglementées
-- E05 : confirmation juridique RDC de prix CDF/publicité, fiscalité/facture DGI, règles de change USD→CDF commercial, retours et données numériques.
-- E06 : pharmacie : vérifier statut officines, marchandises licites, prescriptions et publicité ; **médicaments réglementés bloqués** jusqu'à une validation écrite.
-- E07 : autorisations sanitaires restauration, conditions de service salons, métrologie vente au poids et consentement réparation, selon cas.
-- E08 : choix marchands réels, coordonnées et modalités de règlement manuel, conditions de vente, politique support et gestion des données.
-- E09 : confirmer contrat BASIC à **7 USD/mois/organisation** incluant établissements de cette organisation, limites d'usage raisonnables, échéances et facturation CDF RDC, sans frais/commissions supplémentaires implicites.
-- E10 : validation budget IA et fournisseur réel pour assistants, consentement données, politique opt-in, coûts et latence.
-- E11 : identités éditeurs Google Play, droits marques, signature APK/EXE, distribution/avis de conformité.
-- E12 : sécurité, sauvegarde/restauration, RPO/RTO, droits des données et support validés.
-- E13 : le dépôt est **public**. Avant livrer le code métier propriétaire, décider de le rendre privé ou d'utiliser un repo privé distinct ; GitHub Actions peut tourner en privé.
-
-## V1 / périmètre
-Tous les 38 items `REQUIRED` de [capabilities.json](../spec/v1/capabilities.json) restent exigés ; une absence de ressource externe bloque le **release gate**, pas le droit de prétendre que la fonctionnalité est implémentée. Ordonnances pharmaceutiques/protocole médical réglementé, encaissement marketplace/escrow et POS hors ligne sont **hors V1 de façon explicite**.
+## Activités réglementées, partenaires et commerce
+- **E01** LaJoie Mall n'est qu'un partenariat éventuel, aucun logo/nom public ou déploiement sous sa marque sans accord.
+- **E02** Médicaments et prescriptions **bloqués** tant que licences officines, classification, obligations en ligne et protocole professionnel ne sont pas légalement vérifiés.
+- **E03** Restaurant/santé/hygiène, coiffure, métrologie vente au poids, réparation et données clients : textes/autorisation selon juridiction.
+- **E04** Paiements marchands : cash/à livraison et transferts manuels autorisés ; procédures anti-fraude, remboursement/rapprochement, contrôle de preuve. Aucun portefeuille/escrow marketplace V1.
 
 ## Traçabilité
-Voir [charte](v1/PRODUCT-CHARTER.md), [gates juridiques](v1/LEGAL-REGULATED-GATES.md), [modèle agentique](v1/AGENTIC-KERNEL.md), [handoff Codex](v1/CODEX-HANDOFF.md).
+Le manifeste V1 contient **43 capacités** `REQUIRED`, y compris 3 POS et 2 Core integration. Les gates externes bloquent la **commercialisation**, pas l'implémentation synthétique. Voir [roadmap intégrée](v1/INTEGRATION-ROADMAP.md) et [qualité](v1/QUALITY-REQUIREMENTS.md).
