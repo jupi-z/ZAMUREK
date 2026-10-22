@@ -1,3 +1,5 @@
+> **V1 après ADR-0024 :** l'identité et les memberships sont ceux du Core Monarque Connect, pas une autre base ZAMUREK. Acheteur online = e-mail vérifié sans StaffMembership ; **POS physique = walk-in sans compte** avec caissier/terminal/session auth. Voir [Shared Core](../v1/SHARED-CORE-INTEGRATION.md).
+
 # Identité et habilitations — 16 octobre 2026
 
 ## Client
