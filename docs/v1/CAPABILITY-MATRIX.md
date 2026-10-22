@@ -31,7 +31,7 @@
 | FUR-01 | Options/dimensions, devis personnalisé, livraison spécialisée | REQUIRED | devis → approbation → commande |
 | REP-01 | Dossier de réparation/diagnostic, consentement/estimation | REQUIRED | accord client avant intervention facturable |
 | REP-02 | Suivi étapes, restitution, historique privé, garanties déclarées | REQUIRED | ticket → réparé → remis |
-| PHA-01 | Catalogue non-médicaments autorisés, identification du vendeur | REQUIRED | produits non autorisés bloqués |
+| PHA-01 | Officine : catalogue autorisé, lot/péremption quand requis, autorisation vendeur | REQUIRED | lot périmé refusé ; produits non autorisés bloqués |
 | PHA-02 | Classement réglementaire, licence/approbation et vente refusée | REQUIRED | ordonnance/produit protégé **jamais vendu** sans validation |
 | VEN-01 | Venue/mall, emplacements, opt-in, découverte inter-entreprises | REQUIRED | opt-out retranche les listings et cache |
 | VEN-02 | Panier et checkout propres à chaque commerçant | REQUIRED | plusieurs shops visibles mais commandes séparées |
