@@ -17,6 +17,7 @@
 ## Données machine
 - [Manifeste 38 capacités](../spec/v1/capabilities.json)
 - [Template de progression](../spec/v1/progress-template.json)
+- [Données synthétiques de test](../spec/v1/fixtures.json)
 - [OpenAPI ZAMUREK draft](../packages/contracts/openapi/zamurek-v1.yaml)
 
 ## Gouvernance
