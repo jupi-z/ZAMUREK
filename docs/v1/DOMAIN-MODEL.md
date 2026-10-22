@@ -24,6 +24,8 @@
 ## Entités et identifiants
 UUID/ULID non signifiante, numéro commercial local spécifique tenant/établissement ; aucune adresse/nom client dans events publics. `Offering.kind = PRODUCT | WEIGHTED_PRODUCT | PREPARED_FOOD | SCHEDULED_SERVICE | QUOTED_GOOD | REPAIR_SERVICE | REGULATED_GOOD`. `offeringCapability` non déduite naïvement de `kind` : validation module et droits pour chaque action.
 
+Pour tout calcul de prix/poids, appliquer **[CDF_LINE_HALF_UP_V1](MONETARY-AND-QUANTITY-POLICY.md)** ; aucune interprétation locale alternative n'est admise.
+
 ## Inventaire et prix
 **Ne pas confondre quantités vendues et stock physique**. `availability=AVAILABLE|UNAVAILABLE` est la source de commande V1 ; booking/table/capacité peut réserver une ressource/slot avec prévention de double booking. Définir `UnitDefinition` G, KG, PCS, HOUR, MINUTE, SERVICE, etc. via unité canonique et fraction exacte. **Pas de float monétaire ni masse** ; quantité interne en decimal exact (scale borné) ou entier de plus petite unité métier avec contrôle de précision. Variantes & prix de base USD (centimes), précisions par offre ; taxe/FX appliqués backend sur quote.
 - Prix au poids `priceBaseUsdMinorPerUnit` + `unitBasis`, quantité mesurée exacte et taux FX → sous-total; arrondi final par étape documentée.
