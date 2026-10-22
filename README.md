@@ -1,6 +1,8 @@
-# xShop — plateforme multi-tenant (nom provisoire)
+# ZAMUREK — plateforme commerciale universelle multi-tenant
 
-**Statut : G0 / architecture documentaire ; code métier et applications non implémentés.** Dépôt privé, code propriétaire.
+**Statut : cadrage et architecture documentaire ; code métier et applications non implémentés.** Dépôt privé ; **ZAMUREK** est l'identité du produit, **xShop** son ancien nom de travail.
+
+**Décision propriétaire du 22/10/2026 :** le cœur métier, l'API et les mécanismes agentiques sont développés spécialement pour ZAMUREK. **Mercur et les moteurs commerciaux prêts à l'emploi sont exclus**. Frameworks et bibliothèques open source à licences permissives peuvent être utilisés après contrôle de leurs licences directes et transitives. Voir [ADR-0019](docs/decisions/0019-proprietary-platform-permissive-oss.md) et [politique de dépendances](docs/governance/OPEN-SOURCE-POLICY.md).
 
 ## Décisions les plus récentes
 [Arbitrages validés le 16 octobre 2026](docs/DECISIONS-VALIDATED-2026-10-16.md) **priment** sur ceux du [15 octobre](docs/DECISIONS-VALIDATED-2026-10-15.md) en cas de contradiction.
