@@ -10,12 +10,12 @@ ZAMUREK est une marque/produit autonome couvrant vente en ligne, **vente physiqu
 
 Les modules spécialisés ayant besoin de transactions métier sont conçus comme modules du **backend Monarque Connect**, et les applications ZAMUREK (Android React embarquée+Kotlin, Windows Tauri/Rust), adaptations de canal, matériels d'impression et tests d'intégration sont préparés ici.
 
-La V1 utilise la **base PostgreSQL partagée de Monarque Connect**, sécurité stricte `organizationId`/`establishmentId`/objectOwner, et non l'ancienne « une DB par commerçant ». Les documents pré-convergence (notamment le draft [OpenAPI](packages/contracts/openapi/zamurek-v1.yaml)) ne définissent pas d'API déployée. L'autorité finale de l'API provient du contrat Core versionné (`/api/v1`).
+La V1 utilise la **base PostgreSQL partagée de Monarque Connect**, sécurité stricte `organizationId`/`establishmentId`/objectOwner, et non l'ancienne « une DB par commerçant ». Les documents pré-convergence (notamment le draft [OpenAPI](packages/contracts/openapi/zamurek-v1.yaml)) ne définissent pas d'API déployée. L'autorité finale de l'API provient du contrat Core versionné (`/api/v1`). La PR Core #152 comporte un complément de frontières Docs/114 encore en revue : sa validation est un prérequis avant migration/implémentation POS ou multi-produits.
 
 ## Vente sur place et en ligne — fonctionnement unifié
 
 - POS connecté : caissier authentifié, terminal et session de caisse, vente client de passage **sans compte/e-mail**, prix serveur, encaissement espèces, monnaie rendue, transferts manuels contrôlés, clôture/écarts.
-- Un seul flux financier Core : commande canonique → PaymentRecord → CashMovement si espèces → outbox, atomique et idempotent.
+- Un seul flux financier Core : commande canonique → **Invoice interne** → PaymentRecord lié → CashMovement net si espèces → Outbox, atomique et idempotent côté PostgreSQL. Reçu imprimé ≠ facture fiscale homologuée.
 - Impression A4 et ticket thermique 58/80 mm depuis documents Core, pont matériel dans Kotlin/Rust. **Aucune fausse « facture normalisée DGI »** : fiscalisation selon réglementation et autorisation effectivement vérifiées.
 - Magasin et vente en ligne partagent produits, commandes, droits, historiques et analyses ; venue n'est jamais propriétaire des comptes d'un commerçant.
 
