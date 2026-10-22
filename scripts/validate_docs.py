@@ -8,12 +8,18 @@ from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 REQUIRED = [
-    "README.md", "docs/INDEX.md", "docs/product/PRD.md",
-    "docs/product/V1-FUNCTIONAL-SPEC.md", "docs/architecture/SYSTEM.md",
-    "docs/architecture/TENANCY.md", "docs/architecture/ANDROID.md",
-    "docs/architecture/SECURITY.md", "docs/architecture/MARKETPLACE.md",
-    "docs/quality/ACCEPTANCE.md", "docs/ROADMAP.md",
-    "docs/decisions/README.md", "packages/contracts/openapi/xshop-v1.yaml",
+    "README.md", "SECURITY.md", "PROPRIETARY-NOTICE.md",
+    "docs/INDEX.md", "docs/ROADMAP.md", "docs/v1/README.md",
+    "docs/v1/PRODUCT-CHARTER.md", "docs/v1/CAPABILITY-MATRIX.md",
+    "docs/v1/BUSINESS-WORKFLOWS.md", "docs/v1/DOMAIN-MODEL.md",
+    "docs/v1/AGENTIC-KERNEL.md", "docs/v1/TECHNICAL-CONTRACTS.md",
+    "docs/v1/SECURITY-THREAT-MODEL.md", "docs/v1/LEGAL-REGULATED-GATES.md",
+    "docs/v1/QUALITY-REQUIREMENTS.md", "docs/v1/RELEASE-GATES.md",
+    "docs/v1/CODEX-HANDOFF.md", "docs/architecture/TENANCY.md",
+    "docs/decisions/0019-proprietary-platform-permissive-oss.md",
+    "docs/governance/OPEN-SOURCE-POLICY.md",
+    "spec/v1/capabilities.json", "spec/v1/progress-template.json",
+    "packages/contracts/openapi/zamurek-v1.yaml",
 ]
 LINK = re.compile(r"(?<!!)\[[^\]\n]+\]\(([^)\n]+)\)")
 errors: list[str] = []
