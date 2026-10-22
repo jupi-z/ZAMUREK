@@ -1,4 +1,6 @@
-# Architecture xShop — édition 16 octobre
+# Architecture ZAMUREK — socle propriétaire (révision du 22 octobre 2026)
+
+**Règle de conception :** API, services métiers, modèles tenant, règles de vente/réservation, traitements spécifiques aux types de commerce et socle agentique développés **en propre**. **Aucun Mercur ni moteur commercial préconstruit**. Réutiliser seulement des briques génériques open source dont les licences sont permissives et vérifiées, selon [ADR-0019](../decisions/0019-proprietary-platform-permissive-oss.md).
 
 ## Un serveur de production backend/API seulement
 Services NestJS : Platform Registry/provisioning, Global Identity e-mail verified, Merchant Membership + MFA, Catalog (USD source), FX (rate tenant versioned), Quote (public CDF), Cart/Checkout/Orders, Payment Manual, Fulfillment, SaaS Plan BASIC, Audit/Outbox.
