@@ -1975,7 +1975,9 @@ components:
       format: uuid
     DecimalExact:
       type: string
-      pattern: '^[0-9]+(\.[0-9]+)?    PhoneE164:
+      pattern: '^[0-9]+(\.[0-9]+)?$'
+      description: Quantité ou taux décimal encodé en chaîne, sans floating point
+    PhoneE164:
       type: string
       pattern: '^\+[1-9][0-9]{7,14}$'
       description: Contact livraison uniquement, pas un identifiant de connexion
@@ -2449,7 +2451,6 @@ components:
           type: string
           format: uuid
 
-      description: Quantité ou taux décimal encodé en chaîne, sans floating point
     MerchantCredentials:
       type: object
       additionalProperties: false
