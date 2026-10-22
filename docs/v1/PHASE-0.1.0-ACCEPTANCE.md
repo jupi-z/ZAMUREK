@@ -1,67 +1,26 @@
-# ZAMUREK 0.1.0 — périmètre technique et recette obligatoire
+# ZAMUREK 0.1.0 — fondations clientes / intégration Core
 
-**Statut : SPECIFICATION, pas implémenté.** La première phase exécutable du projet doit préparer les fondations **multi-tenant + multi-établissement + AI-native**, pas livrer une maquette. Les parcours métiers complets arriveront aux jalons suivants ; leur support dans les types/policies de domaine doit néanmoins être prévu **dès 0.1.0**. Aucun commerce ne sera ouvert en production à cette étape.
+**NOUVELLE recette normative du 22/10/2026, remplace l'ancien plan de recréation du backend**. Statut : PLANNED, **0 % vérifié**. Lire [ADR-0024](../decisions/0024-shared-monarque-core-zamurek.md), [intégration](SHARED-CORE-INTEGRATION.md) et [POS](POS-AND-FISCAL-DOCUMENTS.md).
 
-## Ce que Codex doit construire en 0.1.0
+## Dépendance bloquante
+- `Monarque-Connect` privé doit publier des contrats testables de **phase 10A.5 C0–C3/C6/C7** et CI succès, identifiant SHA de l'OpenAPI canonique. En attendant, travailler sur apps/layouts et clients synthétiques mais ne pas clôturer 0.1.0.
+- C4–C5 seront nécessaires pour la recette complète POS/vente comptoir 0.2.0, pas pour compiler le shell Android initial.
 
-### 1. Repository et développement reproductible
-- Monorepo pnpm correctement configuré avec lockfile, scripts `install/dev/build/lint/typecheck/test/test:integration/contract:check` utilisables et documentation exacte.
-- Application API NestJS propriétaire exécutable et conteneur ou orchestration locale PostgreSQL, registre + **deux bases métiers isolées d'organisation**, établissement E1/E2 dans une seule des DB.
-- Environnement local de capture e-mail sans SMS, secrets factices test/développement et validation de configuration stricte en prod ; `.env.example` sans secret.
-- CI réelle : scripts statiques existants toujours verts, lint/typecheck/build, tests unitaires/intégration sur PostgreSQL service, migrations, tests de non-régression de la tenancy ; fail-closed si jamais de DB/SMTP modèle configuré en production.
+## À réaliser **dans ZAMUREK**
+1. Monorepo clients reproductible (pnpm/lockfile, scripts UI typecheck/lint/test/build). Aucune création `apps/api` NestJS transactionnelle ni Prisma registry ; les squelettes legacy restent archives ou sont réorientés vers adaptateurs clients.
+2. `packages/contracts` contient uniquement **références vérifiables aux contrats versionnés du Core** et types clients générés; l'OpenAPI `zamurek-v1.yaml` précédent est marqué DRAFT/PRE-CONVERGENCE, pas autorité du runtime. Diff canonique client à chaque CI.
+3. Android acheteur marque, Android marchand et Android discovery/venue : UI React/Capacitor embarquée, Kotlin sécurisé, session client e-mail, rôles employés séparés, affichage état de connexion; APK réellement compilés sur runner adéquat ou statut NOT_RUN.
+4. Windows commerçant/caissier et Windows opérateur : Tauri 2/Rust, application installable; appels opérateur uniquement VPN+MFA, aucune interface web hébergée. Test d'installation sur runner Windows ou statut bloqué honnête.
+5. Client API typé, navigation par établissement, catalogue public et découverte opt-in sur fixtures; simulation UI admise pour développement, **aucune fausse commande, règlement ou facture prétendue terminée**.
+6. Tests d'intégration contre **vrai backend Core** de staging local synthétique : autorisation buyer vs staff, organisation A/B et établissements A1/A2, provenance des prix CDF, fidélité contrat API et erreurs. Pas de DB commerciale ZAMUREK.
+7. Traces de sécurité/session : aucun secret de Core dans JS/React/installeurs, chiffrement stockage mobile/native, expiry/revoke, pas de contournement CORS/Channel.
+8. Intégration contractuelle minimale de l'Agent Runtime commun en read-only ; aucun orchestrateur IA concurrent.
+9. Maintenir documentation, `spec/v1/capabilities.json`, `spec/v1/progress-template.json`, CI et rapport evidence sans fake.
 
-### 2. Registry, tenancy, establishments, permissions
-- Registry PostgreSQL central avec `Organization`, `EstablishmentReference`, `TenantProvisioningJob`, `Channel`, `Membership` et `Venue` **structurel mais pas encore parcours complet**.
-- Provisioner idempotent : DB métier et rôle séparé par org, migrations versionnées, secrets refs (aucune injection client), activation après validation ; rollback/compensation sur échec ; persistance/concurrence testées.
-- Contexte requête immutable `actorId, organizationId, establishmentId, channelId, territoryPolicy` ; résolution serveur channel→org, ownership objet, RBAC actions et scopes établis.
-- Modèle des établissements avec plusieurs activités possibles (RETAIL, WEIGHTED, FOOD, SERVICES, FURNITURE, REPAIRS, PHARMACY) activées explicitement par policy, **pas de table EAV géante**.
-- DB pools limités avec eviction et handles contrôlés ; pas de requête brute cross-tenant ; migration A ne modifie pas B.
+## Gates de sortie
+- Applications squelettes compilables sur plateformes couvertes (Android/Windows), un chemin Core auth/tenant/catalogue testé réellement, contract diff exact, protections ownership négatives, CI de spécification et builds réels verts.
+- Aucune marque partenaire LaJoie Mall présumée autorisée.
+- Aucun POS/règlement/fiscalisation revendiqué comme complet avant implémentation Core C4/C5 et E2E réel.
+- Rapport `docs/implementation/REPORT-0.1.0.md` avec commandes, versions, résultats et blocages, progression locale/globale vérifiable. NOT_RUN/BLOCKED ≠ PASS.
 
-### 3. Identité, MFA, sessions
-- Identité acheteur globale par e-mail/mot de passe, vérification e-mail challenge one-time, reset sans enumeration, login, refresh rotation/révocation, logout; hash de mot de passe résistant, rate limit et audit sans PII.
-- SMTP local-capture en dev ; **pas de SMS** ; vrai SMTP production non configuré = pas d'inscriptions réelles (fail closed).
-- Staff merchant membership au bon établissement et TOTP pour fonctions sensibles, opérateurs plateforme MFA+VPN, scopes séparés. Le simple channel public ne prouve jamais les droits.
-- API `/auth/v1` et `/merchant/v1` documentée, DTO validés, erreurs HTTP déterministes, credential stuffing/faux tokens interdits.
-
-### 4. Agentic Fabric — fondation exécutable
-- Structures et interfaces propriétaires opérationnelles : `AgentDefinition`, `ToolRegistry`, `ModelGateway`, `PolicyEngine`, `ToolExecutor`, `AgentRun`, `MemoryScope`, `Approval`, `AgentEventEnvelope`. Pas de chatbot factice exigé à 0.1, mais **mécanisme outil + policy réel et testable**.
-- Outbox transactionnelle et enveloppe JSON Schema versionnée, ingestion idempotente et replay ; events tenant/establishment-scoped.
-- Au moins 2 outils de démonstration synthétiques : lecture catalogue publique autorisée et tentative d'écriture sensible refusée sans approval. Politiques **autorisées côté backend, jamais calculées par LLM**.
-- Processus d'approbation humaine lié à payloadHash/actor/tenant/TTL ; interdire relecture autre tenant, changements de prix et exfiltration ; kill-switch tenant et global.
-- Adapter provider `disabled` et simulateur déterministe pour CI ; le commerce **reste disponible si IA désactivée**. Un vrai fournisseur LLM est planifié pour 0.7.0, pas requis en 0.1.
-
-### 5. Contrats, fixtures et modèles transversaux
-- Lire et corriger le draft [OpenAPI ZAMUREK](../../packages/contracts/openapi/zamurek-v1.yaml) AVANT codegen : lint/validation normative, cohérence paths/parameters/security/schemas/erreurs et opérations nécessaires 0.1 ; conserver les opérations des autres verticales comme contrats futurs explicites.
-- Stabiliser `EventEnvelope` et `ToolDefinition` JSON Schema, rejets stricts. Ajouter tests de structure et génération de types utiles Kotlin/Rust/TypeScript si outillage pertinent.
-- USD source/FX merchant/règle `CDF_LINE_HALF_UP_V1`, quantité canonique gramme et unités doivent posséder **types/interfaces SQL et tests de calcul pur** dès 0.1, pas nécessaire d'implémenter checkout 0.2 avant les fondations.
-- Les données de test [fixtures](../../spec/v1/fixtures.json) doivent être reproductibles, organisations synthétiques et établissement E1/E2, contenu pharmacie sensible BLOCKED.
-
-### 6. Clients installables — squelette vérifiable
-- Préparer apps Android acheteur, Android marchand, Android Discover/venue avec React UI **embarquée**, Capacitor et Kotlin core, et Windows marchand + opérateur avec Tauri/Rust ; il faut au moins vérifier compilation pour les cibles réellement disponibles, avec un pipeline Windows Android réel / CI appropriée.
-- UI minimale de connexion/configuration/test tenant et état serveur ; **aucun écran de simulation prétendant finalisé**. Stockage session natif, aucun secret serveur dans UI.
-- Aucun frontend web de production, aucun Swagger UI public et aucune application distante hébergée ; seules API et ressources médias nécessaires sont accessibles.
-
-## Tests de sortie P0/P1 indispensables
-```
-- registry DB et tenant A/B physiquement séparés ; droits A ne lisent/modifient jamais B ;
-- établissements E1/E2 du tenant A n'ont pas de fuite d'autorisations ;
-- email vérifié obligatoire + reset, token replay invalide, logout/refresh révoqués ;
-- staff marchand et opérateur hors scope refusés ; MFA/accès VPN platform contrôlés au serveur/proxy ;
-- provisioning idempotent, migration puis réexécution sans perte/collision ;
-- outbox commit atomique, retry/dedup et replay sans double effet ;
-- agent tool READ_PUBLIC autorisé seulement scope explicitement validé ;
-- tool SENSITIVE_WRITE refusé sans approval ; changement du payload après approval refusé ;
-- modèle indisponible, commerce/API registry continuent ;
-- prix USD exact et 125g × 20 USD/kg × 2360 = 5900 CDF dans les tests de calcul ;
-- deux familles d'applications Android et Windows préparent builds, erreur sans outil de build reportée honnêtement ;
-- configuration production refuse valeurs CHANGEME/dev/test et exposition publique des routes platform ;
-- toutes validations documentaires + contrats AI + manifest V1 PASS réellement.
-```
-
-## Definition of Done **0.1.0**
-- API réellement démarrable localement et tests PostgreSQL réels exécutés ; builds applicables compilés ; pas de mocks pour prouver l'isolation SQL.
-- Evidence test avec `command`, `exit_code`, `environment`, `commit`, `timestamp` dans `docs/implementation/REPORT-0.1.0.md`.
-- `docs/implementation/PROGRESS.json` avec 38 capability IDs, jalons pondérés et calcul expliqué ; `NOT_RUN`, `SKIPPED` ou `BLOCKED` ≠ accepté.
-- Révision de `docs/v1/RELEASE-GATES.md` si contrainte démontrée, ADR sur toute décision structurante, API/fixtures à jour.
-- Si la CI ne peut pas vérifier Windows/Android (runner/outils), blocage de jalon documenté, **pas de mensonge « 0.1.0 100 % »**.
-- **Ne pas déployer**, changer les DNS, pousser des secrets ou publier du code sensible sur dépôt public sans autorisation explicite.
+L'ancienne instruction 0.1.0 de démarrer un second NestJS/PostgreSQL/registry était incompatible et a été **annulée**.
