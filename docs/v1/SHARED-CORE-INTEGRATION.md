@@ -1,6 +1,6 @@
 # ZAMUREK V1 — architecture normative d'intégration à Monarque Connect
 
-**Statut : spécification de convergence ; aucune connexion runtime livrée.** Le Core dans le dépôt privé `https://github.com/jupi-z/Monarque-Connect` possède déjà NestJS/Prisma/PostgreSQL et des modules Sales, Cash, Billing, Items, Tenancy, Event Fabric. ZAMUREK ne les duplique pas.
+**Statut : spécification de convergence ; aucune connexion runtime livrée.** Le Core dans le dépôt privé `https://github.com/jupi-z/Monarque-Connect` possède déjà NestJS/Prisma/PostgreSQL et des modules Sales, Cash, Billing, Items, Tenancy, Event Fabric. ZAMUREK ne les duplique pas. **Consulter l'ADR-039 et Docs/114 (PR Core #152) avant toute implémentation : ce cadrage n'est ni fusionné ni implémenté.**
 
 ## Séparation des responsabilités
 | Source canonique | Détient / modifie | Dépôt |
@@ -13,6 +13,9 @@
 La même organisation peut détenir l'offre ZAMUREK seule, Monarque Connect seule ou les deux. **Une seule instance métier et un seul historique canonique**, sans réplication bidirectionnelle ventes/argent.
 
 ## Données et sécurité
+- La fédération future d'authentification Monarque Auth/OIDC ne change pas l'identité métier interne et les droits Core ; distinguer principals BUYER/STAFF/AGENT, aucun rôle staff via e-mail/checkout. `X-Zamurek-Channel` et le choix produit ne constituent jamais une autorisation. Chaque staff POS possède action, établissement et terminal/session autorisés ; pas de rôle global FINANCE/ADMIN pour contourner la caisse.
+- ZAMUREK-only et Monarque-Connect-only ont des souscriptions isolées par `productCode`. Une activation ZAMUREK n'ouvre aucun endpoint métier ERP hors ses commandes POS bornées, et la suspension d'un produit ne supprime pas l'autre.
+
 - `organizationId` vérifié serveur ; `establishmentId` + actor + objectOwner et permissions à chaque commande ; shared PostgreSQL Core, pas de connexion tenant DB depuis client.
 - Client web/app acheteur ZAMUREK s'authentifie par e-mail pour checkout, mais **ne devient pas staff/membership**. Vente POS `walk-in` ne requiert pas d'inscription acheteur ; identité obligatoire du caissier.
 - `Venue` publie seulement données consenties, sans lecture finances/PII même pour gestionnaire du mall. Commandes **mono-vendeur**.
@@ -20,7 +23,9 @@ La même organisation peut détenir l'offre ZAMUREK seule, Monarque Connect seul
 - Aucun traitement d'ordonnance pharmaceutique non autorisée ; actes règlementés fail-closed.
 
 ## Transactions et événements
-- Checkout online/POS passe par use cases canoniques : quote autorisée → commande avec `origin` → facture/reçu selon juridiction → tender PaymentRecord → CashMovement si cash → outbox. **Atomicité transactionnelle pour tous les effets financiers internes** ; aucun success client tant que commit cohérent non obtenu.
+- Opérations PSP et impression **hors transaction SQL**, avec validation webhook signée/intent durable pour les fonds externes ; commande cash atomique interne et idempotente, stock et contrôle de caisse revalidés dans la transaction. L'adaptateur de documents doit être persistant/chiffré et audité avant toute exploitation POS réelle : le stockage mémoire du Core reste test-only.
+
+- Checkout online/POS passe par use cases canoniques : quote autorisée → SalesOrder avec `origin` → **Invoice canonique interne** → PaymentRecord (lien Invoice obligatoire) → CashMovement **net** si espèces → Outbox ; reçu/tax invoice sont des documents distincts de la pièce interne selon fiscalité. **Atomicité transactionnelle pour tous les effets financiers internes** ; aucun success client tant que commit cohérent non obtenu.
 - `Item` demeure générique, `offering` et spécificités métiers = profils étendus, pas un deuxième catalogue autonome. Prix source USD uniquement sur politiques d'offres ZAMUREK, préserver devise Monarque Connect existante.
 - Événements ZAMUREK suivent Event Fabric canonique de Monarque Connect avec tenant/scope/provenance, pas enveloppe concurrente. AI agents utilisent les tool handlers du Core.
 - App POS connectée V1 ; hors-ligne transactionnel hors V1 (l'UI peut présenter dernier catalogue mais **ne confirme jamais une vente offline**).
