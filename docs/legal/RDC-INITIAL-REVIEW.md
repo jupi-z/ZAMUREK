@@ -1,4 +1,6 @@
-# Revue juridique initiale RDC — xShop (16 octobre 2026)
+# Revue juridique historique RDC — xShop (16 octobre 2026)
+
+**Document historique de recherche. Source normative de conformité pour ZAMUREK : [LEGAL-REGULATED-GATES](../v1/LEGAL-REGULATED-GATES.md).** Les sources/taux datés ne doivent pas être présentés comme vérification juridique actuelle.
 
 **Ce document est une synthèse documentaire, pas un avis juridique.** Le texte consolidé applicable et les exceptions commerciales doivent être confirmés par un juriste local avant la vente.
 
