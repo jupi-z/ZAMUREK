@@ -1,25 +1,18 @@
-# Parcours utilisateurs V1 — édition 16 octobre
+# ZAMUREK — parcours utilisateurs actifs de la V1
+
+La source normative détaillée est [BUSINESS-WORKFLOWS](../v1/BUSINESS-WORKFLOWS.md) et la [matrice des capacités](../v1/CAPABILITY-MATRIX.md).
 
 ## Acheteur
-1. Ouvre APK marque et récupère config publique ; aucun identifiant canal n'est une preuve d'auth.
-2. Crée compte par e-mail + mot de passe ; vérifie e-mail via challenge, **sans SMS**, puis se connecte.
-3. Catalogue : prix **CDF** calculé côté backend depuis la base USD et le taux actif marchand.
-4. Ajoute article à panier authentifié, choisit retrait/livraison.
-5. Demande **devis CDF** au backend : taux/version, frais et expiration ; confirme total et paiement livraison/transfert manuel.
-6. Checkout avec quoteId et Idempotency-Key, snapshots enregistrés ; suivi de commande depuis son compte.
-7. Demande annulation à commerçant, sans annulation automatique ; paiement marqué reçu uniquement par marchand habilité.
+Identité globale par e-mail vérifié (aucun SMS) → entrée par APK commerçant ou ZAMUREK Discover/venue → découverte d'offres par établissement (produit, produit au poids, repas, prestation, bien sur devis, réparation, articles pharmaceutiques autorisés) → validation disponibilité et devis CDF API → commande mono-vendeur ou réservation transactionnelle → paiement marchand direct manuel/livraison/retrait → suivi de l'exécution et demande d'annulation/report.
 
-## Marchand Android
-1. Se connecte sous rôle approuvé (TOTP si rôle sensible), choisit boutique autorisée.
-2. Définit prix **USD** variante et frais USD par zone ; configure taux USD→CDF tenant avec audit.
-3. Gère disponibilité, clients/profils autorisés et commandes ; reçoit demandes d'annulation, confirme transferts après rapprochement.
-4. Anciennes commandes conservent leurs snapshots même si taux change.
+## Marchand
+Création organisation/établissement et profils métiers → configuration de chaque activité, horaires, employés/permissions, prix USD+taux USD→CDF versionné → gestion catalogue, menu/options, cuisine, pesée, rendez-vous, devis mobilier et réparation, caisse, remise, règlements et consentement de publication dans venue. IA assiste uniquement avec scopes, consentement et approbations des écritures sensibles.
 
-## Opérateur Windows
-Se connecte via VPN, MFA, gère registry, bases tenant, canaux et abonnements BASIC 7 USD ; routes plateforme pas publiques. Aucun portail web hébergé.
+## Gestionnaire venue/mall
+Gère bâtiments/étages/emplacements, invitations/visibilité des entreprises consentantes et catalogue public ; **aucun accès automatique** aux commandes, clients, comptes ou agents privés des vendeurs. Opt-out d'une entreprise retire sa projection.
 
-## Erreurs
-Compte non vérifié → commande impossible ; panne SMTP = inscription/récupération retardée et traitée explicitement. Taux modifié après devis → nouveau prix et reconfirmation ; pas de checkout validé hors réseau. IDOR client ou inter-tenant rejeté ; prix USD public en RDC rejeté par règle territoriale. VPS test isolé du réel.
+## Opérateur ZAMUREK
+Client Windows EXE/MSI + VPN/MFA, provisioning registry et DB, contrôle des droits/établissements, abonnement BASIC 7 USD par organisation, supervision privée, politique IA et conformité. Ne prend pas possession des fonds marchands.
 
-## Marketplace ultérieure
-Même API, profil global, consentement marchand et nouveaux canaux ; pas de migration obligatoire d'APK existante.
+## Invariants
+Prix/poids sans flottants ; réservations sans double booking ; actes pharmacie réglementés bloqués tant que non autorisés ; serveur de production **API uniquement**, aucun portail hébergé. Les fonctionnalités réellement offertes en 1.0.0 exigent preuves de tests bout en bout et validation juridique.
