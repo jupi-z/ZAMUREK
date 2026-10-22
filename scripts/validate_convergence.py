@@ -37,7 +37,7 @@ check("10A.5" in newprompt and "Monarque Connect" in newprompt,"New Codex integr
 check("SalesOrder" in pos and "PaymentRecord" in pos and "CashMovement" in pos,"Canonical financial operation required")
 check("PRE-CONVERGENCE DRAFT" in api,"Noncanonical ZAMUREK OpenAPI must carry warning")
 check("DB par entreprise" not in handoff,"Old independent DB constraint remains in Codex handoff")
-check("Runtime IA" in handoff,"Shared Agent Runtime requirement missing")
+check("agentique Core" in handoff or "Agent Runtime" in handoff,"Shared Agent Runtime requirement missing")
 
 if errors:
     print("ZAMUREK shared Core convergence checks FAILED:")
