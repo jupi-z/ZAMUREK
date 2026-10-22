@@ -1,13 +1,16 @@
-# Roadmap xShop — révisée le 16 octobre 2026
+# Feuille de route officielle ZAMUREK
 
-| Gate | Livraison | Validation |
-|---|---|---|
-| G0 | Arbitrages datés, PRD/specs/API/ADR, étude légal prix CDF et risques, noms DNS provisoires | cohérence documentaire/CI à vérifier |
-| G1 | Backend NestJS initial, registry + deux DB tenant, identity **email sans SMS**, environnement de dev/staging, FX taux versionné et API segmentation | tests d'isolation/auth + builds squelettes |
-| G2 | Produits prix **USD**, taux USD→CDF par commerçant, devis **CDF** calculés serveur, livraison zones, checkout idempotent, commande snapshot et règlement manuel | E2E prix/taux arrondis/changement taux/paiements |
-| G3 | APK acheteur et marchand distincts, admin Windows Tauri/Rust, UI React embarquée, API-only | tests Android/Windows réels et réseau |
-| G4 | pilote marchand réel Kolwezi sous politique CDF, vérification légale fiscale/TVA, SMTP réel, déploiement VPS/DNS/VPN, backups et support | check juridique, sécurité, sauvegarde, signature |
-| G5 | white-label industrialisé, **abonnement BASIC 7 USD/mois** contractuel et facturation, monitoring et compat API | tests N tenants et release |
-| Futur | marketplace app opt-in, nouveaux territoires/règles monétaires | ADR/PRD séparés |
+La [trajectoire vérifiable de 0.0.0 à 1.0.0](v1/RELEASE-GATES.md) est le plan **normatif**. Les anciennes phases xShop dédiées à une simple boutique sont remplacées.
 
-Sans attendre E01 VPS ou commerçant réel pour le G1 local. Aucune date artificielle. Voir [gates](quality/ACCEPTANCE.md) et [prérequis](OPEN-QUESTIONS.md).
+- **0.1.0** Registry/identity/multi-tenancy et enveloppe AI-native dès les fondations.
+- **0.2.0** Commerce générique, poids, prix FX, caisse connectée.
+- **0.3.0** Restauration, pizzeria, cuisine et réservations de tables.
+- **0.4.0** Prestations, employés, agendas et rendez-vous.
+- **0.5.0** Meubles sur devis et réparation avec consentement.
+- **0.6.0** Pharmacie autorisée avec blocages réglementaires et venue/mall multi-entreprises.
+- **0.7.0** Orchestration IA sécurisée et trois assistants réels.
+- **0.8.0** Toutes les applications Android/Windows installables de V1.
+- **0.9.0** Qualification complète, sécurité, licences, sauvegardes et conformité.
+- **1.0.0** **Une seule ouverture commerciale, pas de MVP ni de lancement partiel** : tous les critères P0/P1 passent avec preuves.
+
+Voir [matrice des 38 capacités](v1/CAPABILITY-MATRIX.md), [gates qualité](v1/QUALITY-REQUIREMENTS.md) et [handoff Codex](v1/CODEX-HANDOFF.md). Aucune étape n'est considérée implémentée sur la seule base des documents.
