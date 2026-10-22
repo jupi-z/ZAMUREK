@@ -35,11 +35,11 @@ ZAMUREK est une plateforme commerciale et de services **100 % propriétaire**, m
 4. [Fabric IA native](docs/v1/AGENTIC-KERNEL.md)
 5. [Tarification USD/CDF et pesée exacte](docs/v1/MONETARY-AND-QUANTITY-POLICY.md)
 6. [Parcours commerciaux](docs/v1/BUSINESS-WORKFLOWS.md)
-6. [Gates 0.0.0 → 1.0.0](docs/v1/RELEASE-GATES.md)
-7. [Critères de qualité](docs/v1/QUALITY-REQUIREMENTS.md)
-8. [Contrat OpenAPI brouillon](packages/contracts/openapi/zamurek-v1.yaml)
-9. [Manifeste V1 contrôlable](spec/v1/capabilities.json) et [progression Codex](spec/v1/progress-template.json), [fixtures synthétiques](spec/v1/fixtures.json)
-10. [**Dossier pour Codex**](docs/v1/CODEX-HANDOFF.md)
+7. [Gates 0.0.0 → 1.0.0](docs/v1/RELEASE-GATES.md)
+8. [Critères de qualité](docs/v1/QUALITY-REQUIREMENTS.md)
+9. [Contrat OpenAPI brouillon](packages/contracts/openapi/zamurek-v1.yaml)
+10. [Manifeste V1 contrôlable](spec/v1/capabilities.json), [progression Codex](spec/v1/progress-template.json) et [fixtures synthétiques](spec/v1/fixtures.json)
+11. [**Dossier pour Codex**](docs/v1/CODEX-HANDOFF.md)
 
 ## Vérifications de conception
 ```bash
