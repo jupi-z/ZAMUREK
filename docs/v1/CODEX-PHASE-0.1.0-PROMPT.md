@@ -22,7 +22,7 @@ Tu es l'ingénieur principal chargé d'implémenter ZAMUREK, une plateforme **co
    - `docs/v1/AGENTIC-KERNEL.md`, `docs/v1/SECURITY-THREAT-MODEL.md`
    - `docs/v1/TECHNICAL-CONTRACTS.md`, `docs/v1/BUSINESS-WORKFLOWS.md`
    - `docs/v1/QUALITY-REQUIREMENTS.md`, `docs/v1/LEGAL-REGULATED-GATES.md`
-   - `docs/v1/CODEX-HANDOFF.md`, `docs/v1/BASELINE-AUDIT-2026-10-22.md`
+   - `docs/v1/CODEX-HANDOFF.md`, `docs/v1/FINAL-REPO-AUDIT-2026-10-22.md`
    - `docs/governance/OPEN-SOURCE-POLICY.md`, `docs/OPEN-QUESTIONS.md`
    - `packages/contracts/openapi/zamurek-v1.yaml`, `packages/contracts/events/event-envelope.schema.json`, `packages/contracts/agent-tools/tool-definition.schema.json`
    - `spec/v1/fixtures.json`, `spec/v1/progress-template.json`
