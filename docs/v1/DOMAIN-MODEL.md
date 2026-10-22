@@ -1,50 +1,37 @@
-# Domaine et frontières transactionnelles — ZAMUREK V1
+# ZAMUREK — modèles spécialisés sur le Core commun Monarque Connect
 
-## Bounded contexts propriétaires
-| Contexte | Agrégat racine / invariants |
-|---|---|
-| Platform Registry | Organization, EstablishmentReference, Channel, VenueMembership, Subscription, FeaturePolicy ; registry **sans commandes tenant** |
-| Global Identity | CustomerIdentity, VerifiedEmail, Session, StaffIdentity, MFA, TenantMembership, Operator ; suppression/rétention sous règles |
-| Tenant Commerce | Establishment, Offering, Variant, Media, Category, UnitDefinition, PriceBasis, ModifierGroup, AvailabilityPolicy |
-| Catalog & FX | USDBasePrice, TenantFxRateVersion, PriceQuote, CdfRoundingPolicy, TerritoryCurrencyPolicy |
-| Ordering | Cart, Order, OrderLine, StatusHistory, Fulfillment, PaymentRecord, CancellationRequest, RefundRequest |
-| Booking | Resource, StaffCalendar, Table, ServiceSlot, Appointment, Hold, Reschedule, NoShow |
-| Restaurant | Menu, MenuItem, ChoiceSet, PreparationTicket, Station, DiningService |
-| Quotes & Repair | Quote, QuoteLine, QuoteAcceptance, RepairCase, Diagnostic, Consent, DeviceRef, WorkOrder, Handover |
-| Venue Discovery | Venue, Floor, Unit, TenantOptIn, PublicOfferingProjection, Revocation/IndexSync |
-| AI Fabric | AgentProfile, ModelAdapter, ToolRegistry, ContextGrant, Run, Step, Approval, MemoryScope, Audit |
-| Platform Ops | Provisioning, DBMigration, LicenseEntitlement, BillingCycle, Health, BackupRestoreJob |
+**Normatif V1 après ADR-0024 (22/10/2026) ; modèles planifiés et non implémentés.** L'ancien « registry + 1 DB métier PostgreSQL par tenant » est **remplacé** par l'isolation logique PostgreSQL actuelle du Core Monarque Connect (organizationId + establishmentId + ownership). Lire [décision](../decisions/0024-shared-monarque-core-zamurek.md) et [architecture d'intégration](SHARED-CORE-INTEGRATION.md).
 
-## Data ownership
-- **Registry DB** : organizations, venues, établissement metadata minimales, mappings tenant DB, app channel, memberships/auth global, abonnements. Venue public listing index minimal et consent flags. Aucun historique commercial personnel sauf éventuelle référence opaque d'agrégation consentie.
-- **Une DB PostgreSQL métier par Organization** : établissements, catalogues, horaires, devis, commandes, réservations, paiements, services et journal métier. `establishmentId` partout où une donnée appartient à un établissement ; données partagées explicitement reliées à une organisation.
-- Même organisation peut gérer plusieurs établissements, mais `tenantId` ne se substitue **jamais** au contrôle `establishmentId`, au rôle, ou à l'ownership acheteur. Deux personnes du même tenant n'ont pas nécessairement les mêmes droits.
-- Multi-tenant marketplace : lecture de projections **publiques opt-in** contrôlées ; aucun join SQL à travers DB tenant en direct. Opérations clients toujours routées après contrôles ownership.
+## Agrégats canoniques du Core (ne jamais dupliquer)
+- Identity : `User`, buyer verified email, `Membership`, `Organization`, `Establishment`, `OrganizationEntitlement`, ProductPlan/Subscription, staff MFA.
+- Commerce : `Item`, price policy, units, `SalesOrder`, `Invoice`, `PaymentRecord`, `CashAccount`, `CashMovement`, refund/reversal, document serialisation, tenant fiscal status.
+- Intelligence : audit, `DomainEvent/Outbox`, `ModelGateway`, `ToolRegistry`, `AgentRun`, `Approval`, tenant-aware knowledge.
+- L'instance Core contient les données canoniques des organisations utilisant Monarque Connect, ZAMUREK ou les deux. Pas de mirroring des commandes ni de second Prisma service financier ZAMUREK.
 
-## Entités et identifiants
-UUID/ULID non signifiante, numéro commercial local spécifique tenant/établissement ; aucune adresse/nom client dans events publics. `Offering.kind = PRODUCT | WEIGHTED_PRODUCT | PREPARED_FOOD | SCHEDULED_SERVICE | QUOTED_GOOD | REPAIR_SERVICE | REGULATED_GOOD`. `offeringCapability` non déduite naïvement de `kind` : validation module et droits pour chaque action.
+## Domaines supplémentaires (modules backend dédiés dans le Core privé)
+| Module | Agrégats propres | Lien avec Core |
+|---|---|---|
+| Channels & Merchant Offerings | `SalesChannel`, `OfferingRevision`, variant/attribute/media, availability, `PriceQuoteVersion` | `Item`, org/establishment, sales order |
+| POS | `PosTerminal`, `CashSession`, `CashierAssignment`, `SaleTender`, `CashReconciliation`, `CommercialPrintJob` | SalesOrder + PaymentRecord + CashMovement transaction unique |
+| Weighted Commerce | `UnitDefinition`, `WeightPolicy`, `MeasuredQuantity`, tare/finalized weight | core price policy/quote version |
+| Restaurant | `Menu`, `ModifierGroup`, `KitchenTicket`, `Table`, `TableReservation` | canonical Order and table slot locks |
+| Service Booking | `StaffResource`, `WorkCalendar`, `Hold`, `Appointment`, `NoShow` | canonical order/quote, staff membership |
+| Furniture | `CustomOption`, `MerchantEstimate`, `SpecialDelivery` | quote approved → canonical order |
+| Repair | `RepairCase`, `DeviceRef`, `Consent`, `Diagnostic`, `WorkOrder`, `Handover` | quote/payment canonical, PII restricted |
+| Regulated goods | legal `ProductClassification`, `MerchantLicenseStatus`, lot/expiration | catalog+checkout policy fail-closed |
+| Venue | `Venue`, `Floor`, `Unit`, `VenueMembership`, public listing projection | opt-in org, no cross-tenant orders/PII |
 
-Pour tout calcul de prix/poids, appliquer **[CDF_LINE_HALF_UP_V1](MONETARY-AND-QUANTITY-POLICY.md)** ; aucune interprétation locale alternative n'est admise.
+## Monnaie, poids et devis
+Prix source USD pour **les offres ZAMUREK**, version FX du marchand, monnaie documentaire publique CDF RDC sous revue légale ; laisser inchangées les organisations Monarque Connect existantes dont `defaultCurrency` diffère. Quote serveur snapshot `amountUsd/sourceRevision/rateVersion/taxPolicy/roundingPolicy/finalCdf/expiresAt`. La règle de calcul exacte est [CDF_LINE_HALF_UP_V1](MONETARY-AND-QUANTITY-POLICY.md), sans float. Quantités vente au poids exactes, 125 g de 20 USD/kg × 2360 = 5900 CDF.
 
-## Inventaire et prix
-**Ne pas confondre quantités vendues et stock physique**. `availability=AVAILABLE|UNAVAILABLE` est la source de commande V1 ; booking/table/capacité peut réserver une ressource/slot avec prévention de double booking. Définir `UnitDefinition` G, KG, PCS, HOUR, MINUTE, SERVICE, etc. via unité canonique et fraction exacte. **Pas de float monétaire ni masse** ; quantité interne en decimal exact (scale borné) ou entier de plus petite unité métier avec contrôle de précision. Variantes & prix de base USD (centimes), précisions par offre ; taxe/FX appliqués backend sur quote.
-- Prix au poids `priceBaseUsdMinorPerUnit` + `unitBasis`, quantité mesurée exacte et taux FX → sous-total; arrondi final par étape documentée.
-- `PriceQuote` inclut `fxRateVersion`, `currencyPolicyVersion`, `taxPolicyVersion`, `offeringRevisionIds`, `feeRevision`, `expiresAt` et empreinte de contenu ; **checkout refuse devis périmé**.
-- Transactions doivent stocker snapshots de prix et des clauses en vigueur, non des pointeurs recalculés par le taux courant.
+## Transaction POS unique
+`PlacePosOrder` valide caissier + terminal + session ouverte + entitlement + stock/disponibilité + quote → écrit **dans transaction DB Core** : `SalesOrder(origin=POS)`, `PaymentRecord` pour fonds effectivement reçus, `CashMovement` pour cash, marque idempotency, outbox. Échec de l'un = rollback de tous, retry identique = même résultat. L'impression peut échouer **après** validation de la vente : réimprimer document versionné sans nouveau paiement. `BusinessParty` du buyer n'est pas obligatoire pour `WALK_IN` ; pas de faux e-mail. Une vente online exige e-mail vérifié mais pas staff membership.
 
-## Réservations et ressources
-Stocker ressources et slots avec contraintes concurrency/DB uniques/exclusion applicables par établissement (ressource, intervalle temporel, statut bloquant), timezone locale IANA et timestamps UTC. Reprogrammer = transaction de libération/acquisition avec contrôle anti-chevauchement. Horaires exceptionnels, pauses, congés, staff habilités et capacité restaurant.
+## Tenancy, partitions de droits et restauration
+Chaque agrégat Core/external product est rattaché à `organizationId`; les données établissement ont `establishmentId` et les lignes sensibles nécessitent validation ownership. Implémentation centrale garde-fou, tests BOLA/T1→T2, E1→E2, customer C1→C2, venue→payment, agent→other tenant. PostgreSQL partagé = isolation logique testée ; backups/export/restauration ciblés par organisation demandent solutions explicites (ne pas supposer restauration physique simple).
 
-## Transactions et fiabilité
-- Achat mono-merchant : transaction DB tenant entre ordre, lignes, paiement en attente, idempotency record, outbox et snapshot. Registry DB **n'intervient pas en transaction distribuée** au checkout.
-- Booking : hold limité, expiration, confirmation atomique ressource/slot, annulation et compensations si ordre échoue.
-- Vente en caisse : sale POS est une commande sous `origin=POS` ; prix serveur et synchro en ligne requise, pas de paiement automatique de la caisse sans preuve.
-- Rapprochement de paiements/reçus dans tenant DB ; SaaS subscription séparé dans registry.
-- Outbox/per-tenant, events versionnés, consumers idempotents et retry/backoff/dead letter.
-- Migration tenant progressive, pool borné/éviction, backups en DB cohérentes, restore ciblé sans cross-tenant.
+## Event Fabric et Agentic Runtime
+L'enveloppe Event Fabric et les tool policies sont **canoniques chez Monarque Connect**. Les documents JSON Schema locaux ZAMUREK sont des **brouillons de compatibilité** en attendant contrats partagés versions ; ne pas déployer un deuxième event bus ni un second agent runner. Les assistants public/merchant utilisent policy, approval et MemoryScope communs.
 
-## Gouvernance métier
-État `DRAFT/ACTIVE/SUSPENDED` par capability ; les modules *pharmacy regulated* sont OFF par défaut et ne deviennent pas activables par marchand sans privilège + preuve légale vérifiée. Médicaments réglementés non proposés aux transactions tant que non autorisés. Venue manager ne reçoit pas les commandes des commerces par sa seule qualité de gestionnaire du centre.
-
-## Évolution
-Éviter table EAV sans schéma ; noyau `Offering` stable + tables spécifiques par verticale, modules NestJS à frontières strictes, aucun monolithe God Service. Aucun moteur ERP ou commerce tiers en fondation.
+## Évolution du schéma
+Migrations additives et compatible anciennes opérations Monarque Connect, changement de devise jamais rétroactif, contraintes de non-chevauchement booking et index lisibles venue sous consentement. Hors V1 : multi-merchant settlement, paiement automatisé marketplace, POS offline, prescription médicale non autorisée.
