@@ -1,6 +1,6 @@
 # ZAMUREK V1 — ventes sur place, encaissements, caisses et documents
 
-**Normatif pour V1 ; non implémenté.** Les services financiers et de numérotation résident **exclusivement dans Monarque Connect Core**. L'app ZAMUREK est une interface installée capable de piloter une imprimante locale.
+**Normatif pour V1 ; non implémenté.** Les services financiers et de numérotation résident **exclusivement dans Monarque Connect Core**. L'app ZAMUREK est une interface installée capable de piloter une imprimante locale. **La frontière normative du Core est fixée par Docs/114 (PR Monarque Connect #152). Les endpoints POS ne sont pas encore livrés.**
 
 ## Périmètre de vente physique
 - Un commerce peut vendre physiquement en boutique, au restaurant, en salon, à un comptoir de réparation ou stand sans connexion de l'acheteur.
@@ -20,9 +20,11 @@
 | `DocumentFiscalization` | juridiction/statut PENDING/AUTHENTICATED/BLOCKED/NOT_APPLICABLE, fournisseur homologué/référence, preuve et journal |
 
 ## Vente comptoir atomique
+**Règle V1 :** chaque vente POS encaissée s'appuie sur Invoice du Core afin de ne pas briser le contrat `PaymentRecord.invoiceId`. Ce document interne n'autorise pas à imprimer une facture fiscalement normalisée sans processus homologué. Une vente cash 5 900 CDF encaissée sur 10 000 CDF remis enregistre 4 100 CDF rendus et une entrée Cash **nette de 5 900 CDF**. Retry client/timeout ne double ni invoice, ni PaymentRecord, ni mouvement de caisse.
+
 1. `OPEN_SESSION` avec fonds d'ouverture; validation RBAC et établissement.
 2. `CREATE_QUOTE` prix serveur, poids exact, réductions/TVA selon profil, version FX et expiration.
-3. `CONFIRM_POS_SALE` transaction unifiée pour SalesOrder, PaymentRecord, CashMovement **si espèces**, idempotency, outbox ; si facture requise, état fiscal conforme avant émission. `amountTendered` ≥ `amountDue` cash, `change` = remis − dû ; monnaie rendue n'est **pas** du chiffre d'affaires.
+3. `CONFIRM_POS_SALE` transaction unifiée pour SalesOrder, **Invoice canonique interne obligatoire**, PaymentRecord lié par `invoiceId` non nullable, CashMovement **net si espèces**, validation stock, audit, idempotency, Outbox ; le document fiscal légal reste distinct et bloqué jusqu'à preuve applicable. `amountTendered` ≥ `amountDue` cash, `change` = remis − dû ; monnaie rendue n'est **pas** du chiffre d'affaires.
 4. `ISSUE_RECEIPT/INVOICE` via renderer Core; imprimer localement ticket 58/80 mm ou A4, QR uniquement si produit par fiscalisation légalement valable. Un reçu ordinaire ne doit **pas** être présenté comme facture normalisée DGI.
 5. Clôture de caisse : total théorique, comptage physique, écarts, justification, supervisor approval si seuil ; rapprocher chaque paiement/mouvement, ne pas « effacer » une correction.
 
@@ -35,6 +37,8 @@
 - Intégration fiscale RDC : modalités légales / certification à vérifier ; mise en vente bloquée si des pièces authentifiées sont légalement exigées et non disponibles.
 
 ## Recette minimale
+Exiger aussi vérification de non-régression des anciens Sales/Invoice/PaymentRecord/Cash et KPI 10A, permissions POS dédiées (sans ADMIN/FINANCE général), paiement externe finalisé seulement après preuve signée, impression post-commit sans duplication et adaptateur de stockage réel testé. `TECH_PASS` ne vaut pas `COMMERCIAL_GO` tant que fiscalité/PSP/appariels ne sont pas prouvés.
+
 E2E vente cash CDF à client de passage : quote→sale→paiement→cash movement→reçu/ticket 80 mm; retry/replay simultané = **1 commande, 1 paiement, 1 cash entry**. Échec impression ≠ double commande. Prix chocolat 125g à 20 USD/kg×2360=5900 CDF exact. Multi-caissiers/établissements, fermeture caisse, fonds insuffisants, remboursements, sale online parallèle et droit d'accès testés. Factures A4 et fiscales selon droit confirmé, sans simulation frauduleuse.
 
 ## Propriété et livraison
