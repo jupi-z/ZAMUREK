@@ -1,6 +1,6 @@
 # Règles numériques exactes — monnaie, poids, arrondis et devis V1
 
-**Statut : politique de calcul déterministe de référence à tester en G1/G2 ; soumise aux ajustements imposés par avis réglementaire avant commercialisation.**
+**Statut : politique déterministe des offres **ZAMUREK** à appliquer dans le Core Monarque Connect partagé via PricingContext, sans forcer la devise source USD aux autres produits Monarque Connect. Tests à réaliser en Core 10A.5 et ZAMUREK 0.2.0, règles fiscales sous validation RDC.**
 
 ## Unités canonique et formats
 - `MoneyUSD` : entier signé 64 bits **en cents USD** (`amountMinor`) ou, pour calcul intermédiaire proportionnel, décimal de précision adéquate non arrondi. Toujours préciser `currency=USD`. Aucun JS `Number` ou float SQL dans les opérations d'argent.
