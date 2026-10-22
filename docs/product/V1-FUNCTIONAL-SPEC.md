@@ -1,3 +1,5 @@
+> **ARCHIVE HISTORIQUE — ancien xShop.** Ne pas utiliser pour guider Codex : nouvelles spécifications dans [ZAMUREK V1](../v1/README.md) et [business workflows](../v1/BUSINESS-WORKFLOWS.md). Les limitations boutique seule / marketplace « future » sont remplacées par une V1 universelle et venue obligatoire.
+
 # xShop — Fonctionnel V1 actif au 16 octobre 2026
 
 ## Canal & identité
