@@ -1,31 +1,26 @@
-# Architecture réseau — exposition minimale, serveur API-only
+# ZAMUREK — topologie API-only et réseau minimal
 
-**Décision : seule la surface HTTP nécessaire au fonctionnement distant des clients doit être accessible sur Internet.** « API-only » ne signifie pas « zéro endpoint public ».
+**Statut : architecture V1, pas une configuration réelle de VPS, DNS ou VPN.**
 
-## Domaines envisagés (DNS NON configuré)
-- `xshop-api-test.shuleops.com` : staging / tests uniquement, accès restreint (VPN ou allowlist) autant que possible ; données synthétiques.
-- `xshop-api.shuleops.com` : production plus tard, certificat TLS et DNS à vérifier.
-- Noms provisoires à remplacer quand xShop sera rebaptisé. Ne pas modifier services ShuleOps préexistants ; confirmer non-collision avant enregistrement.
+## Domaines provisoires CANDIDATS, non créés
+- `zamurek-api-test.shuleops.com` (staging, accès restreint, aucune donnée réelle)
+- `zamurek-api.shuleops.com` (production future, HTTPS)
+Tous deux requièrent confirmation de propriété du domaine, absence de conflit ShuleOps, DNS/TLS et vérification de l'infrastructure. Le serveur existant n'a pas été inspecté.
 
-## Surface et segmentation
-| Service | Exposition projetée |
+## Routes
+| Surface | Accès |
 |---|---|
-| `GET /v1/storefront/config`, catégories, produits, prix CDF publics, images publiques | HTTPS public + validation canal/rate limiting |
-| `/auth/v1/*` pour les acheteurs | HTTPS public, bruteforce protection, abuse detection, CAPTCHA adaptatif si nécessaire |
-| `/v1/carts`, `/v1/checkouts`, commandes clients | HTTPS public mais authentification requise, authz tenant & objet |
-| `/v1/merchant/*` | HTTPS public si marchands mobiles sans VPN, **RBAC strict**, MFA staff, rate limits séparés ; possibilité d'accès VPN marchand pour installation restreinte |
-| `/platform/v1/*` | **VPN uniquement** / réseau privé, MFA opérateur, zéro route ouverte au public |
-| PostgreSQL, secrets, stockage privé, workers, métriques, logs, admin système | réseau privé/localhost uniquement |
-| Swagger UI / portail / pages HTML | **non déployés** |
-| OpenAPI brut | dans Git/CI, pas exposé par défaut en production |
+| Catalogue, menu, disponibilités, venue opt-in publiés | HTTPS public en lecture, territorial CDF, rate-limit |
+| Identité acheteur email/password, panier, commandes, rendez-vous | HTTPS public **mais session, RBAC/ownership, consentement et anti-abus** |
+| API marchand (catalogue, FX, caisse, appointments, réparation, agents autorisés) | HTTPS authentifié + tenant/establishment scopes, MFA/step-up sensible, surveillance |
+| API plateforme provisioning/billing/tenant/agent admin | **VPN privé + MFA opérateur** ; refus du trafic public au proxy |
+| DB registry/tenant, secrets, object store admin, files workers, métriques, SSH, backups | **réseau privé seulement**, deny-default |
+| Swagger UI, SPA, SSR, PWA, portail marchand/administrateur hébergé | **non déployés** |
 
-## Contrôles
-- HTTPS 443, proxy limitant méthodes/chemins et débit, règles WAF au besoin ; pare-feu DENY par défaut, accès SSH privé ou restreint.
-- AuthN/AuthZ partout où nécessaire ; n'importe quel client HTTP peut appeler une API publique, un package signé ne prouve pas une permission.
-- CORS navigateur ne protège pas l'API contre les clients non navigateur.
-- Pas de DB et object storage administrateur sur Internet. Uploads avec autorisation + inspection/limites.
-- DNS et certificats séparés staging/production ; aucun usage de données ou clés de production en staging.
-- Sauvegardes chiffrées, secrets manager, VPN WireGuard ou équivalent pour opérateurs, accès auditables et rotation.
+## Règles
+Protéger routes derrière reverse proxy explicite + firewall ; aucun trust basé sur channelId, CORS, user-agent, device-id ou signature APK. TLS 443, authentification backends, rate-limits distincts, upload contrôlé, aucun endpoint général du serveur exposé. VPN WireGuard ou alternative approuvée, MFA et audit. Media public diffusé par mécanisme contrôlé, media privé par autorisations strictes.
 
-## Avant tout déploiement
-Confirmer propriété et disponibilité des DNS `shuleops.com`, caractéristiques VPS, risque de contention ShuleOps, mémoire, OS, capacité sauvegarde, IP et ports ; mesurer le budget d'exploitation. **Aucune machine ni DNS n'est connecté ou configuré à ce stade.**
+## Séparation environnements
+Local → staging isolé → production validée ; données synthétiques en staging ; pas de migration/restore automatique production à partir de staging. Backups chiffrés, restauration testée et monitoring privé. Aucune route web frontend hébergée.
+
+Voir [menaces V1](../v1/SECURITY-THREAT-MODEL.md), [contrats](../v1/TECHNICAL-CONTRACTS.md).
