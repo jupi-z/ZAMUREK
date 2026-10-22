@@ -19,6 +19,9 @@ REQUIRED = [
     "docs/decisions/0019-proprietary-platform-permissive-oss.md",
     "docs/governance/OPEN-SOURCE-POLICY.md",
     "spec/v1/capabilities.json", "spec/v1/progress-template.json",
+    "spec/v1/fixtures.json",
+    "packages/contracts/events/event-envelope.schema.json",
+    "packages/contracts/agent-tools/tool-definition.schema.json",
     "packages/contracts/openapi/zamurek-v1.yaml",
 ]
 LINK = re.compile(r"(?<!!)\[[^\]\n]+\]\(([^)\n]+)\)")
