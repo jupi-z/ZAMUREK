@@ -1,16 +1,16 @@
-# Feuille de route officielle ZAMUREK
+# Roadmap officielle ZAMUREK — dépendante du Core Monarque Connect
 
-La [trajectoire vérifiable de 0.0.0 à 1.0.0](v1/RELEASE-GATES.md) est le plan **normatif**. Les anciennes phases xShop dédiées à une simple boutique sont remplacées.
+**Avant 0.1.0 :** phase Core **10A.5** dans dépôt privé Monarque Connect, contrats partagés C0–C3/C6/C7 validés. Voir [calendrier croisé](v1/INTEGRATION-ROADMAP.md), [ADR-0024](decisions/0024-shared-monarque-core-zamurek.md).
 
-- **0.1.0** Registry/identity/multi-tenancy et enveloppe AI-native dès les fondations.
-- **0.2.0** Commerce générique, poids, prix FX, caisse connectée.
-- **0.3.0** Restauration, pizzeria, cuisine et réservations de tables.
-- **0.4.0** Prestations, employés, agendas et rendez-vous.
-- **0.5.0** Meubles sur devis et réparation avec consentement.
-- **0.6.0** Pharmacie autorisée avec blocages réglementaires et venue/mall multi-entreprises.
-- **0.7.0** Orchestration IA sécurisée et trois assistants réels.
-- **0.8.0** Toutes les applications Android/Windows installables de V1.
-- **0.9.0** Qualification complète, sécurité, licences, sauvegardes et conformité.
-- **1.0.0** **Une seule ouverture commerciale, pas de MVP ni de lancement partiel** : tous les critères P0/P1 passent avec preuves.
+- **0.1.0** Clients Android/Windows, SDK/contrats Core, identité/tenant/établissement, intégration prouvée (PAS nouveau backend).
+- **0.2.0** Catalogues produits/poids, prix USD/CDF Core, commandes en ligne et POS physique : cash, monnaie, session, reçus/factures imprimés (requiert Core C4/C5).
+- **0.3.0** Restaurant/pizzeria, cuisine, tables et commandes sur place/à distance.
+- **0.4.0** Prestations et rendez-vous salon, ressources, staff et concurrence.
+- **0.5.0** Mobilier/devis et réparations avec consentement.
+- **0.6.0** Produits pharmaceutiques autorisés/fail-closed et venue/mall opt-in.
+- **0.7.0** Trois assistants IA via AI Gateway/Agent Runtime commun **Monarque Connect 10B/11.5**.
+- **0.8.0** Tous les clients installables Android/Windows, marque, tests périphériques.
+- **0.9.0** Tests inter-produits, sécurité, licences, restauration logique, fiscalité, performances.
+- **1.0.0** Une seule ouverture commerciale **V1 complète**, 43 capacités et P0/P1 prouvées, aucune dépendance juridique fictivement validée.
 
-Voir [matrice des 38 capacités](v1/CAPABILITY-MATRIX.md), [gates qualité](v1/QUALITY-REQUIREMENTS.md) et [handoff Codex](v1/CODEX-HANDOFF.md). Aucune étape n'est considérée implémentée sur la seule base des documents.
+Voir [gates détaillés](v1/RELEASE-GATES.md), [matrix](v1/CAPABILITY-MATRIX.md) et [nouveau prompt Codex](v1/CODEX-INTEGRATION-PROMPT.md). Aucun stade n'est considéré implémenté par la présence de documents.
