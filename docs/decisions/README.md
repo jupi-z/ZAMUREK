@@ -17,11 +17,11 @@
 | [0011 Compte obligatoire](0011-mandatory-customer-accounts.md) | adopté, sans SMS selon 0016 |
 | [0012 Deux prix indépendants](0012-dual-currency-cdf-usd.md) | **remplacé par 0015** |
 | [0013 API-only / clients natifs](0013-api-only-and-native-clients.md) | adopté, resserré par 0017 |
-| [0014 Abonnement/encaissement marchand](0014-monthly-saas-merchant-collection.md) | adopté, tarif précisé par 0018 |
+| [0014 Abonnement/encaissement marchand](0014-monthly-saas-merchant-collection.md) | adopté, tarif et unité par 0018 et 0021 |
 | [0015 USD source + FX CDF](0015-usd-source-converted-cdf.md) | **adopté 16/10** |
 | [0016 Pas de SMS / e-mail auth](0016-no-sms-auth.md) | **adopté 16/10** |
 | [0017 Exposition réseau minimale](0017-minimum-exposure.md) | **adopté 16/10** |
-| [0018 Plan BASIC 7 USD mensuel](0018-basic-seven-usd.md) | **adopté 16/10** |
+| [0018 Plan BASIC 7 USD mensuel](0018-basic-seven-usd.md) | **adopté, par organisation en V1** |
 
 | [0019 Plateforme propriétaire, briques OSS permissives](0019-proprietary-platform-permissive-oss.md) | **adopté 22/10 — Mercur exclu** |
 
