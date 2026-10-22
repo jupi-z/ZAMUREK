@@ -78,8 +78,13 @@ def main() -> int:
             fail(f"{ident}: missing acceptance criteria")
         if ident not in matrix:
             fail(f"{ident}: not found in human-readable capability matrix")
-    if "REGULATED_GOOD" not in charter and "pharmacie" not in charter.lower():
-        fail("Charter must describe regulated merchandise gating")
+    legal_controls = charter.lower()
+    if not (
+        ("pharmac" in legal_controls or "regulated_good" in legal_controls)
+        and ("bloqu" in legal_controls or "désactiv" in legal_controls
+             or "fail-closed" in legal_controls)
+    ):
+        fail("Charter must explicitly describe default blocking of regulated medicines")
     if "AGENTIC" not in charter.upper() and "agentique" not in charter.lower():
         fail("AI-native/agentic architecture not recorded")
 
