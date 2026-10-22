@@ -26,5 +26,7 @@ jobs:
         run: python3 scripts/validate_docs.py
       - name: Validate 38-capability V1 manifest and progress gates
         run: python3 scripts/validate_v1_scope.py
+      - name: Validate Agentic tool and event JSON Schema drafts
+        run: python3 scripts/validate_agent_contracts.py
       - name: Validate ZAMUREK V1 OpenAPI draft and invariants
         run: python3 scripts/validate_openapi.py
