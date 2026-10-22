@@ -1,5 +1,8 @@
 # Distribution V1 — applications clientes installables uniquement
 
+> **Core partagé :** toutes ces apps s'adressent au backend Monarque Connect privé, pas à une nouvelle API ZAMUREK. **POS en présentiel**, caissier, cash, rendu monnaie, impression A4/58/80 mm et clôture sont requis pour le client marchand Windows/Android. Voir [POS](../v1/POS-AND-FISCAL-DOCUMENTS.md) et [Core](../v1/SHARED-CORE-INTEGRATION.md).
+
+
 | Client | Runtime | V1 |
 |---|---|---|
 | APK boutique acheteur | React UI embarquée + Capacitor/Kotlin | REQUIRED |
