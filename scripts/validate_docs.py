@@ -13,6 +13,7 @@ REQUIRED = [
     "docs/v1/PRODUCT-CHARTER.md", "docs/v1/CAPABILITY-MATRIX.md",
     "docs/v1/BUSINESS-WORKFLOWS.md", "docs/v1/DOMAIN-MODEL.md",
     "docs/v1/AGENTIC-KERNEL.md", "docs/v1/TECHNICAL-CONTRACTS.md",
+    "docs/v1/MONETARY-AND-QUANTITY-POLICY.md",
     "docs/v1/SECURITY-THREAT-MODEL.md", "docs/v1/LEGAL-REGULATED-GATES.md",
     "docs/v1/QUALITY-REQUIREMENTS.md", "docs/v1/RELEASE-GATES.md",
     "docs/v1/CODEX-HANDOFF.md", "docs/architecture/TENANCY.md",
