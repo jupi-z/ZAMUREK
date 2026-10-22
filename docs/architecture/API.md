@@ -1,9 +1,11 @@
 > **SPÉCIFICATION V1 ACTIVE :** [Contrats ZAMUREK universels](../v1/TECHNICAL-CONTRACTS.md) et [OpenAPI ZAMUREK](../../packages/contracts/openapi/zamurek-v1.yaml). Le contrat xShop de boutique seule est historique et ne doit pas guider Codex.
 
-# Contrats API xShop V1 — 16 octobre
+# Contrats API historiques xShop V1 — 16 octobre 2026
 
 ## Base
-Version `/v1`, OpenAPI 3.1 [draft](../../packages/contracts/openapi/xshop-v1.yaml) ; REST JSON HTTPS exclusivement, aucun Swagger UI public / frontend en prod. Préfixe identité `/auth/v1`, opérateur `/platform/v1` protégé par VPN et MFA.
+**Historique uniquement** : ancien schéma xShop ; la seule référence V1 actuelle est [ZAMUREK OpenAPI](../../packages/contracts/openapi/zamurek-v1.yaml).
+
+Version `/v1`, OpenAPI 3.1 [draft archivé](../../packages/contracts/openapi/xshop-v1.yaml) ; REST JSON HTTPS exclusivement, aucun Swagger UI public / frontend en prod. Préfixe identité `/auth/v1`, opérateur `/platform/v1` protégé par VPN et MFA.
 
 ## Surface
 - `/auth/v1/register`, `verify-email`, login/refresh/logout/recovery et me : **aucun SMS**.
