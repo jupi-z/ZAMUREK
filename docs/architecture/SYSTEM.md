@@ -1,4 +1,6 @@
-# Architecture ZAMUREK — socle propriétaire (révision du 22 octobre 2026)
+# Architecture ZAMUREK — synthèse, voir modèle V1 normatif
+
+**PRIORITÉ :** [Modèle de domaine universel V1](../v1/DOMAIN-MODEL.md), [Charte V1](../v1/PRODUCT-CHARTER.md) et [Noyau agentique](../v1/AGENTIC-KERNEL.md) prévalent sur toute ancienne architecture boutique seule décrite ci-dessous.
 
 **Règle de conception :** API, services métiers, modèles tenant, règles de vente/réservation, traitements spécifiques aux types de commerce et socle agentique développés **en propre**. **Aucun Mercur ni moteur commercial préconstruit**. Réutiliser seulement des briques génériques open source dont les licences sont permissives et vérifiées, selon [ADR-0019](../decisions/0019-proprietary-platform-permissive-oss.md).
 
