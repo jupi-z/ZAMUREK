@@ -10,4 +10,4 @@
 - SLO latence, disponibilité, quotas IA, coûts SMTP/LLM, observabilité et support mesurés avant lancement.
 - Signature APK/Windows, pipelines CI, SBOM/licences, rotation secrets et journalisation anonymisée sont gates 1.0.0.
 
-Voir [topologie](NETWORK-EXPOSURE.md), [recette](../v1/QUALITY-REQUIREMENTS.md), [domained](../v1/DOMAIN-MODEL.md).
+Voir [topologie](NETWORK-EXPOSURE.md), [recette](../v1/QUALITY-REQUIREMENTS.md), [domaine](../v1/DOMAIN-MODEL.md).
