@@ -4,11 +4,13 @@ from __future__ import annotations
 
 import json
 import sys
+from decimal import Decimal, InvalidOperation
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SPEC = ROOT / "spec/v1/capabilities.json"
 PROGRESS = ROOT / "spec/v1/progress-template.json"
+FIXTURES = ROOT / "spec/v1/fixtures.json"
 MATRIX = ROOT / "docs/v1/CAPABILITY-MATRIX.md"
 CHARTER = ROOT / "docs/v1/PRODUCT-CHARTER.md"
 ERRORS: list[str] = []
@@ -33,6 +35,7 @@ def load_json(path: Path) -> dict:
 def main() -> int:
     data = load_json(SPEC)
     progress = load_json(PROGRESS)
+    fixtures = load_json(FIXTURES)
     matrix = MATRIX.read_text(encoding="utf-8")
     charter = CHARTER.read_text(encoding="utf-8")
 
@@ -98,6 +101,40 @@ def main() -> int:
     for priority in ("P0", "P1"):
         if progress.get("criticalGates", {}).get(priority) != "NOT_RUN":
             fail(f"{priority} is not passed before evidence")
+
+    # Real exact-decimal fixture checks, never Python float in currency/weight.
+    organizations = fixtures.get("organizations", [])
+    if len(organizations) != 7:
+        fail("Synthetic fixtures must contain seven industry organizations")
+    industries = {o.get("capabilities", [None])[0] for o in organizations}
+    if industries != {"RETAIL", "WEIGHTED", "FOOD", "SERVICES", "FURNITURE", "REPAIRS", "PHARMACY"}:
+        fail("Missing industry fixture")
+    try:
+        rate = Decimal(fixtures["fx"]["configuredMerchantUsdToCdf"])
+        for organization in organizations:
+            if organization.get("id") == "org-weighted":
+                offering = organization["offers"][0]
+                expected = (
+                    Decimal(offering["basePriceUsdMinorPerKg"]) / Decimal(100)
+                    * Decimal(offering["sampleGrams"]) / Decimal(1000) * rate
+                )
+                assert expected == Decimal(offering["sampleTotalCdf"]), "125 g exact price fixture mismatch"
+            if organization.get("id") == "org-food":
+                offering = organization["offers"][0]
+                total_cents = Decimal(offering["basePriceUsdMinor"]) + sum(
+                    (Decimal(modifier["priceUsdMinor"]) for modifier in offering["modifiers"]),
+                    Decimal(0),
+                )
+                expected = total_cents / Decimal(100) * rate
+                assert expected == Decimal(offering["sampleCdfWithAddon"]), "Pizza addon fixture mismatch"
+            if organization.get("id") == "org-pharmacy":
+                assert any(
+                    p["classification"] == "PRESCRIPTION_REQUIRED"
+                    and p["transactionStatus"] == "BLOCKED"
+                    for p in organization["offers"]
+                ), "Regulated merchandise must be blocked by default"
+    except (KeyError, TypeError, InvalidOperation, AssertionError) as exc:
+        fail(f"Price/pharmacy fixture validation failed: {exc}")
 
     if ERRORS:
         print("ZAMUREK V1 scope validation FAILED:")
