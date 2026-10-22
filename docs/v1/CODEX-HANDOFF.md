@@ -7,7 +7,8 @@
 2. `docs/v1/CAPABILITY-MATRIX.md`
 3. `docs/v1/BUSINESS-WORKFLOWS.md`
 4. `docs/v1/DOMAIN-MODEL.md`
-5. `docs/v1/AGENTIC-KERNEL.md`
+5. `docs/v1/MONETARY-AND-QUANTITY-POLICY.md`
+6. `docs/v1/AGENTIC-KERNEL.md`
 6. `docs/v1/SECURITY-THREAT-MODEL.md`
 7. `docs/v1/QUALITY-REQUIREMENTS.md`
 8. `docs/v1/RELEASE-GATES.md`
