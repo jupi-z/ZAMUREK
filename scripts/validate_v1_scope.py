@@ -108,6 +108,21 @@ def main() -> int:
         if progress.get("criticalGates", {}).get(priority) != "NOT_RUN":
             fail(f"{priority} is not passed before evidence")
 
+    pos = fixtures.get("posScenario", {})
+    if pos.get("buyer", {}).get("kind") != "WALK_IN" or pos.get("buyer", {}).get("email") is not None:
+        fail("POS fixture must support customer walk-in without an email")
+    if pos.get("cashSessionOpen") is not True or pos.get("offlineSaleConfirmation") is not False:
+        fail("POS session and fail-closed offline fixture missing")
+    expected_counts = {"salesOrders": 1, "paymentRecords": 1, "cashMovements": 1, "outboxEvents": 1}
+    if pos.get("expectedCanonical") != expected_counts:
+        fail("POS must use canonical Core orders/payment/cash and outbox exactly once")
+    try:
+        if Decimal(pos.get("amountTenderedCdf", "0")) - Decimal(pos.get("saleTotalCdf", "0")) != Decimal(pos.get("changeDueCdf", "-1")):
+            fail("Cash change arithmetic fixture mismatch")
+    except InvalidOperation:
+        fail("Invalid POS amount decimals")
+    if fixtures.get("integration", {}).get("backend") != "MONARQUE_CONNECT_CORE":
+        fail("Synthetic tests must rely on shared Monarque Connect Core")
     # Real exact-decimal fixture checks, never Python float in currency/weight.
     organizations = fixtures.get("organizations", [])
     if len(organizations) != 7:
