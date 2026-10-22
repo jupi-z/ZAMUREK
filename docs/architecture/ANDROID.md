@@ -1,5 +1,8 @@
 # ZAMUREK Android — trois catégories de clients V1
 
+> **Backend commun :** API Monarque Connect Core, aucun module NestJS propre au dépôt ZAMUREK. **POS physique** dans l'APK marchand : caisse, encaissement cash, monnaie rendue, ticket thermique via Kotlin, session/terminal et fail-closed offline. Voir [POS](../v1/POS-AND-FISCAL-DOCUMENTS.md).
+
+
 - **Acheteur marque (APK par commerçant)** : recherche, produits/services au poids, restaurant, réservations, devis/réparations, prix CDF RDC, compte e-mail vérifié, panier/devis/checkout/états.
 - **Marchand (APK)** : gestion des établissements/capacités, prix source USD+taux FX, menus/cuisine, vente au poids, agenda, devis/réparation, caisse connectée, opt-in venue et suggestions IA avec approbation.
 - **Discovery/Venue (APK)** : découverte commerces d'une ville et lieux partenaires (par ex. centre commercial éventuel), adhésions consenties, navigation multi commerçants et commandes **séparées par marchand**.
