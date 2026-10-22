@@ -1,11 +1,9 @@
-# ZAMUREK — venue V1 et marketplace future
+# ZAMUREK — venue opt-in et découverte V1
 
-**Ne pas confondre** :
-- **Venue / centre commercial fédérateur est OBLIGATOIRE en V1** : découverte et répertoire opt-in d'entreprises indépendantes, produits/services publics, localisation des magasins/étages, entrée dans transactions d'un marchand.
-- **Marketplace transactionnelle multi-vendeurs / encaissement collectif** n'est PAS en V1 et requiert architecture légale et financière spécifique.
+Le **venue/mall est requis en V1** pour découverte multi-entreprises, emplacements, étages, regroupements volontaires et visibilité publique consentie. Une marketplace transactionnelle multivendeur avec paiements collectifs/escrow est **hors V1**.
 
-Chaque entreprise/tenant possède sa propre base commerciale. Un gestionnaire d'un lieu n'a **aucun droit automatique** sur commandes, paiements, réservations ou clients de la boutique. Consentement explicite, index public asynchrone sans PII et opt-out avec invalidation cachée ; disponibilité et prix recalculés par API du marchand.
+**Toutes les organisations partagent l'infrastructure PostgreSQL Core Monarque Connect, pas des bases individuelles**, mais restent isolées par `organizationId/establishmentId/ownership`. Le gestionnaire d'un centre n'a aucun accès automatique à commandes, clients, réservations, paiements, factures, caisses ou données agents des magasins. Opt-out supprime listing et projection/cache sans effacer les données privées du marchand.
 
-Le client Discovery/venue est un APK installable, pas un site web hébergé. Chaque commande, réservation et règlement appartient à **un seul marchand** ; paniers affichés par marchand. La venue ne collecte pas les fonds du vendeur.
+Une application Discover peut naviguer parmi les entreprises, mais chaque panier/checkout/commande et règlement appartient à un vendeur unique, exécuté par Sales/Cash Core. Les identités et marques LaJoie Mall ne sont pas autorisées sans contrat explicite.
 
-Sources : [Charte V1](../v1/PRODUCT-CHARTER.md), [Parcours W8](../v1/BUSINESS-WORKFLOWS.md), [Tenancy](TENANCY.md).
+Voir [ADR-0024](../decisions/0024-shared-monarque-core-zamurek.md), [Core](../v1/SHARED-CORE-INTEGRATION.md), [parcours W8](../v1/BUSINESS-WORKFLOWS.md).
