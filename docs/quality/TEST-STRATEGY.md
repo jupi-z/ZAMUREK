@@ -1,3 +1,5 @@
+> **ARCHIVE HISTORIQUE — stratégie de test xShop remplacée.** Recettes officielles dans [ZAMUREK QUALITY-REQUIREMENTS](../v1/QUALITY-REQUIREMENTS.md), [AGENTIC-KERNEL](../v1/AGENTIC-KERNEL.md) et [CAPABILITY-MATRIX](../v1/CAPABILITY-MATRIX.md).
+
 # Tests xShop — état cible après arbitrages 16 octobre 2026
 
 ## Architecture/métier
