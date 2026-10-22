@@ -1,0 +1,113 @@
+#!/usr/bin/env python3
+"""Verify ZAMUREK V1 product scope and progress templates using Python stdlib."""
+from __future__ import annotations
+
+import json
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+SPEC = ROOT / "spec/v1/capabilities.json"
+PROGRESS = ROOT / "spec/v1/progress-template.json"
+MATRIX = ROOT / "docs/v1/CAPABILITY-MATRIX.md"
+CHARTER = ROOT / "docs/v1/PRODUCT-CHARTER.md"
+ERRORS: list[str] = []
+
+
+def fail(msg: str) -> None:
+    ERRORS.append(msg)
+
+
+def load_json(path: Path) -> dict:
+    try:
+        value = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        fail(f"{path.relative_to(ROOT)}: cannot parse: {exc}")
+        return {}
+    if not isinstance(value, dict):
+        fail(f"{path.relative_to(ROOT)}: root must be JSON object")
+        return {}
+    return value
+
+
+def main() -> int:
+    data = load_json(SPEC)
+    progress = load_json(PROGRESS)
+    matrix = MATRIX.read_text(encoding="utf-8")
+    charter = CHARTER.read_text(encoding="utf-8")
+
+    if data.get("product") != "ZAMUREK" or data.get("targetRelease") != "1.0.0":
+        fail("Product must be ZAMUREK, target release 1.0.0")
+    if data.get("policy") != "NO_PARTIAL_COMMERCIAL_LAUNCH":
+        fail("Partial release not allowed in V1 charter")
+    expected_verticals = {"retail", "weighted", "food", "service", "furniture", "repair", "pharmacy", "venue"}
+    if set(data.get("declaredVerticals", [])) != expected_verticals:
+        fail("Incomplete mandatory business verticals")
+    mandatory = {
+        "FND-01", "FND-02", "FND-05", "FND-07", "FND-13", "FND-16",
+        "RTL-01", "WGT-01", "WGT-02", "FOD-01", "FOD-02", "FOD-03",
+        "SVC-01", "SVC-02", "FUR-01", "REP-01", "REP-02",
+        "PHA-01", "PHA-02", "VEN-01", "VEN-02",
+        "AGT-01", "AGT-02", "AGT-03", "AGT-04",
+        "SEC-01", "OPS-01", "LEG-01",
+    }
+    capabilities = data.get("capabilities", [])
+    if not isinstance(capabilities, list) or len(capabilities) < 38:
+        fail("Expected at least 38 explicitly accountable V1 capabilities")
+        capabilities = []
+    ids = [cap.get("id") for cap in capabilities if isinstance(cap, dict)]
+    if len(ids) != len(set(ids)):
+        fail("Duplicate capability IDs")
+    if not mandatory <= set(ids):
+        fail(f"Required capability IDs missing: {sorted(mandatory - set(ids))}")
+    for cap in capabilities:
+        if not isinstance(cap, dict):
+            fail("Each capability must be object")
+            continue
+        ident = cap.get("id", "")
+        if cap.get("requiredForV1") is not True:
+            fail(f"{ident}: all manifest entries must be mandatory for complete V1")
+        if cap.get("priority") not in {"P0", "P1"}:
+            fail(f"{ident}: invalid priority")
+        if cap.get("category") not in expected_verticals | {"foundation", "ai", "security", "operations", "legal"}:
+            fail(f"{ident}: unknown category")
+        if not cap.get("description") or not cap.get("acceptance"):
+            fail(f"{ident}: missing acceptance criteria")
+        if ident not in matrix:
+            fail(f"{ident}: not found in human-readable capability matrix")
+    if "REGULATED_GOOD" not in charter and "pharmacie" not in charter.lower():
+        fail("Charter must describe regulated merchandise gating")
+    if "AGENTIC" not in charter.upper() and "agentique" not in charter.lower():
+        fail("AI-native/agentic architecture not recorded")
+
+    phases = progress.get("requiredWorkstreams", [])
+    if not isinstance(phases, list) or len(phases) != 9:
+        fail("Progress template must have nine checkpoints 0.1.0..0.9.0")
+        phases = []
+    if sum(s.get("weight", 0) for s in phases if isinstance(s, dict)) != 100:
+        fail("Progress weights must sum to 100")
+    if [s.get("version") for s in phases] != [f"0.{i}.0" for i in range(1, 10)]:
+        fail("Incorrect workstream versions")
+    if progress.get("overallPercent") != 0 or progress.get("releaseStatus") != "NOT_READY":
+        fail("Template must start at 0% and NOT_READY; not claim work is complete")
+    for phase in phases:
+        if phase.get("percent") != 0 or phase.get("verifiedItems") != 0:
+            fail(f"{phase.get('version')}: no unverified progress")
+    if progress.get("capabilities", {}).get("total") != len(capabilities):
+        fail("Progress template does not match number of capabilities")
+    for priority in ("P0", "P1"):
+        if progress.get("criticalGates", {}).get(priority) != "NOT_RUN":
+            fail(f"{priority} is not passed before evidence")
+
+    if ERRORS:
+        print("ZAMUREK V1 scope validation FAILED:")
+        for issue in ERRORS:
+            print(" -", issue)
+        return 1
+    print(f"ZAMUREK V1 scope OK: {len(capabilities)} capabilities, 8 verticals, "
+          "9 weighted gates, 100% evidence required.")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
