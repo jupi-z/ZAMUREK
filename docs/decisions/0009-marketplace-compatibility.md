@@ -1,6 +1,6 @@
 # ADR-0009 — Marketplace additive et opt-in
 
-**Statut : adopté | Date : 2026-10-15**
+**Statut : adopté avec précision par [ADR-0021](0021-organization-establishment-venue.md) : découverte Venue OBLIGATOIRE en V1 ; marketplace de paiement collectif hors V1 | Date : 2026-10-22**
 
 ## Décision
 Prévoir IDs globaux et contrats indépendants des canaux. La marketplace future consomme les mêmes API et un index public opt-in ; les apps white-label continuent à opérer. Checkouts mono-tenant jusqu'à décision spécifique.
