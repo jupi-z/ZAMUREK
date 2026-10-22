@@ -1,33 +1,25 @@
-# Modèle de données conceptuel xShop V1 — 16 octobre 2026
+# ZAMUREK — schéma de données, résumé architectural actif
 
-## Registry / identité globales
-- tenant(id UUID, slug, status, databaseSecretRef, schemaVersion), storefront_channel(id, tenantId, platform, appId).
-- global_customer_identity(id, emailOriginal, emailCanonical unique, passwordHash, verifiedAt, status) ; session_refresh(id, identityId, tokenHash, expiresAt, revokedAt) ; email_challenge(identityId, purpose, tokenHash, expiresAt, consumedAt, attempts).
-- merchant_staff(id, emailCanonical, hash, totpCredentialRef), tenant_membership(staffId, tenantId, role, enabled).
-- platform_operator(id, authRef, totpCredentialRef), platform_audit, provisioning_job.
-- subscription_plan(id, code BASIC, **basePriceUsdMinor = 700**, periodMonths=1), merchant_subscription(tenantId, plan, state, cycle).
-- platform_fx_rate/version (distinct du marchand) pour calcul réglementaire CDF des factures xShop, sans toucher aux commandes boutiques.
+**Source normative : [DOMAIN-MODEL](../v1/DOMAIN-MODEL.md), [TECHNICAL-CONTRACTS](../v1/TECHNICAL-CONTRACTS.md) et [AGENTIC-KERNEL](../v1/AGENTIC-KERNEL.md).** Cet aperçu n'est pas une migration SQL exécutable.
 
-## Base PostgreSQL par commerçant
-- store_settings(..., `baseCurrency='USD'`, `territory='CD'`, legal_display_currency='CDF', fulfillment flags).
-- product(id,name,status), product_variant(id, productId, attributes, **basePriceUsdMinor**), product_media, category.
-- delivery_zone(id,name,enabled, **baseFeeUsdMinor**).
-- **tenant_fx_rate**(id, usdToCdfNumerator, usdToCdfDenominator, decimalText, version, activeFrom, changedBy, audit) — historique immuable ; référence utilisateur 2360 uniquement pour test, confirmer en vente.
-- cart(id, ownerGlobalIdentityId, channelId, rateVersion, quoteExpiresAt, **saleCurrency='CDF'**), cart_item(variantId, quantity).
-- price_quote(id, cartId, rateVersion, pricesSourceUsd, amountsCdf, roundingPolicyVersion, expiresAt, fingerprint), transactionnel et contrôlé serveur.
-- order(id, customerGlobalIdentityId, orderLocalNumber, currency='CDF', rateSnapshot, rateVersion, **subtotalCdfMinor**, feeCdfMinor, totalCdfMinor, recipientSnapshot, createdAt, state).
-- order_item(variantId, productSnapshot, unitBaseUsdMinor, **unitCdfMinor**, quantity, lineCdfMinor) ; payment(id, orderId, receivedCurrency, receiptAmountMinor, saleCurrency='CDF', dueCdfMinor, status, merchantRef).
-- cancellation_request, checkout_idempotency, outbox_event, audit_log.
+## Registry global
+`Organization` (une DB PostgreSQL métier), `EstablishmentReference`, `Venue`, `VenueMembership` opt-in, `Channel`, `Staff/CustomerIdentity` e-mail vérifié, `Session`, `RoleMembership`, `PlatformOperator`, `SubscriptionBASIC`, `ProvisioningJob`. Conserver un minimum de métadonnées communes, **jamais** commandes/rendez-vous/réparations privées dans le registry.
 
-## Invariants
-- Référence produit **uniquement USD**, pas `product_variant_price` dual-table ; calcul des valeurs CDF effectué par le backend.
-- Affichage commercial et libellé des documents RDC en CDF par politique conservatoire ; aucune option client USD sur territoire CD sauf validation légale ultérieure.
-- Snapshot immuable du taux et des montants au moment du checkout ; changer le taux ne réécrit ni anciennes commandes ni historique.
-- Pas de `phone_e164` dans l'auth V1, mais téléphone du destinataire de livraison dans les commandes tenant.
-- Facturation xShop 7 USD mensuel en référence interne, **CDF public/facture RDC via taux plateforme** ; pas de commission sur commandes.
-- Séparation tenant SQL, validation (identité, tenant, propriété de l'objet) pour chaque accès.
+## DB commerciale séparée par organisation
+`Establishment` (sous-division sécurisée) → `CapabilityProfile`, `Offering`, `Variant`, `Category`, `Media`, `UnitDefinition` (PCS/G/KG), `PriceBasis`, `ModifierGroup`, `MerchantFxRateVersion`, `TerritoryPricePolicy`.
 
-## Gate G1
-Établir migrations, contraintes d'intégrité, test des arrondis et TTL de quote, deux DB tenant, sauvegarde ciblée. Ne pas utiliser de float pour la monnaie.
+Par établissement : `Resource`, `StaffCalendar`, `Table`, `ReservationHold`, `Appointment`, `RestaurantMenu`, `KitchenTicket`, `Quote`, `QuoteAcceptance`, `RepairCase`, `Consent`, `WorkOrder`, `Cart`, `PriceQuote`, `Order`, `OrderLine`, `PaymentRecord`, `RefundRequest`, `Fulfillment`, `OutboxEvent`, `AuditEvent`.
 
-Voir [FX-PRICING](FX-PRICING.md), [AUTH-NO-SMS](AUTH-NO-SMS.md), [legal](../legal/RDC-INITIAL-REVIEW.md), [abonnement](SUBSCRIPTIONS.md).
+**Prix catalogue de base USD uniquement**, taux du commerçant USD→CDF versionné, devis et montants CDF figés côté serveur pour les ventes publiques RDC. Masse/prix décimaux exacts selon [règle d'arrondi](../v1/MONETARY-AND-QUANTITY-POLICY.md).
+
+## Agentic Fabric — fondatrice dès 0.1.0
+`AgentDefinition`, `ToolDefinition`, `PolicyDecision`, `Run`, `Checkpoint`, `Approval`, `MemoryScope` et traces d'événements avec organization/establishment/actor. Un agent ne peut interroger directement les bases commerciales sans handler et autorisation.
+
+## Invariants SQL
+- organization DB isolation; `establishmentId` et ownership sur toutes les données concernées.
+- PostgreSQL exclusion/unique constraints contre doubles réservations.
+- Checkout transactionnel idempotent, quote versionnée/snapshot ; pas de paiement confirmé par client.
+- Pharmacie : classification règlementaire `BLOCKED` par défaut et vérification des preuves/autorisations avant toute transaction réglementée.
+- Index venue ne stocke que projections publiques consenties, révocation et purge contrôlées.
+
+Pas de double grille CDF/USD, pas d'authentification par SMS et pas de DB par simple boutique/établissement. Les anciennes spécifications xShop sont archivées par [INDEX](../INDEX.md).
