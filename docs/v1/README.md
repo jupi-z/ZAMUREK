@@ -15,7 +15,8 @@
 11. [Roadmap 0.0.0→1.0.0](RELEASE-GATES.md) — critères de sortie.
 12. [Cahier d'acceptation de la phase 0.1.0](PHASE-0.1.0-ACCEPTANCE.md) — premiers tests exécutables.
 13. [Premier prompt prêt à donner à Codex](CODEX-PHASE-0.1.0-PROMPT.md) — dépôt local déjà cloné.
-14. [Dossier opérationnel Codex](CODEX-HANDOFF.md) — protocole d'implémentation.
+14. [Audit intégral pré-Codex](FINAL-REPO-AUDIT-2026-10-22.md) — corrections vérifiées en CI.
+15. [Dossier opérationnel Codex](CODEX-HANDOFF.md) — protocole d'implémentation.
 
 Les contrats machine : [capacités](../../spec/v1/capabilities.json), [progression](../../spec/v1/progress-template.json), [fixtures synthétiques](../../spec/v1/fixtures.json), [OpenAPI 3.1 V1](../../packages/contracts/openapi/zamurek-v1.yaml). **Attention : l'OpenAPI est un premier contrat de conception, non un backend prêt ou un schéma définitivement stabilisé.**
 
