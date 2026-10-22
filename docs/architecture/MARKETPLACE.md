@@ -1,14 +1,11 @@
-# Marketplace future xShop — client installable et opt-in
+# ZAMUREK — venue V1 et marketplace future
 
-**Hors V1.** Réutilise identité globale, contrats API, canal additionnel, sans remplacer les APK individuelles ni fusionner les DB de commerçants.
+**Ne pas confondre** :
+- **Venue / centre commercial fédérateur est OBLIGATOIRE en V1** : découverte et répertoire opt-in d'entreprises indépendantes, produits/services publics, localisation des magasins/étages, entrée dans transactions d'un marchand.
+- **Marketplace transactionnelle multi-vendeurs / encaissement collectif** n'est PAS en V1 et requiert architecture légale et financière spécifique.
 
-## Catalogue
-L'index de découverte recopie **seulement les informations de vente publiques opt-in** de chaque marchand, sous sa politique territoriale. Chaque prix source reste stocké **en USD dans DB tenant**, avec taux USD→CDF actif versionné par marchand ; l'index RDC publie **prix CDF converti** et date/identifiant de version, rafraîchi via outbox. Prix final toujours recalculé/confirmé par la source tenant au checkout.
+Chaque entreprise/tenant possède sa propre base commerciale. Un gestionnaire d'un lieu n'a **aucun droit automatique** sur commandes, paiements, réservations ou clients de la boutique. Consentement explicite, index public asynchrone sans PII et opt-out avec invalidation cachée ; disponibilité et prix recalculés par API du marchand.
 
-## Commande
-Acheteur compte e-mail vérifié, panier mono-boutique, devis/commande en CDF RDC, modalités propres à chaque marchand. Pas de paiement split ni transfert entre DB V1 ; jamais de transaction cross-tenant.
+Le client Discovery/venue est un APK installable, pas un site web hébergé. Chaque commande, réservation et règlement appartient à **un seul marchand** ; paniers affichés par marchand. La venue ne collecte pas les fonds du vendeur.
 
-## Compatibilité
-Apps marque restent actives ; vendeur peut activer/désactiver opt-in ; les anciennes commandes gardent snapshot FX. Aucune interface web hébergée pour marketplace.
-
-Voir [FX](FX-PRICING.md), [règles légales](../legal/RDC-INITIAL-REVIEW.md), [EVENTS](EVENTS.md).
+Sources : [Charte V1](../v1/PRODUCT-CHARTER.md), [Parcours W8](../v1/BUSINESS-WORKFLOWS.md), [Tenancy](TENANCY.md).
