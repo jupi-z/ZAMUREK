@@ -1,26 +1,34 @@
-# xShop — index G0 actualisé (16 octobre 2026)
+# Index documentaire ZAMUREK — 22 octobre 2026
 
-**Document prioritaire** : [arbitrages du 16 octobre](DECISIONS-VALIDATED-2026-10-16.md), puis [ceux du 15 octobre](DECISIONS-VALIDATED-2026-10-15.md) uniquement si compatibles.
+**Corpus normatif pour la V1 : [docs/v1/README](v1/README.md).** Le cadrage xShop ancien est historique et ne pilote plus le développement. Le statut du code applicatif reste `NOT_IMPLEMENTED`.
 
-## Produit
-- [PRD actif](product/PRD.md)
-- [Fonctionnalités V1](product/V1-FUNCTIONAL-SPEC.md)
-- [Parcours](product/USER-JOURNEYS.md)
+## Référence produit, architecture et recette
+- [Charte produit](v1/PRODUCT-CHARTER.md)
+- [Matrice des fonctionnalités](v1/CAPABILITY-MATRIX.md)
+- [Parcours commerce / services](v1/BUSINESS-WORKFLOWS.md)
+- [Domaine et isolation multi-établissements](v1/DOMAIN-MODEL.md)
+- [Architecture agentique native](v1/AGENTIC-KERNEL.md)
+- [Contrats techniques et sécurité API](v1/TECHNICAL-CONTRACTS.md)
+- [Menaces et défense](v1/SECURITY-THREAT-MODEL.md)
+- [Légal RDC et activités réglementées](v1/LEGAL-REGULATED-GATES.md)
+- [Qualité / release gates](v1/QUALITY-REQUIREMENTS.md), [Versions 0.0.0 → 1.0.0](v1/RELEASE-GATES.md)
+- [Passage à Codex](v1/CODEX-HANDOFF.md)
 
-## Architecture
-- [Système](architecture/SYSTEM.md), [tenancy](architecture/TENANCY.md), [données](architecture/DATA-MODEL.md)
-- [Prix USD + FX CDF](architecture/FX-PRICING.md) ; [ancien modèle à deux prix, remplacé](architecture/CURRENCY-CDF-USD.md)
-- [Authentification sans SMS](architecture/AUTH-NO-SMS.md), [Identity](architecture/IDENTITY.md), [ancienne proposition SMS remplacée](architecture/AUTH-CUSTOMER.md)
-- [Clients installables](architecture/CLIENTS-DEPLOYMENT.md), [Android](architecture/ANDROID.md), [white-label](architecture/WHITE-LABEL.md)
-- [Réseau / accès privés](architecture/NETWORK-EXPOSURE.md), [API](architecture/API.md), [contrat OpenAPI](../packages/contracts/openapi/xshop-v1.yaml)
-- [Paiements](architecture/PAYMENTS.md), [abonnement 7 USD](architecture/SUBSCRIPTIONS.md)
-- [Marketplace](architecture/MARKETPLACE.md), [événements](architecture/EVENTS.md)
-- [Sécurité](architecture/SECURITY.md), [exploitation](architecture/OPERATIONS.md)
+## Données machine
+- [Manifeste 38 capacités](../spec/v1/capabilities.json)
+- [Template de progression](../spec/v1/progress-template.json)
+- [OpenAPI ZAMUREK draft](../packages/contracts/openapi/zamurek-v1.yaml)
 
-## Conformité, qualité et gouvernance
-- [Revue juridique initiale RDC](legal/RDC-INITIAL-REVIEW.md)
-- [Audit G0 historique](quality/AUDIT-G0-2026-10-15.md) ; [audit post-arbitrages 15/10 historique](quality/AUDIT-POST-DECISIONS-2026-10-15.md)
-- [Tests](quality/TEST-STRATEGY.md), [critères d'acceptation](quality/ACCEPTANCE.md), [roadmap](ROADMAP.md), [questions/prérequis](OPEN-QUESTIONS.md), [ADR](decisions/README.md)
+## Gouvernance
+- [Décision propriété du moteur](decisions/0019-proprietary-platform-permissive-oss.md)
+- [Politique licences permissives](governance/OPEN-SOURCE-POLICY.md)
+- [Revue juridique RDC existante](legal/RDC-INITIAL-REVIEW.md)
+- [Registre des ADR](decisions/README.md)
+- [Pré-requis encore ouverts](OPEN-QUESTIONS.md)
 
-## Statuts
-**Décidé** = arbitrage du propriétaire ; **recommandé** = décision technique à vérifier ; **réalisé** = code/test/artefact effectif ; **historique** = document remplacé. Aucun serveur ou APK/EXE n'est actuellement qualifié de réalisé.
+## Archives xShop
+- [Arbitrages du 16/10](DECISIONS-VALIDATED-2026-10-16.md)
+- [PRD historique](product/PRD.md), [spécifications historiques](product/V1-FUNCTIONAL-SPEC.md)
+- [Contrat historique xShop](../packages/contracts/openapi/xshop-v1.yaml)
+
+En cas de divergence, appliquer le corpus ZAMUREK `docs/v1`, inscrire une ADR, corriger les anciens liens actifs. La documentation n'est pas un produit fonctionnel.
