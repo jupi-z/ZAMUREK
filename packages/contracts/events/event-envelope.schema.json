@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.zamurek.invalid/events/event-envelope.schema.json",
+  "title": "ZAMUREK Domain Event Envelope Draft",
+  "description": "Normative envelope draft for append-only outbox events; payload stored/referenced under tenant security",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "eventId",
+    "eventType",
+    "schemaVersion",
+    "organizationId",
+    "correlationId",
+    "occurredAt",
+    "classification",
+    "payloadRef"
+  ],
+  "properties": {
+    "eventId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "eventType": {
+      "type": "string",
+      "pattern": "^[a-z]+(\\.[a-z_]+)+\\.v[0-9]+$"
+    },
+    "schemaVersion": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "organizationId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "establishmentId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uuid"
+    },
+    "correlationId": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "causationId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uuid"
+    },
+    "occurredAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "classification": {
+      "type": "string",
+      "enum": [
+        "PUBLIC",
+        "TENANT_PRIVATE",
+        "PERSONAL",
+        "RESTRICTED"
+      ]
+    },
+    "payloadRef": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 512
+    },
+    "traceId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 128
+    }
+  }
+}
