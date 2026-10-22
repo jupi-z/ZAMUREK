@@ -1,3 +1,5 @@
+> **ARCHIVE HISTORIQUE — ancien xShop.** Ce PRD n'est plus actif pour la nouvelle V1 multi-industries ZAMUREK. Appliquer [Charte produit V1](../v1/PRODUCT-CHARTER.md), [matrice complète](../v1/CAPABILITY-MATRIX.md), [parcours métiers](../v1/BUSINESS-WORKFLOWS.md). Les points contradictoires ci-dessous sont remplacés depuis le 22/10/2026.
+
 # PRD xShop — édition 16 octobre 2026
 
 ## Produit
