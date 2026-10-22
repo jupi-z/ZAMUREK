@@ -21,4 +21,4 @@ ZAMUREK est la nouvelle identité de la plateforme commerciale universelle, mult
 - Ce choix de propriété du code **n'implique pas** que les composants open source tiers deviennent propriétaires ; leurs licences restent applicables.
 - Aucun achat, partenariat LaJoie Mall, nom définitif de domaine ou validation juridique n'est présumé réalisé.
 
-Voir [politique de dépendances](../../docs/governance/OPEN-SOURCE-POLICY.md) et [architecture](../architecture/SYSTEM.md).
+Voir [politique de dépendances](../governance/OPEN-SOURCE-POLICY.md) et [architecture](../architecture/SYSTEM.md).
