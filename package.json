@@ -1,12 +1,13 @@
 {
-  "name": "xshop",
+  "name": "zamurek",
   "private": true,
   "version": "0.0.0",
-  "description": "xShop multi-tenant commerce platform; G0 documentation and scaffold only",
+  "description": "ZAMUREK universal multi-tenant commerce platform — G0 normative V1 specification, no application code yet",
   "scripts": {
     "docs:check": "python3 scripts/validate_docs.py",
+    "scope:check": "python3 scripts/validate_v1_scope.py",
     "contract:check": "python3 scripts/validate_openapi.py",
-    "check": "python3 scripts/validate_docs.py && python3 scripts/validate_openapi.py"
+    "check": "python3 scripts/validate_docs.py && python3 scripts/validate_v1_scope.py && python3 scripts/validate_openapi.py"
   },
   "engines": {
     "node": ">=22"
