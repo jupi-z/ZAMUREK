@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.zamurek.invalid/agent-tools/tool-definition.schema.json",
+  "title": "ZAMUREK Agent Tool Definition Draft",
+  "description": "Policy-enforced tool declaration; cannot grant permissions through tool metadata alone",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "toolId",
+    "version",
+    "riskLevel",
+    "tenantScope",
+    "requiredPermissions",
+    "inputSchema",
+    "outputSchema",
+    "approvalPolicy",
+    "timeoutMs",
+    "idempotency"
+  ],
+  "properties": {
+    "toolId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_]*)+$"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 1000
+    },
+    "riskLevel": {
+      "type": "string",
+      "enum": [
+        "READ_PUBLIC",
+        "READ_TENANT",
+        "DRAFT_WRITE",
+        "SENSITIVE_WRITE",
+        "FORBIDDEN"
+      ]
+    },
+    "tenantScope": {
+      "type": "string",
+      "enum": [
+        "ACTOR_ORGANIZATION",
+        "ACTOR_ESTABLISHMENT",
+        "PUBLIC_ONLY"
+      ]
+    },
+    "requiredPermissions": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "inputSchema": {
+      "type": "object",
+      "description": "JSON Schema validated by runtime"
+    },
+    "outputSchema": {
+      "type": "object",
+      "description": "JSON Schema validated by runtime"
+    },
+    "approvalPolicy": {
+      "type": "string",
+      "enum": [
+        "NONE",
+        "HUMAN_REQUIRED",
+        "DISALLOWED"
+      ]
+    },
+    "timeoutMs": {
+      "type": "integer",
+      "minimum": 100,
+      "maximum": 120000
+    },
+    "idempotency": {
+      "type": "boolean"
+    },
+    "dataClassification": {
+      "type": "string",
+      "enum": [
+        "PUBLIC",
+        "TENANT_PRIVATE",
+        "PERSONAL",
+        "RESTRICTED"
+      ]
+    },
+    "costBudgetMicroUsd": {
+      "type": "integer",
+      "minimum": 0
+    }
+  }
+}
