@@ -1,3 +1,5 @@
+> **SPÉCIFICATION V1 ACTIVE :** [Contrats ZAMUREK universels](../v1/TECHNICAL-CONTRACTS.md) et [OpenAPI ZAMUREK](../../packages/contracts/openapi/zamurek-v1.yaml). Le contrat xShop de boutique seule est historique et ne doit pas guider Codex.
+
 # Contrats API xShop V1 — 16 octobre
 
 ## Base
