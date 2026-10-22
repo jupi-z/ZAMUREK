@@ -4,7 +4,7 @@
 
 **Date : 2026-10-15. Statut : décisions produit validées par le porteur du projet.**
 
-Ce document **prime sur toute ancienne hypothèse contradictoire de G0**. Les documents PRD, architecture et OpenAPI doivent s'y conformer. Les recommandations techniques ci-dessous restent proposées et sont révisables par ADR ; elles ne remplacent pas une validation réglementaire ou d'un prestataire.
+Ce document **primait sur les hypothèses de G0 à sa date** ; il est aujourd'hui **historique et remplacé par [ZAMUREK V1](v1/README.md)** pour tout choix incompatible. Les documents PRD, architecture et OpenAPI doivent s'y conformer. Les recommandations techniques ci-dessous restent proposées et sont révisables par ADR ; elles ne remplacent pas une validation réglementaire ou d'un prestataire.
 
 ## Décisions expressément validées
 
