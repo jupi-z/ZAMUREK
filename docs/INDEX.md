@@ -6,6 +6,7 @@
 - [Charte produit](v1/PRODUCT-CHARTER.md)
 - [Matrice des fonctionnalités](v1/CAPABILITY-MATRIX.md)
 - [Parcours commerce / services](v1/BUSINESS-WORKFLOWS.md)
+- [Prix/poids/arrondi CDF exact](v1/MONETARY-AND-QUANTITY-POLICY.md)
 - [Domaine et isolation multi-établissements](v1/DOMAIN-MODEL.md)
 - [Architecture agentique native](v1/AGENTIC-KERNEL.md)
 - [Contrats techniques et sécurité API](v1/TECHNICAL-CONTRACTS.md)
