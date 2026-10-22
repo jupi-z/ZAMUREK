@@ -6,13 +6,14 @@
 2. [Matrice des 38 capacités](CAPABILITY-MATRIX.md) — engagements de la V1.
 3. [Parcours métiers](BUSINESS-WORKFLOWS.md) — tous les types d'activité et venue.
 4. [Modèle de domaine](DOMAIN-MODEL.md) — agrégats, multi-tenant, établissements.
-5. [Noyau agentique](AGENTIC-KERNEL.md) — sécurité, agents et outils IA dès la fondation.
-6. [Contrats techniques](TECHNICAL-CONTRACTS.md) — API, clients, versionnement.
-7. [Menaces/sécurité](SECURITY-THREAT-MODEL.md) — accès, privacy, anti-abus.
-8. [Risques juridiques](LEGAL-REGULATED-GATES.md) — pharmacie, prix, données.
-9. [Gates de qualité](QUALITY-REQUIREMENTS.md) — P0/P1, tests et preuves.
-10. [Roadmap 0.0.0→1.0.0](RELEASE-GATES.md) — critères de sortie.
-11. [Dossier opérationnel Codex](CODEX-HANDOFF.md) — protocole d'implémentation.
+5. [Politique prix, poids et arrondis exacts](MONETARY-AND-QUANTITY-POLICY.md) — règle CDF_LINE_HALF_UP_V1.
+6. [Noyau agentique](AGENTIC-KERNEL.md) — sécurité, agents et outils IA dès la fondation.
+7. [Contrats techniques](TECHNICAL-CONTRACTS.md) — API, clients, versionnement.
+8. [Menaces/sécurité](SECURITY-THREAT-MODEL.md) — accès, privacy, anti-abus.
+9. [Risques juridiques](LEGAL-REGULATED-GATES.md) — pharmacie, prix, données.
+10. [Gates de qualité](QUALITY-REQUIREMENTS.md) — P0/P1, tests et preuves.
+11. [Roadmap 0.0.0→1.0.0](RELEASE-GATES.md) — critères de sortie.
+12. [Dossier opérationnel Codex](CODEX-HANDOFF.md) — protocole d'implémentation.
 
 Les contrats machine : [capacités](../../spec/v1/capabilities.json), [progression](../../spec/v1/progress-template.json), [fixtures synthétiques](../../spec/v1/fixtures.json), [OpenAPI 3.1 V1](../../packages/contracts/openapi/zamurek-v1.yaml). **Attention : l'OpenAPI est un premier contrat de conception, non un backend prêt ou un schéma définitivement stabilisé.**
 
