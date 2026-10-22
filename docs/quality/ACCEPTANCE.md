@@ -1,3 +1,5 @@
+> **ARCHIVE HISTORIQUE — critères xShop remplacés.** La source officielle est [ZAMUREK QUALITY-REQUIREMENTS](../v1/QUALITY-REQUIREMENTS.md) et [RELEASE-GATES](../v1/RELEASE-GATES.md). Ne pas déclarer V1 complète depuis ce texte ancien.
+
 # Critères d'acceptation xShop — édition 16 octobre 2026
 
 ## G0 documentaire
