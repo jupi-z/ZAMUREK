@@ -1,3 +1,5 @@
+> **ZAMUREK V1 :** La découverte unifiée des commerçants et centres commerciaux est prise en charge par l'application [Discover Android](../discover-android/README.md). Une marketplace transactionnelle multi-vendeurs avec encaissement collectif demeure **hors V1**. L'ancien terme xShop marketplace ci-dessous est historique.
+
 # Marketplace xShop future — hors V1
 
 Application installable, sans site public xShop hébergé. Consentement explicite des commerçants ; index de catalogue public **CDF converti depuis leur base USD et leur taux actif** pour RDC, hors PII. Checkout authentifié mono-boutique par commerce, revalidation devis au taux serveur, commandes isolées en DB tenant. Ne rend pas obsolètes les anciennes applications de boutique.
