@@ -1,27 +1,29 @@
-# Isolation multi-tenant xShop
+# ZAMUREK — isolation multi-tenant et multi-établissement (V1)
 
-**Décision validée : une base PostgreSQL métier par commerçant**, plus registre central. L'identité client globale est un service partagé **séparé**, pas une mise en commun des commandes.
+**Document actif conforme à [DOMAIN-MODEL V1](../v1/DOMAIN-MODEL.md).**
 
-## Registre
-Tenant(id immuable, slug, legalName, status PROVISIONING/ACTIVE/SUSPENDED/FAILED, dbSecretRef, schemaVersion), channels client et marchand, comptes opérateurs/staff/memberships et **globalCustomerIdentity** (phoneE164, vérification, session). Les commandes, adresses, prix et profils locaux restent dans chaque DB tenant.
+## Hiérarchie
+Platform Registry → Organization (tenant commerçant, **sa base PostgreSQL dédiée**) → Establishments (succursales/sites multi-activités dans la même DB), avec `organizationId` validé au routage DB et `establishmentId` validé sur chaque objet et action. Une personne peut avoir des memberships différents par établissement.
 
-## Résolution et autorisation
-- Un canal public permet d'identifier boutique et configuration ; ne prouve pas l'identité.
-- Pour panier/checkout/commande, vérifier **identité authentifiée**, état vérifié si exigé, tenant et **ownership de l'objet**.
-- Pour marchand, membership active et permission tenant ; pour opérateur, rôle plateforme et audit.
-- Chaque client PostgreSQL est ouvert par références du registre et secrets distincts, jamais SQL/host arbitraire depuis des paramètres clients.
-- Pools bornés, cycle de vie éviction, métriques des connexions tenant et protections contre le noisy neighbor. Même serveur PostgreSQL = séparation logique, **pas isolation physique**.
+LaJoie Mall et tout centre commercial éventuel sont représentés comme `Venue` dans le registry avec ses propres niveaux/zones et adhésions **opt-in** ; ils ne deviennent jamais propriétaires de données des entreprises adhérentes.
 
-## Provisioning
-Enregistrer tentatives idempotentes, créer DB + rôle, migrations + seeds minimales, namespace médias, tests de permissions et connexion, rendre ACTIVE seulement après vérification ; reprise/compensation en cas de panne.
+## Registry
+Organizations, DB secret references, établissements metadata minimales, channel app mappings, identity globale **e-mail vérifié, sans SMS**, staff sessions/MFA et venue consent/public discovery metadata. Commandes, rendez-vous, réparations, paiements et données confidentielles résident dans **DB métier de l'organisation**, jamais registry/venue.
 
-## Évolutions
-Versions schema migrées par cohortes, expand/contract et backups par DB. Un tenant ne doit jamais être pointé vers la DB d'un autre. Restoration tenant A sans modifier tenant B et indépendance du registre démontrées avant G4.
+## Résolution et permissions
+- `X-Zamurek-Channel` identifie un canal, **ne prouve pas de droit**.
+- Tenant résolu uniquement après contrôle serveur channel→organization, policy territoriale et actor; DB credentials sélectionnés depuis un registry privé, jamais URL/header client.
+- Contrôle systématique `userId + organizationId + establishmentId + action + objectOwnership + businessCapability` ; clients, employés, agents et venues ne sautent jamais ces vérifications.
+- Opérateur plateforme via VPN/MFA. Aucun outil Agentic Fabric n'accorde des privilèges implicites.
+- SQL tenant credentials et pools séparés/limités ; une DB commune PostgreSQL par organisation est **isolation logique**, pas machine physique dédiée.
 
-## Devises / données
-Une DB contient variant_price CDF/USD et frais zones CDF/USD, commande mono-devise et contact client local, jamais partage inter-tenant. Identité globale permet reconnexion multi-app sans exfiltrer profils/commandes.
+## Provisioning / migrations
+Créer organization idempotente, DB role + DB, appliquer migrations et enregistrements initialisés, contrôle droits, activation seulement après validations. Migrations expand/contract par cohorts, rotation secrets, recovery ciblé et backup registry distinct. Le code supporte plusieurs établissements sous la même organization sans ouvrir une DB par succursale.
 
-## Tests
-Au moins tenants A/B et clients 1/2 du même tenant, opérations lecture/écriture, médias, achat, staff, récupérations, suspensions et restore. Une violation inter-tenant interdit production.
+## Prix et poids
+Catalogue offre/variant stocke **USD source** ; prix CDF dérivé backend via taux commerçant versionné. Aucun double tarif autonome CDF/USD ; *aucun float* pour montants ou grammes. Snapshots immuables commande, quote et établissement. Politique RDC CDF publique jusqu'à validation juridique.
 
-Référence : https://www.postgresql.org/docs/ ; https://owasp.org/API-Security/ .
+## Tests P0
+A→B cross-organization, E1→E2 cross-establishment dans une même org, deux clients d'E1, venue manager→order, agent d'une org→autre org, secret DB et migration, backup A/restauration A sans toucher B. La mise en production est bloquée à la moindre fuite.
+
+Voir [DOMAIN-MODEL](../v1/DOMAIN-MODEL.md), [SECURITY](../v1/SECURITY-THREAT-MODEL.md), [NETWORK](NETWORK-EXPOSURE.md).
