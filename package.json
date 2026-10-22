@@ -7,7 +7,8 @@
     "docs:check": "python3 scripts/validate_docs.py",
     "scope:check": "python3 scripts/validate_v1_scope.py",
     "contract:check": "python3 scripts/validate_openapi.py",
-    "check": "python3 scripts/validate_docs.py && python3 scripts/validate_v1_scope.py && python3 scripts/validate_openapi.py"
+    "check": "python3 scripts/validate_docs.py && python3 scripts/validate_v1_scope.py && python3 scripts/validate_agent_contracts.py && python3 scripts/validate_openapi.py",
+    "agent-contracts:check": "python3 scripts/validate_agent_contracts.py"
   },
   "engines": {
     "node": ">=22"
