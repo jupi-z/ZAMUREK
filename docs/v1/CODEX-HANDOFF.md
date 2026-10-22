@@ -1,5 +1,7 @@
 # Instructions de transfert à Codex — ZAMUREK 0.0.0 → 1.0.0
 
+**Audit GitHub avec corrections prouvées par CI :** [rapport final](FINAL-REPO-AUDIT-2026-10-22.md).
+
 **Première session à lancer :** [prompt Codex phase 0.1.0](CODEX-PHASE-0.1.0-PROMPT.md) et [recette de la phase](PHASE-0.1.0-ACCEPTANCE.md).
 
 **Mission :** transformer le dépôt `jupi-z/ZAMUREK` en système exécutable propriétaire complet, sans implémenter un MVP limité. Ne pas considérer les documents G0 historiques comme source de vérité lorsqu'ils contredisent `docs/v1/*`.
