@@ -1,6 +1,6 @@
 # Nouveau prompt Codex ZAMUREK — client/intégration, PAS nouveau backend
 
-**Statut : document de démarrage conditionnel.** La **première session de développement** doit se dérouler **dans Monarque Connect privé pour la phase 10A.5**, pas dans ZAMUREK. Ce prompt devient applicable **après** stabilisation/test des contrats C0–C3/C6/C7 du Core.
+**Statut : document de démarrage conditionnel.** La **première session de développement** doit se dérouler **dans Monarque Connect privé pour la phase 10A.5**, pas dans ZAMUREK. Ce prompt devient applicable **après** stabilisation/test des contrats C0–C3/C6/C7 du Core. **Le Core doit en outre avoir revu et adopté les frontières Docs/114 sur une PR approuvée ; aucun mock ne peut valider une transaction réelle.**
 
 ## Prompt à copier dans Codex (clone ZAMUREK ouvert)
 
@@ -13,7 +13,7 @@ Lis intégralement docs/decisions/0024-shared-monarque-core-zamurek.md, docs/v1/
 
 Commence par l'inventaire Git/CI, compare chaque fichier hérité à la nouvelle décision, puis planifie une phase 0.1.0 de CLIENTS, SDK/contrats et connexions Core réelles sur scénarios synthétiques. Maintiens UI embarquées React/Capacitor Android avec Kotlin natif, Windows Tauri/Rust, aucun frontend web de production ni secrets serveur dans les clients. Les nouvelles spécialités commerce, restaurant, service, etc. devront ultérieurement utiliser commandes/API du Core, pas réinventer transactions.
 
-POS V1 : terminal, caissier, session, vente walk-in sans e-mail client, cash, rendu monnaie, clôture/écarts, ticket thermique/A4 et fiscalisation réglementaire selon obligations prouvées, **backend dans Core**. Une vente cash confirme commande+payment+cash movement+outbox une seule fois. Ne simule pas fiscalisation DGI. Une venue opt-in ne voit jamais historique financier de ses magasins.
+POS V1 : terminal, caissier, session, vente walk-in sans e-mail client, cash, rendu monnaie, clôture/écarts, ticket thermique/A4 et fiscalisation réglementaire selon obligations prouvées, **backend dans Core**. Une vente cash confirme **SalesOrder+Invoice canonique+PaymentRecord(invoiceId obligatoire)+CashMovement net+Outbox et stock** une seule fois par commande idempotente. Un reçu ou ticket n'est pas une facture fiscale homologuée ; le stockage doit être durable, pas seulement mémoire. Ne simule pas fiscalisation DGI. N'attribue pas de rôle ADMIN/FINANCE général aux caissiers ; respecte permissions POS par action/établissement/session. Conserve le contrat identité métier lors de l'intégration future OIDC/Monarque Auth. `TECH_PASS` n'est pas une autorisation commerciale. Une venue opt-in ne voit jamais historique financier de ses magasins.
 
 Crée docs/implementation/PROGRESS.json et rapport selon preuves vérifiées. Pour chaque tâche : planned/implemented/tested/accepted/blocked + % exact de la phase et progression totale pondérée, tests/exit codes/CI/commit et next action. Teste vraie identité/Core/tenancy à travers API; un mock UI n'est pas PASS financier. Aucun push de secrets/code métier propriétaire dans dépôt public ; PR, pas direct main ; pas de déploiement production ni utilisation marque LaJoie Mall sans accord.
 
