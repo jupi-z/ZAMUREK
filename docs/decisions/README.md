@@ -1,6 +1,6 @@
 # ADR ZAMUREK — registre des décisions
 
-**Règle** : les décisions récentes remplacent les incompatibles ; [arbitrages 2026-10-16](../DECISIONS-VALIDATED-2026-10-16.md) priment.
+**Règle** : pour l'implémentation 0.0.0→1.0.0, [ZAMUREK V1](../v1/README.md) et les ADR-0020→0023 priment sur les décisions historiques xShop. [Arbitrages monétaires antérieurs](../DECISIONS-VALIDATED-2026-10-16.md) restent applicables s'ils ne sont pas contradictoires.
 
 | ADR | Statut |
 |---|---|
@@ -24,5 +24,10 @@
 | [0018 Plan BASIC 7 USD mensuel](0018-basic-seven-usd.md) | **adopté 16/10** |
 
 | [0019 Plateforme propriétaire, briques OSS permissives](0019-proprietary-platform-permissive-oss.md) | **adopté 22/10 — Mercur exclu** |
+
+| [0020 V1 universelle et non MVP](0020-universal-commerce-v1.md) | **adopté 22/10** |
+| [0021 Organisation, établissements et lieu](0021-organization-establishment-venue.md) | **adopté 22/10** |
+| [0022 Agentic Fabric dès les fondations](0022-first-class-agentic-fabric.md) | **adopté 22/10** |
+| [0023 Secteurs réglementés fail-closed](0023-regulated-commerce-fail-closed.md) | **adopté 22/10** |
 
 L'ADR est une décision de conception, non une preuve d'exécution.
