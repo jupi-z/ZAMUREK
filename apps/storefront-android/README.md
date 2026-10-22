@@ -1,3 +1,5 @@
+> **ZAMUREK V1 :** App acheteur multi-activité (retail, poids, restaurant, salon, devis, réparation, pharmacie autorisée) ; lire [Parcours métiers](../../docs/v1/BUSINESS-WORKFLOWS.md), [V1](../../docs/v1/PRODUCT-CHARTER.md) et [Android](../../docs/architecture/ANDROID.md). L'ancien descriptif boutique xShop ci-dessous est historique, pas une limite actuelle.
+
 # Acheteur Android xShop — G0 non implémenté
 
 React/Vite/TypeScript UI **embarquée**, Capacitor bridge, **Kotlin** réseau/cache/sessions. Compte acheteur obligatoire **e-mail + mot de passe vérifié, zéro SMS**. Catalogue sur boutique, produit USD interne mais **prix public CDF** converti par serveur via taux marchand, panier, quoteId CDF, confirmation checkout et historique authentifié.
