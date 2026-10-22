@@ -1,0 +1,203 @@
+{
+  "schemaVersion": "1.0",
+  "suite": "ZAMUREK synthetic E2E personas",
+  "purpose": "No real customer, merchant or venue details; seed for G1-G4 tests",
+  "fx": {
+    "configuredMerchantUsdToCdf": "2360",
+    "note": "Fixture value; not current BCC rate"
+  },
+  "venue": {
+    "name": "Zamurek Demo Plaza",
+    "fictional": true,
+    "location": "Kolwezi, DRC",
+    "membership": "OPT_IN",
+    "memberOrganizationIds": [
+      "org-retail",
+      "org-food",
+      "org-service",
+      "org-weighted",
+      "org-furniture",
+      "org-repair",
+      "org-pharmacy"
+    ]
+  },
+  "organizations": [
+    {
+      "id": "org-retail",
+      "name": "Demo Mode Atelier",
+      "capabilities": [
+        "RETAIL"
+      ],
+      "establishments": [
+        {
+          "id": "est-retail-a",
+          "name": "Boutique A"
+        },
+        {
+          "id": "est-retail-b",
+          "name": "Boutique B"
+        }
+      ],
+      "offers": [
+        {
+          "kind": "PRODUCT",
+          "label": "Pagne de démonstration",
+          "priceUsdMinor": 1200,
+          "available": true
+        }
+      ]
+    },
+    {
+      "id": "org-weighted",
+      "name": "Demo Chocolat Gram",
+      "capabilities": [
+        "WEIGHTED"
+      ],
+      "establishments": [
+        {
+          "id": "est-weighted"
+        }
+      ],
+      "offers": [
+        {
+          "kind": "WEIGHTED_PRODUCT",
+          "label": "Chocolat au poids",
+          "basePriceUsdMinorPerKg": 2000,
+          "minGrams": "50",
+          "stepGrams": "1",
+          "sampleGrams": "125",
+          "sampleTotalCdf": "5900"
+        }
+      ]
+    },
+    {
+      "id": "org-food",
+      "name": "Demo Pizzeria",
+      "capabilities": [
+        "FOOD"
+      ],
+      "establishments": [
+        {
+          "id": "est-food",
+          "tables": 3
+        }
+      ],
+      "offers": [
+        {
+          "kind": "PREPARED_FOOD",
+          "label": "Pizza classique",
+          "basePriceUsdMinor": 1000,
+          "modifiers": [
+            {
+              "name": "Supplément fromage",
+              "priceUsdMinor": 150
+            }
+          ],
+          "sampleCdfWithAddon": "27140"
+        }
+      ]
+    },
+    {
+      "id": "org-service",
+      "name": "Demo Salon",
+      "capabilities": [
+        "SERVICES"
+      ],
+      "establishments": [
+        {
+          "id": "est-salon"
+        }
+      ],
+      "offers": [
+        {
+          "kind": "SCHEDULED_SERVICE",
+          "label": "Coiffure classique",
+          "durationMinutes": 45,
+          "bufferMinutes": 15,
+          "basePriceUsdMinor": 600,
+          "sampleCdf": "14160"
+        }
+      ]
+    },
+    {
+      "id": "org-furniture",
+      "name": "Demo Meubles",
+      "capabilities": [
+        "FURNITURE"
+      ],
+      "establishments": [
+        {
+          "id": "est-furniture"
+        }
+      ],
+      "offers": [
+        {
+          "kind": "QUOTED_GOOD",
+          "label": "Armoire sur mesure",
+          "requiresQuote": true,
+          "sampleQuoteBaseUsdMinor": 30000,
+          "sampleCdf": "708000"
+        }
+      ]
+    },
+    {
+      "id": "org-repair",
+      "name": "Demo Electronique",
+      "capabilities": [
+        "REPAIRS"
+      ],
+      "establishments": [
+        {
+          "id": "est-repair"
+        }
+      ],
+      "offers": [
+        {
+          "kind": "REPAIR_SERVICE",
+          "label": "Diagnostic laptop",
+          "requiresConsent": true,
+          "basePriceUsdMinor": 1500,
+          "sampleCdf": "35400"
+        }
+      ]
+    },
+    {
+      "id": "org-pharmacy",
+      "name": "Demo Officine Nonmedical",
+      "capabilities": [
+        "PHARMACY"
+      ],
+      "establishments": [
+        {
+          "id": "est-pharmacy"
+        }
+      ],
+      "offers": [
+        {
+          "kind": "REGULATED_GOOD",
+          "label": "Produit soumis à ordonnance fictif",
+          "classification": "PRESCRIPTION_REQUIRED",
+          "transactionStatus": "BLOCKED"
+        },
+        {
+          "kind": "PRODUCT",
+          "label": "Savon de démonstration",
+          "classification": "NON_MEDICINAL",
+          "transactionStatus": "CONDITIONAL_ON_MERCHANT_PERMISSION",
+          "basePriceUsdMinor": 100
+        }
+      ]
+    }
+  ],
+  "negativeTests": [
+    "tenant A cannot view tenant B order",
+    "establishment A staff cannot edit B menu",
+    "venue manager cannot read repair customer PII",
+    "same staff/time double booking denied",
+    "expired FX quote denied",
+    "user message with prompt injection cannot execute merchant price update",
+    "blocked prescription item cannot checkout",
+    "network offline cannot confirm POS sale"
+  ],
+  "expectedFirstRunProgress": 0
+}
