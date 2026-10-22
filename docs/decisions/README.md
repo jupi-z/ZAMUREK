@@ -1,4 +1,4 @@
-# ADR xShop — registre des décisions
+# ADR ZAMUREK — registre des décisions
 
 **Règle** : les décisions récentes remplacent les incompatibles ; [arbitrages 2026-10-16](../DECISIONS-VALIDATED-2026-10-16.md) priment.
 
@@ -22,5 +22,7 @@
 | [0016 Pas de SMS / e-mail auth](0016-no-sms-auth.md) | **adopté 16/10** |
 | [0017 Exposition réseau minimale](0017-minimum-exposure.md) | **adopté 16/10** |
 | [0018 Plan BASIC 7 USD mensuel](0018-basic-seven-usd.md) | **adopté 16/10** |
+
+| [0019 Plateforme propriétaire, briques OSS permissives](0019-proprietary-platform-permissive-oss.md) | **adopté 22/10 — Mercur exclu** |
 
 L'ADR est une décision de conception, non une preuve d'exécution.
