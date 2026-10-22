@@ -1,14 +1,13 @@
-# White label — applications xShop installables
+# ZAMUREK — identités commerciales et canaux installables
 
-Nom **xShop provisoire**, thème et nom des APK personnalisés par commerçant, tous bâtis depuis un code commun. Canaux via registry, package ID distinct, signatures isolées, build reproductible ; aucune clé serveur embarquée.
+ZAMUREK peut générer **une APK acheteur personnalisée par commerçant**, ainsi qu'une APK générale `ZAMUREK Discover` incluant une vue lieu/centre commercial autorisé. L'identité LaJoie Mall n'est **pas** présumée autorisée : pas d'utilisation sans contrat/licence de marque.
 
-## Flux
-Chaque app Android client React UI + Capacitor/Kotlin affiche les **prix commerciaux CDF** fournis par API en RDC, même si le catalogue source USD est commun et le taux marchand configurable. Pas de sélecteur USD public en RDC sans validation du droit applicable. Android marchand distinct, gestion prix USD / taux versionné.
+Chaque canal possède package ID/signature/config/thème/assets/translations versionnés, établit la correspondance organisation/établissement/venue via registry, **ne prouve jamais identité ni autorisation à lui seul**.
 
-## Distribution
-APK interne pour tests puis, si approprié, chaque commerçant publie sous **son compte Google Play** ; règles sur apps répétitives à vérifier. Pas de fork backend, pas de portail web xShop. Clients Windows EXE/MSI pour rôles concernés, React embarqué + Tauri/Rust.
+Clients V1 : Android acheteur marque, Android marchand, Android Discover/venue ; Windows marchand et opérateur via React UI embarquée et Tauri/Rust, Windows opérateur VPN+MFA. Toute interface est installable ; **jamais de frontend HTML hébergé en production**.
 
-## Sécurité
-AppId/channelId public jamais preuve d'autorisation ; session, permissions tenant et identité côté serveur. Aucune donnée DB, clef de signature et credential privillégié dans APK. Toutes les versions anciennes supportées par stratégie de dépréciation explicite.
+Le catalogue/public RDC reçoit prix CDF du backend depuis l'USD/taux marchand ; fonctionnalités par `CapabilityProfile` (retail, weight, food, service, furniture, repair, pharmacy autorisée) avec composantes UI communes et modules spécifiques. Checkout toujours mono-vendeur ; le canal venue ne fusionne pas DB commerciales.
 
-Voir [clients installables](CLIENTS-DEPLOYMENT.md), [FX](FX-PRICING.md), [réseau](NETWORK-EXPOSURE.md).
+Google Play : publication dépend des comptes éditeurs et des règles sur les applications répétitives ; aucun app store n'est présumé approuvé. Aucun secret backend, clé privée, token privilégié ou DB credentials dans APK/EXE.
+
+Voir [charte V1](../v1/PRODUCT-CHARTER.md), [clients](CLIENTS-DEPLOYMENT.md), [tenancy](TENANCY.md).
