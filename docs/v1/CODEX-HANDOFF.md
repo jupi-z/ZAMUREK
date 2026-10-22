@@ -13,7 +13,7 @@
 8. `docs/v1/RELEASE-GATES.md`
 9. `docs/v1/TECHNICAL-CONTRACTS.md`
 10. `docs/governance/OPEN-SOURCE-POLICY.md`, `docs/legal/RDC-INITIAL-REVIEW.md`
-11. `spec/v1/capabilities.json`, `spec/v1/progress-template.json` et `packages/contracts/openapi/zamurek-v1.yaml`.
+11. `spec/v1/capabilities.json`, `spec/v1/progress-template.json` et `spec/v1/fixtures.json`, `packages/contracts/openapi/zamurek-v1.yaml`, `packages/contracts/events/event-envelope.schema.json` et `packages/contracts/agent-tools/tool-definition.schema.json`.
 
 ## Règles absolues
 - **Ne jamais bâtir sur Mercur/Medusa/Saleor/Vendure/ERPNext/Frappe ni autre moteur de commerce**, et ne pas forker de plateforme concurrente ; noyau métier, IA, API et tenancy propriétaires. Autoriser frameworks génériques et packages permissifs audités licence/transitives.
