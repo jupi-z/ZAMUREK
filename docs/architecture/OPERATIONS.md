@@ -1,13 +1,12 @@
-# ZAMUREK — exploitation API-only, tests et restauration
+# ZAMUREK — opérations et CI sur la plateforme Core Monarque Connect
 
-**Plan normatif, infrastructure non déployée.** VPS existant et domaines `shuleops.com` proposés, capacités/DNS non inspectés : noms candidats `zamurek-api-test.shuleops.com` et `zamurek-api.shuleops.com`.
+**Planifié ; aucun serveur ZAMUREK autonome à déployer.** API de production ZAMUREK exposée via **backend propriétaire Monarque Connect privé** et ses workers, PostgreSQL et stockage commun. Les noms de domaine précédemment proposés sous `shuleops.com` ne sont que des hypothèses, non réservés ni configurés.
 
-- Production : NestJS REST API/worker, PostgreSQL registry + DB commerciale **par organisation**, stockage média contrôlé, accès secrets et supervision privés. **Aucun frontend hébergé**, y compris admin/Swagger UI.
-- Internet : routes d'identité, catalogue, rendez-vous/commandes selon auth, commerce marchand protégé. `/platform/v1/*` **VPN + MFA**, DB/SSH/métriques/backup hors Internet.
-- Staging et prod isolés avec clés/données distinctes. Synthétique pour toutes les 7 familles métier ; aucune donnée client réel en démo.
-- Migrations expand/contract avec versionnement par org et compatibilité anciennes applications ; pool DB borné et éviction, provisioning idempotent.
-- Backups chiffrés registry et DB séparées, restauration tenant A sans altérer B ; RPO/RTO et politique conservation à négocier avant production, **jamais inventés**.
-- SLO latence, disponibilité, quotas IA, coûts SMTP/LLM, observabilité et support mesurés avant lancement.
-- Signature APK/Windows, pipelines CI, SBOM/licences, rotation secrets et journalisation anonymisée sont gates 1.0.0.
+- Clients installables Android (buyer/merchant/discovery) et Windows (marchand/POS/opérateur), aucune SPA, PWA, SSR, Swagger UI ou console admin web publiquement hébergée pour ZAMUREK.
+- Routes publiques limités par auth/scopes/Core entitlements, administration plateforme via VPN+MFA, bases, secrets, backups, metrics internes au réseau privé. `X-Zamurek-Channel` ne contourne jamais authorization.
+- Les workflows GitHub ZAMUREK valident docs/contrats/client builds ; les tests du Core s'exécutent dans repo privé Monarque Connect. Contrat `coreCommitSha+contractVersion` verrouillé et vérifié entre deux CI avant release.
+- Staging avec données synthétiques : deux org, deux établissements, deux acheteurs, caissiers/mall manager et un client POS walk-in ; pas de données réelles en public.
+- Monarque Core seul et ZAMUREK activé sur la même org doivent fonctionner sans casser quote→order→invoice. Sauvegardes/restauration/export **logiques par organisation** sont des gates à démontrer.
+- Facture normalisée DGI, droits pharma, marque LaJoie Mall et paiement réel sont des **gates externes non acquis**.
 
-Voir [topologie](NETWORK-EXPOSURE.md), [recette](../v1/QUALITY-REQUIREMENTS.md), [domaine](../v1/DOMAIN-MODEL.md).
+Références : [Network](NETWORK-EXPOSURE.md), [roadmap](../v1/INTEGRATION-ROADMAP.md), [gates](../v1/QUALITY-REQUIREMENTS.md).
