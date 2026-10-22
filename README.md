@@ -37,13 +37,14 @@ ZAMUREK est une plateforme commerciale et de services **100 % propriétaire**, m
 6. [Gates 0.0.0 → 1.0.0](docs/v1/RELEASE-GATES.md)
 7. [Critères de qualité](docs/v1/QUALITY-REQUIREMENTS.md)
 8. [Contrat OpenAPI brouillon](packages/contracts/openapi/zamurek-v1.yaml)
-9. [Manifeste V1 contrôlable](spec/v1/capabilities.json) et [progression Codex](spec/v1/progress-template.json)
+9. [Manifeste V1 contrôlable](spec/v1/capabilities.json) et [progression Codex](spec/v1/progress-template.json), [fixtures synthétiques](spec/v1/fixtures.json)
 10. [**Dossier pour Codex**](docs/v1/CODEX-HANDOFF.md)
 
 ## Vérifications de conception
 ```bash
 python3 scripts/validate_docs.py
 python3 scripts/validate_v1_scope.py
+python3 scripts/validate_agent_contracts.py
 python3 -m pip install -r scripts/requirements-docs.txt
 python3 scripts/validate_openapi.py
 ```
