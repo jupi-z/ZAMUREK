@@ -3,7 +3,7 @@
 **NOUVELLE recette normative du 22/10/2026, remplace l'ancien plan de recréation du backend**. Statut : PLANNED, **0 % vérifié**. Lire [ADR-0024](../decisions/0024-shared-monarque-core-zamurek.md), [intégration](SHARED-CORE-INTEGRATION.md) et [POS](POS-AND-FISCAL-DOCUMENTS.md).
 
 ## Dépendance bloquante
-- `Monarque-Connect` privé doit publier des contrats testables de **phase 10A.5 C0–C3/C6/C7** et CI succès, identifiant SHA de l'OpenAPI canonique. En attendant, travailler sur apps/layouts et clients synthétiques mais ne pas clôturer 0.1.0.
+- Avant de commencer 0.1.0, Monarque Connect doit clôturer techniquement 10A.5, 10B, 11, 11.5 et 12, preuves des gates et CI post-fusion verte à l'appui. Le SHA/version des contrats OpenAPI canoniques doit être attesté. Avant ce jalon, seul le cadrage documentaire et la revue des contrats inter-dépôts sont autorisés; aucun code client, SDK ou intégration runtime. C0–C3/C6/C7 restent des prérequis d'intégration, pas une autorisation de démarrer plus tôt.
 - C4–C5 seront nécessaires pour la recette complète POS/vente comptoir 0.2.0, pas pour compiler le shell Android initial.
 
 ## À réaliser **dans ZAMUREK**

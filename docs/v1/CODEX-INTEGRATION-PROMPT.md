@@ -1,13 +1,13 @@
 # Nouveau prompt Codex ZAMUREK — client/intégration, PAS nouveau backend
 
-**Statut : document de démarrage conditionnel.** La **première session de développement** doit se dérouler **dans Monarque Connect privé pour la phase 10A.5**, pas dans ZAMUREK. Ce prompt devient applicable **après** stabilisation/test des contrats C0–C3/C6/C7 du Core. **Le Core doit en outre avoir revu et adopté les frontières Docs/114 sur une PR approuvée ; aucun mock ne peut valider une transaction réelle.**
+**Statut : document de démarrage conditionnel.** Toute la séquence technique Monarque Connect (10A.5, 10B, 11, 11.5 et 12) doit être clôturée avec ses gates et une CI post-fusion verte avant toute session de code dans ZAMUREK. D'ici là, les travaux restent dans le dépôt Monarque Connect et les seules activités permises côté ZAMUREK sont la documentation normative et la revue de contrats inter-dépôts. C0–C3/C6/C7 gelés sont nécessaires à l'intégration mais ne constituent pas une autorisation anticipée de coder. **Le Core doit en outre avoir revu et adopté ses frontières sur des PR approuvées ; aucun mock ne peut valider une transaction réelle.**
 
 ## Prompt à copier dans Codex (clone ZAMUREK ouvert)
 
 ```text
 Tu es chargé de développer les applications et intégrations ZAMUREK du dépôt https://github.com/jupi-z/ZAMUREK déjà cloné et ouvert dans ton environnement.
 
-IMPORTANT : ZAMUREK est un PRODUIT commercial omnicanal propriétaire dont le backend canonique est MONARQUE CONNECT, dépôt privé https://github.com/jupi-z/Monarque-Connect. Ne recrée PAS de second backend NestJS/Prisma, aucun registry, base PostgreSQL dédiée par commerçant, moteur indépendant Sales/Invoices/Payments/Cash/Billing ni second Agentic Fabric. Avant de travailler, vérifie que le Core phase 10A.5 a stabilisé C0–C3/C6/C7, donne les SHA des contrats API; à défaut, réalise seulement les parties clients/contrats synthétiques sans prétendre que les ventes fonctionnent et marque l'intégration BLOCKED.
+IMPORTANT : ZAMUREK est un PRODUIT commercial omnicanal propriétaire dont le backend canonique est MONARQUE CONNECT, dépôt privé https://github.com/jupi-z/Monarque-Connect. Ne recrée PAS de second backend NestJS/Prisma, aucun registry, base PostgreSQL dédiée par commerçant, moteur indépendant Sales/Invoices/Payments/Cash/Billing ni second Agentic Fabric. Avant de travailler dans le dépôt ZAMUREK, vérifie que Monarque Connect a terminé 10A.5, 10B, 11, 11.5 et 12, avec SHA de clôture et CI post-fusion verte, puis confirme les contrats API canoniques. Avant cette preuve, ne réalise aucun code client; seules les mises à jour documentaires et la revue de contrats sont permises, et l'intégration reste BLOCKED.
 
 Lis intégralement docs/decisions/0024-shared-monarque-core-zamurek.md, docs/v1/SHARED-CORE-INTEGRATION.md, docs/v1/POS-AND-FISCAL-DOCUMENTS.md, docs/v1/INTEGRATION-ROADMAP.md, docs/v1/PHASE-0.1.0-ACCEPTANCE.md, docs/v1/PRODUCT-CHARTER.md, docs/v1/CAPABILITY-MATRIX.md, docs/v1/RELEASE-GATES.md, docs/v1/AGENTIC-KERNEL.md, docs/v1/QUALITY-REQUIREMENTS.md, spec/v1/capabilities.json et spec/v1/progress-template.json.
 

@@ -34,10 +34,10 @@ La même organisation peut détenir l'offre ZAMUREK seule, Monarque Connect seul
 Les routes `/v1/*` du `packages/contracts/openapi/zamurek-v1.yaml` sont un brouillon pré-convergence. Pour runtime réel, adopter **`/api/v1` Monarque Connect** et éviter les conflits d'identité, de pricing et de permissions. Les fonctionnalités publiques ZAMUREK doivent être des endpoints distincts à droits réduits, jamais exposer directement l'API financière staff à des jetons acheteur. Les API/DTO historiques Monarque Connect sont rétrocompatibles.
 
 ## Phasage / dépendances
-1. Monarque Connect 10A.5 C0→C3 et C6/C7 : interface/stabilité contractuelle.
-2. ZAMUREK 0.1.0 : socle client installable, SDK/types contractuels, faux commerçants, tests d'intégration réels sur les endpoints disponibles, jamais duplicate Prisma service.
-3. Monarque Connect 10A.5 C4/C5 : POS, cash atomique, documents print/fiscaux ; ZAMUREK réalise interface imprimeur et E2E.
-4. 10B partagé → 11/11.5 → produits sectoriels complets → release 12/Core et ZAMUREK 1.0.0 sous gates séparés.
+1. Monarque Connect 10A.5 C0→C8 : audit, contrats, migrations et backend Core complet, sans démarrer de code ZAMUREK.
+2. Monarque Connect 10B, 11 et 11.5 : livrer et prouver l'intelligence gouvernée, le Control Plane et l'Agent Readiness dans le Core.
+3. Monarque Connect Phase 12 : hardening, compatibilité, sécurité, charge, sauvegarde/restauration et CI post-fusion; clôturer tous les gates techniques du Core.
+4. Après cette clôture seulement, démarrer ZAMUREK 0.1.0 (clients/SDK/intégration), puis poursuivre ses verticales et releases; C0–C3/C6/C7 et C4/C5 restent les contrats d'intégration et de POS requis.
 
 ## Gate de développement
 Aucun travail ne peut être déclaré terminé si non testé sur le vrai Core. Mock API n'est acceptable que pour UI provisoire, **pas** comme preuve de transaction financière ni de release. CI et tests Core devront fournir commit SHA, version du contrat, logs des cases multi-tenant et progression vérifiée.

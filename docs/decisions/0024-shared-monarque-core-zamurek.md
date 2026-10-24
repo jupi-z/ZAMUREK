@@ -21,6 +21,6 @@
 Le backend commun reste privé, API-only pour les clients ZAMUREK. Aucune SPA/SSR/portail marchand web ZAMUREK hébergé ; apps installables. LaJoie Mall n'est pas un partenariat acquis. Aucun Mercur/Medusa/Saleor, ERPNext/Frappe ; briques permissives vérifiées seulement. Facture normalisée DGI et pharmacie réglementée nécessitent validations/solutions officiellement autorisées ; pas de faux codes ou autorisations.
 
 ## Dépendances
-**Avant Codex ZAMUREK 0.1.0** : obtenir la phase 10A.5 **C0–C3/C6/C7** du Core ou interfaces partagées testables ; ne pas suivre l'ancien prompt autonome. **Avant vente/POS réelle** : C4–C5 Core prouvés, sécurité et gates juridiques.
+**Avant tout code Codex ZAMUREK (0.1.0 et suivants)** : clôturer techniquement Monarque Connect 10A.5, 10B, 11, 11.5 et 12, avec gates prouvés et CI post-fusion verte. D'ici là, seules la documentation et la revue de contrats inter-dépôts sont autorisées. Les contrats Core C0–C3/C6/C7 gelés restent un prérequis d'intégration, non un feu vert anticipé. **Avant vente/POS réelle** : C4–C5 Core prouvés, sécurité et gates juridiques.
 
 Voir [intégration](../v1/SHARED-CORE-INTEGRATION.md), [POS](../v1/POS-AND-FISCAL-DOCUMENTS.md), [roadmap](../v1/RELEASE-GATES.md).
