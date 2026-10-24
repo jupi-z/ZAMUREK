@@ -1,6 +1,6 @@
 # ZAMUREK V1 — architecture normative d'intégration à Monarque Connect
 
-**Statut : spécification de convergence ; aucune connexion runtime livrée.** Le Core dans le dépôt privé `https://github.com/jupi-z/Monarque-Connect` possède déjà NestJS/Prisma/PostgreSQL et des modules Sales, Cash, Billing, Items, Tenancy, Event Fabric. ZAMUREK ne les duplique pas.
+**Statut : spécification de convergence ; aucune connexion runtime livrée.** Le Core dans le dépôt privé `https://github.com/jupi-z/Monarque-Connect` possède déjà NestJS/Prisma/PostgreSQL et des modules Sales, Cash, Billing, Items, Tenancy, Event Fabric. ZAMUREK ne les duplique pas. **Consulter l'ADR-039 et Docs/114 (PR Core #152) avant toute implémentation : ce cadrage n'est ni fusionné ni implémenté.**
 
 ## Séparation des responsabilités
 | Source canonique | Détient / modifie | Dépôt |
@@ -13,6 +13,9 @@
 La même organisation peut détenir l'offre ZAMUREK seule, Monarque Connect seule ou les deux. **Une seule instance métier et un seul historique canonique**, sans réplication bidirectionnelle ventes/argent.
 
 ## Données et sécurité
+- La fédération future d'authentification Monarque Auth/OIDC ne change pas l'identité métier interne et les droits Core ; distinguer principals BUYER/STAFF/AGENT, aucun rôle staff via e-mail/checkout. `X-Zamurek-Channel` et le choix produit ne constituent jamais une autorisation. Chaque staff POS possède action, établissement et terminal/session autorisés ; pas de rôle global FINANCE/ADMIN pour contourner la caisse.
+- ZAMUREK-only et Monarque-Connect-only ont des souscriptions isolées par `productCode`. Une activation ZAMUREK n'ouvre aucun endpoint métier ERP hors ses commandes POS bornées, et la suspension d'un produit ne supprime pas l'autre.
+
 - `organizationId` vérifié serveur ; `establishmentId` + actor + objectOwner et permissions à chaque commande ; shared PostgreSQL Core, pas de connexion tenant DB depuis client.
 - Client web/app acheteur ZAMUREK s'authentifie par e-mail pour checkout, mais **ne devient pas staff/membership**. Vente POS `walk-in` ne requiert pas d'inscription acheteur ; identité obligatoire du caissier.
 - `Venue` publie seulement données consenties, sans lecture finances/PII même pour gestionnaire du mall. Commandes **mono-vendeur**.
@@ -20,7 +23,9 @@ La même organisation peut détenir l'offre ZAMUREK seule, Monarque Connect seul
 - Aucun traitement d'ordonnance pharmaceutique non autorisée ; actes règlementés fail-closed.
 
 ## Transactions et événements
-- Checkout online/POS passe par use cases canoniques : quote autorisée → commande avec `origin` → facture/reçu selon juridiction → tender PaymentRecord → CashMovement si cash → outbox. **Atomicité transactionnelle pour tous les effets financiers internes** ; aucun success client tant que commit cohérent non obtenu.
+- Opérations PSP et impression **hors transaction SQL**, avec validation webhook signée/intent durable pour les fonds externes ; commande cash atomique interne et idempotente, stock et contrôle de caisse revalidés dans la transaction. L'adaptateur de documents doit être persistant/chiffré et audité avant toute exploitation POS réelle : le stockage mémoire du Core reste test-only.
+
+- Checkout online/POS passe par use cases canoniques : quote autorisée → SalesOrder avec `origin` → **Invoice canonique interne** → PaymentRecord (lien Invoice obligatoire) → CashMovement **net** si espèces → Outbox ; reçu/tax invoice sont des documents distincts de la pièce interne selon fiscalité. **Atomicité transactionnelle pour tous les effets financiers internes** ; aucun success client tant que commit cohérent non obtenu.
 - `Item` demeure générique, `offering` et spécificités métiers = profils étendus, pas un deuxième catalogue autonome. Prix source USD uniquement sur politiques d'offres ZAMUREK, préserver devise Monarque Connect existante.
 - Événements ZAMUREK suivent Event Fabric canonique de Monarque Connect avec tenant/scope/provenance, pas enveloppe concurrente. AI agents utilisent les tool handlers du Core.
 - App POS connectée V1 ; hors-ligne transactionnel hors V1 (l'UI peut présenter dernier catalogue mais **ne confirme jamais une vente offline**).
@@ -29,10 +34,10 @@ La même organisation peut détenir l'offre ZAMUREK seule, Monarque Connect seul
 Les routes `/v1/*` du `packages/contracts/openapi/zamurek-v1.yaml` sont un brouillon pré-convergence. Pour runtime réel, adopter **`/api/v1` Monarque Connect** et éviter les conflits d'identité, de pricing et de permissions. Les fonctionnalités publiques ZAMUREK doivent être des endpoints distincts à droits réduits, jamais exposer directement l'API financière staff à des jetons acheteur. Les API/DTO historiques Monarque Connect sont rétrocompatibles.
 
 ## Phasage / dépendances
-1. Monarque Connect 10A.5 C0→C3 et C6/C7 : interface/stabilité contractuelle.
-2. ZAMUREK 0.1.0 : socle client installable, SDK/types contractuels, faux commerçants, tests d'intégration réels sur les endpoints disponibles, jamais duplicate Prisma service.
-3. Monarque Connect 10A.5 C4/C5 : POS, cash atomique, documents print/fiscaux ; ZAMUREK réalise interface imprimeur et E2E.
-4. 10B partagé → 11/11.5 → produits sectoriels complets → release 12/Core et ZAMUREK 1.0.0 sous gates séparés.
+1. Monarque Connect 10A.5 C0→C8 : audit, contrats, migrations et backend Core complet, sans démarrer de code ZAMUREK.
+2. Monarque Connect 10B, 11 et 11.5 : livrer et prouver l'intelligence gouvernée, le Control Plane et l'Agent Readiness dans le Core.
+3. Monarque Connect Phase 12 : hardening, compatibilité, sécurité, charge, sauvegarde/restauration et CI post-fusion; clôturer tous les gates techniques du Core.
+4. Après cette clôture seulement, démarrer ZAMUREK 0.1.0 (clients/SDK/intégration), puis poursuivre ses verticales et releases; C0–C3/C6/C7 et C4/C5 restent les contrats d'intégration et de POS requis.
 
 ## Gate de développement
 Aucun travail ne peut être déclaré terminé si non testé sur le vrai Core. Mock API n'est acceptable que pour UI provisoire, **pas** comme preuve de transaction financière ni de release. CI et tests Core devront fournir commit SHA, version du contrat, logs des cases multi-tenant et progression vérifiée.

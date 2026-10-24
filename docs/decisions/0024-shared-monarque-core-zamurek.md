@@ -1,8 +1,11 @@
 # ADR-0024 — ZAMUREK, produit commercial adossé au Core Monarque Connect
 
-**Statut : ADOPTÉ en principe par le propriétaire le 22/10/2026, implémentation NON COMMENCÉE.** Remplace pour la V1 les clauses des anciens documents ZAMUREK exigeant un backend commercial distinct et **une DB PostgreSQL par organisation**. Complément côté backend privé : [ADR-039 Monarque Connect](https://github.com/jupi-z/Monarque-Connect/blob/main/Docs/104_ADR_039_SHARED_COMMERCE_CORE_ZAMUREK.md), à fusionner avant utilisation. Le lien main ne prouve pas encore la fusion.
+**Statut : ADOPTÉ en principe par le propriétaire le 22/10/2026, implémentation NON COMMENCÉE.** Remplace pour la V1 les clauses des anciens documents ZAMUREK exigeant un backend commercial distinct et **une DB PostgreSQL par organisation**. Complément côté backend privé : [ADR-039 Monarque Connect](https://github.com/jupi-z/Monarque-Connect/blob/main/Docs/104_ADR_039_SHARED_COMMERCE_CORE_ZAMUREK.md), à fusionner avant utilisation. Le lien main ne prouve pas encore la fusion. **Annexe technique normative du Core : [Docs/114 — boundaries](https://github.com/jupi-z/Monarque-Connect/blob/planning/phase-10a5-zamurek-convergence/Docs/114_PHASE_10A5_BOUNDARY_INVARIANTS.md), actuellement en revue PR #152, non implémentée.**
 
 ## Décisions normatives
+
+**Garde-fous croisés (non négociables)** : identité staff/BUYER/AGENT séparée et future fédération OIDC/Monarque Auth sans migration de userId forcée ; une souscription active par produit, sans reprise ou élévation automatique de droits FairScale ; paiement POS via SalesOrder→Invoice canonique→PaymentRecord(invoiceId obligatoire)→CashMovement si espèces→Outbox, sans nouveau ledger ; permissions de caisse par commande et établissement. Validation des frontières Core avant Codex de la V1 ZAMUREK.
+
 1. **Monarque Connect** est le Core partagé **propriétaire** pour Identity, RBAC, Organizations, Establishments, Product Entitlements/FairScale, Item/catalogue, price/FX command service, SalesOrder/Invoice/PaymentRecord/CashAccount/CashMovement, Event Fabric, AI Gateway/Agent Runtime et fiscal documents.
 2. **ZAMUREK** est une identité **commerciale indépendante**, ses apps Android/Windows, son expérience découverte/mall opt-in et ses verticales (vente au poids, restauration, salon, meubles/devis, électronique-réparation, articles pharmaceutiques autorisés).
 3. Les domaines métiers spécifiques qui nécessitent transactions et verrouillages avec les domaines Core sont développés en **modules NestJS isolés du backend privé Monarque Connect**, jamais comme duplication d'une DB/backend financier public chez ZAMUREK. Les contrats et applications clients peuvent rester dans le dépôt ZAMUREK.
@@ -18,6 +21,6 @@
 Le backend commun reste privé, API-only pour les clients ZAMUREK. Aucune SPA/SSR/portail marchand web ZAMUREK hébergé ; apps installables. LaJoie Mall n'est pas un partenariat acquis. Aucun Mercur/Medusa/Saleor, ERPNext/Frappe ; briques permissives vérifiées seulement. Facture normalisée DGI et pharmacie réglementée nécessitent validations/solutions officiellement autorisées ; pas de faux codes ou autorisations.
 
 ## Dépendances
-**Avant Codex ZAMUREK 0.1.0** : obtenir la phase 10A.5 **C0–C3/C6/C7** du Core ou interfaces partagées testables ; ne pas suivre l'ancien prompt autonome. **Avant vente/POS réelle** : C4–C5 Core prouvés, sécurité et gates juridiques.
+**Avant tout code Codex ZAMUREK (0.1.0 et suivants)** : clôturer techniquement Monarque Connect 10A.5, 10B, 11, 11.5 et 12, avec gates prouvés et CI post-fusion verte. D'ici là, seules la documentation et la revue de contrats inter-dépôts sont autorisées. Les contrats Core C0–C3/C6/C7 gelés restent un prérequis d'intégration, non un feu vert anticipé. **Avant vente/POS réelle** : C4–C5 Core prouvés, sécurité et gates juridiques.
 
 Voir [intégration](../v1/SHARED-CORE-INTEGRATION.md), [POS](../v1/POS-AND-FISCAL-DOCUMENTS.md), [roadmap](../v1/RELEASE-GATES.md).

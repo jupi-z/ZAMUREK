@@ -10,12 +10,12 @@ ZAMUREK est une marque/produit autonome couvrant vente en ligne, **vente physiqu
 
 Les modules spécialisés ayant besoin de transactions métier sont conçus comme modules du **backend Monarque Connect**, et les applications ZAMUREK (Android React embarquée+Kotlin, Windows Tauri/Rust), adaptations de canal, matériels d'impression et tests d'intégration sont préparés ici.
 
-La V1 utilise la **base PostgreSQL partagée de Monarque Connect**, sécurité stricte `organizationId`/`establishmentId`/objectOwner, et non l'ancienne « une DB par commerçant ». Les documents pré-convergence (notamment le draft [OpenAPI](packages/contracts/openapi/zamurek-v1.yaml)) ne définissent pas d'API déployée. L'autorité finale de l'API provient du contrat Core versionné (`/api/v1`).
+La V1 utilise la **base PostgreSQL partagée de Monarque Connect**, sécurité stricte `organizationId`/`establishmentId`/objectOwner, et non l'ancienne « une DB par commerçant ». Les documents pré-convergence (notamment le draft [OpenAPI](packages/contracts/openapi/zamurek-v1.yaml)) ne définissent pas d'API déployée. L'autorité finale de l'API provient du contrat Core versionné (`/api/v1`). La PR Core #152 comporte un complément de frontières Docs/114 encore en revue : sa validation est un prérequis avant migration/implémentation POS ou multi-produits.
 
 ## Vente sur place et en ligne — fonctionnement unifié
 
 - POS connecté : caissier authentifié, terminal et session de caisse, vente client de passage **sans compte/e-mail**, prix serveur, encaissement espèces, monnaie rendue, transferts manuels contrôlés, clôture/écarts.
-- Un seul flux financier Core : commande canonique → PaymentRecord → CashMovement si espèces → outbox, atomique et idempotent.
+- Un seul flux financier Core : commande canonique → **Invoice interne** → PaymentRecord lié → CashMovement net si espèces → Outbox, atomique et idempotent côté PostgreSQL. Reçu imprimé ≠ facture fiscale homologuée.
 - Impression A4 et ticket thermique 58/80 mm depuis documents Core, pont matériel dans Kotlin/Rust. **Aucune fausse « facture normalisée DGI »** : fiscalisation selon réglementation et autorisation effectivement vérifiées.
 - Magasin et vente en ligne partagent produits, commandes, droits, historiques et analyses ; venue n'est jamais propriétaire des comptes d'un commerçant.
 
@@ -36,7 +36,7 @@ ZAMUREK conserve un prix source USD avec FX commerçant versionné et affichage 
 5. [Nouvelle phase 0.1.0 côté clients](docs/v1/PHASE-0.1.0-ACCEPTANCE.md) et [prompt Codex d'intégration](docs/v1/CODEX-INTEGRATION-PROMPT.md)
 6. [Sécurité V1](docs/v1/SECURITY-THREAT-MODEL.md), [Agentic Shared Runtime](docs/v1/AGENTIC-KERNEL.md), [politique OSS](docs/governance/OPEN-SOURCE-POLICY.md)
 
-**Ordre :** implémenter d'abord la phase 10A.5 sur branche dans le **Core privé**, puis commencer ZAMUREK après contrats C0–C3/C6/C7 gelés et testés. Le précédent [prompt autonome](docs/v1/CODEX-PHASE-0.1.0-PROMPT.md) est **RETIRÉ**.
+**Ordre obligatoire :** terminer et prouver les phases techniques Monarque Connect 10A.5, 10B, 11, 11.5 et 12 avant tout code ZAMUREK (clients, SDK, intégration runtime ou verticales). Jusqu'alors, ce dépôt reste limité au cadrage documentaire et à la revue des contrats inter-dépôts. Les contrats C0–C3/C6/C7 gelés restent nécessaires à l'intégration mais ne déclenchent pas le développement ZAMUREK. Les gates externes FairScale/juridiques/commerciaux demeurent séparés. Le précédent [prompt autonome](docs/v1/CODEX-PHASE-0.1.0-PROMPT.md) est **RETIRÉ**.
 
 ## CI des spécifications (pas preuve de runtime)
 
