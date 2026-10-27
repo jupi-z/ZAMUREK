@@ -20,4 +20,4 @@ Crée docs/implementation/PROGRESS.json et rapport selon preuves vérifiées. Po
 Ne marque pas 0.1.0 ou 1.0.0 complete si APIs Core manquantes, SDK Android/Windows non compilés, sécurité et tests inconnus. Continue les tâches indépendantes, signale blocages externes avec preuve. Commence par l'audit du clone et la vérification des contrats Core disponibles.
 ```
 
-**Référence de phase Core préalable** : `Docs/113_CODEX_PHASE_10A5_FIRST_PROMPT.md` du dépôt propriétaire Monarque Connect. Aucun code Core ou donnée privée ne doit être copié dans le dépôt ZAMUREK pour faciliter le handoff ; seuls les contrats explicitement approuvés peuvent être partagés.
+**Référence de phase Core préalable** : cadrage Monarque Connect **Phase 10A.5** dans `Docs/113_CODEX_PHASE_10A5_FIRST_PROMPT.md`. Aucun code Core ou donnée privée ne doit être copié dans le dépôt ZAMUREK pour faciliter le handoff ; seuls les contrats explicitement approuvés peuvent être partagés.
