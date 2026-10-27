@@ -21,12 +21,12 @@
 - Ventes POS sans compte d'acheteur, mais compte caissier authentifié.
 - Factures SaaS FairScale indépendantes des factures commerçants, même plateforme Billing.
 - Une DB partagée avec isolement logique, pas une DB par commerce avant V1.
-- ZAMUREK public n'héberge ni secrets ni code backend transactionnel propriétaire ; à rendre privé avant code applicatif sensible, Actions disponibles aussi en privé.
+- ZAMUREK et Monarque Connect sont observés publics au 27/10/2026. N'y publier aucun secret, donnée ou code dont la confidentialité est requise ; la visibilité doit être décidée séparément par le propriétaire avant la publication d'éléments sensibles. Les Actions peuvent aussi fonctionner sur un dépôt privé selon plan et quotas.
 - Compatibilité anciens clients Monarque Connect, pas de migration forcée de monnaie.
 - Activation de ZAMUREK seule ne débloque pas modules Monarque Connect non inclus.
 
 ## Passage à Codex
-**NE PAS utiliser** l'ancien [prompt 0.1.0](CODEX-PHASE-0.1.0-PROMPT.md) : remplacé par [nouvelle session d'intégration ZAMUREK](CODEX-INTEGRATION-PROMPT.md), applicable seulement après clôture technique des phases Monarque Connect 10A.5, 10B, 11, 11.5 et 12 avec CI post-fusion verte. Jusqu'à cette échéance, Codex travaille dans le dépôt **privé** Monarque Connect; côté ZAMUREK, seules la documentation normative et la revue de contrats restent autorisées. C0–C3/C6/C7 sont des prérequis d'intégration, pas une autorisation anticipée de coder.
+**NE PAS utiliser** l'ancien [prompt 0.1.0](CODEX-PHASE-0.1.0-PROMPT.md) : remplacé par [nouvelle session d'intégration ZAMUREK](CODEX-INTEGRATION-PROMPT.md), applicable seulement après clôture technique des phases Monarque Connect 10A.5, 10B, 11, 11.5 et 12 avec CI post-fusion verte. Jusqu'à cette échéance, Codex travaille dans le dépôt propriétaire Monarque Connect; côté ZAMUREK, seules la documentation normative et la revue de contrats restent autorisées. C0–C3/C6/C7 sont des prérequis d'intégration, pas une autorisation anticipée de coder.
 
 ## Condition commerciale
 7 USD/mois/organization = **cible**, pas marge garantie. Doivent être décidés le nombre d'établissements inclus, quotas et coûts d'IA/transactions, règles de facturation CDF/taxes, et le fournisseur ou procédure de fiscalisation requise.

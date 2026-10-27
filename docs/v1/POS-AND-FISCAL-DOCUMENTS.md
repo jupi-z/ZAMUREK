@@ -42,4 +42,4 @@ Exiger aussi vérification de non-régression des anciens Sales/Invoice/PaymentR
 E2E vente cash CDF à client de passage : quote→sale→paiement→cash movement→reçu/ticket 80 mm; retry/replay simultané = **1 commande, 1 paiement, 1 cash entry**. Échec impression ≠ double commande. Prix chocolat 125g à 20 USD/kg×2360=5900 CDF exact. Multi-caissiers/établissements, fermeture caisse, fonds insuffisants, remboursements, sale online parallèle et droit d'accès testés. Factures A4 et fiscales selon droit confirmé, sans simulation frauduleuse.
 
 ## Propriété et livraison
-Backend Core privé Monarque Connect ; pont imprimante Android Kotlin/Windows Tauri Rust dans ZAMUREK. Contrats sécurité et DTO versionnés entre dépôts, docs d'exploitation, vidéos/captures d'impression sur matériel réel avant V1.
+Backend Core Monarque Connect ; sa visibilité GitHub observée le 27/10/2026 est publique. Pont imprimante Android Kotlin/Windows Tauri Rust dans ZAMUREK. Contrats sécurité et DTO versionnés entre dépôts, docs d'exploitation, vidéos/captures d'impression sur matériel réel avant V1. Ne pas publier de secret ou de donnée confidentielle dans l'un ou l'autre dépôt.

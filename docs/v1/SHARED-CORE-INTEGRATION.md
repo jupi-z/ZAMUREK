@@ -1,13 +1,13 @@
 # ZAMUREK V1 — architecture normative d'intégration à Monarque Connect
 
-**Statut : spécification de convergence ; aucune connexion runtime livrée.** Le Core dans le dépôt privé `https://github.com/jupi-z/Monarque-Connect` possède déjà NestJS/Prisma/PostgreSQL et des modules Sales, Cash, Billing, Items, Tenancy, Event Fabric. ZAMUREK ne les duplique pas. **Consulter l'ADR-039 et Docs/114 (PR Core #152) avant toute implémentation : ce cadrage n'est ni fusionné ni implémenté.**
+**Statut : spécification de convergence ; aucune connexion runtime livrée.** Le dépôt propriétaire `https://github.com/jupi-z/Monarque-Connect` contient NestJS/Prisma/PostgreSQL et les modules Sales, Cash, Billing, Items, Tenancy, Event Fabric. Sa visibilité GitHub observée le 27/10/2026 est publique ; aucun code ou secret ne doit être considéré confidentiel par défaut. ZAMUREK ne duplique pas ces domaines. **Consulter l'ADR-039 et Docs/114 (PR Core #152) avant toute implémentation : ce cadrage est toujours en revue et non implémenté.**
 
 ## Séparation des responsabilités
 | Source canonique | Détient / modifie | Dépôt |
 |---|---|---|
-| Monarque Connect Core | Organization/Establishment, identity, scopes, FairScale multi-produits, Item, quotes/prices, SalesOrder, Invoice, PaymentRecord, CashMovement, taxes, FX context, fiscal documents, Event Fabric, AI Gateway/Agent Runtime | privé `Monarque-Connect` |
+| Monarque Connect Core | Organization/Establishment, identity, scopes, FairScale actuel, Item, quotes/prices, SalesOrder, Invoice, PaymentRecord, CashMovement et Event Fabric ; product scope, fiscal documents partagés et AI Gateway/Agent Runtime restent des objectifs non livrés | dépôt propriétaire `Monarque-Connect` ; visibilité publique observée 27/10/2026 |
 | Extensions ZAMUREK intégrées au Core | cuisine/table, rendez-vous/staff, poids/options, devis meubles, réparations, venue opt-in/index, POS terminal/session/tender | implémentation backend **dans Monarque Connect** avec modules isolés |
-| ZAMUREK applications | Android acheteur/marchand/discovery, Windows caissier/marchand, thème marque et console opérateur autorisée, appareil imprimante (Kotlin/Rust), contrats client/protocoles de test | dépôt ZAMUREK, code privé si IP sensible |
+| ZAMUREK applications | Android acheteur/marchand/discovery, Windows caissier/marchand, thème marque et console opérateur autorisée, appareil imprimante (Kotlin/Rust), contrats client/protocoles de test | dépôt ZAMUREK ; éviter d'y publier code ou données dont la confidentialité est requise |
 | Contrats communs | OpenAPI canonique Core `/api/v1`, event schemas, identity/tenant/product scoping, tool schemas et versionning | **Core est source de vérité**, ZAMUREK consomme contrats versionnés/générés |
 
 La même organisation peut détenir l'offre ZAMUREK seule, Monarque Connect seule ou les deux. **Une seule instance métier et un seul historique canonique**, sans réplication bidirectionnelle ventes/argent.

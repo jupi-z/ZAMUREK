@@ -6,7 +6,7 @@ ZAMUREK est une marque/produit autonome couvrant vente en ligne, **vente physiqu
 
 ## Architecture nouvelle — décision adoptée le 22 octobre 2026
 
-**<https://github.com/jupi-z/Monarque-Connect>** (dépôt backend privé) est le **seul Core transactionnel partagé** : organisations/établissements, identités, entitlements/FairScale, catalogue commun, prix/FX, commandes SalesOrder, factures Invoice, paiements PaymentRecord, caisse CashMovement, Event Fabric et Agent Runtime. ZAMUREK n'implémente **ni second backend NestJS commercial, ni second registry PostgreSQL, ni deuxième moteur financier/IA**.
+**<https://github.com/jupi-z/Monarque-Connect>** est le dépôt propriétaire du **Core transactionnel partagé** : il contient actuellement organisations/établissements, identités, entitlements/FairScale, catalogue commun, prix/FX, commandes SalesOrder, factures Invoice, paiements PaymentRecord, caisse CashMovement, Event Fabric et projections Intelligence. La visibilité GitHub observée le 27/10/2026 est publique ; elle ne constitue pas une garantie de confidentialité. Certains éléments d'intégration ZAMUREK restent planifiés et ne sont pas livrés. ZAMUREK n'implémente **ni second backend NestJS commercial, ni second registry PostgreSQL, ni deuxième moteur financier**.
 
 Les modules spécialisés ayant besoin de transactions métier sont conçus comme modules du **backend Monarque Connect**, et les applications ZAMUREK (Android React embarquée+Kotlin, Windows Tauri/Rust), adaptations de canal, matériels d'impression et tests d'intégration sont préparés ici.
 
@@ -49,4 +49,4 @@ python3 -m pip install -r scripts/requirements-docs.txt
 python3 scripts/validate_openapi.py
 ```
 
-Ces scripts contrôlent la **cohérence documentaire et les brouillons de contrats**, pas des ventes réelles, des factures DGI, des APK/EXE ou une conformité commerciale. Le dépôt ZAMUREK est **public**, le Core Monarque Connect **privé** ; aucun secret ni code transactionnel privé dans le dépôt public. GitHub Actions fonctionne aussi en dépôt privé.
+Ces scripts contrôlent la **cohérence documentaire et les brouillons de contrats**, pas des ventes réelles, des factures DGI, des APK/EXE ou une conformité commerciale. Les dépôts ZAMUREK et Monarque Connect sont tous deux observés **publics** le 27/10/2026. Ne publier aucun secret, donnée client ou élément dont la confidentialité est requise ; la propriété du Core et sa visibilité GitHub sont deux sujets distincts. GitHub Actions peut aussi fonctionner dans un dépôt privé selon le plan et les quotas.
