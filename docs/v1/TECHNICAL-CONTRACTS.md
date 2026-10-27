@@ -1,6 +1,6 @@
 # ZAMUREK — contrats d'intégration Core (V1)
 
-**Statut : SPECIFICATION non implémentée.** Monarque Connect est la **seule autorité pour l'API transactionnelle** ; son contrat OpenAPI existe dans le dépôt privé et évolue via la phase 10A.5. Le fichier local `packages/contracts/openapi/zamurek-v1.yaml` est **PRE-CONVERGENCE DRAFT** : ses routes `/v1/*` ne sont pas des endpoints prouvés et ne doivent PAS être utilisées pour générer un backend ZAMUREK autonome. Voir [ADR-0024](../decisions/0024-shared-monarque-core-zamurek.md), [intégration](SHARED-CORE-INTEGRATION.md).
+**Statut : SPECIFICATION non implémentée.** Monarque Connect est la **seule autorité pour l'API transactionnelle**; son OpenAPI canonique est dans son dépôt public propriétaire et évolue via la Phase 10A.5. Aucun contrat d'intégration publié/allowlisté n'est encore validé ici. `packages/contracts/openapi/zamurek-v1.yaml` reste **PRE-CONVERGENCE DRAFT** : ses routes `/v1/*` ne sont pas des endpoints prouvés et ne doivent PAS générer un backend ZAMUREK autonome. Voir [ADR-0024](../decisions/0024-shared-monarque-core-zamurek.md), [intégration](SHARED-CORE-INTEGRATION.md).
 
 ## Politique d'API
 - Préfixe canonique serveur Monarque Connect `/api/v1/`. Le module ZAMUREK peut exposer une façade spécifique `/api/v1/zamurek/*` et/ou endpoints Core enrichis, sous contrats OpenAPI publics et privés séparés.

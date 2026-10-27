@@ -33,11 +33,11 @@ La même organisation peut détenir l'offre ZAMUREK seule, Monarque Connect seul
 ## Conventions d'API
 Les routes `/v1/*` du `packages/contracts/openapi/zamurek-v1.yaml` sont un brouillon pré-convergence. Pour runtime réel, adopter **`/api/v1` Monarque Connect** et éviter les conflits d'identité, de pricing et de permissions. Les fonctionnalités publiques ZAMUREK doivent être des endpoints distincts à droits réduits, jamais exposer directement l'API financière staff à des jetons acheteur. Les API/DTO historiques Monarque Connect sont rétrocompatibles.
 
-## Phasage / dépendances
-1. Monarque Connect 10A.5 C0→C8 : audit, contrats, migrations et backend Core complet, sans démarrer de code ZAMUREK.
-2. Monarque Connect 10B, 11 et 11.5 : livrer et prouver l'intelligence gouvernée, le Control Plane et l'Agent Readiness dans le Core.
-3. Monarque Connect Phase 12 : hardening, compatibilité, sécurité, charge, sauvegarde/restauration et CI post-fusion; clôturer tous les gates techniques du Core.
-4. Après cette clôture seulement, démarrer ZAMUREK 0.1.0 (clients/SDK/intégration), puis poursuivre ses verticales et releases; C0–C3/C6/C7 et C4/C5 restent les contrats d'intégration et de POS requis.
+## Phasage / dépendances selon D-09
+1. Avant contrats stables : cadrage fonctionnel, UX, maquettes et revue de frontières dans ZAMUREK.
+2. Après stabilisation d'un contrat Core nécessaire (version, allowlist, SHA source, tests de compatibilité) : SDK, clients de base et tests contractuels correspondant à ce contrat peuvent avancer; les interfaces non disponibles restent explicitement en attente.
+3. Après livraison et vérification d'une commande transactionnelle Core : l'intégration fonctionnelle réelle de ce parcours peut commencer. Les mocks ne prouvent jamais les transactions Core.
+4. 10B, 11, 11.5 et 12 sont des dépendances par capacité (IA, administration, readiness agents, hardening/release), pas un verrou global sur des clients ou contrats indépendants. La commercialisation ZAMUREK attend l'ensemble des gates techniques et externes applicables.
 
 ## Gate de développement
 Aucun travail ne peut être déclaré terminé si non testé sur le vrai Core. Mock API n'est acceptable que pour UI provisoire, **pas** comme preuve de transaction financière ni de release. CI et tests Core devront fournir commit SHA, version du contrat, logs des cases multi-tenant et progression vérifiée.

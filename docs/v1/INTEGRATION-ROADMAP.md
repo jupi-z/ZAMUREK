@@ -1,11 +1,11 @@
 # Roadmap de convergence : Monarque Connect 10A.5 ↔ ZAMUREK 0.0.0→1.0.0
 
-**Statut 22/10/2026 : planifié, pas livré.** Produit V1 ZAMUREK **complet et non MVP** ; implémentation progressive par preuves. Les gates Core et produit restent distincts. **Les invariants de migration et d'autorisation de Docs/114 (Core PR #152) sont des prérequis, indépendamment du calendrier ZAMUREK.**
+**Statut 27/10/2026 : cadrage produit, pas de connexion runtime livrée.** Produit V1 ZAMUREK **complet et non MVP** ; implémentation progressive par preuves. Les gates Core et produit restent distincts. La PR Core #152 est encore à fusionner; ses contrats et invariants Docs/114–116 sont prérequis aux interfaces qui les utilisent.
 
 | Vague | Core Monarque Connect propriétaire | ZAMUREK (apps/specs) | Critère bloquant |
 |---|---|---|---|
-| P0 / Alignement | 10A.5 C0 – audit, ADR-039, contrats partagés | ADR-0024, charte, ancien prompt invalidé, catalogue capabilities révisé | Documents/contrats compatibles et CI des deux dépôts |
-| P1 / Core interface | 10A.5 C1-C3 + C6/C7 – identity/tenancy/entitlement/pricing/events/API seam | Contrats canoniques et preuves d'intégration préparés dans Monarque Connect | Pas de deuxième Core, contrats versionnés et testables |
+| P0 / Alignement | 10A.5 C0 – audit, ADR-039, contrats partagés | ADR-0024, charte, prompt invalidé, catalogue des 43 capacités | Documents cohérents; PR/CI des deux dépôts |
+| P1 / Core interface | C1–C3 + C6/C7, selon leurs contrats effectivement stabilisés | Fondations client/SDK et tests contractuels uniquement pour les interfaces prouvées | OpenAPI allowlist versionnée, SHA source attesté, aucun code serveur dupliqué |
 | P2 / Commerce & POS | 10A.5 C4/C5 – cash transactionnel, factures/reçus et printer contract | 0.2.0 : retail, poids, checkout public, POS Android/Windows, impression réelle | SalesOrder + Invoice + PaymentRecord + CashMovement net au besoin, stock et ticket ; fiscal gate |
 | P3 / Verticaux | Core use cases conservés, backend domain extensions mutualisés | 0.3 restaurant, 0.4 salon, 0.5 meubles/réparations, 0.6 pharmacie autorisée/venue | 1 commande canonique, réservation anti collision, privacy venue |
 | P4 / Intelligence | 10B AI gouvernée + 11.5 agents, 11 entitlements multi-produits | 0.7 : trois assistants IA utilisant le même gateway/runtime, 0.8 : apps complètes | Pas de double Agentic Fabric, tool permissions, coût, E2E apps |
@@ -26,7 +26,7 @@
 - Activation de ZAMUREK seule ne débloque pas modules Monarque Connect non inclus.
 
 ## Passage à Codex
-**NE PAS utiliser** l'ancien [prompt 0.1.0](CODEX-PHASE-0.1.0-PROMPT.md) : remplacé par [nouvelle session d'intégration ZAMUREK](CODEX-INTEGRATION-PROMPT.md), applicable seulement après clôture technique des phases Monarque Connect 10A.5, 10B, 11, 11.5 et 12 avec CI post-fusion verte. Jusqu'à cette échéance, Codex travaille dans le dépôt propriétaire Monarque Connect; côté ZAMUREK, seules la documentation normative et la revue de contrats restent autorisées. C0–C3/C6/C7 sont des prérequis d'intégration, pas une autorisation anticipée de coder.
+**NE PAS utiliser** l'ancien [prompt 0.1.0](CODEX-PHASE-0.1.0-PROMPT.md). Le [prompt d'intégration](CODEX-INTEGRATION-PROMPT.md) doit être appliqué par étapes : cadrage documentaire libre; SDK/tests seulement pour les contrats Core stabilisés; intégration runtime après les commandes Core correspondantes; commercialisation après gates complets. La PR #2 reste en draft tant que le contrat Core minimal/versionné et sa provenance SHA ne sont pas gelés. Les phases 10B, 11, 11.5 et 12 restent requises uniquement aux capacités qui en dépendent, pas comme attente globale automatique.
 
 ## Condition commerciale
-7 USD/mois/organization = **cible**, pas marge garantie. Doivent être décidés le nombre d'établissements inclus, quotas et coûts d'IA/transactions, règles de facturation CDF/taxes, et le fournisseur ou procédure de fiscalisation requise.
+7 USD/mois/organization = **hypothèse non approuvée, inactive et non publiable comme prix**. Le nombre d'établissements, quotas, coûts IA/transactions, facturation CDF/taxes et fiscalisation doivent être évalués avant toute décision commerciale.

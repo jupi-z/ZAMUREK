@@ -1,6 +1,6 @@
 # Roadmap officielle ZAMUREK — dépendante du Core Monarque Connect
 
-**Avant 0.1.0 :** phase Core **10A.5** dans dépôt privé Monarque Connect, contrats partagés C0–C3/C6/C7 validés. Voir [calendrier croisé](v1/INTEGRATION-ROADMAP.md), [ADR-0024](decisions/0024-shared-monarque-core-zamurek.md).
+**Séquence 0.1.0 selon D-09 :** cadrage produit avant stabilisation; SDK et tests contractuels après stabilisation des contrats Core nécessaires; intégration réelle des parcours uniquement après livraison de leurs opérations Core. Voir [calendrier croisé](v1/INTEGRATION-ROADMAP.md), [ADR-0024](decisions/0024-shared-monarque-core-zamurek.md). Aucun prix ZAMUREK n'est activé par cette roadmap.
 
 - **0.1.0** Clients Android/Windows, SDK/contrats Core, identité/tenant/établissement, intégration prouvée (PAS nouveau backend).
 - **0.2.0** Catalogues produits/poids, prix USD/CDF Core, commandes en ligne et POS physique : cash, monnaie, session, reçus/factures imprimés (requiert Core C4/C5).

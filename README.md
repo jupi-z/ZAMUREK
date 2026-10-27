@@ -36,7 +36,7 @@ ZAMUREK conserve un prix source USD avec FX commerçant versionné et affichage 
 5. [Nouvelle phase 0.1.0 côté clients](docs/v1/PHASE-0.1.0-ACCEPTANCE.md) et [prompt Codex d'intégration](docs/v1/CODEX-INTEGRATION-PROMPT.md)
 6. [Sécurité V1](docs/v1/SECURITY-THREAT-MODEL.md), [Agentic Shared Runtime](docs/v1/AGENTIC-KERNEL.md), [politique OSS](docs/governance/OPEN-SOURCE-POLICY.md)
 
-**Ordre obligatoire :** terminer et prouver les phases techniques Monarque Connect 10A.5, 10B, 11, 11.5 et 12 avant tout code ZAMUREK (clients, SDK, intégration runtime ou verticales). Jusqu'alors, ce dépôt reste limité au cadrage documentaire et à la revue des contrats inter-dépôts. Les contrats C0–C3/C6/C7 gelés restent nécessaires à l'intégration mais ne déclenchent pas le développement ZAMUREK. Les gates externes FairScale/juridiques/commerciaux demeurent séparés. Le précédent [prompt autonome](docs/v1/CODEX-PHASE-0.1.0-PROMPT.md) est **RETIRÉ**.
+**Ordre selon l'ADR-0024 et D-09 du Core :** cadrage UX/documentaire maintenant; SDK et tests contractuels après stabilisation des contrats Core nécessaires; intégration fonctionnelle seulement après livraison/vérification des opérations Core concernées; commercialisation après les gates techniques et externes applicables. Les 43 capacités V1 restent obligatoires. La PR de cadrage Core #152 et cette PR ZAMUREK restent en draft tant que la revue des frontières contractuelles n'est pas terminée. Le précédent [prompt autonome](docs/v1/CODEX-PHASE-0.1.0-PROMPT.md) est **RETIRÉ**.
 
 ## CI des spécifications (pas preuve de runtime)
 
