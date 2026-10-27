@@ -1,11 +1,11 @@
 # Roadmap de convergence : Monarque Connect 10A.5 ↔ ZAMUREK 0.0.0→1.0.0
 
-**Statut 27/10/2026 : cadrage produit, pas de connexion runtime livrée.** Produit V1 ZAMUREK **complet et non MVP** ; implémentation progressive par preuves. Les gates Core et produit restent distincts. La PR Core #152 est encore à fusionner; ses contrats et invariants Docs/114–116 sont prérequis aux interfaces qui les utilisent.
+**Statut 27/10/2026 :** C0 est clos et C1.1–C1.4 sont livrés sur `main@8546236d2afa849c16ab1c2d6a953934212d08d8`; la [PR #152](https://github.com/jupi-z/Monarque-Connect/pull/152) est fusionnée et l'[issue #153](https://github.com/jupi-z/Monarque-Connect/issues/153) est close. C1 fournit un catalogue et des entitlements internes scoped par produit, sans publier les APIs transactionnelles ZAMUREK ni son contrat externe allowlisté. Aucune connexion runtime ZAMUREK n'est livrée. Produit V1 ZAMUREK **complet et non MVP** ; implémentation progressive par preuves. Les gates Core et produit restent distincts.
 
 | Vague | Core Monarque Connect propriétaire | ZAMUREK (apps/specs) | Critère bloquant |
 |---|---|---|---|
-| P0 / Alignement | 10A.5 C0 – audit, ADR-039, contrats partagés | ADR-0024, charte, prompt invalidé, catalogue des 43 capacités | Documents cohérents; PR/CI des deux dépôts |
-| P1 / Core interface | C1–C3 + C6/C7, selon leurs contrats effectivement stabilisés | Fondations client/SDK et tests contractuels uniquement pour les interfaces prouvées | OpenAPI allowlist versionnée, SHA source attesté, aucun code serveur dupliqué |
+| P0 / Alignement | 10A.5 C0 + C1.1–C1.4 — clôturés | ADR-0024, charte, prompt invalidé, catalogue des 43 capacités | PR #152 fusionnée, issue #153 close, preuves C1 liées depuis main; aucun runtime ou prix ZAMUREK activé |
+| P1 / Core interface | C1 interne — livré; contrats publics concernés par C2/C3/C6/C7 — à stabiliser selon les capacités | Préparer SDK et tests contractuels uniquement pour les interfaces prouvées | C1 n'est pas un contrat API public; OpenAPI allowlist versionnée et SHA source attesté avant chaque intégration, aucun code serveur dupliqué |
 | P2 / Commerce & POS | 10A.5 C4/C5 – cash transactionnel, factures/reçus et printer contract | 0.2.0 : retail, poids, checkout public, POS Android/Windows, impression réelle | SalesOrder + Invoice + PaymentRecord + CashMovement net au besoin, stock et ticket ; fiscal gate |
 | P3 / Verticaux | Core use cases conservés, backend domain extensions mutualisés | 0.3 restaurant, 0.4 salon, 0.5 meubles/réparations, 0.6 pharmacie autorisée/venue | 1 commande canonique, réservation anti collision, privacy venue |
 | P4 / Intelligence | 10B AI gouvernée + 11.5 agents, 11 entitlements multi-produits | 0.7 : trois assistants IA utilisant le même gateway/runtime, 0.8 : apps complètes | Pas de double Agentic Fabric, tool permissions, coût, E2E apps |

@@ -1,6 +1,6 @@
 # ZAMUREK V1 — architecture normative d'intégration à Monarque Connect
 
-**Statut : spécification de convergence ; aucune connexion runtime livrée.** Le dépôt propriétaire `https://github.com/jupi-z/Monarque-Connect` contient NestJS/Prisma/PostgreSQL et les modules Sales, Cash, Billing, Items, Tenancy, Event Fabric. Sa visibilité GitHub observée le 27/10/2026 est publique ; aucun code ou secret ne doit être considéré confidentiel par défaut. ZAMUREK ne duplique pas ces domaines. **Consulter l'ADR-039 et Docs/114 (PR Core #152) avant toute implémentation : ce cadrage est toujours en revue et non implémenté.**
+**Statut : spécification de convergence ; aucune connexion runtime livrée.** Le dépôt propriétaire `https://github.com/jupi-z/Monarque-Connect` contient NestJS/Prisma/PostgreSQL et les modules Sales, Cash, Billing, Items, Tenancy, Event Fabric. Sa visibilité GitHub observée le 27/10/2026 est publique ; aucun code ou secret ne doit être considéré confidentiel par défaut. ZAMUREK ne duplique pas ces domaines. **ADR-039 et Docs/114 ont été acceptés avec C0 après fusion de la PR Core #152; C1.1–C1.4 sont livrés sur `main@8546236d2afa849c16ab1c2d6a953934212d08d8`. Le registre et les entitlements multi-produits sont internes au Core; aucun runtime ZAMUREK ni contrat API public allowlisté n'est livré.**
 
 ## Séparation des responsabilités
 | Source canonique | Détient / modifie | Dépôt |

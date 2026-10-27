@@ -10,7 +10,7 @@ ZAMUREK est une marque/produit autonome couvrant vente en ligne, **vente physiqu
 
 Les modules spécialisés ayant besoin de transactions métier sont conçus comme modules du **backend Monarque Connect**, et les applications ZAMUREK (Android React embarquée+Kotlin, Windows Tauri/Rust), adaptations de canal, matériels d'impression et tests d'intégration sont préparés ici.
 
-La V1 utilise la **base PostgreSQL partagée de Monarque Connect**, sécurité stricte `organizationId`/`establishmentId`/objectOwner, et non l'ancienne « une DB par commerçant ». Les documents pré-convergence (notamment le draft [OpenAPI](packages/contracts/openapi/zamurek-v1.yaml)) ne définissent pas d'API déployée. L'autorité finale de l'API provient du contrat Core versionné (`/api/v1`). La PR Core #152 comporte un complément de frontières Docs/114 encore en revue : sa validation est un prérequis avant migration/implémentation POS ou multi-produits.
+La V1 utilise la **base PostgreSQL partagée de Monarque Connect**, sécurité stricte `organizationId`/`establishmentId`/objectOwner, et non l'ancienne « une DB par commerçant ». Les documents pré-convergence (notamment le draft [OpenAPI](packages/contracts/openapi/zamurek-v1.yaml)) ne définissent pas d'API déployée. L'autorité finale de l'API provient du contrat Core versionné (`/api/v1`). Le cadrage Core Docs/114 est accepté et fusionné par la PR [#152](https://github.com/jupi-z/Monarque-Connect/pull/152); C0 est clos et C1.1–C1.4 sont livrés sur `main@8546236d2afa849c16ab1c2d6a953934212d08d8` ([preuves](https://github.com/jupi-z/Monarque-Connect/blob/main/Docs/118_C1_CLOSURE_EVIDENCE.md)). C1 apporte le registre et les entitlements internes par produit, mais ne publie pas encore d'API transactionnelle ZAMUREK ni de contrat OpenAPI allowlisté.
 
 ## Vente sur place et en ligne — fonctionnement unifié
 
@@ -36,7 +36,7 @@ ZAMUREK conserve un prix source USD avec FX commerçant versionné et affichage 
 5. [Nouvelle phase 0.1.0 côté clients](docs/v1/PHASE-0.1.0-ACCEPTANCE.md) et [prompt Codex d'intégration](docs/v1/CODEX-INTEGRATION-PROMPT.md)
 6. [Sécurité V1](docs/v1/SECURITY-THREAT-MODEL.md), [Agentic Shared Runtime](docs/v1/AGENTIC-KERNEL.md), [politique OSS](docs/governance/OPEN-SOURCE-POLICY.md)
 
-**Ordre selon l'ADR-0024 et D-09 du Core :** cadrage UX/documentaire maintenant; SDK et tests contractuels après stabilisation des contrats Core nécessaires; intégration fonctionnelle seulement après livraison/vérification des opérations Core concernées; commercialisation après les gates techniques et externes applicables. Les 43 capacités V1 restent obligatoires. La PR de cadrage Core #152 et cette PR ZAMUREK restent en draft tant que la revue des frontières contractuelles n'est pas terminée. Le précédent [prompt autonome](docs/v1/CODEX-PHASE-0.1.0-PROMPT.md) est **RETIRÉ**.
+**Ordre selon l'ADR-0024 et D-09 du Core :** cadrage UX/documentaire maintenant; SDK et tests contractuels après stabilisation des contrats Core nécessaires; intégration fonctionnelle seulement après livraison/vérification des opérations Core concernées; commercialisation après les gates techniques et externes applicables. Les 43 capacités V1 restent obligatoires. La PR Core #152 et l'issue C0 #153 sont closes. Cette PR documentaire ZAMUREK #2 reste en draft jusqu'à stabilisation et revue des contrats externes minimaux requis; C1 interne ne vaut pas API ZAMUREK publiée. Le précédent [prompt autonome](docs/v1/CODEX-PHASE-0.1.0-PROMPT.md) est **RETIRÉ**.
 
 ## CI des spécifications (pas preuve de runtime)
 

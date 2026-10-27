@@ -1,6 +1,6 @@
 # ZAMUREK V1 — ventes sur place, encaissements, caisses et documents
 
-**Normatif pour V1 ; non implémenté.** Les services financiers et de numérotation résident **exclusivement dans Monarque Connect Core**. L'app ZAMUREK est une interface installée capable de piloter une imprimante locale. **La frontière normative du Core est fixée par Docs/114 (PR Monarque Connect #152). Les endpoints POS ne sont pas encore livrés.**
+**Normatif pour V1 ; non implémenté.** Les services financiers et de numérotation résident **exclusivement dans Monarque Connect Core**. L'app ZAMUREK est une interface installée capable de piloter une imprimante locale. **La frontière normative du Core est fixée par Docs/114, acceptée avec C0 après fusion de la PR Monarque Connect #152; le catalogue et les entitlements multi-produits C1 sont livrés. Les endpoints et commandes POS restent à livrer dans les lots Core concernés (C4/C5).**
 
 ## Périmètre de vente physique
 - Un commerce peut vendre physiquement en boutique, au restaurant, en salon, à un comptoir de réparation ou stand sans connexion de l'acheteur.
