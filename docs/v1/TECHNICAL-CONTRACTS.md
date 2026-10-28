@@ -1,6 +1,6 @@
 # ZAMUREK — contrats d'intégration Core (V1)
 
-**Statut : SPECIFICATION non implémentée.** Monarque Connect est la **seule autorité pour l'API transactionnelle** ; son contrat OpenAPI existe dans le dépôt privé et évolue via la phase 10A.5. Le fichier local `packages/contracts/openapi/zamurek-v1.yaml` est **PRE-CONVERGENCE DRAFT** : ses routes `/v1/*` ne sont pas des endpoints prouvés et ne doivent PAS être utilisées pour générer un backend ZAMUREK autonome. Voir [ADR-0024](../decisions/0024-shared-monarque-core-zamurek.md), [intégration](SHARED-CORE-INTEGRATION.md).
+**Statut : SPECIFICATION non implémentée.** Monarque Connect est la **seule autorité pour l'API transactionnelle**; son OpenAPI canonique est dans son dépôt public propriétaire et évolue via la Phase 10A.5. Aucun contrat d'intégration publié/allowlisté n'est encore validé ici. `packages/contracts/openapi/zamurek-v1.yaml` reste **PRE-CONVERGENCE DRAFT** : ses routes `/v1/*` ne sont pas des endpoints prouvés et ne doivent PAS générer un backend ZAMUREK autonome. Voir [ADR-0024](../decisions/0024-shared-monarque-core-zamurek.md), [intégration](SHARED-CORE-INTEGRATION.md).
 
 ## Politique d'API
 - Préfixe canonique serveur Monarque Connect `/api/v1/`. Le module ZAMUREK peut exposer une façade spécifique `/api/v1/zamurek/*` et/ou endpoints Core enrichis, sous contrats OpenAPI publics et privés séparés.
@@ -13,7 +13,7 @@
 REST 200/201/202/204, erreurs 400/401/403/404/409/422/429/503 sans révéler existence d'autres ressources. `Idempotency-Key` tenant/actor/operation/payload-hash obligatoire sur mutations critiques. Heure UTC + timezone IANA établissement, quantité `DecimalExact` string, prix serveur, politique CDF territoriale sans float.
 
 ## Produits, versions et entitlements
-`productCode = MONARQUE_CONNECT|ZAMUREK` ; `ZAMUREK_BASIC` à 7 USD/mois cible, droits aux modules commerciaux nécessaires uniquement. Un org peut souscrire l'un, l'autre ou les deux sans duplication des commandes. Le serveur contrôle la séparation, pas React/Capacitor.
+`productCode = MONARQUE_CONNECT|ZAMUREK` après validation serveur; C1 livre le registre interne mais pas encore l'API transactionnelle. C3 pricing/catalogue est en spécification et ses routes proposées ne sont pas disponibles. Un org peut souscrire l'un, l'autre ou les deux sans duplication des commandes. Le serveur contrôle la séparation, pas React/Capacitor.
 
 ## API spécialisées à définir dans le Core (exigées V1)
 - Discovery public opt-in, listings et disponibilités par venue (lecture filtrée).
