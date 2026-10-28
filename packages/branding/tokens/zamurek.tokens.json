@@ -1,0 +1,88 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "name": "Zamurek brand identity V1",
+  "version": "1.0.0",
+  "status": "brand assets prepared; product UI/Figma design system not yet approved",
+  "brand": {
+    "forest": {
+      "$type": "color",
+      "$value": "#005C45"
+    },
+    "orange": {
+      "$type": "color",
+      "$value": "#FF8A1E"
+    },
+    "magenta": {
+      "$type": "color",
+      "$value": "#D21868"
+    }
+  },
+  "semantic": {
+    "light": {
+      "background": {
+        "$type": "color",
+        "$value": "#FFFFFF"
+      },
+      "surface": {
+        "$type": "color",
+        "$value": "#F4F7F5"
+      },
+      "text": {
+        "$type": "color",
+        "$value": "#17251F"
+      },
+      "muted": {
+        "$type": "color",
+        "$value": "#63736C"
+      },
+      "border": {
+        "$type": "color",
+        "$value": "#E6EBE8"
+      },
+      "brandAction": {
+        "$type": "color",
+        "$value": "#005C45"
+      }
+    },
+    "dark": {
+      "background": {
+        "$type": "color",
+        "$value": "#111318"
+      },
+      "surface": {
+        "$type": "color",
+        "$value": "#202329"
+      },
+      "text": {
+        "$type": "color",
+        "$value": "#F6F7F8"
+      },
+      "muted": {
+        "$type": "color",
+        "$value": "#A9B5B1"
+      },
+      "border": {
+        "$type": "color",
+        "$value": "#30353A"
+      },
+      "brandAction": {
+        "$type": "color",
+        "$value": "#55D6A6"
+      }
+    }
+  },
+  "source": {
+    "original": "Approved logo image submitted by project owner, 2026-10-28",
+    "sha256": "e4aac9d59f75a01e58cf6e46d70d323432bda5b5aa32bd54a625f484421bc546",
+    "vectorization": "contour trace from approved RGBA raster, preserving silhouette but simplifying original tonal gradients; not source-native editable vector artwork"
+  },
+  "usage": {
+    "primaryLockup": "assets/zamurek-horizontal-light.svg",
+    "backgroundLight": "#FFFFFF",
+    "backgroundDark": "#111318",
+    "fonts": {
+      "uiCandidate": "Poppins, system-ui, sans-serif",
+      "logo": "wordmark is traced from owner's approved artwork, not typeset dynamically"
+    }
+  }
+}

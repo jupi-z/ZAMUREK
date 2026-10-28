@@ -1,0 +1,44 @@
+{
+  "name": "ZAMUREK",
+  "version": "1.0.0",
+  "identityStatus": "approved palette and approved raster reference; SVG contour-trace derivatives awaiting exact vector master validation",
+  "sourceSha256": "e4aac9d59f75a01e58cf6e46d70d323432bda5b5aa32bd54a625f484421bc546",
+  "color": {
+    "forest": "#005C45",
+    "orange": "#FF8A1E",
+    "magenta": "#D21868",
+    "light": "#FFFFFF",
+    "dark": "#111318"
+  },
+  "compositions": [
+    "horizontal",
+    "vertical",
+    "icon"
+  ],
+  "treatments": [
+    "light",
+    "dark",
+    "green",
+    "white",
+    "black"
+  ],
+  "assetFormat": "SVG",
+  "logoVariants": [
+    "assets/zamurek-horizontal-light.svg",
+    "assets/zamurek-horizontal-dark.svg",
+    "assets/zamurek-horizontal-green.svg",
+    "assets/zamurek-horizontal-white.svg",
+    "assets/zamurek-horizontal-black.svg",
+    "assets/zamurek-vertical-light.svg",
+    "assets/zamurek-vertical-dark.svg",
+    "assets/zamurek-vertical-green.svg",
+    "assets/zamurek-vertical-white.svg",
+    "assets/zamurek-vertical-black.svg",
+    "assets/zamurek-icon-light.svg",
+    "assets/zamurek-icon-dark.svg",
+    "assets/zamurek-icon-green.svg",
+    "assets/zamurek-icon-white.svg",
+    "assets/zamurek-icon-black.svg"
+  ],
+  "future": "High-fidelity raster masters, platform-specific PNGs and editable native color vector master to be added from owner-approved source after independent visual QA"
+}

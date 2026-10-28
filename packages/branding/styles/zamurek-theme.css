@@ -1,0 +1,25 @@
+/* ZAMUREK V1 — CSS custom properties; import intentionally has no global component styles. */
+:root, [data-zamurek-theme="light"] {
+  color-scheme: light;
+  --zamurek-brand-primary: #005C45;
+  --zamurek-brand-orange: #FF8A1E;
+  --zamurek-brand-magenta: #D21868;
+  --zamurek-bg: #FFFFFF;
+  --zamurek-surface: #F4F7F5;
+  --zamurek-text: #17251F;
+  --zamurek-muted: #63736C;
+  --zamurek-border: #E6EBE8;
+  --zamurek-action: #005C45;
+}
+[data-zamurek-theme="dark"] {
+  color-scheme: dark;
+  --zamurek-brand-primary: #005C45;
+  --zamurek-brand-orange: #FF8A1E;
+  --zamurek-brand-magenta: #D21868;
+  --zamurek-bg: #111318;
+  --zamurek-surface: #202329;
+  --zamurek-text: #F6F7F8;
+  --zamurek-muted: #A9B5B1;
+  --zamurek-border: #30353A;
+  --zamurek-action: #55D6A6;
+}
