@@ -4,7 +4,7 @@
 
 | Version cible | Workstream et livrable | Critère de sortie bloquant |
 |---|---|---|
-| **0.0.0** | Convergence ADR-0024; C0 et C1 internes du Core acceptés/livrés; cadrage des contrats externes requis pour ZAMUREK; migration du cahier des charges et retrait de l'ancien prompt | Documentation cohérente; APIs nécessaires allowlistées/versionnées avec SHA Core seulement quand elles sont stabilisées; aucun runtime ou prix ZAMUREK déclaré livré |
+| **0.0.0** | Convergence ADR-0024; C0–C2 internes du Core acceptés/livrés; C3 contractuelle en préparation; cadrage des contrats externes requis pour ZAMUREK; migration du cahier des charges et retrait de l'ancien prompt | Documentation cohérente; APIs nécessaires allowlistées/versionnées avec SHA Core seulement quand elles sont stabilisées; aucun runtime ou prix ZAMUREK déclaré livré |
 | **0.1.0** | Après stabilisation des contrats Core requis pour chaque fonction : clients Android/Windows compilables, SDK généré/validé contre les contrats disponibles, tests contractuels; seules les intégrations réelles dont les opérations Core sont livrées sont activées | Builds Android/Windows réels, version/SHA du contrat Core, tests scopes A/B E1/E2 contre APIs existantes, aucun backend autonome |
 | **0.2.0** | Core 10A.5 C4/C5 : POS cash/fonds/session/rendu monnaie et documents ; apps ZAMUREK retail/poids/checkout online + POS Android/Windows | vente POS walk-in sans e-mail client, 1 ordre+1 Invoice canonique+1 payment lié+1 mouvement cash net, A4/58/80mm imprimés, FX 125g exact, fiscale fail-closed |
 | **0.3.0** | Restaurant/pizzeria : menu/options, capacité, timing, tickets de cuisine, commandes, réservation de table | E2E prise commande + modificateurs + préparation et réservation sans doublon |

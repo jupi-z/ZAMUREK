@@ -13,7 +13,7 @@
 REST 200/201/202/204, erreurs 400/401/403/404/409/422/429/503 sans révéler existence d'autres ressources. `Idempotency-Key` tenant/actor/operation/payload-hash obligatoire sur mutations critiques. Heure UTC + timezone IANA établissement, quantité `DecimalExact` string, prix serveur, politique CDF territoriale sans float.
 
 ## Produits, versions et entitlements
-`productCode = MONARQUE_CONNECT|ZAMUREK` ; `ZAMUREK_BASIC` à 7 USD/mois cible, droits aux modules commerciaux nécessaires uniquement. Un org peut souscrire l'un, l'autre ou les deux sans duplication des commandes. Le serveur contrôle la séparation, pas React/Capacitor.
+`productCode = MONARQUE_CONNECT|ZAMUREK` après validation serveur; C1 livre le registre interne mais pas encore l'API transactionnelle. C3 pricing/catalogue est en spécification et ses routes proposées ne sont pas disponibles. Un org peut souscrire l'un, l'autre ou les deux sans duplication des commandes. Le serveur contrôle la séparation, pas React/Capacitor.
 
 ## API spécialisées à définir dans le Core (exigées V1)
 - Discovery public opt-in, listings et disponibilités par venue (lecture filtrée).

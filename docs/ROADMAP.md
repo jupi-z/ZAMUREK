@@ -1,6 +1,6 @@
 # Roadmap officielle ZAMUREK — dépendante du Core Monarque Connect
 
-**État Core au 27/10/2026 :** C0 accepté et clos; C1.1–C1.4 sont livrés sur `main@8546236d2afa849c16ab1c2d6a953934212d08d8` ([preuves C1](https://github.com/jupi-z/Monarque-Connect/blob/main/Docs/118_C1_CLOSURE_EVIDENCE.md)). C1 fournit le registre et les entitlements internes multi-produits; aucun endpoint transactionnel ZAMUREK ni contrat externe allowlisté n'est encore livré.
+**État Core vérifié le 28/10/2026 :** C0–C2 clôturés; le dernier main est 2dff07eae662d8de186d6f23cf831dd72c1dfec9, CI post-fusion #170 [run 40635438412](https://github.com/jupi-z/Monarque-Connect/actions/runs/40635438412) réussie. C3 est autorisée (issue #171) et commence par la spécification; aucun modèle, endpoint ou contrat d'intégration C3 n'est encore livré.
 
 **Séquence 0.1.0 selon D-09 :** cadrage produit avant stabilisation; SDK et tests contractuels après stabilisation des contrats Core nécessaires; intégration réelle des parcours uniquement après livraison de leurs opérations Core. Voir [calendrier croisé](v1/INTEGRATION-ROADMAP.md), [ADR-0024](decisions/0024-shared-monarque-core-zamurek.md). Aucun prix ZAMUREK n'est activé par cette roadmap.
 

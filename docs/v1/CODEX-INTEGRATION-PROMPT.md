@@ -1,6 +1,6 @@
 # Nouveau prompt Codex ZAMUREK — client/intégration, PAS nouveau backend
 
-**Statut : prompt applicable par étapes selon D-09.** Le cadrage documentaire/UX ZAMUREK peut avancer avant la stabilisation des contrats. Le SDK et les tests contractuels ne peuvent utiliser qu'un contrat Core versionné, allowlisté et relié à un SHA vérifié. L'intégration fonctionnelle attend les commandes Core correspondantes; la commercialisation attend tous les gates applicables. Les phases 10B, 11, 11.5 et 12 ne bloquent que les fonctions qui en dépendent. **Aucun mock ne valide une transaction réelle.**
+**Statut : prompt applicable selon D-09.** Le Core a clôturé C0–C2; C3 est autorisée mais son contrat catalogue/pricing/FX est encore en préparation, sans endpoints runtime. Le cadrage documentaire/UX peut avancer; SDK/tests seulement sur un contrat Core stable et versionné; intégration fonctionnelle après livraison des opérations Core.
 
 ## Prompt à copier dans Codex (clone ZAMUREK ouvert)
 

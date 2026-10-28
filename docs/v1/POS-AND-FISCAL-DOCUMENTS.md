@@ -1,6 +1,6 @@
 # ZAMUREK V1 — ventes sur place, encaissements, caisses et documents
 
-**Normatif pour V1 ; non implémenté.** Les services financiers et de numérotation résident **exclusivement dans Monarque Connect Core**. L'app ZAMUREK est une interface installée capable de piloter une imprimante locale. **La frontière normative du Core est fixée par Docs/114, acceptée avec C0 après fusion de la PR Monarque Connect #152; le catalogue et les entitlements multi-produits C1 sont livrés. Les endpoints et commandes POS restent à livrer dans les lots Core concernés (C4/C5).**
+**Normatif pour V1 ; non implémenté.** Les services financiers et de numérotation résident **exclusivement dans Monarque Connect Core**. L'app ZAMUREK est une interface installée capable de piloter une imprimante locale. **La frontière normative du Core est fixée par Docs/114, acceptée avec C0 après fusion de la PR Monarque Connect #152; le registre/entitlements C1 et les fondations d'identité C2 sont livrés. Catalogue commercial/pricing/FX C3 reste au stade contrat, sans endpoint runtime. Les endpoints et commandes POS restent à livrer dans les lots Core concernés (C4/C5).**
 
 ## Périmètre de vente physique
 - Un commerce peut vendre physiquement en boutique, au restaurant, en salon, à un comptoir de réparation ou stand sans connexion de l'acheteur.
@@ -42,4 +42,4 @@ Exiger aussi vérification de non-régression des anciens Sales/Invoice/PaymentR
 E2E vente cash CDF à client de passage : quote→sale→paiement→cash movement→reçu/ticket 80 mm; retry/replay simultané = **1 commande, 1 paiement, 1 cash entry**. Échec impression ≠ double commande. Prix chocolat 125g à 20 USD/kg×2360=5900 CDF exact. Multi-caissiers/établissements, fermeture caisse, fonds insuffisants, remboursements, sale online parallèle et droit d'accès testés. Factures A4 et fiscales selon droit confirmé, sans simulation frauduleuse.
 
 ## Propriété et livraison
-Backend Core Monarque Connect ; sa visibilité GitHub observée le 27/10/2026 est publique. Pont imprimante Android Kotlin/Windows Tauri Rust dans ZAMUREK. Contrats sécurité et DTO versionnés entre dépôts, docs d'exploitation, vidéos/captures d'impression sur matériel réel avant V1. Ne pas publier de secret ou de donnée confidentielle dans l'un ou l'autre dépôt.
+Backend Core Monarque Connect ; sa visibilité GitHub observée le 28/10/2026 est publique. Pont imprimante Android Kotlin/Windows Tauri Rust dans ZAMUREK. Contrats sécurité et DTO versionnés entre dépôts, docs d'exploitation, vidéos/captures d'impression sur matériel réel avant V1. Ne pas publier de secret ou de donnée confidentielle dans l'un ou l'autre dépôt.

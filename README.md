@@ -6,11 +6,11 @@ ZAMUREK est une marque/produit autonome couvrant vente en ligne, **vente physiqu
 
 ## Architecture nouvelle — décision adoptée le 22 octobre 2026
 
-**<https://github.com/jupi-z/Monarque-Connect>** est le dépôt propriétaire du **Core transactionnel partagé** : il contient actuellement organisations/établissements, identités, entitlements/FairScale, catalogue commun, prix/FX, commandes SalesOrder, factures Invoice, paiements PaymentRecord, caisse CashMovement, Event Fabric et projections Intelligence. La visibilité GitHub observée le 27/10/2026 est publique ; elle ne constitue pas une garantie de confidentialité. Certains éléments d'intégration ZAMUREK restent planifiés et ne sont pas livrés. ZAMUREK n'implémente **ni second backend NestJS commercial, ni second registry PostgreSQL, ni deuxième moteur financier**.
+**<https://github.com/jupi-z/Monarque-Connect>** est le dépôt propriétaire du **Core transactionnel partagé** : il fournit actuellement organisations/établissements, identités internes et liaison externe, entitlements/FairScale, Item historique, SalesOrder, Invoice, PaymentRecord, CashMovement, Event Fabric et projections Intelligence. Le catalogue commercial partagé et les primitives pricing/FX de C3 sont au stade contrat uniquement; aucun endpoint runtime C3 n'est livré. Visibilité GitHub publique observée le 28/10/2026, sans garantie de confidentialité.
 
 Les modules spécialisés ayant besoin de transactions métier sont conçus comme modules du **backend Monarque Connect**, et les applications ZAMUREK (Android React embarquée+Kotlin, Windows Tauri/Rust), adaptations de canal, matériels d'impression et tests d'intégration sont préparés ici.
 
-La V1 utilise la **base PostgreSQL partagée de Monarque Connect**, sécurité stricte `organizationId`/`establishmentId`/objectOwner, et non l'ancienne « une DB par commerçant ». Les documents pré-convergence (notamment le draft [OpenAPI](packages/contracts/openapi/zamurek-v1.yaml)) ne définissent pas d'API déployée. L'autorité finale de l'API provient du contrat Core versionné (`/api/v1`). Le cadrage Core Docs/114 est accepté et fusionné par la PR [#152](https://github.com/jupi-z/Monarque-Connect/pull/152); C0 est clos et C1.1–C1.4 sont livrés sur `main@8546236d2afa849c16ab1c2d6a953934212d08d8` ([preuves](https://github.com/jupi-z/Monarque-Connect/blob/main/Docs/118_C1_CLOSURE_EVIDENCE.md)). C1 apporte le registre et les entitlements internes par produit, mais ne publie pas encore d'API transactionnelle ZAMUREK ni de contrat OpenAPI allowlisté.
+La V1 utilise la **base PostgreSQL partagée de Monarque Connect**, avec sécurité organizationId/establishmentId/propriétaire de ressource, et non l'ancienne « une DB par commerçant ». Les OpenAPI pré-convergence de ce dépôt sont des brouillons, pas des endpoints déployés. Le Core a fusionné C0, C1 et C2; main 2dff07eae662d8de186d6f23cf831dd72c1dfec9 a sa CI post-fusion réussie ([run 40635438412](https://github.com/jupi-z/Monarque-Connect/actions/runs/40635438412)); preuves C2 [Docs/121](https://github.com/jupi-z/Monarque-Connect/blob/main/Docs/121_C2_CLOSURE_EVIDENCE.md). C3 est autorisée (issue #171), mais son contrat est en préparation et aucune API catalogue/pricing/FX n'est encore runtime ou allowlistée.
 
 ## Vente sur place et en ligne — fonctionnement unifié
 
@@ -23,7 +23,7 @@ La V1 utilise la **base PostgreSQL partagée de Monarque Connect**, sécurité s
 
 Un seul modèle d'agents : AI Gateway/Agent Runtime **Monarque Connect** partagé, outils commerciaux spécifiques ZAMUREK, scopes/approbations/consentement et trois assistants exigés pour 1.0.0. En panne de modèle IA, le POS et les ventes restent opérationnels.
 
-ZAMUREK conserve un prix source USD avec FX commerçant versionné et affichage CDF RDC selon droit confirmé, sans forcer les organisations Monarque Connect existantes à la devise USD. Offre commerciale envisagée **ZAMUREK BASIC 7 USD/mois par organisation**, indépendante des plans FairScale, limites/établissements à finaliser sur coûts réels.
+Le besoin futur de prix source USD avec conversion vers CDF devra employer une policy et un taux FX autorisés du Core, après livraison de C3 et décision commerciale applicable; aucun prix ni taux ZAMUREK n'est actif. L'hypothèse 7 USD/mois reste non approuvée.
 
 **43 capacités obligatoires** sont décrites dans [manifest](spec/v1/capabilities.json) et [matrice](docs/v1/CAPABILITY-MATRIX.md), notamment POS et interopérabilité, plus sept verticales et discovery/venue. Les fonctions réglementées restent bloquées avant revue locale.
 
@@ -36,7 +36,7 @@ ZAMUREK conserve un prix source USD avec FX commerçant versionné et affichage 
 5. [Nouvelle phase 0.1.0 côté clients](docs/v1/PHASE-0.1.0-ACCEPTANCE.md) et [prompt Codex d'intégration](docs/v1/CODEX-INTEGRATION-PROMPT.md)
 6. [Sécurité V1](docs/v1/SECURITY-THREAT-MODEL.md), [Agentic Shared Runtime](docs/v1/AGENTIC-KERNEL.md), [politique OSS](docs/governance/OPEN-SOURCE-POLICY.md)
 
-**Ordre selon l'ADR-0024 et D-09 du Core :** cadrage UX/documentaire maintenant; SDK et tests contractuels après stabilisation des contrats Core nécessaires; intégration fonctionnelle seulement après livraison/vérification des opérations Core concernées; commercialisation après les gates techniques et externes applicables. Les 43 capacités V1 restent obligatoires. La PR Core #152 et l'issue C0 #153 sont closes. Cette PR documentaire ZAMUREK #2 reste en draft jusqu'à stabilisation et revue des contrats externes minimaux requis; C1 interne ne vaut pas API ZAMUREK publiée. Le précédent [prompt autonome](docs/v1/CODEX-PHASE-0.1.0-PROMPT.md) est **RETIRÉ**.
+**Ordre selon l'ADR-0024 et D-09 du Core :** cadrage UX/documentaire maintenant; SDK et tests contractuels après stabilisation des contrats Core nécessaires; intégration fonctionnelle seulement après livraison/vérification des opérations Core concernées; commercialisation après les gates techniques et externes applicables. Les 43 capacités V1 restent obligatoires. La PR Core #152 et l'issue C0 #153 sont closes. Cette PR documentaire ZAMUREK #2 reste en draft. C1/C2 internes ne valent pas API ZAMUREK publiée; C3 est autorisée mais ses routes sont encore proposées, sans runtime. Le précédent [prompt autonome](docs/v1/CODEX-PHASE-0.1.0-PROMPT.md) est **RETIRÉ**.
 
 ## CI des spécifications (pas preuve de runtime)
 
@@ -49,4 +49,4 @@ python3 -m pip install -r scripts/requirements-docs.txt
 python3 scripts/validate_openapi.py
 ```
 
-Ces scripts contrôlent la **cohérence documentaire et les brouillons de contrats**, pas des ventes réelles, des factures DGI, des APK/EXE ou une conformité commerciale. Les dépôts ZAMUREK et Monarque Connect sont tous deux observés **publics** le 27/10/2026. Ne publier aucun secret, donnée client ou élément dont la confidentialité est requise ; la propriété du Core et sa visibilité GitHub sont deux sujets distincts. GitHub Actions peut aussi fonctionner dans un dépôt privé selon le plan et les quotas.
+Ces scripts contrôlent la **cohérence documentaire et les brouillons de contrats**, pas des ventes réelles, des factures DGI, des APK/EXE ou une conformité commerciale. Les dépôts ZAMUREK et Monarque Connect sont observés publics le 28/10/2026; ne publier aucun secret ou donnée client. La visibilité ne concède aucun droit de réutilisation du Core.
