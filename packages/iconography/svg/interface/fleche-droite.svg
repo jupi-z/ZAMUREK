@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-fleche-droite-i-title zi-fleche-droite-i-desc">
+  <title id="zi-fleche-droite-i-title">Flèche droite</title><desc id="zi-fleche-droite-i-desc">Flèche droite — repère visuel pour actions et commandes d’interface dans Zamurek.</desc>
+  
+  <defs/><g id="zi-fleche-droite-i-drawing" data-icon="fleche-droite" data-layer="drawing" transform="matrix(1.0986 0 0 1.0986 -4.732 -4.183)">
+    <path d="M15 48H80M62 28L82 48L62 68" fill="none" stroke="currentColor" stroke-width="4.32" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

@@ -1,0 +1,2900 @@
+{
+  "canonicalIcons": 288,
+  "semanticNamesWithAliases": 298,
+  "individualSvgFiles": 576,
+  "spriteFiles": 2,
+  "categories": 18,
+  "capabilitiesCovered": 43,
+  "capabilitiesTotal": 43,
+  "missingCapabilities": [],
+  "svgXmlValid": true,
+  "uniqueIds": true,
+  "internalReferencesResolved": true,
+  "htmlSvgMatchesFiles": true,
+  "bitmapElements": 0,
+  "fontDependencies": 0,
+  "externalAssets": 0,
+  "htmlSha256": "a52e3d0dfabab63fe1ba9033486dedc6a3dff527805ed13bbfe00963ea6d6397",
+  "files": [
+    {
+      "path": "svg/couleur/accueil.svg",
+      "sha256": "564926dcb7e9acbf69a4ea27d61a539112f903f9b5f689b7452eba4cd797cc80",
+      "bytes": 1740
+    },
+    {
+      "path": "svg/couleur/rechercher.svg",
+      "sha256": "ceb9183c7ce49ed85e4f56a3c0afd6380baedfe91a2a1d5352c5993a540d9851",
+      "bytes": 1981
+    },
+    {
+      "path": "svg/couleur/categories.svg",
+      "sha256": "416316e2b5ff46ecad8cbd7ff87c044808428f40c895c8d4efb13a63438cce5c",
+      "bytes": 2197
+    },
+    {
+      "path": "svg/couleur/boutiques.svg",
+      "sha256": "f33354511ed434fcacc09e71e510f661196251bc5408a79643958224a247d817",
+      "bytes": 1871
+    },
+    {
+      "path": "svg/couleur/favoris.svg",
+      "sha256": "67c582f636897d8deca102e56ceebae86c7801d4bbcd95f4a74a522be63b66d7",
+      "bytes": 1612
+    },
+    {
+      "path": "svg/couleur/profil.svg",
+      "sha256": "c78fa2d7ea97d15d1421e837018eed3b368ae099c669cd36e47069a65f533b2f",
+      "bytes": 1854
+    },
+    {
+      "path": "svg/couleur/menu.svg",
+      "sha256": "3555695b95f91205ef7acc48dc697d0b6416764859ed28d8e200f0af915d402a",
+      "bytes": 1912
+    },
+    {
+      "path": "svg/couleur/commandes.svg",
+      "sha256": "2750edd86e43084ee08fd4b0767431d8bfcec60d2b530596e5453c0fbab82319",
+      "bytes": 1902
+    },
+    {
+      "path": "svg/couleur/notifications.svg",
+      "sha256": "2b3088ffbcc700c3fff245b7bb71eb763287a52efb95956b7767341b2f26a8e1",
+      "bytes": 1978
+    },
+    {
+      "path": "svg/couleur/proximite.svg",
+      "sha256": "686e868abd08f7a02a8e28f503d5a5d3d5ec46b60e244791c4249e42ac4758a5",
+      "bytes": 1823
+    },
+    {
+      "path": "svg/couleur/plan.svg",
+      "sha256": "9a588c0639a2b4468f11fc94dd3b82e78acbd6e9840994b23912c6eaffd555f8",
+      "bytes": 1860
+    },
+    {
+      "path": "svg/couleur/assistant.svg",
+      "sha256": "2e866e33b0f02e140423581511373a12279a51b9576a339ec08b60160e73717e",
+      "bytes": 1938
+    },
+    {
+      "path": "svg/couleur/tous-commerces.svg",
+      "sha256": "29527e6c3cd0543d96cb47817fc0108a07bb47693d0df451e0745687a77b5222",
+      "bytes": 2239
+    },
+    {
+      "path": "svg/couleur/centre-commercial.svg",
+      "sha256": "6958e18179531a1950458453bd1d20415a9e6885c82c111b83f5add51dfad0e8",
+      "bytes": 2395
+    },
+    {
+      "path": "svg/couleur/populaires.svg",
+      "sha256": "63888ceb3d1ef05775ee8b81bdf89fa9f46a2afdeb8af769cf1054a909a3924b",
+      "bytes": 1712
+    },
+    {
+      "path": "svg/couleur/nouveautes.svg",
+      "sha256": "ee68f0847b8249cb330a70e655396fa3de50750c5a638fdfbfc5893cca5dfc83",
+      "bytes": 1885
+    },
+    {
+      "path": "svg/couleur/selection.svg",
+      "sha256": "e4cca6d17100611dee0d8b6ecac2b796d0e7904f5af8e06619b793d2f15c0010",
+      "bytes": 2261
+    },
+    {
+      "path": "svg/couleur/historique.svg",
+      "sha256": "8548ae75126108be770c93ccdac12013ee1b0a17c63dc2b111055a9168cddaf4",
+      "bytes": 1735
+    },
+    {
+      "path": "svg/couleur/enregistres.svg",
+      "sha256": "26d149799a81b193d5ecf85d288568c19aa4842de22deababaf434d34e60ce96",
+      "bytes": 1747
+    },
+    {
+      "path": "svg/couleur/comparaison.svg",
+      "sha256": "a854e0e4c9716359993d22c8afab1b8256d65d3abc8b2b22d00a1493d9205e11",
+      "bytes": 1798
+    },
+    {
+      "path": "svg/couleur/produit.svg",
+      "sha256": "3ef34e5f9389c136404d6e1fbd7f68d2b34628fee936c9f3c0c5a4fd892c4050",
+      "bytes": 1941
+    },
+    {
+      "path": "svg/couleur/variantes.svg",
+      "sha256": "9f901cab1cd3dc35c99c3896841b17d17ed8c40800d61e6bb9d67d90af10e03e",
+      "bytes": 1946
+    },
+    {
+      "path": "svg/couleur/galerie.svg",
+      "sha256": "d290ee11a6fe4d159adc9cc63f20f925de168fd69aa9ceeb678edf8525f84495",
+      "bytes": 1960
+    },
+    {
+      "path": "svg/couleur/details.svg",
+      "sha256": "525e9e458d9db401b599a27246749aacbdc0d202e1039428bb4a073a29b303b1",
+      "bytes": 1731
+    },
+    {
+      "path": "svg/couleur/etiquette.svg",
+      "sha256": "c7cb4752b45ceea963b4ef04fc1095d937f6a4fab67fc54d1dedc6024c9973f6",
+      "bytes": 1806
+    },
+    {
+      "path": "svg/couleur/scanner.svg",
+      "sha256": "9bff9703b5a63815cbf3e63ff8314c7aeb5eb791654cdcce5378809d70d9b10e",
+      "bytes": 2431
+    },
+    {
+      "path": "svg/couleur/code-barres.svg",
+      "sha256": "9f733cc28ab376c9108e2a146a92a27d9cc9510eb226eeee2284a9735fff4749",
+      "bytes": 2688
+    },
+    {
+      "path": "svg/couleur/qr-code.svg",
+      "sha256": "7f1fcd529be66f14d890f686ceceebda923f1bdef631f6c6a4db311b46d0daab",
+      "bytes": 3069
+    },
+    {
+      "path": "svg/couleur/disponible.svg",
+      "sha256": "efc919cf4a18ba03272f577bcb5b29b077dc4ad52e87ba9bc9cf19c8b70b5037",
+      "bytes": 2279
+    },
+    {
+      "path": "svg/couleur/indisponible.svg",
+      "sha256": "cbbe5ef975e2d62876946ca8dec1546852304792c501af19b057d292127aad45",
+      "bytes": 2317
+    },
+    {
+      "path": "svg/couleur/nouveau-produit.svg",
+      "sha256": "86b6bbdd9259396a07b016b31e402b5187c841f3d8bcd0362cab39c0e9770c25",
+      "bytes": 2364
+    },
+    {
+      "path": "svg/couleur/modifier-produit.svg",
+      "sha256": "a89ef88da730e8d856edc4c8b263cbc12f4c036dd5f271696fad26af0b83998d",
+      "bytes": 2388
+    },
+    {
+      "path": "svg/couleur/archiver-produit.svg",
+      "sha256": "0282140e4b43f42f9a340e4e3a72148034f116f31622fb109e67df6075e14820",
+      "bytes": 2584
+    },
+    {
+      "path": "svg/couleur/medias.svg",
+      "sha256": "c9a847125b7c59edde8f5a1fb0d992b0376d6c6cbdff620f0bb9b5e17d2f9534",
+      "bytes": 2249
+    },
+    {
+      "path": "svg/couleur/photo.svg",
+      "sha256": "b029a738119f9183474471b379ff921ffa37f11471eedc43513a02e2801e6956",
+      "bytes": 2014
+    },
+    {
+      "path": "svg/couleur/dimensions.svg",
+      "sha256": "bacb24ab445c02828ac00da3e9faa248df9c9ef09a7473bf2bbc2387ffea8aa0",
+      "bytes": 1769
+    },
+    {
+      "path": "svg/couleur/materiaux.svg",
+      "sha256": "988d530fd9ca3cad7c5d1976ec8dc4d036e01924c6a493ee7e2f324112eae89a",
+      "bytes": 1974
+    },
+    {
+      "path": "svg/couleur/conditionnement.svg",
+      "sha256": "fe73104352c2bb9fb47bfe78c072d551269ffd23475b75220f385e8e0dadec89",
+      "bytes": 2014
+    },
+    {
+      "path": "svg/couleur/catalogue-publie.svg",
+      "sha256": "386c9202baece46565b1c4b37a422161cd20ef38e8426b67ecc96e8a053067da",
+      "bytes": 2297
+    },
+    {
+      "path": "svg/couleur/catalogue-brouillon.svg",
+      "sha256": "71409fa38fa73fef29add5687996bf835963b39ffd42ec4ffe6963f4ac6c577a",
+      "bytes": 2044
+    },
+    {
+      "path": "svg/couleur/publication.svg",
+      "sha256": "8adee6381579a3e9df45d07692fd778683fef638ab98cf2778972f2e04be0125",
+      "bytes": 1804
+    },
+    {
+      "path": "svg/couleur/retirer-publication.svg",
+      "sha256": "3387836a30c88530daf341286819a66f10ce1c226082aed1e5a51366918c7ce8",
+      "bytes": 1918
+    },
+    {
+      "path": "svg/couleur/panier.svg",
+      "sha256": "ef3aa86d43ac32e8f4559e865f9406d01d9c6c4d90f753d0a1f7079ccdc9b8d5",
+      "bytes": 2149
+    },
+    {
+      "path": "svg/couleur/ajouter-panier.svg",
+      "sha256": "6d11c0f85d2699beb6f28c9c076a6c306c2ea142beda633fb8cf020826e17ddf",
+      "bytes": 2581
+    },
+    {
+      "path": "svg/couleur/retirer-panier.svg",
+      "sha256": "53ad3055b8c4e759f981f9200ee07dd085ab7580b52afdbb2cd0f4c95cd96ada",
+      "bytes": 2571
+    },
+    {
+      "path": "svg/couleur/panier-valide.svg",
+      "sha256": "a77e5f82a874a9ebe79ff38dc863f08e4c60c7081d7d760bb38f444998a04be6",
+      "bytes": 2559
+    },
+    {
+      "path": "svg/couleur/panier-vide.svg",
+      "sha256": "8819842541b45628e3be16bf325e5eb0725db75945fc04189128a9e3faa348f5",
+      "bytes": 1964
+    },
+    {
+      "path": "svg/couleur/quantite-plus.svg",
+      "sha256": "d765535b131c7b259ee1ac82aa6b2036cd4737e0a5256077a2662562d0fb6cb0",
+      "bytes": 1789
+    },
+    {
+      "path": "svg/couleur/quantite-moins.svg",
+      "sha256": "b27b368348f597b7d7a499ca4e1b2defc7e4af82837cb36f75116a2e667351f1",
+      "bytes": 1790
+    },
+    {
+      "path": "svg/couleur/ajouter-favoris.svg",
+      "sha256": "80d063490d0e3ccfe3d17188325894fdf88180f9081d83be06815fa2eff32ad7",
+      "bytes": 2022
+    },
+    {
+      "path": "svg/couleur/retirer-favoris.svg",
+      "sha256": "5b03daddd2b3a9c0a44be3794d61a0e3920a50d3989ad72a881450035dd65789",
+      "bytes": 2012
+    },
+    {
+      "path": "svg/couleur/passer-commande.svg",
+      "sha256": "ddc6aeb697f04a1c0f0ff5a2ed385f8c78bdd2ba9a2c308ff4cd0b9d8b543557",
+      "bytes": 2145
+    },
+    {
+      "path": "svg/couleur/confirmation-commande.svg",
+      "sha256": "1c3672fb77bc1b01bbe91a129c1b00d5cc1372a981ea2261c36c6648ddebbaec",
+      "bytes": 2236
+    },
+    {
+      "path": "svg/couleur/commande-annulee.svg",
+      "sha256": "b15cf187a85d4ae8011ada915877ed635ca79f9a7675ac156bd27e13a99d9ff5",
+      "bytes": 2167
+    },
+    {
+      "path": "svg/couleur/commande-attente.svg",
+      "sha256": "d0d78ec84ec6594420f93f65c7f79c7df41123a4dac947a7ae83e0b12c02fb97",
+      "bytes": 2160
+    },
+    {
+      "path": "svg/couleur/devis.svg",
+      "sha256": "234817727a42c038c202d0d15f286cac40e6369802ffd049067ea044bf779567",
+      "bytes": 2120
+    },
+    {
+      "path": "svg/couleur/accepter-devis.svg",
+      "sha256": "ed43f75ed4e22b3a35fe2c9ae5fd253512a959c6e40bebb9a1e0d1cedb68ab21",
+      "bytes": 2266
+    },
+    {
+      "path": "svg/couleur/refuser-devis.svg",
+      "sha256": "0ee403112dbb47366c0054668d10bf437a7fc093d5cc2df465ada9e805313caf",
+      "bytes": 2257
+    },
+    {
+      "path": "svg/couleur/prix.svg",
+      "sha256": "22a8148ca5724dbda10970e725c7874bbad04f6aaae8a5aa7d6559fbd5ef61c2",
+      "bytes": 1745
+    },
+    {
+      "path": "svg/couleur/taux-change.svg",
+      "sha256": "cc413363c6f96d92143f268bcd2292131d16bd9e25f44f1881520335eda46f91",
+      "bytes": 2108
+    },
+    {
+      "path": "svg/couleur/montants.svg",
+      "sha256": "2730d496e7bad44a13e2ae5a2e24bbaf2fd887e5e6f2219b9f2039ab52c02d25",
+      "bytes": 2284
+    },
+    {
+      "path": "svg/couleur/conditions.svg",
+      "sha256": "93ff19d8f38b19aad4bc05423ef7a2991d5f5a8cee0379a78b73fba015fd959b",
+      "bytes": 1962
+    },
+    {
+      "path": "svg/couleur/livraison.svg",
+      "sha256": "dd5d065a9efd8e987b14625da88eaa1f0c690a77cc8a103c17f9e545ebb9833d",
+      "bytes": 2404
+    },
+    {
+      "path": "svg/couleur/retrait.svg",
+      "sha256": "1fe5fe3052b72cc2dbf73984e7a4620dc21b3037dcae7001539d07f95dfff312",
+      "bytes": 2431
+    },
+    {
+      "path": "svg/couleur/sur-place.svg",
+      "sha256": "7ecb530dcee33a3bd20b8024bf496b39399a4502f74a72433050497513267de7",
+      "bytes": 1801
+    },
+    {
+      "path": "svg/couleur/suivi-commande.svg",
+      "sha256": "b337684ae99ae5fdc183bd04f434183bae7629d0e9f75fa555c970ef36fdeb76",
+      "bytes": 2084
+    },
+    {
+      "path": "svg/couleur/zone-livraison.svg",
+      "sha256": "f0de08ef2b983b4e2994545e4a8b63405202a3a020fa6a282046d74a7c7a26ff",
+      "bytes": 2293
+    },
+    {
+      "path": "svg/couleur/hors-zone.svg",
+      "sha256": "d4c6d88ce544e284587ec3b3e0be895f87263e8b24813aa88fbe3bc54df18904",
+      "bytes": 2239
+    },
+    {
+      "path": "svg/couleur/adresse.svg",
+      "sha256": "867d876e2851a8cdb061f3371f7b78963231656668ee8e85995a922c18e1fc54",
+      "bytes": 1785
+    },
+    {
+      "path": "svg/couleur/ajouter-adresse.svg",
+      "sha256": "478a5ffe577ea6d4560ff05de5962032f634405652090f037628c5d0ece13f4f",
+      "bytes": 2204
+    },
+    {
+      "path": "svg/couleur/preparation.svg",
+      "sha256": "d83dfc457c031d9e93cfe1f96ca930c3cb86f82486ba21b8cefb54ab3fe5578d",
+      "bytes": 2318
+    },
+    {
+      "path": "svg/couleur/commande-prete.svg",
+      "sha256": "23d3cf12b9ef19d05433f8516e714af84d5a79a0c2c42c0ac088477d6b1038ef",
+      "bytes": 2300
+    },
+    {
+      "path": "svg/couleur/livree.svg",
+      "sha256": "b23d861ce9d4fb166d6fe674c5e797ca08a583f6825f896cff2fa700984c81f6",
+      "bytes": 2670
+    },
+    {
+      "path": "svg/couleur/echec-livraison.svg",
+      "sha256": "af978a2a1b54b15c0db4964ed225bf59af49ca00fa7ad5b63e4c429937e6d8ed",
+      "bytes": 2828
+    },
+    {
+      "path": "svg/couleur/livraison-volumineuse.svg",
+      "sha256": "341fc185f9401e56b85787e9849460eb8879d941741b97fb2372800f4a72645d",
+      "bytes": 2606
+    },
+    {
+      "path": "svg/couleur/retour.svg",
+      "sha256": "2ad3756b6e87052f3411334a70eb427a96441c118d1ef53f5dd85a15801062a3",
+      "bytes": 1773
+    },
+    {
+      "path": "svg/couleur/demande-retour.svg",
+      "sha256": "0e8972a0c0ca820ccc30e586988bcad61f2ba78a8563150269552b15c6e5800a",
+      "bytes": 2161
+    },
+    {
+      "path": "svg/couleur/retour-accepte.svg",
+      "sha256": "9d796d46a667d27be08a81c8e8cb2f2ea4b3b6d586e9ee3c16632124dff95038",
+      "bytes": 2154
+    },
+    {
+      "path": "svg/couleur/planning-livraison.svg",
+      "sha256": "d20066ac7a0cdee5d5dd36613434dcc1cd41591132655ddc8b8400fddfef28e7",
+      "bytes": 2863
+    },
+    {
+      "path": "svg/couleur/restaurant.svg",
+      "sha256": "73161991f87fc25ec0a5d07cc9c41ba77396084a58b3bd6e2e8a1dc91c49c764",
+      "bytes": 1860
+    },
+    {
+      "path": "svg/couleur/pizza.svg",
+      "sha256": "9f5289cddaf463252f00a47aca63f72e6e969e76b56f7fb605ddcc99c99b3ff5",
+      "bytes": 2241
+    },
+    {
+      "path": "svg/couleur/boissons.svg",
+      "sha256": "d28970336b6ac131ce5ec76298fea094f744e740e277ece319a416d9ce8697d8",
+      "bytes": 1945
+    },
+    {
+      "path": "svg/couleur/carte-restaurant.svg",
+      "sha256": "a047cb7ade64fccfe37ae086e6d97976a30a0f539d3f3125b4d13f615d3a3290",
+      "bytes": 2450
+    },
+    {
+      "path": "svg/couleur/plat.svg",
+      "sha256": "791bb6a6cc308197441581a2fb9c9be56079c2c2ea94f47fafc0d3f4900ed19a",
+      "bytes": 1830
+    },
+    {
+      "path": "svg/couleur/cuisine.svg",
+      "sha256": "709144dc48908d42e6ac1a54329addc411c1a894c25c2ee8827566833935fbe5",
+      "bytes": 1801
+    },
+    {
+      "path": "svg/couleur/cuisson.svg",
+      "sha256": "90ab317141e8adb1d57e803239006e8c68b5d5d0e3c283969bc5e5172be2d77b",
+      "bytes": 2071
+    },
+    {
+      "path": "svg/couleur/supplements.svg",
+      "sha256": "09a53f09bf81f5de59c7a971c4a68f662d6ba122cc60b26c0634403f8ac57a8e",
+      "bytes": 2247
+    },
+    {
+      "path": "svg/couleur/commande-programmee.svg",
+      "sha256": "6f725bca1457fa85f8172bad65d36a7dbdaa458bbe08f799ee1e60bc901b8744",
+      "bytes": 2518
+    },
+    {
+      "path": "svg/couleur/ticket-cuisine.svg",
+      "sha256": "d6fa17f3b285a2da24677a72c885c62f7117ebe0919091dc2b81a04b551c4f2b",
+      "bytes": 1842
+    },
+    {
+      "path": "svg/couleur/plat-pret.svg",
+      "sha256": "e3f49bcdb01609efdce8598d34512062c52d53f457adc74f802d37601d2b5fae",
+      "bytes": 2194
+    },
+    {
+      "path": "svg/couleur/reservation-table.svg",
+      "sha256": "93e5eb7628ee6873ea5e9aa776baf8731835fb18e08e5258af26e15f4eb476f3",
+      "bytes": 2195
+    },
+    {
+      "path": "svg/couleur/couverts.svg",
+      "sha256": "eb63c558989eae27f0a2f9c1266680b05f6eb28266fcdf193f4d846adf749a94",
+      "bytes": 1850
+    },
+    {
+      "path": "svg/couleur/allergenes.svg",
+      "sha256": "a2c8d2618a83dc305f82954b7b9b7c04c8d7dda5f1144c9e4f0feb6a25e84acf",
+      "bytes": 1804
+    },
+    {
+      "path": "svg/couleur/alimentation.svg",
+      "sha256": "5e632f7457c0990c08243a2ca0dc23b61aa4bd089ed480982af096bc5d50bae1",
+      "bytes": 2138
+    },
+    {
+      "path": "svg/couleur/boulangerie.svg",
+      "sha256": "c834c1c7ab702ec46f479d8f88fb6ef7ad9b770fbe231797adfc911cb724076a",
+      "bytes": 1789
+    },
+    {
+      "path": "svg/couleur/patisserie.svg",
+      "sha256": "f53eb21c36c29a6f28f72e2972cc9c51b71e5f202fa174d1da525ad679f0dce0",
+      "bytes": 2175
+    },
+    {
+      "path": "svg/couleur/fruits.svg",
+      "sha256": "1e88cec1b0df78fa17b04fab84e1b8d98dc9c17dd0020b2ca6e82e9e756579f5",
+      "bytes": 1977
+    },
+    {
+      "path": "svg/couleur/menu-indisponible.svg",
+      "sha256": "198339455703a07591440bd27d056a646e24908075adbca30f5d927a5ae6663b",
+      "bytes": 2318
+    },
+    {
+      "path": "svg/couleur/balance.svg",
+      "sha256": "5efe479061dbe99f207bfc96ddbf40c6ba1682e0db3af0ca04839680d5e88b7a",
+      "bytes": 2175
+    },
+    {
+      "path": "svg/couleur/chocolat.svg",
+      "sha256": "de9d52a27ecde2ae2168a812ca4f4ad8f77cc9bc14e2ab459de17f06dc17cf94",
+      "bytes": 2067
+    },
+    {
+      "path": "svg/couleur/poids-confirme.svg",
+      "sha256": "d95835c7979e663485d19d32d72697c43cc5f6fe8e8e10609a8caef0c94d5500",
+      "bytes": 2565
+    },
+    {
+      "path": "svg/couleur/modifier-poids.svg",
+      "sha256": "5fb659c59cfdd466b5d288cf01a47dab591cf60295e88de2318f836f0837bb5d",
+      "bytes": 2574
+    },
+    {
+      "path": "svg/couleur/tare.svg",
+      "sha256": "3aa932b191a094b5e0843f1c9103e2d0fc9e740f3dfbb0c2088404252078ded0",
+      "bytes": 2142
+    },
+    {
+      "path": "svg/couleur/limite-poids.svg",
+      "sha256": "355e0b749c6e21252f4945d96eef2ba4bcab9be321c7d115022ce0e25125627a",
+      "bytes": 2574
+    },
+    {
+      "path": "svg/couleur/accepter-poids.svg",
+      "sha256": "fa91df1a97a5c0ef9bfce1b2bf69808223f4fb825b75a8cb4ccbd572b10386ec",
+      "bytes": 2581
+    },
+    {
+      "path": "svg/couleur/unite-mesure.svg",
+      "sha256": "8be62055db10ef70a18e4984dd42150b8657ad739abb9a4955643b9c829cc29c",
+      "bytes": 1800
+    },
+    {
+      "path": "svg/couleur/beaute.svg",
+      "sha256": "ec28edd422b4957297f2e26c20657b998e6a1955c5876eb7878d95a3372793e3",
+      "bytes": 2165
+    },
+    {
+      "path": "svg/couleur/services.svg",
+      "sha256": "990379870a59c991604a60fc4f0f4c05d9e42403998e9be826ca2d011f41c913",
+      "bytes": 1736
+    },
+    {
+      "path": "svg/couleur/agenda.svg",
+      "sha256": "38bb93d6f61af1abbcec629e64c0bbea8cec56b60cbc070ee6d3c76f403937e5",
+      "bytes": 2843
+    },
+    {
+      "path": "svg/couleur/reserver.svg",
+      "sha256": "e1936a4ab953ca3129f0366e1be57289df698843cff36ed62d72d748f676febe",
+      "bytes": 3191
+    },
+    {
+      "path": "svg/couleur/rendez-vous-confirme.svg",
+      "sha256": "649eb30ab24ce62348f4363289a2bdda98fd4b7bfcbcf3f0de927fe5717b8f68",
+      "bytes": 3358
+    },
+    {
+      "path": "svg/couleur/reporter.svg",
+      "sha256": "43c0de18ed9d9b4cb8548b23d0bce2efa70cf709fa0f8b5f9864a97677ab67af",
+      "bytes": 3201
+    },
+    {
+      "path": "svg/couleur/annuler-rendez-vous.svg",
+      "sha256": "fb4c824baf761373551869a6b6bf40e37a98aaf2acd71084eb46abf8dd4628d8",
+      "bytes": 3352
+    },
+    {
+      "path": "svg/couleur/indisponibilite.svg",
+      "sha256": "00728d705635d1a6b8cc92bf269bef1131798b4450050da6c8ad7e81efdd869a",
+      "bytes": 3507
+    },
+    {
+      "path": "svg/couleur/duree.svg",
+      "sha256": "e57afc24efb2fa9144cc2726de1fee5afccb4a9830c32ef4b14cdba1dd858bd7",
+      "bytes": 1892
+    },
+    {
+      "path": "svg/couleur/collaborateurs.svg",
+      "sha256": "78cbfed2df2feb0f6609bb4a3f2b4ff95929dffb1d2b0ca06028f66d144b91df",
+      "bytes": 2197
+    },
+    {
+      "path": "svg/couleur/arrivee-client.svg",
+      "sha256": "138955242d3eaa2102d3c924bc505b4304175bce4d1c6dd73b004f72f719bef7",
+      "bytes": 2277
+    },
+    {
+      "path": "svg/couleur/absence-client.svg",
+      "sha256": "22649ffbd42e9fd2ebd9d3ced50b56302a9e9188ba151ff2c6d749e22dc07790",
+      "bytes": 2281
+    },
+    {
+      "path": "svg/couleur/brosse.svg",
+      "sha256": "273a061698d7e0da5623be7af1c0ae4f9af98bbe8fc94b9a675e404aaad859f6",
+      "bytes": 1783
+    },
+    {
+      "path": "svg/couleur/peigne.svg",
+      "sha256": "220851c59f66c66238496969a152b378b2c1ec98a39c0103ba6b246b0874044a",
+      "bytes": 1788
+    },
+    {
+      "path": "svg/couleur/seche-cheveux.svg",
+      "sha256": "83d667487547e0469301452ae166faf02b9e21acce0bd3f242a3093d8d9fcb12",
+      "bytes": 2136
+    },
+    {
+      "path": "svg/couleur/fauteuil.svg",
+      "sha256": "e9e1ef0209d4273f24389f4f3774ce4d8749de6e87c66c9566a4163dbc2f02ed",
+      "bytes": 1974
+    },
+    {
+      "path": "svg/couleur/acompte.svg",
+      "sha256": "b9b5c36d8ced7c13b8be745d0a484766132ff85ef52c0f0b9b602b3e579d7319",
+      "bytes": 2551
+    },
+    {
+      "path": "svg/couleur/meubles.svg",
+      "sha256": "062f44aac874c7289c67eb76130d221d267b6e0fb2bb7d54f372a15603dfcabb",
+      "bytes": 2422
+    },
+    {
+      "path": "svg/couleur/lit.svg",
+      "sha256": "273a0b8f999c59abfc097afa58d5bb0d61e39c3da714fa674b12ef43ea03cda4",
+      "bytes": 2084
+    },
+    {
+      "path": "svg/couleur/luminaire.svg",
+      "sha256": "fe2a8490732b370981c4ec44c1f1470eaa041e2c0e9e6f1f763495077998632c",
+      "bytes": 1768
+    },
+    {
+      "path": "svg/couleur/mesures.svg",
+      "sha256": "0678894b88724284d2015050001aada32d9b605f1e7fbb05204f59d345a81443",
+      "bytes": 2043
+    },
+    {
+      "path": "svg/couleur/configuration.svg",
+      "sha256": "a46629330dd9bbde66742341759191a7071e14aacfbf44aa2d9eea8883d20172",
+      "bytes": 2193
+    },
+    {
+      "path": "svg/couleur/devis-meuble.svg",
+      "sha256": "f60e69995e3fffa931563a11cc5ddf7bc356eb0fe0ac1781aada23e55d6575ea",
+      "bytes": 2807
+    },
+    {
+      "path": "svg/couleur/accord-livraison.svg",
+      "sha256": "d012003119b8638c82bf3359bf479d98152f23d51fba2b09489de2cd457032f9",
+      "bytes": 2851
+    },
+    {
+      "path": "svg/couleur/electronique.svg",
+      "sha256": "8b2b6015df5c9e58474b5f623678c182307b6ee9ad275ffe2c3063b277d618ac",
+      "bytes": 1945
+    },
+    {
+      "path": "svg/couleur/ordinateur.svg",
+      "sha256": "3db0fe816cbe36b2d9cece7b0f0fb2229538ffc5890b6409e1d9462b714463ff",
+      "bytes": 2152
+    },
+    {
+      "path": "svg/couleur/reparation.svg",
+      "sha256": "58b243135678d7e985fff43923b0c512471e83d8e4b4d60dd17040d0e5502756",
+      "bytes": 2674
+    },
+    {
+      "path": "svg/couleur/appareil-endommage.svg",
+      "sha256": "4f94bce7bcc00e17319fb5689707f4770d6482d1a746a96fcf602b5458591db0",
+      "bytes": 2172
+    },
+    {
+      "path": "svg/couleur/diagnostic.svg",
+      "sha256": "acce31bcb9c748e9360abda86f6cd3c48a09e7a226382b74c98dc17b89f08f23",
+      "bytes": 2398
+    },
+    {
+      "path": "svg/couleur/consentement.svg",
+      "sha256": "de2c868e8a671b4901999f0871fee677f50fb109aa1c93128f57e48c51fe86a0",
+      "bytes": 2301
+    },
+    {
+      "path": "svg/couleur/intervention.svg",
+      "sha256": "bd2b8f15221042dfeaf903bfd9eb52291c3a46488e62aa38fc2c38bcf992e242",
+      "bytes": 2002
+    },
+    {
+      "path": "svg/couleur/reparation-attente.svg",
+      "sha256": "fac3ee8a3dc9d22eab2f57be86fd22ce5f845fc9b5ae82ffdeeade9f8b506b74",
+      "bytes": 2185
+    },
+    {
+      "path": "svg/couleur/reparation-terminee.svg",
+      "sha256": "ba6b08577441136091aadb4f9009b23a1cb1bff659c08ce4e7bfc428fa8dfd93",
+      "bytes": 2201
+    },
+    {
+      "path": "svg/couleur/tests-techniques.svg",
+      "sha256": "5aeeb074a6d17cf8d61cb095f6bd0f90f1e31b8df380e29413c26da0d46537e0",
+      "bytes": 2007
+    },
+    {
+      "path": "svg/couleur/restitution.svg",
+      "sha256": "f4476b6a27de056f3fa940378848b666d38b72d6d8e83b487c53ef68f0fc0f97",
+      "bytes": 2262
+    },
+    {
+      "path": "svg/couleur/garantie.svg",
+      "sha256": "a6c8720da3c32f72132a46d1a9fbdb4414f00111d5c287370fbd403f5d898f76",
+      "bytes": 2040
+    },
+    {
+      "path": "svg/couleur/numero-serie.svg",
+      "sha256": "6134adcd0efa8c82f7ec09a14761ff0a33d9ef697ae419086bfc1a68e3b5ca6f",
+      "bytes": 3236
+    },
+    {
+      "path": "svg/couleur/pharmacie.svg",
+      "sha256": "f5776a43700c3457812505eef1b13e587c21a6e5ce07e096211bec2c723f9182",
+      "bytes": 2015
+    },
+    {
+      "path": "svg/couleur/produit-autorise.svg",
+      "sha256": "45319961d8353685d5bba72e666b5d418b275ea026222a78477c731abbfe2fdb",
+      "bytes": 2289
+    },
+    {
+      "path": "svg/couleur/lot.svg",
+      "sha256": "8f71ffe2052775966b957c278b819c3f416e17d018cff98a8f78dfc3da7162a2",
+      "bytes": 2409
+    },
+    {
+      "path": "svg/couleur/peremption.svg",
+      "sha256": "d3affdd80b1a014f6bb172d4d4107d03d6789fca6a50861144b9400b035c3244",
+      "bytes": 3254
+    },
+    {
+      "path": "svg/couleur/produit-perime.svg",
+      "sha256": "42d8ac46008b7d312ada9933d34cfb43cc22e2947230792bd538f282ec5c2b94",
+      "bytes": 2564
+    },
+    {
+      "path": "svg/couleur/autorisation-professionnelle.svg",
+      "sha256": "da6cb70d96c9cc1a77f474c753e580dc4d84be37e9b1a56a33b03e8f7e844e0e",
+      "bytes": 2325
+    },
+    {
+      "path": "svg/couleur/produit-restreint.svg",
+      "sha256": "189e0387e4d90b8758aa73ca9a6792ab160896199f071d7ddb998409be42d99e",
+      "bytes": 2632
+    },
+    {
+      "path": "svg/couleur/vente-bloquee.svg",
+      "sha256": "9b59fd19f4993fc5e77746aa1da63efd5166437d5092f13b20af765ef822184a",
+      "bytes": 2772
+    },
+    {
+      "path": "svg/couleur/lieu.svg",
+      "sha256": "db3fb5068ba534f82d8b77f3d57122b6a998799018442bc0dd9d3ac724c6bd3c",
+      "bytes": 2240
+    },
+    {
+      "path": "svg/couleur/niveaux.svg",
+      "sha256": "9d9e0992abd0d5b42bbeddad72ae13efeae4d922657cf30cf194ec44cef2a269",
+      "bytes": 1785
+    },
+    {
+      "path": "svg/couleur/escaliers.svg",
+      "sha256": "cbb6e27c499467e3c796e721a2b637b7cf636ec815cc8b192aa3333ce9013bd6",
+      "bytes": 1745
+    },
+    {
+      "path": "svg/couleur/entree.svg",
+      "sha256": "e99fa9ab7c0ac68cb584c408cc9bc1e9303fc2202abd5aaf85f7ed499e30b61b",
+      "bytes": 1816
+    },
+    {
+      "path": "svg/couleur/stationnement.svg",
+      "sha256": "7f3dc78bde86ee125df6456e9cbe3a17b464f19ce85367cd3fbb58c6db67969b",
+      "bytes": 1819
+    },
+    {
+      "path": "svg/couleur/accessibilite.svg",
+      "sha256": "aa8a765f9a8004e8ffe5f98ac9ea60e07474fe1eb2d7a337c421955bb8114beb",
+      "bytes": 1849
+    },
+    {
+      "path": "svg/couleur/emplacement.svg",
+      "sha256": "1d9a204030db302f5d79c5481060adfa8d00badf46e2852c362c2a60f5f89d63",
+      "bytes": 1865
+    },
+    {
+      "path": "svg/couleur/rejoindre-lieu.svg",
+      "sha256": "e0e43289a14008c3bb93557e030faaea47be0c81a430214fc66afafa0f11eafa",
+      "bytes": 2672
+    },
+    {
+      "path": "svg/couleur/quitter-lieu.svg",
+      "sha256": "7322377258e31e6a9fb4e7126474dbc2f3ad39314c2232558146885587f0b672",
+      "bytes": 2652
+    },
+    {
+      "path": "svg/couleur/visibilite.svg",
+      "sha256": "135a86e1ac6dde668f8d8d23e6f215941ba0dc31f7d85536a2e49355429c6092",
+      "bytes": 2003
+    },
+    {
+      "path": "svg/couleur/confidentialite-lieu.svg",
+      "sha256": "ce4cd0f59191ed5899651294974a4de1ae6a5c7a0fdc75a740449fbd8a621cd5",
+      "bytes": 2968
+    },
+    {
+      "path": "svg/couleur/caisse.svg",
+      "sha256": "6ecd575ea9bae68290cd7ebce16dde2d6d5a66d66791ad71f07b367328d286b0",
+      "bytes": 2256
+    },
+    {
+      "path": "svg/couleur/terminal.svg",
+      "sha256": "c63d6f87b2a20b5169be5334dd6899c84b8c37d0d06dfda44e93febe1326d62c",
+      "bytes": 2445
+    },
+    {
+      "path": "svg/couleur/caissier.svg",
+      "sha256": "a0ad4448db914247949f2f9a690e2a21c34eb50e2c02021cf4d8814482515866",
+      "bytes": 1891
+    },
+    {
+      "path": "svg/couleur/client-passage.svg",
+      "sha256": "7042c9b7232d4062a6c1c8dd071c82cdc53f2c0e00cce6efe45eed78f247275d",
+      "bytes": 2285
+    },
+    {
+      "path": "svg/couleur/ouvrir-caisse.svg",
+      "sha256": "ecbd45821c30863f7c80bf86625493374e82ecbf76c153ce9c38f618b6dbcdf9",
+      "bytes": 2687
+    },
+    {
+      "path": "svg/couleur/cloturer-caisse.svg",
+      "sha256": "e757d1e2c3aae727d56a09d44445ac9a584d27e2c852c0c3b3331cf44463fdb8",
+      "bytes": 2901
+    },
+    {
+      "path": "svg/couleur/especes.svg",
+      "sha256": "f85013f86fac21817f56dcad87d908c16dbb3dd06c164c89c2c0d2dd15e3046a",
+      "bytes": 2042
+    },
+    {
+      "path": "svg/couleur/monnaie-rendue.svg",
+      "sha256": "7710c382f59b13635448c1220b7fd0f6cbe41c2472377438abb2da969a287980",
+      "bytes": 2380
+    },
+    {
+      "path": "svg/couleur/entree-especes.svg",
+      "sha256": "28a45b16541019bc85ba112c77d9b5ba811628369de504b813ea0f926f48cd22",
+      "bytes": 2427
+    },
+    {
+      "path": "svg/couleur/sortie-especes.svg",
+      "sha256": "a1af7245e3f1b11770be2e0204a267ccff302d876253f6434c3261b111aaa993",
+      "bytes": 2415
+    },
+    {
+      "path": "svg/couleur/ecart-caisse.svg",
+      "sha256": "d416f1c3607d634d905ab8a53d2bf698b9ba04565ca5c397192a2f03d821a727",
+      "bytes": 2684
+    },
+    {
+      "path": "svg/couleur/rapprochement.svg",
+      "sha256": "1b21c411b6d1dcf732bf15b167807c6ec63a5562deddafe03bde9275e3d86f3a",
+      "bytes": 2019
+    },
+    {
+      "path": "svg/couleur/transfert-manuel.svg",
+      "sha256": "cc913323bcb60966e518a5c367e91f329cf20966976b8d5bf9300cafe61b792d",
+      "bytes": 2071
+    },
+    {
+      "path": "svg/couleur/preuve-transfert.svg",
+      "sha256": "c605905b12e22ebc13fa2f23daaa3b21c6d84215da5628fb3174d66656e46749",
+      "bytes": 2331
+    },
+    {
+      "path": "svg/couleur/paiement-attente.svg",
+      "sha256": "4a03d2a1d220038cd3370859813e54191b63b3ae971bd166bd9398a2e0ac2afc",
+      "bytes": 2451
+    },
+    {
+      "path": "svg/couleur/paiement-confirme.svg",
+      "sha256": "0ec4d23e28bc1ce8d166dbbddae6f9d60d4e031a17b9d68d563bfedb08dd0291",
+      "bytes": 2464
+    },
+    {
+      "path": "svg/couleur/remboursement.svg",
+      "sha256": "08bb1d05dda9d0188605c2695448eb774ac41846e0f42f6b678d3365955b3989",
+      "bytes": 1850
+    },
+    {
+      "path": "svg/couleur/facture.svg",
+      "sha256": "c08dcc22d2951abcab5143db67dcab6c58afea89480e1bcc787363feb19a8d02",
+      "bytes": 1750
+    },
+    {
+      "path": "svg/couleur/imprimer.svg",
+      "sha256": "3c8e6c06aa23c35f5a1b5854ec610b64be7c2c907d33dae50cd84c2a0f4e2be9",
+      "bytes": 2225
+    },
+    {
+      "path": "svg/couleur/reimprimer.svg",
+      "sha256": "6d98df32179bd9d2dbe459d2d27dd1075cfd153d65b9a91a2d74acb7f8af7d87",
+      "bytes": 2601
+    },
+    {
+      "path": "svg/couleur/panne-imprimante.svg",
+      "sha256": "5051b27cb553e2e734473b755edf3bd75240f26723c8d47e52e342163abd9ec5",
+      "bytes": 2681
+    },
+    {
+      "path": "svg/couleur/papier-a4.svg",
+      "sha256": "dc040e30608063df83e02bce1ee67da959a429635997e12d051e4e9e5d5b90a4",
+      "bytes": 2349
+    },
+    {
+      "path": "svg/couleur/ticket-thermique.svg",
+      "sha256": "e418cf72c62d75bdcc887e8cddf214cc357af0561fa16f81001bbc537a069681",
+      "bytes": 2175
+    },
+    {
+      "path": "svg/couleur/facture-non-fiscalisee.svg",
+      "sha256": "272006f684f182a44be80875a4fd07c4f44ff7f1a0e3518a6e31a9205856ae34",
+      "bytes": 2488
+    },
+    {
+      "path": "svg/couleur/connexion.svg",
+      "sha256": "7b0a27294267cfd51faf46568a125351131d0f937b495f7022dcc08350741aaa",
+      "bytes": 1986
+    },
+    {
+      "path": "svg/couleur/deconnexion.svg",
+      "sha256": "0f904be0bffc58fda156c1e4fb9a9257e64b79303fd0f6973bb1114b4a791b69",
+      "bytes": 1994
+    },
+    {
+      "path": "svg/couleur/email.svg",
+      "sha256": "0cec4b82c272effa976212c4f6656a88ec3336fc3c938d90dcf2ac2b2169b901",
+      "bytes": 1919
+    },
+    {
+      "path": "svg/couleur/email-verifie.svg",
+      "sha256": "8c4b492f83a7a032d9936ec22cdb6a9d60631b71e0f8b85786b76a4df61028ce",
+      "bytes": 2315
+    },
+    {
+      "path": "svg/couleur/mot-de-passe.svg",
+      "sha256": "f7de88e3e403b07fe0438782b2a71bbd5c9089bbbe02c11a3b7bcd10881d8ef7",
+      "bytes": 1991
+    },
+    {
+      "path": "svg/couleur/changer-mot-de-passe.svg",
+      "sha256": "a8f5f175841fa383a938cc76bcd296c16b87da3153bcc6ed494f62ec8966ba91",
+      "bytes": 2447
+    },
+    {
+      "path": "svg/couleur/mfa.svg",
+      "sha256": "259e5d07eaa681e2a19c47b2e0533ed477967adf03e8d4f4b6e14fbd371b07bf",
+      "bytes": 1632
+    },
+    {
+      "path": "svg/couleur/session.svg",
+      "sha256": "6020993fc053b95f237d34d697a6798716daba19a2577e8cb1e9cf2177cc0494",
+      "bytes": 2382
+    },
+    {
+      "path": "svg/couleur/appareils.svg",
+      "sha256": "928c179b4d2aa26c9f45df1ab04612b647eda9b7a0c0611bce40d17f8f28bd72",
+      "bytes": 2646
+    },
+    {
+      "path": "svg/couleur/permissions.svg",
+      "sha256": "6b56416319007e800d65f154b3fb66695027618079b4a66cf3a7d57862be796f",
+      "bytes": 1790
+    },
+    {
+      "path": "svg/couleur/acces-refuse.svg",
+      "sha256": "9c353e6e36bc86a1f20a1d25079df3bd482401341bbbbaa07cd26eff15481d5a",
+      "bytes": 1794
+    },
+    {
+      "path": "svg/couleur/vpn.svg",
+      "sha256": "434cb0dc2e9aca6fffa60650bcdc872c1772ec486829732c743a32d7e181b6fb",
+      "bytes": 2690
+    },
+    {
+      "path": "svg/couleur/confidentialite.svg",
+      "sha256": "5b808fe074f920eda2aa0607d377cdb940613e5baf475d8cfa2aff2db81a85a6",
+      "bytes": 2540
+    },
+    {
+      "path": "svg/couleur/consentements.svg",
+      "sha256": "674237c83e8fe548b01e91578a9cba8659980758e93dfcecc80e0c52217fae6b",
+      "bytes": 2518
+    },
+    {
+      "path": "svg/couleur/parametres.svg",
+      "sha256": "b907600e7d743b0ec9a8a9a3ea06a7a262370b080335b7dbcff40044cb6827a9",
+      "bytes": 2319
+    },
+    {
+      "path": "svg/couleur/langue.svg",
+      "sha256": "72c32f1bf6ef261162458f5684dd8351711afd9a93a5ad16ecf12aa0a43dbdfb",
+      "bytes": 1851
+    },
+    {
+      "path": "svg/couleur/contacts.svg",
+      "sha256": "cce40106bdc953719047a1baeb4407830d6db3e24334bc1e1e76dc8852caccb8",
+      "bytes": 2404
+    },
+    {
+      "path": "svg/couleur/supprimer-compte.svg",
+      "sha256": "edfa90abe1c50c795fa1056472202577739eb520951d73b7195849cf22926611",
+      "bytes": 2321
+    },
+    {
+      "path": "svg/couleur/aide-catalogue.svg",
+      "sha256": "fb5c0e828aebcf4422fdbd3741f5dcb26121a2c0c949c80bae52203af867ea59",
+      "bytes": 2277
+    },
+    {
+      "path": "svg/couleur/faq-assistant.svg",
+      "sha256": "6a9205932ebda605d881debe72b7abdadbc47c1a238c4b5395c20b58005935f3",
+      "bytes": 2319
+    },
+    {
+      "path": "svg/couleur/assistant-analyse.svg",
+      "sha256": "ee376e5bd8026a2f3c29dfd45d07c559e73e2dd8faed10b8b146dca3a5bed5ea",
+      "bytes": 2589
+    },
+    {
+      "path": "svg/couleur/proposition-ia.svg",
+      "sha256": "aae23187e84962cbb2bb3285dafe31a7b71d8d18a56cf0ceaf79cb6c9a188559",
+      "bytes": 2316
+    },
+    {
+      "path": "svg/couleur/approbation-humaine.svg",
+      "sha256": "ccf3fc307a7e04e6cacd75962fb9fb6546907b60bb0f887478f94336755b494b",
+      "bytes": 2358
+    },
+    {
+      "path": "svg/couleur/refus-proposition.svg",
+      "sha256": "03bdcd3cd6c2863d228b5f92b53786ce89d97f49ff50da05c8fc2d8efa967ae3",
+      "bytes": 2367
+    },
+    {
+      "path": "svg/couleur/arret-ia.svg",
+      "sha256": "8df6f8b6a345d847bfa494eb5a493a0b5907d0633373a1f4189e77b81a2f0d51",
+      "bytes": 2442
+    },
+    {
+      "path": "svg/couleur/sources.svg",
+      "sha256": "3aedd89b0c18212a9d9a82edc466f6b845c9a0d2eb3676b3fe1fd25883c9f7c4",
+      "bytes": 1674
+    },
+    {
+      "path": "svg/couleur/budget-ia.svg",
+      "sha256": "d273f39634dc4341063a7c5bdb17bcfe84239bf9958d773ac8e2d276211691b3",
+      "bytes": 2642
+    },
+    {
+      "path": "svg/couleur/outils-ia.svg",
+      "sha256": "d4610c1163eca5d2d819e2949c00311ea553ba290e14acca19bd8eae1bb7a9d8",
+      "bytes": 1809
+    },
+    {
+      "path": "svg/couleur/workflow.svg",
+      "sha256": "fe858806903c9a2c050f8f30e31eda3f80dabb86bcab6ec9e676b66f96000fdc",
+      "bytes": 2125
+    },
+    {
+      "path": "svg/couleur/relancer-processus.svg",
+      "sha256": "63e450d5748935f810896c6827f1c532824313b1ff521a111b5b3219bf38d173",
+      "bytes": 2224
+    },
+    {
+      "path": "svg/couleur/etablissements.svg",
+      "sha256": "2b2abb8c006b9f13827696de726e6eecf68b60c939f50eaa5355a150de426255",
+      "bytes": 2396
+    },
+    {
+      "path": "svg/couleur/profils-metiers.svg",
+      "sha256": "94e05cf8b0811e22e58e9cfee5d6c02d2f2bc16f7ffd9f5581e014e9589e8ee2",
+      "bytes": 2287
+    },
+    {
+      "path": "svg/couleur/abonnement.svg",
+      "sha256": "662eeb0db1217624396282727461bdfcd929a4d5d9b24f96f3668972053ac38c",
+      "bytes": 2343
+    },
+    {
+      "path": "svg/couleur/quotas.svg",
+      "sha256": "31d5989409035e3c2e550378be194d8df7d663e4e8f96e63ac85b2fd4800f7f2",
+      "bytes": 1971
+    },
+    {
+      "path": "svg/couleur/statistiques.svg",
+      "sha256": "66d15a96fdcc9d8923e7e93bf27464725b623ddedd17c022377234a5e36aa369",
+      "bytes": 2079
+    },
+    {
+      "path": "svg/couleur/journal.svg",
+      "sha256": "8611c1602288e9f9f04db46682d8cf10b46432bdc04549e984e70e37a0256f46",
+      "bytes": 2216
+    },
+    {
+      "path": "svg/couleur/evenements.svg",
+      "sha256": "45477dc584c970b4f55693d1af6b266ee825e760f612a0a5ee3fe839f97a2c7f",
+      "bytes": 1650
+    },
+    {
+      "path": "svg/couleur/api-partagee.svg",
+      "sha256": "3ff88c940287b101b5488203aa6c3449c24910e05aafd8980353c073dec4e6b5",
+      "bytes": 2030
+    },
+    {
+      "path": "svg/couleur/isolation.svg",
+      "sha256": "0be7a119d3f9895e34ca4044388027c569168672dab60006a2b53242280e78fa",
+      "bytes": 2454
+    },
+    {
+      "path": "svg/couleur/export-donnees.svg",
+      "sha256": "02dd2ef579367c15d0d0bbe89a1a7f56690fd33e0e6b62295a26ab8969d10eee",
+      "bytes": 2316
+    },
+    {
+      "path": "svg/couleur/sauvegarde.svg",
+      "sha256": "db385248ee38b95120cb57e7075166cdfff0186f188626cde8c8528e637ce5a7",
+      "bytes": 1778
+    },
+    {
+      "path": "svg/couleur/restauration.svg",
+      "sha256": "c0d8752d2322f7a61695dbc39371c070f6cbb14a740aa7630f48b198c5eafc9a",
+      "bytes": 2279
+    },
+    {
+      "path": "svg/couleur/synchronisation.svg",
+      "sha256": "5772fb8170d29aec5ef9ec272d91f88033ace38131577f2ce07c9729ef0d4881",
+      "bytes": 2159
+    },
+    {
+      "path": "svg/couleur/fonction-active.svg",
+      "sha256": "8b0e58a9035282b3b01768dc6b2eed7202c9ed5bfeb9b4c615507dfa6ef6300f",
+      "bytes": 1889
+    },
+    {
+      "path": "svg/couleur/fonction-desactivee.svg",
+      "sha256": "fc2fdfa959e4d70a6d9414d4f6ccf9bf71ed1020dfa970c2761e4213cd53f2ce",
+      "bytes": 1945
+    },
+    {
+      "path": "svg/couleur/controle-qualite.svg",
+      "sha256": "c21481ec22598fc704c46718f3313d1619f064c27eacc442c43530f1cd17a275",
+      "bytes": 2312
+    },
+    {
+      "path": "svg/couleur/validation-legale.svg",
+      "sha256": "ac9e50162943773fe661bc0ae0880f710014a5728024626bc9762f96cb85fc47",
+      "bytes": 2373
+    },
+    {
+      "path": "svg/couleur/deploiement.svg",
+      "sha256": "b0347f45e3ca7fa5ab5044e390d4060c9446396a50d07289d4f7b97c4f6e1252",
+      "bytes": 2496
+    },
+    {
+      "path": "svg/couleur/version.svg",
+      "sha256": "817ea70174e007f880eafc5c4339cb9feed25d9ebb9f82d76f9109e89beb3d9a",
+      "bytes": 2251
+    },
+    {
+      "path": "svg/couleur/modifier.svg",
+      "sha256": "7d1cc947b761901fe587313e425de96f9eadc7c196a8ef16cc954f54044ee1b1",
+      "bytes": 1800
+    },
+    {
+      "path": "svg/couleur/supprimer.svg",
+      "sha256": "319eb27102e3dbb9f4d8fda57244b4c5f07d238baf16369d7280841ba2196cb9",
+      "bytes": 1933
+    },
+    {
+      "path": "svg/couleur/partager.svg",
+      "sha256": "1ccd4f9ecf6308490c2412d67cfb203c3fa0cebc4ae4f1a5d278c782d9be9ea9",
+      "bytes": 2097
+    },
+    {
+      "path": "svg/couleur/trier.svg",
+      "sha256": "47b7d3d14c5fdaeadec582ad49a126bca550537309773de7f7f75cb224f66f97",
+      "bytes": 1590
+    },
+    {
+      "path": "svg/couleur/zoomer.svg",
+      "sha256": "a8a13809fb02565e56501320d303164eb52f500993cdafa7d97f490371afaeff",
+      "bytes": 2097
+    },
+    {
+      "path": "svg/couleur/dezoomer.svg",
+      "sha256": "8eabb42e1116a83d3ba781b847b48f71d8c285959181b8e82064a84712e2df30",
+      "bytes": 2130
+    },
+    {
+      "path": "svg/couleur/telecharger.svg",
+      "sha256": "800facc06d61cfb4bf70f43466caef5b20558dcf14e987f926c900fb230d0feb",
+      "bytes": 1809
+    },
+    {
+      "path": "svg/couleur/copier.svg",
+      "sha256": "b5fee2c0d48173005b735419a2916cc7c0308fefb5e7e49235bd4fb2f96869b8",
+      "bytes": 1902
+    },
+    {
+      "path": "svg/couleur/joindre.svg",
+      "sha256": "a739203e9eaac0969d21539355a1dc296c98eeff44721842db16f7f6cdc01ca9",
+      "bytes": 1644
+    },
+    {
+      "path": "svg/couleur/recadrer.svg",
+      "sha256": "2dd3eb26c063cc880b9a4d5f7ccd69c304ab47469c0427ac2aec76b74503a99f",
+      "bytes": 1599
+    },
+    {
+      "path": "svg/couleur/signaler.svg",
+      "sha256": "513598f1945df9e0c0f754219961359a0e725e935a42f417fa732cb67b4577f9",
+      "bytes": 1755
+    },
+    {
+      "path": "svg/couleur/suivant.svg",
+      "sha256": "01bdf6380dd99a94282eb1dbc2a763b9c4d0b360d22b92527c70a7e1b38cfdd9",
+      "bytes": 1580
+    },
+    {
+      "path": "svg/couleur/precedent.svg",
+      "sha256": "d2e0e2d700086d4e8268af56ca8d98003d30e3477fc4da0fcf8855e4a958e74b",
+      "bytes": 1610
+    },
+    {
+      "path": "svg/couleur/developper.svg",
+      "sha256": "990266753a13ad89ca882897bcd62a0d6af77bdfdfb313603fc9b403930a5c7f",
+      "bytes": 1621
+    },
+    {
+      "path": "svg/couleur/reduire.svg",
+      "sha256": "61adead8b7c1eda34b9fab0176ccf887d4a12d5c6384f5fc8b3e1af155d46d0f",
+      "bytes": 1582
+    },
+    {
+      "path": "svg/couleur/fleche-droite.svg",
+      "sha256": "c1681189e018c09d5fa8c8f95aab1a8542b13242d40df87bb1f85641bc00cd09",
+      "bytes": 1669
+    },
+    {
+      "path": "svg/couleur/fleche-gauche.svg",
+      "sha256": "69840ee7a682d3f529c7ed68b76a20c6901340307a736040e79372f3135cc203",
+      "bytes": 1669
+    },
+    {
+      "path": "svg/couleur/fleche-haut.svg",
+      "sha256": "1f0b203dd81646b79e820d51acfa0d952d2e42b430e8a0ba32229de341c1ba16",
+      "bytes": 1643
+    },
+    {
+      "path": "svg/couleur/fleche-bas.svg",
+      "sha256": "abbb941430ac8f5b28f327ea15f1cc630885850781126714f2f69e2c7a0e78ac",
+      "bytes": 1630
+    },
+    {
+      "path": "svg/couleur/plus-options.svg",
+      "sha256": "8aab2af0063471a19b5c112f0892457407759b5757f121528dc0a56ce05bdf47",
+      "bytes": 1997
+    },
+    {
+      "path": "svg/couleur/options-verticales.svg",
+      "sha256": "eca9d8ba8dd5655754d6532cbf6d525f3b74652d9fe018daca784c486c458aff",
+      "bytes": 2085
+    },
+    {
+      "path": "svg/couleur/lecture.svg",
+      "sha256": "c910b9eab94dfe5a37cdbd5da3fd823f0c2e55655184bfc4e9457f41ff05bfcb",
+      "bytes": 1581
+    },
+    {
+      "path": "svg/couleur/pause.svg",
+      "sha256": "95d760ae145090fdbdf56f901affae5b882e181365c63538a1d3c3a9f76ce877",
+      "bytes": 1755
+    },
+    {
+      "path": "svg/couleur/arreter.svg",
+      "sha256": "545f27adcad0a7ae563ab2a5ab9ca7843cfd2602be9fee40d6fb9756acb8f642",
+      "bytes": 1604
+    },
+    {
+      "path": "svg/couleur/microphone.svg",
+      "sha256": "a540c452bffce4e24c0a4a9e15a09af727bb6791e0bec2dd74b7b1b008300328",
+      "bytes": 1831
+    },
+    {
+      "path": "svg/couleur/audio.svg",
+      "sha256": "c8702491bb113b5dda71cb30f9825e0c1794af3a19c8d1b88fed3597d1ce71dd",
+      "bytes": 1740
+    },
+    {
+      "path": "svg/couleur/basculer.svg",
+      "sha256": "fb98db63123c7ebd96ad28ee154e2b66e29a1b7f376722e948d3d77ce6e06905",
+      "bytes": 1786
+    },
+    {
+      "path": "svg/couleur/selectionner.svg",
+      "sha256": "2caa4a0148b1214d9ddbe2152ef9c762f21af6de56bb35d7f4feb3a7b0b8bd0b",
+      "bytes": 1777
+    },
+    {
+      "path": "svg/couleur/fermer.svg",
+      "sha256": "f15078ca8a8e7c07bafdf69aa6a3061b12a53abf5260bebd35f21a03eb5dfc0a",
+      "bytes": 1697
+    },
+    {
+      "path": "svg/couleur/attention.svg",
+      "sha256": "a5109e91141e479c44a1033cbe6aee12a248e738fb2b06856f01b649fa67e420",
+      "bytes": 1795
+    },
+    {
+      "path": "svg/couleur/en-cours.svg",
+      "sha256": "710442ecac1d6497f93426c0674e77f2ed3a71522f52972784fa9f4bc4c17270",
+      "bytes": 1711
+    },
+    {
+      "path": "svg/couleur/chargement.svg",
+      "sha256": "cbb7c9d25c7b4b7522dee0ccd6e86c45110f7bb86798962f8482bfc5b26e1637",
+      "bytes": 1702
+    },
+    {
+      "path": "svg/couleur/connectivite.svg",
+      "sha256": "ecafb2a73760e69c06c017731a9f32c6d476a9755f6346f329c47c37355aa430",
+      "bytes": 1761
+    },
+    {
+      "path": "svg/couleur/hors-ligne.svg",
+      "sha256": "fb65a0ed322c3264c725aeff1cc1984ba5c6f0477e0f7e645c8e1a9627be7e65",
+      "bytes": 1914
+    },
+    {
+      "path": "svg/couleur/message.svg",
+      "sha256": "c4e80cd3cf21dd05ea79f87d9f2275be8ad52c1a99990a51214b273302eec50e",
+      "bytes": 1774
+    },
+    {
+      "path": "svg/couleur/support.svg",
+      "sha256": "4f3a77d6f8ea21c763a703a7abca48115d0e8e5bc72d5be6bb81599b6cb1d6e7",
+      "bytes": 2149
+    },
+    {
+      "path": "svg/couleur/aide.svg",
+      "sha256": "7460966063379841b94341bc5cae51595a5d49bbfe3a40791a81d7148ac2d7dc",
+      "bytes": 1728
+    },
+    {
+      "path": "svg/couleur/aucun-resultat.svg",
+      "sha256": "ef8797259a68dcb7786691cc44794049ddd48072b5888ffaeac8dc52e0909d52",
+      "bytes": 2350
+    },
+    {
+      "path": "svg/couleur/notification-nouvelle.svg",
+      "sha256": "a6154187be7dc6228495ee00c463544f2dbffe87addf440cdf47b81715bf1670",
+      "bytes": 2407
+    },
+    {
+      "path": "svg/couleur/notification-muette.svg",
+      "sha256": "ec3cc5d437007be514f78f811d4efbe6d43d064b4e9b52a65dacd5463c7bd9f3",
+      "bytes": 2245
+    },
+    {
+      "path": "svg/couleur/non-visible.svg",
+      "sha256": "4d1b92c20e45840d089c763c4c0774cbf77035ec146c1271ead78a513cabe45e",
+      "bytes": 2135
+    },
+    {
+      "path": "svg/couleur/erreur-systeme.svg",
+      "sha256": "2b512b41e577930efd65efa3e915b7d7710c98b0a73147e051bedd43a736490f",
+      "bytes": 2726
+    },
+    {
+      "path": "svg/couleur/temporisation.svg",
+      "sha256": "80c3c9f24bdaed8f1fe6f49b13c0164c9af9c903fe7ddeec9d1a03258cf73311",
+      "bytes": 1984
+    },
+    {
+      "path": "svg/couleur/en-attente-validation.svg",
+      "sha256": "902e9f6a7ab3ff5f435c8a9b8a3618fec95906dd65e036569b955d7ec9b1e9ea",
+      "bytes": 2224
+    },
+    {
+      "path": "svg/couleur/promotions.svg",
+      "sha256": "1e824b74fb56ad2262a3e45fa03601b75583a3ba9ec46cbed2b70a3c2a099d5e",
+      "bytes": 2130
+    },
+    {
+      "path": "svg/couleur/offre-speciale.svg",
+      "sha256": "73751bff3f059243568d636b20f4aea65eaf7377b38cef8e11d0f614bd613148",
+      "bytes": 2317
+    },
+    {
+      "path": "svg/couleur/cadeau.svg",
+      "sha256": "e77f946622e634162a4cdbd1364af474af274ee48592dd69576fa45e3ac72d59",
+      "bytes": 2163
+    },
+    {
+      "path": "svg/couleur/eco-responsable.svg",
+      "sha256": "c1b9e07ebd12d2d312e1ed9e4977944ab024737e855576ac867b0e79390e7dc5",
+      "bytes": 2051
+    },
+    {
+      "path": "svg/couleur/premium.svg",
+      "sha256": "e8aef3ef1b1126f7c4dc94ee21e4e651edfafed2b01d05a9e65eaf31dd3a9b89",
+      "bytes": 1753
+    },
+    {
+      "path": "svg/couleur/avis.svg",
+      "sha256": "454780d70d18dfb7478e8c6a2797ee387b045fc6f4a519b1ce97e5988b3ec183",
+      "bytes": 1772
+    },
+    {
+      "path": "svg/couleur/note.svg",
+      "sha256": "707816bfb81d69779d90c9def59e5c16831192a0602951ae7e5d3ba4960e48fc",
+      "bytes": 1654
+    },
+    {
+      "path": "svg/couleur/portefeuille.svg",
+      "sha256": "a88a7c407803843190b94b37f174a84799fcf9118dc2b2f3a2328a498df0a4f5",
+      "bytes": 2135
+    },
+    {
+      "path": "svg/couleur/carte.svg",
+      "sha256": "ee99838b27e0110c03dbbe7c1039c0c028c5a2a94510898f23e8dd80abe68a82",
+      "bytes": 2065
+    },
+    {
+      "path": "svg/interface/accueil.svg",
+      "sha256": "d490070c6907f221370e2af57e4a031ab73206d1bdbb7da83c87bd613dc8feef",
+      "bytes": 616
+    },
+    {
+      "path": "svg/interface/rechercher.svg",
+      "sha256": "1cdbc8a64247eeaf22b44db11270898d5a897fdbab191f2d0b651ed8046d92d0",
+      "bytes": 908
+    },
+    {
+      "path": "svg/interface/categories.svg",
+      "sha256": "a75463b7ceb3a0e9cbbb760fb9d095a0c91b570b4735a12f5bbc06d420d62ba3",
+      "bytes": 1112
+    },
+    {
+      "path": "svg/interface/boutiques.svg",
+      "sha256": "98c3e077e56aa976e358faa5337a39f617a9c582ee4c34a3d583f5c23966d2bb",
+      "bytes": 740
+    },
+    {
+      "path": "svg/interface/favoris.svg",
+      "sha256": "cc491f54f997fe1ab957e906e5066d7a6e279fcc5f7f095eb3c5a827c6e2d402",
+      "bytes": 602
+    },
+    {
+      "path": "svg/interface/profil.svg",
+      "sha256": "9d0c9ac35ff424386b283fe4befeb3e742c6af8f98ce14c883f49edc985cd231",
+      "bytes": 709
+    },
+    {
+      "path": "svg/interface/menu.svg",
+      "sha256": "2f73e3ab1c417448533dc962395e764f28e70b4babd764703101019645692669",
+      "bytes": 894
+    },
+    {
+      "path": "svg/interface/commandes.svg",
+      "sha256": "41778aa9dc765b7240987605272c0605338aae0915d8a17956e9d46c1dd1a27a",
+      "bytes": 859
+    },
+    {
+      "path": "svg/interface/notifications.svg",
+      "sha256": "5f7ca14dce288df57db294cf135cce364d570ce83cedf4e4c31930ee990a3e1f",
+      "bytes": 787
+    },
+    {
+      "path": "svg/interface/proximite.svg",
+      "sha256": "4f31076c93687f255307daeec8627854516150af6958fe4983519fd391ddd74a",
+      "bytes": 775
+    },
+    {
+      "path": "svg/interface/plan.svg",
+      "sha256": "3eaea9a7f1e323c3c3f06c435164bea5f851a18f3e02a41226ddf1de33626b94",
+      "bytes": 860
+    },
+    {
+      "path": "svg/interface/assistant.svg",
+      "sha256": "c1e517fa3d1fa41e7e73d8128757f24b8b45ff300738b1899f5a111fe9119cc3",
+      "bytes": 784
+    },
+    {
+      "path": "svg/interface/tous-commerces.svg",
+      "sha256": "9d5f7c94324fd5e17747b41a7fd59c9f34498b2b8199054919a75a05cb681603",
+      "bytes": 1030
+    },
+    {
+      "path": "svg/interface/centre-commercial.svg",
+      "sha256": "418b6818d7e19573213186a8c20ba0e60e2817b2a5362de23ec84cb909a2dbb1",
+      "bytes": 1303
+    },
+    {
+      "path": "svg/interface/populaires.svg",
+      "sha256": "ff99ca8e37f0adb786708aa7822cbaeead715eca7e3c58106394d567a3178773",
+      "bytes": 684
+    },
+    {
+      "path": "svg/interface/nouveautes.svg",
+      "sha256": "077a81610f0e9a84b4f766aa839d65f3fee075b2dc6debbe96fdf207937ce4db",
+      "bytes": 831
+    },
+    {
+      "path": "svg/interface/selection.svg",
+      "sha256": "7572e478ef67553c1d5e502d297a425df4eecb683b19937850657d79ded4ad05",
+      "bytes": 1190
+    },
+    {
+      "path": "svg/interface/historique.svg",
+      "sha256": "3c8ddfa37625becc400e62fb477dad99a44bad65db6dd300541c19a84f88722d",
+      "bytes": 712
+    },
+    {
+      "path": "svg/interface/enregistres.svg",
+      "sha256": "3ffc3e7b87837503571ae3327275e2dbb214f23114b3f46e9712c7a53260ff2b",
+      "bytes": 602
+    },
+    {
+      "path": "svg/interface/comparaison.svg",
+      "sha256": "ce17029a1635efc3b29939ffc4c7d06a92801799404a49579214f6343db7176f",
+      "bytes": 714
+    },
+    {
+      "path": "svg/interface/produit.svg",
+      "sha256": "fa99066433a8b69063a50f1dc6208c9e314a1af88d1b0a95439f3093ea468e95",
+      "bytes": 889
+    },
+    {
+      "path": "svg/interface/variantes.svg",
+      "sha256": "dc464c9466a60bf3d37e3a72aa4e1da9ff5ef34a7833d5e854144fd3b3134936",
+      "bytes": 888
+    },
+    {
+      "path": "svg/interface/galerie.svg",
+      "sha256": "6fc0cde3475195135b9f6c5c623cb97cb22859d9db6085f069436da057c9a123",
+      "bytes": 908
+    },
+    {
+      "path": "svg/interface/details.svg",
+      "sha256": "8e68f6f3c26f607781b10f228baabfc168f07a6bb6f67efcca12afefae799abc",
+      "bytes": 731
+    },
+    {
+      "path": "svg/interface/etiquette.svg",
+      "sha256": "b071254a8e00264cf29dd10aea02b9d5926effd01814442789103ca494d18f4e",
+      "bytes": 758
+    },
+    {
+      "path": "svg/interface/scanner.svg",
+      "sha256": "9930b77411e730eaa96d321219a69af22c9616783dc97e3d800d2c74a7da82e1",
+      "bytes": 1227
+    },
+    {
+      "path": "svg/interface/code-barres.svg",
+      "sha256": "1613c7b0ce66a6a02f6d54b6e1964452634439fbbdc86d9755582c2d26168646",
+      "bytes": 1394
+    },
+    {
+      "path": "svg/interface/qr-code.svg",
+      "sha256": "ba74ae3419d756982fffcbd685ff2ab5791ad62a3e6d28cb3b29a735cadf7769",
+      "bytes": 1882
+    },
+    {
+      "path": "svg/interface/disponible.svg",
+      "sha256": "e72ed481852bcc21a8cb112b183e0c487eb14dce6c556f087ca61a24b9c9a0bc",
+      "bytes": 1439
+    },
+    {
+      "path": "svg/interface/indisponible.svg",
+      "sha256": "71fc1234707b9cf42f66983469e33c3179a57ee7f0b51e7cbcc4d73f954cc0ab",
+      "bytes": 1465
+    },
+    {
+      "path": "svg/interface/nouveau-produit.svg",
+      "sha256": "6152a96dc77aad52e97cb3fc1674ad76d650b31c0b3cb7a964a8b3e83d6d5596",
+      "bytes": 1494
+    },
+    {
+      "path": "svg/interface/modifier-produit.svg",
+      "sha256": "ee44dae2ae12044f9fb7360b2f130fea72a3d0e0b5b5a6b278a30eb9f945f3b3",
+      "bytes": 1514
+    },
+    {
+      "path": "svg/interface/archiver-produit.svg",
+      "sha256": "01016504fb50ae46f353a59de75027c6df12e473c637f8c0f42169f1f1892af4",
+      "bytes": 1682
+    },
+    {
+      "path": "svg/interface/medias.svg",
+      "sha256": "99a95565d8d7df626f91c9656a921866353db5ecbbfab00d9cc6eec255f85ed2",
+      "bytes": 1433
+    },
+    {
+      "path": "svg/interface/photo.svg",
+      "sha256": "73607f3278edcabfb08c824f03755370e038fbe3751befa0d2d420be2371c645",
+      "bytes": 981
+    },
+    {
+      "path": "svg/interface/dimensions.svg",
+      "sha256": "82b261db87c8652a66dc7d9f01db848a3a19430bf2574e5453abe63e190a964c",
+      "bytes": 746
+    },
+    {
+      "path": "svg/interface/materiaux.svg",
+      "sha256": "0fc95ad9a63d2e3009d8bd872406652a7030ea4d133f367f01b32d9b451105d4",
+      "bytes": 916
+    },
+    {
+      "path": "svg/interface/conditionnement.svg",
+      "sha256": "6c3268d6e2684f901240119408dfacbbf1e7dbf6929b4eec3c40801d0616368e",
+      "bytes": 937
+    },
+    {
+      "path": "svg/interface/catalogue-publie.svg",
+      "sha256": "b212bb51dd8c95275d44ffaafc527ec03eaa99c738583dd928b94c906ce5cf5d",
+      "bytes": 1451
+    },
+    {
+      "path": "svg/interface/catalogue-brouillon.svg",
+      "sha256": "66bed9142d489b31c1d31acc0cd4c277f3174c557dd2c848e02fb075d2551c68",
+      "bytes": 941
+    },
+    {
+      "path": "svg/interface/publication.svg",
+      "sha256": "057cfac16bc5e2d23b3e08bf240d0d1dd0d1b7375f38e1013e14d00a4506ca50",
+      "bytes": 735
+    },
+    {
+      "path": "svg/interface/retirer-publication.svg",
+      "sha256": "710806763d6dcf1063923d5caaa4ee5964de2db521460605acfa4327dd7e5bda",
+      "bytes": 801
+    },
+    {
+      "path": "svg/interface/panier.svg",
+      "sha256": "8e24257c6b40f65cf8fe0456a87effd247808ef783e69908eac462b9450268aa",
+      "bytes": 969
+    },
+    {
+      "path": "svg/interface/ajouter-panier.svg",
+      "sha256": "db24641c0cfc4f8e6a42a68fa18d012cb347bc8d1065561c62a97e19152d8e17",
+      "bytes": 1574
+    },
+    {
+      "path": "svg/interface/retirer-panier.svg",
+      "sha256": "e89a5b598b9bccad079560c82887b9d9915d5240e689af7d4f64bd2d1ba867e3",
+      "bytes": 1564
+    },
+    {
+      "path": "svg/interface/panier-valide.svg",
+      "sha256": "d9ec5493700a6634395cff7f972abe074fe48ff4981dd3b1883d6fa39f47eec2",
+      "bytes": 1559
+    },
+    {
+      "path": "svg/interface/panier-vide.svg",
+      "sha256": "36715644539cafffa7759e6457d1f60b128a3d19f383f92215c23360c5d1388b",
+      "bytes": 869
+    },
+    {
+      "path": "svg/interface/quantite-plus.svg",
+      "sha256": "96a498fdae37d3c322d3d20c95ed5412b2537b19ba3d7a5c051b04a95ef1c390",
+      "bytes": 748
+    },
+    {
+      "path": "svg/interface/quantite-moins.svg",
+      "sha256": "0de691e055f85ce598ac53736766b8b1c23089629ad759ac9c1780f92ef5f670",
+      "bytes": 743
+    },
+    {
+      "path": "svg/interface/ajouter-favoris.svg",
+      "sha256": "9a2cab292ab3bcb90f7261838778a525a20273237fddfc6b0f8feede183a0ddf",
+      "bytes": 1202
+    },
+    {
+      "path": "svg/interface/retirer-favoris.svg",
+      "sha256": "0873c8c92d9f6e969be2d395a5fbf52dcd5531aa690106da9fca50b79f73d422",
+      "bytes": 1192
+    },
+    {
+      "path": "svg/interface/passer-commande.svg",
+      "sha256": "17f175aaa7bb30a732cb82b5379b4315121e6f79f90299a798ce343132585524",
+      "bytes": 1330
+    },
+    {
+      "path": "svg/interface/confirmation-commande.svg",
+      "sha256": "d34d0aeaa6d042a89ad926b36689e01eedf9a2d2036097469df2126687ef77a0",
+      "bytes": 1391
+    },
+    {
+      "path": "svg/interface/commande-annulee.svg",
+      "sha256": "fcaefcf62cf2d5e32f9de607903b0b499c777342a07bed4164529315ff1fc952",
+      "bytes": 1347
+    },
+    {
+      "path": "svg/interface/commande-attente.svg",
+      "sha256": "51086fdb4a3c96650552b55bfa28be272ce56bff874c349f4d8b25adc2592c7b",
+      "bytes": 1342
+    },
+    {
+      "path": "svg/interface/devis.svg",
+      "sha256": "0ce45ae50e09c5e22acddfcfbf6b827035e14de082728d2f53f28393164a7cc0",
+      "bytes": 1331
+    },
+    {
+      "path": "svg/interface/accepter-devis.svg",
+      "sha256": "e2c39230225637ff255b813e0e1abe0c54d489fcd3c9af054bca6d4633d80dd0",
+      "bytes": 1430
+    },
+    {
+      "path": "svg/interface/refuser-devis.svg",
+      "sha256": "11611fb3b659c06b78a05f960f2ba726bcd593cd9198aa8b0d7e1f6ed668cd01",
+      "bytes": 1426
+    },
+    {
+      "path": "svg/interface/prix.svg",
+      "sha256": "c22cc711d3ad5eb6c20d7ee448a06a1e8f37fae15e5197b65727b23214a59f8c",
+      "bytes": 727
+    },
+    {
+      "path": "svg/interface/taux-change.svg",
+      "sha256": "fe79b42771df1a012ea7846cfdb9d94750cd43166a7768613ac1686c6fc6e4b7",
+      "bytes": 1260
+    },
+    {
+      "path": "svg/interface/montants.svg",
+      "sha256": "4f96484e753f443b954f06a429e4fc7010cd686cde28f766f108711b0ed89045",
+      "bytes": 1222
+    },
+    {
+      "path": "svg/interface/conditions.svg",
+      "sha256": "e790d02f0918511bbee033ed19ee55ad2d3f9aa3837b25dde5788f7e8559f98d",
+      "bytes": 920
+    },
+    {
+      "path": "svg/interface/livraison.svg",
+      "sha256": "647d257839a80ea098dc9997c3cfb6b4af7da53d28bbc114019c9fc5a05aeb91",
+      "bytes": 1191
+    },
+    {
+      "path": "svg/interface/retrait.svg",
+      "sha256": "032cf7d1796a294d2b98fdfc697f6e2725ed1a49200e0e913c854235e9ec601b",
+      "bytes": 1508
+    },
+    {
+      "path": "svg/interface/sur-place.svg",
+      "sha256": "dbe497260832e0cda02cc92da2b7018e0cc4364c36dfd2bbf1df4a661150136c",
+      "bytes": 744
+    },
+    {
+      "path": "svg/interface/suivi-commande.svg",
+      "sha256": "bee28e18302e0b0b9e72d89bcb1a6c06cbd2b2304c9b3ea516153dbfb6d9e0b3",
+      "bytes": 979
+    },
+    {
+      "path": "svg/interface/zone-livraison.svg",
+      "sha256": "8216d23e0374ccf046efad6ecc0644b689e374cd7b3fca52375bb25f8c3e347f",
+      "bytes": 1460
+    },
+    {
+      "path": "svg/interface/hors-zone.svg",
+      "sha256": "061c8e9116303290f9a8f037ac01625e3bab9b22ec5bb9849bc58f6df97446e0",
+      "bytes": 1436
+    },
+    {
+      "path": "svg/interface/adresse.svg",
+      "sha256": "2b6749448ea3460ec2ba08f925348579864f4becea2ed79ea5d8ee4766b8e97b",
+      "bytes": 749
+    },
+    {
+      "path": "svg/interface/ajouter-adresse.svg",
+      "sha256": "017f2f23239d20142d15b6877f1e21e1c8aab66c9ad40ef3a98e4868a808d45e",
+      "bytes": 1358
+    },
+    {
+      "path": "svg/interface/preparation.svg",
+      "sha256": "4e449c37813d6c5729718acbb6d3a84a47fdfe27d4914b4094b1382470a68784",
+      "bytes": 1474
+    },
+    {
+      "path": "svg/interface/commande-prete.svg",
+      "sha256": "4b97d20756853bfff75a430b5aaa6cc5bd3220ad4d0baa3cf447842845aae95f",
+      "bytes": 1467
+    },
+    {
+      "path": "svg/interface/livree.svg",
+      "sha256": "7e2906968c56153ca6efebe7ae203f1961242c462b20e750383c502a12b1ed16",
+      "bytes": 1713
+    },
+    {
+      "path": "svg/interface/echec-livraison.svg",
+      "sha256": "11bf9fe87c2a46f973975de7bb0bb9bd02288ceb4c76b64f477bf21f522adce9",
+      "bytes": 1799
+    },
+    {
+      "path": "svg/interface/livraison-volumineuse.svg",
+      "sha256": "6e1d444a4e01dd21350864a8490c2336167c4adf7c7a6fbbbca2a8d267f24b98",
+      "bytes": 1285
+    },
+    {
+      "path": "svg/interface/retour.svg",
+      "sha256": "773d369fec77b3ed96ada8919d07fcaa653090763e2115183ce466c0dc7c7fb1",
+      "bytes": 733
+    },
+    {
+      "path": "svg/interface/demande-retour.svg",
+      "sha256": "114807d202cd7df8a40b9f91238d6e173af2f4898d3ac433c1110898f3ccfcc1",
+      "bytes": 1310
+    },
+    {
+      "path": "svg/interface/retour-accepte.svg",
+      "sha256": "94d9421931ac64dbd338fd1254a08b75c93cf2d1cd86f01bd805477306564017",
+      "bytes": 1303
+    },
+    {
+      "path": "svg/interface/planning-livraison.svg",
+      "sha256": "48ff7faa9a014a6d285003da93551cbab682a9064d9e2985f6700fb0bb7d5bdd",
+      "bytes": 1812
+    },
+    {
+      "path": "svg/interface/restaurant.svg",
+      "sha256": "c98a6f1b2517473f15b9902a0521b095739d7e4c545b8a963ce18e24599cb55a",
+      "bytes": 813
+    },
+    {
+      "path": "svg/interface/pizza.svg",
+      "sha256": "1eeb9efb33506dc7e986f79f6028c6b9ad63375fa72a1e17a6733944437a6cc9",
+      "bytes": 1187
+    },
+    {
+      "path": "svg/interface/boissons.svg",
+      "sha256": "60230d057dca0224ccb5a6b582c37ed7fa7d788de0c65744dd688f9a274d87b1",
+      "bytes": 859
+    },
+    {
+      "path": "svg/interface/carte-restaurant.svg",
+      "sha256": "ebdbfd45f0bc3ec01263b1031562c5586d015c07300d2a883a5da4152f5b8618",
+      "bytes": 1575
+    },
+    {
+      "path": "svg/interface/plat.svg",
+      "sha256": "77af60d3d3ff95f71fa5ce4173531201f4d87c2ae2a9baf6cf48860910dc1e94",
+      "bytes": 817
+    },
+    {
+      "path": "svg/interface/cuisine.svg",
+      "sha256": "40953909e8fe2eb5b387599640bbf840059a73a133b04d495a4f9abdd6251682",
+      "bytes": 746
+    },
+    {
+      "path": "svg/interface/cuisson.svg",
+      "sha256": "4ee2e9255f6388e760d4018316def57361f86960c646d2d904fe7099760da6fc",
+      "bytes": 899
+    },
+    {
+      "path": "svg/interface/supplements.svg",
+      "sha256": "1f115efcc3ddb9764247b322cdbb2d2ea4bec9a2de8d3bf3756f2da960abc0f6",
+      "bytes": 1426
+    },
+    {
+      "path": "svg/interface/commande-programmee.svg",
+      "sha256": "119a594e7eb1e53fc7d10f391856fb0fc11c61fa037d9e00ee8c384bfe83e09d",
+      "bytes": 1506
+    },
+    {
+      "path": "svg/interface/ticket-cuisine.svg",
+      "sha256": "9ef44380235817bd9075657212d762c7aa689c58490456cce0a8801a8a86fa38",
+      "bytes": 795
+    },
+    {
+      "path": "svg/interface/plat-pret.svg",
+      "sha256": "0ba0530b4d6ef019a820d1032cd5e4a83999d50242c8a74d2fd1629687dafd1b",
+      "bytes": 1383
+    },
+    {
+      "path": "svg/interface/reservation-table.svg",
+      "sha256": "239eea9b444466df92f402be284b0071d22258a17d9f14b10037e771d89bddb1",
+      "bytes": 1332
+    },
+    {
+      "path": "svg/interface/couverts.svg",
+      "sha256": "c66eaddc9fa02e89e852b003125d4454e58c60a32b859519298fe3fa720a374d",
+      "bytes": 817
+    },
+    {
+      "path": "svg/interface/allergenes.svg",
+      "sha256": "592ba328cbd37c4c0561114cbafbc473d8ef6ce03563749136a59cd82f58ffe9",
+      "bytes": 786
+    },
+    {
+      "path": "svg/interface/alimentation.svg",
+      "sha256": "ccbc7bb4242bfb83ef6053d2e6e308457e53af3b3bff59afe88a8b29eb70b0e9",
+      "bytes": 1047
+    },
+    {
+      "path": "svg/interface/boulangerie.svg",
+      "sha256": "dc32160d7456248277bbc75681ec21617536c24587e4bfdecc44da5b21b1ddf7",
+      "bytes": 760
+    },
+    {
+      "path": "svg/interface/patisserie.svg",
+      "sha256": "603e013a351be2504c3d2daf1171eb7150828edd8aefdf5117d4955dbfc27ec2",
+      "bytes": 1027
+    },
+    {
+      "path": "svg/interface/fruits.svg",
+      "sha256": "96ae12615df0216d311d353e759db339dc265b1ebca3e1a923755a7c0e6922e9",
+      "bytes": 923
+    },
+    {
+      "path": "svg/interface/menu-indisponible.svg",
+      "sha256": "ac45098c64f45cf791b9049de0156f2733847caeca0b91f3351c35f48eea1cce",
+      "bytes": 1467
+    },
+    {
+      "path": "svg/interface/balance.svg",
+      "sha256": "96e73bc18872db3e5c0eed70c9127dfe56da1ac9c5656bd7bde5657ecb00aaa1",
+      "bytes": 1055
+    },
+    {
+      "path": "svg/interface/chocolat.svg",
+      "sha256": "fc93a81d13655268cbb3b88394d25f220ed6150ae5eee2b1813e4450e91ec946",
+      "bytes": 1022
+    },
+    {
+      "path": "svg/interface/poids-confirme.svg",
+      "sha256": "5f034e049bc659c7cf6f482d5e4941416457c2bb45de6edf17699f266daf8b5b",
+      "bytes": 1633
+    },
+    {
+      "path": "svg/interface/modifier-poids.svg",
+      "sha256": "048dc23ef2dfe619eccb3e7ced1535d8de70dbc85d20a06868d115a460865002",
+      "bytes": 1644
+    },
+    {
+      "path": "svg/interface/tare.svg",
+      "sha256": "30a3687d35741fbf0170508a43f6177a71a416705203b9b4e8a16a4736f9e0e5",
+      "bytes": 1043
+    },
+    {
+      "path": "svg/interface/limite-poids.svg",
+      "sha256": "0ccd1e44a364cd890e86832c6e94729510bd40a63cbbd2d44799bb182d672b5f",
+      "bytes": 1661
+    },
+    {
+      "path": "svg/interface/accepter-poids.svg",
+      "sha256": "5ec3287e70413072f659e2468f7d65f2241a143a511b87385c543d317906dd2e",
+      "bytes": 1649
+    },
+    {
+      "path": "svg/interface/unite-mesure.svg",
+      "sha256": "a59c1d69af558be3715f7ada64bbb16c0cc2457bccf641cb84772644a48771a8",
+      "bytes": 765
+    },
+    {
+      "path": "svg/interface/beaute.svg",
+      "sha256": "5c5bf09a6a99347df0872ce3a15efa045b466a3bf90a0b0424da57e59460adf5",
+      "bytes": 1121
+    },
+    {
+      "path": "svg/interface/services.svg",
+      "sha256": "a307b187d941dad6913abc2b30f8cb2267fbcf92269981297db12b435c416a40",
+      "bytes": 725
+    },
+    {
+      "path": "svg/interface/agenda.svg",
+      "sha256": "ef65a3455eb404cb0a7b7444b58c84c8faf252124f1017b0859f735b3d2b3c7b",
+      "bytes": 1699
+    },
+    {
+      "path": "svg/interface/reserver.svg",
+      "sha256": "42248479a1bd3b5953b1ec24b53c4eb03005f1daaba8f6bb55cd9358e5c63455",
+      "bytes": 2264
+    },
+    {
+      "path": "svg/interface/rendez-vous-confirme.svg",
+      "sha256": "5627b3afda853e6f10347619979734f0ae0c7566b7805cb2e07c88f930f19ab1",
+      "bytes": 2359
+    },
+    {
+      "path": "svg/interface/reporter.svg",
+      "sha256": "31ef46793330d1917381e3b8f579901eeddb87ec68824ed113e0c62c3a53cd0a",
+      "bytes": 2276
+    },
+    {
+      "path": "svg/interface/annuler-rendez-vous.svg",
+      "sha256": "489c0028e814e8d49edc97f67d5dd04e0cd8616645fa6ebb616b229641603729",
+      "bytes": 2359
+    },
+    {
+      "path": "svg/interface/indisponibilite.svg",
+      "sha256": "667b45368c2182a72a4284e810eb7adf23c3d58238a466c452c55f0097d00d4e",
+      "bytes": 2512
+    },
+    {
+      "path": "svg/interface/duree.svg",
+      "sha256": "7664a3e48b53fb54929d96eb23ba275eab8af4ba14bfb4caa68f67be144a4d83",
+      "bytes": 885
+    },
+    {
+      "path": "svg/interface/collaborateurs.svg",
+      "sha256": "688f09efb1ac6ef17d3aadd09e74e3afaa921a897a03c1ce0f1cbc41331a974f",
+      "bytes": 1076
+    },
+    {
+      "path": "svg/interface/arrivee-client.svg",
+      "sha256": "3cd9f17b19878a61d2e70bb6d97c6f9710a39f493a54cb3a56a87ea60216c5ea",
+      "bytes": 1313
+    },
+    {
+      "path": "svg/interface/absence-client.svg",
+      "sha256": "4748b9574aa6f032208e9e080b167279e3aaa6cc85266d5c1b490d07650094e1",
+      "bytes": 1317
+    },
+    {
+      "path": "svg/interface/brosse.svg",
+      "sha256": "ffcf06cc1f51df7e35a40ed0dee262f4f1792b891521f3fce2936c27ac9f384d",
+      "bytes": 764
+    },
+    {
+      "path": "svg/interface/peigne.svg",
+      "sha256": "61a4b9024dd61cc7310297c4af81a1b8082ed87a734da5a60cebf0fc4d1195e7",
+      "bytes": 749
+    },
+    {
+      "path": "svg/interface/seche-cheveux.svg",
+      "sha256": "202c9b8109873bbc849bf64c04cfdcf82a5591f2a424def1ca3c979b97decc00",
+      "bytes": 1051
+    },
+    {
+      "path": "svg/interface/fauteuil.svg",
+      "sha256": "1d20d50c50c6683b190657559dc3415f6d54fbfb93db3c1156a91b971722169c",
+      "bytes": 906
+    },
+    {
+      "path": "svg/interface/acompte.svg",
+      "sha256": "4b26e699a668c0dafd0aa75489dfa7067927c8170cd28ca6da5e7e2e52fde4e4",
+      "bytes": 1730
+    },
+    {
+      "path": "svg/interface/meubles.svg",
+      "sha256": "d6be9f0590b3b78ae2cf74996618e9b0db7f8de56875d4fe0198ac68e9d8c63d",
+      "bytes": 1218
+    },
+    {
+      "path": "svg/interface/lit.svg",
+      "sha256": "d6931b3dddda3cbe661778ec5b57006a7abf6bccb33318998621451a98a5aa20",
+      "bytes": 1025
+    },
+    {
+      "path": "svg/interface/luminaire.svg",
+      "sha256": "18dcffe43cad7eb7a5e078c095ad8d43432a5933aa84ad40a5b9d4884d96f05c",
+      "bytes": 711
+    },
+    {
+      "path": "svg/interface/mesures.svg",
+      "sha256": "6f7672240eb7ac955d580a1282bdb2f10070bf7dc2abf4fecaa668df5f53259c",
+      "bytes": 1268
+    },
+    {
+      "path": "svg/interface/configuration.svg",
+      "sha256": "d2ffba3450c49e7ef3f2401b99366efdf635695f41371d9f4f80be7ce57dde78",
+      "bytes": 1068
+    },
+    {
+      "path": "svg/interface/devis-meuble.svg",
+      "sha256": "b85b52e105e9a5c314bf0c352693c23413f34914815e56b7aeada175bb064612",
+      "bytes": 1795
+    },
+    {
+      "path": "svg/interface/accord-livraison.svg",
+      "sha256": "3db9a78eb2b8b36d199a081db9fb7e0b87e3b9f351e7a288c438ff0184092a24",
+      "bytes": 1814
+    },
+    {
+      "path": "svg/interface/electronique.svg",
+      "sha256": "23718698134458c99c86c5217ecafe32beb7eeffd20f2339e1a4aca31888b919",
+      "bytes": 846
+    },
+    {
+      "path": "svg/interface/ordinateur.svg",
+      "sha256": "ef6b256c18b18e44af7796d15f7996dbff8da73efc97a60326ab1c0d6c4e465b",
+      "bytes": 1044
+    },
+    {
+      "path": "svg/interface/reparation.svg",
+      "sha256": "c72ddd476999e27cba3ec18a5eb6ac4788d5fb1390aaa8989f29e04bafacbd46",
+      "bytes": 1546
+    },
+    {
+      "path": "svg/interface/appareil-endommage.svg",
+      "sha256": "53f208a5fc5ffd9598af97d868da2040b7a080c5262912cf521ccb2350feb7da",
+      "bytes": 1048
+    },
+    {
+      "path": "svg/interface/diagnostic.svg",
+      "sha256": "b3f37026ba5c0c1bbd053877c2036280a8d638445c0c53057146da66f9bffe27",
+      "bytes": 1570
+    },
+    {
+      "path": "svg/interface/consentement.svg",
+      "sha256": "1c1e504c0c101e1a95e8957b4e4f1e23566d4ca4b5049f5de3ef98a45c86907b",
+      "bytes": 1480
+    },
+    {
+      "path": "svg/interface/intervention.svg",
+      "sha256": "97c98cd22864bd758ed8c35e47b6dd285f32f041f32fb7319394c93f10e37f7e",
+      "bytes": 946
+    },
+    {
+      "path": "svg/interface/reparation-attente.svg",
+      "sha256": "cd62381515f1ba834a0b1bdfd3546a699c415d0cc2e6ae14dd629c33ef1d857b",
+      "bytes": 1357
+    },
+    {
+      "path": "svg/interface/reparation-terminee.svg",
+      "sha256": "e19536e118b58c1eac2aa312ca8c2e7342e94cd5036e3e594d099a54a8c1c3bc",
+      "bytes": 1366
+    },
+    {
+      "path": "svg/interface/tests-techniques.svg",
+      "sha256": "7732ba397337875a9af4fc7e7973ff020bccd5ff908b6a2a3db9540b6a21b100",
+      "bytes": 913
+    },
+    {
+      "path": "svg/interface/restitution.svg",
+      "sha256": "49dccd2c198eb17c2a526c036d85acb587ce014dc24d7d9a9c3e935d28e24018",
+      "bytes": 1405
+    },
+    {
+      "path": "svg/interface/garantie.svg",
+      "sha256": "5c9ce96f460876bcab4ae890523338b4645ed040632ed00b047f91e539b5a92a",
+      "bytes": 1262
+    },
+    {
+      "path": "svg/interface/numero-serie.svg",
+      "sha256": "1be651c2d05501c6c371a5c882943d16edba262787035e214b90613417d64d4d",
+      "bytes": 2146
+    },
+    {
+      "path": "svg/interface/pharmacie.svg",
+      "sha256": "acb5dcf4214bfcd10c02fc196afe51834594161a9afe72cddb0148ae7e95d69f",
+      "bytes": 930
+    },
+    {
+      "path": "svg/interface/produit-autorise.svg",
+      "sha256": "36c1e0558480f8a526b6dd5e20a51d8f4e7dd88872570642dbfdf27d8e149ea5",
+      "bytes": 1139
+    },
+    {
+      "path": "svg/interface/lot.svg",
+      "sha256": "225b5f0af84cbffe713fad4a7d60f43ac3ff22878b9b44b21fe7b6a0bd576f7f",
+      "bytes": 1585
+    },
+    {
+      "path": "svg/interface/peremption.svg",
+      "sha256": "1263a82d84cdaf3c21c174dbabc906f73adb1b9137ef63d8e9c53dd9abb1ecdf",
+      "bytes": 2322
+    },
+    {
+      "path": "svg/interface/produit-perime.svg",
+      "sha256": "66e862f6d60797fe3d9c24ae90538cde23a0ee1c03416c1f046b1545bb700a82",
+      "bytes": 1665
+    },
+    {
+      "path": "svg/interface/autorisation-professionnelle.svg",
+      "sha256": "f6464eb416033fdc6a68d1b79c9d2667c0ea6f55f69215988c534e426a92d161",
+      "bytes": 1445
+    },
+    {
+      "path": "svg/interface/produit-restreint.svg",
+      "sha256": "b99fb54a474b05fa16ede86ecfa876cfceba5fae7a7b3a155c572ece864bdb8b",
+      "bytes": 1713
+    },
+    {
+      "path": "svg/interface/vente-bloquee.svg",
+      "sha256": "1ad6a9d6e2931be1b78c5d0d0936708afb2b0017e9abc9c1562a842e295b2283",
+      "bytes": 1746
+    },
+    {
+      "path": "svg/interface/lieu.svg",
+      "sha256": "c044200f9973e7e9f32304f13d40b067c6858d3399cd0d491c1d9ba53c719aa9",
+      "bytes": 1239
+    },
+    {
+      "path": "svg/interface/niveaux.svg",
+      "sha256": "71fa26a3b3ad25fb457075daa94d475e395218393635dbfe396c843da32ad4f3",
+      "bytes": 759
+    },
+    {
+      "path": "svg/interface/escaliers.svg",
+      "sha256": "c2e972f9c913f1af3c618b1c13ff2107fcd4886c95ce581ba919a4a24ec7612b",
+      "bytes": 600
+    },
+    {
+      "path": "svg/interface/entree.svg",
+      "sha256": "144bffd2992ff250888b46259cb23ae0e061f42441c2534f0f9425efd5d2f0d3",
+      "bytes": 802
+    },
+    {
+      "path": "svg/interface/stationnement.svg",
+      "sha256": "48be17d7701e33690c4c127c1715c0e17edcd10cdb85dfbd24b53d3b4f472959",
+      "bytes": 778
+    },
+    {
+      "path": "svg/interface/accessibilite.svg",
+      "sha256": "6619033827b460385aad283dc0c7b87561710b8402ce306c072eddcd1123466e",
+      "bytes": 768
+    },
+    {
+      "path": "svg/interface/emplacement.svg",
+      "sha256": "37b653b474b497cd48703d58319d478a6d663872e9c3a29b070d047b831316ac",
+      "bytes": 805
+    },
+    {
+      "path": "svg/interface/rejoindre-lieu.svg",
+      "sha256": "25b87557ef64fd40249850c50680754a85d0f6b790449c0c7cd0f06d48a9e5da",
+      "bytes": 1838
+    },
+    {
+      "path": "svg/interface/quitter-lieu.svg",
+      "sha256": "b5297978c96e1eb7c0839342cdcf373fc7f0c2e10aaf27c1ea34105a36168c51",
+      "bytes": 1830
+    },
+    {
+      "path": "svg/interface/visibilite.svg",
+      "sha256": "0dcad58c0a2c562302e49396f23f18800001454b46a6f1c1d312874b4daa3933",
+      "bytes": 930
+    },
+    {
+      "path": "svg/interface/confidentialite-lieu.svg",
+      "sha256": "e84655eb74c450ce5fa41d525d509c7c01a4a2a0d9be3e9df139ef12936265a4",
+      "bytes": 2072
+    },
+    {
+      "path": "svg/interface/caisse.svg",
+      "sha256": "f3796778da0389f666803d0fc16445e0dcf6b703448ecb9e8dd79921cb401deb",
+      "bytes": 1201
+    },
+    {
+      "path": "svg/interface/terminal.svg",
+      "sha256": "cdaf6e3f9d8090380b85a7dccdacb48c2cd0941ecc5e858312d084d63a20605b",
+      "bytes": 1582
+    },
+    {
+      "path": "svg/interface/caissier.svg",
+      "sha256": "5e2d304be8fa305019c025f087bc88d9404017d2d1ec813fbd1c57c90eabb54f",
+      "bytes": 732
+    },
+    {
+      "path": "svg/interface/client-passage.svg",
+      "sha256": "1e8fe0ce09ce4816bea7cb33f91bb4f49690269e7aa5362bb83e074c6e026117",
+      "bytes": 1321
+    },
+    {
+      "path": "svg/interface/ouvrir-caisse.svg",
+      "sha256": "3fc6cdc221cd52afc33f7a7b0d7a84005ad9e8c05f679adeca636dac3523db87",
+      "bytes": 1812
+    },
+    {
+      "path": "svg/interface/cloturer-caisse.svg",
+      "sha256": "22a007fc4faec6fcc310c8092dae603e59295cccf878d84a89ba40b972213aa0",
+      "bytes": 1986
+    },
+    {
+      "path": "svg/interface/especes.svg",
+      "sha256": "0462645e926b20deac390ed57661844f0f957a61208bf480910f959d5181bd2c",
+      "bytes": 1031
+    },
+    {
+      "path": "svg/interface/monnaie-rendue.svg",
+      "sha256": "10727d5a512aae868bd0952fec63313750d56ee54c6d0a688d975eca845df551",
+      "bytes": 1264
+    },
+    {
+      "path": "svg/interface/entree-especes.svg",
+      "sha256": "12776c86d8301a30f8fdc3e683048d4b679a5eaebbf2952a9b4f435b9e63c888",
+      "bytes": 1604
+    },
+    {
+      "path": "svg/interface/sortie-especes.svg",
+      "sha256": "5024f888776ce376a926eaa94e3b3f440c1c96bb783f167b08e6b2e6e944ad6f",
+      "bytes": 1592
+    },
+    {
+      "path": "svg/interface/ecart-caisse.svg",
+      "sha256": "4c56840f789557d0d0918ec73593d4c4e26ef3bc9d6db9d667e1a394090ff38c",
+      "bytes": 1823
+    },
+    {
+      "path": "svg/interface/rapprochement.svg",
+      "sha256": "9e9e53cf1960fdcce8d6f7413f3b94a78880f79289d06f7f0e33957c2465ab43",
+      "bytes": 916
+    },
+    {
+      "path": "svg/interface/transfert-manuel.svg",
+      "sha256": "2cc8684ccc5a8aa66febc52798ee92343cdf93a11301ac5b11b6122f228b022b",
+      "bytes": 946
+    },
+    {
+      "path": "svg/interface/preuve-transfert.svg",
+      "sha256": "f18ff181074ed4df894e8b44c9476c1fdb14fcec2139f88329d0617082e01464",
+      "bytes": 1487
+    },
+    {
+      "path": "svg/interface/paiement-attente.svg",
+      "sha256": "5bd0b2a438623ded498052d1701c642d21fdd888febbe29b1d82c7acad0def6c",
+      "bytes": 1618
+    },
+    {
+      "path": "svg/interface/paiement-confirme.svg",
+      "sha256": "4601df4235a25f232e1093aa253b284cc3a2c23d97de3f4b7acfd5b64056cf1c",
+      "bytes": 1623
+    },
+    {
+      "path": "svg/interface/remboursement.svg",
+      "sha256": "633eedb6caf6062c220e15b3ab9ce5b389676dbaa46e5a9b8e1337c060f90e6e",
+      "bytes": 768
+    },
+    {
+      "path": "svg/interface/facture.svg",
+      "sha256": "042378a2eddba8c1d6be23f7f066aaf168fc24dc7de3182c96860bf6f76725b8",
+      "bytes": 745
+    },
+    {
+      "path": "svg/interface/imprimer.svg",
+      "sha256": "803bf47ef6a3184d1d63aa825fb0118fe32f9e6ade65f63b8699a6e0c32c840b",
+      "bytes": 1089
+    },
+    {
+      "path": "svg/interface/reimprimer.svg",
+      "sha256": "32374ebc05ce592e504180061699af0cffce65833d9cf2f482678b92b91ae1aa",
+      "bytes": 1688
+    },
+    {
+      "path": "svg/interface/panne-imprimante.svg",
+      "sha256": "afc297a2aa82948d345e057a33a463a7a5e06ec6bce1fe6293e6cc822c98972a",
+      "bytes": 1743
+    },
+    {
+      "path": "svg/interface/papier-a4.svg",
+      "sha256": "edf899de9d1be86fc03edf652574024dd7edbd8c9cd36c5b4420a96f997771fb",
+      "bytes": 1509
+    },
+    {
+      "path": "svg/interface/ticket-thermique.svg",
+      "sha256": "1f7d7a5552e0ba32893561f65bed73d6e54319fb0dde7bdd1972acf4a92d8669",
+      "bytes": 1355
+    },
+    {
+      "path": "svg/interface/facture-non-fiscalisee.svg",
+      "sha256": "2dfe9ead992af9f5faa522f5cb7e53e8435e0465807e12bf52fda2d63f0a21ee",
+      "bytes": 1612
+    },
+    {
+      "path": "svg/interface/connexion.svg",
+      "sha256": "e2acb4b6e53c40889ec6f2422fa966cab46057ff04eb51ff7b7b308543692b9e",
+      "bytes": 920
+    },
+    {
+      "path": "svg/interface/deconnexion.svg",
+      "sha256": "14cc7207b2b1074b3d77c793ffdf129ac20c828de24c06366311f83c131203d4",
+      "bytes": 950
+    },
+    {
+      "path": "svg/interface/email.svg",
+      "sha256": "ffc820e3302cd3bba70c216139e8acde39edd1e9c44170e0750e2d07a5ff7c26",
+      "bytes": 860
+    },
+    {
+      "path": "svg/interface/email-verifie.svg",
+      "sha256": "63b5a272f65cdc03f9957da61c5d68221969949ae40c4881ad42d101fdfa2ed6",
+      "bytes": 1444
+    },
+    {
+      "path": "svg/interface/mot-de-passe.svg",
+      "sha256": "3c18ea0fe2149473ae6ed873b240759deba0a37d379ca8b874b38f129281eb11",
+      "bytes": 926
+    },
+    {
+      "path": "svg/interface/changer-mot-de-passe.svg",
+      "sha256": "1b2bcf8bcab548b2c6d1f626bbd9b9ce85f14c8fe459ea272a6c0303bc92bfe6",
+      "bytes": 1549
+    },
+    {
+      "path": "svg/interface/mfa.svg",
+      "sha256": "89ac29d25c0bbde5f17caeade6adaa99095a6b61b52977d0d30a2c3d20973c89",
+      "bytes": 623
+    },
+    {
+      "path": "svg/interface/session.svg",
+      "sha256": "c6aa69a4c8e5c23251ad33e71a87a20ba99dd1a10cd0a17fde38b6f9bb077d8b",
+      "bytes": 1517
+    },
+    {
+      "path": "svg/interface/appareils.svg",
+      "sha256": "9ad300b65e4f15b0405978919554d540589ae4f9f736bd18428dfa67f3002e1c",
+      "bytes": 1751
+    },
+    {
+      "path": "svg/interface/permissions.svg",
+      "sha256": "ae83e43d684dd4f38704f7bb067ee1b3c77815f855861065d6bdadca9b00de43",
+      "bytes": 761
+    },
+    {
+      "path": "svg/interface/acces-refuse.svg",
+      "sha256": "06b762b8d44321e9e0f70e7c37b07b4bb3181288333099eff58cf7eb941be505",
+      "bytes": 759
+    },
+    {
+      "path": "svg/interface/vpn.svg",
+      "sha256": "7f79d19d040172fc9bfa992ed67de6108f27223e9cf88e8106518fd590d061d8",
+      "bytes": 1833
+    },
+    {
+      "path": "svg/interface/confidentialite.svg",
+      "sha256": "3837aa6638c05d81ce0f1e8161db1696f1206b943eaa91cbc561435066fcd576",
+      "bytes": 1644
+    },
+    {
+      "path": "svg/interface/consentements.svg",
+      "sha256": "be3ef10ecd264eda26d15cf377a610a4b4c3c897f6c857f22bfa2c2b90571f50",
+      "bytes": 1665
+    },
+    {
+      "path": "svg/interface/parametres.svg",
+      "sha256": "74e643a13d0724ba8ae2ac5fffcf6d1d419238bc778bbded3ee333a439e0ecb8",
+      "bytes": 1246
+    },
+    {
+      "path": "svg/interface/langue.svg",
+      "sha256": "7a1a8523c2755d28b6935d81df45a9146657921eed63105a996b2b3eedb2e1aa",
+      "bytes": 837
+    },
+    {
+      "path": "svg/interface/contacts.svg",
+      "sha256": "b71cddd121928f3d991ba300c64364e0f415eacde80ce18d060d30af92fba0b8",
+      "bytes": 1568
+    },
+    {
+      "path": "svg/interface/supprimer-compte.svg",
+      "sha256": "60afc74820fc6eef09b473a48088dd4791511ba222dc652c43ef61719888ef5a",
+      "bytes": 1345
+    },
+    {
+      "path": "svg/interface/aide-catalogue.svg",
+      "sha256": "0e9f1818e718cf73cade73387e739d856d0ce79a1840bfa57667b265911337d8",
+      "bytes": 1181
+    },
+    {
+      "path": "svg/interface/faq-assistant.svg",
+      "sha256": "f951337b6ac7cb53e38a4485fec6a89333072f8c5db1148375033e867ab93009",
+      "bytes": 1495
+    },
+    {
+      "path": "svg/interface/assistant-analyse.svg",
+      "sha256": "af9ba9291eeb357b817a66c077c012c37854872512981f2fc886e929fc698c90",
+      "bytes": 1678
+    },
+    {
+      "path": "svg/interface/proposition-ia.svg",
+      "sha256": "8551dea9cdc86ee03547e5141e57ea4c5a44a33054c164c210f307203039f1e5",
+      "bytes": 1366
+    },
+    {
+      "path": "svg/interface/approbation-humaine.svg",
+      "sha256": "6197eccb91e97115b6d5e022ceb198371fff4a43625d3039aeead6aeca0ef747",
+      "bytes": 1364
+    },
+    {
+      "path": "svg/interface/refus-proposition.svg",
+      "sha256": "7b4da12c33b5b41d31687d1d36a4a01cfe44e21422318fba1b91833955910e9d",
+      "bytes": 1397
+    },
+    {
+      "path": "svg/interface/arret-ia.svg",
+      "sha256": "75b4d54c37c90b70b5173e40f76e3ce0d81e37a5ccc9510612d9c52c0eb8f9e8",
+      "bytes": 1500
+    },
+    {
+      "path": "svg/interface/sources.svg",
+      "sha256": "3ce23a05f8e8bae329e379643f5c4c7c59b88ed20635e5bd886cfd5e5484d4db",
+      "bytes": 644
+    },
+    {
+      "path": "svg/interface/budget-ia.svg",
+      "sha256": "5964b4967844fe956d1d9dfa12150531639d6fd8f758d04d63906871628c58dc",
+      "bytes": 1810
+    },
+    {
+      "path": "svg/interface/outils-ia.svg",
+      "sha256": "3d901f5557614321e7e664554182d722ce60c0180845dd3986a7011c2f3f949f",
+      "bytes": 792
+    },
+    {
+      "path": "svg/interface/workflow.svg",
+      "sha256": "a43002888104f917208cc3f3031c46dbc88e018614157d5e00d2a9fc16753e03",
+      "bytes": 1040
+    },
+    {
+      "path": "svg/interface/relancer-processus.svg",
+      "sha256": "8547ed39b13d69eac940419abc2c04217a9b665325c39414b3ec1690b7135f7a",
+      "bytes": 1355
+    },
+    {
+      "path": "svg/interface/etablissements.svg",
+      "sha256": "a12e0a190a275db98d621799bbe44e3279ec5cdbb760582eaf1f08dd78de67e3",
+      "bytes": 1240
+    },
+    {
+      "path": "svg/interface/profils-metiers.svg",
+      "sha256": "a34c5452210c78c2854c0e24f52b5f84030811fa82286ea4abc07ad2dd8808d3",
+      "bytes": 1157
+    },
+    {
+      "path": "svg/interface/abonnement.svg",
+      "sha256": "beaafac7d52ba4dcf90b2f1e0613d55492e66a117f8d429359b97e0acd497be1",
+      "bytes": 1496
+    },
+    {
+      "path": "svg/interface/quotas.svg",
+      "sha256": "43a56408e33c3c693ca0b48c464f6703c5c22b12a36347ad0918ac6eb1263fd3",
+      "bytes": 937
+    },
+    {
+      "path": "svg/interface/statistiques.svg",
+      "sha256": "58580f6b92840fc883a2bdcb622cd3210ceb44c6b5881c344185624cdf3078a7",
+      "bytes": 997
+    },
+    {
+      "path": "svg/interface/journal.svg",
+      "sha256": "62371a8f86e0bc5a6776894c4a98e8c78f25610f6199300b3113e154f145b996",
+      "bytes": 1427
+    },
+    {
+      "path": "svg/interface/evenements.svg",
+      "sha256": "4814c677bc316c73b361f51851dc25eca1b40bb3c2bc79671f0b9f012d3c776f",
+      "bytes": 622
+    },
+    {
+      "path": "svg/interface/api-partagee.svg",
+      "sha256": "8a5d4b3f1759c93d03e3958b5c9093be51830fb533a04d7c94f579c68314e8cc",
+      "bytes": 1210
+    },
+    {
+      "path": "svg/interface/isolation.svg",
+      "sha256": "53bf4f27dd32cb5eeca4575129eb031205d7e3909ae6720799d2c4dcc4746bf9",
+      "bytes": 1625
+    },
+    {
+      "path": "svg/interface/export-donnees.svg",
+      "sha256": "eb98a7a3a0a3374236be63d84c604af9790be9a7d45fc0bac217ce5167864aa6",
+      "bytes": 1485
+    },
+    {
+      "path": "svg/interface/sauvegarde.svg",
+      "sha256": "c42a1f1dfd9a2c873021220557244ef3241a36154c38a2c6b42f4f204c4c46f5",
+      "bytes": 630
+    },
+    {
+      "path": "svg/interface/restauration.svg",
+      "sha256": "d39f35d1242f7e9a2c73c83d32ddc797172fa1f63f78c2345a0a63fa4cd74220",
+      "bytes": 1458
+    },
+    {
+      "path": "svg/interface/synchronisation.svg",
+      "sha256": "032a54f15b54bd31c3a7a01d6f751f45a42a9c3210210d9cc0ae58fedb619aa0",
+      "bytes": 1293
+    },
+    {
+      "path": "svg/interface/fonction-active.svg",
+      "sha256": "8fc2a33f7b1efc49242501776678c66e5d5c18f1d0d717f7fa7af1b4f9410d4e",
+      "bytes": 805
+    },
+    {
+      "path": "svg/interface/fonction-desactivee.svg",
+      "sha256": "522ffa9f297b241f44ae473f2e0b7890cb5f08b6e715cf8ae040fc0814fbb030",
+      "bytes": 837
+    },
+    {
+      "path": "svg/interface/controle-qualite.svg",
+      "sha256": "1e333e052ec13b97575e61d66e6b5f8c22ed28d37cefe52533ac78c48497c6c2",
+      "bytes": 1457
+    },
+    {
+      "path": "svg/interface/validation-legale.svg",
+      "sha256": "979d5cb262bb35dd961ac1162c34b8b85db388abdec549d87b3f32f9e8b134a5",
+      "bytes": 1482
+    },
+    {
+      "path": "svg/interface/deploiement.svg",
+      "sha256": "d83ad55d3a802a1af1ffbf320efdb25b7c73c60f85671060dde0c9f8bad193c5",
+      "bytes": 1617
+    },
+    {
+      "path": "svg/interface/version.svg",
+      "sha256": "319c781af79820ce26655a0e714e650e9b7e827f067b74054f3f33f4456e7542",
+      "bytes": 1439
+    },
+    {
+      "path": "svg/interface/modifier.svg",
+      "sha256": "7be1528a5f09e35cd47bebb960abac744c9dbe2339b69d531621c06ac236fe01",
+      "bytes": 749
+    },
+    {
+      "path": "svg/interface/supprimer.svg",
+      "sha256": "e57231e1f66a53db7fb61832fcf724070924eeac5d2883cb962cee50ab916348",
+      "bytes": 898
+    },
+    {
+      "path": "svg/interface/partager.svg",
+      "sha256": "b2fa404419f628acb722362f00ba0a75eaca19b3a5276e51dc55b88ba92a448e",
+      "bytes": 1012
+    },
+    {
+      "path": "svg/interface/trier.svg",
+      "sha256": "c1e75346d36e8056a2c5b0677619cdd4c2e5d01a671caa57b663e49873371275",
+      "bytes": 571
+    },
+    {
+      "path": "svg/interface/zoomer.svg",
+      "sha256": "a70828f6b1e6c0dd0f73ec918c462367defe3972dd8c30740d8db60caabb1729",
+      "bytes": 1017
+    },
+    {
+      "path": "svg/interface/dezoomer.svg",
+      "sha256": "9c426574a611b95766c342916665842db858f58db0967163a73860b2614377df",
+      "bytes": 1036
+    },
+    {
+      "path": "svg/interface/telecharger.svg",
+      "sha256": "2f1bd8c6e08e19e761d483d82712d3c4bf07bfe878f3055a933b5757b6c4838c",
+      "bytes": 740
+    },
+    {
+      "path": "svg/interface/copier.svg",
+      "sha256": "53cd97f894533df3d2cdc1bc153c4fcee09381e8bd291be1832c0d9fa94786eb",
+      "bytes": 888
+    },
+    {
+      "path": "svg/interface/joindre.svg",
+      "sha256": "3fb79bb6d9d612285116bd184e04926704585680819159441788f28f2246b664",
+      "bytes": 615
+    },
+    {
+      "path": "svg/interface/recadrer.svg",
+      "sha256": "04c8e936506b10b19e9976ab8c14a9dfe0e228da7cf4f6dcf9ded63ac1d4f21a",
+      "bytes": 565
+    },
+    {
+      "path": "svg/interface/signaler.svg",
+      "sha256": "ea3902ae5a467a852cea726f2e48a6cf6fadcd4daec775b038deff89977d68e9",
+      "bytes": 704
+    },
+    {
+      "path": "svg/interface/suivant.svg",
+      "sha256": "6d720e0cdf66b46fa3e8c47676558be225e898ddc39ac52e71c2acb9df89b14c",
+      "bytes": 551
+    },
+    {
+      "path": "svg/interface/precedent.svg",
+      "sha256": "587b39e1f43abfc3d99ebff944622e4ba127eb91a62f658702a3467f88f4df17",
+      "bytes": 571
+    },
+    {
+      "path": "svg/interface/developper.svg",
+      "sha256": "c43e34c07110f1fb0fd293ebcc73195c1fd752c3f5826b3e146a46a0db58d5a4",
+      "bytes": 577
+    },
+    {
+      "path": "svg/interface/reduire.svg",
+      "sha256": "32af54ca886fc6f24e16d669e2d9afc87c898b11d799cc19ba3d0225510a1edd",
+      "bytes": 553
+    },
+    {
+      "path": "svg/interface/fleche-droite.svg",
+      "sha256": "780e47cf7f776645c537519ae1cb0cb5da4f42696b250cf8b5130a9ac61507b1",
+      "bytes": 610
+    },
+    {
+      "path": "svg/interface/fleche-gauche.svg",
+      "sha256": "015b0e91f0614f3f10adcaee3c796c0c86acedf17417b716b34c28ddd645bc19",
+      "bytes": 610
+    },
+    {
+      "path": "svg/interface/fleche-haut.svg",
+      "sha256": "c4bbc343331ea5eccdf7da2029f78da060f02d53f6738a012c2e0faa680bc615",
+      "bytes": 594
+    },
+    {
+      "path": "svg/interface/fleche-bas.svg",
+      "sha256": "c70fb0f11d98d858ef46e9b0f324eddfb39bdd87080159ab5ffafba5a00b68f2",
+      "bytes": 586
+    },
+    {
+      "path": "svg/interface/plus-options.svg",
+      "sha256": "74dfbcd919559d17a6c8363be630f9bcb6130fc36f1d0f95ad6641304dc4bbb8",
+      "bytes": 915
+    },
+    {
+      "path": "svg/interface/options-verticales.svg",
+      "sha256": "24d4f9ee99b957b482bc56175c8b01ad6bd5f652d090cfc022d9182ee18b5151",
+      "bytes": 955
+    },
+    {
+      "path": "svg/interface/lecture.svg",
+      "sha256": "60143d04771c5d9b65ae2bd31ef78eb6ba776fd6f6a225efcf588c82ca5b6a39",
+      "bytes": 571
+    },
+    {
+      "path": "svg/interface/pause.svg",
+      "sha256": "33f52e76e9fba78d7cb8a7b06d0638734e6633e1f9b29fac04967af7acbffceb",
+      "bytes": 743
+    },
+    {
+      "path": "svg/interface/arreter.svg",
+      "sha256": "9455a63e03e5cd4d8711e63ad7ce44a62da2308141519ee9df6dfc9482a6b3ab",
+      "bytes": 594
+    },
+    {
+      "path": "svg/interface/microphone.svg",
+      "sha256": "8e0ca86867e567774d41eab698920aa9254ca077bc51ef759886bfd41b382fea",
+      "bytes": 768
+    },
+    {
+      "path": "svg/interface/audio.svg",
+      "sha256": "756cb60ba4d20a34e91e5773a8ebf98468b4b8e0d20134a4934daa1d622c6613",
+      "bytes": 707
+    },
+    {
+      "path": "svg/interface/basculer.svg",
+      "sha256": "1514123d24d137012cbe3f8782b9fa083ad2caa20b1afe4d339b9312ff7dc297",
+      "bytes": 717
+    },
+    {
+      "path": "svg/interface/selectionner.svg",
+      "sha256": "06856c9d202c851affa3aed0f8a0fecfdd2399f9eab07e881c44218666c6dd49",
+      "bytes": 742
+    },
+    {
+      "path": "svg/interface/fermer.svg",
+      "sha256": "73c27f11109186f4e863efa8703c9812e8c0502c0737eaf7d9130b377e1218c9",
+      "bytes": 698
+    },
+    {
+      "path": "svg/interface/attention.svg",
+      "sha256": "70b10ec6c4bbf49c5c74bb28eec85bf4f1901bc5afcda8e4dd039dc77535c0ec",
+      "bytes": 783
+    },
+    {
+      "path": "svg/interface/en-cours.svg",
+      "sha256": "5a9a487e7b03f71ebdd2750eb33ac70b1900c312871a113e4b60792ba6f4febc",
+      "bytes": 700
+    },
+    {
+      "path": "svg/interface/chargement.svg",
+      "sha256": "66d4d6664b7a206da00b618e56cc9cae31203bda227e86de846917baf90b856b",
+      "bytes": 625
+    },
+    {
+      "path": "svg/interface/connectivite.svg",
+      "sha256": "4db20ec07a0a8de56942ad75c0b480bfa471da92ace90fcc337babd29801d05b",
+      "bytes": 674
+    },
+    {
+      "path": "svg/interface/hors-ligne.svg",
+      "sha256": "e8718b61e7b08fb70e085bfa23efb6e54a8ebb1625fabf8fa123cc282fb7aa68",
+      "bytes": 802
+    },
+    {
+      "path": "svg/interface/message.svg",
+      "sha256": "344e62103a3e72b4cf7e703691e3b646b843c57f0e0b6016f75d397efc86c9d0",
+      "bytes": 779
+    },
+    {
+      "path": "svg/interface/support.svg",
+      "sha256": "96f23c633b97c7f565b42ebf531e45a163175232d2fad1a7c00bde3187649bf5",
+      "bytes": 1072
+    },
+    {
+      "path": "svg/interface/aide.svg",
+      "sha256": "35fbf0df4458018f7fa0520a8a30c8d2202038016492474ad5a28638979f865f",
+      "bytes": 746
+    },
+    {
+      "path": "svg/interface/aucun-resultat.svg",
+      "sha256": "81ef7a712722aff726073057725a164ce13f694d8f73288a543a948ea163314b",
+      "bytes": 1486
+    },
+    {
+      "path": "svg/interface/notification-nouvelle.svg",
+      "sha256": "bb7e0de15f6e6d5347e3d4b9cbf70002f33aee33956dbe36529338de6d0a97b4",
+      "bytes": 1404
+    },
+    {
+      "path": "svg/interface/notification-muette.svg",
+      "sha256": "68471ea381f070fc77bc8e29c524c0a41ea6a3ace7bc5c199a1973c6475b2404",
+      "bytes": 977
+    },
+    {
+      "path": "svg/interface/non-visible.svg",
+      "sha256": "6e5e53565bc34d2ffa4ad574f42e2fca833e0e752209ea5cd4388f924f8d88ec",
+      "bytes": 1020
+    },
+    {
+      "path": "svg/interface/erreur-systeme.svg",
+      "sha256": "262343c5c34551d14b7e6511c747833241582bfb61f71a13ba09e9e5f5d00bfc",
+      "bytes": 1869
+    },
+    {
+      "path": "svg/interface/temporisation.svg",
+      "sha256": "71da7fb45241f2ecad31ef4ddd3de79db8d4e4f573bcd721460a8b285dd3f99c",
+      "bytes": 921
+    },
+    {
+      "path": "svg/interface/en-attente-validation.svg",
+      "sha256": "3097326f08d3534108404e08e0571b4501db0e7f985059c9930fd5a79061f9d5",
+      "bytes": 1381
+    },
+    {
+      "path": "svg/interface/promotions.svg",
+      "sha256": "7fadd65ff45b268b468148adba4a07b6cbcddf9dfa7f500a7f2beae054108693",
+      "bytes": 1055
+    },
+    {
+      "path": "svg/interface/offre-speciale.svg",
+      "sha256": "90d41b6283012176546115bae0d7af97233633ef4bb6da4762e0d5680d4b1187",
+      "bytes": 1447
+    },
+    {
+      "path": "svg/interface/cadeau.svg",
+      "sha256": "caff8e527968223972895814d43f661b5a7fdfc4d7762724f13253c32cd03774",
+      "bytes": 1103
+    },
+    {
+      "path": "svg/interface/eco-responsable.svg",
+      "sha256": "e1387d49eef077fe4016011252d773438f39b12ff32593d88d350e6532c467df",
+      "bytes": 974
+    },
+    {
+      "path": "svg/interface/premium.svg",
+      "sha256": "545ad64cd53ddb384ae1ec2e7197e72eaeaeb6212c39cb45eeb341b28e10c4b9",
+      "bytes": 746
+    },
+    {
+      "path": "svg/interface/avis.svg",
+      "sha256": "fe76b6cbfbea1247e6b8aca57a368ca57fe0e9805d1a9d929b58fb9f58dd61cd",
+      "bytes": 795
+    },
+    {
+      "path": "svg/interface/note.svg",
+      "sha256": "afb6eb1267569b2e07abe8c1bdf301035189579f63e468382e53dfdb73665165",
+      "bytes": 662
+    },
+    {
+      "path": "svg/interface/portefeuille.svg",
+      "sha256": "0cb5954c4789b1d263cbf6765c6517d90a4756faaf0d5781c5b1243f9b239be0",
+      "bytes": 1058
+    },
+    {
+      "path": "svg/interface/carte.svg",
+      "sha256": "476a458c30a69d3ac03d60c91f8d762ea50a84ea91e1e79350984780734e1b7d",
+      "bytes": 973
+    }
+  ]
+}

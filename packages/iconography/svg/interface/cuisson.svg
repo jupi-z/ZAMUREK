@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-cuisson-i-title zi-cuisson-i-desc">
+  <title id="zi-cuisson-i-title">Préparation en cuisine</title><desc id="zi-cuisson-i-desc">Préparation en cuisine — repère visuel pour restaurant et alimentation dans Zamurek.</desc>
+  
+  <defs><clipPath id="zm-cuisson-clip-0-0" clipPathUnits="userSpaceOnUse"><path d="M0 0H96V96H0Z M13 31Q48 8 83 31Z" clip-rule="evenodd" fill-rule="evenodd"/></clipPath></defs><g id="zi-cuisson-i-drawing" data-icon="cuisson" data-layer="drawing">
+    <g clip-path="url(#zm-cuisson-clip-0-0)"><rect x="17" y="35" width="62" height="43" rx="12" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/></g><path d="M13 31Q48 8 83 31Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M39 17H57M9 47H17M79 47H87" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

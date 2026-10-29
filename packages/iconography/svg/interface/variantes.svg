@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-variantes-i-title zi-variantes-i-desc">
+  <title id="zi-variantes-i-title">Variantes</title><desc id="zi-variantes-i-desc">Variantes — repère visuel pour catalogue et produits dans Zamurek.</desc>
+  
+  <defs><clipPath id="zm-variantes-clip-0-0" clipPathUnits="userSpaceOnUse"><path d="M0 0H96V96H0Z M13 48L48 32L83 48L48 65Z" clip-rule="evenodd" fill-rule="evenodd"/></clipPath><clipPath id="zm-variantes-clip-0-1" clipPathUnits="userSpaceOnUse"><path d="M0 0H96V96H0Z M13 30L48 14L83 30L48 47Z" clip-rule="evenodd" fill-rule="evenodd"/></clipPath><clipPath id="zm-variantes-clip-1-0" clipPathUnits="userSpaceOnUse"><path d="M0 0H96V96H0Z M13 30L48 14L83 30L48 47Z" clip-rule="evenodd" fill-rule="evenodd"/></clipPath></defs><g id="zi-variantes-i-drawing" data-icon="variantes" data-layer="drawing">
+    <g clip-path="url(#zm-variantes-clip-0-0)"><g clip-path="url(#zm-variantes-clip-0-1)"><path d="M13 65L48 49L83 65L48 82Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/></g></g><g clip-path="url(#zm-variantes-clip-1-0)"><path d="M13 48L48 32L83 48L48 65Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/></g><path d="M13 30L48 14L83 30L48 47Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

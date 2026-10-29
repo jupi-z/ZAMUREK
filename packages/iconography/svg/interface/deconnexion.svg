@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-deconnexion-i-title zi-deconnexion-i-desc">
+  <title id="zi-deconnexion-i-title">Déconnexion</title><desc id="zi-deconnexion-i-desc">Déconnexion — repère visuel pour compte et sécurité dans Zamurek.</desc>
+  
+  <defs><clipPath id="zm-deconnexion-clip-0-0" clipPathUnits="userSpaceOnUse"><path d="M0 0H96V96H0Z M19 14L48 22V84L19 76Z" clip-rule="evenodd" fill-rule="evenodd"/></clipPath></defs><g id="zi-deconnexion-i-drawing" data-icon="deconnexion" data-layer="drawing" transform="matrix(1.0000 0 0 1.0000 -3.500 -0.500)">
+    <g clip-path="url(#zm-deconnexion-clip-0-0)"><rect x="19" y="14" width="43" height="70" rx="7" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/></g><path d="M19 14L48 22V84L19 76Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M57 48H85M74 37L85 48L74 59" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="39" cy="50" r="3" fill="currentColor"/>
+  </g>
+</svg>

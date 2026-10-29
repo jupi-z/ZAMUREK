@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-enregistres-i-title zi-enregistres-i-desc">
+  <title id="zi-enregistres-i-title">Enregistrés</title><desc id="zi-enregistres-i-desc">Enregistrés — repère visuel pour navigation et découverte dans Zamurek.</desc>
+  
+  <defs/><g id="zi-enregistres-i-drawing" data-icon="enregistres" data-layer="drawing">
+    <path d="M25 13H71V85L48 68L25 85Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

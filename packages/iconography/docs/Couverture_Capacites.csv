@@ -1,0 +1,44 @@
+﻿capability_id,description,icon_ids,source
+FND-01,"Shared Monarque Core tenant isolation (organizationId, establishmentId, object ownership)",confidentialite-lieu | etablissements | isolation | permissions,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+FND-02,"Email login, sessions, staff MFA and operator VPN",connexion | email-verifie | mfa | vpn | session,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+FND-03,Configurable multi-business capability profiles,profils-metiers | fonction-active | fonction-desactivee,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+FND-04,"Typed offers, media, variants and categories",produit | variantes | galerie | categories | publication,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+FND-05,USD source pricing with merchant FX + immutable CDF quotes,prix | taux-change | montants,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+FND-06,Order lifecycle and state history,commandes | historique | confirmation-commande | commande-annulee,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+FND-07,"Canonical Core payments, cash at POS, manual transfer, refunds and safe reconciliation",especes | transfert-manuel | preuve-transfert | paiement-confirme | remboursement | rapprochement,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+FND-08,Zone delivery and pickup/on-site fulfillment,livraison | retrait | sur-place | zone-livraison,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+FND-09,Merchant Android and Windows installed consoles,electronique | ordinateur,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+FND-10,Connected in-person POS Android/Windows using canonical Core Sales/Cash,caisse | terminal | caissier | client-passage,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+FND-11,ZAMUREK BASIC 7 USD monthly organization product entitlement separate from Monarque FairScale,abonnement | quotas,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+FND-12,Branded buyer Android and unified Discovery/venue,accueil | boutiques | tous-commerces | centre-commercial | proximite,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+FND-13,"Shared Monarque Core API-only, logical tenant isolation, selective export/recovery and private operations",api-partagee | isolation | export-donnees | restauration,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+FND-14,"Versioned API, French i18n and accessibility",langue | accessibilite | version | aide,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+FND-15,Territory compliance and category gates,validation-legale | produit-restreint | vente-bloquee,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+FND-16,"Outbox, idempotency and in-app notifications",evenements | notifications | synchronisation,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+RTL-01,Standard product sales and availability,produit | variantes | disponible | indisponible | panier,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+WGT-01,G/KG pricing from canonical mass units,balance | chocolat | unite-mesure,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+WGT-02,Exact fractional quantities and weight confirmation,poids-confirme | modifier-poids | tare | accepter-poids | limite-poids,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+FOD-01,Restaurant menu and required modifiers,restaurant | carte-restaurant | pizza | supplements | allergenes,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+FOD-02,Scheduled cooking and kitchen ticket flow,cuisson | ticket-cuisine | plat-pret | commande-programmee,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+FOD-03,Table booking concurrency control,reservation-table | couverts | agenda,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+SVC-01,"Services, staff schedules, duration and buffers",beaute | services | collaborateurs | indisponibilite | duree,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+SVC-02,Appointment lifecycle and no double booking,reserver | rendez-vous-confirme | reporter | annuler-rendez-vous | arrivee-client,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+FUR-01,Bulky goods quote and specialty delivery,meubles | dimensions | devis-meuble | accepter-devis | livraison-volumineuse | accord-livraison,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+REP-01,Diagnostic plus explicit customer approval,diagnostic | consentement | devis | accepter-devis,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+REP-02,"Work order, handover and merchant warranty record",intervention | reparation | tests-techniques | restitution | garantie,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+PHA-01,"Permitted pharmacy goods, seller qualifications and lot/expiry policies when applicable",pharmacie | produit-autorise | lot | peremption | produit-perime | autorisation-professionnelle,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+PHA-02,Regulated medicine is fail-closed,produit-restreint | vente-bloquee,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+VEN-01,Venue map/floors and opt-in merchant discovery,plan | niveaux | emplacement | rejoindre-lieu | quitter-lieu,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+VEN-02,Merchant-scoped cart/order from aggregated app,tous-commerces | panier | confidentialite-lieu,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+AGT-01,Shared Monarque Core agent registry/tools/scopes; ZAMUREK registers vertical tools without second AI runtime,assistant | outils-ia | permissions | sources,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+AGT-02,"Durable workflow, approval and retry discipline",workflow | approbation-humaine | proposition-ia | refus-proposition | relancer-processus,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+AGT-03,Provider-neutral models and per-tenant kill switch,arret-ia | budget-ia | hors-ligne,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+AGT-04,"Catalogue, FAQ and analytics assistants",aide-catalogue | faq-assistant | assistant-analyse,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+SEC-01,Security/redteam tests for prompt injection,permissions | acces-refuse | confidentialite | journal,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+OPS-01,"Cross-repository CI, build evidence, versioned Core contracts, Android and Windows runtime tests",deploiement | controle-qualite | version | ordinateur | electronique,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+LEG-01,Verified market-specific legal release gates,validation-legale | autorisation-professionnelle,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+POS-01,"Physical cashier, POS terminal and opening/closing cash sessions",caisse | ouvrir-caisse | cloturer-caisse | caissier | terminal,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+POS-02,"Cash payment, change due, tender split policy and cash reconciliation",especes | monnaie-rendue | entree-especes | sortie-especes | ecart-caisse | rapprochement,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+POS-03,A4/58/80mm printed receipts/invoices and fiscal gating,imprimer | reimprimer | panne-imprimante | ticket-thermique | facture | facture-non-fiscalisee,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+INT-01,Shared Monarque Connect Core without duplicate billing/sales/tenancy/agent engine,api-partagee | synchronisation | confidentialite-lieu,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json
+INT-02,Independent ZAMUREK product entitlements and multi-product access controls,abonnement | permissions | quotas,https://github.com/jupi-z/ZAMUREK/blob/main/spec/v1/capabilities.json

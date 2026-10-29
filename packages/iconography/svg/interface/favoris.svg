@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-favoris-i-title zi-favoris-i-desc">
+  <title id="zi-favoris-i-title">Favoris</title><desc id="zi-favoris-i-desc">Favoris — repère visuel pour navigation et découverte dans Zamurek.</desc>
+  
+  <defs/><g id="zi-favoris-i-drawing" data-icon="favoris" data-layer="drawing" transform="matrix(1.0000 0 0 1.0000 0.000 -2.000)">
+    <path d="M48 83L15 51C-2 25 24 7 43 26L48 32L53 26C73 7 99 25 81 51Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

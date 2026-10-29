@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-suivant-i-title zi-suivant-i-desc">
+  <title id="zi-suivant-i-title">Suivant</title><desc id="zi-suivant-i-desc">Suivant — repère visuel pour actions et commandes d’interface dans Zamurek.</desc>
+  
+  <defs/><g id="zi-suivant-i-drawing" data-icon="suivant" data-layer="drawing" transform="matrix(1.2000 0 0 1.2000 -11.400 -9.000)">
+    <path d="M35 20L65 48L35 76" fill="none" stroke="currentColor" stroke-width="4.32" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

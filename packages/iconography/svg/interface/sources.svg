@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-sources-i-title zi-sources-i-desc">
+  <title id="zi-sources-i-title">Sources de la réponse</title><desc id="zi-sources-i-desc">Sources de la réponse — repère visuel pour assistants et validation humaine dans Zamurek.</desc>
+  
+  <defs/><g id="zi-sources-i-drawing" data-icon="sources" data-layer="drawing">
+    <path d="M42 27L49 20C76-1 100 30 76 50L66 59M54 69L47 77C22 96-2 66 20 46L30 36M34 61L63 34" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-appareil-endommage-i-title zi-appareil-endommage-i-desc">
+  <title id="zi-appareil-endommage-i-title">Appareil à réparer</title><desc id="zi-appareil-endommage-i-desc">Appareil à réparer — repère visuel pour électronique et réparation dans Zamurek.</desc>
+  
+  <defs><clipPath id="zm-appareil-endommage-clip-0-0" clipPathUnits="userSpaceOnUse"><path d="M0 0H96V96H0Z M29.20 17.20h37.60v54.60h-37.60Z" clip-rule="evenodd" fill-rule="evenodd"/></clipPath></defs><g id="zi-appareil-endommage-i-drawing" data-icon="appareil-endommage" data-layer="drawing">
+    <g clip-path="url(#zm-appareil-endommage-clip-0-0)"><rect x="25" y="9" width="46" height="78" rx="9" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/></g><rect x="31" y="19" width="34" height="51" rx="4" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M47 30L40 47L52 49L46 62" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/><circle cx="48" cy="79" r="3" fill="currentColor"/>
+  </g>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-attention-i-title zi-attention-i-desc">
+  <title id="zi-attention-i-title">Attention</title><desc id="zi-attention-i-desc">Attention — repère visuel pour états, retours et assistance dans Zamurek.</desc>
+  
+  <defs/><g id="zi-attention-i-drawing" data-icon="attention" data-layer="drawing">
+    <path d="M42 16Q48 6 54 16L86 74Q91 84 79 84H17Q5 84 11 74Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M48 33V54" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="48" cy="68" r="3" fill="currentColor"/>
+  </g>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-publication-i-title zi-publication-i-desc">
+  <title id="zi-publication-i-title">Publier une offre</title><desc id="zi-publication-i-desc">Publier une offre — repère visuel pour catalogue et produits dans Zamurek.</desc>
+  
+  <defs/><g id="zi-publication-i-drawing" data-icon="publication" data-layer="drawing">
+    <path d="M15 59V82H81V59" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M48 66V15L31 32M48 15L65 32" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

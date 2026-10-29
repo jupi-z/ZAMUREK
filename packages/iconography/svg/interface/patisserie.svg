@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-patisserie-i-title zi-patisserie-i-desc">
+  <title id="zi-patisserie-i-title">Pâtisserie</title><desc id="zi-patisserie-i-desc">Pâtisserie — repère visuel pour restaurant et alimentation dans Zamurek.</desc>
+  
+  <defs><clipPath id="zm-patisserie-clip-0-0" clipPathUnits="userSpaceOnUse"><path d="M0 0H96V96H0Z M17 42Q25 24 34 40Q44 25 54 41Q67 25 79 42V54Q68 66 61 51Q48 64 40 51Q26 65 17 52Z" clip-rule="evenodd" fill-rule="evenodd"/></clipPath></defs><g id="zi-patisserie-i-drawing" data-icon="patisserie" data-layer="drawing" transform="matrix(1.0000 0 0 1.0000 0.500 2.500)">
+    <g clip-path="url(#zm-patisserie-clip-0-0)"><path d="M17 42H79V80H17Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/></g><path d="M17 42Q25 24 34 40Q44 25 54 41Q67 25 79 42V54Q68 66 61 51Q48 64 40 51Q26 65 17 52Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M34 18V33M61 18V33" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="34" cy="13" r="3" fill="currentColor"/><circle cx="61" cy="13" r="3" fill="currentColor"/>
+  </g>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-retour-i-title zi-retour-i-desc">
+  <title id="zi-retour-i-title">Retour de marchandise</title><desc id="zi-retour-i-desc">Retour de marchandise — repère visuel pour livraison et exécution dans Zamurek.</desc>
+  
+  <defs><clipPath id="zm-retour-clip-0-0" clipPathUnits="userSpaceOnUse"><path d="M0 0H96V96H0Z M11 17L12 44L38 41Z" clip-rule="evenodd" fill-rule="evenodd"/></clipPath></defs><g id="zi-retour-i-drawing" data-icon="retour" data-layer="drawing" transform="matrix(1.0000 0 0 1.0000 2.000 0.000)">
+    <g clip-path="url(#zm-retour-clip-0-0)"><path d="M19 36C37 5 83 16 82 49C82 82 36 90 20 65" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g><path d="M11 17L12 44L38 41Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

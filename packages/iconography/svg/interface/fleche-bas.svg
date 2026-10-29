@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-fleche-bas-i-title zi-fleche-bas-i-desc">
+  <title id="zi-fleche-bas-i-title">Flèche bas</title><desc id="zi-fleche-bas-i-desc">Flèche bas — repère visuel pour actions et commandes d’interface dans Zamurek.</desc>
+  
+  <defs/><g id="zi-fleche-bas-i-drawing" data-icon="fleche-bas" data-layer="drawing" transform="matrix(1.0986 0 0 1.0986 -4.183 -4.732)">
+    <path d="M48 15V80M28 62L48 82L68 62" fill="none" stroke="currentColor" stroke-width="4.32" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

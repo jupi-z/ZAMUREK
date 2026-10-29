@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-entree-i-title zi-entree-i-desc">
+  <title id="zi-entree-i-title">Entrée et accès</title><desc id="zi-entree-i-desc">Entrée et accès — repère visuel pour mall et découverte des lieux dans Zamurek.</desc>
+  
+  <defs><clipPath id="zm-entree-clip-0-0" clipPathUnits="userSpaceOnUse"><path d="M0 0H96V96H0Z M29 19L64 26V77L29 85Z" clip-rule="evenodd" fill-rule="evenodd"/></clipPath></defs><g id="zi-entree-i-drawing" data-icon="entree" data-layer="drawing">
+    <g clip-path="url(#zm-entree-clip-0-0)"><rect x="21" y="12" width="54" height="73" rx="6" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/></g><path d="M29 19L64 26V77L29 85Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/><circle cx="56" cy="51" r="3" fill="currentColor"/>
+  </g>
+</svg>

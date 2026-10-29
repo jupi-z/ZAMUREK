@@ -1,0 +1,24 @@
+{
+  "version": "1.3.0",
+  "checks": {
+    "svg": 576,
+    "render": 1728,
+    "no_monochrome_change": 288,
+    "references": 0,
+    "nonempty": 0,
+    "badges": 116,
+    "sr_transparency": 0
+  },
+  "geometry": [
+    "services",
+    "fauteuil",
+    "meubles",
+    "reparation-attente",
+    "reparation-terminee",
+    "connexion",
+    "changer-mot-de-passe",
+    "outils-ia"
+  ],
+  "status": "structural_render_passed",
+  "qualityNote": "Manual semantic review and real device checks still recommended."
+}

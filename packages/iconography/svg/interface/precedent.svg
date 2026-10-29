@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-precedent-i-title zi-precedent-i-desc">
+  <title id="zi-precedent-i-title">Précédent</title><desc id="zi-precedent-i-desc">Précédent — repère visuel pour actions et commandes d’interface dans Zamurek.</desc>
+  
+  <defs/><g id="zi-precedent-i-drawing" data-icon="precedent" data-layer="drawing" transform="matrix(1.2000 0 0 1.2000 -6.600 -9.000)">
+    <path d="M61 20L31 48L61 76" fill="none" stroke="currentColor" stroke-width="4.32" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

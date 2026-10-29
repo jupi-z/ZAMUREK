@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-fruits-i-title zi-fruits-i-desc">
+  <title id="zi-fruits-i-title">Fruits et frais</title><desc id="zi-fruits-i-desc">Fruits et frais — repère visuel pour restaurant et alimentation dans Zamurek.</desc>
+  
+  <defs><clipPath id="zm-fruits-clip-0-0" clipPathUnits="userSpaceOnUse"><path d="M0 0H96V96H0Z M48 29C49 13 64 10 74 12C70 26 61 30 48 29Z" clip-rule="evenodd" fill-rule="evenodd"/></clipPath></defs><g id="zi-fruits-i-drawing" data-icon="fruits" data-layer="drawing">
+    <g clip-path="url(#zm-fruits-clip-0-0)"><path d="M48 34C20 12 6 43 21 69C33 91 43 80 48 80C61 89 76 79 81 59C90 27 63 19 48 34Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/></g><path d="M48 29C49 13 64 10 74 12C70 26 61 30 48 29Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M48 33V19" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

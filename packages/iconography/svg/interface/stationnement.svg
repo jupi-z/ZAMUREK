@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-stationnement-i-title zi-stationnement-i-desc">
+  <title id="zi-stationnement-i-title">Stationnement</title><desc id="zi-stationnement-i-desc">Stationnement — repère visuel pour mall et découverte des lieux dans Zamurek.</desc>
+  
+  <defs/><g id="zi-stationnement-i-drawing" data-icon="stationnement" data-layer="drawing">
+    <rect x="17" y="12" width="62" height="74" rx="12" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M36 71V28H53C73 28 73 52 53 52H36" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

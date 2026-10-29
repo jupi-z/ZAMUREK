@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-escaliers-i-title zi-escaliers-i-desc">
+  <title id="zi-escaliers-i-title">Escaliers</title><desc id="zi-escaliers-i-desc">Escaliers — repère visuel pour mall et découverte des lieux dans Zamurek.</desc>
+  
+  <defs/><g id="zi-escaliers-i-drawing" data-icon="escaliers" data-layer="drawing">
+    <path d="M13 80V61H33V43H53V25H74V13H85V84H13Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

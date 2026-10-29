@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-evenements-i-title zi-evenements-i-desc">
+  <title id="zi-evenements-i-title">Événements métier</title><desc id="zi-evenements-i-desc">Événements métier — repère visuel pour gestion marchand et opérateur dans Zamurek.</desc>
+  
+  <defs/><g id="zi-evenements-i-drawing" data-icon="evenements" data-layer="drawing">
+    <path d="M52 8L17 54H42L36 88L81 35H54Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

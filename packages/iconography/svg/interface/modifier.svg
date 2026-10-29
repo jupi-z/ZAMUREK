@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-modifier-i-title zi-modifier-i-desc">
+  <title id="zi-modifier-i-title">Modifier</title><desc id="zi-modifier-i-desc">Modifier — repère visuel pour actions et commandes d’interface dans Zamurek.</desc>
+  
+  <defs/><g id="zi-modifier-i-drawing" data-icon="modifier" data-layer="drawing">
+    <path d="M17 62L64 15Q69 10 75 16L82 23Q87 29 82 34L35 81L13 86Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M58 23L75 40M17 62L35 81" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-reduire-i-title zi-reduire-i-desc">
+  <title id="zi-reduire-i-title">Réduire</title><desc id="zi-reduire-i-desc">Réduire — repère visuel pour actions et commandes d’interface dans Zamurek.</desc>
+  
+  <defs/><g id="zi-reduire-i-drawing" data-icon="reduire" data-layer="drawing" transform="matrix(1.2000 0 0 1.2000 -9.000 -6.600)">
+    <path d="M20 61L48 31L76 61" fill="none" stroke="currentColor" stroke-width="4.32" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

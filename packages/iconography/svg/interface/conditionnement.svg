@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-conditionnement-i-title zi-conditionnement-i-desc">
+  <title id="zi-conditionnement-i-title">Conditionnement</title><desc id="zi-conditionnement-i-desc">Conditionnement — repère visuel pour catalogue et produits dans Zamurek.</desc>
+  
+  <defs><clipPath id="zm-conditionnement-clip-0-0" clipPathUnits="userSpaceOnUse"><path d="M0 0H96V96H0Z M25 35L10 20L35 11L48 27L61 11L86 20L72 35L48 45Z" clip-rule="evenodd" fill-rule="evenodd"/></clipPath></defs><g id="zi-conditionnement-i-drawing" data-icon="conditionnement" data-layer="drawing" transform="matrix(1.0000 0 0 1.0000 0.500 1.500)">
+    <g clip-path="url(#zm-conditionnement-clip-0-0)"><path d="M25 35L48 45L72 35L82 65L49 83L15 66Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/></g><path d="M25 35L10 20L35 11L48 27L61 11L86 20L72 35L48 45Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M48 45V81" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

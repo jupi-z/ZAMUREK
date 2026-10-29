@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-fonction-desactivee-i-title zi-fonction-desactivee-i-desc">
+  <title id="zi-fonction-desactivee-i-title">Fonction désactivée</title><desc id="zi-fonction-desactivee-i-desc">Fonction désactivée — repère visuel pour gestion marchand et opérateur dans Zamurek.</desc>
+  
+  <defs><clipPath id="zm-fonction-desactivee-clip-0-0" clipPathUnits="userSpaceOnUse"><path d="M0 0H96V96H0Z M47.80 48.00 A16.80 16.80 0 1 0 14.20 48.00 A16.80 16.80 0 1 0 47.80 48.00Z" clip-rule="evenodd" fill-rule="evenodd"/></clipPath></defs><g id="zi-fonction-desactivee-i-drawing" data-icon="fonction-desactivee" data-layer="drawing">
+    <g clip-path="url(#zm-fonction-desactivee-clip-0-0)"><rect x="10" y="28" width="76" height="40" rx="20" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/></g><circle cx="31" cy="48" r="15" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

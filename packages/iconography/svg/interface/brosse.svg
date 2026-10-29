@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-brosse-i-title zi-brosse-i-desc">
+  <title id="zi-brosse-i-title">Soins et brossage</title><desc id="zi-brosse-i-desc">Soins et brossage — repère visuel pour services et rendez-vous dans Zamurek.</desc>
+  
+  <defs><clipPath id="zm-brosse-clip-0-0" clipPathUnits="userSpaceOnUse"><path d="M0 0H96V96H0Z M42 44Q23 43 22 61Q23 76 12 81C37 92 58 73 55 57Z" clip-rule="evenodd" fill-rule="evenodd"/></clipPath></defs><g id="zi-brosse-i-drawing" data-icon="brosse" data-layer="drawing" transform="matrix(1.0000 0 0 1.0000 3.000 -0.500)">
+    <g clip-path="url(#zm-brosse-clip-0-0)"><path d="M60 15Q72 10 79 20L55 56L42 46Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/></g><path d="M42 44Q23 43 22 61Q23 76 12 81C37 92 58 73 55 57Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

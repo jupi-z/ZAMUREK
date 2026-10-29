@@ -1,0 +1,67 @@
+{
+  "brand": {
+    "g": "#005C45",
+    "o": "#FF8A1E",
+    "m": "#D21868",
+    "p": "#F8F7EA",
+    "d": "#003B2D"
+  },
+  "grid": 96,
+  "safeArea": [
+    8,
+    8,
+    88,
+    88
+  ],
+  "coloredStroke": 2.4,
+  "interfaceStroke": 4,
+  "lightDirection": "top-left",
+  "gradients": {
+    "green": [
+      "#259F7C",
+      "#005C45",
+      "#003B2D"
+    ],
+    "orange": [
+      "#FFBE67",
+      "#FF8A1E",
+      "#DA580C"
+    ],
+    "magenta": [
+      "#F4599C",
+      "#D21868",
+      "#940B47"
+    ]
+  },
+  "contours": {
+    "surface": "#E3F0D9",
+    "paper": "#8BB5AA"
+  },
+  "interfaceColor": "currentColor",
+  "defaultExportSize": 96,
+  "packVersion": "1.2.0",
+  "optimizationNotes": {
+    "opticalCentering": true,
+    "scaleNormalization": true,
+    "reinforcedLowFillInterfaceStroke": 1.08,
+    "reinforcedLowFillColorStroke": 1.05
+  },
+  "monochromeRevision": {
+    "stroke": "currentColor",
+    "mainStrokeReference": 4,
+    "artworkGrid": 96,
+    "layerOcclusion": "alpha-independent evenodd SVG clipPath cutouts",
+    "revisedFamilies": [
+      "wrench",
+      "key",
+      "sofa"
+    ]
+  },
+  "colorReliefRevision": {
+    "version": "1.3.0",
+    "badgeSeparation": "evenodd vector clipPath 16.2 on a 96x96 grid",
+    "shadowOpacity": 0.14,
+    "shadowBlur": 0.7,
+    "opaqueWhiteBadges": false
+  }
+}

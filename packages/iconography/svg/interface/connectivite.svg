@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-connectivite-i-title zi-connectivite-i-desc">
+  <title id="zi-connectivite-i-title">Connectivité</title><desc id="zi-connectivite-i-desc">Connectivité — repère visuel pour états, retours et assistance dans Zamurek.</desc>
+  
+  <defs/><g id="zi-connectivite-i-drawing" data-icon="connectivite" data-layer="drawing">
+    <path d="M13 34Q48 3 83 34M25 49Q48 28 71 49M37 64Q48 54 59 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="48" cy="78" r="5" fill="currentColor"/>
+  </g>
+</svg>

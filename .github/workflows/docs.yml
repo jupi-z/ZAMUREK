@@ -34,3 +34,5 @@ jobs:
         run: python3 scripts/validate_openapi.py
       - name: Validate brand assets, palette and theme variants
         run: python3 scripts/validate_branding.py
+      - name: Validate Zamurek Matière iconography assets, SVG sprites and capability mapping
+        run: python3 scripts/validate_iconography.py

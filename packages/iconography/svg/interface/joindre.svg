@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-joindre-i-title zi-joindre-i-desc">
+  <title id="zi-joindre-i-title">Joindre un fichier</title><desc id="zi-joindre-i-desc">Joindre un fichier — repère visuel pour actions et commandes d’interface dans Zamurek.</desc>
+  
+  <defs/><g id="zi-joindre-i-drawing" data-icon="joindre" data-layer="drawing" transform="matrix(1.0000 0 0 1.0000 0.500 -4.000)">
+    <path d="M32 57L61 27C78 10 95 30 79 46L46 80C25 101-3 74 18 52L53 17" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
