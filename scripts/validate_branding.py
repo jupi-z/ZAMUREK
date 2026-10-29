@@ -25,7 +25,7 @@ for comp,(mono,tri) in comps.items():
   txt=(ROOT/rel).read_text(encoding="utf-8")
   node=ET.fromstring(txt)
   assert node.tag.endswith("svg") and "viewBox" in node.attrib
-  assert not re.search(r"<(?:image|foreignObject|script|text|use)\\b|data:image/|https?://",txt,re.I), rel
+  assert not re.search(r"<(?:image|foreignObject|script|text|use)\b|data:image/|https?://",txt,re.I), rel
   shapes=[n for n in node.iter() if n.tag.endswith("path")]
   stops=[n for n in node.iter() if n.tag.endswith("stop")]
   assert len(shapes)==(tri if tone in ("light","dark") else mono), (rel,len(shapes))
