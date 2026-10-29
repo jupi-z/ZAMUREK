@@ -4,7 +4,7 @@
   "identityStatus": "native full-vector masters in repository; geometric shapes and typography preserved from user-supplied source SVG collection; green gradients rebalanced for approved backgrounds",
   "origin": {
     "sourceArchive": "Zamurek_Collection_Full_SVG.zip (user supplied 2026-10-29)",
-    "sourceArchiveSHA256": "5a4e1eb4086fd494e6a2c5130d66265bfc32c40532ba9637a8c752ab3c0571e8",
+    "sourceArchiveSHA256": "0a6cd881af6da02d02ae91b955e3b6de6a624fbe243432b3f0277ecb70f2ec8f",
     "legacyRasterSHA256": "e4aac9d59f75a01e58cf6e46d70d323432bda5b5aa32bd54a625f484421bc546",
     "processing": "only primary-green gradient stop-color values of six tricolor masters adjusted; original SVG geometry and viewBoxes unchanged",
     "perAssetSource": {
