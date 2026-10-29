@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-peigne-i-title zi-peigne-i-desc">
+  <title id="zi-peigne-i-title">Coiffage</title><desc id="zi-peigne-i-desc">Coiffage — repère visuel pour services et rendez-vous dans Zamurek.</desc>
+  
+  <defs/><g id="zi-peigne-i-drawing" data-icon="peigne" data-layer="drawing">
+    <rect x="13" y="27" width="72" height="13" rx="6" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 40V70M29 40V65M39 40V70M49 40V65M59 40V70M69 40V65M79 40V70" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

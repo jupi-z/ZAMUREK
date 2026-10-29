@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-assistant-i-title zi-assistant-i-desc">
+  <title id="zi-assistant-i-title">Assistant Zamurek</title><desc id="zi-assistant-i-desc">Assistant Zamurek — repère visuel pour navigation et découverte dans Zamurek.</desc>
+  
+  <defs><clipPath id="zm-assistant-clip-0-0" clipPathUnits="userSpaceOnUse"><path d="M0 0H96V96H0Z M77 15L87 25L77 35L67 25Z" clip-rule="evenodd" fill-rule="evenodd"/></clipPath></defs><g id="zi-assistant-i-drawing" data-icon="assistant" data-layer="drawing" transform="matrix(1.0000 0 0 1.0000 -1.500 2.500)">
+    <g clip-path="url(#zm-assistant-clip-0-0)"><path d="M48 10Q53 37 80 45Q53 51 48 82Q42 53 13 45Q41 38 48 10Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/></g><path d="M77 15L87 25L77 35L67 25Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

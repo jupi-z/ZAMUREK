@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-adresse-i-title zi-adresse-i-desc">
+  <title id="zi-adresse-i-title">Adresse</title><desc id="zi-adresse-i-desc">Adresse — repère visuel pour livraison et exécution dans Zamurek.</desc>
+  
+  <defs><clipPath id="zm-adresse-clip-0-0" clipPathUnits="userSpaceOnUse"><path d="M0 0H96V96H0Z M59.80 35.00 A11.80 11.80 0 1 0 36.20 35.00 A11.80 11.80 0 1 0 59.80 35.00Z" clip-rule="evenodd" fill-rule="evenodd"/></clipPath></defs><g id="zi-adresse-i-drawing" data-icon="adresse" data-layer="drawing">
+    <g clip-path="url(#zm-adresse-clip-0-0)"><path d="M48 86C40 75 20 54 20 36C20 1 76 1 76 36C76 54 56 75 48 86Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/></g><circle cx="48" cy="35" r="10" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

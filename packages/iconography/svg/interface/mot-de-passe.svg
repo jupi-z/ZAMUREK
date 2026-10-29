@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-mot-de-passe-i-title zi-mot-de-passe-i-desc">
+  <title id="zi-mot-de-passe-i-title">Mot de passe</title><desc id="zi-mot-de-passe-i-desc">Mot de passe — repère visuel pour compte et sécurité dans Zamurek.</desc>
+  
+  <defs/><g id="zi-mot-de-passe-i-drawing" data-icon="mot-de-passe" data-layer="drawing">
+    <rect x="21" y="39" width="54" height="46" rx="10" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 40V28C32 6 64 6 64 28V40" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="48" cy="58" r="5" fill="currentColor"/><path d="M48 61V71" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

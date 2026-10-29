@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-scanner-i-title zi-scanner-i-desc">
+  <title id="zi-scanner-i-title">Scanner un code</title><desc id="zi-scanner-i-desc">Scanner un code — repère visuel pour catalogue et produits dans Zamurek.</desc>
+  
+  <defs/><g id="zi-scanner-i-drawing" data-icon="scanner" data-layer="drawing">
+    <path d="M15 33V19Q15 14 21 14H34M62 14H76Q82 14 82 20V33M82 63V77Q82 82 76 82H63M34 82H20Q15 82 15 76V63" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M28 32V64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M37 32V64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M46 32V64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M57 32V64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M67 32V64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

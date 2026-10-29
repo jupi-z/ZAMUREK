@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-connexion-i-title zi-connexion-i-desc">
+  <title id="zi-connexion-i-title">Connexion au compte</title><desc id="zi-connexion-i-desc">Connexion au compte — repère visuel pour compte et sécurité dans Zamurek.</desc>
+  
+  <defs><clipPath id="zm-connexion-clip-0-0" clipPathUnits="userSpaceOnUse"><path d="M0 0H96V96H0Z M35.30 40.00 A8.30 8.30 0 1 0 18.70 40.00 A8.30 8.30 0 1 0 35.30 40.00Z" clip-rule="evenodd" fill-rule="evenodd"/></clipPath></defs><g id="zi-connexion-i-drawing" data-icon="connexion" data-layer="drawing">
+    <g clip-path="url(#zm-connexion-clip-0-0)"><circle cx="27" cy="40" r="18" fill="none" stroke="currentColor" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="1"/></g><circle cx="27" cy="40" r="6.5" fill="none" stroke="currentColor" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="1"/><path d="M45 40H83M65 40V52M77 40V48" fill="none" stroke="currentColor" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="1"/></g>
+</svg>

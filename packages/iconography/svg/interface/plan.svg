@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-plan-i-title zi-plan-i-desc">
+  <title id="zi-plan-i-title">Plan et carte</title><desc id="zi-plan-i-desc">Plan et carte — repère visuel pour navigation et découverte dans Zamurek.</desc>
+  
+  <defs><clipPath id="zm-plan-clip-0-0" clipPathUnits="userSpaceOnUse"><path d="M0 0H96V96H0Z M72.80 48.00 A11.80 11.80 0 1 0 49.20 48.00 A11.80 11.80 0 1 0 72.80 48.00Z" clip-rule="evenodd" fill-rule="evenodd"/></clipPath><clipPath id="zm-plan-clip-1-0" clipPathUnits="userSpaceOnUse"><path d="M0 0H96V96H0Z M72.80 48.00 A11.80 11.80 0 1 0 49.20 48.00 A11.80 11.80 0 1 0 72.80 48.00Z" clip-rule="evenodd" fill-rule="evenodd"/></clipPath></defs><g id="zi-plan-i-drawing" data-icon="plan" data-layer="drawing">
+    <g clip-path="url(#zm-plan-clip-0-0)"><path d="M11 23L34 13L61 25L85 14V74L62 85L35 73L11 84Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/></g><g clip-path="url(#zm-plan-clip-1-0)"><path d="M35 14V73M61 25V83" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g><circle cx="61" cy="48" r="10" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

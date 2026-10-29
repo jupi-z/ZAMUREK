@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-fauteuil-i-title zi-fauteuil-i-desc">
+  <title id="zi-fauteuil-i-title">Fauteuil de service</title><desc id="zi-fauteuil-i-desc">Fauteuil de service — repère visuel pour services et rendez-vous dans Zamurek.</desc>
+  
+  <defs><clipPath id="zm-fauteuil-clip-0-0" clipPathUnits="userSpaceOnUse"><path d="M0 0H96V96H0Z M22 44Q14 44 14 52V72Q14 80 23 80H74Q83 80 83 72V52Q83 44 75 44Q68 44 68 52V62H29V52Q29 44 22 44Z" clip-rule="evenodd" fill-rule="evenodd"/></clipPath></defs><g id="zi-fauteuil-i-drawing" data-icon="fauteuil" data-layer="drawing">
+    <g clip-path="url(#zm-fauteuil-clip-0-0)"><path d="M24 53V35Q24 17 41 17H57Q74 17 74 35V53" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="1"/></g><path d="M22 44Q14 44 14 52V72Q14 80 23 80H74Q83 80 83 72V52Q83 44 75 44Q68 44 68 52V62H29V52Q29 44 22 44Z" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="1"/><path d="M23 80V86M74 80V86" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="1"/></g>
+</svg>

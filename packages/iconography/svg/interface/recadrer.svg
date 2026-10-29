@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-recadrer-i-title zi-recadrer-i-desc">
+  <title id="zi-recadrer-i-title">Recadrer</title><desc id="zi-recadrer-i-desc">Recadrer — repère visuel pour actions et commandes d’interface dans Zamurek.</desc>
+  
+  <defs/><g id="zi-recadrer-i-drawing" data-icon="recadrer" data-layer="drawing">
+    <path d="M27 12V69H84M12 27H69V84" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

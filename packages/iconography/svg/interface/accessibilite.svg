@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-accessibilite-i-title zi-accessibilite-i-desc">
+  <title id="zi-accessibilite-i-title">Accessibilité</title><desc id="zi-accessibilite-i-desc">Accessibilité — repère visuel pour mall et découverte des lieux dans Zamurek.</desc>
+  
+  <defs/><g id="zi-accessibilite-i-drawing" data-icon="accessibilite" data-layer="drawing" transform="matrix(1.0000 0 0 1.0000 0.500 3.000)">
+    <circle cx="48" cy="18" r="8" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 35H76M48 35V58M48 58L29 81M48 58L68 81" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

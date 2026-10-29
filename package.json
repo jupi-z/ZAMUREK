@@ -8,9 +8,10 @@
     "scope:check": "python3 scripts/validate_v1_scope.py",
     "contract:check": "python3 scripts/validate_openapi.py",
     "branding:check": "python3 scripts/validate_branding.py",
-    "check": "python3 scripts/validate_docs.py && python3 scripts/validate_v1_scope.py && python3 scripts/validate_convergence.py && python3 scripts/validate_agent_contracts.py && python3 scripts/validate_openapi.py && python3 scripts/validate_branding.py",
+    "check": "python3 scripts/validate_docs.py && python3 scripts/validate_v1_scope.py && python3 scripts/validate_convergence.py && python3 scripts/validate_agent_contracts.py && python3 scripts/validate_openapi.py && python3 scripts/validate_branding.py && python3 scripts/validate_iconography.py",
     "agent-contracts:check": "python3 scripts/validate_agent_contracts.py",
-    "convergence:check": "python3 scripts/validate_convergence.py"
+    "convergence:check": "python3 scripts/validate_convergence.py",
+    "iconography:check": "python3 scripts/validate_iconography.py"
   },
   "engines": {
     "node": ">=22"

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-audio-i-title zi-audio-i-desc">
+  <title id="zi-audio-i-title">Son</title><desc id="zi-audio-i-desc">Son — repère visuel pour actions et commandes d’interface dans Zamurek.</desc>
+  
+  <defs/><g id="zi-audio-i-drawing" data-icon="audio" data-layer="drawing" transform="matrix(1.0000 0 0 1.0000 -2.000 0.500)">
+    <path d="M13 36H31L52 17V79L31 60H13Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M64 32Q80 48 64 64M75 20Q101 48 75 76" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

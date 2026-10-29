@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-pharmacie-i-title zi-pharmacie-i-desc">
+  <title id="zi-pharmacie-i-title">Catégorie pharmacie</title><desc id="zi-pharmacie-i-desc">Catégorie pharmacie — repère visuel pour pharmacie et autorisations dans Zamurek.</desc>
+  
+  <defs><clipPath id="zm-pharmacie-clip-0-0" clipPathUnits="userSpaceOnUse"><path d="M0 0H96V96H0Z M20 62L39 40L63 60L44 82C25 100 4 78 20 62Z" clip-rule="evenodd" fill-rule="evenodd"/></clipPath></defs><g id="zi-pharmacie-i-drawing" data-icon="pharmacie" data-layer="drawing" transform="matrix(1.0000 0 0 1.0000 -2.500 -1.000)">
+    <g clip-path="url(#zm-pharmacie-clip-0-0)"><path d="M20 62L57 18C76-1 98 21 81 40L44 82C25 100 4 78 20 62Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/></g><path d="M20 62L39 40L63 60L44 82C25 100 4 78 20 62Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M41 40L62 59" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

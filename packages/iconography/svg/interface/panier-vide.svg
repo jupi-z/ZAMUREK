@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-panier-vide-i-title zi-panier-vide-i-desc">
+  <title id="zi-panier-vide-i-title">Panier vide</title><desc id="zi-panier-vide-i-desc">Panier vide — repère visuel pour panier et achats dans Zamurek.</desc>
+  
+  <defs/><g id="zi-panier-vide-i-drawing" data-icon="panier-vide" data-layer="drawing" transform="matrix(1.0500 0 0 1.0500 -2.400 -2.925)">
+    <path d="M17 39L31 19H66L80 39V79H17Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 39H36L41 51H57L63 39H80" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M39 67H58" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

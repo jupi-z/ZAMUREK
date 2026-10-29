@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-accueil-i-title zi-accueil-i-desc">
+  <title id="zi-accueil-i-title">Accueil</title><desc id="zi-accueil-i-desc">Accueil — repère visuel pour navigation et découverte dans Zamurek.</desc>
+  
+  <defs/><g id="zi-accueil-i-drawing" data-icon="accueil" data-layer="drawing">
+    <path d="M14 43L42 17Q48 12 54 17L82 43V77Q82 83 76 83H58V61H38V83H20Q14 83 14 77Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

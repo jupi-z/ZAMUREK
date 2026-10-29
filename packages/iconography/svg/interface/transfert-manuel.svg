@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-transfert-manuel-i-title zi-transfert-manuel-i-desc">
+  <title id="zi-transfert-manuel-i-title">Transfert manuel</title><desc id="zi-transfert-manuel-i-desc">Transfert manuel — repère visuel pour caisse, règlements et documents dans Zamurek.</desc>
+  
+  <defs><clipPath id="zm-transfert-manuel-clip-0-0" clipPathUnits="userSpaceOnUse"><path d="M0 0H96V96H0Z M13.20 74.20h69.60v13.60h-69.60Z" clip-rule="evenodd" fill-rule="evenodd"/></clipPath></defs><g id="zi-transfert-manuel-i-drawing" data-icon="transfert-manuel" data-layer="drawing">
+    <g clip-path="url(#zm-transfert-manuel-clip-0-0)"><path d="M11 31L48 10L85 31Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/></g><rect x="15" y="76" width="66" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M25 37V69M48 37V69M71 37V69" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

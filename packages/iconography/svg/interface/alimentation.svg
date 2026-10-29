@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-alimentation-i-title zi-alimentation-i-desc">
+  <title id="zi-alimentation-i-title">Alimentation</title><desc id="zi-alimentation-i-desc">Alimentation — repère visuel pour restaurant et alimentation dans Zamurek.</desc>
+  
+  <defs><clipPath id="zm-alimentation-clip-0-0" clipPathUnits="userSpaceOnUse"><path d="M0 0H96V96H0Z M7.20 30.20h81.60v15.60h-81.60Z" clip-rule="evenodd" fill-rule="evenodd"/></clipPath><clipPath id="zm-alimentation-clip-1-0" clipPathUnits="userSpaceOnUse"><path d="M0 0H96V96H0Z M7.20 30.20h81.60v15.60h-81.60Z" clip-rule="evenodd" fill-rule="evenodd"/></clipPath></defs><g id="zi-alimentation-i-drawing" data-icon="alimentation" data-layer="drawing">
+    <g clip-path="url(#zm-alimentation-clip-0-0)"><path d="M13 38H83L74 82H23Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/></g><g clip-path="url(#zm-alimentation-clip-1-0)"><path d="M25 38L40 15M71 38L56 15" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g><rect x="9" y="32" width="78" height="12" rx="6" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M31 52L34 70M48 52V70M65 52L62 70" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

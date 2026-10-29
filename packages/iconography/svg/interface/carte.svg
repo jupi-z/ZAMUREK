@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-carte-i-title zi-carte-i-desc">
+  <title id="zi-carte-i-title">Carte, représentation générique</title><desc id="zi-carte-i-desc">Carte, représentation générique — repère visuel pour découverte et éléments éditoriaux dans Zamurek.</desc>
+  
+  <defs><clipPath id="zm-carte-clip-0-0" clipPathUnits="userSpaceOnUse"><path d="M0 0H96V96H0Z M12.20 31.20h71.60v12.60h-71.60Z" clip-rule="evenodd" fill-rule="evenodd"/></clipPath></defs><g id="zi-carte-i-drawing" data-icon="carte" data-layer="drawing">
+    <g clip-path="url(#zm-carte-clip-0-0)"><rect x="13" y="22" width="70" height="53" rx="9" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/></g><rect x="14" y="33" width="68" height="9" rx="1" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M25 60H42" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="66" cy="60" r="3" fill="currentColor"/>
+  </g>
+</svg>

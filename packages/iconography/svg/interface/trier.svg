@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-trier-i-title zi-trier-i-desc">
+  <title id="zi-trier-i-title">Trier</title><desc id="zi-trier-i-desc">Trier — repère visuel pour actions et commandes d’interface dans Zamurek.</desc>
+  
+  <defs/><g id="zi-trier-i-drawing" data-icon="trier" data-layer="drawing">
+    <path d="M28 81V16L15 30M28 16L41 30M68 15V80L55 66M68 80L81 66" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

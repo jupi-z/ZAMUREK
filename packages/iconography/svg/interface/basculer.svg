@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-basculer-i-title zi-basculer-i-desc">
+  <title id="zi-basculer-i-title">Changer de vue</title><desc id="zi-basculer-i-desc">Changer de vue — repère visuel pour actions et commandes d’interface dans Zamurek.</desc>
+  
+  <defs/><g id="zi-basculer-i-drawing" data-icon="basculer" data-layer="drawing">
+    <path d="M13 31H79M66 18L79 31L66 44" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M83 65H17M30 52L17 65L30 78" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

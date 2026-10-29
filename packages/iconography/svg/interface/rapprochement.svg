@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-rapprochement-i-title zi-rapprochement-i-desc">
+  <title id="zi-rapprochement-i-title">Rapprochement de caisse</title><desc id="zi-rapprochement-i-desc">Rapprochement de caisse — repère visuel pour caisse, règlements et documents dans Zamurek.</desc>
+  
+  <defs><clipPath id="zm-rapprochement-clip-0-0" clipPathUnits="userSpaceOnUse"><path d="M0 0H96V96H0Z M25 31L11 59H39Z" clip-rule="evenodd" fill-rule="evenodd"/></clipPath><clipPath id="zm-rapprochement-clip-0-1" clipPathUnits="userSpaceOnUse"><path d="M0 0H96V96H0Z M71 31L57 59H85Z" clip-rule="evenodd" fill-rule="evenodd"/></clipPath><clipPath id="zm-rapprochement-clip-1-0" clipPathUnits="userSpaceOnUse"><path d="M0 0H96V96H0Z M71 31L57 59H85Z" clip-rule="evenodd" fill-rule="evenodd"/></clipPath></defs><g id="zi-rapprochement-i-drawing" data-icon="rapprochement" data-layer="drawing">
+    <g clip-path="url(#zm-rapprochement-clip-0-0)"><g clip-path="url(#zm-rapprochement-clip-0-1)"><path d="M48 15V81M25 84H71M17 31H79" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g></g><g clip-path="url(#zm-rapprochement-clip-1-0)"><path d="M25 31L11 59H39Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/></g><path d="M71 31L57 59H85Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

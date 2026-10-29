@@ -1,0 +1,289 @@
+﻿id,libelle,famille,familles_reutilisation,alias,capacites,perimetre,svg_couleur,svg_interface
+accueil,Accueil,Navigation et découverte,navigation,,FND-12,v1-design,svg/couleur/accueil.svg,svg/interface/accueil.svg
+rechercher,Rechercher,Navigation et découverte,navigation,,,v1-design,svg/couleur/rechercher.svg,svg/interface/rechercher.svg
+categories,Catégories,Navigation et découverte,navigation,,FND-04,v1-design,svg/couleur/categories.svg,svg/interface/categories.svg
+boutiques,Boutiques,Navigation et découverte,navigation,,FND-12,v1-design,svg/couleur/boutiques.svg,svg/interface/boutiques.svg
+favoris,Favoris,Navigation et découverte,navigation,,,v1-design,svg/couleur/favoris.svg,svg/interface/favoris.svg
+profil,Profil,Navigation et découverte,navigation,,,v1-design,svg/couleur/profil.svg,svg/interface/profil.svg
+menu,Menu,Navigation et découverte,navigation,,,v1-design,svg/couleur/menu.svg,svg/interface/menu.svg
+commandes,Commandes,Navigation et découverte,navigation,,FND-06,v1-design,svg/couleur/commandes.svg,svg/interface/commandes.svg
+notifications,Notifications,Navigation et découverte,navigation,,FND-16,v1-design,svg/couleur/notifications.svg,svg/interface/notifications.svg
+proximite,À proximité,Navigation et découverte,navigation,,FND-12,v1-design,svg/couleur/proximite.svg,svg/interface/proximite.svg
+plan,Plan et carte,Navigation et découverte,navigation,,VEN-01,v1-design,svg/couleur/plan.svg,svg/interface/plan.svg
+assistant,Assistant Zamurek,Navigation et découverte,navigation,,AGT-01,v1-design,svg/couleur/assistant.svg,svg/interface/assistant.svg
+tous-commerces,Tous les commerces,Navigation et découverte,navigation,,FND-12 | VEN-02,v1-design,svg/couleur/tous-commerces.svg,svg/interface/tous-commerces.svg
+centre-commercial,Centre commercial,Navigation et découverte,navigation,,FND-12,v1-design,svg/couleur/centre-commercial.svg,svg/interface/centre-commercial.svg
+populaires,Populaires,Navigation et découverte,navigation,,,v1-design,svg/couleur/populaires.svg,svg/interface/populaires.svg
+nouveautes,Nouveautés,Navigation et découverte,navigation,,,v1-design,svg/couleur/nouveautes.svg,svg/interface/nouveautes.svg
+selection,Sélection recommandée,Navigation et découverte,navigation,,,v1-design,svg/couleur/selection.svg,svg/interface/selection.svg
+historique,Historique,Navigation et découverte,navigation,,FND-06,v1-design,svg/couleur/historique.svg,svg/interface/historique.svg
+enregistres,Enregistrés,Navigation et découverte,navigation,,,v1-design,svg/couleur/enregistres.svg,svg/interface/enregistres.svg
+comparaison,Comparer,Navigation et découverte,navigation,,,v1-design,svg/couleur/comparaison.svg,svg/interface/comparaison.svg
+produit,Produit,Catalogue et produits,catalogue,,FND-04 | RTL-01,v1-design,svg/couleur/produit.svg,svg/interface/produit.svg
+variantes,Variantes,Catalogue et produits,catalogue,,FND-04 | RTL-01,v1-design,svg/couleur/variantes.svg,svg/interface/variantes.svg
+galerie,Galerie du produit,Catalogue et produits,catalogue,,FND-04,v1-design,svg/couleur/galerie.svg,svg/interface/galerie.svg
+details,Détails,Catalogue et produits,catalogue | etats,information | Information,,v1-design,svg/couleur/details.svg,svg/interface/details.svg
+etiquette,Étiquette produit,Catalogue et produits,catalogue,,,v1-design,svg/couleur/etiquette.svg,svg/interface/etiquette.svg
+scanner,Scanner un code,Catalogue et produits,catalogue,,,v1-design,svg/couleur/scanner.svg,svg/interface/scanner.svg
+code-barres,Code-barres,Catalogue et produits,catalogue,,,v1-design,svg/couleur/code-barres.svg,svg/interface/code-barres.svg
+qr-code,Code QR,Catalogue et produits,catalogue,,,v1-design,svg/couleur/qr-code.svg,svg/interface/qr-code.svg
+disponible,Disponible,Catalogue et produits,catalogue,,RTL-01,v1-design,svg/couleur/disponible.svg,svg/interface/disponible.svg
+indisponible,Indisponible,Catalogue et produits,catalogue,,RTL-01,v1-design,svg/couleur/indisponible.svg,svg/interface/indisponible.svg
+nouveau-produit,Créer un produit,Catalogue et produits,catalogue,,,v1-design,svg/couleur/nouveau-produit.svg,svg/interface/nouveau-produit.svg
+modifier-produit,Modifier un produit,Catalogue et produits,catalogue | livraison,remise-client | Remise au client,,v1-design,svg/couleur/modifier-produit.svg,svg/interface/modifier-produit.svg
+archiver-produit,Archiver un produit,Catalogue et produits,catalogue,,,v1-design,svg/couleur/archiver-produit.svg,svg/interface/archiver-produit.svg
+medias,Bibliothèque de médias,Catalogue et produits,catalogue,,,v1-design,svg/couleur/medias.svg,svg/interface/medias.svg
+photo,Prendre une photo,Catalogue et produits,catalogue,,,v1-design,svg/couleur/photo.svg,svg/interface/photo.svg
+dimensions,Dimensions,Catalogue et produits,catalogue,,FUR-01,v1-design,svg/couleur/dimensions.svg,svg/interface/dimensions.svg
+materiaux,Matériaux et finitions,Catalogue et produits,catalogue,,,v1-design,svg/couleur/materiaux.svg,svg/interface/materiaux.svg
+conditionnement,Conditionnement,Catalogue et produits,catalogue,,,v1-design,svg/couleur/conditionnement.svg,svg/interface/conditionnement.svg
+catalogue-publie,Catalogue publié,Catalogue et produits,catalogue,,,v1-design,svg/couleur/catalogue-publie.svg,svg/interface/catalogue-publie.svg
+catalogue-brouillon,Brouillon de catalogue,Catalogue et produits,catalogue,,,v1-design,svg/couleur/catalogue-brouillon.svg,svg/interface/catalogue-brouillon.svg
+publication,Publier une offre,Catalogue et produits,catalogue | actions,importer | Importer,FND-04,v1-design,svg/couleur/publication.svg,svg/interface/publication.svg
+retirer-publication,Retirer une offre publiée,Catalogue et produits,catalogue,,,v1-design,svg/couleur/retirer-publication.svg,svg/interface/retirer-publication.svg
+panier,Panier,Panier et achats,achat,,RTL-01 | VEN-02,v1-design,svg/couleur/panier.svg,svg/interface/panier.svg
+ajouter-panier,Ajouter au panier,Panier et achats,achat,,,v1-design,svg/couleur/ajouter-panier.svg,svg/interface/ajouter-panier.svg
+retirer-panier,Retirer du panier,Panier et achats,achat,,,v1-design,svg/couleur/retirer-panier.svg,svg/interface/retirer-panier.svg
+panier-valide,Panier validé,Panier et achats,achat,,,v1-design,svg/couleur/panier-valide.svg,svg/interface/panier-valide.svg
+panier-vide,Panier vide,Panier et achats,achat | etats,liste-vide | Liste vide,,v1-design,svg/couleur/panier-vide.svg,svg/interface/panier-vide.svg
+quantite-plus,Augmenter la quantité,Panier et achats,achat | actions,ajouter | Ajouter,,v1-design,svg/couleur/quantite-plus.svg,svg/interface/quantite-plus.svg
+quantite-moins,Réduire la quantité,Panier et achats,achat | actions,retirer | Retirer,,v1-design,svg/couleur/quantite-moins.svg,svg/interface/quantite-moins.svg
+ajouter-favoris,Ajouter aux favoris,Panier et achats,achat,,,v1-design,svg/couleur/ajouter-favoris.svg,svg/interface/ajouter-favoris.svg
+retirer-favoris,Retirer des favoris,Panier et achats,achat,,,v1-design,svg/couleur/retirer-favoris.svg,svg/interface/retirer-favoris.svg
+passer-commande,Passer commande,Panier et achats,achat,,,v1-design,svg/couleur/passer-commande.svg,svg/interface/passer-commande.svg
+confirmation-commande,Confirmer une commande,Panier et achats,achat,,FND-06,v1-design,svg/couleur/confirmation-commande.svg,svg/interface/confirmation-commande.svg
+commande-annulee,Commande annulée,Panier et achats,achat,,FND-06,v1-design,svg/couleur/commande-annulee.svg,svg/interface/commande-annulee.svg
+commande-attente,Commande en attente,Panier et achats,achat,,,v1-design,svg/couleur/commande-attente.svg,svg/interface/commande-attente.svg
+devis,Devis,Panier et achats,achat,,REP-01,v1-design,svg/couleur/devis.svg,svg/interface/devis.svg
+accepter-devis,Accepter un devis,Panier et achats,achat,,FUR-01 | REP-01,v1-design,svg/couleur/accepter-devis.svg,svg/interface/accepter-devis.svg
+refuser-devis,Refuser un devis,Panier et achats,achat,,,v1-design,svg/couleur/refuser-devis.svg,svg/interface/refuser-devis.svg
+prix,Prix et tarification,Panier et achats,achat,,FND-05,v1-design,svg/couleur/prix.svg,svg/interface/prix.svg
+taux-change,Taux de change marchand,Panier et achats,achat,,FND-05,v1-design,svg/couleur/taux-change.svg,svg/interface/taux-change.svg
+montants,Montants et devises,Panier et achats,achat,,FND-05,v1-design,svg/couleur/montants.svg,svg/interface/montants.svg
+conditions,Conditions de vente,Panier et achats,achat,,,v1-design,svg/couleur/conditions.svg,svg/interface/conditions.svg
+livraison,Livraison,Livraison et exécution,livraison,,FND-08,v1-design,svg/couleur/livraison.svg,svg/interface/livraison.svg
+retrait,Retrait en boutique,Livraison et exécution,livraison,,FND-08,v1-design,svg/couleur/retrait.svg,svg/interface/retrait.svg
+sur-place,Consommer sur place,Livraison et exécution,livraison,,FND-08,v1-design,svg/couleur/sur-place.svg,svg/interface/sur-place.svg
+suivi-commande,Suivi de commande,Livraison et exécution,livraison,,,v1-design,svg/couleur/suivi-commande.svg,svg/interface/suivi-commande.svg
+zone-livraison,Zone de livraison,Livraison et exécution,livraison,,FND-08,v1-design,svg/couleur/zone-livraison.svg,svg/interface/zone-livraison.svg
+hors-zone,Hors zone de livraison,Livraison et exécution,livraison,,,v1-design,svg/couleur/hors-zone.svg,svg/interface/hors-zone.svg
+adresse,Adresse,Livraison et exécution,livraison,,,v1-design,svg/couleur/adresse.svg,svg/interface/adresse.svg
+ajouter-adresse,Ajouter une adresse,Livraison et exécution,livraison,,,v1-design,svg/couleur/ajouter-adresse.svg,svg/interface/ajouter-adresse.svg
+preparation,Commande en préparation,Livraison et exécution,livraison,,,v1-design,svg/couleur/preparation.svg,svg/interface/preparation.svg
+commande-prete,Commande prête,Livraison et exécution,livraison,,,v1-design,svg/couleur/commande-prete.svg,svg/interface/commande-prete.svg
+livree,Livraison effectuée,Livraison et exécution,livraison,,,v1-design,svg/couleur/livree.svg,svg/interface/livree.svg
+echec-livraison,Livraison non effectuée,Livraison et exécution,livraison,,,v1-design,svg/couleur/echec-livraison.svg,svg/interface/echec-livraison.svg
+livraison-volumineuse,Transport volumineux,Livraison et exécution,livraison,,FUR-01,v1-design,svg/couleur/livraison-volumineuse.svg,svg/interface/livraison-volumineuse.svg
+retour,Retour de marchandise,Livraison et exécution,livraison,,,v1-design,svg/couleur/retour.svg,svg/interface/retour.svg
+demande-retour,Demander un retour,Livraison et exécution,livraison,,,v1-design,svg/couleur/demande-retour.svg,svg/interface/demande-retour.svg
+retour-accepte,Retour accepté,Livraison et exécution,livraison,,,v1-design,svg/couleur/retour-accepte.svg,svg/interface/retour-accepte.svg
+planning-livraison,Planifier une livraison,Livraison et exécution,livraison,,,v1-design,svg/couleur/planning-livraison.svg,svg/interface/planning-livraison.svg
+restaurant,Restaurant,Restaurant et alimentation,restaurant,,FOD-01,v1-design,svg/couleur/restaurant.svg,svg/interface/restaurant.svg
+pizza,Pizza et pizzeria,Restaurant et alimentation,restaurant,,FOD-01,v1-design,svg/couleur/pizza.svg,svg/interface/pizza.svg
+boissons,Boissons,Restaurant et alimentation,restaurant,,,v1-design,svg/couleur/boissons.svg,svg/interface/boissons.svg
+carte-restaurant,Carte du restaurant,Restaurant et alimentation,restaurant,,FOD-01,v1-design,svg/couleur/carte-restaurant.svg,svg/interface/carte-restaurant.svg
+plat,Plat,Restaurant et alimentation,restaurant,,,v1-design,svg/couleur/plat.svg,svg/interface/plat.svg
+cuisine,Cuisine et chef,Restaurant et alimentation,restaurant,,,v1-design,svg/couleur/cuisine.svg,svg/interface/cuisine.svg
+cuisson,Préparation en cuisine,Restaurant et alimentation,restaurant,,FOD-02,v1-design,svg/couleur/cuisson.svg,svg/interface/cuisson.svg
+supplements,Suppléments et options,Restaurant et alimentation,restaurant,,FOD-01,v1-design,svg/couleur/supplements.svg,svg/interface/supplements.svg
+commande-programmee,Commande programmée,Restaurant et alimentation,restaurant,,FOD-02,v1-design,svg/couleur/commande-programmee.svg,svg/interface/commande-programmee.svg
+ticket-cuisine,Ticket cuisine,Restaurant et alimentation,restaurant,,FOD-02,v1-design,svg/couleur/ticket-cuisine.svg,svg/interface/ticket-cuisine.svg
+plat-pret,Plat prêt,Restaurant et alimentation,restaurant,,FOD-02,v1-design,svg/couleur/plat-pret.svg,svg/interface/plat-pret.svg
+reservation-table,Réserver une table,Restaurant et alimentation,restaurant,,FOD-03,v1-design,svg/couleur/reservation-table.svg,svg/interface/reservation-table.svg
+couverts,Nombre de couverts,Restaurant et alimentation,restaurant,,FOD-03,v1-design,svg/couleur/couverts.svg,svg/interface/couverts.svg
+allergenes,Informations allergènes,Restaurant et alimentation,restaurant,,FOD-01,v1-design,svg/couleur/allergenes.svg,svg/interface/allergenes.svg
+alimentation,Alimentation,Restaurant et alimentation,restaurant,,,v1-design,svg/couleur/alimentation.svg,svg/interface/alimentation.svg
+boulangerie,Boulangerie,Restaurant et alimentation,restaurant,,,v1-design,svg/couleur/boulangerie.svg,svg/interface/boulangerie.svg
+patisserie,Pâtisserie,Restaurant et alimentation,restaurant,,,v1-design,svg/couleur/patisserie.svg,svg/interface/patisserie.svg
+fruits,Fruits et frais,Restaurant et alimentation,restaurant,,,v1-design,svg/couleur/fruits.svg,svg/interface/fruits.svg
+menu-indisponible,Plat indisponible,Restaurant et alimentation,restaurant,,,v1-design,svg/couleur/menu-indisponible.svg,svg/interface/menu-indisponible.svg
+balance,Vente au poids,Vente au poids,poids,,WGT-01,v1-design,svg/couleur/balance.svg,svg/interface/balance.svg
+chocolat,Chocolats et confiserie,Vente au poids,poids,,WGT-01,v1-design,svg/couleur/chocolat.svg,svg/interface/chocolat.svg
+poids-confirme,Poids confirmé,Vente au poids,poids,,WGT-02,v1-design,svg/couleur/poids-confirme.svg,svg/interface/poids-confirme.svg
+modifier-poids,Ajuster le poids,Vente au poids,poids,,WGT-02,v1-design,svg/couleur/modifier-poids.svg,svg/interface/modifier-poids.svg
+tare,Tare de la pesée,Vente au poids,poids,,WGT-02,v1-design,svg/couleur/tare.svg,svg/interface/tare.svg
+limite-poids,Limite de poids,Vente au poids,poids,,WGT-02,v1-design,svg/couleur/limite-poids.svg,svg/interface/limite-poids.svg
+accepter-poids,Accepter le poids final,Vente au poids,poids,,WGT-02,v1-design,svg/couleur/accepter-poids.svg,svg/interface/accepter-poids.svg
+unite-mesure,Unités de mesure,Vente au poids,poids,,WGT-01,v1-design,svg/couleur/unite-mesure.svg,svg/interface/unite-mesure.svg
+beaute,Beauté et coiffure,Services et rendez-vous,services,,SVC-01,v1-design,svg/couleur/beaute.svg,svg/interface/beaute.svg
+services,Services,Services et rendez-vous,services,,SVC-01,v1-design,svg/couleur/services.svg,svg/interface/services.svg
+agenda,Agenda,Services et rendez-vous,services,,FOD-03,v1-design,svg/couleur/agenda.svg,svg/interface/agenda.svg
+reserver,Réserver un créneau,Services et rendez-vous,services,,SVC-02,v1-design,svg/couleur/reserver.svg,svg/interface/reserver.svg
+rendez-vous-confirme,Rendez-vous confirmé,Services et rendez-vous,services,,SVC-02,v1-design,svg/couleur/rendez-vous-confirme.svg,svg/interface/rendez-vous-confirme.svg
+reporter,Reporter un rendez-vous,Services et rendez-vous,services,,SVC-02,v1-design,svg/couleur/reporter.svg,svg/interface/reporter.svg
+annuler-rendez-vous,Annuler un rendez-vous,Services et rendez-vous,services,,SVC-02,v1-design,svg/couleur/annuler-rendez-vous.svg,svg/interface/annuler-rendez-vous.svg
+indisponibilite,Indisponibilité du personnel,Services et rendez-vous,services,,SVC-01,v1-design,svg/couleur/indisponibilite.svg,svg/interface/indisponibilite.svg
+duree,Durée et temps de service,Services et rendez-vous,services,,SVC-01,v1-design,svg/couleur/duree.svg,svg/interface/duree.svg
+collaborateurs,Collaborateurs,Services et rendez-vous,services,,SVC-01,v1-design,svg/couleur/collaborateurs.svg,svg/interface/collaborateurs.svg
+arrivee-client,Arrivée du client,Services et rendez-vous,services,,SVC-02,v1-design,svg/couleur/arrivee-client.svg,svg/interface/arrivee-client.svg
+absence-client,Absence du client,Services et rendez-vous,services,,,v1-design,svg/couleur/absence-client.svg,svg/interface/absence-client.svg
+brosse,Soins et brossage,Services et rendez-vous,services,,,v1-design,svg/couleur/brosse.svg,svg/interface/brosse.svg
+peigne,Coiffage,Services et rendez-vous,services,,,v1-design,svg/couleur/peigne.svg,svg/interface/peigne.svg
+seche-cheveux,Séchage,Services et rendez-vous,services,,,v1-design,svg/couleur/seche-cheveux.svg,svg/interface/seche-cheveux.svg
+fauteuil,Fauteuil de service,Services et rendez-vous,services,,,v1-design,svg/couleur/fauteuil.svg,svg/interface/fauteuil.svg
+acompte,Acompte manuel,Services et rendez-vous,services,,,v1-design,svg/couleur/acompte.svg,svg/interface/acompte.svg
+meubles,Meubles,Meubles et objets volumineux,meubles,,FUR-01,v1-design,svg/couleur/meubles.svg,svg/interface/meubles.svg
+lit,Literie,Meubles et objets volumineux,meubles,,,v1-design,svg/couleur/lit.svg,svg/interface/lit.svg
+luminaire,Luminaires,Meubles et objets volumineux,meubles,,,v1-design,svg/couleur/luminaire.svg,svg/interface/luminaire.svg
+mesures,Prise de mesures,Meubles et objets volumineux,meubles,,,v1-design,svg/couleur/mesures.svg,svg/interface/mesures.svg
+configuration,Options et configuration,Meubles et objets volumineux,meubles | actions,filtrer | Filtrer,,v1-design,svg/couleur/configuration.svg,svg/interface/configuration.svg
+devis-meuble,Devis pour meuble,Meubles et objets volumineux,meubles,,FUR-01,v1-design,svg/couleur/devis-meuble.svg,svg/interface/devis-meuble.svg
+accord-livraison,Accord de transport spécial,Meubles et objets volumineux,meubles,,FUR-01,v1-design,svg/couleur/accord-livraison.svg,svg/interface/accord-livraison.svg
+electronique,Électronique,Électronique et réparation,reparation,,FND-09 | OPS-01,v1-design,svg/couleur/electronique.svg,svg/interface/electronique.svg
+ordinateur,Ordinateur,Électronique et réparation,reparation,,FND-09 | OPS-01,v1-design,svg/couleur/ordinateur.svg,svg/interface/ordinateur.svg
+reparation,Atelier de réparation,Électronique et réparation,reparation,,REP-02,v1-design,svg/couleur/reparation.svg,svg/interface/reparation.svg
+appareil-endommage,Appareil à réparer,Électronique et réparation,reparation,,,v1-design,svg/couleur/appareil-endommage.svg,svg/interface/appareil-endommage.svg
+diagnostic,Diagnostic technique,Électronique et réparation,reparation,,REP-01,v1-design,svg/couleur/diagnostic.svg,svg/interface/diagnostic.svg
+consentement,Consentement du client,Électronique et réparation,reparation,,REP-01,v1-design,svg/couleur/consentement.svg,svg/interface/consentement.svg
+intervention,Bon d’intervention,Électronique et réparation,reparation,,REP-02,v1-design,svg/couleur/intervention.svg,svg/interface/intervention.svg
+reparation-attente,Réparation en attente,Électronique et réparation,reparation,,,v1-design,svg/couleur/reparation-attente.svg,svg/interface/reparation-attente.svg
+reparation-terminee,Réparation terminée,Électronique et réparation,reparation,,,v1-design,svg/couleur/reparation-terminee.svg,svg/interface/reparation-terminee.svg
+tests-techniques,Tests techniques,Électronique et réparation,reparation,,REP-02,v1-design,svg/couleur/tests-techniques.svg,svg/interface/tests-techniques.svg
+restitution,Restitution de l’appareil,Électronique et réparation,reparation,,REP-02,v1-design,svg/couleur/restitution.svg,svg/interface/restitution.svg
+garantie,Garantie marchand,Électronique et réparation,reparation,,REP-02,v1-design,svg/couleur/garantie.svg,svg/interface/garantie.svg
+numero-serie,Numéro de série restreint,Électronique et réparation,reparation,,,v1-design,svg/couleur/numero-serie.svg,svg/interface/numero-serie.svg
+pharmacie,Catégorie pharmacie,Pharmacie et autorisations,pharmacie,,PHA-01,v1-design,svg/couleur/pharmacie.svg,svg/interface/pharmacie.svg
+produit-autorise,Produit autorisé,Pharmacie et autorisations,pharmacie,,PHA-01,v1-design,svg/couleur/produit-autorise.svg,svg/interface/produit-autorise.svg
+lot,Lot et traçabilité,Pharmacie et autorisations,pharmacie,,PHA-01,v1-design,svg/couleur/lot.svg,svg/interface/lot.svg
+peremption,Date de péremption,Pharmacie et autorisations,pharmacie,,PHA-01,v1-design,svg/couleur/peremption.svg,svg/interface/peremption.svg
+produit-perime,Produit périmé,Pharmacie et autorisations,pharmacie,,PHA-01,v1-design,svg/couleur/produit-perime.svg,svg/interface/produit-perime.svg
+autorisation-professionnelle,Autorisation professionnelle,Pharmacie et autorisations,pharmacie,,PHA-01 | LEG-01,v1-design,svg/couleur/autorisation-professionnelle.svg,svg/interface/autorisation-professionnelle.svg
+produit-restreint,Produit soumis à restriction,Pharmacie et autorisations,pharmacie,,FND-15 | PHA-02,v1-design,svg/couleur/produit-restreint.svg,svg/interface/produit-restreint.svg
+vente-bloquee,Vente bloquée,Pharmacie et autorisations,pharmacie,,FND-15 | PHA-02,v1-design,svg/couleur/vente-bloquee.svg,svg/interface/vente-bloquee.svg
+lieu,Lieu et établissement,Mall et découverte des lieux,lieux,,,v1-design,svg/couleur/lieu.svg,svg/interface/lieu.svg
+niveaux,Niveaux et étages,Mall et découverte des lieux,lieux,,VEN-01,v1-design,svg/couleur/niveaux.svg,svg/interface/niveaux.svg
+escaliers,Escaliers,Mall et découverte des lieux,lieux,,,v1-design,svg/couleur/escaliers.svg,svg/interface/escaliers.svg
+entree,Entrée et accès,Mall et découverte des lieux,lieux,,,v1-design,svg/couleur/entree.svg,svg/interface/entree.svg
+stationnement,Stationnement,Mall et découverte des lieux,lieux,,,v1-design,svg/couleur/stationnement.svg,svg/interface/stationnement.svg
+accessibilite,Accessibilité,Mall et découverte des lieux,lieux,,FND-14,v1-design,svg/couleur/accessibilite.svg,svg/interface/accessibilite.svg
+emplacement,Emplacement marchand,Mall et découverte des lieux,lieux,,VEN-01,v1-design,svg/couleur/emplacement.svg,svg/interface/emplacement.svg
+rejoindre-lieu,Publication dans un lieu,Mall et découverte des lieux,lieux,,VEN-01,v1-design,svg/couleur/rejoindre-lieu.svg,svg/interface/rejoindre-lieu.svg
+quitter-lieu,Retrait de la publication du lieu,Mall et découverte des lieux,lieux,,VEN-01,v1-design,svg/couleur/quitter-lieu.svg,svg/interface/quitter-lieu.svg
+visibilite,Visibilité de la boutique,Mall et découverte des lieux,lieux,,,v1-design,svg/couleur/visibilite.svg,svg/interface/visibilite.svg
+confidentialite-lieu,Données privées du marchand,Mall et découverte des lieux,lieux | gestion,organisation | Organisation,FND-01 | VEN-02 | INT-01,v1-design,svg/couleur/confidentialite-lieu.svg,svg/interface/confidentialite-lieu.svg
+caisse,Caisse POS,"Caisse, règlements et documents",caisse,,FND-10 | POS-01,v1-design,svg/couleur/caisse.svg,svg/interface/caisse.svg
+terminal,Terminal POS installé,"Caisse, règlements et documents",caisse,,FND-10 | POS-01,v1-design,svg/couleur/terminal.svg,svg/interface/terminal.svg
+caissier,Caissier,"Caisse, règlements et documents",caisse,,FND-10 | POS-01,v1-design,svg/couleur/caissier.svg,svg/interface/caissier.svg
+client-passage,Client de passage,"Caisse, règlements et documents",caisse,,FND-10,v1-design,svg/couleur/client-passage.svg,svg/interface/client-passage.svg
+ouvrir-caisse,Ouvrir une session de caisse,"Caisse, règlements et documents",caisse,,POS-01,v1-design,svg/couleur/ouvrir-caisse.svg,svg/interface/ouvrir-caisse.svg
+cloturer-caisse,Clôturer la caisse,"Caisse, règlements et documents",caisse,,POS-01,v1-design,svg/couleur/cloturer-caisse.svg,svg/interface/cloturer-caisse.svg
+especes,Règlement en espèces,"Caisse, règlements et documents",caisse,,FND-07 | POS-02,v1-design,svg/couleur/especes.svg,svg/interface/especes.svg
+monnaie-rendue,Monnaie rendue,"Caisse, règlements et documents",caisse,,POS-02,v1-design,svg/couleur/monnaie-rendue.svg,svg/interface/monnaie-rendue.svg
+entree-especes,Entrée d’espèces,"Caisse, règlements et documents",caisse,,POS-02,v1-design,svg/couleur/entree-especes.svg,svg/interface/entree-especes.svg
+sortie-especes,Sortie d’espèces,"Caisse, règlements et documents",caisse,,POS-02,v1-design,svg/couleur/sortie-especes.svg,svg/interface/sortie-especes.svg
+ecart-caisse,Écart de caisse,"Caisse, règlements et documents",caisse,,POS-02,v1-design,svg/couleur/ecart-caisse.svg,svg/interface/ecart-caisse.svg
+rapprochement,Rapprochement de caisse,"Caisse, règlements et documents",caisse,,FND-07 | POS-02,v1-design,svg/couleur/rapprochement.svg,svg/interface/rapprochement.svg
+transfert-manuel,Transfert manuel,"Caisse, règlements et documents",caisse,,FND-07,v1-design,svg/couleur/transfert-manuel.svg,svg/interface/transfert-manuel.svg
+preuve-transfert,Justificatif de transfert,"Caisse, règlements et documents",caisse,,FND-07,v1-design,svg/couleur/preuve-transfert.svg,svg/interface/preuve-transfert.svg
+paiement-attente,Paiement à vérifier,"Caisse, règlements et documents",caisse,,,v1-design,svg/couleur/paiement-attente.svg,svg/interface/paiement-attente.svg
+paiement-confirme,Paiement confirmé,"Caisse, règlements et documents",caisse,,FND-07,v1-design,svg/couleur/paiement-confirme.svg,svg/interface/paiement-confirme.svg
+remboursement,Remboursement,"Caisse, règlements et documents",caisse,,FND-07,v1-design,svg/couleur/remboursement.svg,svg/interface/remboursement.svg
+facture,Facture,"Caisse, règlements et documents",caisse,,POS-03,v1-design,svg/couleur/facture.svg,svg/interface/facture.svg
+imprimer,Imprimer,"Caisse, règlements et documents",caisse,,POS-03,v1-design,svg/couleur/imprimer.svg,svg/interface/imprimer.svg
+reimprimer,Réimprimer sans recréer la vente,"Caisse, règlements et documents",caisse,,POS-03,v1-design,svg/couleur/reimprimer.svg,svg/interface/reimprimer.svg
+panne-imprimante,Panne d’imprimante,"Caisse, règlements et documents",caisse,,POS-03,v1-design,svg/couleur/panne-imprimante.svg,svg/interface/panne-imprimante.svg
+papier-a4,Document A4,"Caisse, règlements et documents",caisse,,,v1-design,svg/couleur/papier-a4.svg,svg/interface/papier-a4.svg
+ticket-thermique,Ticket thermique,"Caisse, règlements et documents",caisse,,POS-03,v1-design,svg/couleur/ticket-thermique.svg,svg/interface/ticket-thermique.svg
+facture-non-fiscalisee,Document sans validation fiscale,"Caisse, règlements et documents",caisse,,POS-03,v1-design,svg/couleur/facture-non-fiscalisee.svg,svg/interface/facture-non-fiscalisee.svg
+connexion,Connexion au compte,Compte et sécurité,compte,,FND-02,v1-design,svg/couleur/connexion.svg,svg/interface/connexion.svg
+deconnexion,Déconnexion,Compte et sécurité,compte,,,v1-design,svg/couleur/deconnexion.svg,svg/interface/deconnexion.svg
+email,Adresse e-mail,Compte et sécurité,compte,,,v1-design,svg/couleur/email.svg,svg/interface/email.svg
+email-verifie,E-mail vérifié,Compte et sécurité,compte,,FND-02,v1-design,svg/couleur/email-verifie.svg,svg/interface/email-verifie.svg
+mot-de-passe,Mot de passe,Compte et sécurité,compte,,,v1-design,svg/couleur/mot-de-passe.svg,svg/interface/mot-de-passe.svg
+changer-mot-de-passe,Changer le mot de passe,Compte et sécurité,compte,,,v1-design,svg/couleur/changer-mot-de-passe.svg,svg/interface/changer-mot-de-passe.svg
+mfa,Authentification renforcée,Compte et sécurité,compte,,FND-02,v1-design,svg/couleur/mfa.svg,svg/interface/mfa.svg
+session,Session utilisateur,Compte et sécurité,compte,,FND-02,v1-design,svg/couleur/session.svg,svg/interface/session.svg
+appareils,Appareils autorisés,Compte et sécurité,compte,,,v1-design,svg/couleur/appareils.svg,svg/interface/appareils.svg
+permissions,Rôles et permissions,Compte et sécurité,compte,,FND-01 | AGT-01 | SEC-01 | INT-02,v1-design,svg/couleur/permissions.svg,svg/interface/permissions.svg
+acces-refuse,Accès refusé,Compte et sécurité,compte,,SEC-01,v1-design,svg/couleur/acces-refuse.svg,svg/interface/acces-refuse.svg
+vpn,Accès privé et VPN,Compte et sécurité,compte,,FND-02,v1-design,svg/couleur/vpn.svg,svg/interface/vpn.svg
+confidentialite,Confidentialité,Compte et sécurité,compte,,SEC-01,v1-design,svg/couleur/confidentialite.svg,svg/interface/confidentialite.svg
+consentements,Consentements enregistrés,Compte et sécurité,compte,,,v1-design,svg/couleur/consentements.svg,svg/interface/consentements.svg
+parametres,Paramètres,Compte et sécurité,compte,,,v1-design,svg/couleur/parametres.svg,svg/interface/parametres.svg
+langue,Langue,Compte et sécurité,compte,,FND-14,v1-design,svg/couleur/langue.svg,svg/interface/langue.svg
+contacts,Contacts du compte,Compte et sécurité,compte,,,v1-design,svg/couleur/contacts.svg,svg/interface/contacts.svg
+supprimer-compte,Demande de suppression du compte,Compte et sécurité,compte,,,v1-design,svg/couleur/supprimer-compte.svg,svg/interface/supprimer-compte.svg
+aide-catalogue,Assistant catalogue marchand,Assistants et validation humaine,ia,,AGT-04,v1-design,svg/couleur/aide-catalogue.svg,svg/interface/aide-catalogue.svg
+faq-assistant,Assistant FAQ acheteur,Assistants et validation humaine,ia,,AGT-04,v1-design,svg/couleur/faq-assistant.svg,svg/interface/faq-assistant.svg
+assistant-analyse,Assistant d’exploitation,Assistants et validation humaine,ia,,AGT-04,v1-design,svg/couleur/assistant-analyse.svg,svg/interface/assistant-analyse.svg
+proposition-ia,Proposition à vérifier,Assistants et validation humaine,ia,,AGT-02,v1-design,svg/couleur/proposition-ia.svg,svg/interface/proposition-ia.svg
+approbation-humaine,Approbation humaine,Assistants et validation humaine,ia,,AGT-02,v1-design,svg/couleur/approbation-humaine.svg,svg/interface/approbation-humaine.svg
+refus-proposition,Refuser une proposition,Assistants et validation humaine,ia,,AGT-02,v1-design,svg/couleur/refus-proposition.svg,svg/interface/refus-proposition.svg
+arret-ia,Désactiver l’assistant,Assistants et validation humaine,ia,,AGT-03,v1-design,svg/couleur/arret-ia.svg,svg/interface/arret-ia.svg
+sources,Sources de la réponse,Assistants et validation humaine,ia,,AGT-01,v1-design,svg/couleur/sources.svg,svg/interface/sources.svg
+budget-ia,Budget et quota IA,Assistants et validation humaine,ia,,AGT-03,v1-design,svg/couleur/budget-ia.svg,svg/interface/budget-ia.svg
+outils-ia,Outils autorisés de l’assistant,Assistants et validation humaine,ia,,AGT-01,v1-design,svg/couleur/outils-ia.svg,svg/interface/outils-ia.svg
+workflow,Étapes du processus,Assistants et validation humaine,ia,,AGT-02,v1-design,svg/couleur/workflow.svg,svg/interface/workflow.svg
+relancer-processus,Reprendre un processus,Assistants et validation humaine,ia,,AGT-02,v1-design,svg/couleur/relancer-processus.svg,svg/interface/relancer-processus.svg
+etablissements,Établissements et succursales,Gestion marchand et opérateur,gestion,,FND-01,v1-design,svg/couleur/etablissements.svg,svg/interface/etablissements.svg
+profils-metiers,Profils métiers,Gestion marchand et opérateur,gestion,,FND-03,v1-design,svg/couleur/profils-metiers.svg,svg/interface/profils-metiers.svg
+abonnement,Abonnement et droits produit,Gestion marchand et opérateur,gestion,,FND-11 | INT-02,v1-design,svg/couleur/abonnement.svg,svg/interface/abonnement.svg
+quotas,Limites et quotas,Gestion marchand et opérateur,gestion,,FND-11 | INT-02,v1-design,svg/couleur/quotas.svg,svg/interface/quotas.svg
+statistiques,Statistiques d’exploitation,Gestion marchand et opérateur,gestion,,,v1-design,svg/couleur/statistiques.svg,svg/interface/statistiques.svg
+journal,Journal et audit,Gestion marchand et opérateur,gestion,,SEC-01,v1-design,svg/couleur/journal.svg,svg/interface/journal.svg
+evenements,Événements métier,Gestion marchand et opérateur,gestion,,FND-16,v1-design,svg/couleur/evenements.svg,svg/interface/evenements.svg
+api-partagee,Connexion au Core partagé,Gestion marchand et opérateur,gestion,,FND-13 | INT-01,v1-design,svg/couleur/api-partagee.svg,svg/interface/api-partagee.svg
+isolation,Isolation des organisations,Gestion marchand et opérateur,gestion,,FND-01 | FND-13,v1-design,svg/couleur/isolation.svg,svg/interface/isolation.svg
+export-donnees,Exporter les données,Gestion marchand et opérateur,gestion,,FND-13,v1-design,svg/couleur/export-donnees.svg,svg/interface/export-donnees.svg
+sauvegarde,Sauvegarde,Gestion marchand et opérateur,gestion,,,v1-design,svg/couleur/sauvegarde.svg,svg/interface/sauvegarde.svg
+restauration,Restauration ciblée,Gestion marchand et opérateur,gestion,,FND-13,v1-design,svg/couleur/restauration.svg,svg/interface/restauration.svg
+synchronisation,Synchronisation,Gestion marchand et opérateur,gestion,,FND-16 | INT-01,v1-design,svg/couleur/synchronisation.svg,svg/interface/synchronisation.svg
+fonction-active,Fonction activée,Gestion marchand et opérateur,gestion,,FND-03,v1-design,svg/couleur/fonction-active.svg,svg/interface/fonction-active.svg
+fonction-desactivee,Fonction désactivée,Gestion marchand et opérateur,gestion,,FND-03,v1-design,svg/couleur/fonction-desactivee.svg,svg/interface/fonction-desactivee.svg
+controle-qualite,Contrôle qualité,Gestion marchand et opérateur,gestion,,OPS-01,v1-design,svg/couleur/controle-qualite.svg,svg/interface/controle-qualite.svg
+validation-legale,Validation réglementaire,Gestion marchand et opérateur,gestion,,FND-15 | LEG-01,v1-design,svg/couleur/validation-legale.svg,svg/interface/validation-legale.svg
+deploiement,Déploiement des clients,Gestion marchand et opérateur,gestion,,OPS-01,v1-design,svg/couleur/deploiement.svg,svg/interface/deploiement.svg
+version,Version de l’application,Gestion marchand et opérateur,gestion,,FND-14 | OPS-01,v1-design,svg/couleur/version.svg,svg/interface/version.svg
+modifier,Modifier,Actions et commandes d’interface,actions,,,v1-design,svg/couleur/modifier.svg,svg/interface/modifier.svg
+supprimer,Supprimer,Actions et commandes d’interface,actions,,,v1-design,svg/couleur/supprimer.svg,svg/interface/supprimer.svg
+partager,Partager,Actions et commandes d’interface,actions,,,v1-design,svg/couleur/partager.svg,svg/interface/partager.svg
+trier,Trier,Actions et commandes d’interface,actions,,,v1-design,svg/couleur/trier.svg,svg/interface/trier.svg
+zoomer,Agrandir,Actions et commandes d’interface,actions,,,v1-design,svg/couleur/zoomer.svg,svg/interface/zoomer.svg
+dezoomer,Réduire le zoom,Actions et commandes d’interface,actions,,,v1-design,svg/couleur/dezoomer.svg,svg/interface/dezoomer.svg
+telecharger,Télécharger,Actions et commandes d’interface,actions,,,v1-design,svg/couleur/telecharger.svg,svg/interface/telecharger.svg
+copier,Copier,Actions et commandes d’interface,actions,,,v1-design,svg/couleur/copier.svg,svg/interface/copier.svg
+joindre,Joindre un fichier,Actions et commandes d’interface,actions,,,v1-design,svg/couleur/joindre.svg,svg/interface/joindre.svg
+recadrer,Recadrer,Actions et commandes d’interface,actions,,,v1-design,svg/couleur/recadrer.svg,svg/interface/recadrer.svg
+signaler,Signaler,Actions et commandes d’interface,actions,,,v1-design,svg/couleur/signaler.svg,svg/interface/signaler.svg
+suivant,Suivant,Actions et commandes d’interface,actions,,,v1-design,svg/couleur/suivant.svg,svg/interface/suivant.svg
+precedent,Précédent,Actions et commandes d’interface,actions,,,v1-design,svg/couleur/precedent.svg,svg/interface/precedent.svg
+developper,Développer,Actions et commandes d’interface,actions,,,v1-design,svg/couleur/developper.svg,svg/interface/developper.svg
+reduire,Réduire,Actions et commandes d’interface,actions,,,v1-design,svg/couleur/reduire.svg,svg/interface/reduire.svg
+fleche-droite,Flèche droite,Actions et commandes d’interface,actions,,,v1-design,svg/couleur/fleche-droite.svg,svg/interface/fleche-droite.svg
+fleche-gauche,Flèche gauche,Actions et commandes d’interface,actions,,,v1-design,svg/couleur/fleche-gauche.svg,svg/interface/fleche-gauche.svg
+fleche-haut,Flèche haut,Actions et commandes d’interface,actions,,,v1-design,svg/couleur/fleche-haut.svg,svg/interface/fleche-haut.svg
+fleche-bas,Flèche bas,Actions et commandes d’interface,actions,,,v1-design,svg/couleur/fleche-bas.svg,svg/interface/fleche-bas.svg
+plus-options,Plus d’options,Actions et commandes d’interface,actions,,,v1-design,svg/couleur/plus-options.svg,svg/interface/plus-options.svg
+options-verticales,Options verticales,Actions et commandes d’interface,actions,,,v1-design,svg/couleur/options-verticales.svg,svg/interface/options-verticales.svg
+lecture,Lecture,Actions et commandes d’interface,actions,,,v1-design,svg/couleur/lecture.svg,svg/interface/lecture.svg
+pause,Pause,Actions et commandes d’interface,actions,,,v1-design,svg/couleur/pause.svg,svg/interface/pause.svg
+arreter,Arrêter,Actions et commandes d’interface,actions,,,v1-design,svg/couleur/arreter.svg,svg/interface/arreter.svg
+microphone,Microphone,Actions et commandes d’interface,actions,,,v1-design,svg/couleur/microphone.svg,svg/interface/microphone.svg
+audio,Son,Actions et commandes d’interface,actions,,,v1-design,svg/couleur/audio.svg,svg/interface/audio.svg
+basculer,Changer de vue,Actions et commandes d’interface,actions,,,v1-design,svg/couleur/basculer.svg,svg/interface/basculer.svg
+selectionner,Sélectionner,Actions et commandes d’interface,actions | etats,succes | Succès,,v1-design,svg/couleur/selectionner.svg,svg/interface/selectionner.svg
+fermer,Fermer,Actions et commandes d’interface,actions | etats,erreur | Erreur,,v1-design,svg/couleur/fermer.svg,svg/interface/fermer.svg
+attention,Attention,"États, retours et assistance",etats,,,v1-design,svg/couleur/attention.svg,svg/interface/attention.svg
+en-cours,En cours,"États, retours et assistance",etats,,,v1-design,svg/couleur/en-cours.svg,svg/interface/en-cours.svg
+chargement,Chargement,"États, retours et assistance",etats,,,v1-design,svg/couleur/chargement.svg,svg/interface/chargement.svg
+connectivite,Connectivité,"États, retours et assistance",etats,,,v1-design,svg/couleur/connectivite.svg,svg/interface/connectivite.svg
+hors-ligne,Connexion indisponible,"États, retours et assistance",etats,,AGT-03,v1-design,svg/couleur/hors-ligne.svg,svg/interface/hors-ligne.svg
+message,Message,"États, retours et assistance",etats,,,v1-design,svg/couleur/message.svg,svg/interface/message.svg
+support,Support,"États, retours et assistance",etats,,,v1-design,svg/couleur/support.svg,svg/interface/support.svg
+aide,Aide,"États, retours et assistance",etats,,FND-14,v1-design,svg/couleur/aide.svg,svg/interface/aide.svg
+aucun-resultat,Aucun résultat,"États, retours et assistance",etats,,,v1-design,svg/couleur/aucun-resultat.svg,svg/interface/aucun-resultat.svg
+notification-nouvelle,Nouvelle notification,"États, retours et assistance",etats,,,v1-design,svg/couleur/notification-nouvelle.svg,svg/interface/notification-nouvelle.svg
+notification-muette,Notifications désactivées,"États, retours et assistance",etats,,,v1-design,svg/couleur/notification-muette.svg,svg/interface/notification-muette.svg
+non-visible,Masquer,"États, retours et assistance",etats,,,v1-design,svg/couleur/non-visible.svg,svg/interface/non-visible.svg
+erreur-systeme,Incident système,"États, retours et assistance",etats,,,v1-design,svg/couleur/erreur-systeme.svg,svg/interface/erreur-systeme.svg
+temporisation,Délai ou attente,"États, retours et assistance",etats,,,v1-design,svg/couleur/temporisation.svg,svg/interface/temporisation.svg
+en-attente-validation,En attente de validation,"États, retours et assistance",etats,,,v1-design,svg/couleur/en-attente-validation.svg,svg/interface/en-attente-validation.svg
+promotions,Promotions,Découverte et éléments éditoriaux,editorial,,,complement,svg/couleur/promotions.svg,svg/interface/promotions.svg
+offre-speciale,Offre spéciale,Découverte et éléments éditoriaux,editorial,,,complement,svg/couleur/offre-speciale.svg,svg/interface/offre-speciale.svg
+cadeau,Cadeau,Découverte et éléments éditoriaux,editorial,,,complement,svg/couleur/cadeau.svg,svg/interface/cadeau.svg
+eco-responsable,Mention écoresponsable,Découverte et éléments éditoriaux,editorial,,,complement,svg/couleur/eco-responsable.svg,svg/interface/eco-responsable.svg
+premium,Mention premium,Découverte et éléments éditoriaux,editorial,,,complement,svg/couleur/premium.svg,svg/interface/premium.svg
+avis,Avis et commentaires,Découverte et éléments éditoriaux,editorial,,,complement,svg/couleur/avis.svg,svg/interface/avis.svg
+note,Note client,Découverte et éléments éditoriaux,editorial,,,complement,svg/couleur/note.svg,svg/interface/note.svg
+portefeuille,Portefeuille ou résumé des règlements,Découverte et éléments éditoriaux,editorial,,,complement,svg/couleur/portefeuille.svg,svg/interface/portefeuille.svg
+carte,"Carte, représentation générique",Découverte et éléments éditoriaux,editorial,,,complement,svg/couleur/carte.svg,svg/interface/carte.svg

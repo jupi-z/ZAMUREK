@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-mfa-i-title zi-mfa-i-desc">
+  <title id="zi-mfa-i-title">Authentification renforcée</title><desc id="zi-mfa-i-desc">Authentification renforcée — repère visuel pour compte et sécurité dans Zamurek.</desc>
+  
+  <defs/><g id="zi-mfa-i-drawing" data-icon="mfa" data-layer="drawing">
+    <path d="M22 62V42C22 5 76 5 76 42V64M32 72V41C32 18 65 18 65 41V73M43 81V42C43 34 54 34 54 42V81" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

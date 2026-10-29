@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-hors-ligne-i-title zi-hors-ligne-i-desc">
+  <title id="zi-hors-ligne-i-title">Connexion indisponible</title><desc id="zi-hors-ligne-i-desc">Connexion indisponible — repère visuel pour états, retours et assistance dans Zamurek.</desc>
+  
+  <defs/><g id="zi-hors-ligne-i-drawing" data-icon="hors-ligne" data-layer="drawing">
+    <path d="M13 34Q48 3 83 34M25 49Q48 28 71 49M37 64Q48 54 59 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="48" cy="78" r="5" fill="currentColor"/><path d="M18 16L80 80" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

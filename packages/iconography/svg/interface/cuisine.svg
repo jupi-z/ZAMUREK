@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-cuisine-i-title zi-cuisine-i-desc">
+  <title id="zi-cuisine-i-title">Cuisine et chef</title><desc id="zi-cuisine-i-desc">Cuisine et chef — repère visuel pour restaurant et alimentation dans Zamurek.</desc>
+  
+  <defs/><g id="zi-cuisine-i-drawing" data-icon="cuisine" data-layer="drawing" transform="matrix(1.0000 0 0 1.0000 -1.500 4.000)">
+    <path d="M24 49C4 42 16 13 36 23C39 4 66 6 66 24C86 13 96 44 73 50L69 80H27Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M29 64H68" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

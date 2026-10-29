@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-details-i-title zi-details-i-desc">
+  <title id="zi-details-i-title">Détails</title><desc id="zi-details-i-desc">Détails — repère visuel pour catalogue et produits dans Zamurek.</desc>
+  
+  <defs/><g id="zi-details-i-drawing" data-icon="details" data-layer="drawing">
+    <circle cx="48" cy="48" r="33" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/><circle cx="48" cy="29" r="3" fill="currentColor"/><path d="M48 43V65" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

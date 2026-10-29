@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-boissons-i-title zi-boissons-i-desc">
+  <title id="zi-boissons-i-title">Boissons</title><desc id="zi-boissons-i-desc">Boissons — repère visuel pour restaurant et alimentation dans Zamurek.</desc>
+  
+  <defs/><g id="zi-boissons-i-drawing" data-icon="boissons" data-layer="drawing" transform="matrix(1.0000 0 0 1.0000 -6.000 3.500)">
+    <path d="M21 29H69V65Q69 82 45 82Q21 82 21 65Z" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M69 37C96 35 91 65 69 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M34 12V19M48 8V19M61 12V19" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

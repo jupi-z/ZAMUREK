@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" role="img" aria-labelledby="zi-pause-i-title zi-pause-i-desc">
+  <title id="zi-pause-i-title">Pause</title><desc id="zi-pause-i-desc">Pause — repère visuel pour actions et commandes d’interface dans Zamurek.</desc>
+  
+  <defs><clipPath id="zm-pause-clip-0-0" clipPathUnits="userSpaceOnUse"><path d="M0 0H96V96H0Z M55.20 13.20h21.60v71.60h-21.60Z" clip-rule="evenodd" fill-rule="evenodd"/></clipPath></defs><g id="zi-pause-i-drawing" data-icon="pause" data-layer="drawing">
+    <g clip-path="url(#zm-pause-clip-0-0)"><rect x="22" y="15" width="18" height="68" rx="5" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/></g><rect x="57" y="15" width="18" height="68" rx="5" fill="none" stroke="currentColor" stroke-width="4" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
