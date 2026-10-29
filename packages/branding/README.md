@@ -1,58 +1,56 @@
-# ZAMUREK — identité de marque V1
+# ZAMUREK — système de marque, masters vectoriels V2
 
-> **Portée : assets et tokens uniquement.** Aucun backend, client Android/Windows, SDK, API ou paiement n'est introduit.
+**Référence officielle :** 15 masters SVG natifs (3 compositions × 5 traitements), en fonds transparents. Depuis le 29 octobre 2026, ces fichiers remplacent les tracés provisoires.
+Le logo conserve le symbole approuvé par le propriétaire et le mot-symbole épais **Zamurek**.
 
-## Référence retenue
+## Charte
 
-- Logotype : mot **Zamurek** épais, avec **Z/mure** vert, **a** orange et **k** magenta.
-- Icône : silhouette exact du croquis approuvé (tête ronde, chevron, lobes gauche/droite, lobe inférieur). **Ne pas la réinterpréter.**
-- Couleurs : vert forêt `#005C45`, orange `#FF8A1E`, magenta `#D21868`.
-- Fonds dominants : blanc `#FFFFFF` (clair), obsidienne `#111318` (sombre).
-- Direction : brandboard **Concept 01 — Essential Identity**, fond clair, interfaces plates, minimalistes, sans ombres inutiles.
-- UI : **Poppins** est un candidat issu du brandboard, pas une police identifiée de façon certaine à partir du logotype raster. Le logo doit être utilisé sous forme d'artwork, jamais reconstitué avec une substitution de police.
+- Vert forêt principal : `#005C45`
+- Orange secondaire : `#FF8A1E`
+- Magenta accent : `#D21868`
+- Fond clair majoritaire : `#FFFFFF`
+- Fond sombre majoritaire : `#111318` (obsidienne)
+- Style UI plat, peu d'effets, aucun réinterprétation du symbole. Référence brandboard : Concept 01.
 
-## Fichiers versionnés
+## Organisation des ressources
 
-- `assets/` : **15 SVG** (horizontal / vertical / icône × couleur clair / couleur sombre / vert mono / blanc mono / noir mono).
-- `tokens/zamurek.tokens.json` : couleurs de marque et couleurs sémantiques des deux thèmes.
-- `styles/zamurek-theme.css` : variables CSS sans styles imposés sur les composants.
-- `manifest.json` : inventaire pour les outils, les futures interfaces et Figma.
+- `assets/zamurek-{horizontal,vertical,icon}-{light,dark,green,white,black}.svg` : **15 sources SVG natives**.
+- `tokens/zamurek.tokens.json` : primitives/sémantiques.
+- `styles/zamurek-theme.css` : variables CSS réutilisables.
+- `manifest.json` : correspondance entre 15 fichiers, origine et traitements.
+- `scripts/validate_branding.py` : XML, intégrité des tracés, palette, contraste vert/blanc/obsidienne.
 
-Les SVG sont de véritables tracés éditables des **contours** vectorisés depuis le raster fourni et approuvé par le propriétaire, empreinte SHA-256 :
-`e4aac9d59f75a01e58cf6e46d70d323432bda5b5aa32bd54a625f484421bc546`.
+Les modes `light` et `dark` correspondent aux **fichiers tricolores destinés aux fonds respectifs**. Ils ne contiennent pas de fond incorporé ; le fond est fourni par l'application. Les gradations du vert sont des traitements du vert de marque, sans changer les chemins. Le vert plus clair du logo sombre n'est pas une nouvelle couleur principale de l'identité.
 
-**Limite explicite :** ce traçage simplifie les micro-dégradés, les reflets et des bords de l'original. Il ne remplace ni les PNG maîtres existants ni une reconstruction vectorielle manuelle validée. Les SVG de fond sombre éclaircissent le vert sans modifier les contours. Le logo source raster et les PNG 15 variantes existent dans le dossier de livraison créatif mais **ne sont pas inclus dans ce commit** : leur export binaire doit être importé et validé séparément avant production.
+## Fidélité et provenance
 
-## Utilisation prévue
+Les 15 SVG proviennent de l'archive utilisateur `Zamurek_Collection_Full_SVG.zip`, déposée le 29 octobre 2026. Tous les tracés et `viewBox` sont conservés. Pour les six versions tricolores, les arrêts des gradients verts ont été recalibrés afin de garantir une meilleure cohérence sur blanc et une meilleure lisibilité sur obsidienne. Les formes des caractères et de l'icône **ne sont pas réinventées**.
+L'archive originale reste une référence d'entrée du travail créatif ; elle n'est pas distribuée automatiquement avec ce dépôt.
 
-```html
-<link rel="stylesheet" href="/branding/zamurek-theme.css">
-<div data-zamurek-theme="light">
-  <img src="/branding/assets/zamurek-horizontal-light.svg" alt="Zamurek">
-</div>
-<div data-zamurek-theme="dark">
-  <img src="/branding/assets/zamurek-horizontal-dark.svg" alt="Zamurek">
-</div>
-```
+## Fichiers à utiliser
 
-- Conserver les proportions, espaces intérieurs et contreformes de l'icône et des glyphes.
-- Sur les fonds clair et sombre, utiliser le traitement correspondant.
-- Monochromes : vert sur blanc, blanc sur fond sombre, noir pour les techniques d'impression.
-- Ne pas substituer une nouvelle police au mot-symbole approuvé.
-- Pas de gradients inventés sur les éléments UI. Les accents orange/magenta sont réservés aux usages voulus.
-- L'application effective de la charte aux écrans reste **à réaliser avec Figma** ; les tokens sémantiques de surface sont des valeurs initiales à confirmer par tests de contraste, notamment pour des tailles réduites.
+| Usage | Fichier |
+|---|---|
+| Header sur blanc | `assets/zamurek-horizontal-light.svg` |
+| Header sur obsidienne | `assets/zamurek-horizontal-dark.svg` |
+| Signature verticale claire | `assets/zamurek-vertical-light.svg` |
+| Signature verticale sombre | `assets/zamurek-vertical-dark.svg` |
+| Icône claire | `assets/zamurek-icon-light.svg` |
+| Icône sombre | `assets/zamurek-icon-dark.svg` |
+| Impresssion monochrome | `assets/zamurek-*-green.svg`, `*-white.svg`, `*-black.svg` |
 
-## À terminer pour la production
+`light`/`dark` ne sont pas interchangeables sur les fonds opposés. L'icône de petite taille demande un contrôle de reconnaissance et une exportation adaptée à chaque plateforme (PWA/Android/iOS), avant publication. La vectorisation native ne remplace pas ces exports.
 
-1. Importer dans GitHub les **PNG approuvés** (et sauvegarder le raster original), contrôler leurs hashes et transparences ; conserver les fichiers originaux de référence.
-2. Vectoriser **nativement et précisément** les dégradés du logo tricolore, avec revue visuelle stricte face au PNG.
-3. Vérifier contraste, réduction 16–48 px, zones de protection, tailles minimales et tests sur écran/print.
-4. Produire et vérifier de véritables ressources Android adaptive/maskable, iOS, PWA, favicon et impression.
-5. Dans Figma : composants, grilles, typographie UI, écran clair/sombre, états interaction, design tokens et accessibilité.
-6. Faire approuver la version finale avant diffusion sur supports physiques/commerciaux.
+## Figma
+
+Fichier de travail : https://www.figma.com/design/Q5VQfVbvjmRaqFIhHGjVwQ
+
+L'import direct des nouveaux masters dans Figma est nécessaire pour remplacer les anciens contours présents dans le premier brandboard. Ne pas présenter les maquettes Figma existantes comme synchronisées avec cette V2 avant confirmation par capture.
 
 ## Contrôle
 
 ```bash
 python3 scripts/validate_branding.py
 ```
+
+Les animations, interfaces et flux commerciaux ne sont pas livrés par ce changement de branding.

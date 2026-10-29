@@ -1,4 +1,229 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 1480" role="img" aria-label="Zamurek — vertical — light"><title>Zamurek</title><defs>
-<linearGradient id="g" x1="0" x2=".65" y1="0" y2="1"><stop stop-color="#008463"/><stop offset=".6" stop-color="#005C45"/><stop offset="1" stop-color="#003D31"/></linearGradient>
-<linearGradient id="o" x1="0" x2=".8" y1="0" y2="1"><stop stop-color="#FFBA48"/><stop offset=".55" stop-color="#FF8A1E"/><stop offset="1" stop-color="#EF690A"/></linearGradient>
-<linearGradient id="m" x1="0" x2=".7" y1="0" y2="1"><stop stop-color="#FF2777"/><stop offset=".5" stop-color="#D21868"/><stop offset="1" stop-color="#A5004F"/></linearGradient></defs><defs><g id="zamurek-art"><path d="M1374,305 1374,445 1379,467 1391,489 1403,501 1417,510 1446,518 1478,518 1505,511 1524,499 1542,476 1550,451 1551,306 1484,305 1484,432 1481,444 1475,451 1469,454 1459,455 1449,451 1445,447 1441,438 1440,305Z M1868,343 1854,325 1828,308 1802,301 1767,301 1741,308 1717,323 1701,340 1689,361 1687,302 1673,301 1653,308 1642,317 1632,332 1629,305 1564,305 1564,513 1623,513 1633,511 1632,422 1635,398 1640,387 1646,380 1661,371 1669,369 1686,370 1680,397 1680,427 1684,447 1689,461 1697,475 1718,497 1745,512 1772,518 1803,518 1829,512 1848,503 1866,488 1873,477 1831,442 1809,456 1798,459 1784,459 1775,457 1763,450 1756,442 1752,430 1880,429 1881,384 1876,361Z M1752,384 1756,372 1766,361 1779,355 1792,355 1804,360 1812,368 1818,386 1753,387Z M1061,305 1061,512 1129,512 1129,386 1135,374 1147,367 1156,367 1163,370 1169,377 1172,386 1172,512 1241,512 1241,388 1247,375 1254,369 1261,367 1269,367 1279,371 1284,377 1287,387 1287,512 1361,512 1361,364 1355,341 1349,330 1331,312 1320,306 1302,301 1275,301 1251,310 1230,330 1223,320 1212,310 1190,301 1172,300 1154,304 1140,312 1128,324 1125,305Z M177,251 168,253 155,261 73,340 65,357 64,374 66,384 74,399 155,481 172,490 186,491 197,488 210,480 313,381 315,368 312,361 208,259 193,252Z M624,235 620,240 616,251 615,284 617,290 624,296 757,297 623,444 617,455 614,467 614,500 616,507 621,512 628,514 865,514 847,496 837,478 833,463 832,443 724,443 723,441 864,288 876,265 879,247 877,237 872,232 866,230 636,230Z M493,198 460,210 428,218 392,224 347,227 302,226 259,221 229,215 189,201 186,202 195,219 210,238 307,335 322,343 344,345 360,340 369,334 444,261 481,222 490,208Z M241,187 241,207 244,210 295,218 347,219 383,216 414,211 444,201 444,185 439,165 432,150 421,136 406,122 383,109 351,102 337,102 314,106 300,111 278,124 262,140 254,151 245,171Z" fill="url(#g)" fill-rule="evenodd"/><path d="M881,320 871,330 865,341 862,351 863,360 959,360 972,368 976,376 976,385 974,386 963,380 950,376 919,373 893,378 870,390 856,405 848,423 845,440 848,467 860,490 871,501 883,509 912,518 935,518 950,515 964,509 978,498 980,500 982,512 984,513 1048,512 1048,375 1043,349 1032,330 1019,318 1003,309 983,303 962,300 942,300 919,303 895,311Z M923,425 930,420 941,417 950,417 961,420 971,428 975,435 976,443 973,454 963,464 951,468 935,467 927,463 919,455 916,448 916,436Z M484,251 466,259 364,359 361,365 361,376 363,381 466,483 481,490 494,491 506,488 513,484 599,398 607,382 608,360 604,348 596,336 516,259 502,252Z" fill="url(#o)" fill-rule="evenodd"/><path d="M332,391 318,396 309,403 224,486 217,498 215,513 218,525 224,535 301,612 311,620 326,626 346,626 366,617 449,534 456,521 457,503 450,488 361,400 349,393Z M1891,236 1891,512 1965,512 1966,431 2018,499 2031,510 2046,513 2120,513 2120,510 2032,396 2120,305 2035,305 2025,308 1966,368 1965,236Z" fill="url(#m)" fill-rule="evenodd"/></g></defs><svg x="450" y="55" width="700" height="700" viewBox="45 83 575 560" preserveAspectRatio="xMidYMid meet"><use href="#zamurek-art"/></svg><svg x="80" y="895" width="1440" height="340" viewBox="600 202 1540 340" preserveAspectRatio="xMidYMid meet"><use href="#zamurek-art"/></svg></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2600" height="2500" viewBox="0 0 2600 2500" role="img" aria-labelledby="z04-titre z04-description">
+  <title id="z04-titre">Zamurek — Logo vertical · couleur claire</title>
+  <desc id="z04-description">Reconstruction vectorielle de la référence 183853. Palette harmonisée vert forêt, orange et magenta ; matières partagées entre compositions. Fond transparent ; aucun bitmap ; aucune police externe.</desc>
+  <defs><radialGradient id="z04-tete-lumiere-1" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="1" gradientTransform="matrix(463.717 131.598 -285.48 333.906 1149.694 377.668)">
+      <stop offset="0" stop-color="#066b50" data-tone="primary"/>
+      <stop offset="0.05" stop-color="#066e53" data-tone="primary"/>
+      <stop offset="0.1" stop-color="#077155" data-tone="primary"/>
+      <stop offset="0.15" stop-color="#077155" data-tone="primary"/>
+      <stop offset="0.2" stop-color="#067054" data-tone="primary"/>
+      <stop offset="0.25" stop-color="#066e53" data-tone="primary"/>
+      <stop offset="0.3" stop-color="#066b50" data-tone="primary"/>
+      <stop offset="0.35" stop-color="#06684e" data-tone="primary"/>
+      <stop offset="0.4" stop-color="#05654c" data-tone="primary"/>
+      <stop offset="0.45" stop-color="#05624a" data-tone="primary"/>
+      <stop offset="0.5" stop-color="#046048" data-tone="primary"/>
+      <stop offset="0.55" stop-color="#045d46" data-tone="primary"/>
+      <stop offset="0.6" stop-color="#045b44" data-tone="primary"/>
+      <stop offset="0.65" stop-color="#045a43" data-tone="primary"/>
+      <stop offset="0.7" stop-color="#035842" data-tone="primary"/>
+      <stop offset="0.75" stop-color="#035741" data-tone="primary"/>
+      <stop offset="0.8" stop-color="#035540" data-tone="primary"/>
+      <stop offset="0.85" stop-color="#03543f" data-tone="primary"/>
+      <stop offset="0.9" stop-color="#03533e" data-tone="primary"/>
+      <stop offset="0.95" stop-color="#03523d" data-tone="primary"/>
+      <stop offset="1" stop-color="#02503c" data-tone="primary"/>
+    </radialGradient>
+    <linearGradient id="z04-col-lumiere-1" gradientUnits="userSpaceOnUse" x1="1150.237" y1="1116.318" x2="942" y2="566">
+      <stop offset="0" stop-color="#024c39" data-tone="primary"/>
+      <stop offset="0.083" stop-color="#024d3a" data-tone="primary"/>
+      <stop offset="0.167" stop-color="#024e3b" data-tone="primary"/>
+      <stop offset="0.25" stop-color="#02503c" data-tone="primary"/>
+      <stop offset="0.333" stop-color="#03523d" data-tone="primary"/>
+      <stop offset="0.417" stop-color="#03543f" data-tone="primary"/>
+      <stop offset="0.5" stop-color="#035641" data-tone="primary"/>
+      <stop offset="0.583" stop-color="#045943" data-tone="primary"/>
+      <stop offset="0.667" stop-color="#045c45" data-tone="primary"/>
+      <stop offset="0.75" stop-color="#045e47" data-tone="primary"/>
+      <stop offset="0.833" stop-color="#05624a" data-tone="primary"/>
+      <stop offset="0.917" stop-color="#05654c" data-tone="primary"/>
+      <stop offset="1" stop-color="#06684e" data-tone="primary"/>
+    </linearGradient>
+    <linearGradient id="z04-aile-gauche-lumiere-1" gradientUnits="userSpaceOnUse" x1="1107.399" y1="1362.976" x2="650" y2="693">
+      <stop offset="0" stop-color="#014836" data-tone="primary"/>
+      <stop offset="0.083" stop-color="#024b38" data-tone="primary"/>
+      <stop offset="0.167" stop-color="#024c39" data-tone="primary"/>
+      <stop offset="0.25" stop-color="#024e3b" data-tone="primary"/>
+      <stop offset="0.333" stop-color="#02503c" data-tone="primary"/>
+      <stop offset="0.417" stop-color="#03523d" data-tone="primary"/>
+      <stop offset="0.5" stop-color="#03543f" data-tone="primary"/>
+      <stop offset="0.583" stop-color="#035540" data-tone="primary"/>
+      <stop offset="0.667" stop-color="#035842" data-tone="primary"/>
+      <stop offset="0.75" stop-color="#045b44" data-tone="primary"/>
+      <stop offset="0.833" stop-color="#045e47" data-tone="primary"/>
+      <stop offset="0.917" stop-color="#05624a" data-tone="primary"/>
+      <stop offset="1" stop-color="#05664d" data-tone="primary"/>
+    </linearGradient>
+    <linearGradient id="z04-aile-gauche-lumiere-2" gradientUnits="userSpaceOnUse" x1="747.9" y1="1341.846" x2="650" y2="693">
+      <stop offset="0" stop-color="#03513d" data-tone="primary"/>
+      <stop offset="0.083" stop-color="#03533e" data-tone="primary"/>
+      <stop offset="0.167" stop-color="#035540" data-tone="primary"/>
+      <stop offset="0.25" stop-color="#045943" data-tone="primary"/>
+      <stop offset="0.333" stop-color="#045d46" data-tone="primary"/>
+      <stop offset="0.417" stop-color="#056149" data-tone="primary"/>
+      <stop offset="0.5" stop-color="#05654c" data-tone="primary"/>
+      <stop offset="0.583" stop-color="#06694f" data-tone="primary"/>
+      <stop offset="0.667" stop-color="#066c51" data-tone="primary"/>
+      <stop offset="0.75" stop-color="#066f53" data-tone="primary"/>
+      <stop offset="0.833" stop-color="#067054" data-tone="primary"/>
+      <stop offset="0.917" stop-color="#066f53" data-tone="primary"/>
+      <stop offset="1" stop-color="#066c51" data-tone="primary"/>
+    </linearGradient>
+    <clipPath id="z04-aile-gauche-clip"><path fill-rule="evenodd" d="M921.111 1264.883 C911.687 1263.79 900.163 1260.596 892.5 1256.954 C876.081 1249.149 874.856 1248.019 781.5 1154.537 C690.04 1062.954 678.871 1051.454 672.198 1042 C659.476 1023.974 654.953 1011.765 651.361 985.757 L649.601 973.013 L652.259 957.257 C655.952 935.36 661.053 922.572 672.541 906.413 C676.424 900.952 742.122 835.559 754.5 824.836 C757.25 822.453 763.55 816.652 768.5 811.945 C773.45 807.238 782.45 798.704 788.5 792.981 C794.55 787.259 805.35 776.87 812.5 769.896 C819.65 762.921 829.16 753.904 833.633 749.857 C838.107 745.811 848.007 736.629 855.633 729.453 C880.399 706.152 892.802 698.922 914.919 694.896 C937.357 690.813 955.394 693.429 977.5 703.976 C994.17 711.929 997.001 714.332 1036.5 754.046 C1055.75 773.401 1080.05 797.341 1090.5 807.246 C1100.95 817.15 1112.453 828.235 1116.061 831.877 C1129.37 845.311 1204.029 918.132 1220.202 933.454 C1229.388 942.156 1238.69 951.823 1240.873 954.934 C1250.229 968.272 1251.59 984.942 1244.659 1001.321 C1242.755 1005.821 1224.309 1025.464 1211.5 1036.633 C1206.55 1040.949 1196.141 1050.56 1188.37 1057.99 C1180.598 1065.421 1164.2 1080.95 1151.93 1092.5 C1139.66 1104.05 1121.94 1120.925 1112.553 1130 C1103.165 1139.075 1083.592 1157.75 1069.058 1171.5 C1054.523 1185.25 1031.763 1206.896 1018.478 1219.602 C1005.194 1232.309 991.518 1244.611 988.088 1246.94 C974.433 1256.213 958.39 1262.515 943.341 1264.518 C931.404 1266.107 931.627 1266.103 921.111 1264.883 Z"/></clipPath><linearGradient id="z04-aile-droite-lumiere-1" gradientUnits="userSpaceOnUse" x1="1363.148" y1="628.596" x2="1293.284" y2="1258.093">
+      <stop offset="0" stop-color="#fe9016" data-tone="orange"/>
+      <stop offset="0.083" stop-color="#fe8f1a" data-tone="orange"/>
+      <stop offset="0.167" stop-color="#ff8c1c" data-tone="orange"/>
+      <stop offset="0.25" stop-color="#ff881d" data-tone="orange"/>
+      <stop offset="0.333" stop-color="#ff821c" data-tone="orange"/>
+      <stop offset="0.417" stop-color="#ff7b1a" data-tone="orange"/>
+      <stop offset="0.5" stop-color="#ff7216" data-tone="orange"/>
+      <stop offset="0.583" stop-color="#ff6911" data-tone="orange"/>
+      <stop offset="0.667" stop-color="#ff610c" data-tone="orange"/>
+      <stop offset="0.75" stop-color="#ff5707" data-tone="orange"/>
+      <stop offset="0.833" stop-color="#ff4f01" data-tone="orange"/>
+      <stop offset="0.917" stop-color="#fa4a00" data-tone="orange"/>
+      <stop offset="1" stop-color="#f64600" data-tone="orange"/>
+    </linearGradient>
+    <linearGradient id="z04-aile-droite-lumiere-2" gradientUnits="userSpaceOnUse" x1="1375.27" y1="1283.543" x2="1356" y2="693">
+      <stop offset="0" stop-color="#ff6a1a" data-tone="orange"/>
+      <stop offset="0.083" stop-color="#ff721b" data-tone="orange"/>
+      <stop offset="0.167" stop-color="#ff791b" data-tone="orange"/>
+      <stop offset="0.25" stop-color="#ff811c" data-tone="orange"/>
+      <stop offset="0.333" stop-color="#ff871c" data-tone="orange"/>
+      <stop offset="0.417" stop-color="#ff8e1c" data-tone="orange"/>
+      <stop offset="0.5" stop-color="#ff941c" data-tone="orange"/>
+      <stop offset="0.583" stop-color="#ff9a1c" data-tone="orange"/>
+      <stop offset="0.667" stop-color="#ff9f1c" data-tone="orange"/>
+      <stop offset="0.75" stop-color="#ffa31c" data-tone="orange"/>
+      <stop offset="0.833" stop-color="#ffa61c" data-tone="orange"/>
+      <stop offset="0.917" stop-color="#ffa61c" data-tone="orange"/>
+      <stop offset="1" stop-color="#fea61e" data-tone="orange"/>
+    </linearGradient>
+    <clipPath id="z04-aile-droite-clip"><path fill-rule="evenodd" d="M1648 1263.545 C1634.357 1260.606 1619.67 1254.113 1609.657 1246.593 C1606.443 1244.179 1575.798 1214.371 1541.558 1180.352 C1470.196 1109.452 1433.128 1072.935 1393.198 1034.194 C1367.371 1009.137 1364.764 1006.297 1361.526 999.694 C1353.972 984.291 1354.83 968.873 1364.101 953.426 C1367.196 948.269 1427.768 887.696 1461.5 856.025 C1467 850.861 1483.884 834.455 1499.02 819.568 C1514.155 804.681 1538.68 780.809 1553.52 766.519 C1568.359 752.23 1587.047 734.005 1595.049 726.019 C1610.433 710.667 1616.714 706.166 1631.017 700.247 C1644.851 694.522 1652.207 693 1666.046 693 C1695.728 693 1713.37 700.345 1737.913 722.921 C1757.088 740.56 1787.429 769.317 1794.5 776.555 C1798.35 780.495 1805.758 787.495 1810.963 792.11 C1816.167 796.724 1826.341 806.35 1833.571 813.5 C1861.825 841.442 1880.924 859.954 1890.5 868.679 C1906.708 883.449 1911.106 887.953 1919.617 898.5 C1933.051 915.146 1941.886 932.534 1945.54 949.515 C1947.591 959.045 1947.958 983.619 1946.219 995 C1943.911 1010.106 1936.066 1028.377 1926.222 1041.57 C1920.488 1049.254 1735.901 1234.918 1724.627 1244.34 C1713.999 1253.223 1701.447 1259.617 1689 1262.487 C1678.882 1264.82 1656.59 1265.395 1648 1263.545 Z"/></clipPath><linearGradient id="z04-base-lumiere-1" gradientUnits="userSpaceOnUse" x1="1694.315" y1="1224.641" x2="1011" y2="1027">
+      <stop offset="0" stop-color="#c42164" data-tone="pink"/>
+      <stop offset="0.083" stop-color="#c32063" data-tone="pink"/>
+      <stop offset="0.167" stop-color="#c32063" data-tone="pink"/>
+      <stop offset="0.25" stop-color="#c32164" data-tone="pink"/>
+      <stop offset="0.333" stop-color="#c62165" data-tone="pink"/>
+      <stop offset="0.417" stop-color="#cc1f67" data-tone="pink"/>
+      <stop offset="0.5" stop-color="#d21d69" data-tone="pink"/>
+      <stop offset="0.583" stop-color="#d81c6c" data-tone="pink"/>
+      <stop offset="0.667" stop-color="#df1970" data-tone="pink"/>
+      <stop offset="0.75" stop-color="#e71772" data-tone="pink"/>
+      <stop offset="0.833" stop-color="#eb1875" data-tone="pink"/>
+      <stop offset="0.917" stop-color="#ee1978" data-tone="pink"/>
+      <stop offset="1" stop-color="#f01a7b" data-tone="pink"/>
+    </linearGradient>
+    <linearGradient id="z04-base-lumiere-2" gradientUnits="userSpaceOnUse" x1="1064.205" y1="1633.911" x2="1011" y2="1027">
+      <stop offset="0" stop-color="#cc1f67" data-tone="pink"/>
+      <stop offset="0.083" stop-color="#cc1f67" data-tone="pink"/>
+      <stop offset="0.167" stop-color="#cf1e69" data-tone="pink"/>
+      <stop offset="0.25" stop-color="#d71c6c" data-tone="pink"/>
+      <stop offset="0.333" stop-color="#df1970" data-tone="pink"/>
+      <stop offset="0.417" stop-color="#e91673" data-tone="pink"/>
+      <stop offset="0.5" stop-color="#ec1976" data-tone="pink"/>
+      <stop offset="0.583" stop-color="#ef1a7a" data-tone="pink"/>
+      <stop offset="0.667" stop-color="#ef1b7a" data-tone="pink"/>
+      <stop offset="0.75" stop-color="#ed1b78" data-tone="pink"/>
+      <stop offset="0.833" stop-color="#e81a72" data-tone="pink"/>
+      <stop offset="0.917" stop-color="#d61f6a" data-tone="pink"/>
+      <stop offset="1" stop-color="#bf265f" data-tone="pink"/>
+    </linearGradient>
+  <clipPath id="z04-base-clip"><path fill-rule="evenodd" d="M1279.661 1586.868 C1266.25 1585.145 1245.386 1576.467 1232.5 1567.254 C1222.913 1560.398 1205.552 1543.641 1149.878 1487.5 C1123.697 1461.1 1098.284 1435.675 1093.404 1431 C1088.525 1426.325 1081.15 1418.942 1077.016 1414.594 C1072.882 1410.246 1061.259 1398.571 1051.188 1388.649 C1030.614 1368.381 1025.614 1362.262 1019.98 1350.457 C1013.099 1336.041 1011.573 1328.811 1011.548 1310.5 C1011.523 1292.498 1012.542 1287.422 1018.977 1273.5 C1025.832 1258.668 1034.004 1250.023 1113.014 1174.023 C1127.581 1160.011 1144 1144.02 1149.5 1138.487 C1155 1132.955 1170.504 1117.87 1183.952 1104.964 C1197.401 1092.059 1214.951 1075.128 1222.952 1067.34 C1249.024 1041.964 1258.507 1035.632 1279.027 1029.904 C1289.873 1026.877 1290.985 1026.756 1302.951 1027.316 C1322.593 1028.236 1334.677 1032.291 1351.951 1043.759 C1360.094 1049.165 1377.324 1065.4 1418.535 1106.5 C1425.705 1113.65 1462.664 1150.399 1500.667 1188.165 C1579.34 1266.347 1578.409 1265.239 1585.689 1289.398 C1590.558 1305.554 1587.825 1333.661 1579.87 1349.254 C1575.312 1358.19 1563.674 1372.985 1554.72 1381.229 C1549.649 1385.897 1515.577 1419.818 1479.004 1456.609 C1382.909 1553.275 1372.355 1563.622 1364.664 1568.697 C1357.266 1573.579 1342.519 1580.809 1334.5 1583.487 C1322.916 1587.354 1296.241 1588.999 1279.661 1586.868 Z"/></clipPath><linearGradient id="z04-lettre-z-lumiere-1" gradientUnits="userSpaceOnUse" x1="302.671" y1="2220.328" x2="181" y2="1730">
+      <stop offset="0" stop-color="#03533e" data-tone="primary"/>
+      <stop offset="0.083" stop-color="#03543f" data-tone="primary"/>
+      <stop offset="0.167" stop-color="#03543f" data-tone="primary"/>
+      <stop offset="0.25" stop-color="#035540" data-tone="primary"/>
+      <stop offset="0.333" stop-color="#035540" data-tone="primary"/>
+      <stop offset="0.417" stop-color="#035741" data-tone="primary"/>
+      <stop offset="0.5" stop-color="#035742" data-tone="primary"/>
+      <stop offset="0.583" stop-color="#045943" data-tone="primary"/>
+      <stop offset="0.667" stop-color="#045a44" data-tone="primary"/>
+      <stop offset="0.75" stop-color="#045b44" data-tone="primary"/>
+      <stop offset="0.833" stop-color="#045c45" data-tone="primary"/>
+      <stop offset="0.917" stop-color="#045c45" data-tone="primary"/>
+      <stop offset="1" stop-color="#045d46" data-tone="primary"/>
+    </linearGradient>
+    <linearGradient id="z04-lettre-k-lumiere-1" gradientUnits="userSpaceOnUse" x1="2267.889" y1="2212.343" x2="2077" y2="1739">
+      <stop offset="0" stop-color="#c82065" data-tone="pink"/>
+      <stop offset="0.083" stop-color="#c92066" data-tone="pink"/>
+      <stop offset="0.167" stop-color="#ce1f68" data-tone="pink"/>
+      <stop offset="0.25" stop-color="#d01e69" data-tone="pink"/>
+      <stop offset="0.333" stop-color="#d41d6a" data-tone="pink"/>
+      <stop offset="0.417" stop-color="#d71c6c" data-tone="pink"/>
+      <stop offset="0.5" stop-color="#db1b6e" data-tone="pink"/>
+      <stop offset="0.583" stop-color="#dd1a6f" data-tone="pink"/>
+      <stop offset="0.667" stop-color="#e21970" data-tone="pink"/>
+      <stop offset="0.75" stop-color="#e71772" data-tone="pink"/>
+      <stop offset="0.833" stop-color="#e91673" data-tone="pink"/>
+      <stop offset="0.917" stop-color="#eb1875" data-tone="pink"/>
+      <stop offset="1" stop-color="#ed1977" data-tone="pink"/>
+    </linearGradient>
+    <linearGradient id="z04-lettre-a-lumiere-1" gradientUnits="userSpaceOnUse" x1="608.412" y1="2209.097" x2="524" y2="1835">
+      <stop offset="0" stop-color="#ff6015" data-tone="orange"/>
+      <stop offset="0.083" stop-color="#ff6416" data-tone="orange"/>
+      <stop offset="0.167" stop-color="#ff6817" data-tone="orange"/>
+      <stop offset="0.25" stop-color="#ff6b18" data-tone="orange"/>
+      <stop offset="0.333" stop-color="#ff6e18" data-tone="orange"/>
+      <stop offset="0.417" stop-color="#ff711a" data-tone="orange"/>
+      <stop offset="0.5" stop-color="#ff731a" data-tone="orange"/>
+      <stop offset="0.583" stop-color="#ff771b" data-tone="orange"/>
+      <stop offset="0.667" stop-color="#ff7a1b" data-tone="orange"/>
+      <stop offset="0.75" stop-color="#ff7e1b" data-tone="orange"/>
+      <stop offset="0.833" stop-color="#ff811b" data-tone="orange"/>
+      <stop offset="0.917" stop-color="#ff851c" data-tone="orange"/>
+      <stop offset="1" stop-color="#ff891c" data-tone="orange"/>
+    </linearGradient>
+    <linearGradient id="z04-lettre-m-lumiere-1" gradientUnits="userSpaceOnUse" x1="901.678" y1="2211.786" x2="843" y2="1835">
+      <stop offset="0" stop-color="#03523e" data-tone="primary"/>
+      <stop offset="0.083" stop-color="#03523d" data-tone="primary"/>
+      <stop offset="0.167" stop-color="#03523d" data-tone="primary"/>
+      <stop offset="0.25" stop-color="#03523e" data-tone="primary"/>
+      <stop offset="0.333" stop-color="#03533e" data-tone="primary"/>
+      <stop offset="0.417" stop-color="#03543f" data-tone="primary"/>
+      <stop offset="0.5" stop-color="#03543f" data-tone="primary"/>
+      <stop offset="0.583" stop-color="#035540" data-tone="primary"/>
+      <stop offset="0.667" stop-color="#035641" data-tone="primary"/>
+      <stop offset="0.75" stop-color="#035741" data-tone="primary"/>
+      <stop offset="0.833" stop-color="#035842" data-tone="primary"/>
+      <stop offset="0.917" stop-color="#035842" data-tone="primary"/>
+      <stop offset="1" stop-color="#045943" data-tone="primary"/>
+    </linearGradient>
+    <linearGradient id="z04-lettre-r-e-lumiere-1" gradientUnits="userSpaceOnUse" x1="1591.608" y1="1818.049" x2="1579.353" y2="2159.582">
+      <stop offset="0" stop-color="#045943" data-tone="primary"/>
+      <stop offset="0.083" stop-color="#035842" data-tone="primary"/>
+      <stop offset="0.167" stop-color="#035742" data-tone="primary"/>
+      <stop offset="0.25" stop-color="#035641" data-tone="primary"/>
+      <stop offset="0.333" stop-color="#035540" data-tone="primary"/>
+      <stop offset="0.417" stop-color="#035540" data-tone="primary"/>
+      <stop offset="0.5" stop-color="#03543f" data-tone="primary"/>
+      <stop offset="0.583" stop-color="#03543f" data-tone="primary"/>
+      <stop offset="0.667" stop-color="#03533e" data-tone="primary"/>
+      <stop offset="0.75" stop-color="#03523e" data-tone="primary"/>
+      <stop offset="0.833" stop-color="#03523d" data-tone="primary"/>
+      <stop offset="0.917" stop-color="#03523d" data-tone="primary"/>
+      <stop offset="1" stop-color="#03523d" data-tone="primary"/>
+    </linearGradient>
+    <linearGradient id="z04-lettre-u-lumiere-1" gradientUnits="userSpaceOnUse" x1="1317.995" y1="2167.057" x2="1309" y2="1842">
+      <stop offset="0" stop-color="#03513d" data-tone="primary"/>
+      <stop offset="0.083" stop-color="#03523d" data-tone="primary"/>
+      <stop offset="0.167" stop-color="#03523d" data-tone="primary"/>
+      <stop offset="0.25" stop-color="#03523e" data-tone="primary"/>
+      <stop offset="0.333" stop-color="#03523e" data-tone="primary"/>
+      <stop offset="0.417" stop-color="#03533e" data-tone="primary"/>
+      <stop offset="0.5" stop-color="#03543f" data-tone="primary"/>
+      <stop offset="0.583" stop-color="#03543f" data-tone="primary"/>
+      <stop offset="0.667" stop-color="#035540" data-tone="primary"/>
+      <stop offset="0.75" stop-color="#035540" data-tone="primary"/>
+      <stop offset="0.833" stop-color="#035641" data-tone="primary"/>
+      <stop offset="0.917" stop-color="#035741" data-tone="primary"/>
+      <stop offset="1" stop-color="#035842" data-tone="primary"/>
+    </linearGradient>
+  </defs><g id="z04-dessin" data-role="artwork">
+  <g id="z04-symbole" data-role="symbol" aria-label="Symbole Zamurek">
+    <g id="z04-tete" data-part="tete"><path data-face="principale" fill="url(#z04-tete-lumiere-1)" fill-rule="evenodd" d="M1248.132 617.994 C1212.945 616.375 1163.74 612.045 1145.5 608.964 C1138.9 607.849 1130.575 606.453 1127 605.861 C1116.71 604.159 1091.069 599.028 1084.623 597.381 C1073.209 594.465 1072.334 592.819 1071.382 572.5 C1070.175 546.702 1074.818 523.117 1087.915 488.518 C1104.4 444.971 1139.167 404.025 1182.987 376.549 C1210.87 359.065 1248.375 345.652 1281 341.495 C1343.515 333.528 1405.855 346.602 1451.5 377.25 C1480.163 396.495 1487.825 403.661 1515.924 437.5 C1528.753 452.951 1547.589 493.198 1552.025 514.639 C1558.05 543.763 1558.613 576.045 1553.145 578.901 C1549.849 580.624 1521.3 589.748 1514 591.413 C1509.875 592.353 1502.9 594.043 1498.5 595.169 C1487.026 598.105 1479.864 599.605 1468.5 601.455 C1463 602.35 1455.575 603.734 1452 604.529 C1448.425 605.325 1441.9 606.405 1437.5 606.928 C1433.1 607.452 1422.075 608.797 1413 609.918 C1356.036 616.952 1292.795 620.05 1248.132 617.994 Z"/></g><g id="z04-col" data-part="col"><path data-face="principale" fill="url(#z04-col-lumiere-1)" fill-rule="evenodd" d="M1282 916.515 C1269.45 914.646 1254.525 908.916 1239.5 900.197 C1230.725 895.105 1221.481 886.172 1115.12 780 C1012.669 677.729 1000.698 665.273 978.618 637.95 C966.599 623.078 963.239 618.269 958.037 608.5 C955.694 604.1 951.361 596.211 948.407 590.97 C938.169 572.798 939.574 570.567 956.712 577.777 C981.522 588.216 1025.194 602.173 1052.5 608.391 C1075.518 613.632 1083.443 615.28 1091.5 616.503 C1096.45 617.254 1102.975 618.364 1106 618.97 C1113.107 620.393 1155.967 626.748 1167 628.014 C1252.296 637.805 1361.501 637.026 1444.5 626.034 C1471.912 622.403 1536.392 609.885 1556.5 604.29 C1574.319 599.331 1593.664 594.221 1599 593.063 C1600.925 592.646 1605.875 591.085 1610 589.596 C1614.125 588.107 1620.65 585.835 1624.5 584.547 C1632.833 581.76 1643.852 577.564 1649.457 575.043 C1651.681 574.043 1655.975 572.179 1659 570.902 C1662.025 569.624 1665.589 568.024 1666.92 567.345 C1669.601 565.978 1672.687 567.02 1673.689 569.631 C1674.366 571.395 1669.683 583.871 1666.332 589.23 C1665.049 591.282 1664 593.187 1664 593.464 C1664 595.25 1641.61 627.659 1636.806 632.827 C1633.571 636.307 1626.577 644.407 1621.263 650.827 C1613.131 660.653 1578.469 695.934 1556.5 716.745 C1549.949 722.951 1469.756 800.917 1388 880.564 C1370.709 897.409 1367.609 899.753 1354 906.268 C1331.698 916.945 1307.763 920.352 1282 916.515 Z"/></g><g id="z04-aile-gauche" data-part="aile-gauche"><path data-face="principale" fill="url(#z04-aile-gauche-lumiere-1)" fill-rule="evenodd" d="M921.111 1264.883 C911.687 1263.79 900.163 1260.596 892.5 1256.954 C876.081 1249.149 874.856 1248.019 781.5 1154.537 C690.04 1062.954 678.871 1051.454 672.198 1042 C659.476 1023.974 654.953 1011.765 651.361 985.757 L649.601 973.013 L652.259 957.257 C655.952 935.36 661.053 922.572 672.541 906.413 C676.424 900.952 742.122 835.559 754.5 824.836 C757.25 822.453 763.55 816.652 768.5 811.945 C773.45 807.238 782.45 798.704 788.5 792.981 C794.55 787.259 805.35 776.87 812.5 769.896 C819.65 762.921 829.16 753.904 833.633 749.857 C838.107 745.811 848.007 736.629 855.633 729.453 C880.399 706.152 892.802 698.922 914.919 694.896 C937.357 690.813 955.394 693.429 977.5 703.976 C994.17 711.929 997.001 714.332 1036.5 754.046 C1055.75 773.401 1080.05 797.341 1090.5 807.246 C1100.95 817.15 1112.453 828.235 1116.061 831.877 C1129.37 845.311 1204.029 918.132 1220.202 933.454 C1229.388 942.156 1238.69 951.823 1240.873 954.934 C1250.229 968.272 1251.59 984.942 1244.659 1001.321 C1242.755 1005.821 1224.309 1025.464 1211.5 1036.633 C1206.55 1040.949 1196.141 1050.56 1188.37 1057.99 C1180.598 1065.421 1164.2 1080.95 1151.93 1092.5 C1139.66 1104.05 1121.94 1120.925 1112.553 1130 C1103.165 1139.075 1083.592 1157.75 1069.058 1171.5 C1054.523 1185.25 1031.763 1206.896 1018.478 1219.602 C1005.194 1232.309 991.518 1244.611 988.088 1246.94 C974.433 1256.213 958.39 1262.515 943.341 1264.518 C931.404 1266.107 931.627 1266.103 921.111 1264.883 Z"/><g data-face="courbe" clip-path="url(#z04-aile-gauche-clip)"><path d="M642.127 685.115 L866.968 685.115 C911.904 734.179 943.517 783.243 963.862 832.307 C984.209 881.372 993.289 930.436 991.971 979.5 C990.653 1028.564 978.937 1077.628 956.5 1126.693 C934.063 1175.757 900.906 1224.821 855.515 1273.885 L642.127 1273.885 Z" fill="url(#z04-aile-gauche-lumiere-2)"/></g></g><g id="z04-aile-droite" data-part="aile-droite"><path data-face="principale" fill="url(#z04-aile-droite-lumiere-1)" fill-rule="evenodd" d="M1648 1263.545 C1634.357 1260.606 1619.67 1254.113 1609.657 1246.593 C1606.443 1244.179 1575.798 1214.371 1541.558 1180.352 C1470.196 1109.452 1433.128 1072.935 1393.198 1034.194 C1367.371 1009.137 1364.764 1006.297 1361.526 999.694 C1353.972 984.291 1354.83 968.873 1364.101 953.426 C1367.196 948.269 1427.768 887.696 1461.5 856.025 C1467 850.861 1483.884 834.455 1499.02 819.568 C1514.155 804.681 1538.68 780.809 1553.52 766.519 C1568.359 752.23 1587.047 734.005 1595.049 726.019 C1610.433 710.667 1616.714 706.166 1631.017 700.247 C1644.851 694.522 1652.207 693 1666.046 693 C1695.728 693 1713.37 700.345 1737.913 722.921 C1757.088 740.56 1787.429 769.317 1794.5 776.555 C1798.35 780.495 1805.758 787.495 1810.963 792.11 C1816.167 796.724 1826.341 806.35 1833.571 813.5 C1861.825 841.442 1880.924 859.954 1890.5 868.679 C1906.708 883.449 1911.106 887.953 1919.617 898.5 C1933.051 915.146 1941.886 932.534 1945.54 949.515 C1947.591 959.045 1947.958 983.619 1946.219 995 C1943.911 1010.106 1936.066 1028.377 1926.222 1041.57 C1920.488 1049.254 1735.901 1234.918 1724.627 1244.34 C1713.999 1253.223 1701.447 1259.617 1689 1262.487 C1678.882 1264.82 1656.59 1265.395 1648 1263.545 Z"/><g data-face="courbe" clip-path="url(#z04-aile-droite-clip)"><path d="M1955.893 685.137 L1743.091 685.137 C1699.896 734.115 1668.657 783.092 1648.18 832.069 C1627.704 881.046 1617.99 930.023 1618.358 979 C1618.727 1027.977 1629.178 1076.954 1649.544 1125.931 C1669.91 1174.908 1700.191 1223.885 1740.734 1272.863 L1955.893 1272.863 Z" fill="url(#z04-aile-droite-lumiere-2)"/></g></g><g id="z04-base" data-part="base"><path data-face="principale" fill="url(#z04-base-lumiere-1)" fill-rule="evenodd" d="M1279.661 1586.868 C1266.25 1585.145 1245.386 1576.467 1232.5 1567.254 C1222.913 1560.398 1205.552 1543.641 1149.878 1487.5 C1123.697 1461.1 1098.284 1435.675 1093.404 1431 C1088.525 1426.325 1081.15 1418.942 1077.016 1414.594 C1072.882 1410.246 1061.259 1398.571 1051.188 1388.649 C1030.614 1368.381 1025.614 1362.262 1019.98 1350.457 C1013.099 1336.041 1011.573 1328.811 1011.548 1310.5 C1011.523 1292.498 1012.542 1287.422 1018.977 1273.5 C1025.832 1258.668 1034.004 1250.023 1113.014 1174.023 C1127.581 1160.011 1144 1144.02 1149.5 1138.487 C1155 1132.955 1170.504 1117.87 1183.952 1104.964 C1197.401 1092.059 1214.951 1075.128 1222.952 1067.34 C1249.024 1041.964 1258.507 1035.632 1279.027 1029.904 C1289.873 1026.877 1290.985 1026.756 1302.951 1027.316 C1322.593 1028.236 1334.677 1032.291 1351.951 1043.759 C1360.094 1049.165 1377.324 1065.4 1418.535 1106.5 C1425.705 1113.65 1462.664 1150.399 1500.667 1188.165 C1579.34 1266.347 1578.409 1265.239 1585.689 1289.398 C1590.558 1305.554 1587.825 1333.661 1579.87 1349.254 C1575.312 1358.19 1563.674 1372.985 1554.72 1381.229 C1549.649 1385.897 1515.577 1419.818 1479.004 1456.609 C1382.909 1553.275 1372.355 1563.622 1364.664 1568.697 C1357.266 1573.579 1342.519 1580.809 1334.5 1583.487 C1322.916 1587.354 1296.241 1588.999 1279.661 1586.868 Z"/><g data-face="courbe" clip-path="url(#z04-base-clip)"><ellipse cx="1493.489" cy="3271" rx="671.189" ry="2022.237" fill="url(#z04-base-lumiere-2)"/></g></g></g>
+  <g id="z04-lettrage" data-role="wordmark" aria-label="Zamurek">
+    <g id="z04-lettre-z" data-part="lettre-z"><path data-face="principale" fill="url(#z04-lettre-z-lumiere-1)" fill-rule="evenodd" d="M196.195 2151.823 C190.307 2150.507 183.596 2143.998 182.01 2138.066 C181.177 2134.954 180.94 2124.959 181.212 2104.566 C181.782 2061.959 182.539 2060.277 219 2020.596 C226.425 2012.516 236.325 2001.685 241 1996.528 C245.675 1991.371 255.575 1980.516 263 1972.407 C270.425 1964.298 278.708 1955.151 281.408 1952.081 C286.105 1946.74 343.349 1884.274 358.996 1867.415 C375.325 1849.822 391.517 1831.838 391.833 1830.943 C392.041 1830.357 355.936 1829.998 296.333 1829.994 C232.546 1829.991 199.237 1829.638 196.723 1828.94 C192.258 1827.7 186.541 1822.947 184.299 1818.611 C182.435 1815.006 182.278 1773.723 184.084 1762 C186.578 1745.807 195.477 1735.167 209.5 1731.613 C217.447 1729.598 551.401 1729.95 559 1731.982 C565.21 1733.641 569.327 1737.037 571.991 1742.698 C576.856 1753.032 572.65 1779.769 563.198 1798.606 C556.241 1812.469 551.74 1818.065 523.5 1847.961 C518 1853.783 506.75 1865.943 498.5 1874.982 C490.25 1884.021 480.125 1895.038 476 1899.464 C458.332 1918.421 392.564 1990.049 385 1998.572 C381.425 2002.6 372.425 2012.471 365 2020.506 C345.526 2041.581 342.627 2044.961 343.38 2045.713 C343.751 2046.084 380.154 2046.412 424.277 2046.444 L504.5 2046.5 L505.247 2059.5 C507.405 2097.073 523.494 2128.289 552 2150.214 L555.5 2152.906 L378 2152.846 C268.135 2152.809 198.86 2152.419 196.195 2151.823 Z"/></g><g id="z04-lettre-k" data-part="lettre-k"><path data-face="principale" fill="url(#z04-lettre-k-lumiere-1)" fill-rule="evenodd" d="M2077 1945 L2077 1739 L2132.508 1739 L2188.016 1739 L2187.965 1836.624 C2187.937 1890.317 2188.187 1934.52 2188.52 1934.853 C2189.167 1935.5 2195.308 1929.282 2222.949 1899.991 C2258.553 1862.261 2273.86 1847.617 2280.5 1844.929 L2286.5 1842.5 L2352.25 1842.216 C2388.412 1842.06 2418 1842.257 2418 1842.654 C2418 1843.051 2403.659 1857.804 2386.132 1875.438 C2341.829 1920.01 2293.929 1968.77 2290.035 1973.26 L2286.775 1977.021 L2291.637 1982.703 C2294.312 1985.828 2300.45 1993.586 2305.278 1999.943 C2316.283 2014.433 2329.479 2031.635 2335.718 2039.622 C2338.348 2042.989 2349.691 2057.839 2360.925 2072.622 C2372.158 2087.405 2383.885 2102.65 2386.984 2106.5 C2394.477 2115.807 2420 2149.8 2420 2150.471 C2420 2151.575 2301.17 2151.015 2295.799 2149.885 C2282.58 2147.105 2269.16 2136.213 2257.082 2118.463 C2254.102 2114.083 2249.795 2108.25 2247.51 2105.5 C2245.225 2102.75 2236.877 2091.95 2228.958 2081.5 C2201.762 2045.611 2194.011 2035.493 2191.035 2032 L2188.054 2028.5 L2188.027 2089.75 L2188 2151 L2132.5 2151 L2077 2151 L2077 1945 Z"/></g><g id="z04-lettre-a" data-part="lettre-a"><path data-face="principale" fill="url(#z04-lettre-a-lumiere-1)" fill-rule="evenodd" d="M626.345 2158.908 C558.39 2152.845 513.36 2094.332 525.921 2028.415 C530.135 2006.297 537.399 1992.608 553.43 1976.573 C565.396 1964.603 573.132 1959.649 591.043 1952.483 C625.121 1938.849 671.603 1940.517 704.721 1956.563 C710.892 1959.553 716.461 1962 717.096 1962 C719.117 1962 717.693 1946.173 715.245 1941.432 C712.479 1936.074 706.076 1930.397 699.12 1927.135 L693.5 1924.5 L621 1924 L548.5 1923.5 L548.723 1918 C550.052 1885.228 577.245 1855.649 617.101 1843.62 C636.958 1837.628 656.742 1835 682.008 1835 C740.77 1835 782.78 1852.091 806.14 1885.5 C813.199 1895.596 814.562 1898.289 818.572 1910.075 C825.493 1930.418 825.5 1930.552 825.5 2046.5 L825.5 2150.5 L776.733 2150.76 L727.966 2151.019 L727.011 2148.76 C726.485 2147.517 725.343 2142.9 724.471 2138.5 C723.599 2134.1 722.574 2130.191 722.193 2129.814 C721.812 2129.437 718.676 2131.558 715.224 2134.528 C698.183 2149.19 681.224 2155.927 653.789 2158.935 C643.068 2160.111 639.788 2160.108 626.345 2158.908 Z M682.981 2082.933 C696.092 2080.806 708.987 2071.856 714.071 2061.353 C716.867 2055.578 717.899 2042.359 716.022 2036.375 C713.124 2027.14 703.026 2016.846 692.788 2012.69 C688.233 2010.841 685.489 2010.54 673 2010.522 C658.832 2010.5 658.351 2010.571 652 2013.597 C637.311 2020.597 629.842 2031.463 629.842 2045.833 C629.842 2071.279 653.407 2087.732 682.981 2082.933 Z"/></g><g id="z04-lettre-m" data-part="lettre-m"><path data-face="principale" fill="url(#z04-lettre-m-lumiere-1)" fill-rule="evenodd" d="M843.323 2149.398 C842.981 2148.507 842.994 2079.541 843.353 1996.139 C843.711 1912.738 844.003 1843.933 844.002 1843.24 C844 1842.241 854.082 1842.035 892.75 1842.24 L941.5 1842.5 L942.162 1851.923 C942.527 1857.105 943.123 1863.336 943.488 1865.77 L944.152 1870.193 L951.826 1862.265 C971.341 1842.105 991.442 1834.257 1020.999 1835.258 C1053.864 1836.37 1076.505 1849.364 1094.743 1877.577 C1095.93 1879.414 1096.087 1879.365 1098.243 1876.501 C1107.456 1864.258 1125.555 1849.181 1137.244 1844.01 C1169.976 1829.531 1215.715 1832.812 1244.245 1851.685 C1268.857 1867.966 1284.094 1892.927 1289.61 1926 C1291.078 1934.801 1291.49 1999.604 1291.014 2146.75 L1291 2151 L1235.5 2151 L1180 2151 L1180 2059.588 C1180 1953.505 1180.137 1955.424 1171.813 1944.803 C1166.85 1938.47 1159.246 1935.5 1148 1935.501 C1131.019 1935.502 1120.9 1942.929 1114.766 1959.894 C1112.102 1967.262 1110.887 2013.558 1111.247 2094 L1111.5 2150.5 L1060.5 2150.5 L1009.5 2150.5 L1008.975 2054.5 C1008.398 1949.108 1008.788 1955.223 1002.087 1946.358 C995.794 1938.031 990.418 1935.498 979.074 1935.513 C965.307 1935.531 956.741 1940.55 951.082 1951.913 C945.362 1963.397 945.545 1959.883 945.522 2059 L945.5 2150.5 L894.722 2150.759 C848.688 2150.994 843.886 2150.867 843.323 2149.398 Z"/></g><g id="z04-lettre-r-e" data-part="lettre-r-e"><path data-face="principale" fill="url(#z04-lettre-r-e-lumiere-1)" fill-rule="evenodd" d="M1904 2158.863 C1876.457 2156.816 1852.664 2148.585 1828.199 2132.638 C1772.414 2096.277 1750.271 2024.121 1770.935 1946.038 C1772.021 1941.934 1772.694 1938.36 1772.43 1938.096 C1771.352 1937.019 1749.734 1938.014 1743.356 1939.434 C1726.093 1943.28 1709.508 1955.752 1702.71 1970 C1694.311 1987.603 1694.645 1983.579 1694.239 2072.25 L1693.88 2151 L1642.437 2151 L1590.994 2151 L1591.247 1996.75 L1591.5 1842.5 L1640.635 1842.241 L1689.77 1841.981 L1690.347 1846.241 C1690.665 1848.583 1691.227 1857.588 1691.596 1866.25 C1691.966 1874.912 1692.552 1882 1692.898 1882 C1693.244 1882 1694.575 1879.794 1695.855 1877.098 C1701.935 1864.291 1716.667 1849.957 1730.5 1843.388 C1743.364 1837.278 1762.217 1834.322 1771.75 1836.919 L1776 1838.077 L1776 1882.239 C1776 1908.744 1776.363 1926.02 1776.908 1925.45 C1777.408 1924.927 1779.859 1920.573 1782.355 1915.774 C1804.666 1872.873 1841.603 1845.645 1889.5 1836.794 C1902.04 1834.476 1941.378 1835.11 1953.88 1837.832 C1998.331 1847.507 2028.69 1869.526 2046.49 1905 C2059.934 1931.793 2064.833 1957.644 2063.545 1995 C2063.156 2006.275 2062.537 2017.975 2062.169 2021 L2061.5 2026.5 L1966.75 2026.755 C1858.235 2027.047 1870.264 2025.671 1874.1 2037.354 C1881.299 2059.284 1908.411 2073.264 1937.346 2069.965 C1953.252 2068.152 1964.662 2062.941 1978.834 2051.016 L1986.168 2044.845 L1989.834 2047.418 C1996.466 2052.073 2010.57 2063.401 2016.589 2068.907 C2019.84 2071.881 2026.152 2077.056 2030.616 2080.407 C2039.688 2087.217 2051 2097.419 2051 2098.79 C2051 2100.5 2041.024 2113.881 2036.017 2118.888 C2033.249 2121.656 2026.6 2127.04 2021.242 2130.853 C1989.436 2153.485 1951.994 2162.431 1904 2158.863 Z M1967.638 1962.5 C1968.681 1959.782 1966.075 1948.613 1962.882 1942.118 C1948.106 1912.06 1905.576 1908.115 1883.472 1934.752 C1877.559 1941.877 1873.43 1950.712 1872.488 1958.251 L1871.77 1964 L1919.416 1964 C1960.843 1964 1967.138 1963.804 1967.638 1962.5 Z"/></g><g id="z04-lettre-u" data-part="lettre-u"><path data-face="principale" fill="url(#z04-lettre-u-lumiere-1)" fill-rule="evenodd" d="M1420.5 2159.038 C1388.011 2156.101 1361.955 2144.171 1341.413 2122.825 C1326.815 2107.656 1317.277 2088.69 1311.811 2063.957 L1309.5 2053.5 L1309.5 1948 L1309.5 1842.5 L1359 1842.5 L1408.5 1842.5 L1409 1941 L1409.5 2039.5 L1411.881 2045.407 C1416.955 2057.999 1427.839 2064.531 1442.51 2063.789 C1456.113 2063.101 1464.51 2057.033 1469.25 2044.467 L1471.5 2038.5 L1472 1940.5 L1472.5 1842.5 L1522.5 1842.5 L1572.5 1842.5 L1572.5 1947.5 L1572.5 2052.5 L1570.244 2062.688 C1558.694 2114.839 1526.748 2146.475 1475.5 2156.512 C1461.854 2159.184 1435.507 2160.394 1420.5 2159.038 Z"/></g></g>
+  </g>
+</svg>
