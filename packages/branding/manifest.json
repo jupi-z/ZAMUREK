@@ -1,14 +1,44 @@
 {
   "name": "ZAMUREK",
-  "version": "1.0.0",
-  "identityStatus": "approved palette and approved raster reference; SVG contour-trace derivatives awaiting exact vector master validation",
-  "sourceSha256": "e4aac9d59f75a01e58cf6e46d70d323432bda5b5aa32bd54a625f484421bc546",
+  "version": "2.0.0",
+  "identityStatus": "native full-vector masters in repository; geometric shapes and typography preserved from user-supplied source SVG collection; green gradients rebalanced for approved backgrounds",
+  "origin": {
+    "sourceArchive": "Zamurek_Collection_Full_SVG.zip (user supplied 2026-10-29)",
+    "sourceArchiveSHA256": "0a6cd881af6da02d02ae91b955e3b6de6a624fbe243432b3f0277ecb70f2ec8f",
+    "legacyRasterSHA256": "e4aac9d59f75a01e58cf6e46d70d323432bda5b5aa32bd54a625f484421bc546",
+    "processing": "only primary-green gradient stop-color values of six tricolor masters adjusted; original SVG geometry and viewBoxes unchanged",
+    "perAssetSource": {
+      "horizontal-light": "13-zamurek-logo-horizontal-couleur-clair.svg",
+      "horizontal-dark": "14-zamurek-logo-horizontal-couleur-profond.svg",
+      "horizontal-green": "11-zamurek-logo-horizontal-vert.svg",
+      "horizontal-white": "12-zamurek-logo-horizontal-blanc.svg",
+      "horizontal-black": "10-zamurek-logo-horizontal-noir.svg",
+      "vertical-light": "04-zamurek-logo-couleur-clair.svg",
+      "vertical-dark": "05-zamurek-logo-couleur-profond.svg",
+      "vertical-green": "01-zamurek-logo-vert.svg",
+      "vertical-white": "02-zamurek-logo-blanc.svg",
+      "vertical-black": "15-zamurek-logo-vertical-noir.svg",
+      "icon-light": "06-zamurek-symbole-couleur-clair.svg",
+      "icon-dark": "07-zamurek-symbole-couleur-profond.svg",
+      "icon-green": "08-zamurek-symbole-vert.svg",
+      "icon-white": "03-zamurek-symbole-blanc.svg",
+      "icon-black": "09-zamurek-symbole-noir.svg"
+    }
+  },
   "color": {
     "forest": "#005C45",
     "orange": "#FF8A1E",
     "magenta": "#D21868",
     "light": "#FFFFFF",
     "dark": "#111318"
+  },
+  "accessibility": {
+    "backgrounds": [
+      "#FFFFFF",
+      "#111318"
+    ],
+    "darkMasterGreen": "lightened for high legibility on obsidian; no changes to glyph outlines",
+    "audit": "scripts/validate_branding.py"
   },
   "compositions": [
     "horizontal",
@@ -22,7 +52,6 @@
     "white",
     "black"
   ],
-  "assetFormat": "SVG",
   "logoVariants": [
     "assets/zamurek-horizontal-light.svg",
     "assets/zamurek-horizontal-dark.svg",
@@ -40,5 +69,9 @@
     "assets/zamurek-icon-white.svg",
     "assets/zamurek-icon-black.svg"
   ],
-  "future": "High-fidelity raster masters, platform-specific PNGs and editable native color vector master to be added from owner-approved source after independent visual QA"
+  "consumers": {
+    "figma": "https://www.figma.com/design/Q5VQfVbvjmRaqFIhHGjVwQ",
+    "uiThemeCss": "styles/zamurek-theme.css",
+    "tokens": "tokens/zamurek.tokens.json"
+  }
 }
