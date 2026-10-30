@@ -1,4 +1,4 @@
-name: Zamurek SVG pilot quality
+name: Zamurek SVG illustration integrity and production
 on:
   push:
     paths:
@@ -11,7 +11,7 @@ on:
       - "scripts/validate_illustrations_pilots.py"
       - ".github/workflows/illustrations-pilots.yml"
 permissions:
-  contents: read
+  contents: write
 jobs:
   svg-pilot-integrity:
     runs-on: ubuntu-latest
@@ -20,5 +20,61 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Validate illustration pilot XML, attribution and component semantics
+      - name: Validate pilot XML and vector semantics
         run: python3 scripts/validate_illustrations_pilots.py
+  svg-complete-library:
+    runs-on: ubuntu-latest
+    needs: svg-pilot-integrity
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Render complete library from pinned source vectors
+        run: python3 packages/illustrations/scripts/build_full_library.py
+      - name: Verify all 33 bases, 275 contexts and 1100 SVGs
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("packages/illustrations")
+          registry=json.loads((p/"registry/illustrations.production.v2.json").read_text())
+          assert registry["countCases"] == 275
+          assert registry["countMasters"] == 33
+          assert registry["countVariants"] == 1100
+          assert len(list((p/"assets/masters").glob("*/*.svg"))) == 132
+          assert len(list((p/"assets/static").glob("zil-*.svg"))) == 550
+          assert len(list((p/"assets/motion").glob("zil-*.svg"))) == 550
+          assert len(registry["items"]) == 275
+          assert (p/"ZAMUREK_ILLUSTRATIONS_STUDIO_33_FAMILLES.html").stat().st_size > 40000
+          print("PASS: 33 masters, 275 cases, 1100 SVG, offline HTML gallery")
+          PY
+      - name: Commit generated vector assets on same-repository review branch
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'feat/illustrations-pilotes-humaaans-ira-20261030'
+        env:
+          BRANCH: ${{ github.event.pull_request.head.ref }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add packages/illustrations
+          if git diff --staged --quiet; then
+            echo "Already up to date"
+          else
+            git commit -m "build(illustrations): produce 33 masters and 275 contexts"
+            git push origin "HEAD:${BRANCH}"
+          fi
+      - name: Package full library for review
+        run: |
+          zip -q -r ZAMUREK_ILLUSTRATIONS_275_SVG.zip packages/illustrations/assets packages/illustrations/registry packages/illustrations/reports packages/illustrations/ZAMUREK_ILLUSTRATIONS_STUDIO_33_FAMILLES.html
+      - name: Upload self-contained visual studio and vector bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: zamurek-illustrations-275-svg-and-preview
+          path: |
+            ZAMUREK_ILLUSTRATIONS_275_SVG.zip
+            packages/illustrations/ZAMUREK_ILLUSTRATIONS_STUDIO_33_FAMILLES.html
+          retention-days: 30
