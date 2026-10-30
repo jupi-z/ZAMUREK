@@ -1,156 +1,34 @@
-<svg version="1.1" id="example-22" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1088.7 607.2" style="enable-background:new 0 0 1088.7 607.2;" xml:space="preserve">
-
-<title>bg11</title>
-<g id="bg">
-	<path d="M25.4,258.3c-12.4-57.4,13.6-121.9,68-144c42.8-17.4,108.3-23.2,196-2c232,56,212-8,302-58
-		c79.2-44,176-98,344,4c127.4,77.4,52,198,138,272c55.3,47.6-38,278-306,228s-328.7,20.2-450,46c-122,26-373.9-128.7-306-200
-		C51.4,362.3,33.2,294.3,25.4,258.3z" style="fill:#111318"></path>
-	<path d="M94.9,272.3c-10.6-49.3,11.7-104.8,58.5-123.8c36.8-15,93.1-19.9,168.5-1.7c199.4,48.1,182.2-6.9,259.6-49.9
-		c68.1-37.8,151.3-84.2,295.7,3.4c109.5,66.5,44.7,170.2,118.6,233.8c47.5,40.9-32.7,239-263,196s-282.5,17.3-386.8,39.5
-		C241,592,24.4,459.1,82.8,397.8C117.2,361.7,101.5,303.3,94.9,272.3z" style="fill:#111318"></path>
-	<path d="M172.7,275.4c-9.1-42.2,10-89.7,50-106c31.5-12.8,79.7-17,144.3-1.5c170.8,41.2,156-5.9,222.3-42.7
-		c58.3-32.4,129.5-72.1,253.2,2.9c93.8,56.9,38.3,145.7,101.6,200.2c40.7,35-28,204.6-225.2,167.8S476.9,511,387.6,530
-		c-89.8,19.1-275.2-94.7-225.2-147.2C191.9,351.9,178.4,301.9,172.7,275.4z" style="fill:#25372E"></path>
-</g>
-<g id="Elippses">
-	<circle cx="204.4" cy="300.3" r="8" style="fill:#FFFFFF"></circle>
-	<circle cx="266.9" cy="251.8" r="4.5" style="fill:#FFFFFF"></circle>
-	<circle cx="282.4" cy="373.3" r="5" style="fill:#FFFFFF"></circle>
-	<circle cx="239.9" cy="442.8" r="5.5" style="fill:#FFFFFF"></circle>
-	<circle cx="366.9" cy="465.8" r="5.5" style="fill:#FFFFFF"></circle>
-	<circle cx="604.4" cy="463.3" r="6" style="fill:#FFFFFF"></circle>
-	<circle cx="702.9" cy="334.8" r="5.5" style="fill:#FFFFFF"></circle>
-	<circle cx="778.4" cy="260.3" r="4" style="fill:#FFFFFF"></circle>
-	<circle cx="839.9" cy="276.8" r="5.5" style="fill:#FFFFFF"></circle>
-	<circle cx="885.4" cy="207.3" r="5" style="fill:#FFFFFF"></circle>
-	<circle cx="876.4" cy="410.3" r="5" style="fill:#FFFFFF"></circle>
-	<circle cx="793.9" cy="471.8" r="5.5" style="fill:#FFFFFF"></circle>
-	<circle cx="494.4" cy="397.3" r="9" style="fill:#FFFFFF"></circle>
-	<circle cx="538.4" cy="299.3" r="9" style="fill:#FFFFFF"></circle>
-	<circle cx="653.4" cy="256.3" r="9" style="fill:#FFFFFF"></circle>
-	<circle cx="652.9" cy="391.8" r="9.5" style="fill:#FFFFFF"></circle>
-	<circle cx="750.9" cy="378.8" r="9.5" style="fill:#FFFFFF"></circle>
-	<circle cx="457.4" cy="338.3" r="9" style="fill:#FFFFFF"></circle>
-	<circle cx="515.4" cy="418.3" r="9" style="fill:#FFFFFF"></circle>
-	<circle cx="580.4" cy="349.3" r="9" style="fill:#FFFFFF"></circle>
-	<circle cx="347.9" cy="373.8" r="8.5" style="fill:#FFFFFF"></circle>
-	<circle cx="433.9" cy="264.7" r="8.5" style="fill:#FFFFFF"></circle>
-	<polyline points="171.8,439.7 204.4,300.3 344.4,374.3 456.4,338.3 494.4,397.3 515.4,421.3 580.4,348.3 652.4,393.3
-		749.4,378.3 	" style="fill:none;stroke:#FFFFFF;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"></polyline>
-	<polyline points="460.3,338.3 537.2,298.2 653.4,256.3 	" style="fill:none;stroke:#FFFFFF;stroke-width:3;stroke-miterlimit:10"></polyline>
-	<circle cx="352.9" cy="202.8" r="4.5" style="fill:#FFFFFF"></circle>
-	<circle cx="679.4" cy="124.3" r="4" style="fill:#FFFFFF"></circle>
-	<circle cx="440.9" cy="222.8" r="4.5" style="fill:#FFFFFF"></circle>
-	<circle cx="582.4" cy="194.3" r="4" style="fill:#FFFFFF"></circle>
-	<circle cx="345.9" cy="296.8" r="3.5" style="fill:#FFFFFF"></circle>
-	<circle cx="742.4" cy="156.3" r="6" style="fill:#FFFFFF"></circle>
-	<circle cx="628.4" cy="211.3" r="4" style="fill:#FFFFFF"></circle>
-	<circle cx="224.4" cy="193.3" r="5" style="fill:#FFFFFF"></circle>
-	<circle cx="820.4" cy="338.3" r="5" style="fill:#FFFFFF"></circle>
-	<polyline points="876.4,410.3 820.4,338.3 839.4,276.3 778.4,260.3 	" style="fill:none;stroke:#FFFFFF;stroke-width:3;stroke-miterlimit:10"></polyline>
-	<line class="st4" x1="433.9" y1="264.7" x2="456.4" y2="338.3"></line>
-</g>
-<g>
-
-		<linearGradient id="ex22_1_" class="gradient-object" gradientUnits="userSpaceOnUse" x1="844.3931" y1="686.6442" x2="823.6133" y2="565.403" gradientTransform="matrix(1 0 0 1 0 -424)"><stop offset="0" class="stop1"></stop><stop offset="1" class="stop2"></stop></linearGradient>
-
-		<linearGradient id="ex22_2_" class="gradient-object" gradientUnits="userSpaceOnUse" x1="-1420.5974" y1="-2258.1958" x2="-1290.6864" y2="-2258.1958" gradientTransform="matrix(-0.1691 -0.9868 -0.9868 0.1691 -1623.516 -753.2311)"><stop offset="0" class="stop1"></stop><stop offset="1" class="stop2"></stop></linearGradient>
-	<polygon points="772.5,207.4 828.7,140.5 895.5,196.7 839.4,263.5 	" style="fill:url(#ex22_1_);stroke:url(#ex22_2_);stroke-width:5;stroke-miterlimit:10"></polygon>
-
-		<linearGradient id="ex22_3_" class="gradient-object" gradientUnits="userSpaceOnUse" x1="1571.493" y1="-1357.9044" x2="1655.754" y2="-1357.9044" gradientTransform="matrix(1.0012 -4.678037e-03 -4.678037e-03 -1.0012 -823.6127 -1111.1113)"><stop offset="0" class="stop1"></stop><stop offset="1" class="stop2"></stop></linearGradient>
-
-		<linearGradient id="ex22_4_" class="gradient-object" gradientUnits="userSpaceOnUse" x1="1570.7882" y1="-1357.9047" x2="1656.4585" y2="-1357.9047" gradientTransform="matrix(1.0012 -4.678037e-03 -4.678037e-03 -1.0012 -823.6127 -1111.1113)"><stop offset="0" class="stop1"></stop><stop offset="1" class="stop2"></stop></linearGradient>
-	<polygon points="756,218.2 768.3,203.5 840.6,263.5 828.3,278.3 	" style="fill:url(#ex22_3_);stroke:url(#ex22_4_);stroke-miterlimit:10"></polygon>
-	<path d="M854,205.9c-4.7,0-61.6,16-61.6,16l44.1,37.3l7.8-19.4C844.3,239.9,855.4,205.9,854,205.9z" style="fill:#FFFFFF"></path>
-
-		<linearGradient id="ex22_5_" class="gradient-object" gradientUnits="userSpaceOnUse" x1="743.7072" y1="599.6944" x2="831.5125" y2="599.6944" gradientTransform="matrix(1 0 0 1 0 -424)"><stop offset="0" class="stop1"></stop><stop offset="1" class="stop2"></stop></linearGradient>
-
-		<linearGradient id="ex22_6_" class="gradient-object" gradientUnits="userSpaceOnUse" x1="743.2072" y1="-197.6944" x2="832.0125" y2="-197.6944" gradientTransform="matrix(1 0 0 -1 0 -22)"><stop offset="0" class="stop1"></stop><stop offset="1" class="stop2"></stop></linearGradient>
-	<rect x="743.7" y="131.8" width="87.8" height="87.8" style="fill:url(#ex22_5_);stroke:url(#ex22_6_);stroke-miterlimit:10"></rect>
-
-		<linearGradient id="ex22_7_" class="gradient-object" gradientUnits="userSpaceOnUse" x1="740.5123" y1="-909.0403" x2="833.3176" y2="-909.0403" gradientTransform="matrix(1 0 0 -1 0 -734)"><stop offset="0" class="stop1"></stop><stop offset="1" class="stop2"></stop></linearGradient>
-	<rect x="743" y="131.1" width="87.8" height="87.8" style="fill:none;stroke:url(#ex22_7_);stroke-width:5;stroke-miterlimit:10"></rect>
-
-		<linearGradient id="ex22_8_" class="gradient-object" gradientUnits="userSpaceOnUse" x1="741.9903" y1="-962.9376" x2="831.8395" y2="-962.9376" gradientTransform="matrix(1 0 0 -1 0 -734)"><stop offset="0" class="stop1"></stop><stop offset="1" class="stop2"></stop></linearGradient>
-	<rect x="742" y="219.1" width="89.8" height="19.6" style="fill:url(#ex22_8_)"></rect>
-	<polygon points="792,217.3 816.9,175.6 829.8,193.7 829.8,218.2 819.7,218.2 	" style="fill:#FFFFFF"></polygon>
-	<polygon points="768.3,217.9 797.8,178.4 821.3,218.2 	" style="fill:#FFFFFF"></polygon>
-	<path d="M770.6,148c3.9,0,7,3.1,7,7c0,3.9-3.1,7-7,7s-7-3.1-7-7C763.5,151.2,766.7,148,770.6,148L770.6,148" style="fill:#FFFFFF"></path>
-</g>
-<g id="Laptop">
-	<title>Laptop</title>
-
-		<linearGradient id="ex22_9_" class="gradient-object" gradientUnits="userSpaceOnUse" x1="220.677" y1="828.5818" x2="395.8298" y2="828.5818" gradientTransform="matrix(1 0 0 1 0 -554)"><stop offset="0" class="stop1"></stop><stop offset="1" class="stop2"></stop></linearGradient>
-	<linearGradient id="ex22_10_" class="gradient-object" gradientUnits="userSpaceOnUse" x1="220.1875" y1="274.579" x2="396.4487" y2="274.579"><stop offset="0" class="stop1"></stop><stop offset="1" class="stop2"></stop></linearGradient>
-	<polyline points="223.5,330 373.5,323.8 395.8,219.2 243.4,220.5 220.7,329.9 	" style="fill:url(#ex22_9_);stroke:url(#ex22_10_);stroke-miterlimit:10"></polyline>
-	<ellipse cx="310.1" cy="277.8" rx="9.1" ry="9.6" style="fill:#FFFFFF"></ellipse>
-
-		<linearGradient id="ex22_11_" class="gradient-object" gradientUnits="userSpaceOnUse" x1="819.8422" y1="1303.5994" x2="905.0621" y2="1303.5994" gradientTransform="matrix(1 0 0 1 -681.86 -977.55)"><stop offset="0" class="stop1"></stop><stop offset="1" class="stop2"></stop></linearGradient>
-	<linearGradient id="ex22_12_" class="gradient-object" gradientUnits="userSpaceOnUse" x1="137.4822" y1="326.0494" x2="223.7021" y2="326.0494"><stop offset="0" class="stop1"></stop><stop offset="1" class="stop2"></stop></linearGradient>
-	<path d="M222.1,322.2l-81.9-0.1c-0.5,0-0.9,0.3-1.1,0.8l-1.1,4.9c-0.1,0.6,0.2,1.1,0.8,1.2c0.1,0,0.1,0,0.2,0
-		l81.7,0.8c0.5,0,0.9-0.3,1.1-0.8l1.4-5.6c0.1-0.6-0.2-1.2-0.8-1.2C222.3,322.2,222.2,322.2,222.1,322.2z" style="fill:url(#ex22_11_);stroke:url(#ex22_12_);stroke-miterlimit:10"></path>
-
-		<linearGradient id="ex22_13_" class="gradient-object" gradientUnits="userSpaceOnUse" x1="902.5849" y1="1250.7687" x2="1077.7377" y2="1250.7687" gradientTransform="matrix(1 0 0 1 -681.86 -977.55)"><stop offset="0" class="stop1"></stop><stop offset="1" class="stop2"></stop></linearGradient>
-	<path d="M240.9,217.6l152.4-1.1c0.2,0,0.4,0.1,0.6,0.3l2,2.4L244,220.5c-0.3,0-0.6,0.2-0.7,0.6l-19.8,108.3
-		c0,0.3-0.4,0.6-0.7,0.6l-1.3,0c-0.4,0-0.7-0.3-0.7-0.7c0,0,0,0,0-0.1l18.9-110.4C239.7,218.1,240.3,217.6,240.9,217.6z" style="fill:url(#ex22_13_)"></path>
-</g>
-<g id="Layer_6">
-	<g id="Layer_18">
-
-			<linearGradient id="ex22_14_" gradientUnits="userSpaceOnUse" x1="1349.6711" y1="-864.5659" x2="1435.6161" y2="-864.5659" gradientTransform="matrix(0.9006 -0.4347 -0.4347 -0.9006 -1077.1931 276.6345)">
-			<stop offset="0" style="stop-color:#9CE8C9"></stop>
-			<stop offset="0.51" style="stop-color:#64CCAA"></stop>
-			<stop offset="1" style="stop-color:#9CE8C9"></stop>
-		</linearGradient>
-		<path d="M599.3,469.4c0,0-9.6-34.9-48.9-37.1s-40.7-1.3-47.8-0.3c-4.1,0.5-6.5,4.8,0,7.9c6.6,3.2,4.9,5.6,14.1,3.9
-			c9.2-1.7,15.3,7.7,20.6,8.2c5.3,0.5,9.2-0.6,24.2-1.2c13.7-0.6,30,8.5,32.4,13.4c2.4,4.9,14.2,1.1,14.2,1.1L599.3,469.4z" style="fill:url(#ex22_14_)"></path>
-
-			<linearGradient id="ex22_15_" gradientUnits="userSpaceOnUse" x1="1381.8739" y1="-837.4232" x2="1430.7078" y2="-897.2946" gradientTransform="matrix(0.9006 -0.4347 -0.4347 -0.9006 -1077.1931 276.6345)">
-			<stop offset="0" style="stop-color:#9CE8C9"></stop>
-			<stop offset="0.51" style="stop-color:#64CCAA"></stop>
-			<stop offset="1" style="stop-color:#9CE8C9"></stop>
-		</linearGradient>
-		<path d="M596,465.5c0,0-6.3-33.3-41.2-36.1c-34.9-2.8-44.3,2-50.6,2.6c-3.6,0.4,6.7,0.1,12.5,3.1
-			c5.8,3,4.4,2.4,12.5,2.8c9.4,0.5,14.4,3,19.1,1.7c6.9-1.8,8.2,5.6,21.5,5.3c12-0.3,19.1,11.1,21.3,15.6c2.2,4.5,12.6,1.4,12.6,1.4
-			L596,465.5z" style="fill:url(#ex22_15_)"></path>
-
-			<linearGradient id="ex22_16_" gradientUnits="userSpaceOnUse" x1="1438.1053" y1="-905.1246" x2="1505.2421" y2="-853.178" gradientTransform="matrix(0.9006 -0.4347 -0.4347 -0.9006 -1077.1931 276.6345)">
-			<stop offset="0" style="stop-color:#9CE8C9"></stop>
-			<stop offset="0.51" style="stop-color:#64CCAA"></stop>
-			<stop offset="1" style="stop-color:#9CE8C9"></stop>
-		</linearGradient>
-		<path d="M621.3,448l1.7-4.4c0.8-2.1,2.1-3.9,3.8-5.4c8.4-7.2,34-31.2,35.5-60.1c0-0.2-0.2-0.5-0.5-0.5l-0.1,0
-			c-0.1,0-0.1,0-0.2,0c-4.3,1.7-26,11.7-42.9,50.1c-0.3,0.6-0.6,1.4-0.7,2.1c-0.2,1.3-0.6,3.6-0.7,4.8c-0.1,1.7,2.5,3.2,1.4,6.1
-			c-1.1,2.9-3,9.9-3,9.9l4.8,0.9L621.3,448z" style="fill:url(#ex22_16_)"></path>
-
-			<linearGradient id="ex22_17_" gradientUnits="userSpaceOnUse" x1="1454.983" y1="-878.7429" x2="1397.3191" y2="-805.7437" gradientTransform="matrix(0.9006 -0.4347 -0.4347 -0.9006 -1077.1931 276.6345)">
-			<stop offset="0" style="stop-color:#9CE8C9"></stop>
-			<stop offset="0.51" style="stop-color:#64CCAA"></stop>
-			<stop offset="1" style="stop-color:#9CE8C9"></stop>
-		</linearGradient>
-		<path d="M604,453.9c0,0-27.4-77.8-61.1-90.1c-31-11.3-21.9,8.4-20.2,11.7c0.1,0.3,0.4,0.5,0.6,0.7
-			c9.3,6.8,16.1,16.4,19.2,27.5c3,11.7,17.6,2.9,24,12.8c6.4,9.9,19.5,23.5,22.6,31.2c3,7.7,6.5,15,6.5,15l8.4-3.8L604,453.9z" style="fill:url(#ex22_17_)"></path>
-
-			<linearGradient id="ex22_18_" gradientUnits="userSpaceOnUse" x1="1398.0496" y1="-833.5058" x2="1438.6212" y2="-833.5058" gradientTransform="matrix(0.9006 -0.4347 -0.4347 -0.9006 -1077.1931 276.6345)">
-			<stop offset="0" style="stop-color:#9CE8C9"></stop>
-			<stop offset="0.51" style="stop-color:#64CCAA"></stop>
-			<stop offset="1" style="stop-color:#9CE8C9"></stop>
-		</linearGradient>
-		<path d="M604,454.2c0-0.2-0.1-0.4-0.1-0.6c-1.8-5.1-28.4-77.9-61-89.8c-30.8-11.3-21.9,8.1-20.1,11.5
-			c0.2,0.4,0.6,0.7,1,0.9c2.6,1.5,14,7.9,19.5,3.8c15.2-11,10.2,16.1,24.4,22.5c11.3,5,23,35.3,26.1,43.1c1.7,4.4,3,8.9,3.9,13.5
-			c0.3,1.2,1.5,1.8,2.6,1.5c0.1,0,0.1,0,0.2-0.1c0.2-0.1,0.3-0.1,0.4-0.1l1.5-0.7c0.9-0.4,1.5-1.2,1.5-2.2L604,454.2z" style="fill:url(#ex22_18_)"></path>
-
-			<linearGradient id="ex22_19_" gradientUnits="userSpaceOnUse" x1="1435.1436" y1="-899.7919" x2="1479.0929" y2="-836.2321" gradientTransform="matrix(0.9006 -0.4347 -0.4347 -0.9006 -1077.1931 276.6345)">
-			<stop offset="0" style="stop-color:#9CE8C9"></stop>
-			<stop offset="0.51" style="stop-color:#64CCAA"></stop>
-			<stop offset="1" style="stop-color:#9CE8C9"></stop>
-		</linearGradient>
-		<path d="M614.2,454.6c0,0-8.4-21.1-2.5-39.4c1.7-5,4.8-9.4,8.9-12.7c3.2-2.5,7.6-8.2,8.1-20.2c0,0,3.1-18.2,10.7-27
-			c7.6-8.8-2.2-4.6-2.2-4.6s-25,18.5-34.8,43.1c-0.6,1.5-1.3,3.1-2.2,4.5c-3.1,5.3-10,23.2,7.1,57.3L614.2,454.6z" style="fill:url(#ex22_19_)"></path>
-
-			<linearGradient id="ex22_20_" class="gradient-object" gradientUnits="userSpaceOnUse" x1="1409.8066" y1="-916.2177" x2="1472.4252" y2="-916.2177" gradientTransform="matrix(0.9006 -0.4347 -0.4347 -0.9006 -1077.1931 276.6345)"><stop offset="0" class="stop1"></stop><stop offset="1" class="stop2"></stop></linearGradient>
-		<path d="M637.3,441.4c0,0-0.8-2.7-4-1c-2.8,1.5-51.5,24.6-51.5,24.6s-2.3,1.1-1.3,2.7c1,1.6,27.8,38.5,29,39
-			c0.5,0.4,1.2,0.5,1.9,0.4c1-0.2,35-16.8,35-16.8c0.8-0.5,1-1.4,0.7-2.3C647,488.1,637.6,441.9,637.3,441.4" style="fill:url(#ex22_20_)"></path>
-	</g>
-</g>
+<svg width="380px" height="480px" viewBox="0 0 380 480" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>humaaans/standing-8</title>
+    <desc>Created with Sketch.</desc>
+    <g id="humaaans/standing-8" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="A-Human/Standing" transform="translate(40.000000, 27.000000)">
+            <g id="Head/Front/Long" transform="translate(82.000000, 0.000000)">
+                <path d="M95.7620125,45.2901669 C99.2090333,57.9923169 103.701116,86.5437798 99.1172687,91.0224659 L70.1172687,91.0224659 C70.1143073,90.9710129 70.1114038,90.9196907 70.108558,90.8684989 C59.3599056,89.678999 51,80.5657798 51,69.5 L51,48.5 C51,36.6258779 60.6258779,27 72.5,27 L74.5,27 C85.2832975,27 94.2124503,34.9385375 95.7620125,45.2901669 Z" id="Hair-Back" fill="#191847"></path>
+                <g id="Head" stroke-width="1" transform="translate(54.000000, 31.000000)" fill="#D4A181">
+                    <path d="M8.26227388,34.4901268 C3.65436435,29.0813759 0.535634794,22.4528771 1.05677633,15.0254539 C2.55833022,-6.37502057 32.3485306,-1.66718886 38.1433414,9.13393292 C43.9381521,19.9350547 43.249578,47.3329958 35.7603014,49.2634576 C32.7735882,50.033323 26.4110012,48.1474609 19.935372,44.244306 L24,73 L0,73 L8.26227388,34.4901268 Z"></path>
+                </g>
+                <path d="M68.7499646,61.874834 C69.855742,73.75284 69.4127345,87.3172649 66.1172687,90.5371269 L37.1172687,90.5371269 C35.5014749,62.4634848 51.1172687,73.3348557 51.1172687,46.9027926 C52.0908529,45.9515442 53.0108111,45.0100255 53.9211179,44.1980592 L53.888877,43.4207004 C58.9105508,33.1402335 65.2813979,28 73.0014183,28 C84.581449,28 88.2365853,33.3883223 91.3486809,37.9630857 C89.0215226,45.9481754 79.9904303,47.1321867 71.9657406,52.1095118 C71.0198539,51.3410043 69.8137154,50.8804131 68.5,50.8804131 C65.4624339,50.8804131 63,53.3428469 63,56.3804131 C63,59.4179792 65.4624339,61.8804131 68.5,61.8804131 C68.5837722,61.8804131 68.6671069,61.8785402 68.7499646,61.874834 Z" id="Hair-Front" fill="#191847"></path>
+            </g>
+            <g id="Bottom/Standing/Skirt" transform="translate(0.000000, 187.000000)">
+                <path d="M97.4078252,98.0880741 C121.397173,104.797924 142.094458,108.152849 159.499678,108.152849 C176.904899,108.152849 193.071673,102.986324 208,92.6532736 C184.524241,85.7662231 165.190908,82.3226979 150,82.3226979 C134.809092,82.3226979 117.278368,87.5778233 97.4078252,98.0880741 Z" id="Skirt-Shadow" fill="#4BB99A"></path>
+                <path d="M180.266835,117.824327 C180.035521,117.476585 179.840175,117.098311 179.685231,116.688552 C176.478637,108.208488 125.116885,16.7255336 120,0 L177.826087,0 C181.716527,12.7166594 199.227018,92.5197596 201.69132,108.441654 C209.466648,133.556719 225.475271,214.895245 227.518903,220.530129 C229.66877,226.457932 217.572184,232.63317 214.348729,225.345671 C209.219667,213.750031 196.998649,181.665102 191.557135,162.074268 C186.455728,143.707903 182.301821,127.184501 180.266835,117.824327 Z" id="Leg" fill="#BA8B72"></path>
+                <path d="M132.957062,128.993595 C109.475313,134.928474 23.5840287,145.657684 17.6897926,147.340533 C11.6264626,149.07166 6.31008232,136.573779 13.8046857,133.866526 C25.7298651,129.558829 58.589132,119.605712 78.5118243,115.544042 C94.5364316,112.27708 109.159082,109.611243 118.976345,108.050159 C118.144649,80.4734403 114.342756,14.2935455 116.834687,1.42108547e-14 L168,1.42108547e-14 C165.610405,13.7065491 145.410112,113.717714 141.6556,123.728549 C140.464101,127.302484 136.908919,128.8819 132.957062,128.993595 Z" id="Leg" fill="#D4A181"></path>
+                <g id="Accessories/Shoe/Flat-Sneaker" transform="translate(24.500000, 157.000000) rotate(80.000000) translate(-24.500000, -157.000000) translate(-6.000000, 137.000000)" fill="#E4E4E4">
+                    <path d="M2.67813181,25.4019242 C1.55937727,28.3884109 1,30.6229931 1,32.1056708 C1,33.908957 1.3004142,36.5404001 1.90124261,40 C3.99318117,40 22.7937852,40 58.3030548,40 C59.768738,35.1545073 58.9226607,32.5385816 55.7648228,32.1522232 C52.606985,31.7658647 49.9837155,31.4170139 47.8950143,31.1056708 L21.6799926,19.4188835 C21.1755635,19.1940064 20.584344,19.4206282 20.359467,19.9250573 C20.35562,19.9336867 20.3518954,19.9423702 20.3482945,19.9511052 L18.6632131,24.038695 C15.7398812,25.4026522 13.3643706,26.0846307 11.5366811,26.0846307 C10.0517269,26.0846307 8.00099246,25.4849054 5.38447792,24.2854549 L5.38448339,24.285443 C4.38038273,23.8251478 3.19325534,24.2659892 2.73296014,25.2700899 C2.71312074,25.3133681 2.69483298,25.3573409 2.67813181,25.4019242 Z" id="shoe"></path>
+                </g>
+                <g id="Accessories/Shoe/Flat-Sneaker" transform="translate(208.000000, 199.000000)" fill="#E4E4E4">
+                    <path d="M2.67813181,25.4019242 C1.55937727,28.3884109 1,30.6229931 1,32.1056708 C1,33.908957 1.3004142,36.5404001 1.90124261,40 C3.99318117,40 22.7937852,40 58.3030548,40 C59.768738,35.1545073 58.9226607,32.5385816 55.7648228,32.1522232 C52.606985,31.7658647 49.9837155,31.4170139 47.8950143,31.1056708 L21.6799926,19.4188835 C21.1755635,19.1940064 20.584344,19.4206282 20.359467,19.9250573 C20.35562,19.9336867 20.3518954,19.9423702 20.3482945,19.9511052 L18.6632131,24.038695 C15.7398812,25.4026522 13.3643706,26.0846307 11.5366811,26.0846307 C10.0517269,26.0846307 8.00099246,25.4849054 5.38447792,24.2854549 L5.38448339,24.285443 C4.38038273,23.8251478 3.19325534,24.2659892 2.73296014,25.2700899 C2.71312074,25.3133681 2.69483298,25.3573409 2.67813181,25.4019242 Z" id="shoe"></path>
+                </g>
+                <path d="M117,3.55271368e-15 C139.546839,-6.45073907 160.880173,-6.45073907 181,3.55271368e-15 C188,31.9374682 205.00894,44.6134741 208,93.5789257 C174,110.472724 132,81.5304571 97,98.005311 C87,74.9611073 101,19.4645181 117,3.55271368e-15 Z" id="Skirt" fill="#4BB99A"></path>
+            </g>
+            <g id="Body/Long-Sleeve" transform="translate(22.000000, 82.000000)">
+                <path d="M192,65.3107899 L231.482876,59.9251648 C239.381053,55.5320264 246.646993,52.5579486 253.280695,51.0029313 C255.147488,50.9484265 258.117196,51.6270536 253.693154,55.3151968 C249.269111,59.00334 244.780296,63.0831966 245.568527,65.0514942 C246.356757,67.0197919 250.471061,66.2874533 251.152638,69.3148625 C251.607023,71.3331352 244.929759,71.6610844 231.120845,70.2987101 L199.083874,83 L192,65.3107899 Z M67.9697919,74.4496834 L89.8671837,74.5318631 C65.8560993,128.56567 53.3363474,156.856914 52.3079281,159.405597 C49.9939846,165.140133 54.8906002,173.873732 56.9845874,178.567103 C50.1645409,181.61887 50.8912241,170.316929 42.2879189,174.319492 C34.4352209,177.972846 28.4616931,184.59248 19.3890352,178.994371 C18.2736052,178.306117 17.0512757,175.714714 20.0045784,173.68967 C27.3623323,168.644547 37.9653015,159.814672 39.3979297,156.908251 C41.3515741,152.944826 50.8755281,125.458637 67.9697919,74.4496834 Z" id="Skin" fill="#D4A181"></path>
+                <path d="M123.473568,9.66927317 L140.652814,9.31280705 C148.188654,47.0006412 173.203746,69.0336905 223.790464,56.4079457 L234.893349,104.819132 C187.489073,115.210412 143.760505,99.6935282 130.595778,48.4746485 C127.187846,35.2156986 124.201379,21.3681777 123.473568,9.66927317 Z" id="Clothes-Back" fill="#AFB9C5" transform="translate(179.183459, 58.591470) rotate(5.000000) translate(-179.183459, -58.591470) "></path>
+                <path d="M119.490817,0.0159395536 L145.467604,5.96527657 C145.467604,50.6444246 159.700025,79.150459 167,112 L96.8436541,112 C95.8553795,123.350899 95.2484887,135.017565 94.9322404,147 L42.4016357,147 C54.3053653,83.6639633 79.4301113,34.6639633 117.775873,0 L119.477154,0 L119.490817,0.0159395536 Z" id="Clothes" fill="#C5CFD6"></path>
+                <path d="M107.912453,48.2592493 C106.104463,76.1005287 107.167794,97.3474456 111.102445,112 L96.8436541,112 C98.8014235,89.5139021 102.255877,68.2669888 107.91245,48.25926 Z" id="Shade" fill-opacity="0.1" fill="#000000"></path>
+            </g>
+        </g>
+    </g>
 </svg>
