@@ -15,12 +15,12 @@
 #zm-zil-117-bag{animation:zm-zil-117-bag-hover 2.6s ease-in-out 1}
 #zm-zil-117-search{animation:zm-zil-117-appear 1s ease-out 1}
 #zm-zil-117-heart{animation:zm-zil-117-appear 1.4s ease-out 1}
-@keyframes zm-zil-117-phone-tilt{0%,100%{transform:rotate(0)}40%{transform:rotate(-4deg)}75%{transform:rotate(2deg)}}
-@keyframes zm-zil-117-handle-nudge{0%,100%{transform:rotate(0)}35%{transform:rotate(-8deg)}}
-@keyframes zm-zil-117-drawer-open{0%{transform:translateY(-10px);opacity:.68}100%{transform:translateY(0);opacity:1}}
-@keyframes zm-zil-117-receipt-out{0%{transform:translateY(18px);opacity:0}100%{transform:translateY(0);opacity:1}}
-@keyframes zm-zil-117-appear{0%{opacity:0;transform:scale(.87)}100%{opacity:1;transform:scale(1)}}
-@keyframes zm-zil-117-bag-hover{0%,100%{transform:translateY(0)}45%{transform:translateY(-8px)}}
+@keyframes zm-zil-117-phone-tilt{0%,100%{rotate:0deg}40%{rotate:-4deg}75%{rotate:2deg}}
+@keyframes zm-zil-117-handle-nudge{0%,100%{rotate:0deg}35%{rotate:-8deg}}
+@keyframes zm-zil-117-drawer-open{0%{translate:0 -10px;opacity:.68}100%{translate:0 0px;opacity:1}}
+@keyframes zm-zil-117-receipt-out{0%{translate:0 18px;opacity:0}100%{translate:0 0px;opacity:1}}
+@keyframes zm-zil-117-appear{0%{opacity:0;scale:.87}100%{opacity:1;scale:1}}
+@keyframes zm-zil-117-bag-hover{0%,100%{translate:0 0px}45%{translate:0 -8px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
 ]]></style>
