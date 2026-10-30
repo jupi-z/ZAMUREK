@@ -65,7 +65,7 @@ def colorize(s,dark):
     c=dict(PALETTE)
     if dark:c.update(W="#E8F7EE",INK="#A8C7B5",PALE="#33453A",CARD="#233128",OUTLINE="#4B7660")
     else:c.update(PALE="#EAF4EE",CARD="#FFFDFB",OUTLINE="#BEDBCC")
-    for k,v in c.items():s=s.replace("$"+k,v)
+    for k,v in sorted(c.items(),key=lambda kv:-len(kv[0])):s=s.replace("$"+k,v)
     return s
 def svg_source(name,ident,x,y,w,h):
     folder="ira" if name in ("object","tshirt","hair","leggins") else "humaaans"
@@ -123,7 +123,7 @@ def badge_shape(kind):
       "parcel":'<path d="M-28-17L0-32l28 15v32L0 32l-28-17z" fill="$G"/><path d="M-28-17L0 1l28-18M0 1v31" fill="none" stroke="$W" stroke-width="4"/>',
       "basket":'<path d="M-27-11h54l-8 38h-38z" fill="$G"/><path d="M-15-9Q-15-31 0-31T15-9" stroke="$O" stroke-width="8" fill="none"/>',
       "food":'<circle r="28" fill="none" stroke="$G" stroke-width="8"/><path d="M-9-17v34m18-34v34" stroke="$O" stroke-width="6"/>'
-    }.get(kind,'<circle r="27" fill="$G"/><circle r="13" fill="$O"/>')
+    }.get(kind, '<g transform="translate(-35 -35) scale(.22)">' + SHAPES.get(kind, SHAPES['printer']) + '</g>')
 def render(base,name,code,dark,motion,master=False):
     short=base.removeprefix("BASE-")
     pose=CHARACTER.get(short)
@@ -133,6 +133,10 @@ def render(base,name,code,dark,motion,master=False):
     center=407 if pose else 238
     symbol=OBJECT[short]
     geom=SHAPES[symbol]
+    if short == "SUCCESS":
+        geom += '<circle cx="257" cy="244" r="43" fill="$G" stroke="$W" stroke-width="9"/><path d="M235 244l15 15 30-33" fill="none" stroke="$W" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>'
+    elif short == "ERROR":
+        geom += '<path d="M250 200l47 81h-94z" fill="$M" stroke="$W" stroke-width="7"/><path d="M250 229v25m0 10v1" stroke="$W" stroke-width="8" stroke-linecap="round"/>'
     # Use IRA vector components as nested layer, not as merely named references.
     accessory=({"CATALOG":"tshirt","FURNITURE":"object","BEAUTY":"hair",
        "EDITORIAL":"leggins","DISCOVERY":"object"}).get(short)
@@ -173,6 +177,9 @@ def render(base,name,code,dark,motion,master=False):
     return colorize(xml,dark)
 def validate(src,label):
     if any(x in src for x in ("<image","<script","<foreignObject","data:image","<iframe")):raise ValueError("unsafe "+label)
+    for cm in re.finditer(r'#[0-9a-fA-F]{1,9}\b',src):
+        if len(cm.group(0)) not in (4,5,7,9):
+            raise ValueError("invalid hexadecimal color "+cm.group(0)+" in "+label)
     root=ET.fromstring(src)
     ids=[e.get("id") for e in root.iter() if e.get("id")]
     if len(ids)!=len(set(ids)):raise ValueError("duplicate id "+label)
@@ -261,7 +268,7 @@ def main():
                 live[code+"-"+mode+"-"+theme]=svg
                 paths.append(str(file.relative_to(ROOT)))
         production.append({**item,"status":"REVUE_VISUELLE_REQUISE","production_status":"GENERATED_VECTOR_PENDING_QA",
-          "requires_business_state":any(w in norm(item["name"]) for w in ("paiement","encaissement","remboursement","transfert","pharmaci","autorisation","validation")),
+          "requires_business_state":any(w in norm(item["name"]) for w in ("paiement","encaissement","remboursement","transfert","pharmaci","autorisation","validation","commande confirmee","reussie")),
           "pilot_preserved":code in pilots,"paths":paths})
     assert len(live)==1100
     make_studio(live,items,bases)
