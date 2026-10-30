@@ -226,7 +226,7 @@ for(let item of list.slice(state.page*18,(state.page+1)*18)){
 let k=key(item),card=document.createElement("article");card.className="card";
 let head=document.createElement("div");head.className="card-head";head.textContent=item.id+" · "+item.priority;
 let preview=document.createElement("div");preview.className="preview";preview.appendChild(makeFrame(k));
-let content=document.createElement("div");content.className="content",h2=document.createElement("h2");h2.textContent=item.name;
+let content=document.createElement("div");content.className="content";let h2=document.createElement("h2");h2.textContent=item.name;
 let p=document.createElement("p");p.textContent=item.base+" · "+item.scope;
 let actions=document.createElement("div");actions.className="actions";actions.append(btn("Télécharger SVG",()=>download(k)),btn("Relancer",()=>preview.replaceChildren(makeFrame(k))));
 content.append(h2,p,actions);card.append(head,preview,content);gallery.appendChild(card)}
