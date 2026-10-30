@@ -1,0 +1,72 @@
+name: Zamurek generate vector illustration system
+on:
+  push:
+    paths:
+      - "packages/illustrations/scripts/build_full_library.py"
+      - "packages/illustrations/third_party/**"
+      - ".github/workflows/illustrations-build-library.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  generate-library:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout working branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 1
+      - name: Python environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Generate 33 masters and 275 use-case SVG variants
+        run: python3 packages/illustrations/scripts/build_full_library.py
+      - name: Validate preserved pilot variants
+        run: python3 scripts/validate_illustrations_pilots.py
+      - name: Validate export counts and integrity
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          r=Path("packages/illustrations")
+          d=json.loads((r/"registry/illustrations.production.v2.json").read_text())
+          assert d["countCases"]==275 and d["countMasters"]==33
+          assert d["countVariants"]==1100 and d["newCaseFiles"]==1088
+          assert len(list((r/"assets/masters").glob("*/*.svg")))==132
+          assert len(list((r/"assets/static").glob("zil-*.svg")))==550
+          assert len(list((r/"assets/motion").glob("zil-*.svg")))==550
+          assert len(d["items"])==275
+          assert all(len(i["paths"])==4 for i in d["items"])
+          gallery=(r/"ZAMUREK_ILLUSTRATIONS_STUDIO_33_FAMILLES.html")
+          assert gallery.is_file() and gallery.stat().st_size>40000
+          print("PASS 33 masters / 275 use cases / 1100 SVG variants / offline gallery")
+          PY
+      - name: Commit reproducible artwork, documentation and offline visualizer
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add packages/illustrations/assets/masters packages/illustrations/assets/static packages/illustrations/assets/motion packages/illustrations/registry packages/illustrations/reports packages/illustrations/ZAMUREK_ILLUSTRATIONS_STUDIO_33_FAMILLES.html
+          if git diff --staged --quiet; then
+            echo "Artifacts already up to date"
+          else
+            git commit -m "build(illustrations): 33 masters 275 usage vectors and gallery"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
+      - name: Package downloadable release
+        shell: bash
+        run: |
+          zip -q -r ZAMUREK_ILLUSTRATIONS_275_SVG.zip packages/illustrations/assets packages/illustrations/registry packages/illustrations/reports packages/illustrations/third_party packages/illustrations/ZAMUREK_ILLUSTRATIONS_STUDIO_33_FAMILLES.html
+      - name: Upload preview and full SVG zip
+        uses: actions/upload-artifact@v4
+        with:
+          name: zamurek-illustrations-275-svg-and-preview
+          path: |
+            ZAMUREK_ILLUSTRATIONS_275_SVG.zip
+            packages/illustrations/ZAMUREK_ILLUSTRATIONS_STUDIO_33_FAMILLES.html
+          retention-days: 30
