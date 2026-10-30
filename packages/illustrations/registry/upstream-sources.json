@@ -1,0 +1,498 @@
+{
+  "gallery-01": {
+    "library": "ira-gallery",
+    "upstreamRepo": "ira-design/ira-design.github.io",
+    "upstreamCommit": "076ae5438c79374d1556a0bb88afb82df85d8e51",
+    "upstreamPath": "_includes/examples/svg/svg1.html",
+    "svgSha256": "f8a0621d3f34324f69d6231256e3474cdcaf452e2bd2a4f4cc078a89edcdc19e",
+    "license": "IRA Design MIT"
+  },
+  "gallery-02": {
+    "library": "ira-gallery",
+    "upstreamRepo": "ira-design/ira-design.github.io",
+    "upstreamCommit": "076ae5438c79374d1556a0bb88afb82df85d8e51",
+    "upstreamPath": "_includes/examples/svg/svg2.html",
+    "svgSha256": "d1432d2327adc332bb04a57df3f850dae558f7ba2bcc3ee821563a71b295d200",
+    "license": "IRA Design MIT"
+  },
+  "gallery-03": {
+    "library": "ira-gallery",
+    "upstreamRepo": "ira-design/ira-design.github.io",
+    "upstreamCommit": "076ae5438c79374d1556a0bb88afb82df85d8e51",
+    "upstreamPath": "_includes/examples/svg/svg3.html",
+    "svgSha256": "ec362aa8c90467ed2f1866ab71b338c0d8f35bb74dc0bba4a2ee18a6ed3cb193",
+    "license": "IRA Design MIT"
+  },
+  "gallery-04": {
+    "library": "ira-gallery",
+    "upstreamRepo": "ira-design/ira-design.github.io",
+    "upstreamCommit": "076ae5438c79374d1556a0bb88afb82df85d8e51",
+    "upstreamPath": "_includes/examples/svg/svg4.html",
+    "svgSha256": "5af9721934a0d4ce9c07def2adf2368999157a585be054c849b7f05d38a03885",
+    "license": "IRA Design MIT"
+  },
+  "gallery-05": {
+    "library": "ira-gallery",
+    "upstreamRepo": "ira-design/ira-design.github.io",
+    "upstreamCommit": "076ae5438c79374d1556a0bb88afb82df85d8e51",
+    "upstreamPath": "_includes/examples/svg/svg5.html",
+    "svgSha256": "f08170186da5467ebddf6b14b3a6a4bc2a025741148bc870d14de6888af0c528",
+    "license": "IRA Design MIT"
+  },
+  "gallery-06": {
+    "library": "ira-gallery",
+    "upstreamRepo": "ira-design/ira-design.github.io",
+    "upstreamCommit": "076ae5438c79374d1556a0bb88afb82df85d8e51",
+    "upstreamPath": "_includes/examples/svg/svg6.html",
+    "svgSha256": "c2168b58c3df1b4dbfbd7d59285a64ea02bbdeff274c28e2b193d30ca35b79f7",
+    "license": "IRA Design MIT"
+  },
+  "gallery-07": {
+    "library": "ira-gallery",
+    "upstreamRepo": "ira-design/ira-design.github.io",
+    "upstreamCommit": "076ae5438c79374d1556a0bb88afb82df85d8e51",
+    "upstreamPath": "_includes/examples/svg/svg7.html",
+    "svgSha256": "46bca845489d6442a29d88772a1d85464f9b3def4e22f5969b7149d3a49a1f92",
+    "license": "IRA Design MIT"
+  },
+  "gallery-08": {
+    "library": "ira-gallery",
+    "upstreamRepo": "ira-design/ira-design.github.io",
+    "upstreamCommit": "076ae5438c79374d1556a0bb88afb82df85d8e51",
+    "upstreamPath": "_includes/examples/svg/svg8.html",
+    "svgSha256": "dfece3185e71af5a13adacaec561f352a7b20f8e9a757576c79f17351d2283e3",
+    "license": "IRA Design MIT"
+  },
+  "gallery-09": {
+    "library": "ira-gallery",
+    "upstreamRepo": "ira-design/ira-design.github.io",
+    "upstreamCommit": "076ae5438c79374d1556a0bb88afb82df85d8e51",
+    "upstreamPath": "_includes/examples/svg/svg9.html",
+    "svgSha256": "5c4e5dfb5f0a0efb1b77bde1b0e5ca3d69b47a8a91f1b67fdec82e3e04a7806a",
+    "license": "IRA Design MIT"
+  },
+  "gallery-10": {
+    "library": "ira-gallery",
+    "upstreamRepo": "ira-design/ira-design.github.io",
+    "upstreamCommit": "076ae5438c79374d1556a0bb88afb82df85d8e51",
+    "upstreamPath": "_includes/examples/svg/svg10.html",
+    "svgSha256": "673a9d6b3809633c5a6caa296263d118a5046dea0dd278d035d5ba9f72fb6f35",
+    "license": "IRA Design MIT"
+  },
+  "gallery-11": {
+    "library": "ira-gallery",
+    "upstreamRepo": "ira-design/ira-design.github.io",
+    "upstreamCommit": "076ae5438c79374d1556a0bb88afb82df85d8e51",
+    "upstreamPath": "_includes/examples/svg/svg11.html",
+    "svgSha256": "00bcf1c40fffbef896f953075967285eed616ba0e554389431e72db07568d6bd",
+    "license": "IRA Design MIT"
+  },
+  "gallery-12": {
+    "library": "ira-gallery",
+    "upstreamRepo": "ira-design/ira-design.github.io",
+    "upstreamCommit": "076ae5438c79374d1556a0bb88afb82df85d8e51",
+    "upstreamPath": "_includes/examples/svg/svg12.html",
+    "svgSha256": "e6efdaf186b07cfd5d9bf5e9fae279f9c509f3fa898c297adf80aa5eb49992a9",
+    "license": "IRA Design MIT"
+  },
+  "gallery-13": {
+    "library": "ira-gallery",
+    "upstreamRepo": "ira-design/ira-design.github.io",
+    "upstreamCommit": "076ae5438c79374d1556a0bb88afb82df85d8e51",
+    "upstreamPath": "_includes/examples/svg/svg13.html",
+    "svgSha256": "999f1cd8594d40e4c1514a936977e48a127628739e9d24786be0b33841745d35",
+    "license": "IRA Design MIT"
+  },
+  "gallery-14": {
+    "library": "ira-gallery",
+    "upstreamRepo": "ira-design/ira-design.github.io",
+    "upstreamCommit": "076ae5438c79374d1556a0bb88afb82df85d8e51",
+    "upstreamPath": "_includes/examples/svg/svg14.html",
+    "svgSha256": "ea0e49a17e47a5d9b5a8eea5c3a0c00149d790def7c88612aeb2d0fec8aa6f30",
+    "license": "IRA Design MIT"
+  },
+  "gallery-15": {
+    "library": "ira-gallery",
+    "upstreamRepo": "ira-design/ira-design.github.io",
+    "upstreamCommit": "076ae5438c79374d1556a0bb88afb82df85d8e51",
+    "upstreamPath": "_includes/examples/svg/svg15.html",
+    "svgSha256": "7de24dfba95c34e144f99ced3d31e919cc227af61d6e617a119f11a688320aab",
+    "license": "IRA Design MIT"
+  },
+  "gallery-16": {
+    "library": "ira-gallery",
+    "upstreamRepo": "ira-design/ira-design.github.io",
+    "upstreamCommit": "076ae5438c79374d1556a0bb88afb82df85d8e51",
+    "upstreamPath": "_includes/examples/svg/svg16.html",
+    "svgSha256": "b3e246ffb1756eada5dfce488c2c18399bc1eca7ee2b2a6420cb51f59e0b0a49",
+    "license": "IRA Design MIT"
+  },
+  "gallery-17": {
+    "library": "ira-gallery",
+    "upstreamRepo": "ira-design/ira-design.github.io",
+    "upstreamCommit": "076ae5438c79374d1556a0bb88afb82df85d8e51",
+    "upstreamPath": "_includes/examples/svg/svg17.html",
+    "svgSha256": "f6504f917dd3f350de1c4b4e9316c91f00b965eb13a3486ea60719e6d68dcb1a",
+    "license": "IRA Design MIT"
+  },
+  "gallery-18": {
+    "library": "ira-gallery",
+    "upstreamRepo": "ira-design/ira-design.github.io",
+    "upstreamCommit": "076ae5438c79374d1556a0bb88afb82df85d8e51",
+    "upstreamPath": "_includes/examples/svg/svg18.html",
+    "svgSha256": "d6e82676ebc50799b6f13703321b019c07529d857f277fcdce258f7d79e5237e",
+    "license": "IRA Design MIT"
+  },
+  "gallery-19": {
+    "library": "ira-gallery",
+    "upstreamRepo": "ira-design/ira-design.github.io",
+    "upstreamCommit": "076ae5438c79374d1556a0bb88afb82df85d8e51",
+    "upstreamPath": "_includes/examples/svg/svg19.html",
+    "svgSha256": "043d5f0d82535a42c4a50dce9ac753b7a470756d946c80ec66323b713c605977",
+    "license": "IRA Design MIT"
+  },
+  "gallery-20": {
+    "library": "ira-gallery",
+    "upstreamRepo": "ira-design/ira-design.github.io",
+    "upstreamCommit": "076ae5438c79374d1556a0bb88afb82df85d8e51",
+    "upstreamPath": "_includes/examples/svg/svg20.html",
+    "svgSha256": "01ebf5dbc2f5b7583dfb2d5c4e73ed6ab3b860065d83723eb82d785127488b67",
+    "license": "IRA Design MIT"
+  },
+  "gallery-21": {
+    "library": "ira-gallery",
+    "upstreamRepo": "ira-design/ira-design.github.io",
+    "upstreamCommit": "076ae5438c79374d1556a0bb88afb82df85d8e51",
+    "upstreamPath": "_includes/examples/svg/svg21.html",
+    "svgSha256": "0415a0e4dd509e53b0d370844d9be09b310af8e35a28b221f3b394f0e9397ebb",
+    "license": "IRA Design MIT"
+  },
+  "gallery-22": {
+    "library": "ira-gallery",
+    "upstreamRepo": "ira-design/ira-design.github.io",
+    "upstreamCommit": "076ae5438c79374d1556a0bb88afb82df85d8e51",
+    "upstreamPath": "_includes/examples/svg/svg22.html",
+    "svgSha256": "6cb36ab038baa0242cb87bb8b644196596ca06e7806c2911e5b1d248a7d3ed30",
+    "license": "IRA Design MIT"
+  },
+  "gallery-23": {
+    "library": "ira-gallery",
+    "upstreamRepo": "ira-design/ira-design.github.io",
+    "upstreamCommit": "076ae5438c79374d1556a0bb88afb82df85d8e51",
+    "upstreamPath": "_includes/examples/svg/svg23.html",
+    "svgSha256": "103e50e93e0ea59dc5adf42e7ef5687b0c262e05316deccf683bc173387ed02d",
+    "license": "IRA Design MIT"
+  },
+  "gallery-24": {
+    "library": "ira-gallery",
+    "upstreamRepo": "ira-design/ira-design.github.io",
+    "upstreamCommit": "076ae5438c79374d1556a0bb88afb82df85d8e51",
+    "upstreamPath": "_includes/examples/svg/svg24.html",
+    "svgSha256": "eec58d23eb43db53a97ac1e1f19800856b2193f6f834decc915e5743d065f00d",
+    "license": "IRA Design MIT"
+  },
+  "gallery-25": {
+    "library": "ira-gallery",
+    "upstreamRepo": "ira-design/ira-design.github.io",
+    "upstreamCommit": "076ae5438c79374d1556a0bb88afb82df85d8e51",
+    "upstreamPath": "_includes/examples/svg/svg25.html",
+    "svgSha256": "c41ede654b0353286bc805085425369cc92825806fa735fa332ef9e091417865",
+    "license": "IRA Design MIT"
+  },
+  "gallery-26": {
+    "library": "ira-gallery",
+    "upstreamRepo": "ira-design/ira-design.github.io",
+    "upstreamCommit": "076ae5438c79374d1556a0bb88afb82df85d8e51",
+    "upstreamPath": "_includes/examples/svg/svg26.html",
+    "svgSha256": "68b72828428ab4a2d163630b883b9c43d81653932cd4ba9f894357e0a3233475",
+    "license": "IRA Design MIT"
+  },
+  "gallery-27": {
+    "library": "ira-gallery",
+    "upstreamRepo": "ira-design/ira-design.github.io",
+    "upstreamCommit": "076ae5438c79374d1556a0bb88afb82df85d8e51",
+    "upstreamPath": "_includes/examples/svg/svg27.html",
+    "svgSha256": "79b145323a9a4c0a88bd8dd8a4c7a8c4708d648c4bbb6c672dbb6faf0b407689",
+    "license": "IRA Design MIT"
+  },
+  "gallery-28": {
+    "library": "ira-gallery",
+    "upstreamRepo": "ira-design/ira-design.github.io",
+    "upstreamCommit": "076ae5438c79374d1556a0bb88afb82df85d8e51",
+    "upstreamPath": "_includes/examples/svg/svg28.html",
+    "svgSha256": "e39111e0f64b35206d6f6ff82d6ea602bfbf82a52692b44abada801830c28eb8",
+    "license": "IRA Design MIT"
+  },
+  "gallery-29": {
+    "library": "ira-gallery",
+    "upstreamRepo": "ira-design/ira-design.github.io",
+    "upstreamCommit": "076ae5438c79374d1556a0bb88afb82df85d8e51",
+    "upstreamPath": "_includes/examples/svg/svg29.html",
+    "svgSha256": "e4e11ddecf125998373985e16419da77a0824e9c11329522076e15153bd20dd4",
+    "license": "IRA Design MIT"
+  },
+  "gallery-30": {
+    "library": "ira-gallery",
+    "upstreamRepo": "ira-design/ira-design.github.io",
+    "upstreamCommit": "076ae5438c79374d1556a0bb88afb82df85d8e51",
+    "upstreamPath": "_includes/examples/svg/svg30.html",
+    "svgSha256": "dcaca61d12ca53b56e3bd8d97384ad7ba06558bc21e7c5bd2a07ef3086cb33e5",
+    "license": "IRA Design MIT"
+  },
+  "standing-01": {
+    "library": "humaaans",
+    "upstreamRepo": "Calinou/humaaans",
+    "upstreamCommit": "818f184343b884123e08e531ffd62c5b2f9ffef4",
+    "upstreamPath": "Flat Assets/Humaaans/standing-1.svg",
+    "svgSha256": "6df688cd37e6eb2b22e78a5725d377a41228997460aa1eac35c694a2fa759af9",
+    "license": "CC BY 4.0 (mirror)"
+  },
+  "standing-02": {
+    "library": "humaaans",
+    "upstreamRepo": "Calinou/humaaans",
+    "upstreamCommit": "818f184343b884123e08e531ffd62c5b2f9ffef4",
+    "upstreamPath": "Flat Assets/Humaaans/standing-2.svg",
+    "svgSha256": "f51dd78a393fb793a117d3fcf7b37cd4eeb2dfb2a5a4ef9af0b0296ce5e39003",
+    "license": "CC BY 4.0 (mirror)"
+  },
+  "standing-03": {
+    "library": "humaaans",
+    "upstreamRepo": "Calinou/humaaans",
+    "upstreamCommit": "818f184343b884123e08e531ffd62c5b2f9ffef4",
+    "upstreamPath": "Flat Assets/Humaaans/standing-3.svg",
+    "svgSha256": "f90173bd16e1137f7b35a905ead48e6a0ddc51c40488de5791770a5efe9296bd",
+    "license": "CC BY 4.0 (mirror)"
+  },
+  "standing-04": {
+    "library": "humaaans",
+    "upstreamRepo": "Calinou/humaaans",
+    "upstreamCommit": "818f184343b884123e08e531ffd62c5b2f9ffef4",
+    "upstreamPath": "Flat Assets/Humaaans/standing-4.svg",
+    "svgSha256": "250bbf74203ef1aecc9f3ab3ba129d3a6ff16cd9c00af64b6fa8586d137ab89f",
+    "license": "CC BY 4.0 (mirror)"
+  },
+  "standing-05": {
+    "library": "humaaans",
+    "upstreamRepo": "Calinou/humaaans",
+    "upstreamCommit": "818f184343b884123e08e531ffd62c5b2f9ffef4",
+    "upstreamPath": "Flat Assets/Humaaans/standing-5.svg",
+    "svgSha256": "bc87268341d973cccd981a1ddb43a874a1ff9d916a3e77329400e5b1a1682790",
+    "license": "CC BY 4.0 (mirror)"
+  },
+  "standing-06": {
+    "library": "humaaans",
+    "upstreamRepo": "Calinou/humaaans",
+    "upstreamCommit": "818f184343b884123e08e531ffd62c5b2f9ffef4",
+    "upstreamPath": "Flat Assets/Humaaans/standing-6.svg",
+    "svgSha256": "bced35bdf441dadedbf81f0f313a652b90e8bc98ec685b31dc40c16383357d77",
+    "license": "CC BY 4.0 (mirror)"
+  },
+  "standing-07": {
+    "library": "humaaans",
+    "upstreamRepo": "Calinou/humaaans",
+    "upstreamCommit": "818f184343b884123e08e531ffd62c5b2f9ffef4",
+    "upstreamPath": "Flat Assets/Humaaans/standing-7.svg",
+    "svgSha256": "4aa4f977d7a7d3ed00bd17ed03a289748ecf6fe6a600517de82281d479d7aa10",
+    "license": "CC BY 4.0 (mirror)"
+  },
+  "standing-08": {
+    "library": "humaaans",
+    "upstreamRepo": "Calinou/humaaans",
+    "upstreamCommit": "818f184343b884123e08e531ffd62c5b2f9ffef4",
+    "upstreamPath": "Flat Assets/Humaaans/standing-8.svg",
+    "svgSha256": "c4e9a435d2438d8b2d163f3075b7e829478a112392f9e79f5f1d0a18b9b71fd4",
+    "license": "CC BY 4.0 (mirror)"
+  },
+  "standing-09": {
+    "library": "humaaans",
+    "upstreamRepo": "Calinou/humaaans",
+    "upstreamCommit": "818f184343b884123e08e531ffd62c5b2f9ffef4",
+    "upstreamPath": "Flat Assets/Humaaans/standing-9.svg",
+    "svgSha256": "61a73558c43f9d2ad26c6e4def72d05cff9459c999964c7b7150993b39901300",
+    "license": "CC BY 4.0 (mirror)"
+  },
+  "standing-10": {
+    "library": "humaaans",
+    "upstreamRepo": "Calinou/humaaans",
+    "upstreamCommit": "818f184343b884123e08e531ffd62c5b2f9ffef4",
+    "upstreamPath": "Flat Assets/Humaaans/standing-10.svg",
+    "svgSha256": "f0464cf82d903caede6bb1230e40267894393903b393d0b0f7a18d7c6fd0bcf6",
+    "license": "CC BY 4.0 (mirror)"
+  },
+  "standing-11": {
+    "library": "humaaans",
+    "upstreamRepo": "Calinou/humaaans",
+    "upstreamCommit": "818f184343b884123e08e531ffd62c5b2f9ffef4",
+    "upstreamPath": "Flat Assets/Humaaans/standing-11.svg",
+    "svgSha256": "5d6c9c690aee94ab050fb62bcaa9e3768a7a0a8a18df5d1e4109ebdc42184162",
+    "license": "CC BY 4.0 (mirror)"
+  },
+  "standing-12": {
+    "library": "humaaans",
+    "upstreamRepo": "Calinou/humaaans",
+    "upstreamCommit": "818f184343b884123e08e531ffd62c5b2f9ffef4",
+    "upstreamPath": "Flat Assets/Humaaans/standing-12.svg",
+    "svgSha256": "a4435929ac2941ba756b5693bbd3f55bd371a7f05d9e2a295c3c34a503ec865f",
+    "license": "CC BY 4.0 (mirror)"
+  },
+  "standing-13": {
+    "library": "humaaans",
+    "upstreamRepo": "Calinou/humaaans",
+    "upstreamCommit": "818f184343b884123e08e531ffd62c5b2f9ffef4",
+    "upstreamPath": "Flat Assets/Humaaans/standing-13.svg",
+    "svgSha256": "59abe6fb312ed4c3ba9efa1c5d2d326e59c1e3612bbe66ae5e12abfa4c7c8db1",
+    "license": "CC BY 4.0 (mirror)"
+  },
+  "standing-14": {
+    "library": "humaaans",
+    "upstreamRepo": "Calinou/humaaans",
+    "upstreamCommit": "818f184343b884123e08e531ffd62c5b2f9ffef4",
+    "upstreamPath": "Flat Assets/Humaaans/standing-14.svg",
+    "svgSha256": "52358c700205fdf206608dbbb382d57d2a7fea0fa97958cd04013b635e40dbec",
+    "license": "CC BY 4.0 (mirror)"
+  },
+  "standing-15": {
+    "library": "humaaans",
+    "upstreamRepo": "Calinou/humaaans",
+    "upstreamCommit": "818f184343b884123e08e531ffd62c5b2f9ffef4",
+    "upstreamPath": "Flat Assets/Humaaans/standing-15.svg",
+    "svgSha256": "f83fb25a0f83da630e708063ee5dc31ed454de8c53a782defc334776c348060a",
+    "license": "CC BY 4.0 (mirror)"
+  },
+  "standing-16": {
+    "library": "humaaans",
+    "upstreamRepo": "Calinou/humaaans",
+    "upstreamCommit": "818f184343b884123e08e531ffd62c5b2f9ffef4",
+    "upstreamPath": "Flat Assets/Humaaans/standing-16.svg",
+    "svgSha256": "cfb6c8a5a6898215ae67ded9b20cea34a1083720008a08f7a9faba4c4a02a296",
+    "license": "CC BY 4.0 (mirror)"
+  },
+  "standing-17": {
+    "library": "humaaans",
+    "upstreamRepo": "Calinou/humaaans",
+    "upstreamCommit": "818f184343b884123e08e531ffd62c5b2f9ffef4",
+    "upstreamPath": "Flat Assets/Humaaans/standing-17.svg",
+    "svgSha256": "8b4712dae2c5db1c090c4eb9257e812d9e1d73edc5900b39e0e3837b1dd096c4",
+    "license": "CC BY 4.0 (mirror)"
+  },
+  "standing-18": {
+    "library": "humaaans",
+    "upstreamRepo": "Calinou/humaaans",
+    "upstreamCommit": "818f184343b884123e08e531ffd62c5b2f9ffef4",
+    "upstreamPath": "Flat Assets/Humaaans/standing-18.svg",
+    "svgSha256": "30aeb00fe5d07ca6a05075ccb05ee0d4963f96402391defa0596886760ca3ed8",
+    "license": "CC BY 4.0 (mirror)"
+  },
+  "standing-19": {
+    "library": "humaaans",
+    "upstreamRepo": "Calinou/humaaans",
+    "upstreamCommit": "818f184343b884123e08e531ffd62c5b2f9ffef4",
+    "upstreamPath": "Flat Assets/Humaaans/standing-19.svg",
+    "svgSha256": "5138f5b897843049ca05afaf0714bbb714cd4f78f086ed6c7637e0e86496729a",
+    "license": "CC BY 4.0 (mirror)"
+  },
+  "standing-20": {
+    "library": "humaaans",
+    "upstreamRepo": "Calinou/humaaans",
+    "upstreamCommit": "818f184343b884123e08e531ffd62c5b2f9ffef4",
+    "upstreamPath": "Flat Assets/Humaaans/standing-20.svg",
+    "svgSha256": "c998e8069b20a1e92e126fad9277c861571adc291fbe8e8370860cb740cca0a1",
+    "license": "CC BY 4.0 (mirror)"
+  },
+  "standing-21": {
+    "library": "humaaans",
+    "upstreamRepo": "Calinou/humaaans",
+    "upstreamCommit": "818f184343b884123e08e531ffd62c5b2f9ffef4",
+    "upstreamPath": "Flat Assets/Humaaans/standing-21.svg",
+    "svgSha256": "9b41d1acd0497112fb3692fd9afb5c4aac3ebf9fce76c3f17616db04b014f662",
+    "license": "CC BY 4.0 (mirror)"
+  },
+  "standing-22": {
+    "library": "humaaans",
+    "upstreamRepo": "Calinou/humaaans",
+    "upstreamCommit": "818f184343b884123e08e531ffd62c5b2f9ffef4",
+    "upstreamPath": "Flat Assets/Humaaans/standing-22.svg",
+    "svgSha256": "584e5cdcb3fd5feb9526848aceecf8950a7ab59870691e97330dc056344834d8",
+    "license": "CC BY 4.0 (mirror)"
+  },
+  "standing-23": {
+    "library": "humaaans",
+    "upstreamRepo": "Calinou/humaaans",
+    "upstreamCommit": "818f184343b884123e08e531ffd62c5b2f9ffef4",
+    "upstreamPath": "Flat Assets/Humaaans/standing-23.svg",
+    "svgSha256": "acfc3b84b6b9bd425304bfcd73809de3c28785cf10809bb1032e3817c8b80fd8",
+    "license": "CC BY 4.0 (mirror)"
+  },
+  "standing-24": {
+    "library": "humaaans",
+    "upstreamRepo": "Calinou/humaaans",
+    "upstreamCommit": "818f184343b884123e08e531ffd62c5b2f9ffef4",
+    "upstreamPath": "Flat Assets/Humaaans/standing-24.svg",
+    "svgSha256": "d3e9054da4501239f2ec3bb9e3ad23852ad307ce291d7026d289d4e67803b757",
+    "license": "CC BY 4.0 (mirror)"
+  },
+  "sitting-01": {
+    "library": "humaaans",
+    "upstreamRepo": "Calinou/humaaans",
+    "upstreamCommit": "818f184343b884123e08e531ffd62c5b2f9ffef4",
+    "upstreamPath": "Flat Assets/Humaaans/sitting-1.svg",
+    "svgSha256": "121212c70d2a38eda9e319e56e76c028b6a3d9f2e0cbfc3605ff0c6fb0bbd1c0",
+    "license": "CC BY 4.0 (mirror)"
+  },
+  "sitting-02": {
+    "library": "humaaans",
+    "upstreamRepo": "Calinou/humaaans",
+    "upstreamCommit": "818f184343b884123e08e531ffd62c5b2f9ffef4",
+    "upstreamPath": "Flat Assets/Humaaans/sitting-2.svg",
+    "svgSha256": "84b850ed6aafbf4eaa08d90f934556ac12ec5a3b49d483b6cbb1ef6cac006eb6",
+    "license": "CC BY 4.0 (mirror)"
+  },
+  "sitting-03": {
+    "library": "humaaans",
+    "upstreamRepo": "Calinou/humaaans",
+    "upstreamCommit": "818f184343b884123e08e531ffd62c5b2f9ffef4",
+    "upstreamPath": "Flat Assets/Humaaans/sitting-3.svg",
+    "svgSha256": "79781765eb0e3297d315652ef43ad30a116fdce078b45e3242ddd5de1faf9097",
+    "license": "CC BY 4.0 (mirror)"
+  },
+  "sitting-04": {
+    "library": "humaaans",
+    "upstreamRepo": "Calinou/humaaans",
+    "upstreamCommit": "818f184343b884123e08e531ffd62c5b2f9ffef4",
+    "upstreamPath": "Flat Assets/Humaaans/sitting-4.svg",
+    "svgSha256": "0faef83bbff3580028ba6852f705bef2c4e59ebb74ca76747c85d105dd58b83b",
+    "license": "CC BY 4.0 (mirror)"
+  },
+  "sitting-05": {
+    "library": "humaaans",
+    "upstreamRepo": "Calinou/humaaans",
+    "upstreamCommit": "818f184343b884123e08e531ffd62c5b2f9ffef4",
+    "upstreamPath": "Flat Assets/Humaaans/sitting-5.svg",
+    "svgSha256": "adbd49e53a5e4c89d6665f1ca0c99c665cac79d81f624df5a4113374bb696229",
+    "license": "CC BY 4.0 (mirror)"
+  },
+  "sitting-06": {
+    "library": "humaaans",
+    "upstreamRepo": "Calinou/humaaans",
+    "upstreamCommit": "818f184343b884123e08e531ffd62c5b2f9ffef4",
+    "upstreamPath": "Flat Assets/Humaaans/sitting-6.svg",
+    "svgSha256": "176f0b6d1ab2b8fe67befade7736fc5adcb15f9c0771582e1de4f1e68fe4f46b",
+    "license": "CC BY 4.0 (mirror)"
+  },
+  "sitting-07": {
+    "library": "humaaans",
+    "upstreamRepo": "Calinou/humaaans",
+    "upstreamCommit": "818f184343b884123e08e531ffd62c5b2f9ffef4",
+    "upstreamPath": "Flat Assets/Humaaans/sitting-7.svg",
+    "svgSha256": "387fba9357c8a3690e1d0c0c67510093c9170afec9ef49c8d5d0f1a2f1f89522",
+    "license": "CC BY 4.0 (mirror)"
+  },
+  "sitting-08": {
+    "library": "humaaans",
+    "upstreamRepo": "Calinou/humaaans",
+    "upstreamCommit": "818f184343b884123e08e531ffd62c5b2f9ffef4",
+    "upstreamPath": "Flat Assets/Humaaans/sitting-8.svg",
+    "svgSha256": "fbc54d90ea793ec1b1a3df6343eabe35d7e5dea99a56ffb13c09180d075aab35",
+    "license": "CC BY 4.0 (mirror)"
+  }
+}
