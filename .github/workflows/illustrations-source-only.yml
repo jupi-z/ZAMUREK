@@ -1,0 +1,70 @@
+name: Zamurek upstream-only 257 illustrations
+on:
+  push:
+    branches:
+      - feat/illustrations-ira-humaaans-only-257-20261030
+    paths:
+      - ".github/workflows/illustrations-source-only.yml"
+      - "packages/illustrations/scripts/reuse_upstream_only.py"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  import-and-validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Import only existing IRA Gallery and Humaaans SVG and recolor
+        run: python3 packages/illustrations/scripts/reuse_upstream_only.py
+      - name: Check SVG provenance and no new geometry
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("packages/illustrations")
+          r=json.loads((p/"registry/257-source-mapping.json").read_text())
+          assert r["processedCases"]==257 and r["backlogCases"]==275
+          assert r["uniqueOriginals"]==62 and r["themeVariants"]==124
+          assert r["caseVariants"]==514 and r["newSvgGeometry"]==0
+          assert len(list((p/"sources/original").glob("*/*.svg")))==62
+          assert len(list((p/"assets/themes").glob("*.svg")))==124
+          assert len(list((p/"assets/cases").glob("*.svg")))==514
+          for item in r["cases"]:
+              for variant in ("light","dark"):
+                  assert (p/item["variants"][variant]["path"]).is_file()
+          assert (p/"ZAMUREK_VISUALISATION_SOURCES_257.html").stat().st_size>100000
+          assert not (p/"assets/masters").exists()
+          assert not (p/"scripts/build_full_library.py").exists()
+          print("PASS: source-only, 62 original SVG, 257 mapped cases, 514 recolors")
+          PY
+      - name: Commit copied upstream artwork without previous generated SVGs
+        env:
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add packages/illustrations
+          if git diff --staged --quiet; then
+            echo "All source artworks already present"
+          else
+            git commit -m "build(illustrations): vendor source-only 257 usage artwork"
+            git push origin "HEAD:${BRANCH}"
+          fi
+      - name: Package original artworks, recolors, and registers
+        run: |
+          zip -q -r ZAMUREK_257_ILLUSTRATIONS_SOURCES_ONLY.zip packages/illustrations -x 'packages/illustrations/_upstream_checkout/*'
+      - name: Upload complete ZIP and self-contained HTML
+        uses: actions/upload-artifact@v4
+        with:
+          name: zamurek-257-source-only-ira-humaaans
+          path: |
+            ZAMUREK_257_ILLUSTRATIONS_SOURCES_ONLY.zip
+            packages/illustrations/ZAMUREK_VISUALISATION_SOURCES_257.html
+          retention-days: 30
