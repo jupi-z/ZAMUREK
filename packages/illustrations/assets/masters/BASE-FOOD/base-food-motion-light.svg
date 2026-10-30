@@ -4,7 +4,7 @@
 <style><![CDATA[#base-food-seal{transform-box:fill-box;transform-origin:center;animation:base-food-hint 2s ease-in-out 1}#base-food-device{transform-box:fill-box;transform-origin:center;animation:base-food-float 2.8s ease-in-out 1}@keyframes base-food-hint{0%,100%{scale:1;opacity:1}50%{scale:1.1;opacity:.72}}@keyframes base-food-float{0%,100%{translate:0 0}50%{translate:0 -6px}}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}]]></style>
 <g id="base-food-background" data-layer="decor">
 <circle cx="558" cy="300" r="192" fill="#EAF4EE" opacity=".81"/>
-<ellipse cx="566" cy="496" rx="171" ry="14" fill="#005C452" opacity=".12"/>
+<ellipse cx="566" cy="496" rx="171" ry="14" fill="#14886B" opacity=".12"/>
 <circle cx="707" cy="137" r="32" fill="#FF8A1E" opacity=".17"/>
 <path d="M701 218l10 16 16 10-16 10-10 16-10-16-16-10 16-10z" fill="#D21868" opacity=".25"/></g>
 <g id="base-food-person" data-upstream="Humaaans" data-source="standing-4.svg"><svg x="9" y="89" width="355" height="445" viewBox="0 0 380 480" overflow="visible">
@@ -43,11 +43,11 @@
     </g>
 </svg></g>
 <g id="base-food-device" data-layer="object" transform="translate(407 153)">
-<rect x="0" y="0" width="324" height="329" rx="51" fill="#FFFDFB" stroke="#FF8A1EUTLINE" stroke-width="4"/>
-<g id="base-food-object-geometry" transform="translate(1 16)"><ellipse cx="158" cy="166" rx="146" ry="101" fill="#FFFFFF" stroke="#005C452" stroke-width="13"/><ellipse cx="158" cy="166" rx="123" ry="82" fill="#FF8A1E"/><path d="M158 166L75 105q-36 71 24 117z" fill="#005C452"/><path d="M158 166l91-61q33 75-34 122z" fill="#FFF0DE"/><circle cx="98" cy="141" r="15" fill="#D21868"/><circle cx="198" cy="186" r="15" fill="#D21868"/><circle cx="148" cy="210" r="11" fill="#D21868"/><path d="M101 41q-10-24 8-38m60 38q-10-24 8-38m50 41q-10-24 8-38" fill="none" stroke="#005C452" stroke-width="9" stroke-linecap="round"/></g>
+<rect x="0" y="0" width="324" height="329" rx="51" fill="#FFFDFB" stroke="#BEDBCC" stroke-width="4"/>
+<g id="base-food-object-geometry" transform="translate(1 16)"><ellipse cx="158" cy="166" rx="146" ry="101" fill="#FFFFFF" stroke="#14886B" stroke-width="13"/><ellipse cx="158" cy="166" rx="123" ry="82" fill="#FF8A1E"/><path d="M158 166L75 105q-36 71 24 117z" fill="#14886B"/><path d="M158 166l91-61q33 75-34 122z" fill="#FFF0DE"/><circle cx="98" cy="141" r="15" fill="#D21868"/><circle cx="198" cy="186" r="15" fill="#D21868"/><circle cx="148" cy="210" r="11" fill="#D21868"/><path d="M101 41q-10-24 8-38m60 38q-10-24 8-38m50 41q-10-24 8-38" fill="none" stroke="#14886B" stroke-width="9" stroke-linecap="round"/></g>
 </g>
 
 <g id="base-food-seal" data-layer="contextual-accessory" transform="translate(707 126)">
-<circle r="48" fill="#FFFDFB" stroke="#FF8A1EUTLINE" stroke-width="4"/>
+<circle r="48" fill="#FFFDFB" stroke="#BEDBCC" stroke-width="4"/>
 <g id="base-food-context-symbol"><circle r="13" fill="#FF8A1E"/></g></g>
 </svg>

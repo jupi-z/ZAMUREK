@@ -4,7 +4,7 @@
 
 <g id="zil-169-background" data-layer="decor">
 <circle cx="558" cy="300" r="192" fill="#EAF4EE" opacity=".81"/>
-<ellipse cx="566" cy="496" rx="171" ry="14" fill="#005C452" opacity=".12"/>
+<ellipse cx="566" cy="496" rx="171" ry="14" fill="#14886B" opacity=".12"/>
 <circle cx="707" cy="137" r="32" fill="#FF8A1E" opacity=".17"/>
 <path d="M701 218l10 16 16 10-16 10-10 16-10-16-16-10 16-10z" fill="#D21868" opacity=".25"/></g>
 <g id="zil-169-person" data-upstream="Humaaans" data-source="standing-11.svg"><svg x="9" y="89" width="355" height="445" viewBox="0 0 380 480" overflow="visible">
@@ -39,11 +39,11 @@
     </g>
 </svg></g>
 <g id="zil-169-device" data-layer="object" transform="translate(407 153)">
-<rect x="0" y="0" width="324" height="329" rx="51" fill="#FFFDFB" stroke="#FF8A1EUTLINE" stroke-width="4"/>
-<g id="zil-169-object-geometry" transform="translate(1 16)"><path d="M158 20l122 54v74q0 103-122 147Q36 253 36 148V74z" fill="#005C45"/><path d="M158 51l92 38v62q0 78-92 111-92-36-92-111V89z" fill="#005C452"/><path d="M117 150l27 29 61-61" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+<rect x="0" y="0" width="324" height="329" rx="51" fill="#FFFDFB" stroke="#BEDBCC" stroke-width="4"/>
+<g id="zil-169-object-geometry" transform="translate(1 16)"><path d="M158 20l122 54v74q0 103-122 147Q36 253 36 148V74z" fill="#005C45"/><path d="M158 51l92 38v62q0 78-92 111-92-36-92-111V89z" fill="#14886B"/><path d="M117 150l27 29 61-61" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
 </g>
 
 <g id="zil-169-seal" data-layer="contextual-accessory" transform="translate(707 126)">
-<circle r="48" fill="#FFFDFB" stroke="#FF8A1EUTLINE" stroke-width="4"/>
+<circle r="48" fill="#FFFDFB" stroke="#BEDBCC" stroke-width="4"/>
 <g id="zil-169-context-symbol"><circle cx="-6" cy="-6" r="19" fill="none" stroke="#005C45" stroke-width="8"/><path d="M7 8l23 22" stroke="#FF8A1E" stroke-width="8" stroke-linecap="round"/></g></g>
 </svg>

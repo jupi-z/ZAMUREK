@@ -4,7 +4,7 @@
 <style><![CDATA[#zil-147-seal{transform-box:fill-box;transform-origin:center;animation:zil-147-hint 2s ease-in-out 1}#zil-147-device{transform-box:fill-box;transform-origin:center;animation:zil-147-float 2.8s ease-in-out 1}@keyframes zil-147-hint{0%,100%{scale:1;opacity:1}50%{scale:1.1;opacity:.72}}@keyframes zil-147-float{0%,100%{translate:0 0}50%{translate:0 -6px}}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}]]></style>
 <g id="zil-147-background" data-layer="decor">
 <circle cx="558" cy="300" r="192" fill="#EAF4EE" opacity=".81"/>
-<ellipse cx="566" cy="496" rx="171" ry="14" fill="#005C452" opacity=".12"/>
+<ellipse cx="566" cy="496" rx="171" ry="14" fill="#14886B" opacity=".12"/>
 <circle cx="707" cy="137" r="32" fill="#FF8A1E" opacity=".17"/>
 <path d="M701 218l10 16 16 10-16 10-10 16-10-16-16-10 16-10z" fill="#D21868" opacity=".25"/></g>
 <g id="zil-147-person" data-upstream="Humaaans" data-source="standing-7.svg"><svg x="9" y="89" width="355" height="445" viewBox="0 0 380 480" overflow="visible">
@@ -49,11 +49,11 @@
     </g>
 </svg></g>
 <g id="zil-147-device" data-layer="object" transform="translate(407 153)">
-<rect x="0" y="0" width="324" height="329" rx="51" fill="#FFFDFB" stroke="#FF8A1EUTLINE" stroke-width="4"/>
-<g id="zil-147-object-geometry" transform="translate(1 16)"><rect x="67" y="26" width="193" height="232" rx="96" fill="#FF8A1E"/><rect x="82" y="41" width="162" height="200" rx="82" fill="#FFFFFF"/><path d="M105 193q54-100 114-29" stroke="#005C45" stroke-width="18" fill="none"/><path d="M55 271h224" stroke="#005C452" stroke-width="11" stroke-linecap="round"/><path d="M25 97l67 76m0-76l-67 76" stroke="#D21868" stroke-width="9"/><circle cx="41" cy="183" r="15" fill="none" stroke="#D21868" stroke-width="7"/><circle cx="91" cy="183" r="15" fill="none" stroke="#D21868" stroke-width="7"/></g>
+<rect x="0" y="0" width="324" height="329" rx="51" fill="#FFFDFB" stroke="#BEDBCC" stroke-width="4"/>
+<g id="zil-147-object-geometry" transform="translate(1 16)"><rect x="67" y="26" width="193" height="232" rx="96" fill="#FF8A1E"/><rect x="82" y="41" width="162" height="200" rx="82" fill="#FFFFFF"/><path d="M105 193q54-100 114-29" stroke="#005C45" stroke-width="18" fill="none"/><path d="M55 271h224" stroke="#14886B" stroke-width="11" stroke-linecap="round"/><path d="M25 97l67 76m0-76l-67 76" stroke="#D21868" stroke-width="9"/><circle cx="41" cy="183" r="15" fill="none" stroke="#D21868" stroke-width="7"/><circle cx="91" cy="183" r="15" fill="none" stroke="#D21868" stroke-width="7"/></g>
 </g>
 <g id="zil-147-ira" data-upstream="IRA Design" data-source="hair.svg"><svg x="645" y="392" width="66" height="66" viewBox="0 0 30.59 21" overflow="visible"><defs><style>.cls-1{fill:#14886B;}</style></defs><title>hair</title><g id="zil-147-ira-node-0" data-part="part"><path class="cls-1" d="M22.74,14.69S9.38,19.56,6.63,21.6a6.66,6.66,0,0,0-2.48,2.92s-1.42-.62-1.33,1.42-1.59-3.19-2-4.87A11.14,11.14,0,0,1,4,11.24c3.63-3.45,7.61-6,11-5.84a12.65,12.65,0,0,1,8.76,3.72c2.65,2.57,3.27,2.39,3.81,2.65a10.84,10.84,0,0,1,3.63,6.37A31.57,31.57,0,0,1,30.53,26a1,1,0,0,0-1.33-.18c-.71.53-.88-3-3.19-7.35C24.33,15.31,22.74,14.69,22.74,14.69Z" transform="translate(-0.63 -5.39)"/></g></svg></g>
 <g id="zil-147-seal" data-layer="contextual-accessory" transform="translate(707 126)">
-<circle r="48" fill="#FFFDFB" stroke="#FF8A1EUTLINE" stroke-width="4"/>
-<g id="zil-147-context-symbol"><circle r="27" fill="#005C45"/><circle r="13" fill="#FF8A1E"/></g></g>
+<circle r="48" fill="#FFFDFB" stroke="#BEDBCC" stroke-width="4"/>
+<g id="zil-147-context-symbol"><g transform="translate(-35 -35) scale(.22)"><rect x="67" y="26" width="193" height="232" rx="96" fill="#FF8A1E"/><rect x="82" y="41" width="162" height="200" rx="82" fill="#FFFFFF"/><path d="M105 193q54-100 114-29" stroke="#005C45" stroke-width="18" fill="none"/><path d="M55 271h224" stroke="#14886B" stroke-width="11" stroke-linecap="round"/><path d="M25 97l67 76m0-76l-67 76" stroke="#D21868" stroke-width="9"/><circle cx="41" cy="183" r="15" fill="none" stroke="#D21868" stroke-width="7"/><circle cx="91" cy="183" r="15" fill="none" stroke="#D21868" stroke-width="7"/></g></g></g>
 </svg>

@@ -4,7 +4,7 @@
 
 <g id="zil-066-background" data-layer="decor">
 <circle cx="558" cy="300" r="192" fill="#EAF4EE" opacity=".81"/>
-<ellipse cx="566" cy="496" rx="171" ry="14" fill="#005C452" opacity=".12"/>
+<ellipse cx="566" cy="496" rx="171" ry="14" fill="#14886B" opacity=".12"/>
 <circle cx="707" cy="137" r="32" fill="#FF8A1E" opacity=".17"/>
 <path d="M701 218l10 16 16 10-16 10-10 16-10-16-16-10 16-10z" fill="#D21868" opacity=".25"/></g>
 <g id="zil-066-person" data-upstream="Humaaans" data-source="standing-18.svg"><svg x="9" y="89" width="355" height="445" viewBox="0 0 380 480" overflow="visible">
@@ -43,11 +43,11 @@
     </g>
 </svg></g>
 <g id="zil-066-device" data-layer="object" transform="translate(407 153)">
-<rect x="0" y="0" width="324" height="329" rx="51" fill="#FFFDFB" stroke="#FF8A1EUTLINE" stroke-width="4"/>
-<g id="zil-066-object-geometry" transform="translate(1 16)"><path d="M38 113h244l-34 141H73z" fill="#005C45" stroke="#142C25" stroke-width="6"/><path d="M78 113Q80 37 160 37t82 76" stroke="#FF8A1E" stroke-width="22" fill="none" stroke-linecap="round"/><path d="M108 150v75m53-75v75m53-75v75" stroke="#FFFFFF" stroke-width="13" opacity=".66"/><path d="M41 113h239" stroke="#005C452" stroke-width="15"/></g>
+<rect x="0" y="0" width="324" height="329" rx="51" fill="#FFFDFB" stroke="#BEDBCC" stroke-width="4"/>
+<g id="zil-066-object-geometry" transform="translate(1 16)"><path d="M38 113h244l-34 141H73z" fill="#005C45" stroke="#142C25" stroke-width="6"/><path d="M78 113Q80 37 160 37t82 76" stroke="#FF8A1E" stroke-width="22" fill="none" stroke-linecap="round"/><path d="M108 150v75m53-75v75m53-75v75" stroke="#FFFFFF" stroke-width="13" opacity=".66"/><path d="M41 113h239" stroke="#14886B" stroke-width="15"/></g>
 </g>
 
 <g id="zil-066-seal" data-layer="contextual-accessory" transform="translate(707 126)">
-<circle r="48" fill="#FFFDFB" stroke="#FF8A1EUTLINE" stroke-width="4"/>
+<circle r="48" fill="#FFFDFB" stroke="#BEDBCC" stroke-width="4"/>
 <g id="zil-066-context-symbol"><path d="M-28-17L0-32l28 15v32L0 32l-28-17z" fill="#005C45"/><path d="M-28-17L0 1l28-18M0 1v31" fill="none" stroke="#FFFFFF" stroke-width="4"/></g></g>
 </svg>

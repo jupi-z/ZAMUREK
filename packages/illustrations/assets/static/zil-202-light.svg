@@ -4,7 +4,7 @@
 
 <g id="zil-202-background" data-layer="decor">
 <circle cx="558" cy="300" r="192" fill="#EAF4EE" opacity=".81"/>
-<ellipse cx="566" cy="496" rx="171" ry="14" fill="#005C452" opacity=".12"/>
+<ellipse cx="566" cy="496" rx="171" ry="14" fill="#14886B" opacity=".12"/>
 <circle cx="707" cy="137" r="32" fill="#FF8A1E" opacity=".17"/>
 <path d="M701 218l10 16 16 10-16 10-10 16-10-16-16-10 16-10z" fill="#D21868" opacity=".25"/></g>
 <g id="zil-202-person" data-upstream="Humaaans" data-source="standing-23.svg"><svg x="9" y="89" width="355" height="445" viewBox="0 0 380 480" overflow="visible">
@@ -40,11 +40,11 @@
     </g>
 </svg></g>
 <g id="zil-202-device" data-layer="object" transform="translate(407 153)">
-<rect x="0" y="0" width="324" height="329" rx="51" fill="#FFFDFB" stroke="#FF8A1EUTLINE" stroke-width="4"/>
+<rect x="0" y="0" width="324" height="329" rx="51" fill="#FFFDFB" stroke="#BEDBCC" stroke-width="4"/>
 <g id="zil-202-object-geometry" transform="translate(1 16)"><rect x="27" y="57" width="263" height="185" rx="44" fill="#005C45"/><path d="M88 242l-18 48 82-48" fill="#005C45"/><path d="M127 105l13 35 34 14-34 13-13 34-14-34-34-13 34-14z" fill="#FF8A1E"/><path d="M230 96l10 21 20 10-20 10-10 20-10-20-19-10 19-10z" fill="#FFFFFF"/><circle cx="212" cy="197" r="13" fill="#D21868"/></g>
 </g>
 
 <g id="zil-202-seal" data-layer="contextual-accessory" transform="translate(707 126)">
-<circle r="48" fill="#FFFDFB" stroke="#FF8A1EUTLINE" stroke-width="4"/>
+<circle r="48" fill="#FFFDFB" stroke="#BEDBCC" stroke-width="4"/>
 <g id="zil-202-context-symbol"><path d="M-27-11h54l-8 38h-38z" fill="#005C45"/><path d="M-15-9Q-15-31 0-31T15-9" stroke="#FF8A1E" stroke-width="8" fill="none"/></g></g>
 </svg>

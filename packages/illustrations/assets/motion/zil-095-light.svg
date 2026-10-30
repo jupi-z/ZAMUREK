@@ -4,7 +4,7 @@
 <style><![CDATA[#zil-095-seal{transform-box:fill-box;transform-origin:center;animation:zil-095-hint 2s ease-in-out 1}#zil-095-device{transform-box:fill-box;transform-origin:center;animation:zil-095-float 2.8s ease-in-out 1}@keyframes zil-095-hint{0%,100%{scale:1;opacity:1}50%{scale:1.1;opacity:.72}}@keyframes zil-095-float{0%,100%{translate:0 0}50%{translate:0 -6px}}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}]]></style>
 <g id="zil-095-background" data-layer="decor">
 <circle cx="558" cy="300" r="192" fill="#EAF4EE" opacity=".81"/>
-<ellipse cx="566" cy="496" rx="171" ry="14" fill="#005C452" opacity=".12"/>
+<ellipse cx="566" cy="496" rx="171" ry="14" fill="#14886B" opacity=".12"/>
 <circle cx="707" cy="137" r="32" fill="#FF8A1E" opacity=".17"/>
 <path d="M701 218l10 16 16 10-16 10-10 16-10-16-16-10 16-10z" fill="#D21868" opacity=".25"/></g>
 <g id="zil-095-person" data-upstream="Humaaans" data-source="standing-4.svg"><svg x="9" y="89" width="355" height="445" viewBox="0 0 380 480" overflow="visible">
@@ -43,11 +43,11 @@
     </g>
 </svg></g>
 <g id="zil-095-device" data-layer="object" transform="translate(407 153)">
-<rect x="0" y="0" width="324" height="329" rx="51" fill="#FFFDFB" stroke="#FF8A1EUTLINE" stroke-width="4"/>
-<g id="zil-095-object-geometry" transform="translate(1 16)"><path d="M78 69l47-37q31 39 70 0l49 37 41 53-43 41-28-22v126H106V141l-28 22-43-41z" fill="#005C45" stroke="#005C452" stroke-width="6"/><path d="M129 111h70" stroke="#FFFFFF" stroke-width="8"/><path d="M204 189l77-1v68l-77 1z" fill="#FF8A1E"/><circle cx="226" cy="208" r="8" fill="#FFFFFF"/></g>
+<rect x="0" y="0" width="324" height="329" rx="51" fill="#FFFDFB" stroke="#BEDBCC" stroke-width="4"/>
+<g id="zil-095-object-geometry" transform="translate(1 16)"><path d="M78 69l47-37q31 39 70 0l49 37 41 53-43 41-28-22v126H106V141l-28 22-43-41z" fill="#005C45" stroke="#14886B" stroke-width="6"/><path d="M129 111h70" stroke="#FFFFFF" stroke-width="8"/><path d="M204 189l77-1v68l-77 1z" fill="#FF8A1E"/><circle cx="226" cy="208" r="8" fill="#FFFFFF"/></g>
 </g>
 <g id="zil-095-ira" data-upstream="IRA Design" data-source="tshirt.svg"><svg x="645" y="392" width="66" height="66" viewBox="0 0 64 64" overflow="visible"><g class="nc-icon-wrapper" fill="#14886B"><path fill="#14886B" d="M62.5,9.3l-10-6.2C52.4,3.1,52.2,3,52,3H42c-0.6,0-1,0.4-1,1c0,5-4,9-9,9s-9-4-9-9c0-0.6-0.4-1-1-1H12 c-0.2,0-0.4,0.1-0.5,0.1l-10,6.2C1.2,9.5,1,9.8,1,10.2V26c0,0.6,0.4,1,1,1h9v33c0,0.6,0.4,1,1,1h40c0.6,0,1-0.4,1-1V27h9 c0.6,0,1-0.4,1-1V10.2C63,9.8,62.8,9.5,62.5,9.3z"></path></g></svg></g>
 <g id="zil-095-seal" data-layer="contextual-accessory" transform="translate(707 126)">
-<circle r="48" fill="#FFFDFB" stroke="#FF8A1EUTLINE" stroke-width="4"/>
-<g id="zil-095-context-symbol"><circle r="27" fill="#005C45"/><circle r="13" fill="#FF8A1E"/></g></g>
+<circle r="48" fill="#FFFDFB" stroke="#BEDBCC" stroke-width="4"/>
+<g id="zil-095-context-symbol"><g transform="translate(-35 -35) scale(.22)"><path d="M78 69l47-37q31 39 70 0l49 37 41 53-43 41-28-22v126H106V141l-28 22-43-41z" fill="#005C45" stroke="#14886B" stroke-width="6"/><path d="M129 111h70" stroke="#FFFFFF" stroke-width="8"/><path d="M204 189l77-1v68l-77 1z" fill="#FF8A1E"/><circle cx="226" cy="208" r="8" fill="#FFFFFF"/></g></g></g>
 </svg>

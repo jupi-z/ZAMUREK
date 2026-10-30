@@ -4,7 +4,7 @@
 <style><![CDATA[#zil-232-seal{transform-box:fill-box;transform-origin:center;animation:zil-232-hint 2s ease-in-out 1}#zil-232-device{transform-box:fill-box;transform-origin:center;animation:zil-232-float 2.8s ease-in-out 1}@keyframes zil-232-hint{0%,100%{scale:1;opacity:1}50%{scale:1.1;opacity:.72}}@keyframes zil-232-float{0%,100%{translate:0 0}50%{translate:0 -6px}}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}]]></style>
 <g id="zil-232-background" data-layer="decor">
 <circle cx="558" cy="300" r="192" fill="#33453A" opacity=".81"/>
-<ellipse cx="566" cy="496" rx="171" ry="14" fill="#005C452" opacity=".12"/>
+<ellipse cx="566" cy="496" rx="171" ry="14" fill="#14886B" opacity=".12"/>
 <circle cx="707" cy="137" r="32" fill="#FF8A1E" opacity=".17"/>
 <path d="M701 218l10 16 16 10-16 10-10 16-10-16-16-10 16-10z" fill="#D21868" opacity=".25"/></g>
 <g id="zil-232-person" data-upstream="Humaaans" data-source="standing-23.svg"><svg x="9" y="89" width="355" height="445" viewBox="0 0 380 480" overflow="visible">
@@ -40,11 +40,11 @@
     </g>
 </svg></g>
 <g id="zil-232-device" data-layer="object" transform="translate(407 153)">
-<rect x="0" y="0" width="324" height="329" rx="51" fill="#233128" stroke="#FF8A1EUTLINE" stroke-width="4"/>
-<g id="zil-232-object-geometry" transform="translate(1 16)"><rect x="75" y="13" width="177" height="275" rx="30" fill="#A8C7B5"/><rect x="89" y="30" width="148" height="243" rx="16" fill="#E8F7EE"/><circle cx="123" cy="92" r="21" fill="#005C45"/><circle cx="123" cy="158" r="21" fill="#FF8A1E"/><circle cx="123" cy="223" r="21" fill="#D21868"/><path d="M159 92h49M159 158h49M159 223h49" stroke="#005C452" stroke-width="12" stroke-linecap="round"/></g>
+<rect x="0" y="0" width="324" height="329" rx="51" fill="#233128" stroke="#4B7660" stroke-width="4"/>
+<g id="zil-232-object-geometry" transform="translate(1 16)"><rect x="75" y="13" width="177" height="275" rx="30" fill="#A8C7B5"/><rect x="89" y="30" width="148" height="243" rx="16" fill="#E8F7EE"/><circle cx="123" cy="92" r="21" fill="#005C45"/><circle cx="123" cy="158" r="21" fill="#FF8A1E"/><circle cx="123" cy="223" r="21" fill="#D21868"/><path d="M159 92h49M159 158h49M159 223h49" stroke="#14886B" stroke-width="12" stroke-linecap="round"/></g>
 </g>
 
 <g id="zil-232-seal" data-layer="contextual-accessory" transform="translate(707 126)">
-<circle r="48" fill="#233128" stroke="#FF8A1EUTLINE" stroke-width="4"/>
+<circle r="48" fill="#233128" stroke="#4B7660" stroke-width="4"/>
 <g id="zil-232-context-symbol"><path d="M-28-17L0-32l28 15v32L0 32l-28-17z" fill="#005C45"/><path d="M-28-17L0 1l28-18M0 1v31" fill="none" stroke="#E8F7EE" stroke-width="4"/></g></g>
 </svg>

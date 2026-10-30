@@ -14,16 +14,16 @@ ZIL-012,Aucun établissement lié,BASE-EMPTY,P1,REVUE_VISUELLE_REQUISE,False,ass
 ZIL-013,Aucune notification,BASE-EMPTY,P1,REVUE_VISUELLE_REQUISE,False,assets/static/zil-013-light.svg,assets/motion/zil-013-light.svg,assets/static/zil-013-dark.svg,assets/motion/zil-013-dark.svg
 ZIL-014,Aucune activité récente,BASE-EMPTY,P1,REVUE_VISUELLE_REQUISE,False,assets/static/zil-014-light.svg,assets/motion/zil-014-light.svg,assets/static/zil-014-dark.svg,assets/motion/zil-014-dark.svg
 ZIL-015,Aucune recherche récente,BASE-EMPTY,P1,REVUE_VISUELLE_REQUISE,False,assets/static/zil-015-light.svg,assets/motion/zil-015-light.svg,assets/static/zil-015-dark.svg,assets/motion/zil-015-dark.svg
-ZIL-016,Action réussie,BASE-SUCCESS,P0,REVUE_VISUELLE_REQUISE,False,assets/static/zil-016-light.svg,assets/motion/zil-016-light.svg,assets/static/zil-016-dark.svg,assets/motion/zil-016-dark.svg
-ZIL-017,Commande confirmée,BASE-SUCCESS,P0,REVUE_VISUELLE_REQUISE,False,assets/static/zil-017-light.svg,assets/motion/zil-017-light.svg,assets/static/zil-017-dark.svg,assets/motion/zil-017-dark.svg
+ZIL-016,Action réussie,BASE-SUCCESS,P0,REVUE_VISUELLE_REQUISE,True,assets/static/zil-016-light.svg,assets/motion/zil-016-light.svg,assets/static/zil-016-dark.svg,assets/motion/zil-016-dark.svg
+ZIL-017,Commande confirmée,BASE-SUCCESS,P0,REVUE_VISUELLE_REQUISE,True,assets/static/zil-017-light.svg,assets/motion/zil-017-light.svg,assets/static/zil-017-dark.svg,assets/motion/zil-017-dark.svg
 ZIL-018,Paiement confirmé,BASE-SUCCESS,P0,REVUE_VISUELLE_REQUISE,True,assets/static/zil-018-light.svg,assets/motion/zil-018-light.svg,assets/static/zil-018-dark.svg,assets/motion/zil-018-dark.svg
 ZIL-019,Réservation confirmée,BASE-SUCCESS,P0,REVUE_VISUELLE_REQUISE,False,assets/static/zil-019-light.svg,assets/motion/zil-019-light.svg,assets/static/zil-019-dark.svg,assets/motion/zil-019-dark.svg
 ZIL-020,Profil créé,BASE-SUCCESS,P1,REVUE_VISUELLE_REQUISE,False,assets/static/zil-020-light.svg,assets/motion/zil-020-light.svg,assets/static/zil-020-dark.svg,assets/motion/zil-020-dark.svg
 ZIL-021,Boutique créée,BASE-SUCCESS,P1,REVUE_VISUELLE_REQUISE,False,assets/static/zil-021-light.svg,assets/motion/zil-021-light.svg,assets/static/zil-021-dark.svg,assets/motion/zil-021-dark.svg
 ZIL-022,Produit ajouté avec succès,BASE-SUCCESS,P1,REVUE_VISUELLE_REQUISE,False,assets/static/zil-022-light.svg,assets/motion/zil-022-light.svg,assets/static/zil-022-dark.svg,assets/motion/zil-022-dark.svg
 ZIL-023,Service publié,BASE-SUCCESS,P2,REVUE_VISUELLE_REQUISE,False,assets/static/zil-023-light.svg,assets/motion/zil-023-light.svg,assets/static/zil-023-dark.svg,assets/motion/zil-023-dark.svg
-ZIL-024,Synchronisation réussie,BASE-SUCCESS,P1,REVUE_VISUELLE_REQUISE,False,assets/static/zil-024-light.svg,assets/motion/zil-024-light.svg,assets/static/zil-024-dark.svg,assets/motion/zil-024-dark.svg
-ZIL-025,Impression réussie,BASE-SUCCESS,P1,REVUE_VISUELLE_REQUISE,False,assets/static/zil-025-light.svg,assets/motion/zil-025-light.svg,assets/static/zil-025-dark.svg,assets/motion/zil-025-dark.svg
+ZIL-024,Synchronisation réussie,BASE-SUCCESS,P1,REVUE_VISUELLE_REQUISE,True,assets/static/zil-024-light.svg,assets/motion/zil-024-light.svg,assets/static/zil-024-dark.svg,assets/motion/zil-024-dark.svg
+ZIL-025,Impression réussie,BASE-SUCCESS,P1,REVUE_VISUELLE_REQUISE,True,assets/static/zil-025-light.svg,assets/motion/zil-025-light.svg,assets/static/zil-025-dark.svg,assets/motion/zil-025-dark.svg
 ZIL-026,Erreur réseau,BASE-ERROR,P0,REVUE_VISUELLE_REQUISE,False,assets/static/zil-026-light.svg,assets/motion/zil-026-light.svg,assets/static/zil-026-dark.svg,assets/motion/zil-026-dark.svg
 ZIL-027,Erreur serveur,BASE-ERROR,P0,REVUE_VISUELLE_REQUISE,False,assets/static/zil-027-light.svg,assets/motion/zil-027-light.svg,assets/static/zil-027-dark.svg,assets/motion/zil-027-dark.svg
 ZIL-028,Paiement échoué,BASE-ERROR,P0,REVUE_VISUELLE_REQUISE,True,assets/static/zil-028-light.svg,assets/motion/zil-028-light.svg,assets/static/zil-028-dark.svg,assets/motion/zil-028-dark.svg
@@ -273,4 +273,4 @@ ZIL-271,Appareil connecté,BASE-UTILITY,P1,REVUE_VISUELLE_REQUISE,False,assets/s
 ZIL-272,Appareil non connecté,BASE-UTILITY,P1,REVUE_VISUELLE_REQUISE,False,assets/static/zil-272-light.svg,assets/motion/zil-272-light.svg,assets/static/zil-272-dark.svg,assets/motion/zil-272-dark.svg
 ZIL-273,Export / impression,BASE-UTILITY,P1,REVUE_VISUELLE_REQUISE,False,assets/static/zil-273-light.svg,assets/motion/zil-273-light.svg,assets/static/zil-273-dark.svg,assets/motion/zil-273-dark.svg
 ZIL-274,Historique,BASE-UTILITY,P1,REVUE_VISUELLE_REQUISE,False,assets/static/zil-274-light.svg,assets/motion/zil-274-light.svg,assets/static/zil-274-dark.svg,assets/motion/zil-274-dark.svg
-ZIL-275,Sauvegarde réussie,BASE-UTILITY,P1,REVUE_VISUELLE_REQUISE,False,assets/static/zil-275-light.svg,assets/motion/zil-275-light.svg,assets/static/zil-275-dark.svg,assets/motion/zil-275-dark.svg
+ZIL-275,Sauvegarde réussie,BASE-UTILITY,P1,REVUE_VISUELLE_REQUISE,True,assets/static/zil-275-light.svg,assets/motion/zil-275-light.svg,assets/static/zil-275-dark.svg,assets/motion/zil-275-dark.svg
