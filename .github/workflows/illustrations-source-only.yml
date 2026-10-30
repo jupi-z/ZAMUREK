@@ -50,6 +50,20 @@ jobs:
           assert not (p/"scripts/build_full_library.py").exists()
           print("PASS: source-only, 62 original SVG, 257 mapped cases, 514 recolors")
           PY
+      - name: Record source-only gallery and per-case mappings in review branch
+        if: github.event_name == 'push'
+        env:
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add packages/illustrations
+          if git diff --staged --quiet; then
+            echo "No generated mapping changes"
+          else
+            git commit -m "build(illustrations): update curated existing-source mappings"
+            git push origin "HEAD:${BRANCH}"
+          fi
       - name: Package original artworks, recolors, and registers
         run: |
           zip -q -r ZAMUREK_257_ILLUSTRATIONS_SOURCES_ONLY.zip packages/illustrations -x 'packages/illustrations/_upstream_checkout/*'
