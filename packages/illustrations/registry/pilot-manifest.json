@@ -1,0 +1,46 @@
+{
+  "version": "0.1.0",
+  "date": "2026-10-30",
+  "status": "REVUE_VISUELLE_REQUISE",
+  "count": 3,
+  "assets": [
+    {
+      "id": "ZIL-001",
+      "variants": [
+        "assets/static/zil-001-light.svg",
+        "assets/static/zil-001-dark.svg",
+        "assets/motion/zil-001-light.svg",
+        "assets/motion/zil-001-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-044",
+      "variants": [
+        "assets/static/zil-044-light.svg",
+        "assets/static/zil-044-dark.svg",
+        "assets/motion/zil-044-light.svg",
+        "assets/motion/zil-044-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-117",
+      "variants": [
+        "assets/static/zil-117-light.svg",
+        "assets/static/zil-117-dark.svg",
+        "assets/motion/zil-117-light.svg",
+        "assets/motion/zil-117-dark.svg"
+      ]
+    }
+  ],
+  "licenses": [
+    "Humaaans mirror CC BY 4.0 (attribution retained)",
+    "IRA Design MIT (notice retained)"
+  ],
+  "checks": {
+    "noRaster": true,
+    "noScript": true,
+    "reducedMotion": true,
+    "loopingAnimations": false,
+    "visualQA": false
+  }
+}
