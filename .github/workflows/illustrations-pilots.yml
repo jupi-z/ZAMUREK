@@ -73,7 +73,7 @@ jobs:
           fi
       - name: Package full library for review
         run: |
-          zip -q -r ZAMUREK_ILLUSTRATIONS_275_SVG.zip packages/illustrations/assets packages/illustrations/registry packages/illustrations/reports packages/illustrations/ZAMUREK_ILLUSTRATIONS_STUDIO_33_FAMILLES.html
+          zip -q -r ZAMUREK_ILLUSTRATIONS_275_SVG.zip packages/illustrations
       - name: Upload self-contained visual studio and vector bundle
         uses: actions/upload-artifact@v4
         with:
