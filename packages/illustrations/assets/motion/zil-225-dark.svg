@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="600" viewBox="0 0 800 600" role="img" aria-labelledby="zil-225-title zil-225-desc" data-illustration="ZIL-225" data-base="BASE-TRUST" data-theme="dark" data-motion="on" data-requires-business-state="false" data-status="REVUE_VISUELLE_REQUISE">
+<title id="zil-225-title">Session expirée</title><desc id="zil-225-desc">Illustration Zamurek. Géométrie vectorielle native. Famille BASE-TRUST. Sources Humaaans / IRA Design lorsque présentes. Pas de preuve transactionnelle.</desc>
+<style><![CDATA[#zil-225-seal{transform-box:fill-box;transform-origin:center;animation:zil-225-hint 2s ease-in-out 1}#zil-225-device{transform-box:fill-box;transform-origin:center;animation:zil-225-float 2.8s ease-in-out 1}@keyframes zil-225-hint{0%,100%{scale:1;opacity:1}50%{scale:1.1;opacity:.72}}@keyframes zil-225-float{0%,100%{translate:0 0}50%{translate:0 -6px}}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}]]></style>
+<g id="zil-225-background" data-layer="decor">
+<circle cx="389" cy="300" r="192" fill="#33453A" opacity=".81"/>
+<ellipse cx="397" cy="496" rx="171" ry="14" fill="#005C452" opacity=".12"/>
+<circle cx="538" cy="137" r="32" fill="#FF8A1E" opacity=".17"/>
+<path d="M532 218l10 16 16 10-16 10-10 16-10-16-16-10 16-10z" fill="#D21868" opacity=".25"/></g>
+
+<g id="zil-225-device" data-layer="object" transform="translate(238 153)">
+<rect x="0" y="0" width="324" height="329" rx="51" fill="#233128" stroke="#FF8A1EUTLINE" stroke-width="4"/>
+<g id="zil-225-object-geometry" transform="translate(1 16)"><path d="M158 20l122 54v74q0 103-122 147Q36 253 36 148V74z" fill="#005C45"/><path d="M158 51l92 38v62q0 78-92 111-92-36-92-111V89z" fill="#005C452"/><path d="M117 150l27 29 61-61" stroke="#E8F7EE" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+</g>
+
+<g id="zil-225-seal" data-layer="contextual-accessory" transform="translate(538 126)">
+<circle r="48" fill="#233128" stroke="#FF8A1EUTLINE" stroke-width="4"/>
+<g id="zil-225-context-symbol"><path d="M0-32l32 58h-64z" fill="#D21868"/><path d="M0-13v18m0 9v1" stroke="#E8F7EE" stroke-width="6" stroke-linecap="round"/></g></g>
+</svg>

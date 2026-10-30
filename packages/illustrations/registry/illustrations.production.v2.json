@@ -1,0 +1,6694 @@
+{
+  "schemaVersion": "2.0",
+  "status": "VECTORS_GENERATED_QA_PENDING",
+  "visualAccepted": false,
+  "mobileValidated": false,
+  "countCases": 275,
+  "countMasters": 33,
+  "countVariants": 1100,
+  "newCaseFiles": 1088,
+  "masterVariants": 132,
+  "sourceRegistry": "docs/design/illustrations/ZAMUREK_Illustrations_Registry_V1.json",
+  "sources": "8 pinned Humaaans vectors + 4 pinned IRA Design SVG components",
+  "items": [
+    {
+      "id": "ZIL-001",
+      "no": 1,
+      "group": "A1",
+      "name": "Panier vide",
+      "base": "BASE-EMPTY",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-12",
+        "FND-14"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": true,
+      "paths": [
+        "assets/static/zil-001-light.svg",
+        "assets/motion/zil-001-light.svg",
+        "assets/static/zil-001-dark.svg",
+        "assets/motion/zil-001-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-002",
+      "no": 2,
+      "group": "A1",
+      "name": "Aucun résultat",
+      "base": "BASE-EMPTY",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-12",
+        "FND-14"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-002-light.svg",
+        "assets/motion/zil-002-light.svg",
+        "assets/static/zil-002-dark.svg",
+        "assets/motion/zil-002-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-003",
+      "no": 3,
+      "group": "A1",
+      "name": "Aucun favori",
+      "base": "BASE-EMPTY",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-12",
+        "FND-14"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-003-light.svg",
+        "assets/motion/zil-003-light.svg",
+        "assets/static/zil-003-dark.svg",
+        "assets/motion/zil-003-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-004",
+      "no": 4,
+      "group": "A1",
+      "name": "Aucune commande",
+      "base": "BASE-EMPTY",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-12",
+        "FND-14"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-004-light.svg",
+        "assets/motion/zil-004-light.svg",
+        "assets/static/zil-004-dark.svg",
+        "assets/motion/zil-004-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-005",
+      "no": 5,
+      "group": "A1",
+      "name": "Aucune réservation",
+      "base": "BASE-EMPTY",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-12",
+        "FND-14"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-005-light.svg",
+        "assets/motion/zil-005-light.svg",
+        "assets/static/zil-005-dark.svg",
+        "assets/motion/zil-005-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-006",
+      "no": 6,
+      "group": "A1",
+      "name": "Aucun message",
+      "base": "BASE-EMPTY",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-12",
+        "FND-14"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-006-light.svg",
+        "assets/motion/zil-006-light.svg",
+        "assets/static/zil-006-dark.svg",
+        "assets/motion/zil-006-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-007",
+      "no": 7,
+      "group": "A1",
+      "name": "Aucune boutique disponible",
+      "base": "BASE-EMPTY",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-12",
+        "FND-14"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-007-light.svg",
+        "assets/motion/zil-007-light.svg",
+        "assets/static/zil-007-dark.svg",
+        "assets/motion/zil-007-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-008",
+      "no": 8,
+      "group": "A1",
+      "name": "Aucun produit disponible",
+      "base": "BASE-EMPTY",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-12",
+        "FND-14"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-008-light.svg",
+        "assets/motion/zil-008-light.svg",
+        "assets/static/zil-008-dark.svg",
+        "assets/motion/zil-008-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-009",
+      "no": 9,
+      "group": "A1",
+      "name": "Aucun service disponible",
+      "base": "BASE-EMPTY",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-12",
+        "FND-14"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-009-light.svg",
+        "assets/motion/zil-009-light.svg",
+        "assets/static/zil-009-dark.svg",
+        "assets/motion/zil-009-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-010",
+      "no": 10,
+      "group": "A1",
+      "name": "Aucun restaurant disponible",
+      "base": "BASE-EMPTY",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-12",
+        "FND-14"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-010-light.svg",
+        "assets/motion/zil-010-light.svg",
+        "assets/static/zil-010-dark.svg",
+        "assets/motion/zil-010-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-011",
+      "no": 11,
+      "group": "A1",
+      "name": "Aucun historique",
+      "base": "BASE-EMPTY",
+      "priority": "P2",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-12",
+        "FND-14"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-011-light.svg",
+        "assets/motion/zil-011-light.svg",
+        "assets/static/zil-011-dark.svg",
+        "assets/motion/zil-011-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-012",
+      "no": 12,
+      "group": "A1",
+      "name": "Aucun établissement lié",
+      "base": "BASE-EMPTY",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-12",
+        "FND-14"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-012-light.svg",
+        "assets/motion/zil-012-light.svg",
+        "assets/static/zil-012-dark.svg",
+        "assets/motion/zil-012-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-013",
+      "no": 13,
+      "group": "A1",
+      "name": "Aucune notification",
+      "base": "BASE-EMPTY",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-12",
+        "FND-14"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-013-light.svg",
+        "assets/motion/zil-013-light.svg",
+        "assets/static/zil-013-dark.svg",
+        "assets/motion/zil-013-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-014",
+      "no": 14,
+      "group": "A1",
+      "name": "Aucune activité récente",
+      "base": "BASE-EMPTY",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-12",
+        "FND-14"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-014-light.svg",
+        "assets/motion/zil-014-light.svg",
+        "assets/static/zil-014-dark.svg",
+        "assets/motion/zil-014-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-015",
+      "no": 15,
+      "group": "A1",
+      "name": "Aucune recherche récente",
+      "base": "BASE-EMPTY",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-12",
+        "FND-14"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-015-light.svg",
+        "assets/motion/zil-015-light.svg",
+        "assets/static/zil-015-dark.svg",
+        "assets/motion/zil-015-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-016",
+      "no": 16,
+      "group": "A2",
+      "name": "Action réussie",
+      "base": "BASE-SUCCESS",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-16"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-016-light.svg",
+        "assets/motion/zil-016-light.svg",
+        "assets/static/zil-016-dark.svg",
+        "assets/motion/zil-016-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-017",
+      "no": 17,
+      "group": "A2",
+      "name": "Commande confirmée",
+      "base": "BASE-SUCCESS",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-16"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-017-light.svg",
+        "assets/motion/zil-017-light.svg",
+        "assets/static/zil-017-dark.svg",
+        "assets/motion/zil-017-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-018",
+      "no": 18,
+      "group": "A2",
+      "name": "Paiement confirmé",
+      "base": "BASE-SUCCESS",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-16"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": true,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-018-light.svg",
+        "assets/motion/zil-018-light.svg",
+        "assets/static/zil-018-dark.svg",
+        "assets/motion/zil-018-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-019",
+      "no": 19,
+      "group": "A2",
+      "name": "Réservation confirmée",
+      "base": "BASE-SUCCESS",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-16"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-019-light.svg",
+        "assets/motion/zil-019-light.svg",
+        "assets/static/zil-019-dark.svg",
+        "assets/motion/zil-019-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-020",
+      "no": 20,
+      "group": "A2",
+      "name": "Profil créé",
+      "base": "BASE-SUCCESS",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-16"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-020-light.svg",
+        "assets/motion/zil-020-light.svg",
+        "assets/static/zil-020-dark.svg",
+        "assets/motion/zil-020-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-021",
+      "no": 21,
+      "group": "A2",
+      "name": "Boutique créée",
+      "base": "BASE-SUCCESS",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-16"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-021-light.svg",
+        "assets/motion/zil-021-light.svg",
+        "assets/static/zil-021-dark.svg",
+        "assets/motion/zil-021-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-022",
+      "no": 22,
+      "group": "A2",
+      "name": "Produit ajouté avec succès",
+      "base": "BASE-SUCCESS",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-16"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-022-light.svg",
+        "assets/motion/zil-022-light.svg",
+        "assets/static/zil-022-dark.svg",
+        "assets/motion/zil-022-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-023",
+      "no": 23,
+      "group": "A2",
+      "name": "Service publié",
+      "base": "BASE-SUCCESS",
+      "priority": "P2",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-16"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-023-light.svg",
+        "assets/motion/zil-023-light.svg",
+        "assets/static/zil-023-dark.svg",
+        "assets/motion/zil-023-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-024",
+      "no": 24,
+      "group": "A2",
+      "name": "Synchronisation réussie",
+      "base": "BASE-SUCCESS",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-16"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-024-light.svg",
+        "assets/motion/zil-024-light.svg",
+        "assets/static/zil-024-dark.svg",
+        "assets/motion/zil-024-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-025",
+      "no": 25,
+      "group": "A2",
+      "name": "Impression réussie",
+      "base": "BASE-SUCCESS",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-16"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-025-light.svg",
+        "assets/motion/zil-025-light.svg",
+        "assets/static/zil-025-dark.svg",
+        "assets/motion/zil-025-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-026",
+      "no": 26,
+      "group": "A3",
+      "name": "Erreur réseau",
+      "base": "BASE-ERROR",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-14",
+        "FND-16"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-026-light.svg",
+        "assets/motion/zil-026-light.svg",
+        "assets/static/zil-026-dark.svg",
+        "assets/motion/zil-026-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-027",
+      "no": 27,
+      "group": "A3",
+      "name": "Erreur serveur",
+      "base": "BASE-ERROR",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-14",
+        "FND-16"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-027-light.svg",
+        "assets/motion/zil-027-light.svg",
+        "assets/static/zil-027-dark.svg",
+        "assets/motion/zil-027-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-028",
+      "no": 28,
+      "group": "A3",
+      "name": "Paiement échoué",
+      "base": "BASE-ERROR",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-14",
+        "FND-16"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": true,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-028-light.svg",
+        "assets/motion/zil-028-light.svg",
+        "assets/static/zil-028-dark.svg",
+        "assets/motion/zil-028-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-029",
+      "no": 29,
+      "group": "A3",
+      "name": "Échec de synchronisation",
+      "base": "BASE-ERROR",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-14",
+        "FND-16"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-029-light.svg",
+        "assets/motion/zil-029-light.svg",
+        "assets/static/zil-029-dark.svg",
+        "assets/motion/zil-029-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-030",
+      "no": 30,
+      "group": "A3",
+      "name": "Impression échouée",
+      "base": "BASE-ERROR",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-14",
+        "FND-16"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-030-light.svg",
+        "assets/motion/zil-030-light.svg",
+        "assets/static/zil-030-dark.svg",
+        "assets/motion/zil-030-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-031",
+      "no": 31,
+      "group": "A3",
+      "name": "Produit introuvable",
+      "base": "BASE-ERROR",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-14",
+        "FND-16"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-031-light.svg",
+        "assets/motion/zil-031-light.svg",
+        "assets/static/zil-031-dark.svg",
+        "assets/motion/zil-031-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-032",
+      "no": 32,
+      "group": "A3",
+      "name": "Action impossible",
+      "base": "BASE-ERROR",
+      "priority": "P2",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-14",
+        "FND-16"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-032-light.svg",
+        "assets/motion/zil-032-light.svg",
+        "assets/static/zil-032-dark.svg",
+        "assets/motion/zil-032-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-033",
+      "no": 33,
+      "group": "A3",
+      "name": "Session expirée",
+      "base": "BASE-ERROR",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-14",
+        "FND-16"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-033-light.svg",
+        "assets/motion/zil-033-light.svg",
+        "assets/static/zil-033-dark.svg",
+        "assets/motion/zil-033-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-034",
+      "no": 34,
+      "group": "A3",
+      "name": "Accès refusé",
+      "base": "BASE-ERROR",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-14",
+        "FND-16"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-034-light.svg",
+        "assets/motion/zil-034-light.svg",
+        "assets/static/zil-034-dark.svg",
+        "assets/motion/zil-034-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-035",
+      "no": 35,
+      "group": "A3",
+      "name": "Données indisponibles",
+      "base": "BASE-ERROR",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-14",
+        "FND-16"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-035-light.svg",
+        "assets/motion/zil-035-light.svg",
+        "assets/static/zil-035-dark.svg",
+        "assets/motion/zil-035-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-036",
+      "no": 36,
+      "group": "A4",
+      "name": "Chargement générique",
+      "base": "BASE-LOADING",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-14"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-036-light.svg",
+        "assets/motion/zil-036-light.svg",
+        "assets/static/zil-036-dark.svg",
+        "assets/motion/zil-036-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-037",
+      "no": 37,
+      "group": "A4",
+      "name": "Recherche en cours",
+      "base": "BASE-LOADING",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-14"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-037-light.svg",
+        "assets/motion/zil-037-light.svg",
+        "assets/static/zil-037-dark.svg",
+        "assets/motion/zil-037-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-038",
+      "no": 38,
+      "group": "A4",
+      "name": "Traitement du paiement",
+      "base": "BASE-LOADING",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-14"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": true,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-038-light.svg",
+        "assets/motion/zil-038-light.svg",
+        "assets/static/zil-038-dark.svg",
+        "assets/motion/zil-038-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-039",
+      "no": 39,
+      "group": "A4",
+      "name": "Génération de reçu",
+      "base": "BASE-LOADING",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-14"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-039-light.svg",
+        "assets/motion/zil-039-light.svg",
+        "assets/static/zil-039-dark.svg",
+        "assets/motion/zil-039-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-040",
+      "no": 40,
+      "group": "A4",
+      "name": "Synchronisation des données",
+      "base": "BASE-LOADING",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-14"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-040-light.svg",
+        "assets/motion/zil-040-light.svg",
+        "assets/static/zil-040-dark.svg",
+        "assets/motion/zil-040-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-041",
+      "no": 41,
+      "group": "A4",
+      "name": "Préparation de commande",
+      "base": "BASE-LOADING",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-14"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-041-light.svg",
+        "assets/motion/zil-041-light.svg",
+        "assets/static/zil-041-dark.svg",
+        "assets/motion/zil-041-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-042",
+      "no": 42,
+      "group": "A4",
+      "name": "Vérification du compte",
+      "base": "BASE-LOADING",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-14"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-042-light.svg",
+        "assets/motion/zil-042-light.svg",
+        "assets/static/zil-042-dark.svg",
+        "assets/motion/zil-042-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-043",
+      "no": 43,
+      "group": "A4",
+      "name": "Connexion en cours",
+      "base": "BASE-LOADING",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-14"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-043-light.svg",
+        "assets/motion/zil-043-light.svg",
+        "assets/static/zil-043-dark.svg",
+        "assets/motion/zil-043-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-044",
+      "no": 44,
+      "group": "B1",
+      "name": "Bienvenue sur Zamurek",
+      "base": "BASE-DISCOVERY",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-12",
+        "VEN-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": true,
+      "paths": [
+        "assets/static/zil-044-light.svg",
+        "assets/motion/zil-044-light.svg",
+        "assets/static/zil-044-dark.svg",
+        "assets/motion/zil-044-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-045",
+      "no": 45,
+      "group": "B1",
+      "name": "Découvrir les boutiques",
+      "base": "BASE-DISCOVERY",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-12",
+        "VEN-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-045-light.svg",
+        "assets/motion/zil-045-light.svg",
+        "assets/static/zil-045-dark.svg",
+        "assets/motion/zil-045-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-046",
+      "no": 46,
+      "group": "B1",
+      "name": "Découvrir les restaurants",
+      "base": "BASE-DISCOVERY",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-12",
+        "VEN-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-046-light.svg",
+        "assets/motion/zil-046-light.svg",
+        "assets/static/zil-046-dark.svg",
+        "assets/motion/zil-046-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-047",
+      "no": 47,
+      "group": "B1",
+      "name": "Découvrir les services",
+      "base": "BASE-DISCOVERY",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-12",
+        "VEN-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-047-light.svg",
+        "assets/motion/zil-047-light.svg",
+        "assets/static/zil-047-dark.svg",
+        "assets/motion/zil-047-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-048",
+      "no": 48,
+      "group": "B1",
+      "name": "Découvrir les salons de beauté",
+      "base": "BASE-DISCOVERY",
+      "priority": "P1",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-12",
+        "VEN-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-048-light.svg",
+        "assets/motion/zil-048-light.svg",
+        "assets/static/zil-048-dark.svg",
+        "assets/motion/zil-048-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-049",
+      "no": 49,
+      "group": "B1",
+      "name": "Découvrir les pharmacies",
+      "base": "BASE-DISCOVERY",
+      "priority": "P1",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-12",
+        "VEN-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": true,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-049-light.svg",
+        "assets/motion/zil-049-light.svg",
+        "assets/static/zil-049-dark.svg",
+        "assets/motion/zil-049-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-050",
+      "no": 50,
+      "group": "B1",
+      "name": "Découvrir les meubles",
+      "base": "BASE-DISCOVERY",
+      "priority": "P1",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-12",
+        "VEN-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-050-light.svg",
+        "assets/motion/zil-050-light.svg",
+        "assets/static/zil-050-dark.svg",
+        "assets/motion/zil-050-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-051",
+      "no": 51,
+      "group": "B1",
+      "name": "Découvrir les réparations",
+      "base": "BASE-DISCOVERY",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-12",
+        "VEN-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-051-light.svg",
+        "assets/motion/zil-051-light.svg",
+        "assets/static/zil-051-dark.svg",
+        "assets/motion/zil-051-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-052",
+      "no": 52,
+      "group": "B1",
+      "name": "Explorer le mall / univers Zamurek",
+      "base": "BASE-DISCOVERY",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-12",
+        "VEN-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-052-light.svg",
+        "assets/motion/zil-052-light.svg",
+        "assets/static/zil-052-dark.svg",
+        "assets/motion/zil-052-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-053",
+      "no": 53,
+      "group": "B2",
+      "name": "Recherche produit",
+      "base": "BASE-SEARCH",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-04",
+        "FND-12"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-053-light.svg",
+        "assets/motion/zil-053-light.svg",
+        "assets/static/zil-053-dark.svg",
+        "assets/motion/zil-053-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-054",
+      "no": 54,
+      "group": "B2",
+      "name": "Recherche boutique",
+      "base": "BASE-SEARCH",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-04",
+        "FND-12"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-054-light.svg",
+        "assets/motion/zil-054-light.svg",
+        "assets/static/zil-054-dark.svg",
+        "assets/motion/zil-054-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-055",
+      "no": 55,
+      "group": "B2",
+      "name": "Recherche service",
+      "base": "BASE-SEARCH",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-04",
+        "FND-12"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-055-light.svg",
+        "assets/motion/zil-055-light.svg",
+        "assets/static/zil-055-dark.svg",
+        "assets/motion/zil-055-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-056",
+      "no": 56,
+      "group": "B2",
+      "name": "Recherche restaurant",
+      "base": "BASE-SEARCH",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-04",
+        "FND-12"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-056-light.svg",
+        "assets/motion/zil-056-light.svg",
+        "assets/static/zil-056-dark.svg",
+        "assets/motion/zil-056-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-057",
+      "no": 57,
+      "group": "B2",
+      "name": "Filtres de recherche",
+      "base": "BASE-SEARCH",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-04",
+        "FND-12"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-057-light.svg",
+        "assets/motion/zil-057-light.svg",
+        "assets/static/zil-057-dark.svg",
+        "assets/motion/zil-057-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-058",
+      "no": 58,
+      "group": "B2",
+      "name": "Suggestions intelligentes",
+      "base": "BASE-SEARCH",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-04",
+        "FND-12"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-058-light.svg",
+        "assets/motion/zil-058-light.svg",
+        "assets/static/zil-058-dark.svg",
+        "assets/motion/zil-058-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-059",
+      "no": 59,
+      "group": "B2",
+      "name": "Recherche de proximité",
+      "base": "BASE-SEARCH",
+      "priority": "P1",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-04",
+        "FND-12"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-059-light.svg",
+        "assets/motion/zil-059-light.svg",
+        "assets/static/zil-059-dark.svg",
+        "assets/motion/zil-059-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-060",
+      "no": 60,
+      "group": "B3",
+      "name": "Ajouter au panier",
+      "base": "BASE-CHECKOUT",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-08",
+        "VEN-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-060-light.svg",
+        "assets/motion/zil-060-light.svg",
+        "assets/static/zil-060-dark.svg",
+        "assets/motion/zil-060-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-061",
+      "no": 61,
+      "group": "B3",
+      "name": "Panier avec articles",
+      "base": "BASE-CHECKOUT",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-08",
+        "VEN-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-061-light.svg",
+        "assets/motion/zil-061-light.svg",
+        "assets/static/zil-061-dark.svg",
+        "assets/motion/zil-061-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-062",
+      "no": 62,
+      "group": "B3",
+      "name": "Validation de commande",
+      "base": "BASE-CHECKOUT",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-08",
+        "VEN-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": true,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-062-light.svg",
+        "assets/motion/zil-062-light.svg",
+        "assets/static/zil-062-dark.svg",
+        "assets/motion/zil-062-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-063",
+      "no": 63,
+      "group": "B3",
+      "name": "Choix du mode de livraison",
+      "base": "BASE-CHECKOUT",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-08",
+        "VEN-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-063-light.svg",
+        "assets/motion/zil-063-light.svg",
+        "assets/static/zil-063-dark.svg",
+        "assets/motion/zil-063-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-064",
+      "no": 64,
+      "group": "B3",
+      "name": "Choix du retrait",
+      "base": "BASE-CHECKOUT",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-08",
+        "VEN-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-064-light.svg",
+        "assets/motion/zil-064-light.svg",
+        "assets/static/zil-064-dark.svg",
+        "assets/motion/zil-064-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-065",
+      "no": 65,
+      "group": "B3",
+      "name": "Confirmation finale",
+      "base": "BASE-CHECKOUT",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-08",
+        "VEN-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-065-light.svg",
+        "assets/motion/zil-065-light.svg",
+        "assets/static/zil-065-dark.svg",
+        "assets/motion/zil-065-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-066",
+      "no": 66,
+      "group": "B3",
+      "name": "Suivi de commande",
+      "base": "BASE-CHECKOUT",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-08",
+        "VEN-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-066-light.svg",
+        "assets/motion/zil-066-light.svg",
+        "assets/static/zil-066-dark.svg",
+        "assets/motion/zil-066-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-067",
+      "no": 67,
+      "group": "B3",
+      "name": "Colis prêt",
+      "base": "BASE-CHECKOUT",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-08",
+        "VEN-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-067-light.svg",
+        "assets/motion/zil-067-light.svg",
+        "assets/static/zil-067-dark.svg",
+        "assets/motion/zil-067-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-068",
+      "no": 68,
+      "group": "B3",
+      "name": "Commande livrée",
+      "base": "BASE-CHECKOUT",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-08",
+        "VEN-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-068-light.svg",
+        "assets/motion/zil-068-light.svg",
+        "assets/static/zil-068-dark.svg",
+        "assets/motion/zil-068-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-069",
+      "no": 69,
+      "group": "B3",
+      "name": "Commande retirée",
+      "base": "BASE-CHECKOUT",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-08",
+        "VEN-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-069-light.svg",
+        "assets/motion/zil-069-light.svg",
+        "assets/static/zil-069-dark.svg",
+        "assets/motion/zil-069-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-070",
+      "no": 70,
+      "group": "B4",
+      "name": "Paiement espèces à la livraison",
+      "base": "BASE-TENDER",
+      "priority": "P1",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-05",
+        "FND-07"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": true,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-070-light.svg",
+        "assets/motion/zil-070-light.svg",
+        "assets/static/zil-070-dark.svg",
+        "assets/motion/zil-070-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-071",
+      "no": 71,
+      "group": "B4",
+      "name": "Paiement par transfert",
+      "base": "BASE-TENDER",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-05",
+        "FND-07"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": true,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-071-light.svg",
+        "assets/motion/zil-071-light.svg",
+        "assets/static/zil-071-dark.svg",
+        "assets/motion/zil-071-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-072",
+      "no": 72,
+      "group": "B4",
+      "name": "Paiement confirmé",
+      "base": "BASE-TENDER",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-05",
+        "FND-07"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": true,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-072-light.svg",
+        "assets/motion/zil-072-light.svg",
+        "assets/static/zil-072-dark.svg",
+        "assets/motion/zil-072-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-073",
+      "no": 73,
+      "group": "B4",
+      "name": "Attente de confirmation",
+      "base": "BASE-TENDER",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-05",
+        "FND-07"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-073-light.svg",
+        "assets/motion/zil-073-light.svg",
+        "assets/static/zil-073-dark.svg",
+        "assets/motion/zil-073-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-074",
+      "no": 74,
+      "group": "B4",
+      "name": "Remboursement / retour",
+      "base": "BASE-TENDER",
+      "priority": "P1",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-05",
+        "FND-07"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": true,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-074-light.svg",
+        "assets/motion/zil-074-light.svg",
+        "assets/static/zil-074-dark.svg",
+        "assets/motion/zil-074-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-075",
+      "no": 75,
+      "group": "B4",
+      "name": "Réception d'une facture ou d'un reçu",
+      "base": "BASE-TENDER",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-05",
+        "FND-07"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-075-light.svg",
+        "assets/motion/zil-075-light.svg",
+        "assets/static/zil-075-dark.svg",
+        "assets/motion/zil-075-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-076",
+      "no": 76,
+      "group": "B5",
+      "name": "Création de compte",
+      "base": "BASE-PROFILE",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-076-light.svg",
+        "assets/motion/zil-076-light.svg",
+        "assets/static/zil-076-dark.svg",
+        "assets/motion/zil-076-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-077",
+      "no": 77,
+      "group": "B5",
+      "name": "Connexion",
+      "base": "BASE-PROFILE",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-077-light.svg",
+        "assets/motion/zil-077-light.svg",
+        "assets/static/zil-077-dark.svg",
+        "assets/motion/zil-077-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-078",
+      "no": 78,
+      "group": "B5",
+      "name": "Vérification du compte",
+      "base": "BASE-PROFILE",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-078-light.svg",
+        "assets/motion/zil-078-light.svg",
+        "assets/static/zil-078-dark.svg",
+        "assets/motion/zil-078-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-079",
+      "no": 79,
+      "group": "B5",
+      "name": "Profil utilisateur",
+      "base": "BASE-PROFILE",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-079-light.svg",
+        "assets/motion/zil-079-light.svg",
+        "assets/static/zil-079-dark.svg",
+        "assets/motion/zil-079-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-080",
+      "no": 80,
+      "group": "B5",
+      "name": "Historique de commandes",
+      "base": "BASE-PROFILE",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-080-light.svg",
+        "assets/motion/zil-080-light.svg",
+        "assets/static/zil-080-dark.svg",
+        "assets/motion/zil-080-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-081",
+      "no": 81,
+      "group": "B5",
+      "name": "Favoris / liste d'envies",
+      "base": "BASE-PROFILE",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-081-light.svg",
+        "assets/motion/zil-081-light.svg",
+        "assets/static/zil-081-dark.svg",
+        "assets/motion/zil-081-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-082",
+      "no": 82,
+      "group": "B5",
+      "name": "Adresse de livraison",
+      "base": "BASE-PROFILE",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-082-light.svg",
+        "assets/motion/zil-082-light.svg",
+        "assets/static/zil-082-dark.svg",
+        "assets/motion/zil-082-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-083",
+      "no": 83,
+      "group": "B5",
+      "name": "Moyens de contact",
+      "base": "BASE-PROFILE",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-083-light.svg",
+        "assets/motion/zil-083-light.svg",
+        "assets/static/zil-083-dark.svg",
+        "assets/motion/zil-083-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-084",
+      "no": 84,
+      "group": "B5",
+      "name": "Support client",
+      "base": "BASE-PROFILE",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-084-light.svg",
+        "assets/motion/zil-084-light.svg",
+        "assets/static/zil-084-dark.svg",
+        "assets/motion/zil-084-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-085",
+      "no": 85,
+      "group": "C1",
+      "name": "Création de boutique",
+      "base": "BASE-STORE",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-03",
+        "FND-09",
+        "FND-11",
+        "INT-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-085-light.svg",
+        "assets/motion/zil-085-light.svg",
+        "assets/static/zil-085-dark.svg",
+        "assets/motion/zil-085-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-086",
+      "no": 86,
+      "group": "C1",
+      "name": "Configuration du profil marchand",
+      "base": "BASE-STORE",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-03",
+        "FND-09",
+        "FND-11",
+        "INT-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-086-light.svg",
+        "assets/motion/zil-086-light.svg",
+        "assets/static/zil-086-dark.svg",
+        "assets/motion/zil-086-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-087",
+      "no": 87,
+      "group": "C1",
+      "name": "Ajout du logo ou de l'identité",
+      "base": "BASE-STORE",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-03",
+        "FND-09",
+        "FND-11",
+        "INT-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-087-light.svg",
+        "assets/motion/zil-087-light.svg",
+        "assets/static/zil-087-dark.svg",
+        "assets/motion/zil-087-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-088",
+      "no": 88,
+      "group": "C1",
+      "name": "Activation de la boutique",
+      "base": "BASE-STORE",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-03",
+        "FND-09",
+        "FND-11",
+        "INT-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-088-light.svg",
+        "assets/motion/zil-088-light.svg",
+        "assets/static/zil-088-dark.svg",
+        "assets/motion/zil-088-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-089",
+      "no": 89,
+      "group": "C1",
+      "name": "Boutique en attente de validation",
+      "base": "BASE-STORE",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-03",
+        "FND-09",
+        "FND-11",
+        "INT-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": true,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-089-light.svg",
+        "assets/motion/zil-089-light.svg",
+        "assets/static/zil-089-dark.svg",
+        "assets/motion/zil-089-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-090",
+      "no": 90,
+      "group": "C1",
+      "name": "Boutique active",
+      "base": "BASE-STORE",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-03",
+        "FND-09",
+        "FND-11",
+        "INT-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-090-light.svg",
+        "assets/motion/zil-090-light.svg",
+        "assets/static/zil-090-dark.svg",
+        "assets/motion/zil-090-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-091",
+      "no": 91,
+      "group": "C2",
+      "name": "Ajouter un produit",
+      "base": "BASE-CATALOG",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-04",
+        "RTL-01",
+        "WGT-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-091-light.svg",
+        "assets/motion/zil-091-light.svg",
+        "assets/static/zil-091-dark.svg",
+        "assets/motion/zil-091-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-092",
+      "no": 92,
+      "group": "C2",
+      "name": "Modifier un produit",
+      "base": "BASE-CATALOG",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-04",
+        "RTL-01",
+        "WGT-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-092-light.svg",
+        "assets/motion/zil-092-light.svg",
+        "assets/static/zil-092-dark.svg",
+        "assets/motion/zil-092-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-093",
+      "no": 93,
+      "group": "C2",
+      "name": "Organiser le catalogue",
+      "base": "BASE-CATALOG",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-04",
+        "RTL-01",
+        "WGT-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-093-light.svg",
+        "assets/motion/zil-093-light.svg",
+        "assets/static/zil-093-dark.svg",
+        "assets/motion/zil-093-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-094",
+      "no": 94,
+      "group": "C2",
+      "name": "Produit indisponible",
+      "base": "BASE-CATALOG",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-04",
+        "RTL-01",
+        "WGT-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-094-light.svg",
+        "assets/motion/zil-094-light.svg",
+        "assets/static/zil-094-dark.svg",
+        "assets/motion/zil-094-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-095",
+      "no": 95,
+      "group": "C2",
+      "name": "Gestion des variantes",
+      "base": "BASE-CATALOG",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-04",
+        "RTL-01",
+        "WGT-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-095-light.svg",
+        "assets/motion/zil-095-light.svg",
+        "assets/static/zil-095-dark.svg",
+        "assets/motion/zil-095-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-096",
+      "no": 96,
+      "group": "C2",
+      "name": "Produit au poids / grammage",
+      "base": "BASE-CATALOG",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-04",
+        "RTL-01",
+        "WGT-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-096-light.svg",
+        "assets/motion/zil-096-light.svg",
+        "assets/static/zil-096-dark.svg",
+        "assets/motion/zil-096-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-097",
+      "no": 97,
+      "group": "C2",
+      "name": "Service publié",
+      "base": "BASE-CATALOG",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-04",
+        "RTL-01",
+        "WGT-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-097-light.svg",
+        "assets/motion/zil-097-light.svg",
+        "assets/static/zil-097-dark.svg",
+        "assets/motion/zil-097-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-098",
+      "no": 98,
+      "group": "C2",
+      "name": "Service désactivé",
+      "base": "BASE-CATALOG",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-04",
+        "RTL-01",
+        "WGT-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-098-light.svg",
+        "assets/motion/zil-098-light.svg",
+        "assets/static/zil-098-dark.svg",
+        "assets/motion/zil-098-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-099",
+      "no": 99,
+      "group": "C2",
+      "name": "Produit mis en avant",
+      "base": "BASE-CATALOG",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-04",
+        "RTL-01",
+        "WGT-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-099-light.svg",
+        "assets/motion/zil-099-light.svg",
+        "assets/static/zil-099-dark.svg",
+        "assets/motion/zil-099-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-100",
+      "no": 100,
+      "group": "C3",
+      "name": "Nouvelle commande",
+      "base": "BASE-MERCHANT-ORDER",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-09"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-100-light.svg",
+        "assets/motion/zil-100-light.svg",
+        "assets/static/zil-100-dark.svg",
+        "assets/motion/zil-100-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-101",
+      "no": 101,
+      "group": "C3",
+      "name": "Préparation de commande",
+      "base": "BASE-MERCHANT-ORDER",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-09"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-101-light.svg",
+        "assets/motion/zil-101-light.svg",
+        "assets/static/zil-101-dark.svg",
+        "assets/motion/zil-101-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-102",
+      "no": 102,
+      "group": "C3",
+      "name": "Commande prête",
+      "base": "BASE-MERCHANT-ORDER",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-09"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-102-light.svg",
+        "assets/motion/zil-102-light.svg",
+        "assets/static/zil-102-dark.svg",
+        "assets/motion/zil-102-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-103",
+      "no": 103,
+      "group": "C3",
+      "name": "Commande remise",
+      "base": "BASE-MERCHANT-ORDER",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-09"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-103-light.svg",
+        "assets/motion/zil-103-light.svg",
+        "assets/static/zil-103-dark.svg",
+        "assets/motion/zil-103-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-104",
+      "no": 104,
+      "group": "C3",
+      "name": "Commande annulée",
+      "base": "BASE-MERCHANT-ORDER",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-09"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-104-light.svg",
+        "assets/motion/zil-104-light.svg",
+        "assets/static/zil-104-dark.svg",
+        "assets/motion/zil-104-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-105",
+      "no": 105,
+      "group": "C3",
+      "name": "Réservation reçue",
+      "base": "BASE-MERCHANT-ORDER",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-09"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-105-light.svg",
+        "assets/motion/zil-105-light.svg",
+        "assets/static/zil-105-dark.svg",
+        "assets/motion/zil-105-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-106",
+      "no": 106,
+      "group": "C3",
+      "name": "Réservation confirmée",
+      "base": "BASE-MERCHANT-ORDER",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-09"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-106-light.svg",
+        "assets/motion/zil-106-light.svg",
+        "assets/static/zil-106-dark.svg",
+        "assets/motion/zil-106-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-107",
+      "no": 107,
+      "group": "C3",
+      "name": "Réservation refusée",
+      "base": "BASE-MERCHANT-ORDER",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-09"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-107-light.svg",
+        "assets/motion/zil-107-light.svg",
+        "assets/static/zil-107-dark.svg",
+        "assets/motion/zil-107-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-108",
+      "no": 108,
+      "group": "C3",
+      "name": "Historique marchand",
+      "base": "BASE-MERCHANT-ORDER",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-06",
+        "FND-09"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-108-light.svg",
+        "assets/motion/zil-108-light.svg",
+        "assets/static/zil-108-dark.svg",
+        "assets/motion/zil-108-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-109",
+      "no": 109,
+      "group": "C4",
+      "name": "Statistiques boutique",
+      "base": "BASE-ANALYTICS",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-09",
+        "AGT-04"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-109-light.svg",
+        "assets/motion/zil-109-light.svg",
+        "assets/static/zil-109-dark.svg",
+        "assets/motion/zil-109-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-110",
+      "no": 110,
+      "group": "C4",
+      "name": "Ventes en hausse",
+      "base": "BASE-ANALYTICS",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-09",
+        "AGT-04"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-110-light.svg",
+        "assets/motion/zil-110-light.svg",
+        "assets/static/zil-110-dark.svg",
+        "assets/motion/zil-110-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-111",
+      "no": 111,
+      "group": "C4",
+      "name": "Produit populaire",
+      "base": "BASE-ANALYTICS",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-09",
+        "AGT-04"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-111-light.svg",
+        "assets/motion/zil-111-light.svg",
+        "assets/static/zil-111-dark.svg",
+        "assets/motion/zil-111-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-112",
+      "no": 112,
+      "group": "C4",
+      "name": "Nouveau client",
+      "base": "BASE-ANALYTICS",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-09",
+        "AGT-04"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-112-light.svg",
+        "assets/motion/zil-112-light.svg",
+        "assets/static/zil-112-dark.svg",
+        "assets/motion/zil-112-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-113",
+      "no": 113,
+      "group": "C4",
+      "name": "Fidélisation",
+      "base": "BASE-ANALYTICS",
+      "priority": "P3",
+      "scope": "Hors V1 (candidat futur)",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-09",
+        "AGT-04"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-113-light.svg",
+        "assets/motion/zil-113-light.svg",
+        "assets/static/zil-113-dark.svg",
+        "assets/motion/zil-113-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-114",
+      "no": 114,
+      "group": "C4",
+      "name": "Offre promotionnelle",
+      "base": "BASE-ANALYTICS",
+      "priority": "P1",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-09",
+        "AGT-04"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-114-light.svg",
+        "assets/motion/zil-114-light.svg",
+        "assets/static/zil-114-dark.svg",
+        "assets/motion/zil-114-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-115",
+      "no": 115,
+      "group": "C4",
+      "name": "Campagne de mise en avant",
+      "base": "BASE-ANALYTICS",
+      "priority": "P2",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-09",
+        "AGT-04"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-115-light.svg",
+        "assets/motion/zil-115-light.svg",
+        "assets/static/zil-115-dark.svg",
+        "assets/motion/zil-115-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-116",
+      "no": 116,
+      "group": "C4",
+      "name": "Avis client / satisfaction",
+      "base": "BASE-ANALYTICS",
+      "priority": "P2",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-09",
+        "AGT-04"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-116-light.svg",
+        "assets/motion/zil-116-light.svg",
+        "assets/static/zil-116-dark.svg",
+        "assets/motion/zil-116-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-117",
+      "no": 117,
+      "group": "D1",
+      "name": "Ouverture de caisse",
+      "base": "BASE-POS",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "POS-01",
+        "POS-02",
+        "POS-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": true,
+      "paths": [
+        "assets/static/zil-117-light.svg",
+        "assets/motion/zil-117-light.svg",
+        "assets/static/zil-117-dark.svg",
+        "assets/motion/zil-117-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-118",
+      "no": 118,
+      "group": "D1",
+      "name": "Session de caisse active",
+      "base": "BASE-POS",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "POS-01",
+        "POS-02",
+        "POS-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-118-light.svg",
+        "assets/motion/zil-118-light.svg",
+        "assets/static/zil-118-dark.svg",
+        "assets/motion/zil-118-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-119",
+      "no": 119,
+      "group": "D1",
+      "name": "Vente enregistrée",
+      "base": "BASE-POS",
+      "priority": "P2",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "POS-01",
+        "POS-02",
+        "POS-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-119-light.svg",
+        "assets/motion/zil-119-light.svg",
+        "assets/static/zil-119-dark.svg",
+        "assets/motion/zil-119-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-120",
+      "no": 120,
+      "group": "D1",
+      "name": "Impression de ticket",
+      "base": "BASE-POS",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "POS-01",
+        "POS-02",
+        "POS-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-120-light.svg",
+        "assets/motion/zil-120-light.svg",
+        "assets/static/zil-120-dark.svg",
+        "assets/motion/zil-120-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-121",
+      "no": 121,
+      "group": "D1",
+      "name": "Ticket imprimé",
+      "base": "BASE-POS",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "POS-01",
+        "POS-02",
+        "POS-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-121-light.svg",
+        "assets/motion/zil-121-light.svg",
+        "assets/static/zil-121-dark.svg",
+        "assets/motion/zil-121-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-122",
+      "no": 122,
+      "group": "D1",
+      "name": "Encaissement espèces",
+      "base": "BASE-POS",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "POS-01",
+        "POS-02",
+        "POS-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": true,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-122-light.svg",
+        "assets/motion/zil-122-light.svg",
+        "assets/static/zil-122-dark.svg",
+        "assets/motion/zil-122-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-123",
+      "no": 123,
+      "group": "D1",
+      "name": "Rendu de monnaie",
+      "base": "BASE-POS",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "POS-01",
+        "POS-02",
+        "POS-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-123-light.svg",
+        "assets/motion/zil-123-light.svg",
+        "assets/static/zil-123-dark.svg",
+        "assets/motion/zil-123-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-124",
+      "no": 124,
+      "group": "D1",
+      "name": "Fermeture de caisse",
+      "base": "BASE-POS",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "POS-01",
+        "POS-02",
+        "POS-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-124-light.svg",
+        "assets/motion/zil-124-light.svg",
+        "assets/static/zil-124-dark.svg",
+        "assets/motion/zil-124-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-125",
+      "no": 125,
+      "group": "D1",
+      "name": "Rapprochement caisse",
+      "base": "BASE-POS",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "POS-01",
+        "POS-02",
+        "POS-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-125-light.svg",
+        "assets/motion/zil-125-light.svg",
+        "assets/static/zil-125-dark.svg",
+        "assets/motion/zil-125-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-126",
+      "no": 126,
+      "group": "D1",
+      "name": "Historique POS",
+      "base": "BASE-POS",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "POS-01",
+        "POS-02",
+        "POS-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-126-light.svg",
+        "assets/motion/zil-126-light.svg",
+        "assets/static/zil-126-dark.svg",
+        "assets/motion/zil-126-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-127",
+      "no": 127,
+      "group": "D2",
+      "name": "Scan produit",
+      "base": "BASE-POS-TOOLS",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-10",
+        "POS-01",
+        "POS-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-127-light.svg",
+        "assets/motion/zil-127-light.svg",
+        "assets/static/zil-127-dark.svg",
+        "assets/motion/zil-127-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-128",
+      "no": 128,
+      "group": "D2",
+      "name": "Recherche rapide article",
+      "base": "BASE-POS-TOOLS",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-10",
+        "POS-01",
+        "POS-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-128-light.svg",
+        "assets/motion/zil-128-light.svg",
+        "assets/static/zil-128-dark.svg",
+        "assets/motion/zil-128-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-129",
+      "no": 129,
+      "group": "D2",
+      "name": "Vente rapide",
+      "base": "BASE-POS-TOOLS",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-10",
+        "POS-01",
+        "POS-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-129-light.svg",
+        "assets/motion/zil-129-light.svg",
+        "assets/static/zil-129-dark.svg",
+        "assets/motion/zil-129-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-130",
+      "no": 130,
+      "group": "D2",
+      "name": "Ajout manuel article",
+      "base": "BASE-POS-TOOLS",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-10",
+        "POS-01",
+        "POS-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-130-light.svg",
+        "assets/motion/zil-130-light.svg",
+        "assets/static/zil-130-dark.svg",
+        "assets/motion/zil-130-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-131",
+      "no": 131,
+      "group": "D2",
+      "name": "Annulation de ligne",
+      "base": "BASE-POS-TOOLS",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-10",
+        "POS-01",
+        "POS-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-131-light.svg",
+        "assets/motion/zil-131-light.svg",
+        "assets/static/zil-131-dark.svg",
+        "assets/motion/zil-131-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-132",
+      "no": 132,
+      "group": "D2",
+      "name": "Réduction / remise",
+      "base": "BASE-POS-TOOLS",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-10",
+        "POS-01",
+        "POS-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-132-light.svg",
+        "assets/motion/zil-132-light.svg",
+        "assets/static/zil-132-dark.svg",
+        "assets/motion/zil-132-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-133",
+      "no": 133,
+      "group": "D2",
+      "name": "Reçu interne ou document fiscal sous condition",
+      "base": "BASE-POS-TOOLS",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-10",
+        "POS-01",
+        "POS-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-133-light.svg",
+        "assets/motion/zil-133-light.svg",
+        "assets/static/zil-133-dark.svg",
+        "assets/motion/zil-133-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-134",
+      "no": 134,
+      "group": "D2",
+      "name": "QR interne",
+      "base": "BASE-POS-TOOLS",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-10",
+        "POS-01",
+        "POS-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-134-light.svg",
+        "assets/motion/zil-134-light.svg",
+        "assets/static/zil-134-dark.svg",
+        "assets/motion/zil-134-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-135",
+      "no": 135,
+      "group": "D2",
+      "name": "Reprise / retour",
+      "base": "BASE-POS-TOOLS",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-10",
+        "POS-01",
+        "POS-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-135-light.svg",
+        "assets/motion/zil-135-light.svg",
+        "assets/static/zil-135-dark.svg",
+        "assets/motion/zil-135-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-136",
+      "no": 136,
+      "group": "D2",
+      "name": "Incident de caisse",
+      "base": "BASE-POS-TOOLS",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-10",
+        "POS-01",
+        "POS-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-136-light.svg",
+        "assets/motion/zil-136-light.svg",
+        "assets/static/zil-136-dark.svg",
+        "assets/motion/zil-136-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-137",
+      "no": 137,
+      "group": "E1",
+      "name": "Commander un repas",
+      "base": "BASE-FOOD",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FOD-01",
+        "FOD-02",
+        "FOD-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-137-light.svg",
+        "assets/motion/zil-137-light.svg",
+        "assets/static/zil-137-dark.svg",
+        "assets/motion/zil-137-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-138",
+      "no": 138,
+      "group": "E1",
+      "name": "Restaurant disponible",
+      "base": "BASE-FOOD",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FOD-01",
+        "FOD-02",
+        "FOD-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-138-light.svg",
+        "assets/motion/zil-138-light.svg",
+        "assets/static/zil-138-dark.svg",
+        "assets/motion/zil-138-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-139",
+      "no": 139,
+      "group": "E1",
+      "name": "Menu / carte",
+      "base": "BASE-FOOD",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FOD-01",
+        "FOD-02",
+        "FOD-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-139-light.svg",
+        "assets/motion/zil-139-light.svg",
+        "assets/static/zil-139-dark.svg",
+        "assets/motion/zil-139-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-140",
+      "no": 140,
+      "group": "E1",
+      "name": "Plat prêt",
+      "base": "BASE-FOOD",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FOD-01",
+        "FOD-02",
+        "FOD-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-140-light.svg",
+        "assets/motion/zil-140-light.svg",
+        "assets/static/zil-140-dark.svg",
+        "assets/motion/zil-140-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-141",
+      "no": 141,
+      "group": "E1",
+      "name": "Livraison repas",
+      "base": "BASE-FOOD",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FOD-01",
+        "FOD-02",
+        "FOD-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-141-light.svg",
+        "assets/motion/zil-141-light.svg",
+        "assets/static/zil-141-dark.svg",
+        "assets/motion/zil-141-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-142",
+      "no": 142,
+      "group": "E1",
+      "name": "Réservation de table",
+      "base": "BASE-FOOD",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FOD-01",
+        "FOD-02",
+        "FOD-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-142-light.svg",
+        "assets/motion/zil-142-light.svg",
+        "assets/static/zil-142-dark.svg",
+        "assets/motion/zil-142-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-143",
+      "no": 143,
+      "group": "E1",
+      "name": "Pizza",
+      "base": "BASE-FOOD",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FOD-01",
+        "FOD-02",
+        "FOD-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-143-light.svg",
+        "assets/motion/zil-143-light.svg",
+        "assets/static/zil-143-dark.svg",
+        "assets/motion/zil-143-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-144",
+      "no": 144,
+      "group": "E1",
+      "name": "Chocolat / vente au gramme",
+      "base": "BASE-FOOD",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FOD-01",
+        "FOD-02",
+        "FOD-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-144-light.svg",
+        "assets/motion/zil-144-light.svg",
+        "assets/static/zil-144-dark.svg",
+        "assets/motion/zil-144-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-145",
+      "no": 145,
+      "group": "E1",
+      "name": "Boisson / café",
+      "base": "BASE-FOOD",
+      "priority": "P2",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FOD-01",
+        "FOD-02",
+        "FOD-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-145-light.svg",
+        "assets/motion/zil-145-light.svg",
+        "assets/static/zil-145-dark.svg",
+        "assets/motion/zil-145-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-146",
+      "no": 146,
+      "group": "E1",
+      "name": "Cuisine en préparation",
+      "base": "BASE-FOOD",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FOD-01",
+        "FOD-02",
+        "FOD-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-146-light.svg",
+        "assets/motion/zil-146-light.svg",
+        "assets/static/zil-146-dark.svg",
+        "assets/motion/zil-146-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-147",
+      "no": 147,
+      "group": "E2",
+      "name": "Réserver un service beauté",
+      "base": "BASE-BEAUTY",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "SVC-01",
+        "SVC-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-147-light.svg",
+        "assets/motion/zil-147-light.svg",
+        "assets/static/zil-147-dark.svg",
+        "assets/motion/zil-147-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-148",
+      "no": 148,
+      "group": "E2",
+      "name": "Coiffure en cours",
+      "base": "BASE-BEAUTY",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "SVC-01",
+        "SVC-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-148-light.svg",
+        "assets/motion/zil-148-light.svg",
+        "assets/static/zil-148-dark.svg",
+        "assets/motion/zil-148-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-149",
+      "no": 149,
+      "group": "E2",
+      "name": "Salon disponible",
+      "base": "BASE-BEAUTY",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "SVC-01",
+        "SVC-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-149-light.svg",
+        "assets/motion/zil-149-light.svg",
+        "assets/static/zil-149-dark.svg",
+        "assets/motion/zil-149-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-150",
+      "no": 150,
+      "group": "E2",
+      "name": "Beauté / esthétique",
+      "base": "BASE-BEAUTY",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "SVC-01",
+        "SVC-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-150-light.svg",
+        "assets/motion/zil-150-light.svg",
+        "assets/static/zil-150-dark.svg",
+        "assets/motion/zil-150-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-151",
+      "no": 151,
+      "group": "E2",
+      "name": "Onglerie / soin",
+      "base": "BASE-BEAUTY",
+      "priority": "P2",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "SVC-01",
+        "SVC-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-151-light.svg",
+        "assets/motion/zil-151-light.svg",
+        "assets/static/zil-151-dark.svg",
+        "assets/motion/zil-151-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-152",
+      "no": 152,
+      "group": "E2",
+      "name": "Rendez-vous confirmé",
+      "base": "BASE-BEAUTY",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "SVC-01",
+        "SVC-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-152-light.svg",
+        "assets/motion/zil-152-light.svg",
+        "assets/static/zil-152-dark.svg",
+        "assets/motion/zil-152-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-153",
+      "no": 153,
+      "group": "E2",
+      "name": "Attente en salon",
+      "base": "BASE-BEAUTY",
+      "priority": "P2",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "SVC-01",
+        "SVC-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-153-light.svg",
+        "assets/motion/zil-153-light.svg",
+        "assets/static/zil-153-dark.svg",
+        "assets/motion/zil-153-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-154",
+      "no": 154,
+      "group": "E3",
+      "name": "Réparation smartphone",
+      "base": "BASE-REPAIR",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "REP-01",
+        "REP-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-154-light.svg",
+        "assets/motion/zil-154-light.svg",
+        "assets/static/zil-154-dark.svg",
+        "assets/motion/zil-154-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-155",
+      "no": 155,
+      "group": "E3",
+      "name": "Diagnostic appareil",
+      "base": "BASE-REPAIR",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "REP-01",
+        "REP-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-155-light.svg",
+        "assets/motion/zil-155-light.svg",
+        "assets/static/zil-155-dark.svg",
+        "assets/motion/zil-155-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-156",
+      "no": 156,
+      "group": "E3",
+      "name": "Technicien au travail",
+      "base": "BASE-REPAIR",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "REP-01",
+        "REP-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-156-light.svg",
+        "assets/motion/zil-156-light.svg",
+        "assets/static/zil-156-dark.svg",
+        "assets/motion/zil-156-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-157",
+      "no": 157,
+      "group": "E3",
+      "name": "Appareil prêt",
+      "base": "BASE-REPAIR",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "REP-01",
+        "REP-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-157-light.svg",
+        "assets/motion/zil-157-light.svg",
+        "assets/static/zil-157-dark.svg",
+        "assets/motion/zil-157-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-158",
+      "no": 158,
+      "group": "E3",
+      "name": "Appareil en attente",
+      "base": "BASE-REPAIR",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "REP-01",
+        "REP-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-158-light.svg",
+        "assets/motion/zil-158-light.svg",
+        "assets/static/zil-158-dark.svg",
+        "assets/motion/zil-158-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-159",
+      "no": 159,
+      "group": "E3",
+      "name": "Outil / atelier",
+      "base": "BASE-REPAIR",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "REP-01",
+        "REP-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-159-light.svg",
+        "assets/motion/zil-159-light.svg",
+        "assets/static/zil-159-dark.svg",
+        "assets/motion/zil-159-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-160",
+      "no": 160,
+      "group": "E3",
+      "name": "Réparation validée",
+      "base": "BASE-REPAIR",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "REP-01",
+        "REP-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-160-light.svg",
+        "assets/motion/zil-160-light.svg",
+        "assets/static/zil-160-dark.svg",
+        "assets/motion/zil-160-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-161",
+      "no": 161,
+      "group": "E3",
+      "name": "Remise au client",
+      "base": "BASE-REPAIR",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "REP-01",
+        "REP-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-161-light.svg",
+        "assets/motion/zil-161-light.svg",
+        "assets/static/zil-161-dark.svg",
+        "assets/motion/zil-161-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-162",
+      "no": 162,
+      "group": "E4",
+      "name": "Mobilier en vitrine",
+      "base": "BASE-FURNITURE",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FUR-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-162-light.svg",
+        "assets/motion/zil-162-light.svg",
+        "assets/static/zil-162-dark.svg",
+        "assets/motion/zil-162-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-163",
+      "no": 163,
+      "group": "E4",
+      "name": "Consultation d'un meuble",
+      "base": "BASE-FURNITURE",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FUR-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-163-light.svg",
+        "assets/motion/zil-163-light.svg",
+        "assets/static/zil-163-dark.svg",
+        "assets/motion/zil-163-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-164",
+      "no": 164,
+      "group": "E4",
+      "name": "Commande de meuble",
+      "base": "BASE-FURNITURE",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FUR-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-164-light.svg",
+        "assets/motion/zil-164-light.svg",
+        "assets/static/zil-164-dark.svg",
+        "assets/motion/zil-164-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-165",
+      "no": 165,
+      "group": "E4",
+      "name": "Livraison meuble",
+      "base": "BASE-FURNITURE",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FUR-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-165-light.svg",
+        "assets/motion/zil-165-light.svg",
+        "assets/static/zil-165-dark.svg",
+        "assets/motion/zil-165-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-166",
+      "no": 166,
+      "group": "E4",
+      "name": "Catalogue maison",
+      "base": "BASE-FURNITURE",
+      "priority": "P2",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FUR-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-166-light.svg",
+        "assets/motion/zil-166-light.svg",
+        "assets/static/zil-166-dark.svg",
+        "assets/motion/zil-166-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-167",
+      "no": 167,
+      "group": "E4",
+      "name": "Décoration intérieure",
+      "base": "BASE-FURNITURE",
+      "priority": "P2",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FUR-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-167-light.svg",
+        "assets/motion/zil-167-light.svg",
+        "assets/static/zil-167-dark.svg",
+        "assets/motion/zil-167-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-168",
+      "no": 168,
+      "group": "E4",
+      "name": "Article volumineux",
+      "base": "BASE-FURNITURE",
+      "priority": "P2",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FUR-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-168-light.svg",
+        "assets/motion/zil-168-light.svg",
+        "assets/static/zil-168-dark.svg",
+        "assets/motion/zil-168-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-169",
+      "no": 169,
+      "group": "E5",
+      "name": "Recherche de produit de santé autorisé",
+      "base": "BASE-PHARMACY",
+      "priority": "P1",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "PHA-01",
+        "PHA-02",
+        "FND-15"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-169-light.svg",
+        "assets/motion/zil-169-light.svg",
+        "assets/static/zil-169-dark.svg",
+        "assets/motion/zil-169-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-170",
+      "no": 170,
+      "group": "E5",
+      "name": "Pharmacie disponible",
+      "base": "BASE-PHARMACY",
+      "priority": "P1",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "PHA-01",
+        "PHA-02",
+        "FND-15"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": true,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-170-light.svg",
+        "assets/motion/zil-170-light.svg",
+        "assets/static/zil-170-dark.svg",
+        "assets/motion/zil-170-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-171",
+      "no": 171,
+      "group": "E5",
+      "name": "Produit de santé autorisé",
+      "base": "BASE-PHARMACY",
+      "priority": "P1",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "PHA-01",
+        "PHA-02",
+        "FND-15"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-171-light.svg",
+        "assets/motion/zil-171-light.svg",
+        "assets/static/zil-171-dark.svg",
+        "assets/motion/zil-171-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-172",
+      "no": 172,
+      "group": "E5",
+      "name": "Conseil pharmacie non médical",
+      "base": "BASE-PHARMACY",
+      "priority": "P1",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "PHA-01",
+        "PHA-02",
+        "FND-15"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": true,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-172-light.svg",
+        "assets/motion/zil-172-light.svg",
+        "assets/static/zil-172-dark.svg",
+        "assets/motion/zil-172-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-173",
+      "no": 173,
+      "group": "E5",
+      "name": "Commande pharmacie autorisée",
+      "base": "BASE-PHARMACY",
+      "priority": "P1",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "PHA-01",
+        "PHA-02",
+        "FND-15"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": true,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-173-light.svg",
+        "assets/motion/zil-173-light.svg",
+        "assets/static/zil-173-dark.svg",
+        "assets/motion/zil-173-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-174",
+      "no": 174,
+      "group": "E5",
+      "name": "Disponibilité confirmée",
+      "base": "BASE-PHARMACY",
+      "priority": "P1",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "PHA-01",
+        "PHA-02",
+        "FND-15"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-174-light.svg",
+        "assets/motion/zil-174-light.svg",
+        "assets/static/zil-174-dark.svg",
+        "assets/motion/zil-174-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-175",
+      "no": 175,
+      "group": "E5",
+      "name": "Restrictions / sécurité",
+      "base": "BASE-PHARMACY",
+      "priority": "P1",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "PHA-01",
+        "PHA-02",
+        "FND-15"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-175-light.svg",
+        "assets/motion/zil-175-light.svg",
+        "assets/static/zil-175-dark.svg",
+        "assets/motion/zil-175-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-176",
+      "no": 176,
+      "group": "E6",
+      "name": "Réserver un service",
+      "base": "BASE-SERVICES",
+      "priority": "P2",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "SVC-01",
+        "SVC-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-176-light.svg",
+        "assets/motion/zil-176-light.svg",
+        "assets/static/zil-176-dark.svg",
+        "assets/motion/zil-176-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-177",
+      "no": 177,
+      "group": "E6",
+      "name": "Prestation en cours",
+      "base": "BASE-SERVICES",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "SVC-01",
+        "SVC-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-177-light.svg",
+        "assets/motion/zil-177-light.svg",
+        "assets/static/zil-177-dark.svg",
+        "assets/motion/zil-177-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-178",
+      "no": 178,
+      "group": "E6",
+      "name": "Service terminé",
+      "base": "BASE-SERVICES",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "SVC-01",
+        "SVC-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-178-light.svg",
+        "assets/motion/zil-178-light.svg",
+        "assets/static/zil-178-dark.svg",
+        "assets/motion/zil-178-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-179",
+      "no": 179,
+      "group": "E6",
+      "name": "Prestataire disponible",
+      "base": "BASE-SERVICES",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "SVC-01",
+        "SVC-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-179-light.svg",
+        "assets/motion/zil-179-light.svg",
+        "assets/static/zil-179-dark.svg",
+        "assets/motion/zil-179-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-180",
+      "no": 180,
+      "group": "E6",
+      "name": "Service professionnel",
+      "base": "BASE-SERVICES",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "SVC-01",
+        "SVC-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-180-light.svg",
+        "assets/motion/zil-180-light.svg",
+        "assets/static/zil-180-dark.svg",
+        "assets/motion/zil-180-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-181",
+      "no": 181,
+      "group": "E6",
+      "name": "Demande envoyée",
+      "base": "BASE-SERVICES",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "SVC-01",
+        "SVC-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-181-light.svg",
+        "assets/motion/zil-181-light.svg",
+        "assets/static/zil-181-dark.svg",
+        "assets/motion/zil-181-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-182",
+      "no": 182,
+      "group": "E6",
+      "name": "Service validé",
+      "base": "BASE-SERVICES",
+      "priority": "P2",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "SVC-01",
+        "SVC-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-182-light.svg",
+        "assets/motion/zil-182-light.svg",
+        "assets/static/zil-182-dark.svg",
+        "assets/motion/zil-182-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-183",
+      "no": 183,
+      "group": "E7",
+      "name": "Pesée produit",
+      "base": "BASE-WEIGHT",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "WGT-01",
+        "WGT-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-183-light.svg",
+        "assets/motion/zil-183-light.svg",
+        "assets/static/zil-183-dark.svg",
+        "assets/motion/zil-183-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-184",
+      "no": 184,
+      "group": "E7",
+      "name": "Choix de grammage",
+      "base": "BASE-WEIGHT",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "WGT-01",
+        "WGT-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-184-light.svg",
+        "assets/motion/zil-184-light.svg",
+        "assets/static/zil-184-dark.svg",
+        "assets/motion/zil-184-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-185",
+      "no": 185,
+      "group": "E7",
+      "name": "Sachet / emballage",
+      "base": "BASE-WEIGHT",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "WGT-01",
+        "WGT-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-185-light.svg",
+        "assets/motion/zil-185-light.svg",
+        "assets/static/zil-185-dark.svg",
+        "assets/motion/zil-185-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-186",
+      "no": 186,
+      "group": "E7",
+      "name": "Produit prêt à l'achat",
+      "base": "BASE-WEIGHT",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "WGT-01",
+        "WGT-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-186-light.svg",
+        "assets/motion/zil-186-light.svg",
+        "assets/static/zil-186-dark.svg",
+        "assets/motion/zil-186-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-187",
+      "no": 187,
+      "group": "E7",
+      "name": "Prix calculé par poids",
+      "base": "BASE-WEIGHT",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "WGT-01",
+        "WGT-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-187-light.svg",
+        "assets/motion/zil-187-light.svg",
+        "assets/static/zil-187-dark.svg",
+        "assets/motion/zil-187-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-188",
+      "no": 188,
+      "group": "F",
+      "name": "Explorer les univers Zamurek",
+      "base": "BASE-VENUE",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "VEN-01",
+        "VEN-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-188-light.svg",
+        "assets/motion/zil-188-light.svg",
+        "assets/static/zil-188-dark.svg",
+        "assets/motion/zil-188-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-189",
+      "no": 189,
+      "group": "F",
+      "name": "Parcourir plusieurs boutiques",
+      "base": "BASE-VENUE",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "VEN-01",
+        "VEN-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-189-light.svg",
+        "assets/motion/zil-189-light.svg",
+        "assets/static/zil-189-dark.svg",
+        "assets/motion/zil-189-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-190",
+      "no": 190,
+      "group": "F",
+      "name": "Recommandations personnalisées",
+      "base": "BASE-VENUE",
+      "priority": "P3",
+      "scope": "Hors V1 (candidat futur)",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "VEN-01",
+        "VEN-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-190-light.svg",
+        "assets/motion/zil-190-light.svg",
+        "assets/static/zil-190-dark.svg",
+        "assets/motion/zil-190-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-191",
+      "no": 191,
+      "group": "F",
+      "name": "Sélection du moment",
+      "base": "BASE-VENUE",
+      "priority": "P1",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "VEN-01",
+        "VEN-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-191-light.svg",
+        "assets/motion/zil-191-light.svg",
+        "assets/static/zil-191-dark.svg",
+        "assets/motion/zil-191-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-192",
+      "no": 192,
+      "group": "F",
+      "name": "Promotions du mall",
+      "base": "BASE-VENUE",
+      "priority": "P1",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "VEN-01",
+        "VEN-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-192-light.svg",
+        "assets/motion/zil-192-light.svg",
+        "assets/static/zil-192-dark.svg",
+        "assets/motion/zil-192-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-193",
+      "no": 193,
+      "group": "F",
+      "name": "Nouvelles boutiques",
+      "base": "BASE-VENUE",
+      "priority": "P1",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "VEN-01",
+        "VEN-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-193-light.svg",
+        "assets/motion/zil-193-light.svg",
+        "assets/static/zil-193-dark.svg",
+        "assets/motion/zil-193-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-194",
+      "no": 194,
+      "group": "F",
+      "name": "Parcours de découverte",
+      "base": "BASE-VENUE",
+      "priority": "P1",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "VEN-01",
+        "VEN-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-194-light.svg",
+        "assets/motion/zil-194-light.svg",
+        "assets/static/zil-194-dark.svg",
+        "assets/motion/zil-194-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-195",
+      "no": 195,
+      "group": "F",
+      "name": "Favoris multi-boutiques",
+      "base": "BASE-VENUE",
+      "priority": "P1",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "VEN-01",
+        "VEN-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-195-light.svg",
+        "assets/motion/zil-195-light.svg",
+        "assets/static/zil-195-dark.svg",
+        "assets/motion/zil-195-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-196",
+      "no": 196,
+      "group": "F",
+      "name": "Collections et sélections",
+      "base": "BASE-VENUE",
+      "priority": "P2",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "VEN-01",
+        "VEN-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-196-light.svg",
+        "assets/motion/zil-196-light.svg",
+        "assets/static/zil-196-dark.svg",
+        "assets/motion/zil-196-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-197",
+      "no": 197,
+      "group": "F",
+      "name": "Expérience unifiée, tout au même endroit",
+      "base": "BASE-VENUE",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "VEN-01",
+        "VEN-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-197-light.svg",
+        "assets/motion/zil-197-light.svg",
+        "assets/static/zil-197-dark.svg",
+        "assets/motion/zil-197-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-198",
+      "no": 198,
+      "group": "G1",
+      "name": "Assistant de recommandation",
+      "base": "BASE-AI-SHOP",
+      "priority": "P0",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "AGT-04",
+        "AGT-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-198-light.svg",
+        "assets/motion/zil-198-light.svg",
+        "assets/static/zil-198-dark.svg",
+        "assets/motion/zil-198-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-199",
+      "no": 199,
+      "group": "G1",
+      "name": "Suggestions personnalisées",
+      "base": "BASE-AI-SHOP",
+      "priority": "P1",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "AGT-04",
+        "AGT-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-199-light.svg",
+        "assets/motion/zil-199-light.svg",
+        "assets/static/zil-199-dark.svg",
+        "assets/motion/zil-199-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-200",
+      "no": 200,
+      "group": "G1",
+      "name": "Aide à trouver un produit",
+      "base": "BASE-AI-SHOP",
+      "priority": "P3",
+      "scope": "Hors V1 (candidat futur)",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "AGT-04",
+        "AGT-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-200-light.svg",
+        "assets/motion/zil-200-light.svg",
+        "assets/static/zil-200-dark.svg",
+        "assets/motion/zil-200-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-201",
+      "no": 201,
+      "group": "G1",
+      "name": "Comparaison assistée",
+      "base": "BASE-AI-SHOP",
+      "priority": "P1",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "AGT-04",
+        "AGT-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-201-light.svg",
+        "assets/motion/zil-201-light.svg",
+        "assets/static/zil-201-dark.svg",
+        "assets/motion/zil-201-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-202",
+      "no": 202,
+      "group": "G1",
+      "name": "Conseiller d'achat",
+      "base": "BASE-AI-SHOP",
+      "priority": "P1",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "AGT-04",
+        "AGT-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-202-light.svg",
+        "assets/motion/zil-202-light.svg",
+        "assets/static/zil-202-dark.svg",
+        "assets/motion/zil-202-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-203",
+      "no": 203,
+      "group": "G2",
+      "name": "Aide à la création de catalogue",
+      "base": "BASE-AI-MERCHANT",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "AGT-04",
+        "AGT-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-203-light.svg",
+        "assets/motion/zil-203-light.svg",
+        "assets/static/zil-203-dark.svg",
+        "assets/motion/zil-203-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-204",
+      "no": 204,
+      "group": "G2",
+      "name": "Suggestion de mise en avant",
+      "base": "BASE-AI-MERCHANT",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "AGT-04",
+        "AGT-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-204-light.svg",
+        "assets/motion/zil-204-light.svg",
+        "assets/static/zil-204-dark.svg",
+        "assets/motion/zil-204-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-205",
+      "no": 205,
+      "group": "G2",
+      "name": "Aide à la gestion des commandes",
+      "base": "BASE-AI-MERCHANT",
+      "priority": "P1",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "AGT-04",
+        "AGT-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-205-light.svg",
+        "assets/motion/zil-205-light.svg",
+        "assets/static/zil-205-dark.svg",
+        "assets/motion/zil-205-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-206",
+      "no": 206,
+      "group": "G2",
+      "name": "Assistant marketing marchand",
+      "base": "BASE-AI-MERCHANT",
+      "priority": "P2",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "AGT-04",
+        "AGT-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-206-light.svg",
+        "assets/motion/zil-206-light.svg",
+        "assets/static/zil-206-dark.svg",
+        "assets/motion/zil-206-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-207",
+      "no": 207,
+      "group": "G2",
+      "name": "Conseils d'optimisation",
+      "base": "BASE-AI-MERCHANT",
+      "priority": "P1",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "AGT-04",
+        "AGT-02"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-207-light.svg",
+        "assets/motion/zil-207-light.svg",
+        "assets/static/zil-207-dark.svg",
+        "assets/motion/zil-207-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-208",
+      "no": 208,
+      "group": "G3",
+      "name": "Assistant de supervision",
+      "base": "BASE-AI-OPS",
+      "priority": "P2",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "AGT-02",
+        "AGT-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-208-light.svg",
+        "assets/motion/zil-208-light.svg",
+        "assets/static/zil-208-dark.svg",
+        "assets/motion/zil-208-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-209",
+      "no": 209,
+      "group": "G3",
+      "name": "Résumé des activités",
+      "base": "BASE-AI-OPS",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "AGT-02",
+        "AGT-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-209-light.svg",
+        "assets/motion/zil-209-light.svg",
+        "assets/static/zil-209-dark.svg",
+        "assets/motion/zil-209-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-210",
+      "no": 210,
+      "group": "G3",
+      "name": "Alerte intelligente",
+      "base": "BASE-AI-OPS",
+      "priority": "P1",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "AGT-02",
+        "AGT-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-210-light.svg",
+        "assets/motion/zil-210-light.svg",
+        "assets/static/zil-210-dark.svg",
+        "assets/motion/zil-210-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-211",
+      "no": 211,
+      "group": "G3",
+      "name": "Analyse automatique",
+      "base": "BASE-AI-OPS",
+      "priority": "P1",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "AGT-02",
+        "AGT-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-211-light.svg",
+        "assets/motion/zil-211-light.svg",
+        "assets/static/zil-211-dark.svg",
+        "assets/motion/zil-211-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-212",
+      "no": 212,
+      "group": "G3",
+      "name": "Aide à la décision",
+      "base": "BASE-AI-OPS",
+      "priority": "P2",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "AGT-02",
+        "AGT-03"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-212-light.svg",
+        "assets/motion/zil-212-light.svg",
+        "assets/static/zil-212-dark.svg",
+        "assets/motion/zil-212-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-213",
+      "no": 213,
+      "group": "G4",
+      "name": "Support intelligent",
+      "base": "BASE-AI-CHAT",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "AGT-04",
+        "SEC-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-213-light.svg",
+        "assets/motion/zil-213-light.svg",
+        "assets/static/zil-213-dark.svg",
+        "assets/motion/zil-213-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-214",
+      "no": 214,
+      "group": "G4",
+      "name": "Discussion assistant-client",
+      "base": "BASE-AI-CHAT",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "AGT-04",
+        "SEC-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-214-light.svg",
+        "assets/motion/zil-214-light.svg",
+        "assets/static/zil-214-dark.svg",
+        "assets/motion/zil-214-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-215",
+      "no": 215,
+      "group": "G4",
+      "name": "Discussion assistant-marchand",
+      "base": "BASE-AI-CHAT",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "AGT-04",
+        "SEC-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-215-light.svg",
+        "assets/motion/zil-215-light.svg",
+        "assets/static/zil-215-dark.svg",
+        "assets/motion/zil-215-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-216",
+      "no": 216,
+      "group": "G4",
+      "name": "Recherche assistée",
+      "base": "BASE-AI-CHAT",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "AGT-04",
+        "SEC-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-216-light.svg",
+        "assets/motion/zil-216-light.svg",
+        "assets/static/zil-216-dark.svg",
+        "assets/motion/zil-216-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-217",
+      "no": 217,
+      "group": "G4",
+      "name": "Notification intelligente",
+      "base": "BASE-AI-CHAT",
+      "priority": "P1",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "AGT-04",
+        "SEC-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-217-light.svg",
+        "assets/motion/zil-217-light.svg",
+        "assets/static/zil-217-dark.svg",
+        "assets/motion/zil-217-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-218",
+      "no": 218,
+      "group": "H",
+      "name": "Connexion sécurisée",
+      "base": "BASE-TRUST",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-02",
+        "FND-13",
+        "SEC-01",
+        "LEG-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-218-light.svg",
+        "assets/motion/zil-218-light.svg",
+        "assets/static/zil-218-dark.svg",
+        "assets/motion/zil-218-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-219",
+      "no": 219,
+      "group": "H",
+      "name": "Création de mot de passe",
+      "base": "BASE-TRUST",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-02",
+        "FND-13",
+        "SEC-01",
+        "LEG-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-219-light.svg",
+        "assets/motion/zil-219-light.svg",
+        "assets/static/zil-219-dark.svg",
+        "assets/motion/zil-219-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-220",
+      "no": 220,
+      "group": "H",
+      "name": "Vérification du compte",
+      "base": "BASE-TRUST",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-02",
+        "FND-13",
+        "SEC-01",
+        "LEG-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-220-light.svg",
+        "assets/motion/zil-220-light.svg",
+        "assets/static/zil-220-dark.svg",
+        "assets/motion/zil-220-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-221",
+      "no": 221,
+      "group": "H",
+      "name": "Compte protégé",
+      "base": "BASE-TRUST",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-02",
+        "FND-13",
+        "SEC-01",
+        "LEG-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-221-light.svg",
+        "assets/motion/zil-221-light.svg",
+        "assets/static/zil-221-dark.svg",
+        "assets/motion/zil-221-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-222",
+      "no": 222,
+      "group": "H",
+      "name": "Données sécurisées",
+      "base": "BASE-TRUST",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-02",
+        "FND-13",
+        "SEC-01",
+        "LEG-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-222-light.svg",
+        "assets/motion/zil-222-light.svg",
+        "assets/static/zil-222-dark.svg",
+        "assets/motion/zil-222-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-223",
+      "no": 223,
+      "group": "H",
+      "name": "Autorisation refusée",
+      "base": "BASE-TRUST",
+      "priority": "P2",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-02",
+        "FND-13",
+        "SEC-01",
+        "LEG-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": true,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-223-light.svg",
+        "assets/motion/zil-223-light.svg",
+        "assets/static/zil-223-dark.svg",
+        "assets/motion/zil-223-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-224",
+      "no": 224,
+      "group": "H",
+      "name": "Vérification identité",
+      "base": "BASE-TRUST",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-02",
+        "FND-13",
+        "SEC-01",
+        "LEG-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-224-light.svg",
+        "assets/motion/zil-224-light.svg",
+        "assets/static/zil-224-dark.svg",
+        "assets/motion/zil-224-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-225",
+      "no": 225,
+      "group": "H",
+      "name": "Session expirée",
+      "base": "BASE-TRUST",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-02",
+        "FND-13",
+        "SEC-01",
+        "LEG-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-225-light.svg",
+        "assets/motion/zil-225-light.svg",
+        "assets/static/zil-225-dark.svg",
+        "assets/motion/zil-225-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-226",
+      "no": 226,
+      "group": "H",
+      "name": "Validation de permissions",
+      "base": "BASE-TRUST",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-02",
+        "FND-13",
+        "SEC-01",
+        "LEG-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": true,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-226-light.svg",
+        "assets/motion/zil-226-light.svg",
+        "assets/static/zil-226-dark.svg",
+        "assets/motion/zil-226-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-227",
+      "no": 227,
+      "group": "H",
+      "name": "Appareil autorisé",
+      "base": "BASE-TRUST",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-02",
+        "FND-13",
+        "SEC-01",
+        "LEG-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-227-light.svg",
+        "assets/motion/zil-227-light.svg",
+        "assets/static/zil-227-dark.svg",
+        "assets/motion/zil-227-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-228",
+      "no": 228,
+      "group": "I",
+      "name": "Bienvenue utilisateur",
+      "base": "BASE-ONBOARDING",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-12",
+        "FND-14"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-228-light.svg",
+        "assets/motion/zil-228-light.svg",
+        "assets/static/zil-228-dark.svg",
+        "assets/motion/zil-228-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-229",
+      "no": 229,
+      "group": "I",
+      "name": "Bienvenue marchand",
+      "base": "BASE-ONBOARDING",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-12",
+        "FND-14"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-229-light.svg",
+        "assets/motion/zil-229-light.svg",
+        "assets/static/zil-229-dark.svg",
+        "assets/motion/zil-229-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-230",
+      "no": 230,
+      "group": "I",
+      "name": "Comment acheter sur Zamurek",
+      "base": "BASE-ONBOARDING",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-12",
+        "FND-14"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-230-light.svg",
+        "assets/motion/zil-230-light.svg",
+        "assets/static/zil-230-dark.svg",
+        "assets/motion/zil-230-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-231",
+      "no": 231,
+      "group": "I",
+      "name": "Comment vendre sur Zamurek",
+      "base": "BASE-ONBOARDING",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-12",
+        "FND-14"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-231-light.svg",
+        "assets/motion/zil-231-light.svg",
+        "assets/static/zil-231-dark.svg",
+        "assets/motion/zil-231-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-232",
+      "no": 232,
+      "group": "I",
+      "name": "Comment suivre une commande",
+      "base": "BASE-ONBOARDING",
+      "priority": "P1",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-12",
+        "FND-14"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-232-light.svg",
+        "assets/motion/zil-232-light.svg",
+        "assets/static/zil-232-dark.svg",
+        "assets/motion/zil-232-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-233",
+      "no": 233,
+      "group": "I",
+      "name": "Comment gérer sa boutique",
+      "base": "BASE-ONBOARDING",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-12",
+        "FND-14"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-233-light.svg",
+        "assets/motion/zil-233-light.svg",
+        "assets/static/zil-233-dark.svg",
+        "assets/motion/zil-233-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-234",
+      "no": 234,
+      "group": "I",
+      "name": "Comment utiliser le POS",
+      "base": "BASE-ONBOARDING",
+      "priority": "P0",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-12",
+        "FND-14"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-234-light.svg",
+        "assets/motion/zil-234-light.svg",
+        "assets/static/zil-234-dark.svg",
+        "assets/motion/zil-234-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-235",
+      "no": 235,
+      "group": "I",
+      "name": "Découverte des univers",
+      "base": "BASE-ONBOARDING",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-12",
+        "FND-14"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-235-light.svg",
+        "assets/motion/zil-235-light.svg",
+        "assets/static/zil-235-dark.svg",
+        "assets/motion/zil-235-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-236",
+      "no": 236,
+      "group": "I",
+      "name": "Personnalisation de l'expérience",
+      "base": "BASE-ONBOARDING",
+      "priority": "P2",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-12",
+        "FND-14"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-236-light.svg",
+        "assets/motion/zil-236-light.svg",
+        "assets/static/zil-236-dark.svg",
+        "assets/motion/zil-236-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-237",
+      "no": 237,
+      "group": "I",
+      "name": "Premiers pas avec l'assistant IA",
+      "base": "BASE-ONBOARDING",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-12",
+        "FND-14"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-237-light.svg",
+        "assets/motion/zil-237-light.svg",
+        "assets/static/zil-237-dark.svg",
+        "assets/motion/zil-237-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-238",
+      "no": 238,
+      "group": "J",
+      "name": "Nouvelle notification",
+      "base": "BASE-NOTIFY",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-16"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-238-light.svg",
+        "assets/motion/zil-238-light.svg",
+        "assets/static/zil-238-dark.svg",
+        "assets/motion/zil-238-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-239",
+      "no": 239,
+      "group": "J",
+      "name": "Promotion reçue",
+      "base": "BASE-NOTIFY",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-16"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-239-light.svg",
+        "assets/motion/zil-239-light.svg",
+        "assets/static/zil-239-dark.svg",
+        "assets/motion/zil-239-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-240",
+      "no": 240,
+      "group": "J",
+      "name": "Message du marchand",
+      "base": "BASE-NOTIFY",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-16"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-240-light.svg",
+        "assets/motion/zil-240-light.svg",
+        "assets/static/zil-240-dark.svg",
+        "assets/motion/zil-240-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-241",
+      "no": 241,
+      "group": "J",
+      "name": "Commande mise à jour",
+      "base": "BASE-NOTIFY",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-16"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-241-light.svg",
+        "assets/motion/zil-241-light.svg",
+        "assets/static/zil-241-dark.svg",
+        "assets/motion/zil-241-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-242",
+      "no": 242,
+      "group": "J",
+      "name": "Paiement confirmé",
+      "base": "BASE-NOTIFY",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-16"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": true,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-242-light.svg",
+        "assets/motion/zil-242-light.svg",
+        "assets/static/zil-242-dark.svg",
+        "assets/motion/zil-242-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-243",
+      "no": 243,
+      "group": "J",
+      "name": "Réservation rappelée",
+      "base": "BASE-NOTIFY",
+      "priority": "P1",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-16"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-243-light.svg",
+        "assets/motion/zil-243-light.svg",
+        "assets/static/zil-243-dark.svg",
+        "assets/motion/zil-243-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-244",
+      "no": 244,
+      "group": "J",
+      "name": "Alerte importante",
+      "base": "BASE-NOTIFY",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-16"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-244-light.svg",
+        "assets/motion/zil-244-light.svg",
+        "assets/static/zil-244-dark.svg",
+        "assets/motion/zil-244-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-245",
+      "no": 245,
+      "group": "J",
+      "name": "Message d'assistance",
+      "base": "BASE-NOTIFY",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-16"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-245-light.svg",
+        "assets/motion/zil-245-light.svg",
+        "assets/static/zil-245-dark.svg",
+        "assets/motion/zil-245-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-246",
+      "no": 246,
+      "group": "J",
+      "name": "Fidélité / récompense avancée",
+      "base": "BASE-NOTIFY",
+      "priority": "P3",
+      "scope": "Hors V1 (candidat futur)",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-16"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-246-light.svg",
+        "assets/motion/zil-246-light.svg",
+        "assets/static/zil-246-dark.svg",
+        "assets/motion/zil-246-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-247",
+      "no": 247,
+      "group": "K",
+      "name": "Zamurek comme mall digital",
+      "base": "BASE-EDITORIAL",
+      "priority": "P2",
+      "scope": "Communication éditoriale (hors gate fonctionnel)",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-12",
+        "INT-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-247-light.svg",
+        "assets/motion/zil-247-light.svg",
+        "assets/static/zil-247-dark.svg",
+        "assets/motion/zil-247-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-248",
+      "no": 248,
+      "group": "K",
+      "name": "Tout un univers, une seule destination",
+      "base": "BASE-EDITORIAL",
+      "priority": "P2",
+      "scope": "Communication éditoriale (hors gate fonctionnel)",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-12",
+        "INT-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-248-light.svg",
+        "assets/motion/zil-248-light.svg",
+        "assets/static/zil-248-dark.svg",
+        "assets/motion/zil-248-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-249",
+      "no": 249,
+      "group": "K",
+      "name": "Commerce local connecté",
+      "base": "BASE-EDITORIAL",
+      "priority": "P2",
+      "scope": "Communication éditoriale (hors gate fonctionnel)",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-12",
+        "INT-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-249-light.svg",
+        "assets/motion/zil-249-light.svg",
+        "assets/static/zil-249-dark.svg",
+        "assets/motion/zil-249-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-250",
+      "no": 250,
+      "group": "K",
+      "name": "Multi-activité",
+      "base": "BASE-EDITORIAL",
+      "priority": "P2",
+      "scope": "Communication éditoriale (hors gate fonctionnel)",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-12",
+        "INT-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-250-light.svg",
+        "assets/motion/zil-250-light.svg",
+        "assets/static/zil-250-dark.svg",
+        "assets/motion/zil-250-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-251",
+      "no": 251,
+      "group": "K",
+      "name": "Marchands et clients reliés",
+      "base": "BASE-EDITORIAL",
+      "priority": "P2",
+      "scope": "Communication éditoriale (hors gate fonctionnel)",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-12",
+        "INT-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-251-light.svg",
+        "assets/motion/zil-251-light.svg",
+        "assets/static/zil-251-dark.svg",
+        "assets/motion/zil-251-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-252",
+      "no": 252,
+      "group": "K",
+      "name": "Expérience omnicanale",
+      "base": "BASE-EDITORIAL",
+      "priority": "P2",
+      "scope": "Communication éditoriale (hors gate fonctionnel)",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-12",
+        "INT-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-252-light.svg",
+        "assets/motion/zil-252-light.svg",
+        "assets/static/zil-252-dark.svg",
+        "assets/motion/zil-252-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-253",
+      "no": 253,
+      "group": "K",
+      "name": "POS + commerce digital",
+      "base": "BASE-EDITORIAL",
+      "priority": "P2",
+      "scope": "Communication éditoriale (hors gate fonctionnel)",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-12",
+        "INT-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-253-light.svg",
+        "assets/motion/zil-253-light.svg",
+        "assets/static/zil-253-dark.svg",
+        "assets/motion/zil-253-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-254",
+      "no": 254,
+      "group": "K",
+      "name": "Assistant IA au cœur du système",
+      "base": "BASE-EDITORIAL",
+      "priority": "P2",
+      "scope": "Communication éditoriale (hors gate fonctionnel)",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-12",
+        "INT-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-254-light.svg",
+        "assets/motion/zil-254-light.svg",
+        "assets/static/zil-254-dark.svg",
+        "assets/motion/zil-254-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-255",
+      "no": 255,
+      "group": "K",
+      "name": "Croissance des commerçants",
+      "base": "BASE-EDITORIAL",
+      "priority": "P2",
+      "scope": "Communication éditoriale (hors gate fonctionnel)",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-12",
+        "INT-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-255-light.svg",
+        "assets/motion/zil-255-light.svg",
+        "assets/static/zil-255-dark.svg",
+        "assets/motion/zil-255-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-256",
+      "no": 256,
+      "group": "K",
+      "name": "Confiance et proximité",
+      "base": "BASE-EDITORIAL",
+      "priority": "P2",
+      "scope": "Communication éditoriale (hors gate fonctionnel)",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-12",
+        "INT-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-256-light.svg",
+        "assets/motion/zil-256-light.svg",
+        "assets/static/zil-256-dark.svg",
+        "assets/motion/zil-256-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-257",
+      "no": 257,
+      "group": "L",
+      "name": "Supervision globale",
+      "base": "BASE-OPERATOR",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "OPS-01",
+        "FND-13",
+        "FND-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-257-light.svg",
+        "assets/motion/zil-257-light.svg",
+        "assets/static/zil-257-dark.svg",
+        "assets/motion/zil-257-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-258",
+      "no": 258,
+      "group": "L",
+      "name": "Tableau de bord opérateur",
+      "base": "BASE-OPERATOR",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "OPS-01",
+        "FND-13",
+        "FND-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-258-light.svg",
+        "assets/motion/zil-258-light.svg",
+        "assets/static/zil-258-dark.svg",
+        "assets/motion/zil-258-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-259",
+      "no": 259,
+      "group": "L",
+      "name": "Gestion des établissements",
+      "base": "BASE-OPERATOR",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "OPS-01",
+        "FND-13",
+        "FND-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-259-light.svg",
+        "assets/motion/zil-259-light.svg",
+        "assets/static/zil-259-dark.svg",
+        "assets/motion/zil-259-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-260",
+      "no": 260,
+      "group": "L",
+      "name": "Gestion des permissions",
+      "base": "BASE-OPERATOR",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "OPS-01",
+        "FND-13",
+        "FND-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-260-light.svg",
+        "assets/motion/zil-260-light.svg",
+        "assets/static/zil-260-dark.svg",
+        "assets/motion/zil-260-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-261",
+      "no": 261,
+      "group": "L",
+      "name": "Monitoring des activités",
+      "base": "BASE-OPERATOR",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "OPS-01",
+        "FND-13",
+        "FND-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-261-light.svg",
+        "assets/motion/zil-261-light.svg",
+        "assets/static/zil-261-dark.svg",
+        "assets/motion/zil-261-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-262",
+      "no": 262,
+      "group": "L",
+      "name": "Alertes opérationnelles",
+      "base": "BASE-OPERATOR",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "OPS-01",
+        "FND-13",
+        "FND-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-262-light.svg",
+        "assets/motion/zil-262-light.svg",
+        "assets/static/zil-262-dark.svg",
+        "assets/motion/zil-262-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-263",
+      "no": 263,
+      "group": "L",
+      "name": "Vérification des flux",
+      "base": "BASE-OPERATOR",
+      "priority": "P1",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "OPS-01",
+        "FND-13",
+        "FND-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-263-light.svg",
+        "assets/motion/zil-263-light.svg",
+        "assets/static/zil-263-dark.svg",
+        "assets/motion/zil-263-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-264",
+      "no": 264,
+      "group": "L",
+      "name": "Contrôle des incidents",
+      "base": "BASE-OPERATOR",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "OPS-01",
+        "FND-13",
+        "FND-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-264-light.svg",
+        "assets/motion/zil-264-light.svg",
+        "assets/static/zil-264-dark.svg",
+        "assets/motion/zil-264-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-265",
+      "no": 265,
+      "group": "L",
+      "name": "Vue réseau marchands / services",
+      "base": "BASE-OPERATOR",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "OPS-01",
+        "FND-13",
+        "FND-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-265-light.svg",
+        "assets/motion/zil-265-light.svg",
+        "assets/static/zil-265-dark.svg",
+        "assets/motion/zil-265-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-266",
+      "no": 266,
+      "group": "M",
+      "name": "Support / aide",
+      "base": "BASE-UTILITY",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-14",
+        "OPS-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-266-light.svg",
+        "assets/motion/zil-266-light.svg",
+        "assets/static/zil-266-dark.svg",
+        "assets/motion/zil-266-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-267",
+      "no": 267,
+      "group": "M",
+      "name": "Contact / assistance",
+      "base": "BASE-UTILITY",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-14",
+        "OPS-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-267-light.svg",
+        "assets/motion/zil-267-light.svg",
+        "assets/static/zil-267-dark.svg",
+        "assets/motion/zil-267-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-268",
+      "no": 268,
+      "group": "M",
+      "name": "FAQ / centre d'aide",
+      "base": "BASE-UTILITY",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-14",
+        "OPS-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-268-light.svg",
+        "assets/motion/zil-268-light.svg",
+        "assets/static/zil-268-dark.svg",
+        "assets/motion/zil-268-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-269",
+      "no": 269,
+      "group": "M",
+      "name": "Mise à jour disponible",
+      "base": "BASE-UTILITY",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-14",
+        "OPS-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-269-light.svg",
+        "assets/motion/zil-269-light.svg",
+        "assets/static/zil-269-dark.svg",
+        "assets/motion/zil-269-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-270",
+      "no": 270,
+      "group": "M",
+      "name": "Synchronisation en cas de déconnexion",
+      "base": "BASE-UTILITY",
+      "priority": "P2",
+      "scope": "V1 sous conditions / validation",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-14",
+        "OPS-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-270-light.svg",
+        "assets/motion/zil-270-light.svg",
+        "assets/static/zil-270-dark.svg",
+        "assets/motion/zil-270-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-271",
+      "no": 271,
+      "group": "M",
+      "name": "Appareil connecté",
+      "base": "BASE-UTILITY",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-14",
+        "OPS-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-271-light.svg",
+        "assets/motion/zil-271-light.svg",
+        "assets/static/zil-271-dark.svg",
+        "assets/motion/zil-271-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-272",
+      "no": 272,
+      "group": "M",
+      "name": "Appareil non connecté",
+      "base": "BASE-UTILITY",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-14",
+        "OPS-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-272-light.svg",
+        "assets/motion/zil-272-light.svg",
+        "assets/static/zil-272-dark.svg",
+        "assets/motion/zil-272-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-273",
+      "no": 273,
+      "group": "M",
+      "name": "Export / impression",
+      "base": "BASE-UTILITY",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-14",
+        "OPS-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-273-light.svg",
+        "assets/motion/zil-273-light.svg",
+        "assets/static/zil-273-dark.svg",
+        "assets/motion/zil-273-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-274",
+      "no": 274,
+      "group": "M",
+      "name": "Historique",
+      "base": "BASE-UTILITY",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Optionnelle",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-14",
+        "OPS-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-274-light.svg",
+        "assets/motion/zil-274-light.svg",
+        "assets/static/zil-274-dark.svg",
+        "assets/motion/zil-274-dark.svg"
+      ]
+    },
+    {
+      "id": "ZIL-275",
+      "no": 275,
+      "group": "M",
+      "name": "Sauvegarde réussie",
+      "base": "BASE-UTILITY",
+      "priority": "P1",
+      "scope": "V1 / support à confirmer",
+      "motion": "Oui",
+      "status": "REVUE_VISUELLE_REQUISE",
+      "capabilities": [
+        "FND-14",
+        "OPS-01"
+      ],
+      "production_status": "GENERATED_VECTOR_PENDING_QA",
+      "requires_business_state": false,
+      "pilot_preserved": false,
+      "paths": [
+        "assets/static/zil-275-light.svg",
+        "assets/motion/zil-275-light.svg",
+        "assets/static/zil-275-dark.svg",
+        "assets/motion/zil-275-dark.svg"
+      ]
+    }
+  ]
+}

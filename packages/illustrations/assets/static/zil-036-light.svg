@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="600" viewBox="0 0 800 600" role="img" aria-labelledby="zil-036-title zil-036-desc" data-illustration="ZIL-036" data-base="BASE-LOADING" data-theme="light" data-motion="off" data-requires-business-state="false" data-status="REVUE_VISUELLE_REQUISE">
+<title id="zil-036-title">Chargement générique</title><desc id="zil-036-desc">Illustration Zamurek. Géométrie vectorielle native. Famille BASE-LOADING. Sources Humaaans / IRA Design lorsque présentes. Pas de preuve transactionnelle.</desc>
+
+<g id="zil-036-background" data-layer="decor">
+<circle cx="389" cy="300" r="192" fill="#EAF4EE" opacity=".81"/>
+<ellipse cx="397" cy="496" rx="171" ry="14" fill="#005C452" opacity=".12"/>
+<circle cx="538" cy="137" r="32" fill="#FF8A1E" opacity=".17"/>
+<path d="M532 218l10 16 16 10-16 10-10 16-10-16-16-10 16-10z" fill="#D21868" opacity=".25"/></g>
+
+<g id="zil-036-device" data-layer="object" transform="translate(238 153)">
+<rect x="0" y="0" width="324" height="329" rx="51" fill="#FFFDFB" stroke="#FF8A1EUTLINE" stroke-width="4"/>
+<g id="zil-036-object-geometry" transform="translate(1 16)"><circle cx="158" cy="153" r="104" stroke="#005C45" stroke-width="21" stroke-dasharray="420 232" fill="none"/><path d="M241 49l28 69-72-13" fill="#FF8A1E"/><path d="M79 258l-26-68 69 11" fill="#D21868"/><circle cx="158" cy="153" r="21" fill="#005C452"/></g>
+</g>
+
+<g id="zil-036-seal" data-layer="contextual-accessory" transform="translate(538 126)">
+<circle r="48" fill="#FFFDFB" stroke="#FF8A1EUTLINE" stroke-width="4"/>
+<g id="zil-036-context-symbol"><circle r="27" fill="#005C45"/><circle r="13" fill="#FF8A1E"/></g></g>
+</svg>

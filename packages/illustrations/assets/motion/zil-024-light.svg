@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="600" viewBox="0 0 800 600" role="img" aria-labelledby="zil-024-title zil-024-desc" data-illustration="ZIL-024" data-base="BASE-SUCCESS" data-theme="light" data-motion="on" data-requires-business-state="false" data-status="REVUE_VISUELLE_REQUISE">
+<title id="zil-024-title">Synchronisation réussie</title><desc id="zil-024-desc">Illustration Zamurek. Géométrie vectorielle native. Famille BASE-SUCCESS. Sources Humaaans / IRA Design lorsque présentes. Pas de preuve transactionnelle.</desc>
+<style><![CDATA[#zil-024-seal{transform-box:fill-box;transform-origin:center;animation:zil-024-hint 2s ease-in-out 1}#zil-024-device{transform-box:fill-box;transform-origin:center;animation:zil-024-float 2.8s ease-in-out 1}@keyframes zil-024-hint{0%,100%{scale:1;opacity:1}50%{scale:1.1;opacity:.72}}@keyframes zil-024-float{0%,100%{translate:0 0}50%{translate:0 -6px}}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}]]></style>
+<g id="zil-024-background" data-layer="decor">
+<circle cx="389" cy="300" r="192" fill="#EAF4EE" opacity=".81"/>
+<ellipse cx="397" cy="496" rx="171" ry="14" fill="#005C452" opacity=".12"/>
+<circle cx="538" cy="137" r="32" fill="#FF8A1E" opacity=".17"/>
+<path d="M532 218l10 16 16 10-16 10-10 16-10-16-16-10 16-10z" fill="#D21868" opacity=".25"/></g>
+
+<g id="zil-024-device" data-layer="object" transform="translate(238 153)">
+<rect x="0" y="0" width="324" height="329" rx="51" fill="#FFFDFB" stroke="#FF8A1EUTLINE" stroke-width="4"/>
+<g id="zil-024-object-geometry" transform="translate(1 16)"><path d="M43 83l119-54 116 54v136l-116 57-119-57z" fill="#005C45"/><path d="M43 83l119 58 116-58M162 141v135" stroke="#FFFFFF" stroke-width="8" fill="none"/><path d="M103 54l120 56v43" stroke="#FF8A1E" stroke-width="19" fill="none"/></g>
+</g>
+
+<g id="zil-024-seal" data-layer="contextual-accessory" transform="translate(538 126)">
+<circle r="48" fill="#FFFDFB" stroke="#FF8A1EUTLINE" stroke-width="4"/>
+<g id="zil-024-context-symbol"><circle r="27" fill="#005C45"/><circle r="13" fill="#FF8A1E"/></g></g>
+</svg>

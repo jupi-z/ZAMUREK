@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="600" viewBox="0 0 800 600" role="img" aria-labelledby="zil-010-title zil-010-desc" data-illustration="ZIL-010" data-base="BASE-EMPTY" data-theme="light" data-motion="off" data-requires-business-state="false" data-status="REVUE_VISUELLE_REQUISE">
+<title id="zil-010-title">Aucun restaurant disponible</title><desc id="zil-010-desc">Illustration Zamurek. Géométrie vectorielle native. Famille BASE-EMPTY. Sources Humaaans / IRA Design lorsque présentes. Pas de preuve transactionnelle.</desc>
+
+<g id="zil-010-background" data-layer="decor">
+<circle cx="389" cy="300" r="192" fill="#EAF4EE" opacity=".81"/>
+<ellipse cx="397" cy="496" rx="171" ry="14" fill="#005C452" opacity=".12"/>
+<circle cx="538" cy="137" r="32" fill="#FF8A1E" opacity=".17"/>
+<path d="M532 218l10 16 16 10-16 10-10 16-10-16-16-10 16-10z" fill="#D21868" opacity=".25"/></g>
+
+<g id="zil-010-device" data-layer="object" transform="translate(238 153)">
+<rect x="0" y="0" width="324" height="329" rx="51" fill="#FFFDFB" stroke="#FF8A1EUTLINE" stroke-width="4"/>
+<g id="zil-010-object-geometry" transform="translate(1 16)"><path d="M38 113h244l-34 141H73z" fill="#005C45" stroke="#142C25" stroke-width="6"/><path d="M78 113Q80 37 160 37t82 76" stroke="#FF8A1E" stroke-width="22" fill="none" stroke-linecap="round"/><path d="M108 150v75m53-75v75m53-75v75" stroke="#FFFFFF" stroke-width="13" opacity=".66"/><path d="M41 113h239" stroke="#005C452" stroke-width="15"/></g>
+</g>
+
+<g id="zil-010-seal" data-layer="contextual-accessory" transform="translate(538 126)">
+<circle r="48" fill="#FFFDFB" stroke="#FF8A1EUTLINE" stroke-width="4"/>
+<g id="zil-010-context-symbol"><circle r="28" fill="none" stroke="#005C45" stroke-width="8"/><path d="M-9-17v34m18-34v34" stroke="#FF8A1E" stroke-width="6"/></g></g>
+</svg>
