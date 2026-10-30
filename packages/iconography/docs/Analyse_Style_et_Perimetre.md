@@ -12,7 +12,7 @@ Formes compactes et arrondies, objets vus de face ou avec une perspective très 
 
 Palette : vert forêt #005C45, orange #FF8A1E, magenta #D21868. Les nuances du système sont centralisées dans design-tokens.json. Vert pour la structure ; orange pour les transactions, objets et accents d’action ; magenta pour les liens affectifs, l’attention et certains états. Chaque état important possède aussi un symbole explicite : la couleur seule ne porte pas son sens.
 
-Grille : viewBox 0 0 96 96. Cadrage optique régulier, coins arrondis et terminaisons de traits rondes. Deux rendus : couleur avec relief pour navigation, catégories et illustrations de marque ; interface à traits monochromes currentColor pour les commandes compactes. Aucun caractère de police n’est utilisé pour les signes ou les objets.
+Grille : viewBox 0 0 96 96. Cadrage optique régulier, coins arrondis et terminaisons de traits rondes. Deux rendus : couleur avec relief pour navigation, catégories et signes de marque ; interface à traits monochromes currentColor pour les commandes compactes. Aucun caractère de police n’est utilisé pour les signes ou les objets.
 
 Les badges plus, moins, validation, annulation, délai et verrou reprennent une construction constante. Ils indiquent des opérations distinctes sur un même objet. Les formes génériques usuelles (loupe, cœur, panier) sont dessinées pour ce système.
 
@@ -29,7 +29,7 @@ Ces sources décrivent une plateforme commerciale et de services omnicanale : re
 
 L’inventaire couvre navigation, catalogue, panier, commandes, livraisons/retrait, verticales métiers, espèces et caisse, tickets/impression, comptes, isolation et permissions, assistants et approbations, exploitation, actions et états. La correspondance des 43 capacités est donnée dans Couverture_Capacites.csv et manifest.json. Une couverture signifie qu’un repère graphique pertinent existe ; elle ne prouve ni le fonctionnement ni l’exhaustivité de futurs écrans non spécifiés.
 
-Les éléments éditoriaux complémentaires — cadeau, premium, avis, carte générique, portefeuille — portent le statut complement. Ils ne présument ni programme de fidélité, ni paiement carte automatisé, ni porte-monnaie de plateforme. Le marqueur pharmacie identifie une catégorie ; les icônes restriction/autorisation ne signifient pas qu’un médicament est vendable. Le mode hors ligne représente la connectivité, sans promettre un POS transactionnel hors ligne. Les QR et codes-barres sont des illustrations, pas des codes utilisables pour une transaction.
+Les éléments éditoriaux complémentaires — cadeau, premium, avis, carte générique, portefeuille — portent le statut complement. Ils ne présument ni programme de fidélité, ni paiement carte automatisé, ni porte-monnaie de plateforme. Le marqueur pharmacie identifie une catégorie ; les icônes restriction/autorisation ne signifient pas qu’un médicament est vendable. Le mode hors ligne représente la connectivité, sans promettre un POS transactionnel hors ligne. Les QR et codes-barres sont des pictogrammes, pas des codes utilisables pour une transaction.
 
 ## Mise en œuvre
 
