@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-labelledby="zm-zil-001-title zm-zil-001-desc" width="800" height="600" viewBox="0 0 800 600" fill="none" data-zamurek-illustration="ZIL-001" data-theme="light" data-motion="off">
+<title id="zm-zil-001-title">Panier vide</title><desc id="zm-zil-001-desc">Illustration SVG vectorielle modulaire Zamurek. Provenance : Original Zamurek design. Aucun paiement confirmé implicite.</desc>
+<defs><linearGradient id="zm-zil-001-basket" x1="0" y1="0" x2=".9" y2="1"><stop stop-color="#168C70"/><stop offset=".56" stop-color="#005C45"/><stop offset="1" stop-color="#003E32"/></linearGradient><linearGradient id="zm-zil-001-warm" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFB85E"/><stop offset=".8" stop-color="#FF8A1E"/><stop offset="1" stop-color="#E06711"/></linearGradient><linearGradient id="zm-zil-001-mag" x1="0" y1="0" x2=".9" y2="1"><stop stop-color="#F7619C"/><stop offset="1" stop-color="#D21868"/></linearGradient></defs>
+<style><![CDATA[
+:root{color-scheme:light dark}
+.zm-shape{vector-effect:non-scaling-stroke}
+#zm-zil-001-phone,#zm-zil-001-handle,#zm-zil-001-drawer,#zm-zil-001-receipt,#zm-zil-001-spark,#zm-zil-001-bag,#zm-zil-001-search,#zm-zil-001-heart{transform-box:fill-box;transform-origin:center}
+
+]]></style>
+
+<g id="zm-zil-001-soft-accents" opacity=".95">
+ <circle cx="563" cy="152" r="48" fill="#E6F3ED"/><circle cx="171" cy="374" r="37" fill="#FF8A1E" opacity=".13"/>
+ <path d="M580 226l12 23 25 12-25 12-12 25-12-25-25-12 25-12z" fill="#FF8A1E" opacity=".45"/>
+</g>
+<g id="zm-zil-001-search" data-zamurek-layer="accessory" transform="translate(118 114)">
+<rect x="0" y="0" width="118" height="112" rx="27" fill="#FFFFFF" stroke="#A0CDBD" stroke-width="2"/>
+<circle cx="53" cy="48" r="21" stroke="#005C45" stroke-width="10" fill="none"/><path d="M69 65l19 20" stroke="#FF8A1E" stroke-width="10" stroke-linecap="round"/>
+</g>
+<g id="zm-zil-001-heart" data-zamurek-layer="accessory" transform="translate(565 95)">
+<rect width="88" height="83" rx="22" fill="#E6F3ED"/><path d="M44 62l-25-22C2 22 27 6 44 25c17-19 42-3 25 15L44 62z" fill="#D21868"/>
+</g>
+<g id="zm-zil-001-basket-main" data-zamurek-layer="object" transform="translate(175 170)">
+<ellipse cx="196" cy="315" rx="190" ry="20" fill="#003E32" opacity=".13"/>
+<path d="M53 83C59 28 103 9 200 9c105 0 154 23 159 74" fill="none" stroke="#003E32" stroke-width="28" stroke-linecap="round" opacity=".16" transform="translate(0 5)"/>
+<g id="zm-zil-001-handle" data-zamurek-layer="handle">
+<path d="M54 111C59 48 104 21 200 21S354 48 359 111" fill="none" stroke="#FF8A1E" stroke-width="24" stroke-linecap="round"/><path d="M65 100C76 51 121 39 202 39" stroke="#FFCB85" stroke-width="5" stroke-linecap="round" fill="none" opacity=".8"/>
+</g>
+<path d="M10 137Q9 111 35 107L372 107Q401 107 396 138L351 309Q344 333 319 334H91Q67 334 61 312Z" fill="url(#zm-zil-001-basket)" stroke="#003E32" stroke-width="4"/>
+<path d="M18 136Q10 107 43 106H369Q395 107 392 138L375 160Q199 194 39 155Z" fill="#11866B"/>
+<path d="M42 145Q205 164 371 145" stroke="#4CBD9A" stroke-width="7" fill="none" opacity=".76"/>
+<rect x="93" y="193" width="18" height="99" rx="9" fill="#003E32" opacity=".72"/><rect x="139" y="200" width="18" height="87" rx="9" fill="#003E32" opacity=".72"/><rect x="185" y="193" width="18" height="99" rx="9" fill="#003E32" opacity=".72"/><rect x="231" y="200" width="18" height="87" rx="9" fill="#003E32" opacity=".72"/><rect x="277" y="193" width="18" height="99" rx="9" fill="#003E32" opacity=".72"/><rect x="323" y="200" width="18" height="87" rx="9" fill="#003E32" opacity=".72"/>
+<path d="M78 310H325" stroke="#0D8667" stroke-width="5" stroke-linecap="round" opacity=".5"/>
+<circle cx="39" cy="121" r="13" fill="#003E32"/><circle cx="370" cy="121" r="13" fill="#003E32"/><circle cx="39" cy="121" r="5" fill="#FF8A1E"/><circle cx="370" cy="121" r="5" fill="#FF8A1E"/>
+</g>
+<g id="zm-zil-001-spark" data-zamurek-layer="accessory" fill="#D21868"><path d="M119 320l9 15 16 9-16 9-9 15-9-15-16-9 16-9z"/><circle cx="626" cy="377" r="7" fill="#FF8A1E"/></g>
+</svg>
