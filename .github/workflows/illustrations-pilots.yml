@@ -34,8 +34,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Repair source template before generation
+        run: python3 packages/illustrations/scripts/fix_gallery_template.py
       - name: Render complete library from pinned source vectors
         run: python3 packages/illustrations/scripts/build_full_library.py
+      - name: Verify strict-mode HTML gallery after generation
+        run: python3 packages/illustrations/scripts/fix_gallery_template.py
       - name: Verify all 33 bases, 275 contexts and 1100 SVGs
         run: |
           python3 - <<'PY'
