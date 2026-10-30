@@ -1,0 +1,24 @@
+name: Zamurek SVG pilot quality
+on:
+  push:
+    paths:
+      - "packages/illustrations/**"
+      - "scripts/validate_illustrations_pilots.py"
+      - ".github/workflows/illustrations-pilots.yml"
+  pull_request:
+    paths:
+      - "packages/illustrations/**"
+      - "scripts/validate_illustrations_pilots.py"
+      - ".github/workflows/illustrations-pilots.yml"
+permissions:
+  contents: read
+jobs:
+  svg-pilot-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate illustration pilot XML, attribution and component semantics
+        run: python3 scripts/validate_illustrations_pilots.py
